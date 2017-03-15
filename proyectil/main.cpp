@@ -85,9 +85,9 @@ class Bala{
         void Disparar(float velocidad, float angulo);
         
 		sf::RectangleShape getShape();
-		
-        void Delete();
         
+		void Render(sf::RenderWindow *window);
+		
         ~Bala();
         
 };
@@ -100,10 +100,11 @@ class MyContactListener : public b2ContactListener{
 };
 
 set<Bala*> listaDeBalasPorEliminar;
+set<Bala*> listadoBala;
 
 int main(){
 	
-	set<Bala*> listadoBala;
+	
 	
     //Definir Mundo Box2D
     b2Vec2 gravity(0.0f, 9.8f);
@@ -129,13 +130,8 @@ int main(){
                     
                     switch(event.key.code){
                         case Keyboard::Space:
-							/*hola->m_pBody->SetTransform(b2Vec2(2,2), hola->m_pBody->GetAngle());
-							hola->m_pBody->SetLinearVelocity(b2Vec2(0,0));
-							hola->m_pBody->SetAngularVelocity(0);
-							hola->Disparar_Parabola(60.0f, 45.0f);	*/
 							Bala* nueva;
 							nueva = new Bala(&world, sf::Vector2f(30,30), sf::Vector2f(WIDTH/2, 0));
-							nueva->Disparar_Parabola(30, 0);
 							listadoBala.insert(nueva);
                         break;
                     }
@@ -151,15 +147,8 @@ int main(){
 			Bala* dyingBala = *it;
 			listadoBala.erase(dyingBala);
             delete dyingBala;
-			
-			//cout << dyingBala;
-			//dyingBala->Delete();
 		}
 		listaDeBalasPorEliminar.clear();
-		
-        
-        //proyectil.Update_Shape();
-
 
         Ventana.clear(sf::Color::Black);
        
@@ -167,14 +156,12 @@ int main(){
         
         Ventana.draw(terra.m_Shape);
 		
-        //Ventana.draw(proyectil.m_Shape);
-		
 		it = listadoBala.begin();
 		end = listadoBala.end();
 		for(; it!=end; ++it){
 			Bala* updateBala = *it;
 			updateBala->Update_Shape();
-			Ventana.draw(updateBala->getShape());
+			updateBala->Render(&Ventana);
 		}
 
         Ventana.display();
@@ -231,13 +218,12 @@ void Bala::Disparar(float velocidad, float angulo){
 	m_pBody->SetLinearVelocity(b2Vec2(velocidad * cos(angulo*3.14/180.0f), -velocidad * sin(angulo*3.14/180.0f)));
 }
 
-void Bala::Delete(){
-	m_pBody->GetWorld()->DestroyBody(m_pBody);
-	cout << "Delete crashea" << endl;
-}
-
 sf::RectangleShape Bala::getShape(){
 	return *m_Shape;
+}
+
+void Bala::Render(sf::RenderWindow *window){
+	window->draw(*m_Shape);
 }
 
 Bala::~Bala(){
@@ -254,12 +240,12 @@ void MyContactListener::BeginContact(b2Contact* contact){
 	void* bodyUserDataA = contact->GetFixtureA()->GetBody()->GetUserData();
 	void* bodyUserDataB = contact->GetFixtureB()->GetBody()->GetUserData();	
 	
-	if(static_cast<Bala*>(bodyUserDataA) && bodyUserDataB == 0){
+	if(static_cast<Bala*>(bodyUserDataA)){
 		listaDeBalasPorEliminar.insert(static_cast<Bala*>(bodyUserDataA));
 	}
     
 	
-	if(static_cast<Bala*>(bodyUserDataB) && bodyUserDataA == 0){
+	if(static_cast<Bala*>(bodyUserDataB)){
 		listaDeBalasPorEliminar.insert(static_cast<Bala*>(bodyUserDataB));
 	} 
 }
