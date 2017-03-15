@@ -1,3 +1,4 @@
+ESTOY EDITANDO
 # King of the Jungle 2k17: Turbo Power Edition
 # Instrucciones de configuración del repositorio en Ubuntu y Windows(Consola de comandos):
 
