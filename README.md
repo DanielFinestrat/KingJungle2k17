@@ -1,5 +1,36 @@
-ESTOY EDITANDO
 # King of the Jungle 2k17: Turbo Power Edition
+
+
+
+1.- Box2DTest
+	Test básico de Box2D con varias cajas
+
+2.- ClickBox2DTest
+	Test básico de Box2D, creando cajas cuando clicas
+
+3.- ColisionTest
+	Test que detecta colisiones y elimina balas
+
+4.- JoystickTest
+	Primer test de joystick, movimiento de varias cajas
+
+5.- JoystickAnimations
+	Segundo test de joystick, moviendo un personaje
+
+6.- JoystickClass
+	Clase y manejador de joysticks terminado
+
+
+
+
+
+
+
+
+
+
+
+
 # Instrucciones de configuración del repositorio en Ubuntu y Windows(Consola de comandos):
 
 1.- Descargar Git (En windows descargar de la Web): 
