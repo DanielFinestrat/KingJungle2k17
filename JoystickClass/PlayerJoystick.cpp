@@ -84,6 +84,7 @@ void PlayerJoystick::checkAxisX(int ejeX){
     else if(ejeX < -10) ejeX = -1;
     else ejeX = 0;
     
+    //1 = derecha
     if(ejeX != estadoEjeX){
         cout<<"Me muevo en el eje X en la dirección "<<ejeX<<endl;
         estadoEjeX = ejeX;
@@ -96,6 +97,7 @@ void PlayerJoystick::checkAxisY(int ejeY){
     else if(ejeY < -10) ejeY = -1;
     else ejeY = 0;
     
+    //1 = agachado
     if(ejeY != estadoEjeY){
         cout<<"Me muevo en el eje Y en la dirección "<<ejeY<<endl;
         estadoEjeY = ejeY;

@@ -17,16 +17,7 @@ using namespace std;
 
 class PlayerJoystick {
 public: 
-    struct boton{
-        string nombre;
-        int numBoton;
-        bool pulsado;
-    };
-    vector<boton> misBotones;
-    int estadoEjeX;
-    int estadoEjeY;
     //Player player;
-    int id;
     
     PlayerJoystick(int id, b2World *world);
     virtual ~PlayerJoystick();
@@ -37,7 +28,15 @@ public:
     void checkAxisY(int ejeY);
 
 private:
-
+    struct boton{
+        string nombre;
+        int numBoton;
+        bool pulsado;
+    };
+    vector<boton> misBotones;
+    int estadoEjeX;
+    int estadoEjeY;
+    int id;
 };
 
 #endif
