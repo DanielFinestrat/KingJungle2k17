@@ -51,31 +51,53 @@ class Explosion : public Entidad{
 		float radioMax;
 		float incrementoRadio;
 		
-		
 		b2Body *m_pBody;
 		sf::CircleShape *m_Shape;
 
-		
+		/**
+		 * Constructor del objeto Explosion
+		 * @param mundo b2World: mundo en el que estan todos los objetos
+		 * @param position Vector2f: posicion de la explosion
+		 * @param radio float: radio maxio al que alcanzará la explosión
+		 * @param incremento float: valor con el que aumenta el radio con cada iteración
+		 * @param inicial float: radio inicial de la explosión
+		 */ 
 		Explosion(b2World *mundo, sf::Vector2f position, float radio, float incremento, float inicial);
 		
+		/**
+		 * Actualiza el FixtureBodyDef y CircleShape de la explosión
+		 */
 		void Update();
 		
+		/**
+		 * Renderiza la explosión en la ventana
+		 * @param window RenderWindow: Ventana de la aplicación
+		 * */
 		void Render(sf::RenderWindow *window);
+		
+		/**
+		 * Elimina de memoria las variables de la explosión 
+		 */
+		~Explosion();
 
 };
 
 class Bala : public Entidad{
     public:
         sf::Vector2f m_Size;
+		bool explosion;
         
 		b2Body *m_pBody;
         sf::RectangleShape *m_Shape;
+		
         /**
          * Constructor del objeto Bala
          * @param mundo b2World*: mundo en el que estan todos los objetos
          * @param size Vector2f: tamaño de la bala
+		 * @param position Vector2f: posicion inicial de la bala
+		 * @param explo bool: activar la explosion al eliminar la bala
          */
-        Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position);
+        Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position, bool explo);
         
 		/**
          * Actualiza el RectangleShape del objeto
@@ -96,23 +118,39 @@ class Bala : public Entidad{
          */
         void Disparar(float velocidad, float angulo);
         
-		sf::RectangleShape getShape();
-        
+		/**
+		 * Renderiza la bala en la ventana
+		 * @param window RenderWindow: Ventana de la aplicación
+		 */
 		void Render(sf::RenderWindow *window);
 		
+		/**
+		* Elimina de memoria las variables de la bala
+		*/
         ~Bala();
         
 };
 
 class MyContactListener : public b2ContactListener{
     public:
+		/**
+		 * Función que se ejecuta al empezar una colisión en el mundo
+		 * @param contact b2Contact: Elemento con los cuerpos que intervienen en la colisión
+		 */
         void BeginContact(b2Contact* contact); 
 
+		/**
+		 * Función que se ejecuta al finalizar una colisión en el mundo
+		 * @param contact b2Contact: Elemento con los cuerpos que intervienen en la colisión
+		 */
         void EndContact(b2Contact* contact);
 };
 
 set<Bala*> listaDeBalasPorEliminar;
+set<Explosion*> listaDeExploPorEliminar;
+
 set<Bala*> listadoBala;
+set<Explosion*> listadoExplosion;
 
 int main(){
 	
@@ -125,9 +163,6 @@ int main(){
     world.SetContactListener(&espiaContacto);
     
     Suelo terra(&world);
-    
-	Explosion *hi;
-	hi = new Explosion(&world, sf::Vector2f(400,400), 1.0f, 0.01f, 0.5f);
 	
     //Crear Ventana
     RenderWindow Ventana(VideoMode(WIDTH, HEIGHT), "Pruebas Proyectiles");
@@ -148,7 +183,7 @@ int main(){
                     switch(event.key.code){
                         case Keyboard::Space:
 							Bala* nueva;
-							nueva = new Bala(&world, sf::Vector2f(30,30), sf::Vector2f(WIDTH/2, 0));
+							nueva = new Bala(&world, sf::Vector2f(30,30), sf::Vector2f(WIDTH/2, 0), frameCounter%2);
 							listadoBala.insert(nueva);
                         break;
                     }
@@ -157,31 +192,62 @@ int main(){
         }
         
 
-        
-        set<Bala*>::iterator it = listaDeBalasPorEliminar.begin();
-		set<Bala*>::iterator end = listaDeBalasPorEliminar.end();
-		for(; it!=end; ++it){
-			Bala* dyingBala = *it;
+        //Eliminacion de las balas
+        set<Bala*>::iterator itBala = listaDeBalasPorEliminar.begin();
+		set<Bala*>::iterator endBala = listaDeBalasPorEliminar.end();
+		for(; itBala!=endBala; ++itBala){
+			Bala* dyingBala = *itBala;
+			if(dyingBala->explosion == true){
+				b2Vec2 position = dyingBala->m_pBody->GetPosition();
+				
+				Explosion *nueva;
+				nueva = new Explosion(dyingBala->m_pBody->GetWorld(), sf::Vector2f(position.x * PPM,position.y * PPM), 1.0f, 0.05f, 0.5f);
+				listadoExplosion.insert(nueva);
+			}
 			listadoBala.erase(dyingBala);
             delete dyingBala;
+			dyingBala = NULL;
 		}
+		
 		listaDeBalasPorEliminar.clear();
+		
+		//Eliminación de las explosiones
+		set<Explosion*>::iterator itExplo = listaDeExploPorEliminar.begin();
+		set<Explosion*>::iterator endExplo = listaDeExploPorEliminar.end();
+		for(; itExplo!=endExplo; ++itExplo){
+			Explosion* dyingExplo = *itExplo;
+			listadoExplosion.erase(dyingExplo);
+			delete dyingExplo;
+			dyingExplo = NULL;
+		}
 
+		listaDeExploPorEliminar.clear();
+		
         Ventana.clear(sf::Color::Black);
        
         world.Step(1.0f/60.0f, 10, 10);
         
         terra.Render(&Ventana);
 		
-		it = listadoBala.begin();
-		end = listadoBala.end();
-		for(; it!=end; ++it){
-			Bala* updateBala = *it;
+		
+		//Update y Render Balas
+		itBala = listadoBala.begin();
+		endBala = listadoBala.end();
+		for(; itBala!=endBala; ++itBala){
+			Bala* updateBala = *itBala;
 			updateBala->Update_Shape();
 			updateBala->Render(&Ventana);
 		}
-		hi->Update();
-		hi->Render(&Ventana);
+		
+		//Update y Render Explosiones
+		itExplo = listadoExplosion.begin();
+		endExplo = listadoExplosion.end();
+		for(; itExplo!=endExplo; ++itExplo){
+			Explosion* updateExplo = *itExplo;
+			updateExplo->Update();
+			updateExplo->Render(&Ventana);
+		}
+		
         Ventana.display();
     }
     return 0;
@@ -263,45 +329,58 @@ Explosion::Explosion(b2World *mundo, sf::Vector2f position, float radio, float i
 
 void Explosion::Update(){
        
-	if(radioActual < radioMax && frameCounter%10 == 0){
-		radioActual = radioActual + incrementoRadio;
-		
-		b2Fixture *fixtureA = m_pBody->GetFixtureList();
-		m_pBody->DestroyFixture(fixtureA);
-		
-		b2CircleShape circleShape;
-		//circleShape.m_p.Set(radioActual, radioActual);
-		circleShape.m_radius = radioActual;
-		
-		b2FixtureDef fixtureDef;
-		fixtureDef.shape = &circleShape;
-		fixtureDef.friction = 0.2f;
-		fixtureDef.restitution = 0.3f;
-		fixtureDef.density = 0.7f;
-		fixtureDef.filter.categoryBits = CATEGORY_SCENERY;
-		fixtureDef.filter.maskBits = MASK_SCENERY;
-		
-		m_pBody->CreateFixture(&fixtureDef);
+	if(radioActual < radioMax){
+		if(frameCounter%10 == 0){
+			radioActual = radioActual + incrementoRadio;
+
+			b2Fixture *fixtureA = m_pBody->GetFixtureList();
+			m_pBody->DestroyFixture(fixtureA);
+
+			b2CircleShape circleShape;
+			//circleShape.m_p.Set(radioActual, radioActual);
+			circleShape.m_radius = radioActual;
+
+			b2FixtureDef fixtureDef;
+			fixtureDef.shape = &circleShape;
+			fixtureDef.friction = 0.2f;
+			fixtureDef.restitution = 0.3f;
+			fixtureDef.density = 0.7f;
+			fixtureDef.filter.categoryBits = CATEGORY_SCENERY;
+			fixtureDef.filter.maskBits = MASK_SCENERY;
+
+			m_pBody->CreateFixture(&fixtureDef);
+
+			float angle = m_pBody->GetAngle();
+			b2Vec2 pos = m_pBody->GetPosition();
+
+			m_Shape->setRadius(radioActual * PPM);
+			m_Shape->setOrigin(radioActual * PPM, radioActual * PPM);
+			m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
+			m_Shape->setRotation((angle*180)/M_PI);
+		}
+	}
+	else{
+		listaDeExploPorEliminar.insert(this);
 	}
 
-	float angle = m_pBody->GetAngle();
-    b2Vec2 pos = m_pBody->GetPosition();
 	
-	m_Shape->setRadius(radioActual * PPM);
-	m_Shape->setOrigin(radioActual * PPM, radioActual * PPM);
-	m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
-	m_Shape->setRotation((angle*180)/M_PI);
 }
 
 void Explosion::Render(sf::RenderWindow *window){
 	window->draw(*m_Shape);
 }
 
+Explosion::~Explosion(){
+	m_pBody->GetWorld()->DestroyBody(m_pBody);
+	delete m_Shape;
+	m_Shape = NULL;
+}
 
 //----------------------------------------------------------------------------------------Bala
-Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position){
+Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position, bool explo){
 	tipo = "Bala";
-		
+	explosion = explo;	
+	
 	m_Size = size;
 
 	b2BodyDef balaBodyDef;
@@ -347,10 +426,6 @@ void Bala::Disparar(float velocidad, float angulo){
 	m_pBody->SetLinearVelocity(b2Vec2(velocidad * cos(angulo*3.14/180.0f), -velocidad * sin(angulo*3.14/180.0f)));
 }
 
-sf::RectangleShape Bala::getShape(){
-	return *m_Shape;
-}
-
 void Bala::Render(sf::RenderWindow *window){
 	window->draw(*m_Shape);
 }
@@ -376,10 +451,12 @@ void MyContactListener::BeginContact(b2Contact* contact){
 	//Colision con Balas
 	if(entidadA->getTipo().compare("Bala") == 0 || entidadB->getTipo().compare("Bala") == 0){
 		if(entidadA->getTipo().compare("Bala") == 0){
-			listaDeBalasPorEliminar.insert(static_cast<Bala*>(bodyUserDataA));
+			Bala* bala = static_cast<Bala*>(bodyUserDataA);
+			listaDeBalasPorEliminar.insert(bala);
 		}
 		else if(entidadB->getTipo().compare("Bala") == 0){
-			listaDeBalasPorEliminar.insert(static_cast<Bala*>(bodyUserDataB));
+			Bala* bala = static_cast<Bala*>(bodyUserDataB);
+			listaDeBalasPorEliminar.insert(bala);
 		}
 	}
 	
