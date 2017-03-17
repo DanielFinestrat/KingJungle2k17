@@ -23,6 +23,8 @@ public:
         bool pulsado;
     };
     vector<boton> misBotones;
+    int estadoEjeX;
+    int estadoEjeY;
     //Player player;
     int id;
     
@@ -32,6 +34,7 @@ public:
     void pressUpdateState(int botonPulsado);
     void releaseUpdateState(int botonSoltado);
     void checkAxisX(int ejeX);
+    void checkAxisY(int ejeY);
 
 private:
 

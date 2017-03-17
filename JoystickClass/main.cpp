@@ -77,6 +77,9 @@ int main() {
                     if(event.joystickMove.axis == Joystick::X){
                         playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickMove.joystickId)).checkAxisX(event.joystickMove.position);
                     }
+                    if(event.joystickMove.axis == Joystick::Y){
+                        playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickMove.joystickId)).checkAxisY(event.joystickMove.position);
+                    }
                     break;
                     
                 case Event::JoystickButtonPressed:
