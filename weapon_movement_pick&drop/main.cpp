@@ -134,12 +134,13 @@ int main() {
     RenderWindow window(VideoMode(WIDTH, HEIGHT), "Prueba disparo arma");
     window.setFramerateLimit(60);
     
-    //Contador y variable booleana para controlar la cadencia de disparo
-    float cont = 60.0;
-    bool enableShoot;
+    //Variable de tiempo para controlar la cadencia de disparo
+    Clock deltaClock;
+    int difTime = 0;
+    Time dt;
+    time_t lastShot = time(&lastShot);
     
     while(window.isOpen()) {
-        if (cont == 60.0f*weapon->shootCadence) enableShoot = true;
 
         Event event;
         while(window.pollEvent(event)) {
@@ -150,16 +151,18 @@ int main() {
                 case Event::KeyPressed:
                     switch(event.key.code){
                         case Keyboard::Space:
-                            if (enableShoot){
-                                if (weapon->inPossession) {
+                            if (weapon->inPossession) {
+                                dt = deltaClock.restart();
+                                difTime += dt.asMilliseconds();
+
+                                if (difTime >= (1/weapon->shootCadence) * 1000) {
+                                    difTime = 0.0;
                                     weapon->shoot(world, player.dir);
+                                    lastShot = time(NULL);
                                 
-                                    enableShoot = false;
-                                    cont = 0;
                                 }
-                                
                             }
-                            break;
+                        break;
                             
                         case Keyboard::Left:
                             move(-1, player.m_pBody);
@@ -183,7 +186,6 @@ int main() {
                     }
             }
         }
-        cont++;
 
         //Creamos iteradores para recorrer los vectores de balas
         set<Bala*>::iterator it = weapon->balasAEliminar.begin();
@@ -231,6 +233,7 @@ int main() {
         }
         
         window.display();
+       
     }
     return 0;
 }

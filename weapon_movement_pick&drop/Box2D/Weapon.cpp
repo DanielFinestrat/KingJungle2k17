@@ -60,7 +60,7 @@ void Weapon::update() {
     b2Vec2 pos = m_pBody->GetPosition();
     m_pBody->SetTransform(pos,0);
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
-    cout << pos.y << endl;
+
 }
 
 void Weapon::update(b2Vec2 pos) {

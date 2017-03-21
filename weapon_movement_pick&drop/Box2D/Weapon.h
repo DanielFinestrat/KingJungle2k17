@@ -35,7 +35,7 @@ class Weapon {
          * @param b2world world: mundo en el que se encuentran todos los objetos
          * @param vector2f size: tamaño del arma
          * @param vector2f pos: posicion del arma
-         * @param float shoot_cadence: Disparos por segundo (n*60) siendo n un numero entre 0 y 1 ---> cadencia de 0.5 = 2 disparo(s)/s
+         * @param float shoot_cadence: Disparos por segundo 
          * @param int BPS: Balas por disparo
          */
         Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS);
