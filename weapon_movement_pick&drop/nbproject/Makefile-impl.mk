@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=weapon_movement
+PROJECTNAME=weapon_movement_pick&drop
 
 # Active Configuration
 DEFAULTCONF=Debug

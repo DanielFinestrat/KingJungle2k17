@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=weapon_movement
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/weapon_movement
+CND_ARTIFACT_NAME_Debug=weapon_movement_pick_drop
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/weapon_movement_pick_drop
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=weaponmovement.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/weaponmovement.tar
+CND_PACKAGE_NAME_Debug=weaponmovementpick&drop.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/weaponmovementpick&drop.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=weapon_movement
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/weapon_movement
+CND_ARTIFACT_NAME_Release=weapon_movement_pick_drop
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/weapon_movement_pick_drop
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=weaponmovement.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/weaponmovement.tar
+CND_PACKAGE_NAME_Release=weaponmovementpick&drop.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/weaponmovementpick&drop.tar
 #
 # include compiler specific variables
 #

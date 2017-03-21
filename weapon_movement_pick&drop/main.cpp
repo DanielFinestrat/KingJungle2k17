@@ -106,6 +106,7 @@ void move(int dir, b2Body *body){
 void pickUp(pjBox player, Weapon *weapon) {
     if (player.m_Shape.getGlobalBounds().intersects(weapon->m_Shape->getGlobalBounds())) { //Comprobamos si intersectan sus formas
         weapon->inPossession = true;
+        weapon->m_pBody->SetAwake(true);     
     } 
 }
 
@@ -113,6 +114,7 @@ void pickUp(pjBox player, Weapon *weapon) {
 void drop(pjBox player, Weapon *weapon) {
     if (player.m_Shape.getGlobalBounds().intersects(weapon->m_Shape->getGlobalBounds()) && weapon->inPossession) {//Comprobamos si intersectan sus formas y si tiene el arma
         weapon->inPossession = false;
+        weapon->m_pBody->SetAwake(true);
     }
 }
 
@@ -149,11 +151,13 @@ int main() {
                     switch(event.key.code){
                         case Keyboard::Space:
                             if (enableShoot){
+                                if (weapon->inPossession) {
+                                    weapon->shoot(world, player.dir);
                                 
-                                weapon->shoot(world, player.dir);
+                                    enableShoot = false;
+                                    cont = 0;
+                                }
                                 
-                                enableShoot = false;
-                                cont = 0;
                             }
                             break;
                             
