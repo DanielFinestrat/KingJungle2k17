@@ -32,6 +32,8 @@ class Player {
         void update(Time);
         SpriteAnimated& getPlayerSprite();
         void jump();
+        bool isGrounded();
+        bool updateCanJumpStateState();
         void changeDirection(int);
         void move();
         void duck(int);
@@ -58,7 +60,10 @@ class Player {
         
         int dirMoving;
         int dirLooking;
+        
+        bool updateCanJumpState;
         bool canJump;
+        
         bool isDucking;
         
         float fuerzaSalto;

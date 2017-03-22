@@ -54,7 +54,8 @@ Player::Player(b2World &world){
    dirLooking = 1;
    
    canJump = true;
-   fuerzaSalto = -65;
+   updateCanJumpState = false;
+   fuerzaSalto = -80;
    fuerzaMovimiento = 5;
    velocidadMaxima = 1;
    
@@ -109,6 +110,8 @@ void Player::update(Time frameTime){
     
     move();
     
+    if(!canJump && updateCanJumpState) canJump = isGrounded();
+    
     playerSprite->setPosition(pos.x * PPM, pos.y * PPM);
     playAnimation();
 }
@@ -118,20 +121,22 @@ SpriteAnimated& Player::getPlayerSprite(){
 }
 
 void Player::jump(){
-    //SALTO
-    
-    //Comprobamos si puede saltar
-    if(!canJump && fabs(m_pBody->GetLinearVelocity().y) <= 0.005){
-        canJump = true;
-    }
-    
-    //Si podemos saltar y el botón no estaba presionado, saltamos
+    //SALTO  
     if(canJump){
         m_pBody->SetLinearVelocity(b2Vec2(m_pBody->GetLinearVelocity().x,0));
         m_pBody->ApplyForceToCenter(b2Vec2(0, fuerzaSalto), 1);
         canJump = false;
+        updateCanJumpState = false;
     }
-    
+}
+
+//Comprobamos si se puede saltar
+bool Player::isGrounded(){
+    return( fabs(m_pBody->GetLinearVelocity().y) <= 0.0000005 ? true : false );
+}
+
+bool Player::updateCanJumpStateState(){
+    updateCanJumpState = true;
 }
 
 void Player::changeDirection(int newDirMov){
@@ -141,6 +146,7 @@ void Player::changeDirection(int newDirMov){
     if(dirMoving != 0){
         if(!isDucking)setWalkingAnimation();
         if(dirLooking != dirMoving){
+            m_pBody->SetLinearVelocity(b2Vec2(-m_pBody->GetLinearVelocity().x, m_pBody->GetLinearVelocity().y));
             playerSprite->scale(-1,1);
             dirLooking = dirMoving;
         }

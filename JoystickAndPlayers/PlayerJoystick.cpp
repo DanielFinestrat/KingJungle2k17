@@ -61,6 +61,7 @@ void PlayerJoystick::pressUpdateState(int pressedButton){
 void PlayerJoystick::releaseUpdateState(int releasedButton){
     if(misBotones.at(0).numBoton == releasedButton){
         misBotones.at(0).pulsado = false;
+        player->updateCanJumpStateState();
     }
     
     else if(misBotones.at(1).numBoton == releasedButton){
