@@ -56,19 +56,19 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libsfml-audio.so /usr/lib/x86_64-linux-gnu/libsfml-graphics.so /usr/lib/x86_64-linux-gnu/libsfml-system.so /usr/lib/x86_64-linux-gnu/libsfml-window.so libBox2D.a
+LDLIBSOPTIONS=-L/usr/lib/i386-linux-gnu /usr/lib/i386-linux-gnu/libsfml-audio.so /usr/lib/i386-linux-gnu/libsfml-graphics.so /usr/lib/i386-linux-gnu/libsfml-system.so /usr/lib/i386-linux-gnu/libsfml-window.so libBox2D.a
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
 	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/i386-linux-gnu/libsfml-audio.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/i386-linux-gnu/libsfml-graphics.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/x86_64-linux-gnu/libsfml-system.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/i386-linux-gnu/libsfml-system.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/x86_64-linux-gnu/libsfml-window.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: /usr/lib/i386-linux-gnu/libsfml-window.so
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: libBox2D.a
 
@@ -76,27 +76,27 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Animation.o: Animation.cpp 
+${OBJECTDIR}/Animation.o: Animation.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Animation.o Animation.cpp
 
-${OBJECTDIR}/Player.o: Player.cpp 
+${OBJECTDIR}/Player.o: Player.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Player.o Player.cpp
 
-${OBJECTDIR}/PlayerJoystick.o: PlayerJoystick.cpp 
+${OBJECTDIR}/PlayerJoystick.o: PlayerJoystick.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayerJoystick.o PlayerJoystick.cpp
 
-${OBJECTDIR}/SpriteAnimated.o: SpriteAnimated.cpp 
+${OBJECTDIR}/SpriteAnimated.o: SpriteAnimated.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SpriteAnimated.o SpriteAnimated.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
@@ -107,6 +107,7 @@ ${OBJECTDIR}/main.o: main.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-system.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-audio.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-window.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-graphics.so
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/joystickandplayers
 
 # Subprojects
