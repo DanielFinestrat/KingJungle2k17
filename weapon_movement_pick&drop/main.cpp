@@ -4,8 +4,6 @@
 #include "Box2D/Box2D.h"
 #include "Box2D/Weapon.h"
 
-
-
 #define WIDTH 800
 #define HEIGHT 600
 #define PPM 64.0f               //PIXELS POR METRO
@@ -23,8 +21,11 @@ short MASK_SCENERY = -1;
 using namespace std;
 using namespace sf;
 
-set<Bala*> listaDeBalasPorEliminar;
-set<Bala*> listadoBala;
+/*
+ * =============================================================================
+ *                          STRUCT SUELO (CAJAS)
+ * =============================================================================
+ */
 
 struct Suelo{
     
@@ -56,6 +57,14 @@ struct Suelo{
     b2Body *m_pBody;
     sf::RectangleShape m_Shape;
 };
+//=============================================================================
+
+/*
+ * =============================================================================
+ *                           STRUCT PERSONAJE
+ * =============================================================================
+ */
+ 
 
 struct pjBox {
     
@@ -88,6 +97,14 @@ struct pjBox {
         m_Shape.setFillColor(sf::Color::Red);
     }    
 };
+//=============================================================================
+
+
+/*
+ * =============================================================================
+ *                          FUNCIONES DEL PERSONAJE
+ * =============================================================================
+ */
 
 void updatePJ(pjBox &player) {
     b2Vec2 pos = player.m_pBody->GetPosition();
@@ -97,44 +114,60 @@ void updatePJ(pjBox &player) {
     
 }
 
-//Movimiento del personaje, sencillo aplicando una fuerza
+//Movimiento del personaje, sencillo aplicando una fuerza a izquierda o derecha (-1 o 1)
 void move(int dir, b2Body *body){
     body->ApplyForce(b2Vec2(5.0f*dir, 0),body->GetWorldCenter(),1);
 }
 
 //Coger el arma
+//Modificar para comprobar si tiene ya un arma y la cambie por la que esta en el suelo
 void pickUp(pjBox player, Weapon *weapon) {
     if (player.m_Shape.getGlobalBounds().intersects(weapon->m_Shape->getGlobalBounds())) { //Comprobamos si intersectan sus formas
         weapon->inPossession = true;
-        weapon->m_pBody->SetAwake(true);     
     } 
 }
 
-//Dejar el arma
-void drop(pjBox player, Weapon *weapon) {
-    if (player.m_Shape.getGlobalBounds().intersects(weapon->m_Shape->getGlobalBounds()) && weapon->inPossession) {//Comprobamos si intersectan sus formas y si tiene el arma
-        weapon->inPossession = false;
-        weapon->m_pBody->SetAwake(true);
+//Tirar arma
+void throwWeapon(Weapon *weapon) {
+    if (weapon->inPossession) {
+        weapon->throwWeapon();
     }
 }
+//=============================================================================
 
+/*
+ *=============================================================================
+ *                          CUERPO PRINCIPAL              
+ *=============================================================================
+ */
 int main() {
     
     //Definir mundo Box2D
     b2Vec2 gravity(0.0f, 9.8f);
     b2World *world = new b2World(gravity);
    
+    //Definir suelo y personaje
     Suelo floor(world);
     pjBox player(world);
     
     //Definir arma
-    Weapon *weapon = new Weapon(world, Vector2f(100,30), Vector2f(WIDTH/2,200), 1.0f, 1);
+    Weapon *weapon = new Weapon(world, Vector2f(50,30), Vector2f(WIDTH/2,200), 1.0f, 1, 10);
+    
+    Texture tex;
+    if (!tex.loadFromFile("resources/images/revolver.png"))
+    {
+        cerr << "Error cargando la imagen revolver.png" << endl;
+        exit(0);
+    }
+    tex.setSmooth(true);
+    weapon->m_Shape->setTexture(&tex);
+    
     
     //Crear ventana
     RenderWindow window(VideoMode(WIDTH, HEIGHT), "Prueba disparo arma");
     window.setFramerateLimit(60);
     
-    //Variable de tiempo para controlar la cadencia de disparo
+    //Variables de tiempo para controlar la cadencia de disparo
     Clock deltaClock;
     int difTime = 0;
     Time dt;
@@ -151,14 +184,17 @@ int main() {
                 case Event::KeyPressed:
                     switch(event.key.code){
                         case Keyboard::Space:
-                            if (weapon->inPossession) {
-                                dt = deltaClock.restart();
-                                difTime += dt.asMilliseconds();
-
+                            if (weapon->inPossession && weapon->ammo > 0) {
+                                dt = deltaClock.restart();      //Reiniciamos el clock
+                                difTime += dt.asMilliseconds(); //Sumamos al contador de tiempo
+                                
+                                //Comprobamos que ha pasado el tiempo suficiente para poder volver a disparar
                                 if (difTime >= (1/weapon->shootCadence) * 1000) {
-                                    difTime = 0.0;
-                                    weapon->shoot(world, player.dir);
-                                    lastShot = time(NULL);
+                                    difTime = 0.0;                      //Dejamos la diferencia a 0 para resetear el tiempo entre disDisparos
+                                    weapon->shoot(world);               //Disparo
+                                    weapon->ammo--;                     //Disminuimos la municion del arma
+                                    lastShot = time(NULL);              //Tiempo del ultimo tiro
+                                    
                                 
                                 }
                             }
@@ -167,11 +203,13 @@ int main() {
                         case Keyboard::Left:
                             move(-1, player.m_pBody);
                             player.dir = 1;
+                            weapon->setDir(1);
                             break;
                             
                         case Keyboard::Right:
                             move(1, player.m_pBody);
                             player.dir = -1;
+                            weapon->setDir(-1);
                             break;
                     }
                 case Event::KeyReleased:
@@ -181,7 +219,7 @@ int main() {
                             break;
                             
                         case 28: //Tecla 2
-                            drop(player,weapon);
+                            throwWeapon(weapon);
                             break;
                     }
             }
@@ -195,11 +233,11 @@ int main() {
         //Recorremos los vectores de balas
         for(; it != end; ++it) {
             cout << "Eliminando bala" << endl;
-            Bala* dyingBala = *it; //Asignamos la bala del vector a una bala (que morira muajaja)
-            weapon->listadoBalas.erase(dyingBala); //La eliminamos del vector
-            delete dyingBala; //Eliminamos la bala
-            dyingBala = NULL; //Dejamos el puntero a NULL
-            weapon->balasAEliminar.clear(); //Limpiamos el vector
+            Bala* dyingBala = *it;                  //Asignamos la bala del vector a una bala (que morira muajaja)
+            weapon->listadoBalas.erase(dyingBala);  //La eliminamos del vector
+            delete dyingBala;                       //Eliminamos la bala
+            dyingBala = NULL;                       //Dejamos el puntero a NULL
+            weapon->balasAEliminar.clear();         //Limpiamos el vector
         }
         
         window.clear(Color::Black);
@@ -208,11 +246,12 @@ int main() {
         world->Step(1.0f/60.0f, 10, 10);
         window.draw(floor.m_Shape);
         
+        //Update del personaje
         updatePJ(player);
         window.draw(player.m_Shape);
         
         
-        //Update y render del arma
+        //Update y render del arma, segun si esta en posesion o no
         if (weapon->inPossession)
             weapon->update(player.m_pBody->GetPosition());
         else
@@ -227,8 +266,8 @@ int main() {
         
         for(; it != end; ++it) {
             
-            Bala* updateBala = *it; //Asignamos la bala a actualizar
-            updateBala->Update_Shape(weapon->balasAEliminar);
+            Bala* updateBala = *it; //Bala a actualizar
+            updateBala->Update_Shape(weapon->balasAEliminar);  
             updateBala->Render(&window);
         }
         

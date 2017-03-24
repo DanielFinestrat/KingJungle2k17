@@ -24,13 +24,13 @@ using namespace sf;
 short CATEGORY_WEAPON = 0x0003;
 short MASK_WEAPON = 0x0002;
 
-Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps) {
+Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm) {
     
     shootCadence = shoot_cad;
     BPS = Bps;
     m_Size = size;
-    bool inPossession = false;
-    
+    ammo = amm;
+
     b2BodyDef weaponBodyDef;
     weaponBodyDef.userData = this;
     weaponBodyDef.type = b2_dynamicBody;
@@ -59,23 +59,42 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
 void Weapon::update() {
     b2Vec2 pos = m_pBody->GetPosition();
     m_pBody->SetTransform(pos,0);
+    m_Shape->setOrigin(m_Size.x/2, m_Size.y/2);
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
-
+    m_Shape->setRotation((m_pBody->GetAngle()*180)/M_PI);
 }
 
 void Weapon::update(b2Vec2 pos) {
+    
     m_pBody->SetTransform(pos,0);
+    m_Shape->setOrigin(m_Size.x/2, m_Size.y/2);
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
+    m_Shape->setRotation((m_pBody->GetAngle()*180)/M_PI);
+    
 }
 
-void Weapon::shoot(b2World *world, int orientation) {
+void Weapon::shoot(b2World *world) {
     Bala* nuevaBala = new Bala(world, Vector2f(10,10), Vector2f(m_Shape->getGlobalBounds().left, m_pBody->GetPosition().y * PPM ));
-    nuevaBala->Disparar(5*orientation, 180);
+    nuevaBala->Disparar(5*dir, 180);
     listadoBalas.insert(nuevaBala);
 }
 
 void Weapon::render(sf::RenderWindow *window){
     window->draw(*m_Shape);
+}
+
+void Weapon::setPossession(bool var) {
+    inPossession = var;
+}
+
+void Weapon::throwWeapon() {
+    inPossession = false;
+     //No funciona ni con angular impulse, ni con apply force
+    //Falla en parte por el cambio de update
+}
+
+void Weapon::setDir(int i) {
+    dir = i;
 }
 
 

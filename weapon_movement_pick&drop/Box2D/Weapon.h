@@ -22,7 +22,9 @@ class Weapon {
     public:
         float shootCadence; //Shots per second
         int BPS; //Bullets per shot
-        bool inPossession = false;
+        bool inPossession = false; //Indica si el arma esta en posesion de un personaje
+        int ammo; //Municion actual del arma
+        int dir = 1; //Direccion a la que apunta el arma
         
         std::set<Bala*> balasAEliminar;
         std::set<Bala*> listadoBalas;
@@ -37,8 +39,9 @@ class Weapon {
          * @param vector2f pos: posicion del arma
          * @param float shoot_cadence: Disparos por segundo 
          * @param int BPS: Balas por disparo
+         * @param int ammo: Municion del arma
          */
-        Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS);
+        Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo);
 
         /*Se encarga de actualizar las posiciones de los elementos del arma*/
         void update();
@@ -50,14 +53,28 @@ class Weapon {
 
         /*Crea balas para añadirlas en el array y seguidamente llamar a la función disparo de Bala
          * @param b2World world: mundo en el que se van a crear las balas
-         * @param int orientation: dirección a la que se va a disparar (1 o -1)
          */
-        void shoot(b2World *world, int orientation);
+        void shoot(b2World *world);
         
         /*Funcion que renderiza el arma
          * @param RenderWindow window: Ventana en la que se muestra el programa
          */
         void render(sf::RenderWindow *window);
+        
+        /*Funcion para editar la posesion del arma
+         * @param bool var: Puede ser true o false
+         */
+        void setPossession(bool var);
+        
+        /*Funcion que lanza el arma en posesion de un personaje
+         */
+        void throwWeapon();
+        
+        /*Funcion para modificar la direccion a la que apunta el arma
+         * @param int i: Puede ser 1 o -1
+         */
+        void setDir(int i);
+        
 
 
         ~Weapon();
