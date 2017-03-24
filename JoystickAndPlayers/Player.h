@@ -26,7 +26,9 @@ class Player {
         void setStandAnimation();
         void setWalkingAnimation();
         void setJumpAnimation();
+        void setFallAnimation();
         void setDuckAnimation();
+        void setDeadAnimation();
         void playAnimation();
         Animation* getCurrentAnimation();
         void update(Time);
@@ -37,7 +39,8 @@ class Player {
         void changeDirection(int);
         void move();
         void duck(int);
-        void die(); //TODO
+        void die(); 
+        bool isPlayerDead();
         void mock(); //TODO
         void shoot(); //TODO
         void interact(); //TODO
@@ -54,7 +57,9 @@ class Player {
         Animation standAnimation;       //Animacion de estar quieto
         Animation walkingAnimation;     //Animacion de andar
         Animation jumpAnimation;        //Animacion de saltar
+        Animation fallAnimation;        //Animacion de caer
         Animation duckAnimation;        //Animacion de agacharse
+        Animation deadAnimation;        //Animacion de muerte
         Animation* currentAnimation;    //Animacion actual
         SpriteAnimated* playerSprite;   //Aprite del jugador
         
@@ -65,6 +70,8 @@ class Player {
         bool canJump;
         
         bool isDucking;
+        
+        bool isDead;
         
         float fuerzaSalto;
         float fuerzaMovimiento;
