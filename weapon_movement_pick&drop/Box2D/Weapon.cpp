@@ -21,7 +21,7 @@
 using namespace std;
 using namespace sf;
 
-short CATEGORY_WEAPON = 0x0003;
+short CATEGORY_WEAPON = 0x0008;
 short MASK_WEAPON = 0x0002;
 
 Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm) {
@@ -30,6 +30,9 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     BPS = Bps;
     m_Size = size;
     ammo = amm;
+    inPossession = false;
+    dir = 1;   
+    difTime = 0;
 
     b2BodyDef weaponBodyDef;
     weaponBodyDef.userData = this;
@@ -70,13 +73,25 @@ void Weapon::update(b2Vec2 pos) {
     m_Shape->setOrigin(m_Size.x/2, m_Size.y/2);
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
     m_Shape->setRotation((m_pBody->GetAngle()*180)/M_PI);
+    m_Shape->setScale(dir, 1);
     
 }
 
 void Weapon::shoot(b2World *world) {
-    Bala* nuevaBala = new Bala(world, Vector2f(10,10), Vector2f(m_Shape->getGlobalBounds().left, m_pBody->GetPosition().y * PPM ));
-    nuevaBala->Disparar(5*dir, 180);
-    listadoBalas.insert(nuevaBala);
+ 
+    float rightBound = m_Shape->getGlobalBounds().left+m_Size.x;
+    
+    if (dir > 0) { //Se debe copmprobar para posicionar el punto de salida de la bala
+        Bala* nuevaBala = new Bala(world, Vector2f(10,10), Vector2f(rightBound, m_pBody->GetPosition().y * PPM ));
+        nuevaBala->Disparar(5*-dir, 180);
+        listadoBalas.insert(nuevaBala);
+    } else {
+        Bala* nuevaBala = new Bala(world, Vector2f(10,10), Vector2f(m_Shape->getGlobalBounds().left, m_pBody->GetPosition().y * PPM ));
+        nuevaBala->Disparar(5*-dir, 180);
+        listadoBalas.insert(nuevaBala);
+    }
+    
+    
 }
 
 void Weapon::render(sf::RenderWindow *window){
@@ -88,9 +103,9 @@ void Weapon::setPossession(bool var) {
 }
 
 void Weapon::throwWeapon() {
+    //Falta rotacion del arma
     inPossession = false;
-     //No funciona ni con angular impulse, ni con apply force
-    //Falla en parte por el cambio de update
+    m_pBody->ApplyForceToCenter(b2Vec2(dir * 100 * abs(10), -50), 1);
 }
 
 void Weapon::setDir(int i) {

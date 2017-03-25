@@ -53,11 +53,11 @@ Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position){
     
 void Bala::Update_Shape(set<Bala*> &balasAEliminar){
     //Se comprueba si las balas salen de la pantalla
-    if (m_pBody->GetPosition().x < 0 || m_pBody->GetPosition().x > 800*MPP || m_pBody->GetPosition().y > 600 *MPP) {
+    if (m_pBody->GetPosition().x < (0+100) * MPP || m_pBody->GetPosition().x > (800 -100)*MPP || m_pBody->GetPosition().y > 600 *MPP) {
         std::cout << "fuera de rango" << std::endl;
         balasAEliminar.insert(this);  
     }
-        
+    
     float angle = m_pBody->GetAngle();
     b2Vec2 pos = m_pBody->GetPosition();
             

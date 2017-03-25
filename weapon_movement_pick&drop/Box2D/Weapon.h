@@ -13,7 +13,7 @@
 
 
 #include "Bala.h"
-
+#include <ctime>
 #ifndef WEAPON_H
 #define WEAPON_H
 
@@ -22,9 +22,15 @@ class Weapon {
     public:
         float shootCadence; //Shots per second
         int BPS; //Bullets per shot
-        bool inPossession = false; //Indica si el arma esta en posesion de un personaje
+        bool inPossession; //Indica si el arma esta en posesion de un personaje
         int ammo; //Municion actual del arma
-        int dir = 1; //Direccion a la que apunta el arma
+        int dir; //Direccion a la que apunta el arma
+        
+        //Variables de tiempo para controlar la cadencia de disparo
+        sf::Clock deltaClock;
+        int difTime;
+        sf::Time dt;
+        time_t lastShot;
         
         std::set<Bala*> balasAEliminar;
         std::set<Bala*> listadoBalas;
