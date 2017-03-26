@@ -51,7 +51,7 @@ build/Debug/GNU-Linux/PlayerJoystick.o: PlayerJoystick.cpp \
  Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h \
  Box2D/Dynamics/Joints/b2WheelJoint.h Player.h Animation.h \
- SpriteAnimated.h
+ SpriteAnimated.h Weapon.h Bala.h
 
 PlayerJoystick.h:
 
@@ -190,3 +190,7 @@ Player.h:
 Animation.h:
 
 SpriteAnimated.h:
+
+Weapon.h:
+
+Bala.h:

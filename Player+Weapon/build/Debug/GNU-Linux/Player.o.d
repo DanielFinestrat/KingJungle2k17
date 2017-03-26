@@ -49,7 +49,8 @@ build/Debug/GNU-Linux/Player.o: Player.cpp Player.h Box2D/Box2D.h \
  Box2D/Dynamics/Joints/b2PulleyJoint.h \
  Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h \
- Box2D/Dynamics/Joints/b2WheelJoint.h Animation.h SpriteAnimated.h
+ Box2D/Dynamics/Joints/b2WheelJoint.h Animation.h SpriteAnimated.h \
+ Weapon.h Bala.h
 
 Player.h:
 
@@ -186,3 +187,7 @@ Box2D/Dynamics/Joints/b2WheelJoint.h:
 Animation.h:
 
 SpriteAnimated.h:
+
+Weapon.h:
+
+Bala.h:
