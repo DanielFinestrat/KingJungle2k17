@@ -6,17 +6,14 @@
  */
 
 #include "../headerfiles/Bala.h"
-
-
-#define WIDTH 800
-#define HEIGHT 600
-#define PPM 64.0f               //PIXELS POR METRO
-#define MPP (1.0f/PPM)          //METROS POR PIXEL
+#include "../headerfiles/Partida.h"
 
 using namespace std;
 using namespace sf;
 
-Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position) {
+Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position, bool explo) {
+    tag = "Bala";
+    explosion = explo;
 
     m_Size = size;
 
@@ -34,42 +31,53 @@ Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position) {
     balaFixtureDef.friction = 0.2f;
     balaFixtureDef.restitution = 0.3f;
     balaFixtureDef.density = 0.7f;
-    balaFixtureDef.filter.categoryBits = 0x0001;
-    balaFixtureDef.filter.maskBits = 0x0002;
+    balaFixtureDef.filter.categoryBits = CATEGORY_BULLET;
+    balaFixtureDef.filter.maskBits = MASK_BULLET;
 
     m_pBody->CreateFixture(&balaFixtureDef);
 
     m_Shape = new sf::RectangleShape(size);
     m_Shape->setOrigin(size.x / 2, size.y / 2);
     m_Shape->setPosition(sf::Vector2f(m_pBody->GetPosition().x*PPM, m_pBody->GetPosition().y * PPM));
-    m_Shape->setFillColor(Color::White);
+    m_Shape->setFillColor(sf::Color::Yellow);
+
+    /*if (!textura.loadFromFile("resources/images/bala1.png")) {
+        cerr << "nope" << endl;
+    }
+    m_Shape->setTexture(&textura);*/
 }
 
-void Bala::Update_Shape(set<Bala*> &balasAEliminar) {
-    //Se comprueba si las balas salen de la pantalla
-    if (m_pBody->GetPosition().x < 0 || m_pBody->GetPosition().x > 800 * MPP || m_pBody->GetPosition().y > 600 * MPP) {
-        std::cout << "fuera de rango" << std::endl;
-        balasAEliminar.insert(this);
+void Bala::Update_Shape() {
+    
+    Partida *partida = Partida::getInstance();
+    
+    b2Vec2 pos = m_pBody->GetPosition();
+    float angle = m_pBody->GetAngle();
+
+       //Se comprueba si las balas salen de la pantalla
+    if (pos.x < 0 || pos.x > screenWidth * MPP || pos.y > screenHeight * MPP) {
+        partida->bullets2Delete.insert(this);
     }
 
-    float angle = m_pBody->GetAngle();
-    b2Vec2 pos = m_pBody->GetPosition();
+    float vx = m_pBody->GetLinearVelocity().x;
+    float vy = m_pBody->GetLinearVelocity().y;
+
+    double a = atan(vy / vx) * (180 / M_PI);     
 
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
-    m_Shape->setRotation((angle * 180) / M_PI);
+    m_Shape->setRotation(a);
 }
 
 void Bala::Disparar_Parabola(float fuerza, float angulo) {
-    m_pBody->ApplyForce(b2Vec2(fuerza * cos(angulo * 3.14 / 180.0f), -fuerza * sin(angulo * 3.14 / 180.0f)), m_pBody->GetWorldCenter(), 1);
+     m_pBody->ApplyForce(b2Vec2(fuerza * cos(angulo * 3.14 / 180.0f), -fuerza * sin(angulo * 3.14 / 180.0f)), m_pBody->GetWorldCenter(), 1);
 }
 
 void Bala::Disparar(float velocidad, float angulo) {
     m_pBody->SetGravityScale(0);
     m_pBody->SetLinearVelocity(b2Vec2(velocidad * cos(angulo * 3.14 / 180.0f), -velocidad * sin(angulo * 3.14 / 180.0f)));
-}
 
-sf::RectangleShape Bala::getShape() {
-    return *m_Shape;
+    m_Shape->rotate(-angulo);
+    m_pBody->SetTransform(m_pBody->GetPosition(), -angulo);
 }
 
 void Bala::Render(sf::RenderWindow *window) {

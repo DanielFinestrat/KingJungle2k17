@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ArmaAutocontenida
+PROJECTNAME=Arma + Balas
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -7,9 +7,11 @@
 
 #ifndef PLAYER_H
 #define PLAYER_H
+
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "../Box2D/Box2D.h"
+#include "Entidad.h"
 #include "Animation.h"
 #include "SpriteAnimated.h"
 #include "Weapon.h"
@@ -17,11 +19,9 @@
 using namespace sf;
 using namespace std;
 
-class Player {
+class Player: public Entidad{
 public:
-
-
-
+    
     Player();
     Player(b2World&);
     Player(const Player& orig);
@@ -61,6 +61,8 @@ private:
     Animation* currentAnimation; //Animacion actual
     SpriteAnimated* playerSprite; //Aprite del jugador
 
+    Weapon *weapon;
+    
     int dirMoving;
     int dirLooking;
 

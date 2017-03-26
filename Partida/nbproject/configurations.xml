@@ -6,7 +6,10 @@
                    projectFiles="true">
       <itemPath>headerfiles/Animation.h</itemPath>
       <itemPath>headerfiles/Bala.h</itemPath>
+      <itemPath>headerfiles/ContactListener.h</itemPath>
+      <itemPath>headerfiles/Entidad.h</itemPath>
       <itemPath>headerfiles/Partida.h</itemPath>
+      <itemPath>headerfiles/Platform.h</itemPath>
       <itemPath>headerfiles/Player.h</itemPath>
       <itemPath>headerfiles/PlayerJoystick.h</itemPath>
       <itemPath>headerfiles/SpriteAnimated.h</itemPath>
@@ -24,7 +27,10 @@
                    projectFiles="true">
       <itemPath>sourcefiles/Animation.cpp</itemPath>
       <itemPath>sourcefiles/Bala.cpp</itemPath>
+      <itemPath>sourcefiles/ContactListener.cpp</itemPath>
+      <itemPath>sourcefiles/Entidad.cpp</itemPath>
       <itemPath>sourcefiles/Partida.cpp</itemPath>
+      <itemPath>sourcefiles/Platform.cpp</itemPath>
       <itemPath>sourcefiles/Player.cpp</itemPath>
       <itemPath>sourcefiles/PlayerJoystick.cpp</itemPath>
       <itemPath>sourcefiles/SpriteAnimated.cpp</itemPath>
@@ -72,7 +78,13 @@
       </item>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Player.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -94,7 +106,13 @@
       </item>
       <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Platform.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -142,7 +160,13 @@
       </item>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Player.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -164,7 +188,13 @@
       </item>
       <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Platform.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Player.cpp" ex="false" tool="1" flavor2="0">
       </item>

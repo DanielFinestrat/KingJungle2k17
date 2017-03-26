@@ -65,9 +65,15 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Animation.h \
  sourcefiles/../headerfiles/SpriteAnimated.h \
- sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h
+ sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/Partida.h \
+ sourcefiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/PlayerJoystick.h \
+ sourcefiles/../headerfiles/Player.h \
+ sourcefiles/../headerfiles/ContactListener.h
 
 sourcefiles/../headerfiles/Player.h:
 
@@ -201,6 +207,8 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
+sourcefiles/../headerfiles/Entidad.h:
+
 sourcefiles/../headerfiles/Animation.h:
 
 sourcefiles/../headerfiles/SpriteAnimated.h:
@@ -208,3 +216,13 @@ sourcefiles/../headerfiles/SpriteAnimated.h:
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/Partida.h:
+
+sourcefiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/PlayerJoystick.h:
+
+sourcefiles/../headerfiles/Player.h:
+
+sourcefiles/../headerfiles/ContactListener.h:

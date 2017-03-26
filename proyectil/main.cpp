@@ -183,13 +183,13 @@ int main() {
                     switch (event.key.code) {
                         case Keyboard::Space:
                             Bala* nueva;
-                            nueva = new Bala(&world, sf::Vector2f(20, 20), sf::Vector2f(0, HEIGHT / 3 * 2), 0);
+                            nueva = new Bala(&world, sf::Vector2f(30, 5), sf::Vector2f(0, HEIGHT / 3 * 2), 0);
                             float fuerza = 30;
                             float angulo = 50;
 
-                            nueva->Disparar_Parabola(fuerza, angulo);
+                            //nueva->Disparar_Parabola(fuerza, angulo);
 
-                            //nueva->Disparar(30, angulo);
+                            nueva->Disparar(30, angulo);
                             listadoBala.insert(nueva);
                             break;
                     }
@@ -431,10 +431,7 @@ void Bala::Update_Shape() {
     float vx = m_pBody->GetLinearVelocity().x;
     float vy = m_pBody->GetLinearVelocity().y;
 
-    double a = atan(vy / vx) * (180 / M_PI);
-
-    if (frameCounter % 2 == 0)
-        cout << "vx= " << vx << ", vy=" << vy << ", a=" << a << ", ax10=" << a * 10 << endl;
+    double a = atan(vy / vx) * (180 / M_PI);     
 
     m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
     m_Shape->setRotation(a);

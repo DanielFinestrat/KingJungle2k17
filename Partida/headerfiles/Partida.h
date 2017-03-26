@@ -8,12 +8,68 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
+#include <vector>
+#include <SFML/Graphics.hpp>
+#include "../Box2D/Box2D.h"
+#include "Platform.h"
+#include "Weapon.h"
+#include "Bala.h"
+#include "PlayerJoystick.h"
+#include "ContactListener.h"
+
+using namespace std;
+
+#define screenWidth 1024
+#define screenHeight 600
+
+#define TIMESTEP 1.0f/15.f      //TIEMPO DE REFRESCO
+#define VELITER 10              //NUMERO DE ITERACION POR TICK PARA CALCULAR LA VELOCIDAD
+#define POSITER 10              //NUMERO DE ITERACION POR TICK PARA CALCULAR LA POSICION
+
 class Partida {
 public:
+    b2World *world;
+    ContactListener myContactListener;
+    sf::RenderWindow *window;
+
+    vector<Platform*> worldPlatforms;
+    vector<Weapon*> worldWeapons;
+    set<Bala*> worldBullets;
+    vector<PlayerJoystick> playerJoysticks;
+
+    set<Bala*> bullets2Delete;
+    
+    Clock frameClock;
+
+    static Partida* getInstance();
+
+    void Input();
+    void Update();
+    void Erase();
+    void Render();
+
+    void drawPlatforms();
+    void drawPlayers();
+    void drawWeapons();
+    void drawBullets();
+    
+    void eraseBullets();
+    
+    int findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id);
+    void checkJoysticksConnected();
+    void addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id);
+    void updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks);
+    void updateBullets();
+
+    void updateWeapons();
+
+    void loadMap();
+    virtual ~Partida();
+
+private:
+    
     Partida();
     Partida(const Partida& orig);
-    virtual ~Partida();
-private:
 
 };
 
