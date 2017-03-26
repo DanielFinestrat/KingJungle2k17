@@ -6,25 +6,18 @@
  */
 
 #include "../headerfiles/Weapon.h"
+#include "../headerfiles/Partida.h"
 
-#define WIDTH 800
-#define HEIGHT 600
-#define PPM 64.0f               //PIXELS POR METRO
-#define MPP (1.0f/PPM)          //METROS POR PIXEL
+Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm, int recoil_) {
 
-using namespace std;
-using namespace sf;
-
-short CATEGORY_WEAPON = 0x0003;
-short MASK_WEAPON = 0x0002;
-
-Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm) {
+    tag = "Weapon";
 
     shootCadence = shoot_cad;
     BPS = Bps;
     m_Size = size;
     ammo = amm;
-
+    recoil = recoil_;
+    
     inPossession = false;
     dir = 1;
 
@@ -39,11 +32,11 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
 
     b2FixtureDef weaponFixtureDef;
     weaponFixtureDef.shape = &weaponBox;
-    weaponFixtureDef.friction = 0.2f;
+    weaponFixtureDef.friction = 0.5f;
     weaponFixtureDef.restitution = 0.3f;
     weaponFixtureDef.density = 1.0f;
-    weaponFixtureDef.filter.categoryBits = CATEGORY_WEAPON;
-    weaponFixtureDef.filter.maskBits = MASK_WEAPON;
+    weaponFixtureDef.filter.categoryBits = CATEGORY_GUN;
+    weaponFixtureDef.filter.maskBits = MASK_GUN;
 
     m_pBody->CreateFixture(&weaponFixtureDef);
 
@@ -76,10 +69,15 @@ void Weapon::update(b2Vec2 pos) {
     m_Shape->setRotation((m_pBody->GetAngle()*180) / M_PI);
 }
 
-void Weapon::shoot(b2World *world) {
-    Bala* nuevaBala = new Bala(world, Vector2f(10, 10), Vector2f(m_Shape->getGlobalBounds().left, m_pBody->GetPosition().y * PPM));
-    nuevaBala->Disparar(5 * dir, 180);
-    listadoBalas.insert(nuevaBala);
+int Weapon::shoot() {
+    
+    Partida *partida = Partida::getInstance();
+    // +50 habria que cambiarlo por el size del personaje
+    Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 10), Vector2f(m_pBody->GetPosition().x * PPM + 50*dir, m_pBody->GetPosition().y * PPM), false);
+    nuevaBala->Disparar(5 * -dir, 180);
+    partida->worldBullets.insert(nuevaBala);
+    
+    return recoil;
 }
 
 void Weapon::render(sf::RenderWindow *window) {
@@ -90,16 +88,30 @@ void Weapon::setPossession(bool var) {
     inPossession = var;
 }
 
-void Weapon::throwWeapon() {
+void Weapon::throwWeapon(float playerVel) {
+    
     inPossession = false;
-    //No funciona ni con angular impulse, ni con apply force
-    //Falla en parte por el cambio de update
+    
+    //Lanzarla para arriba si está quieto o anda despacio
+    if (fabs(playerVel) > 3) {
+        m_pBody->ApplyForceToCenter(b2Vec2(-dir * 20, -100), 1);
+        //m_pBody->SetAngularVelocity(M_PI);
+    }
+    
+    //Lanzarla hacia donde mire la pistola
+    else { //(dir * fuerzaX*VelX, fuerzaY)
+        m_pBody->ApplyForceToCenter(b2Vec2(dir * 60 * fabs(playerVel) * 0.5, -20), 1);
+    }
+    
 }
 
 void Weapon::setDir(int i) {
     dir = i;
+    m_Shape->scale(-1, 1);
 }
 
+Weapon::~Weapon() {
+}
 
 
 

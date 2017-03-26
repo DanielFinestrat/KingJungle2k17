@@ -38,7 +38,10 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/sourcefiles/Animation.o \
 	${OBJECTDIR}/sourcefiles/Bala.o \
+	${OBJECTDIR}/sourcefiles/ContactListener.o \
+	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Partida.o \
+	${OBJECTDIR}/sourcefiles/Platform.o \
 	${OBJECTDIR}/sourcefiles/Player.o \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/SpriteAnimated.o \
@@ -96,10 +99,25 @@ ${OBJECTDIR}/sourcefiles/Bala.o: sourcefiles/Bala.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Bala.o sourcefiles/Bala.cpp
 
+${OBJECTDIR}/sourcefiles/ContactListener.o: sourcefiles/ContactListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/ContactListener.o sourcefiles/ContactListener.cpp
+
+${OBJECTDIR}/sourcefiles/Entidad.o: sourcefiles/Entidad.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Entidad.o sourcefiles/Entidad.cpp
+
 ${OBJECTDIR}/sourcefiles/Partida.o: sourcefiles/Partida.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Partida.o sourcefiles/Partida.cpp
+
+${OBJECTDIR}/sourcefiles/Platform.o: sourcefiles/Platform.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Platform.o sourcefiles/Platform.cpp
 
 ${OBJECTDIR}/sourcefiles/Player.o: sourcefiles/Player.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

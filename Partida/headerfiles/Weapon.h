@@ -9,17 +9,19 @@
 #define WEAPON_H
 
 #include "Bala.h"
+#include "Entidad.h"
 
 using namespace std;
 using namespace sf;
 
-class Weapon {
+class Weapon: public Entidad {
 public:
     float shootCadence; //Shots per second
     int BPS; //Bullets per shot
     bool inPossession; //Indica si el arma esta en posesion de un personaje
     int ammo; //Municion actual del arma
     int dir; //Direccion a la que apunta el arma
+    int recoil;
 
     Texture weapon_texture;
 
@@ -38,7 +40,7 @@ public:
      * @param int BPS: Balas por disparo
      * @param int ammo: Municion del arma
      */
-    Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo);
+    Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo, int recoil_);
     ~Weapon();
 
     /*Se encarga de actualizar las posiciones de los elementos del arma*/
@@ -52,7 +54,7 @@ public:
     /*Crea balas para añadirlas en el array y seguidamente llamar a la función disparo de Bala
      * @param b2World world: mundo en el que se van a crear las balas
      */
-    void shoot(b2World *world);
+    int shoot();
 
     /*Funcion que renderiza el arma
      * @param RenderWindow window: Ventana en la que se muestra el programa
@@ -66,7 +68,7 @@ public:
 
     /*Funcion que lanza el arma en posesion de un personaje
      */
-    void throwWeapon();
+    void throwWeapon(float playerVel);
 
     /*Funcion para modificar la direccion a la que apunta el arma
      * @param int i: Puede ser 1 o -1

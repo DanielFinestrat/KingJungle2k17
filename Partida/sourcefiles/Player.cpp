@@ -6,6 +6,8 @@
  */
 
 #include "../headerfiles/Player.h"
+#include "../headerfiles/Partida.h"
+
 #define PPM 64.0f               //PIXELS POR METRO
 #define MPP (1.0f/PPM)          //METROS POR PIXEL
 
@@ -15,6 +17,8 @@ Player::Player() {
 }
 
 Player::Player(b2World &world) {
+
+    tag = "Player";
 
     //Cargamos la textura
     if (!texture.loadFromFile("resources/sprites/sprites.png")) {
@@ -62,6 +66,7 @@ Player::Player(b2World &world) {
 
     //Definimos un cuerpo dinamico (afectando por la gravedad y resto de objetos box2d creados)
     bodyDef.type = b2_dynamicBody;
+    bodyDef.userData = this;
     bodyDef.gravityScale = 0.7;
     bodyDef.fixedRotation = true;
     m_pBody = world.CreateBody(&bodyDef);
@@ -71,8 +76,13 @@ Player::Player(b2World &world) {
     fixtureDef.friction = 0.2f;
     fixtureDef.restitution = 0;
     fixtureDef.density = 0.7f;
+    fixtureDef.filter.categoryBits = CATEGORY_PLAYER;
+    fixtureDef.filter.maskBits = MASK_PLAYER;
 
     m_pBody->CreateFixture(&fixtureDef);
+
+    weapon = NULL;
+
 }
 
 Player::Player(const Player& orig) {
@@ -115,6 +125,9 @@ void Player::update(Time frameTime) {
 
     playerSprite->setPosition(pos.x * PPM, pos.y * PPM);
     playAnimation();
+
+    if (weapon != NULL) weapon->update(m_pBody->GetPosition());
+
 }
 
 SpriteAnimated& Player::getPlayerSprite() {
@@ -151,6 +164,11 @@ void Player::changeDirection(int newDirMov) {
             m_pBody->SetLinearVelocity(b2Vec2(-m_pBody->GetLinearVelocity().x, m_pBody->GetLinearVelocity().y));
             playerSprite->scale(-1, 1);
             dirLooking = dirMoving;
+
+            if (weapon != NULL) {
+                weapon->setDir(dirLooking);
+            }
+
         }
     } else setStandAnimation();
 }
@@ -165,8 +183,7 @@ void Player::duck(int new_dir) {
     if (new_dir == 1) {
         isDucking = true;
         setDuckAnimation();
-    }
-    else if (new_dir == 0) {
+    } else if (new_dir == 0) {
         isDucking = false;
         setStandAnimation();
         //if(m_pBody->GetLinearVelocity().x > 0.005)setWalkingAnimation();
@@ -182,10 +199,41 @@ void Player::mock() {
 }
 
 void Player::shoot() {
+    if (weapon != NULL) {
+        int recoil = weapon->shoot();
+        if (abs((int) m_pBody->GetLinearVelocity().x) < velocidadMaxima * 4 / 3) {
+            
+            if (!isDucking)
+               m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking*-1, 0.0), 1);
+            else
+               m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking * -1, -recoil), 1);
+        }
 
+    }
 }
 
 void Player::interact() {
+
+    Partida *partida = Partida::getInstance();
+    vector<Weapon*> worldWeapons = partida->worldWeapons;
+
+    if (weapon == NULL) {
+        for (int i = 0; i < worldWeapons.size(); i++) {
+            Weapon *currentWeapon = worldWeapons.at(i);
+            if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
+                if (!currentWeapon->inPossession) {
+                    currentWeapon->inPossession = true;
+                    currentWeapon->m_pBody->SetAwake(false);
+                    weapon = currentWeapon;
+                    if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+                    break;
+                }
+            }
+        }
+    } else {
+        weapon->throwWeapon(m_pBody->GetLinearVelocity().x);
+        weapon = NULL;
+    }
 
 }
 

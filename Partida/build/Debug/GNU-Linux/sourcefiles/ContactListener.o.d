@@ -1,5 +1,7 @@
-build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
- sourcefiles/../headerfiles/Bala.h \
+build/Debug/GNU-Linux/sourcefiles/ContactListener.o: \
+ sourcefiles/ContactListener.cpp \
+ sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/Entidad.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../Box2D/Common/b2Settings.h \
  sourcefiles/../headerfiles/../Box2D/Common/b2Draw.h \
@@ -65,15 +67,18 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
- sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/Weapon.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/Animation.h \
  sourcefiles/../headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/ContactListener.h
+
+sourcefiles/../headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/Bala.h:
 
@@ -207,15 +212,11 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
-sourcefiles/../headerfiles/Entidad.h:
-
 sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/Platform.h:
 
 sourcefiles/../headerfiles/Weapon.h:
-
-sourcefiles/../headerfiles/Bala.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
