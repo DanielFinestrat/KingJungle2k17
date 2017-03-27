@@ -68,6 +68,7 @@ build/Debug/GNU-Linux/sourcefiles/ContactListener.o: \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
  sourcefiles/../headerfiles/Partida.h \
+ sourcefiles/../headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Weapon.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
@@ -213,6 +214,8 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
 sourcefiles/../headerfiles/Partida.h:
+
+sourcefiles/../headerfiles/Temporizador.h:
 
 sourcefiles/../headerfiles/Platform.h:
 

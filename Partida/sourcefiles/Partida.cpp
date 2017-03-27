@@ -16,6 +16,7 @@ Partida::Partida() {
     world = new b2World(b2Vec2(0.0f, 9.8f));
     world->SetContactListener(&myContactListener);
     checkJoysticksConnected();
+    temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
 }
 
 Partida::Partida(const Partida& orig) {
@@ -56,28 +57,28 @@ void Partida::Input() {
             case Event::JoystickButtonReleased:
                 playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).releaseUpdateState(event.joystickButton.button);
                 break;
-				
-				
-			case Event::KeyPressed:
-				respawn();
-				break;
+
+
+            case Event::KeyPressed:
+                //respawn();
+                break;
         }
     }
 
 }
 
-void Partida::erasePlayers(){
-	for(int i=0; i < players2Delete.size(); i++){
-		
-		players2Delete.at(i)->die(players2Delete.at(i)->getDirMoving());
-	}
-	players2Delete.clear();
+void Partida::erasePlayers() {
+    for (int i = 0; i < players2Delete.size(); i++) {
+
+        players2Delete.at(i)->die(players2Delete.at(i)->getDirMoving());
+    }
+    players2Delete.clear();
 }
 
 void Partida::eraseBullets() {
     set<Bala*>::iterator itBala = bullets2Delete.begin();
 
-    for (; itBala !=  bullets2Delete.end(); ++itBala) {
+    for (; itBala != bullets2Delete.end(); ++itBala) {
         Bala* dyingBala = *itBala;
         /* if (dyingBala->explosion == true) {
              b2Vec2 position = dyingBala->m_pBody->GetPosition();
@@ -96,12 +97,13 @@ void Partida::eraseBullets() {
 
 void Partida::Erase() {
     eraseBullets();
-	erasePlayers();
+    erasePlayers();
 }
 
 void Partida::Update() {
     world->Step(TIMESTEP, VELITER, POSITER);
     Time frameTime = frameClock.restart();
+    temporizador->Update();
     updateWeapons();
     updatePlayers(frameTime, &playerJoysticks);
     updateBullets();
@@ -109,6 +111,7 @@ void Partida::Update() {
 
 void Partida::Render() {
     window->clear(sf::Color::Black);
+    temporizador->Draw(window);
     drawPlatforms();
     drawPlayers();
     drawWeapons();
@@ -175,20 +178,21 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
     if (add) {
         PlayerJoystick p(id, world);
         playerJoysticks->push_back(p);
-        PlayerJoystick p1(id + 1, world);
+        /*PlayerJoystick p1(id + 1, world);
         playerJoysticks->push_back(p1);
         PlayerJoystick p2(id + 5, world);
         playerJoysticks->push_back(p2);
         PlayerJoystick p3(id + 9, world);
-        playerJoysticks->push_back(p3);
+        playerJoysticks->push_back(p3);*/
     }
 }
 
-void Partida::respawn(){
-	for(int i = 0; i < playerJoysticks.size(); i++){
-		if(playerJoysticks.at(i).player!=NULL)
-			playerJoysticks.at(i).player->respawn();
-	}
+void Partida::respawn() {
+    for (int i = 0; i < playerJoysticks.size(); i++) {
+        PlayerJoystick* joystick = &playerJoysticks.at(i);
+        joystick->player->setPosition((i+1) * screenWidth/5, screenHeight-100);
+        joystick->player->respawn();
+    }
 }
 
 void Partida::updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks) {
@@ -222,11 +226,20 @@ void Partida::loadMap() {
 
     Platform *paredDcha = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(screenWidth, screenHeight / 2), 0);
     worldPlatforms.push_back(paredDcha);
+    
+    Platform *platformDcha = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth/4, screenHeight / 3), 0.2);
+    worldPlatforms.push_back(platformDcha);
+    
+    Platform *platformIzda = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(3*screenWidth/4, screenHeight / 3), 0.2);
+    worldPlatforms.push_back(platformIzda);
+    
+    Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth/2, 2*screenHeight / 3), 0.2);
+    worldPlatforms.push_back(platformCentr);
 
-    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), Vector2f(screenWidth / 4, 200), 1.0f, 1, 10, 20);
+    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth/4, (screenHeight / 3)-5), 1.0f, 1, 10, 20);
     worldWeapons.push_back(pistola1);
 
-    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), Vector2f(screenWidth / 4.5, 200), 1.0f, 1, 10, 30);
+    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3*screenWidth/4, (screenHeight / 3)-5), 1.0f, 1, 10, 30);
     worldWeapons.push_back(pistola2);
 }
 

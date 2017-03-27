@@ -65,6 +65,7 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ sourcefiles/../headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Entidad.h sourcefiles/../headerfiles/Weapon.h \
  sourcefiles/../headerfiles/Bala.h \
@@ -205,6 +206,8 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h:
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
+
+sourcefiles/../headerfiles/Temporizador.h:
 
 sourcefiles/../headerfiles/Platform.h:
 

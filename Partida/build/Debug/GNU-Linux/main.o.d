@@ -50,9 +50,9 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h \
  Box2D/Dynamics/Joints/b2WheelJoint.h headerfiles/Partida.h \
- headerfiles/../Box2D/Box2D.h headerfiles/Platform.h \
- headerfiles/Entidad.h headerfiles/Weapon.h headerfiles/Bala.h \
- headerfiles/PlayerJoystick.h headerfiles/Player.h \
+ headerfiles/../Box2D/Box2D.h headerfiles/Temporizador.h \
+ headerfiles/Platform.h headerfiles/Entidad.h headerfiles/Weapon.h \
+ headerfiles/Bala.h headerfiles/PlayerJoystick.h headerfiles/Player.h \
  headerfiles/Animation.h headerfiles/SpriteAnimated.h \
  headerfiles/ContactListener.h
 
@@ -189,6 +189,8 @@ Box2D/Dynamics/Joints/b2WheelJoint.h:
 headerfiles/Partida.h:
 
 headerfiles/../Box2D/Box2D.h:
+
+headerfiles/Temporizador.h:
 
 headerfiles/Platform.h:
 

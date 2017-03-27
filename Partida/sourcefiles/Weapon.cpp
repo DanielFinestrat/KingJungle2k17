@@ -73,7 +73,7 @@ int Weapon::shoot() {
     
     Partida *partida = Partida::getInstance();
     // +50 habria que cambiarlo por el size del personaje
-    Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 10), Vector2f(m_pBody->GetPosition().x * PPM + 50*dir, m_pBody->GetPosition().y * PPM), false);
+    Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50*dir, m_pBody->GetPosition().y * PPM), false);
     nuevaBala->Disparar(5 * -dir, 180);
     partida->worldBullets.insert(nuevaBala);
     

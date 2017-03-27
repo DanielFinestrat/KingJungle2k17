@@ -1,5 +1,5 @@
-build/Debug/GNU-Linux/sourcefiles/temporizador.o: \
- sourcefiles/temporizador.cpp sourcefiles/../headerfiles/temporizador.h \
+build/Debug/GNU-Linux/sourcefiles/Temporizador.o: \
+ sourcefiles/Temporizador.cpp sourcefiles/../headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../Box2D/Common/b2Settings.h \
  sourcefiles/../headerfiles/../Box2D/Common/b2Draw.h \
@@ -64,9 +64,19 @@ build/Debug/GNU-Linux/sourcefiles/temporizador.o: \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
- sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h
+ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ sourcefiles/../headerfiles/Partida.h \
+ sourcefiles/../headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/Entidad.h sourcefiles/../headerfiles/Weapon.h \
+ sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/PlayerJoystick.h \
+ sourcefiles/../headerfiles/Player.h \
+ sourcefiles/../headerfiles/Animation.h \
+ sourcefiles/../headerfiles/SpriteAnimated.h \
+ sourcefiles/../headerfiles/ContactListener.h
 
-sourcefiles/../headerfiles/temporizador.h:
+sourcefiles/../headerfiles/Temporizador.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
 
@@ -197,3 +207,25 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h:
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
+
+sourcefiles/../headerfiles/Partida.h:
+
+sourcefiles/../headerfiles/Temporizador.h:
+
+sourcefiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/Weapon.h:
+
+sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/PlayerJoystick.h:
+
+sourcefiles/../headerfiles/Player.h:
+
+sourcefiles/../headerfiles/Animation.h:
+
+sourcefiles/../headerfiles/SpriteAnimated.h:
+
+sourcefiles/../headerfiles/ContactListener.h:

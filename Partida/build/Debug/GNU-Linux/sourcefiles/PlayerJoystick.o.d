@@ -69,7 +69,12 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/Player.h sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Animation.h \
  sourcefiles/../headerfiles/SpriteAnimated.h \
- sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h
+ sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/Partida.h \
+ sourcefiles/../headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/PlayerJoystick.h \
+ sourcefiles/../headerfiles/ContactListener.h
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
@@ -214,3 +219,13 @@ sourcefiles/../headerfiles/SpriteAnimated.h:
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/Partida.h:
+
+sourcefiles/../headerfiles/Temporizador.h:
+
+sourcefiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/PlayerJoystick.h:
+
+sourcefiles/../headerfiles/ContactListener.h:

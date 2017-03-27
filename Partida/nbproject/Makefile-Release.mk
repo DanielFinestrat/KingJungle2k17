@@ -45,8 +45,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Player.o \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/SpriteAnimated.o \
-	${OBJECTDIR}/sourcefiles/Weapon.o \
-	${OBJECTDIR}/sourcefiles/temporizador.o
+	${OBJECTDIR}/sourcefiles/Temporizador.o \
+	${OBJECTDIR}/sourcefiles/Weapon.o
 
 
 # C Compiler Flags
@@ -135,15 +135,15 @@ ${OBJECTDIR}/sourcefiles/SpriteAnimated.o: sourcefiles/SpriteAnimated.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/SpriteAnimated.o sourcefiles/SpriteAnimated.cpp
 
+${OBJECTDIR}/sourcefiles/Temporizador.o: sourcefiles/Temporizador.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Temporizador.o sourcefiles/Temporizador.cpp
+
 ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Weapon.o sourcefiles/Weapon.cpp
-
-${OBJECTDIR}/sourcefiles/temporizador.o: sourcefiles/temporizador.cpp 
-	${MKDIR} -p ${OBJECTDIR}/sourcefiles
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/temporizador.o sourcefiles/temporizador.cpp
 
 # Subprojects
 .build-subprojects:

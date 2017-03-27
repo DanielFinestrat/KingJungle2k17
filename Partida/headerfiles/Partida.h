@@ -11,6 +11,7 @@
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "../Box2D/Box2D.h"
+#include "Temporizador.h"
 #include "Platform.h"
 #include "Weapon.h"
 #include "Bala.h"
@@ -40,6 +41,7 @@ public:
     set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
     
+    Temporizador *temporizador;
     Clock frameClock;
 
     static Partida* getInstance();

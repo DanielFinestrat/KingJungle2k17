@@ -5,6 +5,7 @@
  * Created on 15 de marzo de 2017, 9:45
  */
 #include "../headerfiles/PlayerJoystick.h"
+#include "../headerfiles/Partida.h"
 
 PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     boton b1;
@@ -42,7 +43,7 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
 
     this->id = id;
     player = new Player(*world);
-    player->setPosition(id * 50 + 100, 100);
+    player->setPosition((id+1) * screenWidth/5, screenHeight-100);
 
     cout << "He insertado un mando con la id " << this->id << endl;
 }
