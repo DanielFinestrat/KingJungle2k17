@@ -37,7 +37,7 @@ public:
     set<Bala*> worldBullets;
     vector<PlayerJoystick> playerJoysticks;
 
-    vector<Bala*> bullets2Delete;
+    set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
     
     Clock frameClock;

@@ -63,14 +63,17 @@ void Partida::Input() {
 
 void Partida::erasePlayers(){
 	for(int i=0; i < players2Delete.size(); i++){
+		
 		players2Delete.at(i)->die(players2Delete.at(i)->getDirMoving());
 	}
 	players2Delete.clear();
 }
 
 void Partida::eraseBullets() {
-    for (int i=0; i < bullets2Delete.size(); i++) {
-        Bala* dyingBala = bullets2Delete.at(i);
+    set<Bala*>::iterator itBala = bullets2Delete.begin();
+
+    for (; itBala !=  bullets2Delete.end(); ++itBala) {
+        Bala* dyingBala = *itBala;
         /* if (dyingBala->explosion == true) {
              b2Vec2 position = dyingBala->m_pBody->GetPosition();
 
@@ -79,7 +82,7 @@ void Partida::eraseBullets() {
              listadoExplosion.insert(nueva);
          }*/
         worldBullets.erase(dyingBala);
-        //bullets2Delete.erase(dyingBala);
+        bullets2Delete.erase(dyingBala);
         delete dyingBala;
         dyingBala = NULL;
     }

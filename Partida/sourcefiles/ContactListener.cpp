@@ -19,7 +19,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
     Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
     Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
 
-    //cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
+    cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
 
     //Colision con Balas
     if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
@@ -30,11 +30,11 @@ void ContactListener::BeginContact(b2Contact* contact) {
                 Player* player = static_cast<Player*> (bodyUserDataB);
                 int dir = -1;
                 if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
+				//player->changeDirection(dir);
+				//partida->players2Delete.push_back(player);
             }
 
-            partida->bullets2Delete.push_back(bala);
+            partida->bullets2Delete.insert(bala);
             
         } else if (entidadB->getTag().compare("Bala") == 0) {
             Bala* bala = static_cast<Bala*> (bodyUserDataB);
@@ -43,11 +43,11 @@ void ContactListener::BeginContact(b2Contact* contact) {
                 Player* player = static_cast<Player*> (bodyUserDataA);
                 int dir = -1;
                 if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
+				//player->changeDirection(dir);
+				//partida->players2Delete.push_back(player);
             }
 
-            partida->bullets2Delete.push_back(bala);
+            partida->bullets2Delete.insert(bala);
         }
     }
 
