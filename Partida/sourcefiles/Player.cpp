@@ -218,6 +218,9 @@ void Player::die(int dir) {
         changeDirection(-dir);
         m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * 5 * dir, -30), true);
         isDead = true;
+        
+        //b2Fixture *fix = m_pBody->GetFixtureList();
+        //m_pBody->DestroyFixture(fix);
     }
 }
 
@@ -258,6 +261,7 @@ void Player::interact() {
                     if (!currentWeapon->inPossession) {
                         currentWeapon->inPossession = true;
                         currentWeapon->m_pBody->SetAwake(false);
+                        currentWeapon->m_pBody->SetActive(false);
                         weapon = currentWeapon;
                         if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
                         break;

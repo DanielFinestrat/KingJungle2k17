@@ -91,6 +91,7 @@ void Weapon::setPossession(bool var) {
 void Weapon::throwWeapon(float playerVel) {
     
     inPossession = false;
+    m_pBody->SetActive(true);
     
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) > 3) {
