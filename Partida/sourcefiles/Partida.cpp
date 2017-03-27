@@ -161,6 +161,12 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
     if (add) {
         PlayerJoystick p(id, world);
         playerJoysticks->push_back(p);
+        PlayerJoystick p1(id + 1, world);
+        playerJoysticks->push_back(p1);
+        PlayerJoystick p2(id + 5, world);
+        playerJoysticks->push_back(p2);
+        PlayerJoystick p3(id + 9, world);
+        playerJoysticks->push_back(p3);
     }
 }
 
@@ -183,7 +189,7 @@ void Partida::updateBullets() {
         Bala* updateBala = *itBala;
         updateBala->Update_Shape();
     }
-    
+
 }
 
 void Partida::loadMap() {

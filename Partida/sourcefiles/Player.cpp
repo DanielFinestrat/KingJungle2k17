@@ -213,9 +213,10 @@ void Player::duck(int new_dir) {
     }
 }
 
-void Player::die() {
+void Player::die(int dir) {
     if (!isDead) {
-        m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * 5 * -dirLooking, -30), true);
+        changeDirection(-dir);
+        m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * 5 * dir, -30), true);
         isDead = true;
     }
 }
@@ -273,6 +274,10 @@ void Player::interact() {
 
 void Player::pause(bool paused) {
 
+}
+
+b2Vec2 Player::getPosition(){
+    return(m_pBody->GetPosition());
 }
 
 void Player::setPosition(float posX, float posY) {

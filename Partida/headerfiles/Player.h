@@ -42,12 +42,13 @@ public:
     void changeDirection(int);
     void move();
     void duck(int);
-    void die();
+    void die(int);
     bool isPlayerDead();
     void mock(); //TODO
     void shoot();
     void interact();
     void pause(bool); //TODO
+    b2Vec2 getPosition();
     void setPosition(float, float);
 
 private:
