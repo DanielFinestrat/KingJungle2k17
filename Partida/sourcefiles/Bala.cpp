@@ -56,7 +56,7 @@ void Bala::Update_Shape() {
 
        //Se comprueba si las balas salen de la pantalla
     if (pos.x < 0 || pos.x > screenWidth * MPP || pos.y > screenHeight * MPP) {
-        partida->bullets2Delete.insert(this);
+        partida->bullets2Delete.push_back(this);
     }
 
     float vx = m_pBody->GetLinearVelocity().x;

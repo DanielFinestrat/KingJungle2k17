@@ -46,10 +46,12 @@ public:
     bool isPlayerDead();
     void mock(); //TODO
     void shoot();
+    void eraseBody();
     void interact();
     void pause(bool); //TODO
     b2Vec2 getPosition();
     void setPosition(float, float);
+    int getDirMoving();
 
 private:
     b2Body *m_pBody;

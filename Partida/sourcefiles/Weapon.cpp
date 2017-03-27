@@ -91,7 +91,7 @@ void Weapon::setPossession(bool var) {
 void Weapon::throwWeapon(float playerVel) {
     
     inPossession = false;
-    //m_pBody->SetActive(true);
+    m_pBody->SetActive(true);
     
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) m_pBody->ApplyForceToCenter(b2Vec2(0, -30), 1);

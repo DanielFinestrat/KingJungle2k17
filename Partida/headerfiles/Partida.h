@@ -37,7 +37,8 @@ public:
     set<Bala*> worldBullets;
     vector<PlayerJoystick> playerJoysticks;
 
-    set<Bala*> bullets2Delete;
+    vector<Bala*> bullets2Delete;
+    vector<Player*> players2Delete;
     
     Clock frameClock;
 
@@ -54,6 +55,7 @@ public:
     void drawBullets();
     
     void eraseBullets();
+    void erasePlayers();
     
     int findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id);
     void checkJoysticksConnected();
