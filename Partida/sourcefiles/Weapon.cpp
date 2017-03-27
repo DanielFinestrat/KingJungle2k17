@@ -91,18 +91,12 @@ void Weapon::setPossession(bool var) {
 void Weapon::throwWeapon(float playerVel) {
     
     inPossession = false;
-    m_pBody->SetActive(true);
+    //m_pBody->SetActive(true);
     
     //Lanzarla para arriba si está quieto o anda despacio
-    if (fabs(playerVel) > 3) {
-        m_pBody->ApplyForceToCenter(b2Vec2(-dir * 20, -100), 1);
-        //m_pBody->SetAngularVelocity(M_PI);
-    }
-    
+    if (fabs(playerVel) < 0.3) m_pBody->ApplyForceToCenter(b2Vec2(0, -30), 1);
     //Lanzarla hacia donde mire la pistola
-    else { //(dir * fuerzaX*VelX, fuerzaY)
-        m_pBody->ApplyForceToCenter(b2Vec2(dir * 60 * fabs(playerVel) * 0.5, -20), 1);
-    }
+    else m_pBody->ApplyForceToCenter(b2Vec2(dir * 30 * fabs(playerVel), -20), 1);
     
 }
 

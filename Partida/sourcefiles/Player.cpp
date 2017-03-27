@@ -217,10 +217,14 @@ void Player::die(int dir) {
     if (!isDead) {
         changeDirection(-dir);
         m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * 5 * dir, -30), true);
-        isDead = true;
         
-        //b2Fixture *fix = m_pBody->GetFixtureList();
-        //m_pBody->DestroyFixture(fix);
+        if(weapon != NULL){
+            weapon->setDir(dir);
+            weapon->throwWeapon(dir);
+            weapon = NULL;
+        }
+        
+        isDead = true;
     }
 }
 
