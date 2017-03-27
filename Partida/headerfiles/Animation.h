@@ -65,4 +65,3 @@ private:
 };
 
 #endif /* ANIMATION_H */
-

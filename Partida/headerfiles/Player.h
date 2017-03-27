@@ -19,9 +19,9 @@
 using namespace sf;
 using namespace std;
 
-class Player: public Entidad{
+class Player : public Entidad {
 public:
-    
+
     Player();
     Player(b2World&);
     Player(const Player& orig);
@@ -29,7 +29,9 @@ public:
     void setStandAnimation();
     void setWalkingAnimation();
     void setJumpAnimation();
+    void setFallAnimation();
     void setDuckAnimation();
+    void setDeadAnimation();
     void playAnimation();
     Animation* getCurrentAnimation();
     void update(Time);
@@ -40,10 +42,11 @@ public:
     void changeDirection(int);
     void move();
     void duck(int);
-    void die(); //TODO
+    void die();
+    bool isPlayerDead();
     void mock(); //TODO
-    void shoot(); //TODO
-    void interact(); //TODO
+    void shoot();
+    void interact();
     void pause(bool); //TODO
     void setPosition(float, float);
 
@@ -57,12 +60,14 @@ private:
     Animation standAnimation; //Animacion de estar quieto
     Animation walkingAnimation; //Animacion de andar
     Animation jumpAnimation; //Animacion de saltar
+    Animation fallAnimation; //Animacion de caer
     Animation duckAnimation; //Animacion de agacharse
+    Animation deadAnimation; //Animacion de muerte
     Animation* currentAnimation; //Animacion actual
-    SpriteAnimated* playerSprite; //Aprite del jugador
+    SpriteAnimated* playerSprite; //Sprite del jugador
 
     Weapon *weapon;
-    
+
     int dirMoving;
     int dirLooking;
 
@@ -70,6 +75,7 @@ private:
     bool canJump;
 
     bool isDucking;
+    bool isDead;
 
     float fuerzaSalto;
     float fuerzaMovimiento;

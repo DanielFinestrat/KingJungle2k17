@@ -102,7 +102,7 @@ Time SpriteAnimated::getFrameTime() const {
 
 void SpriteAnimated::setFrame(size_t newFrame, bool resetTime) {
     if (animation) {
-        //calculate new vertex positions and texture coordiantes
+        //calculamos las coordenadas de las texturas
         IntRect rect = animation->getFrame(newFrame);
 
         vertex[0].position = Vector2f(0.f, 0.f);
@@ -126,22 +126,22 @@ void SpriteAnimated::setFrame(size_t newFrame, bool resetTime) {
 }
 
 void SpriteAnimated::update(Time deltaTime) {
-    // if not paused and we have a valid animation
+    // si no esta pausado tenemos una animacion valida
     if (!isPaused && animation) {
-        // add delta time
+        // anyadimos delta time
         currentTime += deltaTime;
 
-        // if current time is bigger then the frame time advance one frame
+        // si el tiempo actual es mayor entonces la animacion avanza un frame
         if (currentTime >= frameTime) {
-            // reset time, but keep the remainder
+            // reseteamos el tiempo pero nos quedamos con la diferencia
             currentTime = microseconds(currentTime.asMicroseconds() % frameTime.asMicroseconds());
 
-            // get next Frame index
+            // cogemos el indice del siguiente frame
             if (currentFrame + 1 < animation->getSize())
                 currentFrame++;
             else {
-                // animation has ended
-                currentFrame = 0; // reset to start
+                //si la animacion ya ha acabado reseteamos a 0 
+                currentFrame = 0;
 
                 if (!isLooped) {
                     isPaused = true;
@@ -149,7 +149,7 @@ void SpriteAnimated::update(Time deltaTime) {
 
             }
 
-            // set the current frame, not reseting the time
+            // actualizamos el frame actual sin resetear el tiempo
             setFrame(currentFrame, false);
         }
     }

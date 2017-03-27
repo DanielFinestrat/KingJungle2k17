@@ -11,7 +11,7 @@
 #define PPM 64.0f               //PIXELS POR METRO
 #define MPP (1.0f/PPM)          //METROS POR PIXEL
 
-#define pSize 65                //Collider Box Size
+#define pSize 64                //Collider Box Size
 
 Player::Player() {
 }
@@ -37,11 +37,10 @@ Player::Player(b2World &world) {
     jumpAnimation.setSpriteSheet(texture);
     jumpAnimation.addFrame(IntRect(53, 219, 98 - 53, 70));
     jumpAnimation.addFrame(IntRect(101, 289 - 70, 146 - 101, 70));
-    jumpAnimation.addFrame(IntRect(149, 275 - 70, 196 - 149, 70));
-    jumpAnimation.addFrame(IntRect(199, 275 - 70, 247 - 199, 70));
-    jumpAnimation.addFrame(IntRect(250, 275 - 70, 303 - 250, 70));
-    jumpAnimation.addFrame(IntRect(306, 285 - 70, 351 - 306, 70));
-    jumpAnimation.addFrame(IntRect(354, 285 - 70, 399 - 354, 70));
+
+    fallAnimation.setSpriteSheet(texture);
+    fallAnimation.addFrame(IntRect(306, 285 - 70, 351 - 306, 70));
+    fallAnimation.addFrame(IntRect(354, 285 - 70, 399 - 354, 70));
 
     standAnimation.setSpriteSheet(texture);
     standAnimation.addFrame(IntRect(4, 0, 38 - 4, 67));
@@ -51,12 +50,18 @@ Player::Player(b2World &world) {
     duckAnimation.setSpriteSheet(texture);
     duckAnimation.addFrame(IntRect(3, 298 - 70, 51 - 3, 70));
 
+    deadAnimation.setSpriteSheet(texture);
+    deadAnimation.addFrame(IntRect(3, 1470, 77 - 3, 1540 - 1470));
+
     currentAnimation = &standAnimation; //Establecemos la animacion por defecto
-    playerSprite = new SpriteAnimated(seconds(0.2), true, false); //Creamos un sprite animado
+    playerSprite = new SpriteAnimated(seconds(0.1), true, false); //Creamos un sprite animado
     playerSprite->setOrigin(pSize / 2, pSize / 2);
 
     dirMoving = 0;
     dirLooking = 1;
+
+    isDucking = false;
+    isDead = false;
 
     canJump = true;
     updateCanJumpState = false;
@@ -103,8 +108,16 @@ void Player::setJumpAnimation() {
     currentAnimation = &jumpAnimation;
 }
 
+void Player::setFallAnimation() {
+    currentAnimation = &fallAnimation;
+}
+
 void Player::setDuckAnimation() {
     currentAnimation = &duckAnimation;
+}
+
+void Player::setDeadAnimation() {
+    currentAnimation = &deadAnimation;
 }
 
 void Player::playAnimation() {
@@ -122,6 +135,14 @@ void Player::update(Time frameTime) {
     move();
 
     if (!canJump && updateCanJumpState) canJump = isGrounded();
+    if (isDead) setDeadAnimation();
+    else if ((int) m_pBody->GetLinearVelocity().y > 0) setFallAnimation();
+    else if ((int) m_pBody->GetLinearVelocity().y < 0) setJumpAnimation();
+    else {
+        if (isDucking && isGrounded() == true) setDuckAnimation();
+        else if (dirMoving != 0) setWalkingAnimation();
+        else setStandAnimation();
+    }
 
     playerSprite->setPosition(pos.x * PPM, pos.y * PPM);
     playAnimation();
@@ -135,13 +156,16 @@ SpriteAnimated& Player::getPlayerSprite() {
 }
 
 void Player::jump() {
-    //SALTO  
-    if (canJump) {
-        m_pBody->SetLinearVelocity(b2Vec2(m_pBody->GetLinearVelocity().x, 0));
-        m_pBody->ApplyForceToCenter(b2Vec2(0, fuerzaSalto), 1);
-        canJump = false;
-        updateCanJumpState = false;
+
+    if (!isDead) {
+        if (canJump) {
+            m_pBody->SetLinearVelocity(b2Vec2(m_pBody->GetLinearVelocity().x, 0));
+            m_pBody->ApplyForceToCenter(b2Vec2(0, fuerzaSalto), 1);
+            canJump = false;
+            updateCanJumpState = false;
+        }
     }
+
 }
 
 //Comprobamos si se puede saltar
@@ -156,42 +180,48 @@ bool Player::updateCanJumpStateState() {
 
 void Player::changeDirection(int newDirMov) {
     //MOVERSE IZDA/DCHA
-    dirMoving = newDirMov;
+    if (!isDead) {
+        dirMoving = newDirMov;
 
-    if (dirMoving != 0) {
-        if (!isDucking)setWalkingAnimation();
-        if (dirLooking != dirMoving) {
-            m_pBody->SetLinearVelocity(b2Vec2(-m_pBody->GetLinearVelocity().x, m_pBody->GetLinearVelocity().y));
-            playerSprite->scale(-1, 1);
-            dirLooking = dirMoving;
+        if (dirMoving != 0) {
+            if (dirLooking != dirMoving) {
+                m_pBody->SetLinearVelocity(b2Vec2(-m_pBody->GetLinearVelocity().x, m_pBody->GetLinearVelocity().y));
+                playerSprite->scale(-1, 1);
+                dirLooking = dirMoving;
 
-            if (weapon != NULL) {
-                weapon->setDir(dirLooking);
+                if (weapon != NULL) {
+                    weapon->setDir(dirLooking);
+                }
+
             }
-
         }
-    } else setStandAnimation();
+    }
 }
 
 void Player::move() {
-    if (abs((int) m_pBody->GetLinearVelocity().x) < velocidadMaxima && !isDucking) {
-        m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * dirMoving, 0), true);
+    if (!isDead) {
+        if (abs((int) m_pBody->GetLinearVelocity().x) < velocidadMaxima && !isDucking) {
+            m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * dirMoving, 0), true);
+        }
     }
 }
 
 void Player::duck(int new_dir) {
-    if (new_dir == 1) {
-        isDucking = true;
-        setDuckAnimation();
-    } else if (new_dir == 0) {
-        isDucking = false;
-        setStandAnimation();
-        //if(m_pBody->GetLinearVelocity().x > 0.005)setWalkingAnimation();
+    if (!isDead) {
+        if (new_dir == 1) isDucking = true;
+        else if (new_dir == 0) isDucking = false;
     }
 }
 
 void Player::die() {
+    if (!isDead) {
+        m_pBody->ApplyForceToCenter(b2Vec2(fuerzaMovimiento * 5 * -dirLooking, -30), true);
+        isDead = true;
+    }
+}
 
+bool Player::isPlayerDead() {
+    return isDead;
 }
 
 void Player::mock() {
@@ -199,40 +229,44 @@ void Player::mock() {
 }
 
 void Player::shoot() {
-    if (weapon != NULL) {
-        int recoil = weapon->shoot();
-        if (abs((int) m_pBody->GetLinearVelocity().x) < velocidadMaxima * 4 / 3) {
-            
-            if (!isDucking)
-               m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking*-1, 0.0), 1);
-            else
-               m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking * -1, -recoil), 1);
-        }
+    if (!isDead) {
+        if (weapon != NULL) {
+            int recoil = weapon->shoot();
+            if (abs((int) m_pBody->GetLinearVelocity().x) < velocidadMaxima * 4 / 3) {
 
+                if (!isDucking)
+                    m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking*-1, 0.0), 1);
+                else
+                    m_pBody->ApplyForceToCenter(b2Vec2(recoil * dirLooking * -1, -recoil), 1);
+            }
+
+        }
     }
 }
 
 void Player::interact() {
 
-    Partida *partida = Partida::getInstance();
-    vector<Weapon*> worldWeapons = partida->worldWeapons;
+    if (!isDead) {
+        Partida *partida = Partida::getInstance();
+        vector<Weapon*> worldWeapons = partida->worldWeapons;
 
-    if (weapon == NULL) {
-        for (int i = 0; i < worldWeapons.size(); i++) {
-            Weapon *currentWeapon = worldWeapons.at(i);
-            if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
-                if (!currentWeapon->inPossession) {
-                    currentWeapon->inPossession = true;
-                    currentWeapon->m_pBody->SetAwake(false);
-                    weapon = currentWeapon;
-                    if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
-                    break;
+        if (weapon == NULL) {
+            for (int i = 0; i < worldWeapons.size(); i++) {
+                Weapon *currentWeapon = worldWeapons.at(i);
+                if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
+                    if (!currentWeapon->inPossession) {
+                        currentWeapon->inPossession = true;
+                        currentWeapon->m_pBody->SetAwake(false);
+                        weapon = currentWeapon;
+                        if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+                        break;
+                    }
                 }
             }
+        } else {
+            weapon->throwWeapon(m_pBody->GetLinearVelocity().x);
+            weapon = NULL;
         }
-    } else {
-        weapon->throwWeapon(m_pBody->GetLinearVelocity().x);
-        weapon = NULL;
     }
 
 }
