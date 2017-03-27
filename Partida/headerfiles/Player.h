@@ -48,6 +48,7 @@ public:
     void shoot();
     void eraseBody();
     void interact();
+    void interact(Weapon* lastWeapon);
     void pause(bool); //TODO
     b2Vec2 getPosition();
     void setPosition(float, float);

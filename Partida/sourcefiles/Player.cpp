@@ -128,9 +128,9 @@ Animation* Player::getCurrentAnimation() {
 	return currentAnimation;
 }
 
-void Player::eraseBody(){
+void Player::eraseBody() {
 	b2Vec2 velocidad = m_pBody->GetLinearVelocity();
-	if(fabs(velocidad.x) < 0.005 && fabs(velocidad.y) < 0.005){
+	if (fabs(velocidad.x) < 0.005 && fabs(velocidad.y) < 0.005) {
 		m_pBody->SetActive(false);
 	}
 }
@@ -149,7 +149,6 @@ void Player::update(Time frameTime) {
 			eraseBody();
 		}
 	}
-
 	else if ((int) m_pBody->GetLinearVelocity().y > 0) setFallAnimation();
 	else if ((int) m_pBody->GetLinearVelocity().y < 0) setJumpAnimation();
 	else {
@@ -266,6 +265,28 @@ void Player::shoot() {
 	}
 }
 
+void Player::interact(Weapon* lastWeapon) {
+
+	if (!isDead) {
+		Partida *partida = Partida::getInstance();
+		vector<Weapon*> worldWeapons = partida->worldWeapons;
+		for (int i = 0; i < worldWeapons.size(); i++) {
+			Weapon *currentWeapon = worldWeapons.at(i);
+			if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
+				if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
+					currentWeapon->inPossession = true;
+					currentWeapon->m_pBody->SetAwake(false);
+					currentWeapon->m_pBody->SetActive(false);
+					weapon = currentWeapon;
+					if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+					break;
+				}
+			}
+		}
+
+	}
+}
+
 void Player::interact() {
 
 	if (!isDead) {
@@ -288,7 +309,9 @@ void Player::interact() {
 			}
 		} else {
 			weapon->throwWeapon(m_pBody->GetLinearVelocity().x);
+			Weapon* lastWeapon = weapon;
 			weapon = NULL;
+			interact(lastWeapon);
 		}
 	}
 
