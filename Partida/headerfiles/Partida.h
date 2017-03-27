@@ -60,9 +60,10 @@ public:
     int findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id);
     void checkJoysticksConnected();
     void addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id);
+    void respawn();
+    
     void updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks);
     void updateBullets();
-
     void updateWeapons();
 
     void loadMap();

@@ -265,6 +265,16 @@ void Player::shoot() {
 	}
 }
 
+
+
+void Player::respawn(){
+	dirMoving = 0;
+
+	isDucking = false;
+	isDead = false;
+	m_pBody->SetActive(true);
+}
+
 void Player::interact(Weapon* lastWeapon) {
 
 	if (!isDead) {

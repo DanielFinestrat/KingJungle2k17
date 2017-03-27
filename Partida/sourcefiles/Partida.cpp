@@ -56,6 +56,11 @@ void Partida::Input() {
             case Event::JoystickButtonReleased:
                 playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).releaseUpdateState(event.joystickButton.button);
                 break;
+				
+				
+			case Event::KeyPressed:
+				respawn();
+				break;
         }
     }
 
@@ -177,6 +182,13 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
         PlayerJoystick p3(id + 9, world);
         playerJoysticks->push_back(p3);
     }
+}
+
+void Partida::respawn(){
+	for(int i = 0; i < playerJoysticks.size(); i++){
+		if(playerJoysticks.at(i).player!=NULL)
+			playerJoysticks.at(i).player->respawn();
+	}
 }
 
 void Partida::updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks) {

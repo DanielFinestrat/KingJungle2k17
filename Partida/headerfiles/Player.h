@@ -46,6 +46,7 @@ public:
     bool isPlayerDead();
     void mock(); //TODO
     void shoot();
+    void respawn();
     void eraseBody();
     void interact();
     void interact(Weapon* lastWeapon);

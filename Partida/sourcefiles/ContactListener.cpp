@@ -30,8 +30,8 @@ void ContactListener::BeginContact(b2Contact* contact) {
                 Player* player = static_cast<Player*> (bodyUserDataB);
                 int dir = -1;
                 if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-				//player->changeDirection(dir);
-				//partida->players2Delete.push_back(player);
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
             }
 
             partida->bullets2Delete.insert(bala);
@@ -43,8 +43,8 @@ void ContactListener::BeginContact(b2Contact* contact) {
                 Player* player = static_cast<Player*> (bodyUserDataA);
                 int dir = -1;
                 if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-				//player->changeDirection(dir);
-				//partida->players2Delete.push_back(player);
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
             }
 
             partida->bullets2Delete.insert(bala);
