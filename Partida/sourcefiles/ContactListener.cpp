@@ -10,15 +10,15 @@
 #include "../headerfiles/Partida.h"
 
 void ContactListener::BeginContact(b2Contact* contact) {
-    
+
     Partida *partida = Partida::getInstance();
-    
+
     void* bodyUserDataA = contact->GetFixtureA()->GetBody()->GetUserData();
     void* bodyUserDataB = contact->GetFixtureB()->GetBody()->GetUserData();
 
     Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
     Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
-    
+
     //cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
 
     //Colision con Balas
@@ -31,6 +31,17 @@ void ContactListener::BeginContact(b2Contact* contact) {
             partida->bullets2Delete.insert(bala);
         }
     }
+
+    if (entidadA->getTag().compare("Player") == 0 || entidadB->getTag().compare("Player") == 0) {
+        if (entidadA->getTag().compare("Bala") == 0) {
+            Player* player = static_cast<Player*> (bodyUserDataA);
+            player->die();
+        } else if (entidadB->getTag().compare("Bala") == 0) {
+            Player* player = static_cast<Player*> (bodyUserDataA);
+            player->die();
+        }
+    }
+
 
 }
 
