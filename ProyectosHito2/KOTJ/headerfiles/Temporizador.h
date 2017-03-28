@@ -24,6 +24,7 @@ public:
     void Update();
     void Draw(sf::RenderWindow *window);
     void restartGame();
+    void setPosition();
 
     virtual ~Temporizador();
 private:

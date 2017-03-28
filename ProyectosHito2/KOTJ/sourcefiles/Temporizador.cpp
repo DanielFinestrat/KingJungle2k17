@@ -17,7 +17,8 @@ Temporizador::Temporizador(int time, b2Vec2 position, int size) {
     chrono.restart();
 
     maxTime = (float) time;
-
+    this->position = position;
+    
     if (!font.loadFromFile("resources/fonts/bits.ttf")) {
         cerr << "No encuentro la fuente (Clock)" << endl;
     }
@@ -25,13 +26,11 @@ Temporizador::Temporizador(int time, b2Vec2 position, int size) {
     timeBoardSec = new sf::Text();
     timeBoardSec->setFont(font);
     timeBoardSec->setCharacterSize(size);
-    timeBoardSec->setPosition(position.x - size/2, position.y);
-    timeBoardSec->setString(to_string(maxTime));
-
+    timeBoardSec->setString(to_string(maxTime));    
+    
     timeBoardMsec = new sf::Text();
     timeBoardMsec->setFont(font);
     timeBoardMsec->setCharacterSize(size/2);
-    timeBoardMsec->setPosition(position.x + size/2 + 7, position.y + size/2);
     timeBoardMsec->setString(to_string(0));
 }
 
@@ -46,7 +45,8 @@ void Temporizador::Update() {
     
     float fSeconds = maxTime -  currentTime;
     int iSeconds = maxTime -  currentTime;
-    int iMiliseconds = (iSeconds - fSeconds) * -100;
+    int iMiliseconds = (iSeconds - fSeconds) * -100; //100 a 0
+    iMiliseconds = iMiliseconds * 60 / 100; //60 a 0
     
     string sSeconds = to_string(iSeconds);
     string sMiliseconds = to_string(iMiliseconds);
@@ -59,8 +59,11 @@ void Temporizador::Update() {
     timeBoardSec->setString(sSeconds);
     timeBoardMsec->setString(sMiliseconds);
     
+    setPosition();
+    
     if(iSeconds == 0 && iMiliseconds == 0) restartGame();
-        
+    
+    cout<<sSeconds<<":"<<sMiliseconds<<endl;
     
 }
 
@@ -73,4 +76,14 @@ void Temporizador::restartGame(){
     chrono.restart();
     Partida *partida = Partida::getInstance();
     partida->respawn();
+}
+
+void Temporizador::setPosition(){
+    
+    timeBoardSec->setPosition(position.x - (timeBoardSec->getLocalBounds().width/2) , position.y);
+    
+    float mposX = timeBoardSec->getGlobalBounds().left + timeBoardSec->getLocalBounds().width + (timeBoardMsec->getLocalBounds().width/4);
+    float mposY = timeBoardSec->getGlobalBounds().top + timeBoardSec->getLocalBounds().height - (timeBoardMsec->getLocalBounds().height*1.7);
+    timeBoardMsec->setPosition(mposX, mposY);
+    
 }
