@@ -32,6 +32,7 @@ public:
     b2World *world;
     ContactListener myContactListener;
     sf::RenderWindow *window;
+    sf::View *camara;
 
     vector<Platform*> worldPlatforms;
     vector<Weapon*> worldWeapons;
@@ -68,6 +69,8 @@ public:
     void updateBullets();
     void updateWeapons();
 
+    void cameraSetTransform();
+    
     void loadMap();
     virtual ~Partida();
 

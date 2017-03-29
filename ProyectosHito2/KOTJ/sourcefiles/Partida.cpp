@@ -17,6 +17,10 @@ Partida::Partida() {
     world->SetContactListener(&myContactListener);
     checkJoysticksConnected();
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
+
+    camara = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
+    window->setView(*camara);
+
 }
 
 Partida::Partida(const Partida& orig) {
@@ -107,6 +111,8 @@ void Partida::Update() {
     updateWeapons();
     updatePlayers(frameTime, &playerJoysticks);
     updateBullets();
+
+    cameraSetTransform();
 }
 
 void Partida::Render() {
@@ -190,7 +196,7 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
 void Partida::respawn() {
     for (int i = 0; i < playerJoysticks.size(); i++) {
         PlayerJoystick* joystick = &playerJoysticks.at(i);
-        joystick->player->setPosition((i+1) * screenWidth/5, screenHeight-100);
+        joystick->player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
         joystick->player->respawn();
     }
 }
@@ -217,6 +223,55 @@ void Partida::updateBullets() {
 
 }
 
+void Partida::cameraSetTransform() {
+
+    int total = 0;
+    float posX = 0;
+    float posY = 0;
+    float scale = 1;
+    float ratio = screenWidth / (float) screenHeight;
+    float maxDifferenceX = 0;
+    float maxDifferenceY = 0;
+
+    //Posición
+    for (int i = 0; i < playerJoysticks.size(); i++) {
+        if (!playerJoysticks.at(i).player->isPlayerDead()) {
+            posX += playerJoysticks.at(i).player->getPosition().x;
+            posY += playerJoysticks.at(i).player->getPosition().y;
+            total++;
+        }
+    }
+    if (total > 0) {
+        posX = posX / total;
+        posY = posY / total;
+        camara->setCenter(posX * PPM, posY * PPM);
+    }
+
+    //Zoom
+    for (int i = 0; i < playerJoysticks.size(); i++) {
+        if (!playerJoysticks.at(i).player->isPlayerDead()) {
+            float currentPosX = playerJoysticks.at(i).player->getPosition().x;
+            if (abs(currentPosX - posX) > maxDifferenceX) maxDifferenceX = abs(currentPosX - posX);
+
+            float currentPosY = playerJoysticks.at(i).player->getPosition().y;
+            if (abs(currentPosY - posY) > maxDifferenceY) maxDifferenceY = abs(currentPosY - posY);
+        }
+    }
+    if (maxDifferenceX > maxDifferenceY * ratio) {
+        maxDifferenceX += 2;
+        //float escala = screenWidth/2/maxDifferenceX*PPM;
+        camara->setSize(sf::Vector2f(abs(maxDifferenceX * 2 * PPM), abs(maxDifferenceX * 1 / ratio * 2 * PPM)));
+        //camara->setSize(sf::Vector2f(screenWidth * escala, screenHeight * escala));
+    } else {
+        maxDifferenceY += (2/ratio);
+        camara->setSize(sf::Vector2f(abs(maxDifferenceY * ratio * 2 * PPM), abs(maxDifferenceY * 2 * PPM)));
+    }
+
+    //Ponerlo todo
+    window->setView(*camara);
+
+}
+
 void Partida::loadMap() {
     Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
     worldPlatforms.push_back(suelo);
@@ -226,20 +281,20 @@ void Partida::loadMap() {
 
     Platform *paredDcha = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(screenWidth, screenHeight / 2), 0);
     worldPlatforms.push_back(paredDcha);
-    
-    Platform *platformDcha = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth/4, screenHeight / 3), 0.2);
+
+    Platform *platformDcha = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 4, screenHeight / 3), 0.2);
     worldPlatforms.push_back(platformDcha);
-    
-    Platform *platformIzda = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(3*screenWidth/4, screenHeight / 3), 0.2);
+
+    Platform *platformIzda = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(3 * screenWidth / 4, screenHeight / 3), 0.2);
     worldPlatforms.push_back(platformIzda);
-    
-    Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth/2, 2*screenHeight / 3), 0.2);
+
+    Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 2, 2 * screenHeight / 3), 0.2);
     worldPlatforms.push_back(platformCentr);
 
-    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth/4, (screenHeight / 3)-5), 1.0f, 1, 10, 20);
+    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 20);
     worldWeapons.push_back(pistola1);
 
-    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3*screenWidth/4, (screenHeight / 3)-5), 1.0f, 1, 10, 30);
+    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 30);
     worldWeapons.push_back(pistola2);
 }
 

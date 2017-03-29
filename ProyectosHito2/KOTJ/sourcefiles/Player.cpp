@@ -356,8 +356,8 @@ void Player::setColor(int id) {
             color->b = 255;
             break;
         case 3:
-            color->b = 255;
             color->r = 255;
+            color->b = 255;
             break;
     }
     playerSprite->setColor(*color);
