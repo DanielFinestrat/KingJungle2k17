@@ -46,7 +46,7 @@ void Temporizador::Update() {
     float fSeconds = maxTime -  currentTime;
     int iSeconds = maxTime -  currentTime;
     int iMiliseconds = (iSeconds - fSeconds) * -100; //100 a 0
-    iMiliseconds = iMiliseconds * 60 / 100; //60 a 0
+    iMiliseconds = iMiliseconds * 60 / 100; //60 a 0exit
     
     string sSeconds = to_string(iSeconds);
     string sMiliseconds = to_string(iMiliseconds);
@@ -63,7 +63,7 @@ void Temporizador::Update() {
     
     if(iSeconds == 0 && iMiliseconds == 0) restartGame();
     
-    cout<<sSeconds<<":"<<sMiliseconds<<endl;
+    //cout<<sSeconds<<sMiliseconds<<endl;
     
 }
 

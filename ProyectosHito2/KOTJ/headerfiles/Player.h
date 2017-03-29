@@ -54,6 +54,7 @@ public:
     b2Vec2 getPosition();
     void setPosition(float, float);
     int getDirMoving();
+    void setColor(int);
 
 private:
     b2Body *m_pBody;

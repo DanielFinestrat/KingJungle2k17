@@ -78,7 +78,7 @@ void Partida::erasePlayers() {
 void Partida::eraseBullets() {
     set<Bala*>::iterator itBala = bullets2Delete.begin();
 
-    for (; itBala != bullets2Delete.end(); ++itBala) {
+    for (; itBala != bullets2Delete.end(); itBala++) {
         Bala* dyingBala = *itBala;
         /* if (dyingBala->explosion == true) {
              b2Vec2 position = dyingBala->m_pBody->GetPosition();
@@ -88,7 +88,7 @@ void Partida::eraseBullets() {
              listadoExplosion.insert(nueva);
          }*/
         worldBullets.erase(dyingBala);
-        bullets2Delete.erase(dyingBala);
+        //bullets2Delete.erase(dyingBala);
         delete dyingBala;
         dyingBala = NULL;
     }

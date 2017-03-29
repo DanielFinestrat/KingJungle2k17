@@ -338,3 +338,27 @@ void Player::setPosition(float posX, float posY) {
 int Player::getDirMoving() {
     return dirMoving;
 }
+
+void Player::setColor(int id) {
+    Color *color = new Color(0, 0, 0);
+    switch (id) {
+        case 0:
+            color->r = 255;
+            color->g = 255;
+            color->b = 255;
+            break;
+        case 1:
+            color->r = 255;
+            color->g = 255;
+            break;
+        case 2:
+            color->g = 255;
+            color->b = 255;
+            break;
+        case 3:
+            color->b = 255;
+            color->r = 255;
+            break;
+    }
+    playerSprite->setColor(*color);
+}

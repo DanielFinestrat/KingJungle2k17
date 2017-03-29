@@ -44,6 +44,7 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     this->id = id;
     player = new Player(*world);
     player->setPosition((id+1) * screenWidth/5, screenHeight-100);
+    player->setColor(id);
 
     cout << "He insertado un mando con la id " << this->id << endl;
 }
