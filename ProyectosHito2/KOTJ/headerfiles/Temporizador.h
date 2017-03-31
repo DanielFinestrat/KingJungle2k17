@@ -9,6 +9,7 @@
 #define TEMPORIZADOR_H
 
 #include <iostream>
+#include <sstream>
 #include <cmath>
 #include <SFML/Graphics.hpp>
 #include "../Box2D/Box2D.h"
@@ -25,6 +26,8 @@ public:
     void Draw(sf::RenderWindow *window);
     void restartGame();
     void setPosition();
+    void setBasePosition(b2Vec2 *position);
+    void setScale(float newScaleX, float newScaleY);
 
     virtual ~Temporizador();
 private:

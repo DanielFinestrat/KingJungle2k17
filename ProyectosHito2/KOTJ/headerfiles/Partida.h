@@ -32,7 +32,9 @@ public:
     b2World *world;
     ContactListener myContactListener;
     sf::RenderWindow *window;
-    sf::View *camara;
+    
+    sf::View *mainCamera;
+    sf::View *hudCamera;
 
     vector<Platform*> worldPlatforms;
     vector<Weapon*> worldWeapons;

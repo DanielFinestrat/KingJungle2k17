@@ -46,7 +46,7 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     player->setPosition((id+1) * screenWidth/5, screenHeight-100);
     player->setColor(id);
 
-    cout << "He insertado un mando con la id " << this->id << endl;
+    //cout << "He insertado un mando con la id " << this->id << endl;
 }
 
 PlayerJoystick::~PlayerJoystick() {
@@ -55,27 +55,27 @@ PlayerJoystick::~PlayerJoystick() {
 void PlayerJoystick::pressUpdateState(int pressedButton) {
     if (misBotones.at(0).numBoton == pressedButton && !misBotones.at(0).pulsado) {
         misBotones.at(0).pulsado = true;
-        cout << id << ".- He saltado" << endl;
+        //cout << id << ".- He saltado" << endl;
         player->jump();
     }
     else if (misBotones.at(1).numBoton == pressedButton && !misBotones.at(1).pulsado) {
         misBotones.at(1).pulsado = true;
-        cout << id << ".- He disparado" << endl;
+        //cout << id << ".- He disparado" << endl;
         player->shoot();
     }
     else if (misBotones.at(2).numBoton == pressedButton && !misBotones.at(2).pulsado) {
         misBotones.at(2).pulsado = true;
-        cout << id << ".- He interactuado" << endl;
+        //cout << id << ".- He interactuado" << endl;
         player->interact();
     }
     else if (misBotones.at(3).numBoton == pressedButton && !misBotones.at(3).pulsado) {
         misBotones.at(3).pulsado = true;
-        cout << id << ".- Me he burlado" << endl;
+        //cout << id << ".- Me he burlado" << endl;
         player->mock();
     }
     else if (misBotones.at(4).numBoton == pressedButton && !misBotones.at(4).pulsado) {
         misBotones.at(4).pulsado = true;
-        cout << id << ".- He pausado" << endl;
+        //cout << id << ".- He pausado" << endl;
         player->pause(true);
     }
 }
@@ -106,7 +106,7 @@ void PlayerJoystick::checkAxisX(int ejeX) {
 
     //1 = derecha
     if (ejeX != estadoEjeX) {
-        cout << "Me muevo en el eje X en la dirección " << ejeX << endl;
+        //cout << "Me muevo en el eje X en la dirección " << ejeX << endl;
         estadoEjeX = ejeX;
         player->changeDirection(estadoEjeX);
     }
@@ -119,7 +119,7 @@ void PlayerJoystick::checkAxisY(int ejeY) {
 
     //1 = agachado
     if (ejeY != estadoEjeY) {
-        cout << "Me muevo en el eje Y en la dirección " << ejeY << endl;
+        //cout << "Me muevo en el eje Y en la dirección " << ejeY << endl;
         estadoEjeY = ejeY;
         player->duck(estadoEjeY);
     }

@@ -11,16 +11,17 @@ using namespace sf;
 static Partida* instance;
 
 Partida::Partida() {
-    window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition");
+    window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
     world = new b2World(b2Vec2(0.0f, 9.8f));
     world->SetContactListener(&myContactListener);
     checkJoysticksConnected();
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
 
-    camara = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
-    window->setView(*camara);
-
+    mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
+    hudCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
+    window->setView(*mainCamera);
+    window ->setView(*hudCamera);
 }
 
 Partida::Partida(const Partida& orig) {
@@ -36,7 +37,6 @@ void Partida::Input() {
     Event event;
     while (window->pollEvent(event)) {
         switch (event.type) {
-
             case Event::Closed:
                 window->close();
                 break;
@@ -62,10 +62,6 @@ void Partida::Input() {
                 playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).releaseUpdateState(event.joystickButton.button);
                 break;
 
-
-            case Event::KeyPressed:
-                //respawn();
-                break;
         }
     }
 
@@ -92,7 +88,6 @@ void Partida::eraseBullets() {
              listadoExplosion.insert(nueva);
          }*/
         worldBullets.erase(dyingBala);
-        //bullets2Delete.erase(dyingBala);
         delete dyingBala;
         dyingBala = NULL;
     }
@@ -107,7 +102,9 @@ void Partida::Erase() {
 void Partida::Update() {
     world->Step(TIMESTEP, VELITER, POSITER);
     Time frameTime = frameClock.restart();
+    window->setView(*hudCamera);
     temporizador->Update();
+    window->setView(*mainCamera);
     updateWeapons();
     updatePlayers(frameTime, &playerJoysticks);
     updateBullets();
@@ -117,11 +114,13 @@ void Partida::Update() {
 
 void Partida::Render() {
     window->clear(sf::Color::Black);
-    temporizador->Draw(window);
+    window->setView(*mainCamera);
     drawPlatforms();
     drawPlayers();
     drawWeapons();
     drawBullets();
+    window->setView(*hudCamera);
+    temporizador->Draw(window);
     window->display();
 }
 
@@ -163,6 +162,12 @@ int Partida::findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id)
 }
 
 void Partida::checkJoysticksConnected() {
+
+    addPlayerJoystick(&playerJoysticks, 0);
+    addPlayerJoystick(&playerJoysticks, 1);
+    addPlayerJoystick(&playerJoysticks, 2);
+    addPlayerJoystick(&playerJoysticks, 3);
+
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
         if (joystickManager.isConnected(i)) {
@@ -184,12 +189,6 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
     if (add) {
         PlayerJoystick p(id, world);
         playerJoysticks->push_back(p);
-        /*PlayerJoystick p1(id + 1, world);
-        playerJoysticks->push_back(p1);
-        PlayerJoystick p2(id + 5, world);
-        playerJoysticks->push_back(p2);
-        PlayerJoystick p3(id + 9, world);
-        playerJoysticks->push_back(p3);*/
     }
 }
 
@@ -228,7 +227,10 @@ void Partida::cameraSetTransform() {
     int total = 0;
     float posX = 0;
     float posY = 0;
-    float scale = 1;
+
+    float newSize = screenWidth;
+    float minSize = screenWidth;
+
     float ratio = screenWidth / (float) screenHeight;
     float maxDifferenceX = 0;
     float maxDifferenceY = 0;
@@ -241,12 +243,29 @@ void Partida::cameraSetTransform() {
             total++;
         }
     }
-    if (total > 0) {
-        posX = posX / total;
-        posY = posY / total;
-        camara->setCenter(posX * PPM, posY * PPM);
-    }
 
+    //Tenemos en cuenta las esquinas del nivel
+    posX += screenWidth*MPP;
+    posY += screenHeight*MPP;
+    total++;
+
+    posX += 0;
+    posY += 0;
+    total++;
+
+    posX += screenWidth*MPP;
+    posY += 0;
+    total++;
+
+    posX += 0;
+    posY += screenHeight*MPP;
+    total++;
+
+    posX = posX / total;
+    posY = posY / total;
+    mainCamera->setCenter(posX * PPM, posY * PPM);
+
+    
     //Zoom
     for (int i = 0; i < playerJoysticks.size(); i++) {
         if (!playerJoysticks.at(i).player->isPlayerDead()) {
@@ -257,18 +276,21 @@ void Partida::cameraSetTransform() {
             if (abs(currentPosY - posY) > maxDifferenceY) maxDifferenceY = abs(currentPosY - posY);
         }
     }
+
     if (maxDifferenceX > maxDifferenceY * ratio) {
         maxDifferenceX += 2;
-        //float escala = screenWidth/2/maxDifferenceX*PPM;
-        camara->setSize(sf::Vector2f(abs(maxDifferenceX * 2 * PPM), abs(maxDifferenceX * 1 / ratio * 2 * PPM)));
-        //camara->setSize(sf::Vector2f(screenWidth * escala, screenHeight * escala));
+        newSize = abs(maxDifferenceX * 2 * PPM);
+        if (newSize < minSize) newSize = minSize;
+        mainCamera->setSize(sf::Vector2f(newSize, newSize / ratio));
     } else {
-        maxDifferenceY += (2/ratio);
-        camara->setSize(sf::Vector2f(abs(maxDifferenceY * ratio * 2 * PPM), abs(maxDifferenceY * 2 * PPM)));
+        maxDifferenceY += (2 / ratio);
+        newSize = abs(maxDifferenceY * 2 * PPM);
+        if (newSize < minSize / ratio) newSize = minSize / ratio;
+        mainCamera->setSize(sf::Vector2f(newSize * ratio, newSize));
     }
-
+    
     //Ponerlo todo
-    window->setView(*camara);
+    window->setView(*mainCamera);
 
 }
 

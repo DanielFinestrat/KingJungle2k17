@@ -191,7 +191,6 @@ bool Player::updateCanJumpStateState() {
 }
 
 void Player::changeDirection(int newDirMov) {
-    //MOVERSE IZDA/DCHA
     if (!isDead) {
         dirMoving = newDirMov;
 
