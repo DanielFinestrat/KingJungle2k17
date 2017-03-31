@@ -73,7 +73,8 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/Animation.h \
  sourcefiles/../headerfiles/SpriteAnimated.h \
- sourcefiles/../headerfiles/ContactListener.h
+ sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/Partida.h:
 
@@ -226,3 +227,5 @@ sourcefiles/../headerfiles/Animation.h:
 sourcefiles/../headerfiles/SpriteAnimated.h:
 
 sourcefiles/../headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/PlayerKeyboard.h:

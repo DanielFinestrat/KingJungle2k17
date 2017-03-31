@@ -17,6 +17,7 @@
 #include "Bala.h"
 #include "PlayerJoystick.h"
 #include "ContactListener.h"
+#include "PlayerKeyboard.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ public:
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
     vector<PlayerJoystick> playerJoysticks;
+    PlayerKeyboard* playerKeyboard;
 
     set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
@@ -65,6 +67,7 @@ public:
     int findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id);
     void checkJoysticksConnected();
     void addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id);
+    void addPlayerKeyboard();
     void respawn();
     
     void updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks);
@@ -80,6 +83,7 @@ private:
     
     Partida();
     Partida(const Partida& orig);
+    bool usingKeyboard;
 
 };
 

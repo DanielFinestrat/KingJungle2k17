@@ -9,31 +9,31 @@
 
 PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     boton b1;
-    b1.nombre = "Salto";
+    b1.nombre = "Salto"; //UP
     b1.numBoton = 0;
     b1.pulsado = false;
     misBotones.push_back(b1);
     
     boton b2;
-    b1.nombre = "Disparo";
+    b1.nombre = "Disparo";//R
     b2.numBoton = 2;
     b2.pulsado = false;
     misBotones.push_back(b2);
     
     boton b3;
-    b1.nombre = "Interactuar";
+    b1.nombre = "Interactuar";//E
     b3.numBoton = 1;
     b3.pulsado = false;
     misBotones.push_back(b3);
     
     boton b4;
-    b1.nombre = "Burlarse";
+    b1.nombre = "Burlarse";//W
     b4.numBoton = 3;
     b4.pulsado = false;
     misBotones.push_back(b4);
     
     boton b5;
-    b1.nombre = "Pausar";
+    b1.nombre = "Pausar";//Q
     b5.numBoton = 7;
     b5.pulsado = false;
     misBotones.push_back(b5);

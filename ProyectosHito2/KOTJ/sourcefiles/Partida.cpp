@@ -17,6 +17,7 @@ Partida::Partida() {
     world->SetContactListener(&myContactListener);
     checkJoysticksConnected();
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
+    usingKeyboard = false;
 
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     hudCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
@@ -61,6 +62,27 @@ void Partida::Input() {
             case Event::JoystickButtonReleased:
                 playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).releaseUpdateState(event.joystickButton.button);
                 break;
+                
+            case Event::KeyPressed:
+                if(usingKeyboard)playerKeyboard->pressUpdateState(event.key.code);
+                switch (event.key.code) {
+                    case Keyboard::Escape:
+                        window->close();
+                        break;
+                    case Keyboard::F2:
+                        if (!usingKeyboard) {
+                            addPlayerKeyboard();
+                            usingKeyboard = true;
+                        }
+                        break;
+                }
+                break;
+
+            case Event::KeyReleased:
+                if(usingKeyboard) playerKeyboard->releaseUpdateState(event.key.code);
+                break;
+                
+            
 
         }
     }
@@ -134,6 +156,7 @@ void Partida::drawPlayers() {
     for (int i = 0; i < playerJoysticks.size(); i++) {
         window->draw(playerJoysticks.at(i).player->getPlayerSprite());
     }
+    if (usingKeyboard) window->draw(playerKeyboard->player->getPlayerSprite());
 }
 
 void Partida::drawWeapons() {
@@ -166,7 +189,7 @@ void Partida::checkJoysticksConnected() {
     addPlayerJoystick(&playerJoysticks, 0);
     addPlayerJoystick(&playerJoysticks, 1);
     addPlayerJoystick(&playerJoysticks, 2);
-    addPlayerJoystick(&playerJoysticks, 3);
+    //addPlayerJoystick(&playerJoysticks, 3);
 
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
@@ -192,11 +215,20 @@ void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id)
     }
 }
 
+void Partida::addPlayerKeyboard() {
+    playerKeyboard = new PlayerKeyboard(world);
+
+}
+
 void Partida::respawn() {
     for (int i = 0; i < playerJoysticks.size(); i++) {
         PlayerJoystick* joystick = &playerJoysticks.at(i);
         joystick->player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
         joystick->player->respawn();
+    }
+    if(usingKeyboard){ 
+        playerKeyboard->player->setPosition((4) * screenWidth / 5, screenHeight - 100);
+        playerKeyboard->player->respawn();
     }
 }
 
@@ -204,6 +236,7 @@ void Partida::updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysti
     for (int i = 0; i < playerJoysticks->size(); i++) {
         playerJoysticks->at(i).player->update(frameTime);
     }
+    if (usingKeyboard) playerKeyboard->player->update(frameTime);
 }
 
 void Partida::updateWeapons() {

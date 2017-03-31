@@ -54,7 +54,7 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/Platform.h headerfiles/Entidad.h headerfiles/Weapon.h \
  headerfiles/Bala.h headerfiles/PlayerJoystick.h headerfiles/Player.h \
  headerfiles/Animation.h headerfiles/SpriteAnimated.h \
- headerfiles/ContactListener.h
+ headerfiles/ContactListener.h headerfiles/PlayerKeyboard.h
 
 Box2D/Box2D.h:
 
@@ -209,3 +209,5 @@ headerfiles/Animation.h:
 headerfiles/SpriteAnimated.h:
 
 headerfiles/ContactListener.h:
+
+headerfiles/PlayerKeyboard.h:

@@ -74,7 +74,8 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
- sourcefiles/../headerfiles/ContactListener.h
+ sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/Player.h:
 
@@ -229,3 +230,5 @@ sourcefiles/../headerfiles/PlayerJoystick.h:
 sourcefiles/../headerfiles/Player.h:
 
 sourcefiles/../headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/PlayerKeyboard.h:

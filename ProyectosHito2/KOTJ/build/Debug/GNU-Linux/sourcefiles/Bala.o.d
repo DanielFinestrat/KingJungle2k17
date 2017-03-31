@@ -74,7 +74,8 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/Animation.h \
  sourcefiles/../headerfiles/SpriteAnimated.h \
- sourcefiles/../headerfiles/ContactListener.h
+ sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/Bala.h:
 
@@ -229,3 +230,5 @@ sourcefiles/../headerfiles/Animation.h:
 sourcefiles/../headerfiles/SpriteAnimated.h:
 
 sourcefiles/../headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/PlayerKeyboard.h:

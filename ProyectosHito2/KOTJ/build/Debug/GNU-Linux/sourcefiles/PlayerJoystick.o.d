@@ -74,7 +74,8 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
- sourcefiles/../headerfiles/ContactListener.h
+ sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
@@ -229,3 +230,5 @@ sourcefiles/../headerfiles/Platform.h:
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
 sourcefiles/../headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/PlayerKeyboard.h:
