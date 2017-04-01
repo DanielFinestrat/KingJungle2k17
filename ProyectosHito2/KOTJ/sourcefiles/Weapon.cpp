@@ -17,10 +17,11 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     m_Size = size;
     ammo = amm;
     recoil = recoil_;
-    
+
     inPossession = false;
     dir = 1;
-
+    difTime = (1 / shootCadence) * 1000;
+    
     b2BodyDef weaponBodyDef;
     weaponBodyDef.userData = this;
     weaponBodyDef.type = b2_dynamicBody;
@@ -70,14 +71,22 @@ void Weapon::update(b2Vec2 pos) {
 }
 
 int Weapon::shoot() {
-    
-    Partida *partida = Partida::getInstance();
-    // +50 habria que cambiarlo por el size del personaje
-    Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50*dir, m_pBody->GetPosition().y * PPM), false);
-    nuevaBala->Disparar(5 * -dir, 180);
-    partida->worldBullets.insert(nuevaBala);
-    
-    return recoil;
+    if (ammo > 0) {
+        dt = deltaClock.restart();
+        difTime += dt.asSeconds();
+
+        if (difTime >= shootCadence) {
+            difTime = 0.0;
+            ammo--;
+            Partida *partida = Partida::getInstance();
+            // +50 habria que cambiarlo por el size del personaje
+            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50 * dir, m_pBody->GetPosition().y * PPM), false);
+            nuevaBala->Disparar(5 * -dir, 180);
+            partida->worldBullets.insert(nuevaBala);
+            return recoil;
+        }
+    }
+    return 0;
 }
 
 void Weapon::render(sf::RenderWindow *window) {
@@ -89,15 +98,15 @@ void Weapon::setPossession(bool var) {
 }
 
 void Weapon::throwWeapon(float playerVel) {
-    
+
     inPossession = false;
     m_pBody->SetActive(true);
-    
+
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) m_pBody->ApplyForceToCenter(b2Vec2(0, -30), 1);
-    //Lanzarla hacia donde mire la pistola
+        //Lanzarla hacia donde mire la pistola
     else m_pBody->ApplyForceToCenter(b2Vec2(dir * 30 * fabs(playerVel), -20), 1);
-    
+
 }
 
 void Weapon::setDir(int i) {

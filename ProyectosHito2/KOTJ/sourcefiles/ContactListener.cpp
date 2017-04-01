@@ -19,7 +19,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
     Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
     Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
 
-    cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
+    //cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
 
     //Colision con Balas
     if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
@@ -51,8 +51,6 @@ void ContactListener::BeginContact(b2Contact* contact) {
 
 
 }
-
-//void ContactListener::EndContact(b2Contact* contact){}
 
 
 

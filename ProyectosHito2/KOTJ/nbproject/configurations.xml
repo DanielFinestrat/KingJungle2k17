@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="100">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -67,14 +67,14 @@
         </ccTool>
         <linkerTool>
           <linkerAddLib>
-            <pElem>/usr/lib/i386-linux-gnu</pElem>
+            <pElem>/usr/lib/x86_64-linux-gnu</pElem>
           </linkerAddLib>
           <linkerLibItems>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-audio.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-graphics.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-system.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-window.so</linkerLibFileItem>
             <linkerLibFileItem>libBox2D.a</linkerLibFileItem>
-            <linkerLibFileItem>/usr/lib/i386-linux-gnu/libsfml-audio.so</linkerLibFileItem>
-            <linkerLibFileItem>/usr/lib/i386-linux-gnu/libsfml-graphics.so</linkerLibFileItem>
-            <linkerLibFileItem>/usr/lib/i386-linux-gnu/libsfml-system.so</linkerLibFileItem>
-            <linkerLibFileItem>/usr/lib/i386-linux-gnu/libsfml-window.so</linkerLibFileItem>
           </linkerLibItems>
         </linkerTool>
       </compileType>

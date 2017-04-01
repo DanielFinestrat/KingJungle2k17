@@ -14,7 +14,7 @@
 using namespace std;
 using namespace sf;
 
-class Weapon: public Entidad {
+class Weapon : public Entidad {
 public:
     float shootCadence; //Shots per second
     int BPS; //Bullets per shot
@@ -24,6 +24,12 @@ public:
     int recoil;
 
     Texture weapon_texture;
+
+    //Variables para controlar la cadencia de disparo
+    sf::Clock deltaClock;
+    float difTime;
+    sf::Time dt;
+    time_t lastShot;
 
     std::set<Bala*> balasAEliminar;
     std::set<Bala*> listadoBalas;
