@@ -35,7 +35,9 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/ContactListener.o \
 	${OBJECTDIR}/Trampa.o \
+	${OBJECTDIR}/factoriaTrampa.o \
 	${OBJECTDIR}/main.o
 
 
@@ -73,10 +75,20 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/trampa: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/trampa ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/ContactListener.o: ContactListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ContactListener.o ContactListener.cpp
+
 ${OBJECTDIR}/Trampa.o: Trampa.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Trampa.o Trampa.cpp
+
+${OBJECTDIR}/factoriaTrampa.o: factoriaTrampa.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/factoriaTrampa.o factoriaTrampa.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

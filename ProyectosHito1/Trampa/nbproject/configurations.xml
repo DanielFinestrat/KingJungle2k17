@@ -4,7 +4,10 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>ContactListener.h</itemPath>
       <itemPath>Trampa.h</itemPath>
+      <itemPath>factoriaTrampa.h</itemPath>
+      <itemPath>filters.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -13,7 +16,9 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>ContactListener.cpp</itemPath>
       <itemPath>Trampa.cpp</itemPath>
+      <itemPath>factoriaTrampa.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -58,9 +63,19 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
+      <item path="ContactListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ContactListener.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Trampa.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Trampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="factoriaTrampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="factoriaTrampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filters.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -85,9 +100,19 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="ContactListener.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="ContactListener.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="Trampa.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="Trampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="factoriaTrampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="factoriaTrampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="filters.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

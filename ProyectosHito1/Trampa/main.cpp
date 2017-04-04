@@ -1,21 +1,30 @@
 #include <sstream>
 #include <stdio.h>
 #include "Box2D/Box2D.h"
+#include "Trampa.h"
+#include "ContactListener.h"
 #include <SFML/Graphics.hpp>
+
+
 
 
 #define WIDTH 800 
 #define HEIGHT 600
 #define PPM 64.0f               //PIXELS POR METRO
 #define MPP (1.0f/PPM)          //METROS POR PIXEL
+#define DEGTORAD 0.0174532925199432957;
 
-short CATEGORY_BALA = 0x0001;
+
 short CATEGORY_SCENERY = 0x0002;
 short CATEGORY_PJ = 0x0004;
+short CATEGORY_TRAMPA = 0x0001;
 
-short MASK_BALA = CATEGORY_SCENERY;
-short MASK_PJ = CATEGORY_SCENERY;
+
+short MASK_TRAMPA = CATEGORY_PJ;
+short MASK_PJ = CATEGORY_SCENERY | CATEGORY_TRAMPA;
 short MASK_SCENERY = -1;
+
+
 
 
 using namespace std;
@@ -90,6 +99,8 @@ struct Pared1 {
 };
 //=============================================================================
 
+
+
 /*
  * =============================================================================
  *                           STRUCT PERSONAJE
@@ -101,10 +112,12 @@ struct pjBox {
     int dir; //Puede ser 1 o -1 (derecha e izquierda respectivamente)
     b2Body *m_pBody;
     sf::RectangleShape m_Shape;
+    bool contact;
    
 
     pjBox(b2World *world) {
         b2BodyDef pjBodyDef;
+        pjBodyDef.userData = this;
         pjBodyDef.type = b2_dynamicBody;
         pjBodyDef.position.Set(WIDTH / 2 * MPP, HEIGHT / 2 * MPP);
         m_pBody = world->CreateBody(&pjBodyDef);
@@ -158,6 +171,8 @@ void move(int dir, pjBox *player) {
 
     }
 }
+void startContact(pjBox *player){ player->contact = true;}
+void endContact(pjBox *player){player->contact = false;}
 
 //Coger el arma
 //Modificar para comprobar si tiene ya un arma y la cambie por la que esta en el suelo
@@ -175,13 +190,18 @@ int main() {
     //Definir mundo Box2D
     b2Vec2 gravity(0.0f, 9.8f);
     b2World *world = new b2World(gravity);
+   
+    ContactListener escuchador;
 
-
-    //Definir suelo y personaje
+    //Definir suelo, trampa y personaje
     Suelo floor(world);
     Pared1 paredL(world, 0);
     Pared1 paredR(world, WIDTH - 50);
     pjBox *player= new pjBox(world);
+    sf::Vector2f trapSize(75,100); 
+    sf::Vector2f trapPos(200 ,600);
+    
+    Trampa trampa1(world, trapSize, trapPos, 0, 0);
 
     //Crear ventana
     RenderWindow window(VideoMode(WIDTH, HEIGHT), "Prueba disparo arma");
@@ -198,9 +218,7 @@ int main() {
 
                 case Event::KeyPressed:
                     switch (event.key.code) {
-                        case Keyboard::Space:
-                            
-                            break;
+                        
                         case Keyboard::Escape:
                             window.close();
                             break;
@@ -214,6 +232,12 @@ int main() {
                             move(1, player);
                             player->dir=1;
                             break;
+                        case Keyboard::A:
+                            trampa1.activar();
+                            break;
+                        case Keyboard::D:
+                            trampa1.desactivar();
+                            break;
                     }
                 case Event::KeyReleased:
                     switch (event.key.code) {
@@ -225,9 +249,10 @@ int main() {
         // Partida - Eliminar objetos ---------------------------------------------------------------------------------  ------------------------------------------------------------
 
        window.clear(Color::Black);
-
+       
         //World step y render del suelo
         world->Step(1.0f / 60.0f, 10, 10);
+        world->SetContactListener(&escuchador);
         window.draw(floor.m_Shape);
         window.draw(paredL.m_Shape);
         window.draw(paredR.m_Shape);
@@ -240,8 +265,9 @@ int main() {
 
         //-------------------------------------------------------------------------------
         //Update y render del arma, segun si esta en posesion o no
-      
-
+        trampa1.updateShape();
+        
+        trampa1.render(&window);
        
         //-------------------------------------------------------------------------------
 
