@@ -72,8 +72,9 @@ build/Debug/GNU-Linux/sourcefiles/Temporizador.o: \
  sourcefiles/../headerfiles/Bala.h sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
- sourcefiles/../headerfiles/Animation.h \
- sourcefiles/../headerfiles/SpriteAnimated.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h
@@ -228,9 +229,11 @@ sourcefiles/../headerfiles/PlayerJoystick.h:
 
 sourcefiles/../headerfiles/Player.h:
 
-sourcefiles/../headerfiles/Animation.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
-sourcefiles/../headerfiles/SpriteAnimated.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 sourcefiles/../headerfiles/Controlador.h:
 

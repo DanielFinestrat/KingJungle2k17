@@ -53,9 +53,11 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../Box2D/Box2D.h headerfiles/Temporizador.h \
  headerfiles/Platform.h headerfiles/Entidad.h headerfiles/Weapon.h \
  headerfiles/Bala.h headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
- headerfiles/Player.h headerfiles/Animation.h \
- headerfiles/SpriteAnimated.h headerfiles/Controlador.h \
- headerfiles/ContactListener.h headerfiles/PlayerKeyboard.h
+ headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
+ headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
+ headerfiles/../motorgrafico/headerfiles/Animation.h \
+ headerfiles/Controlador.h headerfiles/ContactListener.h \
+ headerfiles/PlayerKeyboard.h
 
 Box2D/Box2D.h:
 
@@ -207,9 +209,11 @@ headerfiles/PlayerJoystick.h:
 
 headerfiles/Player.h:
 
-headerfiles/Animation.h:
+headerfiles/../motorgrafico/headerfiles/Animation.h:
 
-headerfiles/SpriteAnimated.h:
+headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
+
+headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 headerfiles/Controlador.h:
 

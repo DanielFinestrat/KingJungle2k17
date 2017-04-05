@@ -12,8 +12,8 @@
 #include <SFML/Graphics.hpp>
 #include "../Box2D/Box2D.h"
 #include "Entidad.h"
-#include "Animation.h"
-#include "SpriteAnimated.h"
+#include "../motorgrafico/headerfiles/Animation.h"
+#include "../motorgrafico/headerfiles/SpriteAnimated.h"
 #include "Weapon.h"
 
 using namespace sf;

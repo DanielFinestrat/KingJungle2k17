@@ -36,7 +36,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
-	${OBJECTDIR}/sourcefiles/Animation.o \
+	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
+	${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o \
 	${OBJECTDIR}/sourcefiles/Bala.o \
 	${OBJECTDIR}/sourcefiles/ContactListener.o \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
@@ -47,7 +48,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Player.o \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/PlayerKeyboard.o \
-	${OBJECTDIR}/sourcefiles/SpriteAnimated.o \
 	${OBJECTDIR}/sourcefiles/Temporizador.o \
 	${OBJECTDIR}/sourcefiles/Weapon.o
 
@@ -88,77 +88,77 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_fachada: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_fachada ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/main.o: main.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
-${OBJECTDIR}/sourcefiles/Animation.o: sourcefiles/Animation.cpp 
-	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o: motorgrafico/sourcefiles/Animation.cpp
+	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Animation.o sourcefiles/Animation.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o motorgrafico/sourcefiles/Animation.cpp
 
-${OBJECTDIR}/sourcefiles/Bala.o: sourcefiles/Bala.cpp 
+${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o: motorgrafico/sourcefiles/SpriteAnimated.cpp
+	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o motorgrafico/sourcefiles/SpriteAnimated.cpp
+
+${OBJECTDIR}/sourcefiles/Bala.o: sourcefiles/Bala.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Bala.o sourcefiles/Bala.cpp
 
-${OBJECTDIR}/sourcefiles/ContactListener.o: sourcefiles/ContactListener.cpp 
+${OBJECTDIR}/sourcefiles/ContactListener.o: sourcefiles/ContactListener.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/ContactListener.o sourcefiles/ContactListener.cpp
 
-${OBJECTDIR}/sourcefiles/Controlador.o: sourcefiles/Controlador.cpp 
+${OBJECTDIR}/sourcefiles/Controlador.o: sourcefiles/Controlador.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Controlador.o sourcefiles/Controlador.cpp
 
-${OBJECTDIR}/sourcefiles/Entidad.o: sourcefiles/Entidad.cpp 
+${OBJECTDIR}/sourcefiles/Entidad.o: sourcefiles/Entidad.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Entidad.o sourcefiles/Entidad.cpp
 
-${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp 
+${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Explosion.o sourcefiles/Explosion.cpp
 
-${OBJECTDIR}/sourcefiles/Partida.o: sourcefiles/Partida.cpp 
+${OBJECTDIR}/sourcefiles/Partida.o: sourcefiles/Partida.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Partida.o sourcefiles/Partida.cpp
 
-${OBJECTDIR}/sourcefiles/Platform.o: sourcefiles/Platform.cpp 
+${OBJECTDIR}/sourcefiles/Platform.o: sourcefiles/Platform.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Platform.o sourcefiles/Platform.cpp
 
-${OBJECTDIR}/sourcefiles/Player.o: sourcefiles/Player.cpp 
+${OBJECTDIR}/sourcefiles/Player.o: sourcefiles/Player.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Player.o sourcefiles/Player.cpp
 
-${OBJECTDIR}/sourcefiles/PlayerJoystick.o: sourcefiles/PlayerJoystick.cpp 
+${OBJECTDIR}/sourcefiles/PlayerJoystick.o: sourcefiles/PlayerJoystick.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/PlayerJoystick.o sourcefiles/PlayerJoystick.cpp
 
-${OBJECTDIR}/sourcefiles/PlayerKeyboard.o: sourcefiles/PlayerKeyboard.cpp 
+${OBJECTDIR}/sourcefiles/PlayerKeyboard.o: sourcefiles/PlayerKeyboard.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/PlayerKeyboard.o sourcefiles/PlayerKeyboard.cpp
 
-${OBJECTDIR}/sourcefiles/SpriteAnimated.o: sourcefiles/SpriteAnimated.cpp 
-	${MKDIR} -p ${OBJECTDIR}/sourcefiles
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/SpriteAnimated.o sourcefiles/SpriteAnimated.cpp
-
-${OBJECTDIR}/sourcefiles/Temporizador.o: sourcefiles/Temporizador.cpp 
+${OBJECTDIR}/sourcefiles/Temporizador.o: sourcefiles/Temporizador.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Temporizador.o sourcefiles/Temporizador.cpp
 
-${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp 
+${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Weapon.o sourcefiles/Weapon.cpp
@@ -169,6 +169,7 @@ ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
+	${RM} -r ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-window.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-audio.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-graphics.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-network.so ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/libsfml-system.so
 	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_fachada
 
 # Subprojects

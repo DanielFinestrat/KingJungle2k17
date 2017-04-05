@@ -67,8 +67,9 @@ build/Debug/GNU-Linux/sourcefiles/PlayerKeyboard.o: \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
  sourcefiles/../headerfiles/Player.h sourcefiles/../headerfiles/Entidad.h \
- sourcefiles/../headerfiles/Animation.h \
- sourcefiles/../headerfiles/SpriteAnimated.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/Partida.h \
@@ -215,9 +216,11 @@ sourcefiles/../headerfiles/Player.h:
 
 sourcefiles/../headerfiles/Entidad.h:
 
-sourcefiles/../headerfiles/Animation.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
-sourcefiles/../headerfiles/SpriteAnimated.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 sourcefiles/../headerfiles/Weapon.h:
 
