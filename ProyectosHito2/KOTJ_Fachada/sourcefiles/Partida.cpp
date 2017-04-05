@@ -243,7 +243,7 @@ void Partida::addPlayerJoystick(int id) {
 
     //Comprobamos si existe el mando y actualizamos la condición
     for (int i = 0; i < worldControlador.size() && add; i++) {
-        if (worldControlador.at(i)->tipo.compare("JoyStick") == 0 && worldControlador.at(i)->id == id) add = false;
+        if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) add = false;
     }
 
     //Añadimos en funcion de la condición
