@@ -20,13 +20,19 @@
 
 class Cuerpo {
 public:
-    Cuerpo();
-    Cuerpo(const Cuerpo& orig);
+    Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle); //Solo puede llamarse desde world
     virtual ~Cuerpo();
+    void setVelocidadX(float x);
+    void setVelocidadY(float y);
+    void setVelocidad(float x, float y);
+    void aplicarFuerza(float x, float y);
+    void setAngulo(float angle);
+    void setTamanyo(float x, float y);
+    void setPosicion(float x,float y);
+    float getVelocidadX();
+    float getVelocidadY();
 private:
-    b2FixtureDef m_Fixture;
-    b2BodyDef   m_pBody;
-    b2PolygonShape  m_Shape;
+    b2Body *m_pBody;
 };
 
 #endif /* CUERPO_H */
