@@ -19,6 +19,20 @@
       <itemPath>headerfiles/Temporizador.h</itemPath>
       <itemPath>headerfiles/Weapon.h</itemPath>
     </logicalFolder>
+    <logicalFolder name="motorfisico" displayName="motorfisico" projectFiles="true">
+      <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="motorgrafico"
+                   displayName="motorgrafico"
+                   projectFiles="true">
+      <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+      </logicalFolder>
+    </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
@@ -53,6 +67,8 @@
   </logicalFolder>
   <sourceRootList>
     <Elem>Box2D</Elem>
+    <Elem>motorgrafico</Elem>
+    <Elem>motorfisico</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>

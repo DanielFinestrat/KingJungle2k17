@@ -11,6 +11,8 @@
             <make-dep-projects/>
             <sourceRootList>
                 <sourceRootElem>Box2D</sourceRootElem>
+                <sourceRootElem>motorgrafico</sourceRootElem>
+                <sourceRootElem>motorfisico</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

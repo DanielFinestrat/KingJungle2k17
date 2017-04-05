@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=kotj_explo
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_explo
+CND_ARTIFACT_NAME_Debug=kotj_fachada
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_fachada
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=kotjexplo.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjexplo.tar
+CND_PACKAGE_NAME_Debug=kotjfachada.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjfachada.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=kotj_explo
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_explo
+CND_ARTIFACT_NAME_Release=kotj_fachada
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_fachada
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=kotjexplo.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjexplo.tar
+CND_PACKAGE_NAME_Release=kotjfachada.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjfachada.tar
 #
 # include compiler specific variables
 #
