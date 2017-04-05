@@ -56,7 +56,7 @@ void Explosion::Update() {
         dt = deltaClock.restart();
         difTime += dt.asSeconds();
 
-        if (difTime >= 0.25) {
+        if (difTime >= 0.02) {
             difTime = 0;
             radioActual = radioActual + incrementoRadio;
 
@@ -64,7 +64,6 @@ void Explosion::Update() {
             m_pBody->DestroyFixture(fixtureA);
 
             b2CircleShape circleShape;
-            //circleShape.m_p.Set(radioActual, radioActual);
             circleShape.m_radius = radioActual;
 
             b2FixtureDef fixtureDef;
@@ -89,7 +88,6 @@ void Explosion::Update() {
         Partida* partida = Partida::getInstance();
         partida->explo2Delete.insert(this);
     }
-    cout << difTime << endl;
 }
 
 void Explosion::Render(sf::RenderWindow *window) {
