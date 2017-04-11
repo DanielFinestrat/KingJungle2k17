@@ -60,19 +60,19 @@ void Cuerpo::setAngulo(float angle){
 }
 //0-> Estatico 1-> Dinamico 2-> Kinetico
 void Cuerpo::setType(int type){
-    switch (type)
+    switch (type){
         case 0:
             m_pBody->SetType(b2_staticBody);
-        break;
+            break;
         
         case 1:
             m_pBody->SetType(b2_dynamicBody);
-        break;
+            break;
         
         case 2:    
             m_pBody->SetType(b2_kinematicBody);
-        break;
-    
+            break;
+    }
 }
 void Cuerpo::setPosicion(float x,float y){
     float igual = m_pBody->GetAngle();
@@ -91,7 +91,21 @@ void Cuerpo::setDensity(float den){
     m_pBody->GetFixtureList()[0].SetDensity(den);
 }
 void Cuerpo::setSensor(bool sensor){
-    m_pBody->GetFixtureList()[0].IsSensor(sensor);
+    b2Fixture fix = m_pBody->GetFixtureList()[0];
+    
+    m_pBody->DestroyFixture(&fix);
+    
+    b2FixtureDef fix2;
+    fix2.isSensor = sensor;
+    fix2.density = fix.GetDensity();
+    fix2.filter.categoryBits = fix.GetFilterData().categoryBits;
+    fix2.filter.maskBits = fix.GetFilterData().maskBits;
+    fix2.friction = fix.GetFriction();
+    fix2.restitution = fix.GetRestitution();
+    fix2.shape = fix.GetShape();
+    fix2.userData = fix.GetUserData();
+    
+    m_pBody->CreateFixture(&fix2);
 }
 
 void Cuerpo::setDespertar(bool despertador){
@@ -100,7 +114,7 @@ void Cuerpo::setDespertar(bool despertador){
 
 //Se le pasa el filtro al que pertenece el objeto, tipo 0x0001
 void Cuerpo::setCategoryBits(short category){
-    b2Filter filter = m_pBody->GetFixtureList()[0]->GetFilterData();
+    b2Filter filter = m_pBody->GetFixtureList()[0].GetFilterData();
     
     filter.categoryBits= category;
     
@@ -108,7 +122,7 @@ void Cuerpo::setCategoryBits(short category){
 }
 //Se le pasan los filtros con los que puede colisionar el objeto
 void Cuerpo::setMaskBits(short mask){
-    b2Filter filter = m_pBody->GetFixtureList()[0]->GetFilterData();
+    b2Filter filter = m_pBody->GetFixtureList()[0].GetFilterData();
     
     filter.maskBits = mask;
     
