@@ -50,11 +50,8 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     m_Shape->setFillColor(Color::White);
 
     //Creamos la textura y el sprite
-    if (!weapon_texture.loadFromFile("resources/sprites/revolver.png")) {
-        cerr << "Error cargando la imagen revolver.png" << endl;
-    }
-    weapon_texture.setSmooth(true);
-    m_Shape->setTexture(&weapon_texture);
+    weapon_texture.loadTexture("resources/sprites/revolver.png");
+    m_Shape->setTexture(weapon_texture.getTexture());
 
 }
 

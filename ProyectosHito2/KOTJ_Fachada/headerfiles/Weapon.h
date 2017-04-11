@@ -10,6 +10,7 @@
 
 #include "Bala.h"
 #include "Entidad.h"
+#include "../motorgrafico/headerfiles/StaticTexture.h"
 
 using namespace std;
 using namespace sf;
@@ -26,7 +27,7 @@ public:
     bool parabola;
     bool explosivo;
 
-    Texture weapon_texture;
+    StaticTexture weapon_texture;
 
     //Variables para controlar la cadencia de disparo
     sf::Clock deltaClock;
