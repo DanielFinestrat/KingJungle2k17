@@ -29,8 +29,23 @@ public:
     void setAngulo(float angle);
     void setTamanyo(float x, float y);
     void setPosicion(float x,float y);
+    void setUserData();
+    void setType(int type);
+    void setFriction(float fric);
+    void setRestitution(float rest);
+    void setDensity(float den);
+    void setSensor(bool sensor);
+    void setDespertar(bool despertador);
+    void setCategoryBits(short category);
+    void setMaskBits(short mask);
+    
+    
+    float getAngulo();
+    float getPosicionX();
+    float getPosicionY();
     float getVelocidadX();
     float getVelocidadY();
+
 private:
     b2Body *m_pBody;
 };
