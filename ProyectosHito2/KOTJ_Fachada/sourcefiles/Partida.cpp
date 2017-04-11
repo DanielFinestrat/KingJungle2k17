@@ -372,6 +372,14 @@ void Partida::cameraSetTransform() {
 
 }
 
+bool Partida::getUsingKeyboard(){
+    return usingKeyboard;
+}
+
+void Partida::setUsingKeyboard(bool state){
+    usingKeyboard == state;
+}
+
 void Partida::loadMap() {
     checkJoysticksConnected();
 

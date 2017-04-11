@@ -82,6 +82,9 @@ public:
     void updateExplo();
 
     void cameraSetTransform();
+    
+    bool getUsingKeyboard();
+    void setUsingKeyboard(bool state);
 
     void loadMap();
     virtual ~Partida();
