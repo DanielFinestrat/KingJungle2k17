@@ -65,10 +65,13 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h \
- sourcefiles/../headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Entidad.h sourcefiles/../headerfiles/Weapon.h \
- sourcefiles/../headerfiles/Bala.h sourcefiles/../headerfiles/Explosion.h \
+ sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
@@ -210,7 +213,9 @@ sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 sourcefiles/../headerfiles/../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
-sourcefiles/../headerfiles/Temporizador.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/Platform.h:
 
@@ -219,6 +224,8 @@ sourcefiles/../headerfiles/Entidad.h:
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 

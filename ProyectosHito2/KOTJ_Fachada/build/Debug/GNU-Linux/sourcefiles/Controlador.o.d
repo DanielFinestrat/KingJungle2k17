@@ -70,7 +70,8 @@ build/Debug/GNU-Linux/sourcefiles/Controlador.o: \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
- sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h
+ sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h
 
 sourcefiles/../headerfiles/Controlador.h:
 
@@ -217,3 +218,5 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:

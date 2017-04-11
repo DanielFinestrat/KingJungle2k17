@@ -50,9 +50,13 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h \
  Box2D/Dynamics/Joints/b2WheelJoint.h headerfiles/Partida.h \
- headerfiles/../Box2D/Box2D.h headerfiles/Temporizador.h \
+ headerfiles/../Box2D/Box2D.h \
+ headerfiles/../motorgrafico/headerfiles/Temporizador.h \
+ headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
  headerfiles/Platform.h headerfiles/Entidad.h headerfiles/Weapon.h \
- headerfiles/Bala.h headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
+ headerfiles/Bala.h \
+ headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
  headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  headerfiles/../motorgrafico/headerfiles/Animation.h \
@@ -193,7 +197,9 @@ headerfiles/Partida.h:
 
 headerfiles/../Box2D/Box2D.h:
 
-headerfiles/Temporizador.h:
+headerfiles/../motorgrafico/headerfiles/Temporizador.h:
+
+headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 
 headerfiles/Platform.h:
 
@@ -202,6 +208,8 @@ headerfiles/Entidad.h:
 headerfiles/Weapon.h:
 
 headerfiles/Bala.h:
+
+headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
 
 headerfiles/Explosion.h:
 
