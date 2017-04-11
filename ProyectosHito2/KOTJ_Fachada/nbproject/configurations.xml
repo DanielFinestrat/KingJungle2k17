@@ -34,6 +34,7 @@
         <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
         <itemPath>motorgrafico/headerfiles/StaticTexture.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Temporizador.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/motorGrafico.h</itemPath>
         <itemPath>motorgrafico/headerfiles/musicPlayer.h</itemPath>
         <itemPath>motorgrafico/headerfiles/resources.h</itemPath>
       </logicalFolder>
@@ -42,6 +43,7 @@
         <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/StaticTexture.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Temporizador.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/motorGrafico.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/musicPlayer.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/resources.cpp</itemPath>
       </logicalFolder>
@@ -166,6 +168,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/motorGrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/musicPlayer.h"
             ex="false"
             tool="3"
@@ -192,6 +199,11 @@
             flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/motorGrafico.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -324,6 +336,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/motorGrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/musicPlayer.h"
             ex="false"
             tool="3"
@@ -350,6 +367,11 @@
             flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/motorGrafico.cpp"
             ex="false"
             tool="1"
             flavor2="0">
