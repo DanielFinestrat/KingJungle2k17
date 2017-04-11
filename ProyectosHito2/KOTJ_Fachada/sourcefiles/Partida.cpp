@@ -374,23 +374,23 @@ void Partida::cameraSetTransform() {
 
 void Partida::loadMap() {
     checkJoysticksConnected();
-    
-    Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
+
+    Platform *suelo = new Platform(screenWidth, 100.0f, screenWidth / 2.0f, screenHeight, 0.2);
     worldPlatforms.push_back(suelo);
 
-    Platform *paredIzda = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(0, screenHeight / 2), 0);
+    Platform *paredIzda = new Platform(100.0f, screenHeight, 0.0f, screenHeight / 2.0f, 0);
     worldPlatforms.push_back(paredIzda);
 
-    Platform *paredDcha = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(screenWidth, screenHeight / 2), 0);
+    Platform *paredDcha = new Platform(100.0f, screenHeight, screenWidth, screenHeight / 2, 0.0f);
     worldPlatforms.push_back(paredDcha);
 
-    Platform *platformDcha = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 4, screenHeight / 3), 0.2);
+    Platform *platformDcha = new Platform(120.0f, 50.0f, screenWidth / 4, screenHeight / 3, 0.2);
     worldPlatforms.push_back(platformDcha);
 
-    Platform *platformIzda = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(3 * screenWidth / 4, screenHeight / 3), 0.2);
+    Platform *platformIzda = new Platform(120.0f, 50.0f, 3 * screenWidth / 4, screenHeight / 3, 0.2);
     worldPlatforms.push_back(platformIzda);
 
-    Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 2, 2 * screenHeight / 3), 0.2);
+    Platform *platformCentr = new Platform(120.0f, 50.0, screenWidth / 2, 2 * screenHeight / 3, 0.2);
     worldPlatforms.push_back(platformCentr);
 
     Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);

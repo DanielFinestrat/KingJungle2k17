@@ -71,6 +71,14 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  motorgrafico/sourcefiles/../../headerfiles/Platform.h \
  motorgrafico/sourcefiles/../../headerfiles/Entidad.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
  motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
@@ -225,6 +233,22 @@ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporiza
 motorgrafico/sourcefiles/../../headerfiles/Platform.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Entidad.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
 

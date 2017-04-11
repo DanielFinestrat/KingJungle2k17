@@ -13,32 +13,23 @@ Platform::Platform() {
 Platform::Platform(const Platform& orig) {
 }
 
-Platform::Platform(b2World *world, sf::Vector2f size, sf::Vector2f position, float friction) {
+Platform::Platform(float sizex, float sizey, float posx, float posy, float friction) {
     tag = "Platform";
     
-    //Definimos parametros de BOX2D
-    b2BodyDef platformBodyDef;
-    platformBodyDef.userData = this;
-    platformBodyDef.position.Set(position.x*MPP, position.y*MPP);
-    body = world->CreateBody(&platformBodyDef);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(posx, posy, sizex, sizey);
     
-    b2PolygonShape platformBox;
-    platformBox.SetAsBox(size.x/2*MPP, size.y/2*MPP);
+    cuerpo->setFriction(0);
+    cuerpo->setFriction(friction);
     
-    b2FixtureDef platformFixtureDef;
-    platformFixtureDef.shape = &platformBox;
-    platformFixtureDef.friction = friction;
-    platformFixtureDef.restitution = 0.01f;
-    platformFixtureDef.density = 0.7f;
-    platformFixtureDef.filter.categoryBits = CATEGORY_SCENERY;
-    platformFixtureDef.filter.maskBits = MASK_SCENERY;
+    cuerpo->setRestitution(0.01);
     
-    body->CreateFixture(&platformFixtureDef);
+    cuerpo->setMaskBits(MASK_SCENERY);
+    cuerpo->setCategoryBits(CATEGORY_SCENERY);
     
     //Definimos parametros de SFML
-    shape = new sf::RectangleShape(size);
-    shape->setOrigin(size.x/2, size.y/2);
-    shape->setPosition(position);
+    shape = new sf::RectangleShape(sf::Vector2f(sizex, sizey));
+    shape->setOrigin(sizex/2, sizey/2);
+    shape->setPosition(sf::Vector2f(posx, posy));
     shape->setFillColor(sf::Color::Cyan);
     
 }

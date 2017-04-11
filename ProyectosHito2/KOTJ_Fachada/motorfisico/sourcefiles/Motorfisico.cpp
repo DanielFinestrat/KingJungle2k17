@@ -7,6 +7,13 @@
 
 #include "../headerfiles/Motorfisico.h"
 
+static Motorfisico* instance;
+
+Motorfisico* Motorfisico::getInstance() {
+    if (instance == NULL) instance = new Motorfisico();
+    return (instance);
+}
+
 Motorfisico::Motorfisico() {
     world = new b2World(b2Vec2(0.0f, 9.8f));
     world->SetContactListener(&myContactListener);
@@ -27,11 +34,11 @@ void Motorfisico::Update() {
 }
 
 Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY) {
-    return(new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), 0));
+    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), 0));
 }
 
 Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo) {
-    return(new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), angulo));
+    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), angulo));
 }
 
 Motorfisico::~Motorfisico() {

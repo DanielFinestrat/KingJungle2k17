@@ -34,7 +34,7 @@ public:
     b2World *world;
     ContactListener myContactListener;
     sf::RenderWindow *window;
-    
+
     sf::View *mainCamera;
     sf::View *hudCamera;
 
@@ -48,7 +48,7 @@ public:
     set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
     set<Explosion*> explo2Delete;
-    
+
     Temporizador *temporizador;
     Clock frameClock;
 
@@ -64,30 +64,30 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
-    
+
     void eraseBullets();
     void erasePlayers();
     void eraseExplo();
-    
+
     int findKeyboardControlador();
     int findControladorWithId(int id);
     void checkJoysticksConnected();
     void addPlayerJoystick(int id);
     void addPlayerKeyboard();
     void respawn();
-    
+
     void updatePlayers(Time frameTime);
     void updateBullets();
     void updateWeapons();
     void updateExplo();
 
     void cameraSetTransform();
-    
+
     void loadMap();
     virtual ~Partida();
 
 private:
-    
+
     Partida();
     Partida(const Partida& orig);
     bool usingKeyboard;

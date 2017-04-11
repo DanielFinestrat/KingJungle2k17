@@ -17,19 +17,21 @@
 
 class Motorfisico {
 public:
-    Motorfisico();
-    Motorfisico(float gravedadY);
-    Motorfisico(float gravedadX, float gravedadY);
-    
+    static Motorfisico* getInstance();
+
     void Update();
     Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo);
     Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY);
-    
+
     virtual ~Motorfisico();
-    
+
 private:
     b2World *world;
     ContactListener myContactListener;
+
+    Motorfisico();
+    Motorfisico(float gravedadY);
+    Motorfisico(float gravedadX, float gravedadY);
 
 };
 

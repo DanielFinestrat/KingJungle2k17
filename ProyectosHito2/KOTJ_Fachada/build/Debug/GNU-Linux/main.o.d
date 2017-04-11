@@ -53,8 +53,16 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../Box2D/Box2D.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
- headerfiles/Platform.h headerfiles/Entidad.h headerfiles/Weapon.h \
- headerfiles/Bala.h \
+ headerfiles/Platform.h headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ headerfiles/../motorfisico/headerfiles/Motorfisico.h \
+ headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
+ headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
  headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
  headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
@@ -204,6 +212,22 @@ headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 headerfiles/Platform.h:
 
 headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+headerfiles/../motorfisico/headerfiles/Motorfisico.h:
+
+headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
 
 headerfiles/Weapon.h:
 
