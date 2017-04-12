@@ -59,7 +59,7 @@ public:
     /*Se encarga de actualizar la posicion cuando un jugador tiene el arma
      * @param b2Vec2 pos: vector posicion a la que se movera el arma
      */
-    void update(b2Vec2 pos);
+    void update(float posx, float posy);
 
     /*Crea balas para añadirlas en el array y seguidamente llamar a la función disparo de Bala
      * @param b2World world: mundo en el que se van a crear las balas

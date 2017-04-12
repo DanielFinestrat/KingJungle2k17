@@ -63,10 +63,10 @@ void Weapon::update() {
     m_Shape->setRotation((m_pBody->GetAngle()*180) / M_PI);
 }
 
-void Weapon::update(b2Vec2 pos) {
-    m_pBody->SetTransform(pos, 0);
+void Weapon::update(float posx, float posy) {
+    m_pBody->SetTransform(b2Vec2(posx, posy), 0);
     m_Shape->setOrigin(m_Size.x / 2, m_Size.y / 2);
-    m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
+    m_Shape->setPosition(posx * PPM, posy * PPM);
     m_Shape->setRotation((m_pBody->GetAngle()*180) / M_PI);
 }
 

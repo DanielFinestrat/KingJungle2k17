@@ -14,6 +14,7 @@
 #include "Entidad.h"
 #include "../motorgrafico/headerfiles/Animation.h"
 #include "../motorgrafico/headerfiles/SpriteAnimated.h"
+#include "../motorfisico/headerfiles/Cuerpo.h"
 #include "Weapon.h"
 
 using namespace sf;
@@ -23,8 +24,6 @@ class Player : public Entidad {
 public:
 
     Player();
-    Player(b2World&);
-    Player(const Player& orig);
     virtual ~Player();
     void setStandAnimation();
     void setWalkingAnimation();
@@ -50,17 +49,15 @@ public:
     void eraseBody();
     void interact();
     void interact(Weapon* lastWeapon);
-    void pause(bool); //TODO
-    b2Vec2 getPosition();
+    void pause(bool);
+    float getPositionX();
+    float getPositionY();
     void setPosition(float, float);
     int getDirMoving();
     void setColor(int);
 
 private:
-    b2Body *m_pBody;
-    b2PolygonShape polyShape;
-    b2FixtureDef fixtureDef;
-    b2BodyDef bodyDef;
+    Cuerpo *cuerpo;
 
     Texture texture;
     Animation standAnimation; //Animacion de estar quieto

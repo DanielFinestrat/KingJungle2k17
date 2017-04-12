@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Cuerpo.h
  * Author: youjair
@@ -35,12 +29,13 @@ public:
     void setRestitution(float rest);
     void setDensity(float den);
     void setSensor(bool sensor);
+    void setActive(bool active);
     void setDespertar(bool despertador);
     void setCategoryBits(short category);
-    void setMaskBits(short mask);
-    
+    void setMaskBits(short mask);    
     
     float getAngulo();
+    bool getActive();
     float getPosicionX();
     float getPosicionY();
     float getVelocidadX();

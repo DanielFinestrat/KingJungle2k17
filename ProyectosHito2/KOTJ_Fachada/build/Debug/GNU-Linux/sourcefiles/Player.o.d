@@ -69,14 +69,14 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
@@ -230,6 +230,10 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
@@ -243,10 +247,6 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/Platform.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 

@@ -13,6 +13,7 @@ static Partida* instance;
 Partida::Partida() {
     window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
+    
     world = new b2World(b2Vec2(0.0f, 9.8f));
     world->SetContactListener(&myContactListener);
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
@@ -134,6 +135,8 @@ void Partida::Erase() {
 
 void Partida::Update() {
     world->Step(TIMESTEP, VELITER, POSITER);
+    Motorfisico::getInstance()->Update();
+    
     Time frameTime = frameClock.restart();
     window->setView(*hudCamera);
     temporizador->Update();
@@ -316,8 +319,8 @@ void Partida::cameraSetTransform() {
     //Posición
     for (int i = 0; i < worldPlayer.size(); i++) {
         if (!worldPlayer.at(i)->isPlayerDead()) {
-            posX += worldPlayer.at(i)->getPosition().x;
-            posY += worldPlayer.at(i)->getPosition().y;
+            posX += worldPlayer.at(i)->getPositionX();
+            posY += worldPlayer.at(i)->getPositionY();
             total++;
         }
     }
@@ -347,10 +350,10 @@ void Partida::cameraSetTransform() {
     //Zoom
     for (int i = 0; i < worldPlayer.size(); i++) {
         if (!worldPlayer.at(i)->isPlayerDead()) {
-            float currentPosX = worldPlayer.at(i)->getPosition().x;
+            float currentPosX = worldPlayer.at(i)->getPositionX();
             if (abs(currentPosX - posX) > maxDifferenceX) maxDifferenceX = abs(currentPosX - posX);
 
-            float currentPosY = worldPlayer.at(i)->getPosition().y;
+            float currentPosY = worldPlayer.at(i)->getPositionY();
             if (abs(currentPosY - posY) > maxDifferenceY) maxDifferenceY = abs(currentPosY - posY);
         }
     }

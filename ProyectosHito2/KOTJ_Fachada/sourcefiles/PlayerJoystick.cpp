@@ -47,7 +47,7 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
 
     this->id = id;
     
-    player = new Player(*world);
+    player = new Player();
     player->setPosition((partida->worldPlayer.size() + 1) * screenWidth / 5, screenHeight - 100);
     player->setColor(partida->worldPlayer.size());
 

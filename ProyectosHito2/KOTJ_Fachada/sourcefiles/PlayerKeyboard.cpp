@@ -68,7 +68,7 @@ PlayerKeyboard::PlayerKeyboard(b2World* world) {
      
     id = partida->worldPlayer.size();
     
-    player = new Player(*world);
+    player = new Player();
     player->setPosition((id+1) * screenWidth/5, screenHeight-100);
     player->setColor(id);
     partida->worldPlayer.push_back(player);

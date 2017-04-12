@@ -27,6 +27,8 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
     fixtureDef.density = 0;
     fixtureDef.isSensor = false;
     m_pBody->CreateFixture(&fixtureDef);
+    
+    setType(1);
 }
 
 Cuerpo::~Cuerpo() {
@@ -57,7 +59,7 @@ void Cuerpo::setAngulo(float angle) {
     m_pBody->SetTransform(igual, angle);
 }
 
-//0-> Estatico 1-> Dinamico 2-> Kinetico
+/**0-> Estatico 1-> Dinamico 2-> Kinetico*/
 void Cuerpo::setType(int type) {
     switch (type) {
         case 0:
@@ -105,6 +107,14 @@ void Cuerpo::setSensor(bool sensor) {
     fix2.userData = fix.GetUserData();
 
     m_pBody->CreateFixture(&fix2);
+}
+
+void Cuerpo::setActive(bool active){
+    m_pBody->SetActive(active);
+}
+
+bool Cuerpo::getActive(){
+    return(m_pBody->IsActive());
 }
 
 void Cuerpo::setDespertar(bool despertador) {

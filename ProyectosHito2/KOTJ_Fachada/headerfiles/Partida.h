@@ -90,7 +90,6 @@ public:
     virtual ~Partida();
 
 private:
-
     Partida();
     Partida(const Partida& orig);
     bool usingKeyboard;

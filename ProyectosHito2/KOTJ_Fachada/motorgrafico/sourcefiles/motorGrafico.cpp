@@ -55,8 +55,8 @@ void motorGrafico::cameraSetTransform(){
     //Posición
     for (int i = 0; i < partida->worldPlayer.size(); i++) {
         if (!partida->worldPlayer.at(i)->isPlayerDead()) {
-            posX += partida->worldPlayer.at(i)->getPosition().x;
-            posY += partida->worldPlayer.at(i)->getPosition().y;
+            posX += partida->worldPlayer.at(i)->getPositionX();
+            posY += partida->worldPlayer.at(i)->getPositionY();
             total++;
         }
     }
@@ -86,10 +86,10 @@ void motorGrafico::cameraSetTransform(){
     //Zoom
     for (int i = 0; i < partida->worldPlayer.size(); i++) {
         if (!partida->worldPlayer.at(i)->isPlayerDead()) {
-            float currentPosX = partida->worldPlayer.at(i)->getPosition().x;
+            float currentPosX = partida->worldPlayer.at(i)->getPositionX();
             if (abs(currentPosX - posX) > maxDifferenceX) maxDifferenceX = abs(currentPosX - posX);
 
-            float currentPosY = partida->worldPlayer.at(i)->getPosition().y;
+            float currentPosY = partida->worldPlayer.at(i)->getPositionY();
             if (abs(currentPosY - posY) > maxDifferenceY) maxDifferenceY = abs(currentPosY - posY);
         }
     }
