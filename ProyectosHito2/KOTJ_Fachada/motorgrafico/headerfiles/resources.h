@@ -9,7 +9,8 @@ using namespace sf;
 class Resources {
     
     public:
-        Resources();
+       
+        static Resources* getInstance();
         bool initialise();
         void cleanUp();
         bool loadAll();
@@ -28,6 +29,7 @@ class Resources {
         const string sprites;
 
     private:
+        Resources();
         map<string, Font*> fonts;
         map<string, Texture*> textures;
         map<string, Image*> images;

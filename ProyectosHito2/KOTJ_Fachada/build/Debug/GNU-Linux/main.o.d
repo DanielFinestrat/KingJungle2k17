@@ -63,7 +63,7 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  headerfiles/Weapon.h headerfiles/Bala.h \
- headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
  headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
@@ -233,7 +233,7 @@ headerfiles/Weapon.h:
 
 headerfiles/Bala.h:
 
-headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
+headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 headerfiles/Explosion.h:
 

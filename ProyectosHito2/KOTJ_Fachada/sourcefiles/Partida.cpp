@@ -177,7 +177,7 @@ void Partida::drawPlayers() {
 
 void Partida::drawWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-        window->draw(*(worldWeapons.at(i)->m_Shape));
+        window->draw((worldWeapons.at(i)->m_vBody->getShape()));
     }
 }
 

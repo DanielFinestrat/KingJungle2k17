@@ -32,8 +32,8 @@
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
         <itemPath>motorgrafico/headerfiles/Animation.h</itemPath>
         <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
-        <itemPath>motorgrafico/headerfiles/StaticTexture.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Temporizador.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/VisibleBody.h</itemPath>
         <itemPath>motorgrafico/headerfiles/motorGrafico.h</itemPath>
         <itemPath>motorgrafico/headerfiles/musicPlayer.h</itemPath>
         <itemPath>motorgrafico/headerfiles/resources.h</itemPath>
@@ -41,8 +41,8 @@
       <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
         <itemPath>motorgrafico/sourcefiles/Animation.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
-        <itemPath>motorgrafico/sourcefiles/StaticTexture.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Temporizador.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/VisibleBody.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/motorGrafico.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/musicPlayer.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/resources.cpp</itemPath>
@@ -158,12 +158,12 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="motorgrafico/headerfiles/StaticTexture.h"
+      <item path="motorgrafico/headerfiles/Temporizador.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="motorgrafico/headerfiles/Temporizador.h"
+      <item path="motorgrafico/headerfiles/VisibleBody.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -193,12 +193,12 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="motorgrafico/sourcefiles/StaticTexture.cpp"
+      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+      <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -326,12 +326,12 @@
             tool="3"
             flavor2="0">
       </item>
-      <item path="motorgrafico/headerfiles/StaticTexture.h"
+      <item path="motorgrafico/headerfiles/Temporizador.h"
             ex="false"
             tool="3"
             flavor2="0">
       </item>
-      <item path="motorgrafico/headerfiles/Temporizador.h"
+      <item path="motorgrafico/headerfiles/VisibleBody.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -361,12 +361,12 @@
             tool="1"
             flavor2="0">
       </item>
-      <item path="motorgrafico/sourcefiles/StaticTexture.cpp"
+      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
             ex="false"
             tool="1"
             flavor2="0">
       </item>
-      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+      <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
             ex="false"
             tool="1"
             flavor2="0">

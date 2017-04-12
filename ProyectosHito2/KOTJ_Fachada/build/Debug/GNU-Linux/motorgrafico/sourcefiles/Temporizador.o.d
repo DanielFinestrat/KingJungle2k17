@@ -81,7 +81,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
  motorgrafico/sourcefiles/../../headerfiles/Bala.h \
- motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../../headerfiles/Explosion.h \
  motorgrafico/sourcefiles/../../headerfiles/PlayerJoystick.h \
  motorgrafico/sourcefiles/../../headerfiles/Player.h \
@@ -254,7 +254,7 @@ motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Bala.h:
 
-motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
+motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Explosion.h:
 

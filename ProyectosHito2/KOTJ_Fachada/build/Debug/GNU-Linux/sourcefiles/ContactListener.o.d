@@ -77,7 +77,7 @@ build/Debug/GNU-Linux/sourcefiles/ContactListener.o: \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/Weapon.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
@@ -244,7 +244,7 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactL
 
 sourcefiles/../headerfiles/Weapon.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 

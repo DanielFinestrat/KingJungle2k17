@@ -278,7 +278,7 @@ void Player::interact(Weapon* lastWeapon) {
         vector<Weapon*> worldWeapons = partida->worldWeapons;
         for (int i = 0; i < worldWeapons.size(); i++) {
             Weapon *currentWeapon = worldWeapons.at(i);
-            if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
+            if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
                 if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
                     currentWeapon->inPossession = true;
                     currentWeapon->m_pBody->SetAwake(false);
@@ -302,7 +302,7 @@ void Player::interact() {
         if (weapon == NULL) {
             for (int i = 0; i < worldWeapons.size(); i++) {
                 Weapon *currentWeapon = worldWeapons.at(i);
-                if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_Shape->getGlobalBounds())) {
+                if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
                     if (!currentWeapon->inPossession) {
                         currentWeapon->inPossession = true;
                         currentWeapon->m_pBody->SetAwake(false);

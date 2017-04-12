@@ -4,13 +4,23 @@
 using namespace sf;
 using namespace std;
 
+static Resources* instance; 
+
 Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
-                        arma("./resources/revolver.png"),
-                        sprites("./resources/sprites.png")
-{}
+                        arma("./resources/sprites/revolver.png"),
+                        sprites("./resources/sprites/sprites.png")
+                        
+{initialise();}
+
+
+
+Resources* Resources::getInstance() {
+    if (instance == NULL) {instance = new Resources();}
+    return instance;
+}
 
 bool Resources::initialise() {
-    if (loadAll()) { return true; }
+    if (loadAll()) {return true; }
     return false;
 }
 
@@ -54,7 +64,7 @@ bool Resources::loadFont(string filename) {
     err().rdbuf(NULL);
 
     if (!font->loadFromFile(filename)) {
-        cout<<"ERROR CARGANDO"<<endl;
+        cout<<"Error cargando fuente"<<endl;
         delete font; font = NULL; return false;
     }
 
@@ -80,11 +90,11 @@ bool Resources::loadTexture(string filename){
     Texture *texture = new Texture();
     err().rdbuf(NULL);
 
-    texture->loadFromFile("./mi/ruta.png");
+    texture->loadFromFile(filename);
     
     //Le asignamos la imagen guardada a la textura
     if (!texture->loadFromImage(getImage(filename))) {
-        cout<<"ERROR CARGANDO"<<endl;
+        cout<<"Error cargando textura"<<endl;
         delete texture; texture = NULL; return false;
     }
 
@@ -105,7 +115,8 @@ bool Resources::loadImage(string filename){
     err().rdbuf(NULL);
 
     if (!image->loadFromFile(filename)) {
-        cout<<"ERROR CARGANDO"<<endl;
+        cout << filename << endl;
+        cout<<"Error al cargar la imagen"<<endl;
         delete image; image = NULL; return false;
     }
 

@@ -10,7 +10,7 @@
 
 #include "Bala.h"
 #include "Entidad.h"
-#include "../motorgrafico/headerfiles/StaticTexture.h"
+#include "../motorgrafico/headerfiles/VisibleBody.h"
 
 using namespace std;
 using namespace sf;
@@ -27,7 +27,7 @@ public:
     bool parabola;
     bool explosivo;
 
-    StaticTexture weapon_texture;
+    
 
     //Variables para controlar la cadencia de disparo
     sf::Clock deltaClock;
@@ -40,7 +40,7 @@ public:
 
     sf::Vector2f m_Size;
     b2Body *m_pBody;
-    sf::RectangleShape *m_Shape;
+    VisibleBody *m_vBody;
 
     /*Constructor del objeto arma
      * @param b2world world: mundo en el que se encuentran todos los objetos
@@ -57,9 +57,10 @@ public:
     void update();
 
     /*Se encarga de actualizar la posicion cuando un jugador tiene el arma
-     * @param b2Vec2 pos: vector posicion a la que se movera el arma
+     * @param float posX: Posicion en X del arma
+     * @param float posY: Posicion en Y del arma
      */
-    void update(float posx, float posy);
+    void update(float posX, float posY);
 
     /*Crea balas para añadirlas en el array y seguidamente llamar a la función disparo de Bala
      * @param b2World world: mundo en el que se van a crear las balas

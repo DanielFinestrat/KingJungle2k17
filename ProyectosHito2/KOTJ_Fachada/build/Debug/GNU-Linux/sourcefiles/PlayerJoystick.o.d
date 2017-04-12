@@ -73,7 +73,7 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
@@ -240,7 +240,7 @@ sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/Controlador.h:
 

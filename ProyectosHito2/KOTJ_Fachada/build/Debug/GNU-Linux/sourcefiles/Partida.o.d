@@ -78,7 +78,7 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
@@ -249,7 +249,7 @@ sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/StaticTexture.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 

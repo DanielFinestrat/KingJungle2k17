@@ -40,8 +40,8 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorfisico/sourcefiles/Motorfisico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o \
-	${OBJECTDIR}/motorgrafico/sourcefiles/StaticTexture.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o \
+	${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/motorGrafico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/resources.o \
@@ -119,15 +119,15 @@ ${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o: motorgrafico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o motorgrafico/sourcefiles/SpriteAnimated.cpp
 
-${OBJECTDIR}/motorgrafico/sourcefiles/StaticTexture.o: motorgrafico/sourcefiles/StaticTexture.cpp 
-	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/StaticTexture.o motorgrafico/sourcefiles/StaticTexture.cpp
-
 ${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o: motorgrafico/sourcefiles/Temporizador.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o motorgrafico/sourcefiles/Temporizador.cpp
+
+${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o: motorgrafico/sourcefiles/VisibleBody.cpp 
+	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o motorgrafico/sourcefiles/VisibleBody.cpp
 
 ${OBJECTDIR}/motorgrafico/sourcefiles/motorGrafico.o: motorgrafico/sourcefiles/motorGrafico.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles

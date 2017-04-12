@@ -43,31 +43,21 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     weaponFixtureDef.filter.maskBits = MASK_GUN;
 
     m_pBody->CreateFixture(&weaponFixtureDef);
-
-    m_Shape = new sf::RectangleShape(size);
-    m_Shape->setOrigin(Vector2f(size.x / 2, size.y / 2));
-    m_Shape->setPosition(Vector2f(m_pBody->GetPosition().x, m_pBody->GetPosition().y));
-    m_Shape->setFillColor(Color::White);
-
-    //Creamos la textura y el sprite
-    weapon_texture.loadTexture("resources/sprites/revolver.png");
-    m_Shape->setTexture(weapon_texture.getTexture());
+    
+    //Creacion del cuerpo visible (shape)
+    m_vBody = new VisibleBody(pos.x * PPM, pos.y * PPM, size.x, size.y, "./resources/sprites/revolver.png");
 
 }
 
 void Weapon::update() {
     b2Vec2 pos = m_pBody->GetPosition();
     m_pBody->SetTransform(pos, 0);
-    m_Shape->setOrigin(m_Size.x / 2, m_Size.y / 2);
-    m_Shape->setPosition(pos.x * PPM, pos.y * PPM);
-    m_Shape->setRotation((m_pBody->GetAngle()*180) / M_PI);
+    m_vBody->updateBody(pos.x * PPM, pos.y * PPM, m_pBody->GetAngle()*180);
 }
 
-void Weapon::update(float posx, float posy) {
-    m_pBody->SetTransform(b2Vec2(posx, posy), 0);
-    m_Shape->setOrigin(m_Size.x / 2, m_Size.y / 2);
-    m_Shape->setPosition(posx * PPM, posy * PPM);
-    m_Shape->setRotation((m_pBody->GetAngle()*180) / M_PI);
+void Weapon::update(float posX, float posY) {
+    m_pBody->SetTransform(b2Vec2(posX, posY), 0);
+    m_vBody->updateBody(posX * PPM, posY * PPM, m_pBody->GetAngle()*180);
 }
 
 int Weapon::shoot() {
@@ -93,7 +83,7 @@ int Weapon::shoot() {
 }
 
 void Weapon::render(sf::RenderWindow *window) {
-    window->draw(*m_Shape);
+    window->draw(m_vBody->getShape());
 }
 
 void Weapon::setPossession(bool var) {
@@ -114,7 +104,7 @@ void Weapon::throwWeapon(float playerVel) {
 
 void Weapon::setDir(int i) {
     dir = i;
-    m_Shape->scale(-1, 1);
+    m_vBody->setScale(i, 1);
 }
 
 Weapon::~Weapon() {
