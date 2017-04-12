@@ -12,34 +12,23 @@
 #include <vector>
 #include "../Box2D/Box2D.h"
 #include "Player.h"
+#include "Controlador.h"
 
-class PlayerKeyboard {
+class PlayerKeyboard : public Controlador{
 public:
-    PlayerKeyboard();
-    PlayerKeyboard(b2World*);
-    PlayerKeyboard(const PlayerKeyboard& orig);
+    
+    PlayerKeyboard(b2World *world);
     virtual ~PlayerKeyboard();
 
-    Player* player;
     int id;
     int ejeX;
     bool invertido;
 
-    void pressUpdateState(int);
-    void releaseUpdateState(int);
+    void pressUpdateState(int botonPulsado);
+    void releaseUpdateState(int botonPulsado);
     void checkAxisX();
     void checkAxisY();
 
-private:
-
-    struct boton {
-        string nombre;
-        int numBoton;
-        bool pulsado;
-    };
-    vector<boton> misBotones;
-    int estadoEjeX;
-    int estadoEjeY;
 };
 
 #endif /* PLAYERKEYBOARD_H */

@@ -15,16 +15,15 @@ Partida::Partida() {
     window->setFramerateLimit(60);
     world = new b2World(b2Vec2(0.0f, 9.8f));
     world->SetContactListener(&myContactListener);
-    checkJoysticksConnected();
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
     usingKeyboard = false;
-    
-    console = Console();
-    
+
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     hudCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     window->setView(*mainCamera);
     window ->setView(*hudCamera);
+
+    console = Console();
 }
 
 Partida::Partida(const Partida& orig) {
@@ -45,28 +44,29 @@ void Partida::Input() {
                 break;
 
             case Event::JoystickConnected:
-                addPlayerJoystick(&playerJoysticks, event.joystickConnect.joystickId);
+                addPlayerJoystick(event.joystickConnect.joystickId);
                 break;
 
             case Event::JoystickMoved:
                 if (event.joystickMove.axis == Joystick::X) {
-                    playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickMove.joystickId)).checkAxisX(event.joystickMove.position);
+                    worldControlador.at(findControladorWithId(event.joystickMove.joystickId))->checkAxisX(event.joystickMove.position);
                 }
                 if (event.joystickMove.axis == Joystick::Y) {
-                    playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickMove.joystickId)).checkAxisY(event.joystickMove.position);
+                    worldControlador.at(findControladorWithId(event.joystickMove.joystickId))->checkAxisY(event.joystickMove.position);
                 }
                 break;
 
             case Event::JoystickButtonPressed:
-                playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).pressUpdateState(event.joystickButton.button);
+                worldControlador.at(findControladorWithId(event.joystickButton.joystickId))->pressUpdateState(event.joystickButton.button);
                 break;
 
             case Event::JoystickButtonReleased:
-                playerJoysticks.at(findJoystickWithId(&playerJoysticks, event.joystickButton.joystickId)).releaseUpdateState(event.joystickButton.button);
+                worldControlador.at(findControladorWithId(event.joystickButton.joystickId))->releaseUpdateState(event.joystickButton.button);
                 break;
 
             case Event::KeyPressed:
-                if (usingKeyboard)playerKeyboard->pressUpdateState(event.key.code);
+                if (usingKeyboard)
+                    worldControlador.at(findKeyboardControlador())->pressUpdateState(event.key.code);
                 switch (event.key.code) {
                     case Keyboard::Escape:
                         window->close();
@@ -81,10 +81,10 @@ void Partida::Input() {
                         console.toggleConsole();
                         break;
 
-                    case Keyboard::Return :
+                    case Keyboard::Return:
                         console.send();
                         break;
-                        
+
                     case Keyboard::BackSpace:
                         console.deleteChar();
                         break;
@@ -92,12 +92,13 @@ void Partida::Input() {
                 break;
 
             case Event::KeyReleased:
-                if (usingKeyboard) playerKeyboard->releaseUpdateState(event.key.code);
+                if (usingKeyboard) worldControlador.at(findKeyboardControlador())->releaseUpdateState(event.key.code);
                 break;
 
             case sf::Event::TextEntered:
                 console.write(event);
                 break;
+
         }
     }
 
@@ -116,13 +117,13 @@ void Partida::eraseBullets() {
 
     for (; itBala != bullets2Delete.end(); itBala++) {
         Bala* dyingBala = *itBala;
-        /* if (dyingBala->explosion == true) {
-             b2Vec2 position = dyingBala->m_pBody->GetPosition();
+        if (dyingBala->explosion == true) {
+            b2Vec2 position = dyingBala->m_pBody->GetPosition();
 
-             Explosion *nueva;
-             nueva = new Explosion(dyingBala->m_pBody->GetWorld(), sf::Vector2f(position.x * PPM, position.y * PPM), 1.0f, 0.05f, 0.5f);
-             listadoExplosion.insert(nueva);
-         }*/
+            Explosion *nueva;
+            nueva = new Explosion(dyingBala->m_pBody->GetWorld(), sf::Vector2f(position.x * PPM, position.y * PPM), 1.0f, 0.05f, 0.5f);
+            worldExplo.insert(nueva);
+        }
         worldBullets.erase(dyingBala);
         delete dyingBala;
         dyingBala = NULL;
@@ -130,9 +131,23 @@ void Partida::eraseBullets() {
     bullets2Delete.clear();
 }
 
+void Partida::eraseExplo() {
+    set<Explosion*>::iterator itExplo = explo2Delete.begin();
+    set<Explosion*>::iterator itEnd = explo2Delete.end();
+
+    for (; itExplo != itEnd; itExplo++) {
+        Explosion* dyingExplo = *itExplo;
+        worldExplo.erase(dyingExplo);
+        delete dyingExplo;
+        dyingExplo = NULL;
+    }
+    explo2Delete.clear();
+}
+
 void Partida::Erase() {
     eraseBullets();
     erasePlayers();
+    eraseExplo();
 }
 
 void Partida::Update() {
@@ -142,8 +157,9 @@ void Partida::Update() {
     temporizador->Update();
     window->setView(*mainCamera);
     updateWeapons();
-    updatePlayers(frameTime, &playerJoysticks);
+    updatePlayers(frameTime);
     updateBullets();
+    updateExplo();
 
     cameraSetTransform();
 }
@@ -155,7 +171,7 @@ void Partida::Render() {
     drawPlayers();
     drawWeapons();
     drawBullets();
-
+    drawExplo();
     window->setView(*hudCamera);
     temporizador->Draw(window);
     console.draw(window);
@@ -169,10 +185,10 @@ void Partida::drawPlatforms() {
 }
 
 void Partida::drawPlayers() {
-    for (int i = 0; i < playerJoysticks.size(); i++) {
-        window->draw(playerJoysticks.at(i).player->getPlayerSprite());
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        window->draw(worldPlayer.at(i)->getPlayerSprite());
     }
-    if (usingKeyboard) window->draw(playerKeyboard->player->getPlayerSprite());
+    // if (usingKeyboard) window->draw(playerKeyboard->player->getPlayerSprite());
 }
 
 void Partida::drawWeapons() {
@@ -190,11 +206,36 @@ void Partida::drawBullets() {
     }
 }
 
-int Partida::findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id) {
+void Partida::drawExplo() {
+    set<Explosion*>::iterator itExplo = worldExplo.begin();
+    set<Explosion*>::iterator endExplo = worldExplo.end();
+    for (; itExplo != endExplo; ++itExplo) {
+        Explosion* renderExplo = *itExplo;
+        window->draw(*(renderExplo->m_Shape));
+    }
+}
+
+int Partida::findKeyboardControlador() {
     int index = -1;
 
-    for (int i = 0; i < playerJoysticks->size() && index == -1; i++) {
-        if (playerJoysticks->at(i).id == id) index = i;
+    for (int i = 0; i < worldControlador.size(); i++) {
+        if (worldControlador.at(i)->tipo.compare("Keyboard") == 0) {
+            index = i;
+            break;
+        }
+    }
+
+    return index;
+}
+
+int Partida::findControladorWithId(int id) {
+    int index = -1;
+
+    for (int i = 0; i < worldControlador.size(); i++) {
+        if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) {
+            index = i;
+            break;
+        }
     }
 
     return index;
@@ -202,56 +243,55 @@ int Partida::findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id)
 
 void Partida::checkJoysticksConnected() {
 
-    addPlayerJoystick(&playerJoysticks, 0);
+    /*addPlayerJoystick(&playerJoysticks, 0);
     addPlayerJoystick(&playerJoysticks, 1);
     addPlayerJoystick(&playerJoysticks, 2);
-    //addPlayerJoystick(&playerJoysticks, 3);
+    addPlayerJoystick(&playerJoysticks, 3);*/
 
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
         if (joystickManager.isConnected(i)) {
-            addPlayerJoystick(&playerJoysticks, i);
+            addPlayerJoystick(i);
         }
     }
 }
 
-void Partida::addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id) {
+void Partida::addPlayerJoystick(int id) {
     //Para saber si la tenemos que añador
     bool add = true;
 
     //Comprobamos si existe el mando y actualizamos la condición
-    for (int i = 0; i < playerJoysticks->size() && add; i++) {
-        if (playerJoysticks->at(i).id == id) add = false;
+    for (int i = 0; i < worldControlador.size() && add; i++) {
+        if (worldControlador.at(i)->tipo.compare("JoyStick") == 0 && worldControlador.at(i)->id == id) add = false;
     }
 
     //Añadimos en funcion de la condición
     if (add) {
-        PlayerJoystick p(id, world);
-        playerJoysticks->push_back(p);
+        PlayerJoystick* p = new PlayerJoystick(id, world);
+        worldControlador.push_back(p);
     }
 }
 
 void Partida::addPlayerKeyboard() {
-    playerKeyboard = new PlayerKeyboard(world);
+    worldControlador.push_back(new PlayerKeyboard(world));
 }
 
 void Partida::respawn() {
-    for (int i = 0; i < playerJoysticks.size(); i++) {
-        PlayerJoystick* joystick = &playerJoysticks.at(i);
-        joystick->player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
-        joystick->player->respawn();
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        Player* player = worldPlayer.at(i);
+        player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
+        player->respawn();
     }
-    if (usingKeyboard) {
-        playerKeyboard->player->setPosition((4) * screenWidth / 5, screenHeight - 100);
-        playerKeyboard->player->respawn();
-    }
+    /* if (usingKeyboard) {
+         playerKeyboard->player->setPosition((4) * screenWidth / 5, screenHeight - 100);
+         playerKeyboard->player->respawn();
+     }*/
 }
 
-void Partida::updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks) {
-    for (int i = 0; i < playerJoysticks->size(); i++) {
-        playerJoysticks->at(i).player->update(frameTime);
+void Partida::updatePlayers(Time frameTime) {
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        worldPlayer.at(i)->update(frameTime);
     }
-    if (usingKeyboard) playerKeyboard->player->update(frameTime);
 }
 
 void Partida::updateWeapons() {
@@ -270,6 +310,15 @@ void Partida::updateBullets() {
 
 }
 
+void Partida::updateExplo() {
+    set<Explosion*>::iterator itExplo = worldExplo.begin();
+    set<Explosion*>::iterator endExplo = worldExplo.end();
+    for (; itExplo != endExplo; ++itExplo) {
+        Explosion* updateBala = *itExplo;
+        updateBala->Update();
+    }
+}
+
 void Partida::cameraSetTransform() {
 
     int total = 0;
@@ -284,10 +333,10 @@ void Partida::cameraSetTransform() {
     float maxDifferenceY = 0;
 
     //Posición
-    for (int i = 0; i < playerJoysticks.size(); i++) {
-        if (!playerJoysticks.at(i).player->isPlayerDead()) {
-            posX += playerJoysticks.at(i).player->getPosition().x;
-            posY += playerJoysticks.at(i).player->getPosition().y;
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        if (!worldPlayer.at(i)->isPlayerDead()) {
+            posX += worldPlayer.at(i)->getPosition().x;
+            posY += worldPlayer.at(i)->getPosition().y;
             total++;
         }
     }
@@ -315,12 +364,12 @@ void Partida::cameraSetTransform() {
 
 
     //Zoom
-    for (int i = 0; i < playerJoysticks.size(); i++) {
-        if (!playerJoysticks.at(i).player->isPlayerDead()) {
-            float currentPosX = playerJoysticks.at(i).player->getPosition().x;
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        if (!worldPlayer.at(i)->isPlayerDead()) {
+            float currentPosX = worldPlayer.at(i)->getPosition().x;
             if (abs(currentPosX - posX) > maxDifferenceX) maxDifferenceX = abs(currentPosX - posX);
 
-            float currentPosY = playerJoysticks.at(i).player->getPosition().y;
+            float currentPosY = worldPlayer.at(i)->getPosition().y;
             if (abs(currentPosY - posY) > maxDifferenceY) maxDifferenceY = abs(currentPosY - posY);
         }
     }
@@ -343,6 +392,8 @@ void Partida::cameraSetTransform() {
 }
 
 void Partida::loadMap() {
+    checkJoysticksConnected();
+
     Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
     worldPlatforms.push_back(suelo);
 
@@ -361,10 +412,10 @@ void Partida::loadMap() {
     Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 2, 2 * screenHeight / 3), 0.2);
     worldPlatforms.push_back(platformCentr);
 
-    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 30);
+    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);
     worldWeapons.push_back(pistola1);
 
-    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 30);
+    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 20, false, false);
     worldWeapons.push_back(pistola2);
 }
 

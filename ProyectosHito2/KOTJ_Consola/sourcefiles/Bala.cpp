@@ -54,8 +54,8 @@ void Bala::Update_Shape() {
     b2Vec2 pos = m_pBody->GetPosition();
     float angle = m_pBody->GetAngle();
 
-       //Se comprueba si las balas salen de la pantalla
-    if (pos.x < 0 || pos.x > screenWidth * MPP || pos.y > screenHeight * MPP) {
+    //Se comprueba si las balas salen de la pantalla
+    if (pos.x < 0 - screenWidth || pos.x > screenWidth * 2  * MPP || pos.y > screenHeight * 2 * MPP) {
         partida->bullets2Delete.insert(this);
     }
 
@@ -69,7 +69,7 @@ void Bala::Update_Shape() {
 }
 
 void Bala::Disparar_Parabola(float fuerza, float angulo) {
-     m_pBody->ApplyForce(b2Vec2(fuerza * cos(angulo * 3.14 / 180.0f), -fuerza * sin(angulo * 3.14 / 180.0f)), m_pBody->GetWorldCenter(), 1);
+     m_pBody->ApplyForce(b2Vec2(fuerza * cos(angulo * 3.14 / 180.0f), -1 * fabs(fuerza) * sin(angulo * 3.14 / 180.0f)), m_pBody->GetWorldCenter(), 1);
 }
 
 void Bala::Disparar(float velocidad, float angulo) {

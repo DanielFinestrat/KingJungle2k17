@@ -12,10 +12,11 @@
  */
 
 #include "../headerfiles/Console.h"
+#include "../headerfiles/Partida.h"
 
 using namespace std;
 
-//Partida * partida = Partida::getInstance();
+Partida * partida = Partida::getInstance();
 
 Console::Console() {
 
@@ -36,7 +37,7 @@ Console::Console() {
     }
     //consoleText = new Text();
     consoleText = new sf::Text(consoleString, *font, 20);
-    consoleText->setFillColor(sf::Color::White);
+    consoleText->setColor(sf::Color::White);
     consoleText->setPosition(sf::Vector2f(0, screenHeight - console.getSize().y + 15));
 
 
@@ -63,6 +64,7 @@ void Console::toggleConsole() {
 
 void Console::send() {
     if (consoleInScreen) {
+        //se controla el comando
         if (commandString != "") {
             char *line = new char[commandString.length() + 1]; // or
             char * token;
@@ -73,6 +75,8 @@ void Console::send() {
 
             token = strtok(line, " ");
             nombrefunction = string(token);
+            //pasa todo a minusculas
+            transform(nombrefunction.begin(), nombrefunction.end(), nombrefunction.begin(), ::tolower);
 
             token = strtok(NULL, " ");
             if (token != NULL)
@@ -81,11 +85,8 @@ void Console::send() {
             //token = strtok(NULL, " ");
             token = strtok(NULL, "\0");
 
-            cout << nombrefunction << endl;
+            //cout << nombrefunction << endl;
             if (functionMap->count(nombrefunction) > 0) {
-                //function <void (int)> fn = functionMap->at(string(function));
-
-                //ToDo: conseguir llamar a una funcion bien desde un mapa
                 function<void (int) > fn = functionMap->at(nombrefunction);
                 fn(param1);
             }
@@ -93,6 +94,8 @@ void Console::send() {
             delete token;
             delete[] line;
         }
+        
+        //se controlan los saltos de linea y to eso
         if (nlines == 10) {
             size_t pos = consoleString.find('\n');
             consoleString = consoleString.substr(pos + 1);
@@ -134,11 +137,11 @@ void Console::deleteChar() {
 }
 
 void suicideAll(int n) {
-    cout << "pum, tos muertos" << endl;
+    //cout << "pum, tos muertos" << endl;
 
-    /*for(int i=0; partida->playerJoysticks.size(); i++){
-        partida->players2Delete.push_back(partida->playerJoysticks.at(i));
-    }*/
+    for (int i = 0; i < partida->worldPlayer.size(); i++) {
+        partida->players2Delete.push_back(partida->worldPlayer.at(i));
+    }
 }
 
 void Console::loadFunctions() {

@@ -12,13 +12,12 @@
 #include <vector>
 #include "../Box2D/Box2D.h"
 #include "Player.h"
+#include "Controlador.h"
 
 using namespace std;
 
-class PlayerJoystick {
+class PlayerJoystick : public Controlador {
 public:
-    Player* player;
-    int id;
 
     PlayerJoystick(int id, b2World *world);
     virtual ~PlayerJoystick();
@@ -30,14 +29,6 @@ public:
 
 private:
 
-    struct boton {
-        string nombre;
-        int numBoton;
-        bool pulsado;
-    };
-    vector<boton> misBotones;
-    int estadoEjeX;
-    int estadoEjeY;
 };
 
 #endif

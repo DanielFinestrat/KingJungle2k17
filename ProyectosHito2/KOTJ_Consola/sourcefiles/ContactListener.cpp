@@ -11,43 +11,68 @@
 
 void ContactListener::BeginContact(b2Contact* contact) {
 
-    Partida *partida = Partida::getInstance();
+	Partida *partida = Partida::getInstance();
 
-    void* bodyUserDataA = contact->GetFixtureA()->GetBody()->GetUserData();
-    void* bodyUserDataB = contact->GetFixtureB()->GetBody()->GetUserData();
+	void* bodyUserDataA = contact->GetFixtureA()->GetBody()->GetUserData();
+	void* bodyUserDataB = contact->GetFixtureB()->GetBody()->GetUserData();
 
-    Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
-    Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
+	Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
+	Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
 
-    //cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
+	string tagA = entidadA->getTag();
+	string tagB = entidadB->getTag();
 
-    //Colision con Balas
-    if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
-        if (entidadA->getTag().compare("Bala") == 0) {
-            Bala* bala = static_cast<Bala*> (bodyUserDataA);
+	//cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
 
-            if (entidadB->getTag().compare("Player") == 0) {
-                Player* player = static_cast<Player*> (bodyUserDataB);
-                int dir = -1;
-                if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-                player->changeDirection(dir);
-                partida->players2Delete.push_back(player);
-            }
-            if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
+	//Colision con Balas
 
-        } else if (entidadB->getTag().compare("Bala") == 0) {
-            Bala* bala = static_cast<Bala*> (bodyUserDataB);
+	if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
+		if (entidadA->getTag().compare("Bala") == 0) {
+			Bala* bala = static_cast<Bala*> (bodyUserDataA);
 
-            if (entidadA->getTag().compare("Player") == 0) {
-                Player* player = static_cast<Player*> (bodyUserDataA);
-                int dir = -1;
-                if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
-                player->changeDirection(dir);
-                partida->players2Delete.push_back(player);
-            }
-            if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
-        }
-    }
+			if (entidadB->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataB);
+				int dir = -1;
+				if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
+
+		} else if (entidadB->getTag().compare("Bala") == 0) {
+			Bala* bala = static_cast<Bala*> (bodyUserDataB);
+
+			if (entidadA->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataA);
+				int dir = -1;
+				if (bala->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
+		}
+	} else if (entidadA->getTag().compare("Explosion") == 0 || entidadB->getTag().compare("Explosion") == 0) {
+		if (entidadA->getTag().compare("Explosion") == 0) {
+			Explosion* explo = static_cast<Explosion*> (bodyUserDataA);
+			if (entidadB->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataB);
+				int dir = -1;
+				if (explo->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+		} else if (entidadB->getTag().compare("Explosion") == 0) {
+			Explosion* explo = static_cast<Explosion*> (bodyUserDataB);
+			if (entidadA->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataA);
+				int dir = -1;
+				if (explo->m_pBody->GetPosition().x < player->getPosition().x) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+		}
+	}
+
 
 
 }

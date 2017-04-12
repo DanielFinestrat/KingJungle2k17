@@ -15,6 +15,7 @@
 #include "Platform.h"
 #include "Weapon.h"
 #include "Bala.h"
+#include "Explosion.h"
 #include "PlayerJoystick.h"
 #include "ContactListener.h"
 #include "PlayerKeyboard.h"
@@ -34,19 +35,21 @@ public:
     b2World *world;
     ContactListener myContactListener;
     sf::RenderWindow *window;
-
+    
     sf::View *mainCamera;
     sf::View *hudCamera;
 
     vector<Platform*> worldPlatforms;
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
-    vector<PlayerJoystick> playerJoysticks;
-    PlayerKeyboard* playerKeyboard;
+    set<Explosion*> worldExplo;
+    vector<Player*> worldPlayer;
+    vector<Controlador*> worldControlador;
 
     set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
-
+    set<Explosion*> explo2Delete;
+    
     Temporizador *temporizador;
     Clock frameClock;
 
@@ -60,36 +63,36 @@ public:
     void drawPlatforms();
     void drawPlayers();
     void drawWeapons();
-    void drawBullets();    
-    void drawConsole();
-
-
+    void drawBullets();
+    void drawExplo();
+    
     void eraseBullets();
     void erasePlayers();
-
-    int findJoystickWithId(vector<PlayerJoystick> *playerJoysticks, int id);
+    void eraseExplo();
+    
+    int findKeyboardControlador();
+    int findControladorWithId(int id);
     void checkJoysticksConnected();
-    void addPlayerJoystick(vector<PlayerJoystick> *playerJoysticks, int id);
+    void addPlayerJoystick(int id);
     void addPlayerKeyboard();
     void respawn();
-
-    void updatePlayers(Time frameTime, vector<PlayerJoystick> *playerJoysticks);
+    
+    void updatePlayers(Time frameTime);
     void updateBullets();
     void updateWeapons();
+    void updateExplo();
 
     void cameraSetTransform();
-
     
-
     void loadMap();
     virtual ~Partida();
 
 private:
-
+    
     Partida();
     Partida(const Partida& orig);
     bool usingKeyboard;
-    
+
     Console console;
 };
 

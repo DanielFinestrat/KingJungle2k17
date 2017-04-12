@@ -8,32 +8,36 @@
 #include "../headerfiles/Partida.h"
 
 PlayerJoystick::PlayerJoystick(int id, b2World *world) {
+    tipo = "Joystick";
+
+    Partida* partida = Partida::getInstance();
+
     boton b1;
     b1.nombre = "Salto"; //UP
     b1.numBoton = 0;
     b1.pulsado = false;
     misBotones.push_back(b1);
-    
+
     boton b2;
-    b1.nombre = "Disparo";//R
+    b1.nombre = "Disparo"; //R
     b2.numBoton = 2;
     b2.pulsado = false;
     misBotones.push_back(b2);
-    
+
     boton b3;
-    b1.nombre = "Interactuar";//E
+    b1.nombre = "Interactuar"; //E
     b3.numBoton = 1;
     b3.pulsado = false;
     misBotones.push_back(b3);
-    
+
     boton b4;
-    b1.nombre = "Burlarse";//W
+    b1.nombre = "Burlarse"; //W
     b4.numBoton = 3;
     b4.pulsado = false;
     misBotones.push_back(b4);
-    
+
     boton b5;
-    b1.nombre = "Pausar";//Q
+    b1.nombre = "Pausar"; //Q
     b5.numBoton = 7;
     b5.pulsado = false;
     misBotones.push_back(b5);
@@ -42,11 +46,14 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     estadoEjeY = 0;
 
     this->id = id;
+    
     player = new Player(*world);
-    player->setPosition((id+1) * screenWidth/5, screenHeight-100);
-    player->setColor(id);
+    player->setPosition((partida->worldPlayer.size() + 1) * screenWidth / 5, screenHeight - 100);
+    player->setColor(partida->worldPlayer.size());
 
-    //cout << "He insertado un mando con la id " << this->id << endl;
+    partida->worldPlayer.push_back(player);
+
+    //cout << "He insertado un mando con la id " << this->id << " " << tipo << endl;
 }
 
 PlayerJoystick::~PlayerJoystick() {
@@ -57,23 +64,19 @@ void PlayerJoystick::pressUpdateState(int pressedButton) {
         misBotones.at(0).pulsado = true;
         //cout << id << ".- He saltado" << endl;
         player->jump();
-    }
-    else if (misBotones.at(1).numBoton == pressedButton && !misBotones.at(1).pulsado) {
+    } else if (misBotones.at(1).numBoton == pressedButton && !misBotones.at(1).pulsado) {
         misBotones.at(1).pulsado = true;
         //cout << id << ".- He disparado" << endl;
         player->shoot();
-    }
-    else if (misBotones.at(2).numBoton == pressedButton && !misBotones.at(2).pulsado) {
+    } else if (misBotones.at(2).numBoton == pressedButton && !misBotones.at(2).pulsado) {
         misBotones.at(2).pulsado = true;
         //cout << id << ".- He interactuado" << endl;
         player->interact();
-    }
-    else if (misBotones.at(3).numBoton == pressedButton && !misBotones.at(3).pulsado) {
+    } else if (misBotones.at(3).numBoton == pressedButton && !misBotones.at(3).pulsado) {
         misBotones.at(3).pulsado = true;
         //cout << id << ".- Me he burlado" << endl;
         player->mock();
-    }
-    else if (misBotones.at(4).numBoton == pressedButton && !misBotones.at(4).pulsado) {
+    } else if (misBotones.at(4).numBoton == pressedButton && !misBotones.at(4).pulsado) {
         misBotones.at(4).pulsado = true;
         //cout << id << ".- He pausado" << endl;
         player->pause(true);
@@ -84,17 +87,13 @@ void PlayerJoystick::releaseUpdateState(int releasedButton) {
     if (misBotones.at(0).numBoton == releasedButton) {
         misBotones.at(0).pulsado = false;
         player->updateCanJumpStateState();
-    }
-    else if (misBotones.at(1).numBoton == releasedButton) {
+    } else if (misBotones.at(1).numBoton == releasedButton) {
         misBotones.at(1).pulsado = false;
-    }
-    else if (misBotones.at(2).numBoton == releasedButton) {
+    } else if (misBotones.at(2).numBoton == releasedButton) {
         misBotones.at(2).pulsado = false;
-    }
-    else if (misBotones.at(3).numBoton == releasedButton) {
+    } else if (misBotones.at(3).numBoton == releasedButton) {
         misBotones.at(3).pulsado = false;
-    }
-    else if (misBotones.at(4).numBoton == releasedButton) {
+    } else if (misBotones.at(4).numBoton == releasedButton) {
         misBotones.at(4).pulsado = false;
     }
 }

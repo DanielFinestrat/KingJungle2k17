@@ -22,6 +22,9 @@ public:
     int ammo; //Municion actual del arma
     int dir; //Direccion a la que apunta el arma
     int recoil;
+    
+    bool parabola;
+    bool explosivo;
 
     Texture weapon_texture;
 
@@ -46,7 +49,7 @@ public:
      * @param int BPS: Balas por disparo
      * @param int ammo: Municion del arma
      */
-    Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo, int recoil_);
+    Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo, int recoil_, bool parabola, bool explosivo);
     ~Weapon();
 
     /*Se encarga de actualizar las posiciones de los elementos del arma*/

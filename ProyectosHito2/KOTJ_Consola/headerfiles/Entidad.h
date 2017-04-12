@@ -18,11 +18,13 @@ const short CATEGORY_BULLET = 0x0001;
 const short CATEGORY_SCENERY = 0x0002;
 const short CATEGORY_PLAYER = 0x0004;
 const short CATEGORY_GUN = 0x0008;
+const short CATEGORY_EXPLOSION = 0x0016;
 
 const short MASK_BULLET = CATEGORY_SCENERY | CATEGORY_PLAYER;
 const short MASK_PLAYER = CATEGORY_BULLET | CATEGORY_SCENERY;
 const short MASK_GUN = CATEGORY_SCENERY;
 const short MASK_SCENERY = -1;
+const short MASK_EXPLOSION = CATEGORY_PLAYER;
 
 class Entidad {
 public:
@@ -41,4 +43,3 @@ private:
 };
 
 #endif /* ENTIDAD_H */
-

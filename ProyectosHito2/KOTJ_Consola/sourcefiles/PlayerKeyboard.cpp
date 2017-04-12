@@ -8,9 +8,11 @@
 #include "../headerfiles/PlayerKeyboard.h"
 #include "../headerfiles/Partida.h"
 
-PlayerKeyboard::PlayerKeyboard(){}
-
 PlayerKeyboard::PlayerKeyboard(b2World* world) {
+    tipo = "Keyboard";
+	
+    Partida* partida = Partida::getInstance();
+	
     boton b1;
     b1.nombre = "Salto";
     b1.numBoton = 73;
@@ -63,18 +65,15 @@ PlayerKeyboard::PlayerKeyboard(b2World* world) {
     estadoEjeY = 0;
     ejeX = 0;
     invertido = false;
+     
+    id = partida->worldPlayer.size();
     
-    Partida *partida = Partida::getInstance();
-    this->id = partida->playerJoysticks.size();
     player = new Player(*world);
     player->setPosition((id+1) * screenWidth/5, screenHeight-100);
     player->setColor(id);
+    partida->worldPlayer.push_back(player);
 
-    cout << "Se ha unido el jugador con teclado con id: " << this->id << endl;
-}
-
-PlayerKeyboard::PlayerKeyboard(const PlayerKeyboard& orig) {
-    
+    //cout << "Se ha unido el jugador con teclado con id: " << this->id << " " << tipo << endl;
 }
 
 PlayerKeyboard::~PlayerKeyboard() {
@@ -83,40 +82,40 @@ PlayerKeyboard::~PlayerKeyboard() {
 void PlayerKeyboard::pressUpdateState(int keycode){
     if (misBotones.at(0).numBoton == keycode && !misBotones.at(0).pulsado) {
         misBotones.at(0).pulsado = true;
-        cout << id << ".- He saltado" << endl;
+        //cout << id << ".- He saltado" << endl;
         player->jump();
     }
     else if (misBotones.at(1).numBoton == keycode && !misBotones.at(1).pulsado) {
         misBotones.at(1).pulsado = true;
-        cout << id << ".- He disparado" << endl;
+        //cout << id << ".- He disparado" << endl;
         player->shoot();
     }
     else if (misBotones.at(2).numBoton == keycode && !misBotones.at(2).pulsado) {
         misBotones.at(2).pulsado = true;
-        cout << id << ".- He interactuado" << endl;
+        //cout << id << ".- He interactuado" << endl;
         player->interact();
     }
     else if (misBotones.at(3).numBoton == keycode && !misBotones.at(3).pulsado) {
         misBotones.at(3).pulsado = true;
-        cout << id << ".- Me he burlado" << endl;
+        //cout << id << ".- Me he burlado" << endl;
         player->mock();
     }
     else if (misBotones.at(4).numBoton == keycode && !misBotones.at(4).pulsado) {
         misBotones.at(4).pulsado = true;
-        cout << id << ".- He pausado" << endl;
+        //cout << id << ".- He pausado" << endl;
         player->pause(true);
     }
     else if(misBotones.at(5).numBoton == keycode && !misBotones.at(5).pulsado){
         misBotones.at(5).pulsado = true;
-        cout << id << ".- Me muevo hacia la izquierda" << endl;
+        //cout << id << ".- Me muevo hacia la izquierda" << endl;
     }
     else if(misBotones.at(6).numBoton == keycode && !misBotones.at(6).pulsado){
         misBotones.at(6).pulsado = true;
-        cout << id << ".- Me muevo hacia la derecha" << endl;
+        //cout << id << ".- Me muevo hacia la derecha" << endl;
     }
     else if(misBotones.at(7).numBoton == keycode && !misBotones.at(7).pulsado){
         misBotones.at(7).pulsado = true;
-        cout << id << ".- Me agacho" << endl;
+        //cout << id << ".- Me agacho" << endl;
     }
     
     checkAxisX();
@@ -176,7 +175,7 @@ void PlayerKeyboard::checkAxisX() {
 
     //1 = derecha
     if (ejeX != estadoEjeX) {
-        cout << "Me muevo en el eje X en la dirección " << ejeX << endl;
+        //cout << "Me muevo en el eje X en la dirección " << ejeX << endl;
         estadoEjeX = ejeX;
         player->changeDirection(estadoEjeX);
     }
@@ -188,7 +187,7 @@ void PlayerKeyboard::checkAxisY() {
 
     //1 = agachado
     if (ejeY != estadoEjeY) {
-        cout << "Me muevo en el eje Y en la dirección " << ejeY << endl;
+        //cout << "Me muevo en el eje Y en la dirección " << ejeY << endl;
         estadoEjeY = ejeY;
         player->duck(estadoEjeY);
     }

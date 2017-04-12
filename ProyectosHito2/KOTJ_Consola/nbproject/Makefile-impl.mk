@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=pruebaConsola
+PROJECTNAME=KOTJ_Controlador
 
 # Active Configuration
 DEFAULTCONF=Debug

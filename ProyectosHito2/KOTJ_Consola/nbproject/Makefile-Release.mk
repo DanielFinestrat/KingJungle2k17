@@ -40,7 +40,9 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Bala.o \
 	${OBJECTDIR}/sourcefiles/Console.o \
 	${OBJECTDIR}/sourcefiles/ContactListener.o \
+	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
+	${OBJECTDIR}/sourcefiles/Explosion.o \
 	${OBJECTDIR}/sourcefiles/Partida.o \
 	${OBJECTDIR}/sourcefiles/Platform.o \
 	${OBJECTDIR}/sourcefiles/Player.o \
@@ -69,23 +71,23 @@ LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu libBox2D.a /usr/lib/x86_64-linux-gnu/l
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: libBox2D.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: libBox2D.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: /usr/lib/x86_64-linux-gnu/libsfml-window.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: /usr/lib/x86_64-linux-gnu/libsfml-network.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-network.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: /usr/lib/x86_64-linux-gnu/libsfml-system.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -112,10 +114,20 @@ ${OBJECTDIR}/sourcefiles/ContactListener.o: sourcefiles/ContactListener.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/ContactListener.o sourcefiles/ContactListener.cpp
 
+${OBJECTDIR}/sourcefiles/Controlador.o: sourcefiles/Controlador.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Controlador.o sourcefiles/Controlador.cpp
+
 ${OBJECTDIR}/sourcefiles/Entidad.o: sourcefiles/Entidad.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Entidad.o sourcefiles/Entidad.cpp
+
+${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Explosion.o sourcefiles/Explosion.cpp
 
 ${OBJECTDIR}/sourcefiles/Partida.o: sourcefiles/Partida.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
@@ -163,7 +175,7 @@ ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/pruebaconsola
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador
 
 # Subprojects
 .clean-subprojects:

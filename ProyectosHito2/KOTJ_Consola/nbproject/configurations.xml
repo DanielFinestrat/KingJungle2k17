@@ -8,7 +8,9 @@
       <itemPath>headerfiles/Bala.h</itemPath>
       <itemPath>headerfiles/Console.h</itemPath>
       <itemPath>headerfiles/ContactListener.h</itemPath>
+      <itemPath>headerfiles/Controlador.h</itemPath>
       <itemPath>headerfiles/Entidad.h</itemPath>
+      <itemPath>headerfiles/Explosion.h</itemPath>
       <itemPath>headerfiles/Partida.h</itemPath>
       <itemPath>headerfiles/Platform.h</itemPath>
       <itemPath>headerfiles/Player.h</itemPath>
@@ -17,12 +19,10 @@
       <itemPath>headerfiles/SpriteAnimated.h</itemPath>
       <itemPath>headerfiles/Temporizador.h</itemPath>
       <itemPath>headerfiles/Weapon.h</itemPath>
-      <itemPath>console.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <itemPath>resources/audios</itemPath>
       <itemPath>resources/fonts</itemPath>
       <itemPath>resources/sprites</itemPath>
     </logicalFolder>
@@ -33,7 +33,9 @@
       <itemPath>sourcefiles/Bala.cpp</itemPath>
       <itemPath>sourcefiles/Console.cpp</itemPath>
       <itemPath>sourcefiles/ContactListener.cpp</itemPath>
+      <itemPath>sourcefiles/Controlador.cpp</itemPath>
       <itemPath>sourcefiles/Entidad.cpp</itemPath>
+      <itemPath>sourcefiles/Explosion.cpp</itemPath>
       <itemPath>sourcefiles/Partida.cpp</itemPath>
       <itemPath>sourcefiles/Platform.cpp</itemPath>
       <itemPath>sourcefiles/Player.cpp</itemPath>
@@ -58,7 +60,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>GNU|GNU</compilerSet>
+        <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -82,8 +84,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="console.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="headerfiles/Animation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
@@ -92,7 +92,11 @@
       </item>
       <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -112,8 +116,6 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="resources/audios" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="resources/fonts" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites" ex="false" tool="3" flavor2="0">
@@ -126,7 +128,11 @@
       </item>
       <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -178,8 +184,6 @@
           </linkerLibItems>
         </linkerTool>
       </compileType>
-      <item path="console.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="headerfiles/Animation.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
@@ -188,7 +192,11 @@
       </item>
       <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -208,8 +216,6 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="resources/audios" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="resources/fonts" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites" ex="false" tool="3" flavor2="0">
@@ -222,7 +228,11 @@
       </item>
       <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>

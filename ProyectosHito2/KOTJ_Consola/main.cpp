@@ -4,7 +4,7 @@
 #include "headerfiles/Partida.h"
 
 using namespace std;
- 
+
 int main() {
     Partida *partida = Partida::getInstance();
     partida->loadMap();

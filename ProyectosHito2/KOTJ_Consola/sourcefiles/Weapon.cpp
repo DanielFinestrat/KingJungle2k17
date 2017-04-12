@@ -8,7 +8,7 @@
 #include "../headerfiles/Weapon.h"
 #include "../headerfiles/Partida.h"
 
-Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm, int recoil_) {
+Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm, int recoil_, bool parabola, bool explosivo) {
 
     tag = "Weapon";
 
@@ -18,6 +18,9 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     ammo = amm;
     recoil = recoil_;
 
+    this->parabola = parabola;
+    this->explosivo = explosivo;
+    
     inPossession = false;
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
@@ -80,8 +83,11 @@ int Weapon::shoot() {
             ammo--;
             Partida *partida = Partida::getInstance();
             // +50 habria que cambiarlo por el size del personaje
-            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50 * dir, m_pBody->GetPosition().y * PPM), false);
-            nuevaBala->Disparar(5 * -dir, 180);
+            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50 * dir, m_pBody->GetPosition().y * PPM), explosivo);
+            
+            if(!parabola) nuevaBala->Disparar(5 * -dir, 180);
+            else nuevaBala->Disparar_Parabola(-dir, 160);
+                
             partida->worldBullets.insert(nuevaBala);
             return recoil;
         }
