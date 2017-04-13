@@ -21,6 +21,9 @@
 #include "PlayerKeyboard.h"
 #include "Console.h"
 
+#include "tinystr.h"
+#include "tinyxml.h"
+
 using namespace std;
 
 #define screenWidth 1024
@@ -53,8 +56,12 @@ public:
     Temporizador *temporizador;
     Clock frameClock;
 
+    int ***_tilemap;
+    
     static Partida* getInstance();
 
+    void cargarXML();
+    
     void Input();
     void Update();
     void Erase();

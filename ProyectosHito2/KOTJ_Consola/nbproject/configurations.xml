@@ -19,6 +19,8 @@
       <itemPath>headerfiles/SpriteAnimated.h</itemPath>
       <itemPath>headerfiles/Temporizador.h</itemPath>
       <itemPath>headerfiles/Weapon.h</itemPath>
+      <itemPath>headerfiles/tinystr.h</itemPath>
+      <itemPath>headerfiles/tinyxml.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -45,6 +47,10 @@
       <itemPath>sourcefiles/Temporizador.cpp</itemPath>
       <itemPath>sourcefiles/Weapon.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
+      <itemPath>sourcefiles/tinystr.cpp</itemPath>
+      <itemPath>sourcefiles/tinyxml.cpp</itemPath>
+      <itemPath>sourcefiles/tinyxmlerror.cpp</itemPath>
+      <itemPath>sourcefiles/tinyxmlparser.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -114,6 +120,10 @@
       </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="resources/fonts" ex="false" tool="3" flavor2="0">
@@ -149,6 +159,14 @@
       <item path="sourcefiles/Temporizador.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -214,6 +232,10 @@
       </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="resources/fonts" ex="false" tool="3" flavor2="0">
@@ -249,6 +271,14 @@
       <item path="sourcefiles/Temporizador.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxmlerror.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/tinyxmlparser.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

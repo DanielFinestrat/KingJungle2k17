@@ -50,7 +50,11 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/PlayerKeyboard.o \
 	${OBJECTDIR}/sourcefiles/SpriteAnimated.o \
 	${OBJECTDIR}/sourcefiles/Temporizador.o \
-	${OBJECTDIR}/sourcefiles/Weapon.o
+	${OBJECTDIR}/sourcefiles/Weapon.o \
+	${OBJECTDIR}/sourcefiles/tinystr.o \
+	${OBJECTDIR}/sourcefiles/tinyxml.o \
+	${OBJECTDIR}/sourcefiles/tinyxmlerror.o \
+	${OBJECTDIR}/sourcefiles/tinyxmlparser.o
 
 
 # C Compiler Flags
@@ -71,21 +75,21 @@ LDLIBSOPTIONS=-L/usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu/libsfml-audi
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
-	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador
+	"${MAKE}"  -f nbproject/Makefile-${CND_CONF}.mk ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: /usr/lib/x86_64-linux-gnu/libsfml-audio.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: /usr/lib/x86_64-linux-gnu/libsfml-graphics.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-system.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: /usr/lib/x86_64-linux-gnu/libsfml-system.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: /usr/lib/x86_64-linux-gnu/libsfml-window.so
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: /usr/lib/x86_64-linux-gnu/libsfml-window.so
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: libBox2D.a
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: libBox2D.a
 
-${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador: ${OBJECTFILES}
+${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -167,13 +171,33 @@ ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Weapon.o sourcefiles/Weapon.cpp
 
+${OBJECTDIR}/sourcefiles/tinystr.o: sourcefiles/tinystr.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/tinystr.o sourcefiles/tinystr.cpp
+
+${OBJECTDIR}/sourcefiles/tinyxml.o: sourcefiles/tinyxml.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/tinyxml.o sourcefiles/tinyxml.cpp
+
+${OBJECTDIR}/sourcefiles/tinyxmlerror.o: sourcefiles/tinyxmlerror.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/tinyxmlerror.o sourcefiles/tinyxmlerror.cpp
+
+${OBJECTDIR}/sourcefiles/tinyxmlparser.o: sourcefiles/tinyxmlparser.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/tinyxmlparser.o sourcefiles/tinyxmlparser.cpp
+
 # Subprojects
 .build-subprojects:
 
 # Clean Targets
 .clean-conf: ${CLEAN_SUBPROJECTS}
 	${RM} -r ${CND_BUILDDIR}/${CND_CONF}
-	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_controlador
+	${RM} ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kotj_consola
 
 # Subprojects
 .clean-subprojects:

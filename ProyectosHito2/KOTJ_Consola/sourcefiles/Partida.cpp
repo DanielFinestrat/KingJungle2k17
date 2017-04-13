@@ -10,6 +10,64 @@ using namespace sf;
 
 static Partida* instance;
 
+void Partida::cargarXML(){
+
+	TiXmlDocument doc("resources/mapas/mapa.tmx");
+	doc.LoadFile();
+
+	TiXmlElement* map = doc.FirstChildElement("map");
+	int _width = 0; 
+	int _height = 0;
+	int _numLayers = 0;
+
+	//Leemos el valor de X e Y del mapa
+	map->QueryIntAttribute("width", &_width);
+	map->QueryIntAttribute("height", &_height);
+	
+	//Leemos el número de layers que hay
+	TiXmlElement* layer = map->FirstChildElement("layer");
+	while(layer){
+		_numLayers++;
+		layer = layer->NextSiblingElement("layer");
+	}
+	
+	//Creamos la matriz donde irá la información
+	_tilemap = new int**[_numLayers];
+	for(int i=0; i<_numLayers; i++){
+		_tilemap[i] = new int*[_height];
+		for(int j=0; j<_height; j++){
+			_tilemap[i][j] = new int[_width];
+			for(int k=0; k<_width; k++){
+				_tilemap[i][j][k] = 0;
+			}
+		}
+	}
+
+	cout << "altura: " << _height << " - ancho: " << _width << " - capas: " << _numLayers << endl;
+	
+	//Leemos las matrices
+	TiXmlElement *tile;
+	layer = map->FirstChildElement("layer");
+	tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+	
+		 
+	for(int l=0; l<_numLayers; l++){
+		if(l!=0){
+			layer = layer->NextSiblingElement("layer");
+			tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+		}
+		for(int y=0; y<_height; y++){
+			for(int x = 0; x < _width; x++){
+				tile->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+				//Avanzo al siguiente tag
+				tile = tile->NextSiblingElement("tile");
+			}
+		}
+		
+	}
+	
+}
+
 Partida::Partida() {
     window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
@@ -24,6 +82,7 @@ Partida::Partida() {
     window ->setView(*hudCamera);
 
     console = Console();
+	cargarXML();
 }
 
 Partida::Partida(const Partida& orig) {
