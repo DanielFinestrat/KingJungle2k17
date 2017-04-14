@@ -53,6 +53,8 @@ public:
     vector<Player*> players2Delete;
     set<Explosion*> explo2Delete;
     
+    vector<vector<int>> spawnPlayer;
+    
     Temporizador *temporizador;
     Clock frameClock;
 

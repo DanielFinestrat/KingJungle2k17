@@ -69,7 +69,14 @@ PlayerKeyboard::PlayerKeyboard(b2World* world) {
     id = partida->worldPlayer.size();
     
     player = new Player(*world);
-    player->setPosition((id+1) * screenWidth/5, screenHeight-100);
+	
+	vector<int> position = partida->spawnPlayer.at(0);
+	//Elimina el element de la primera posicion y la inserta en la última
+	partida->spawnPlayer.erase(partida->spawnPlayer.begin());
+	partida->spawnPlayer.push_back(position);
+	
+	cout << position.at(0) << endl;
+    player->setPosition(position.at(0), position.at(1));
     player->setColor(id);
     partida->worldPlayer.push_back(player);
 

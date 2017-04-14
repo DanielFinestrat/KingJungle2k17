@@ -48,7 +48,14 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
     this->id = id;
     
     player = new Player(*world);
-    player->setPosition((partida->worldPlayer.size() + 1) * screenWidth / 5, screenHeight - 100);
+	
+	vector<int> position = partida->spawnPlayer.at(0);
+	//Elimina el element de la primera posicion y la inserta en la última
+	partida->spawnPlayer.erase(partida->spawnPlayer.begin());
+	partida->spawnPlayer.push_back(position);
+	
+	cout << position.at(0) << endl;
+    player->setPosition(position.at(0), position.at(1));
     player->setColor(partida->worldPlayer.size());
 
     partida->worldPlayer.push_back(player);

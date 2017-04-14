@@ -279,7 +279,13 @@ void Partida::addPlayerKeyboard() {
 void Partida::respawn() {
     for (int i = 0; i < worldPlayer.size(); i++) {
         Player* player = worldPlayer.at(i);
-        player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
+			
+		vector<int> position = spawnPlayer.at(0);
+		//Elimina el element de la primera posicion y la inserta en la última
+		spawnPlayer.erase(spawnPlayer.begin());
+		spawnPlayer.push_back(position);
+	
+		player->setPosition(position.at(0), position.at(1));
         player->respawn();
     }
     /* if (usingKeyboard) {
@@ -392,8 +398,8 @@ void Partida::cameraSetTransform() {
 }
 
 void Partida::loadMap() {
-    checkJoysticksConnected();
 	cargarXML();
+    checkJoysticksConnected();
 	/*
     Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
     worldPlatforms.push_back(suelo);
@@ -501,7 +507,7 @@ void Partida::guardarObj(TiXmlElement* map){
 		}
 		while(object){
 			tipo = object->Attribute("name");
-			cout << tipo << endl;
+			//cout << tipo << endl;
 			if(tipo.compare("platform") == 0){
 				object->QueryIntAttribute("x", &_width);
 				object->QueryIntAttribute("y", &_height);
@@ -511,10 +517,17 @@ void Partida::guardarObj(TiXmlElement* map){
 				Platform *suelo = new Platform(world, sf::Vector2f((float)_sizeX, (float)_sizeY), sf::Vector2f((float)_width + _sizeX/2, (float)_height + _sizeY/2), 0.2);
 				worldPlatforms.push_back(suelo);
 			}
-			
+			else if(tipo.compare("player") == 0){
+				object->QueryIntAttribute("x", &_width);
+				object->QueryIntAttribute("y", &_height);
+				vector<int> posicion;
+				posicion.push_back(_width);
+				posicion.push_back(_height);
+				spawnPlayer.push_back(posicion);
+				//cout << _width << " " << _height << endl;
+			}
 			object = object->NextSiblingElement("object");
 		}
-		cout << endl;
 	}
 	
 }
@@ -529,7 +542,6 @@ void Partida::cargarXML(){
 	guardarObj(map);
 	
 }
-
 
 Partida::~Partida() {
 }

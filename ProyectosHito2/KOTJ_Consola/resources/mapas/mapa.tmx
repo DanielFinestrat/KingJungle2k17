@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" nextobjectid="15">
  <tileset firstgid="1" source="../../../../../Escritorio/KOTJ.tsx"/>
  <layer name="Escenario" width="35" height="20" offsetx="0" offsety="1">
   <data>
@@ -233,8 +233,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="195"/>
-   <tile gid="196"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -268,8 +268,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="239"/>
-   <tile gid="240"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -603,11 +603,11 @@
    <tile gid="309"/>
    <tile gid="309"/>
    <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
+   <tile gid="270"/>
+   <tile gid="270"/>
+   <tile gid="270"/>
+   <tile gid="270"/>
+   <tile gid="270"/>
    <tile gid="268"/>
    <tile gid="268"/>
    <tile gid="268"/>
@@ -638,11 +638,11 @@
    <tile gid="309"/>
    <tile gid="309"/>
    <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
-   <tile gid="309"/>
+   <tile gid="314"/>
+   <tile gid="314"/>
+   <tile gid="314"/>
+   <tile gid="314"/>
+   <tile gid="314"/>
    <tile gid="311"/>
    <tile gid="311"/>
    <tile gid="311"/>
@@ -712,5 +712,11 @@
   <object id="4" name="platform" x="160" y="544" width="736" height="96"/>
   <object id="5" name="platform" x="0" y="0" width="160" height="640"/>
   <object id="8" name="platform" x="288" y="128" width="128" height="64"/>
+ </objectgroup>
+ <objectgroup name="Spawn">
+  <object id="9" name="player" x="224" y="480" width="32" height="32"/>
+  <object id="10" name="player" x="352" y="64" width="32" height="32"/>
+  <object id="13" name="player" x="736" y="224" width="32" height="32"/>
+  <object id="14" name="player" x="768" y="480" width="32" height="32"/>
  </objectgroup>
 </map>
