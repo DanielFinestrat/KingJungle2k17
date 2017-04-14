@@ -10,64 +10,6 @@ using namespace sf;
 
 static Partida* instance;
 
-void Partida::cargarXML(){
-
-	TiXmlDocument doc("resources/mapas/mapa.tmx");
-	doc.LoadFile();
-
-	TiXmlElement* map = doc.FirstChildElement("map");
-	int _width = 0; 
-	int _height = 0;
-	int _numLayers = 0;
-
-	//Leemos el valor de X e Y del mapa
-	map->QueryIntAttribute("width", &_width);
-	map->QueryIntAttribute("height", &_height);
-	
-	//Leemos el número de layers que hay
-	TiXmlElement* layer = map->FirstChildElement("layer");
-	while(layer){
-		_numLayers++;
-		layer = layer->NextSiblingElement("layer");
-	}
-	
-	//Creamos la matriz donde irá la información
-	_tilemap = new int**[_numLayers];
-	for(int i=0; i<_numLayers; i++){
-		_tilemap[i] = new int*[_height];
-		for(int j=0; j<_height; j++){
-			_tilemap[i][j] = new int[_width];
-			for(int k=0; k<_width; k++){
-				_tilemap[i][j][k] = 0;
-			}
-		}
-	}
-
-	cout << "altura: " << _height << " - ancho: " << _width << " - capas: " << _numLayers << endl;
-	
-	//Leemos las matrices
-	TiXmlElement *tile;
-	layer = map->FirstChildElement("layer");
-	tile = layer->FirstChildElement("data")->FirstChildElement("tile");
-	
-		 
-	for(int l=0; l<_numLayers; l++){
-		if(l!=0){
-			layer = layer->NextSiblingElement("layer");
-			tile = layer->FirstChildElement("data")->FirstChildElement("tile");
-		}
-		for(int y=0; y<_height; y++){
-			for(int x = 0; x < _width; x++){
-				tile->QueryIntAttribute("gid", &_tilemap[l][y][x]);
-				//Avanzo al siguiente tag
-				tile = tile->NextSiblingElement("tile");
-			}
-		}
-		
-	}
-	
-}
-
 Partida::Partida() {
     window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
@@ -82,7 +24,6 @@ Partida::Partida() {
     window ->setView(*hudCamera);
 
     console = Console();
-	cargarXML();
 }
 
 Partida::Partida(const Partida& orig) {
@@ -452,7 +393,8 @@ void Partida::cameraSetTransform() {
 
 void Partida::loadMap() {
     checkJoysticksConnected();
-
+	cargarXML();
+	/*
     Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
     worldPlatforms.push_back(suelo);
 
@@ -470,13 +412,124 @@ void Partida::loadMap() {
 
     Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 2, 2 * screenHeight / 3), 0.2);
     worldPlatforms.push_back(platformCentr);
-
+*/
     Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);
     worldWeapons.push_back(pistola1);
 
     Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 20, false, false);
     worldWeapons.push_back(pistola2);
 }
+
+
+void Partida::guardarCapas(TiXmlElement* map){
+	int _width = 0; 
+	int _height = 0;
+	int _numLayers = 0;
+
+	//Leemos el valor de X e Y del mapa
+	map->QueryIntAttribute("width", &_width);
+	map->QueryIntAttribute("height", &_height);
+	
+	//Leemos el número de layers que hay
+	TiXmlElement* layer = map->FirstChildElement("layer");
+	while(layer){
+		_numLayers++;
+		layer = layer->NextSiblingElement("layer");
+	}
+	
+	//Creamos la matriz donde irá la información
+	_tilemap = new int**[_numLayers];
+	for(int i=0; i<_numLayers; i++){
+		_tilemap[i] = new int*[_height];
+		for(int j=0; j<_height; j++){
+			_tilemap[i][j] = new int[_width];
+			for(int k=0; k<_width; k++){
+				_tilemap[i][j][k] = 0;
+			}
+		}
+	}
+
+	cout << "altura: " << _height << " - ancho: " << _width << " - capas: " << _numLayers << endl;
+	
+	//Leemos las matrices
+	TiXmlElement *tile;
+	layer = map->FirstChildElement("layer");
+	tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+	
+		 
+	for(int l=0; l<_numLayers; l++){
+		if(l!=0){
+			layer = layer->NextSiblingElement("layer");
+			tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+		}
+		for(int y=0; y<_height; y++){
+			for(int x = 0; x < _width; x++){
+				tile->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+				//Avanzo al siguiente tag
+				tile = tile->NextSiblingElement("tile");
+			}
+		}
+		
+	}
+}
+
+void Partida::guardarObj(TiXmlElement* map){
+	int _numLayers = 0;
+	
+	//Leemos el número de layers que hay
+	TiXmlElement* layer = map->FirstChildElement("objectgroup");
+	while(layer){
+		_numLayers++;
+		layer = layer->NextSiblingElement("objectgroup");
+	}
+	
+	//Leemos las matrices
+	TiXmlElement *object;
+	layer = map->FirstChildElement("objectgroup");
+	object = layer->FirstChildElement("object");
+	
+	int _width = 0;
+	int _height = 0;
+	int _sizeX = 0;
+	int _sizeY = 0;
+	string tipo;
+	
+	for(int l=0; l<_numLayers; l++){
+		if(l!=0){
+			layer = layer->NextSiblingElement("objectgroup");
+			object = layer->FirstChildElement("object");
+		}
+		while(object){
+			tipo = object->Attribute("name");
+			cout << tipo << endl;
+			if(tipo.compare("platform") == 0){
+				object->QueryIntAttribute("x", &_width);
+				object->QueryIntAttribute("y", &_height);
+				object->QueryIntAttribute("width", &_sizeX);
+				object->QueryIntAttribute("height", &_sizeY);
+				//cout << _width << " " << _height << " " << _sizeX << " " << _sizeY << endl;
+				Platform *suelo = new Platform(world, sf::Vector2f((float)_sizeX, (float)_sizeY), sf::Vector2f((float)_width + _sizeX/2, (float)_height + _sizeY/2), 0.2);
+				worldPlatforms.push_back(suelo);
+			}
+			
+			object = object->NextSiblingElement("object");
+		}
+		cout << endl;
+	}
+	
+}
+
+void Partida::cargarXML(){
+
+	TiXmlDocument doc("resources/mapas/mapa.tmx");
+	doc.LoadFile();
+
+	TiXmlElement* map = doc.FirstChildElement("map");
+	guardarCapas(map);
+	guardarObj(map);
+	
+}
+
 
 Partida::~Partida() {
 }
