@@ -9,7 +9,7 @@
 #define MOTORGRAFICO_H
 
 #include "Cuerpo.h"
-#include "../../headerfiles/ContactListener.h"
+#include "ContactListener.h"
 
 #define TIMESTEP 1.0f/15.f      //TIEMPO DE REFRESCO
 #define VELITER 10              //NUMERO DE ITERACIONES POR TICK PARA CALCULAR LA VELOCIDAD

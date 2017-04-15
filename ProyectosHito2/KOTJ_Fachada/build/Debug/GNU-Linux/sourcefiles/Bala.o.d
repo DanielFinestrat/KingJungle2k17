@@ -74,10 +74,9 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/Explosion.h \
@@ -87,7 +86,7 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/Controlador.h \
- sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/Bala.h:
@@ -240,13 +239,11 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/Weapon.h:
 
@@ -268,6 +265,6 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 sourcefiles/../headerfiles/Controlador.h:
 
-sourcefiles/../headerfiles/ContactListener.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:

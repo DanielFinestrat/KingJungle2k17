@@ -75,10 +75,11 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
  motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
@@ -89,7 +90,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h \
  motorgrafico/sourcefiles/../../headerfiles/Controlador.h \
- motorgrafico/sourcefiles/../../headerfiles/ContactListener.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h
 
 motorgrafico/sourcefiles/../headerfiles/Temporizador.h:
@@ -242,13 +243,15 @@ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisic
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
 
@@ -270,6 +273,6 @@ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation
 
 motorgrafico/sourcefiles/../../headerfiles/Controlador.h:
 
-motorgrafico/sourcefiles/../../headerfiles/ContactListener.h:
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h:

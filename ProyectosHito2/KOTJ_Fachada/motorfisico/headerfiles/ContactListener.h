@@ -9,9 +9,9 @@
 #define CONTACTLISTENER_H
 
 #include <iostream>
-#include "Entidad.h"
-#include "Bala.h"
-#include "../Box2D/Box2D.h"
+#include "../../headerfiles/Entidad.h"
+#include "../../headerfiles/Bala.h"
+#include "../../Box2D/Box2D.h"
 
 class ContactListener : public b2ContactListener {
 public:

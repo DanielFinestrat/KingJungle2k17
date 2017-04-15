@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/main.o \
+	${OBJECTDIR}/motorfisico/sourcefiles/ContactListener.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/Cuerpo.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/Motorfisico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
@@ -46,7 +47,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/resources.o \
 	${OBJECTDIR}/sourcefiles/Bala.o \
-	${OBJECTDIR}/sourcefiles/ContactListener.o \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
@@ -99,6 +99,11 @@ ${OBJECTDIR}/main.o: main.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
+${OBJECTDIR}/motorfisico/sourcefiles/ContactListener.o: motorfisico/sourcefiles/ContactListener.cpp 
+	${MKDIR} -p ${OBJECTDIR}/motorfisico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorfisico/sourcefiles/ContactListener.o motorfisico/sourcefiles/ContactListener.cpp
+
 ${OBJECTDIR}/motorfisico/sourcefiles/Cuerpo.o: motorfisico/sourcefiles/Cuerpo.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorfisico/sourcefiles
 	${RM} "$@.d"
@@ -148,11 +153,6 @@ ${OBJECTDIR}/sourcefiles/Bala.o: sourcefiles/Bala.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Bala.o sourcefiles/Bala.cpp
-
-${OBJECTDIR}/sourcefiles/ContactListener.o: sourcefiles/ContactListener.cpp 
-	${MKDIR} -p ${OBJECTDIR}/sourcefiles
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/ContactListener.o sourcefiles/ContactListener.cpp
 
 ${OBJECTDIR}/sourcefiles/Controlador.o: sourcefiles/Controlador.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

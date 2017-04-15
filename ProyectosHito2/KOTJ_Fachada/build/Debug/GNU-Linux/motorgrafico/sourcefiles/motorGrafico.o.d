@@ -84,7 +84,9 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/motorGrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Controlador.h \
- motorgrafico/sourcefiles/../headerfiles/../../headerfiles/ContactListener.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/PlayerKeyboard.h
 
 motorgrafico/sourcefiles/../headerfiles/motorGrafico.h:
@@ -255,6 +257,10 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/header
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Controlador.h:
 
-motorgrafico/sourcefiles/../headerfiles/../../headerfiles/ContactListener.h:
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/PlayerKeyboard.h:

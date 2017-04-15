@@ -17,7 +17,7 @@
 #include "Bala.h"
 #include "Explosion.h"
 #include "PlayerJoystick.h"
-#include "ContactListener.h"
+#include "../motorfisico/headerfiles/ContactListener.h"
 #include "PlayerKeyboard.h"
 
 using namespace std;

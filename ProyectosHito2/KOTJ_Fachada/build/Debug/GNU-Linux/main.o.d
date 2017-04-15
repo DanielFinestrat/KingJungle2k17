@@ -58,17 +58,19 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ headerfiles/../motorfisico/headerfiles/ContactListener.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
  headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  headerfiles/../motorgrafico/headerfiles/Animation.h \
- headerfiles/Controlador.h headerfiles/ContactListener.h \
+ headerfiles/Controlador.h \
+ headerfiles/../motorfisico/headerfiles/ContactListener.h \
  headerfiles/PlayerKeyboard.h
 
 Box2D/Box2D.h:
@@ -221,13 +223,15 @@ headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 headerfiles/Weapon.h:
 
@@ -249,6 +253,6 @@ headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 headerfiles/Controlador.h:
 
-headerfiles/ContactListener.h:
+headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 headerfiles/PlayerKeyboard.h:

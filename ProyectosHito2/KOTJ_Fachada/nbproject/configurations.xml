@@ -5,7 +5,6 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>headerfiles/Bala.h</itemPath>
-      <itemPath>headerfiles/ContactListener.h</itemPath>
       <itemPath>headerfiles/Controlador.h</itemPath>
       <itemPath>headerfiles/Entidad.h</itemPath>
       <itemPath>headerfiles/Explosion.h</itemPath>
@@ -18,10 +17,12 @@
     </logicalFolder>
     <logicalFolder name="motorfisico" displayName="motorfisico" projectFiles="true">
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+        <itemPath>motorfisico/headerfiles/ContactListener.h</itemPath>
         <itemPath>motorfisico/headerfiles/Cuerpo.h</itemPath>
         <itemPath>motorfisico/headerfiles/Motorfisico.h</itemPath>
       </logicalFolder>
       <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+        <itemPath>motorfisico/sourcefiles/ContactListener.cpp</itemPath>
         <itemPath>motorfisico/sourcefiles/Cuerpo.cpp</itemPath>
         <itemPath>motorfisico/sourcefiles/Motorfisico.cpp</itemPath>
       </logicalFolder>
@@ -58,7 +59,6 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>sourcefiles/Bala.cpp</itemPath>
-      <itemPath>sourcefiles/ContactListener.cpp</itemPath>
       <itemPath>sourcefiles/Controlador.cpp</itemPath>
       <itemPath>sourcefiles/Entidad.cpp</itemPath>
       <itemPath>sourcefiles/Explosion.cpp</itemPath>
@@ -112,8 +112,6 @@
       </compileType>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
@@ -134,11 +132,21 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="motorfisico/headerfiles/ContactListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="motorfisico/headerfiles/Motorfisico.h"
             ex="false"
             tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/ContactListener.cpp"
+            ex="false"
+            tool="1"
             flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
@@ -223,8 +231,6 @@
       <item path="resources/sprites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -280,8 +286,6 @@
       </compileType>
       <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="headerfiles/ContactListener.h" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
@@ -302,11 +306,21 @@
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="motorfisico/headerfiles/ContactListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="motorfisico/headerfiles/Motorfisico.h"
             ex="false"
             tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/ContactListener.cpp"
+            ex="false"
+            tool="1"
             flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
@@ -391,8 +405,6 @@
       <item path="resources/sprites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="sourcefiles/ContactListener.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
       </item>

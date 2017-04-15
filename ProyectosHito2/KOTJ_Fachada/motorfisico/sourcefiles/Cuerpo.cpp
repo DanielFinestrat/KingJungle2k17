@@ -12,6 +12,7 @@
 
 Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
     b2BodyDef body;
+	body.type = b2_dynamicBody;
     body.position.Set(pos.x*MPP, pos.y * MPP);
     body.angle = angle;
 
@@ -28,7 +29,7 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
     fixtureDef.isSensor = false;
     m_pBody->CreateFixture(&fixtureDef);
     
-    setType(1);
+    //setType(1);
 }
 
 Cuerpo::~Cuerpo() {

@@ -81,13 +81,12 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
- sourcefiles/../headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
@@ -256,18 +255,16 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/ContactListener.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
-
 sourcefiles/../headerfiles/Explosion.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
-sourcefiles/../headerfiles/ContactListener.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:
