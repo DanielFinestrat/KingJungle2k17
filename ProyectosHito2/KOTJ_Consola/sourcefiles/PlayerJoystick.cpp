@@ -54,7 +54,6 @@ PlayerJoystick::PlayerJoystick(int id, b2World *world) {
 	partida->spawnPlayer.erase(partida->spawnPlayer.begin());
 	partida->spawnPlayer.push_back(position);
 	
-	cout << position.at(0) << endl;
     player->setPosition(position.at(0), position.at(1));
     player->setColor(partida->worldPlayer.size());
 

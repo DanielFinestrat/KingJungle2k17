@@ -186,6 +186,10 @@ bool Player::isGrounded() {
     return ( fabs(m_pBody->GetLinearVelocity().y) <= 0.0000005 ? true : false);
 }
 
+bool Player::isJumping(){
+	return !canJump;
+}
+
 bool Player::updateCanJumpStateState() {
     updateCanJumpState = true;
 }

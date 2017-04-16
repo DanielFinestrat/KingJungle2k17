@@ -62,6 +62,8 @@ public:
     
     static Partida* getInstance();
 
+    void IA();
+    
     void cargarXML();
     void guardarCapas(TiXmlElement* map);
     void guardarObj(TiXmlElement* map);

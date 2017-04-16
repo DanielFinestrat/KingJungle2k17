@@ -38,6 +38,7 @@ public:
     SpriteAnimated& getPlayerSprite();
     void jump();
     bool isGrounded();
+    bool isJumping();
     bool updateCanJumpStateState();
     void changeDirection(int);
     void move();
