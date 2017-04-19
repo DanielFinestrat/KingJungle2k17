@@ -14,6 +14,7 @@
 #ifndef VISIBLEBODY_H
 #define VISIBLEBODY_H
 
+#include "../headerfiles/resources.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>
@@ -110,7 +111,8 @@ public:
 private:
     float posX, posY, height, width;
     std::string texPath;
-    sf::RectangleShape rectangle;    
+    sf::RectangleShape rectangle;
+    Resources* tex;
 };
 
 #endif /* VISIBLEBODY_H */

@@ -12,7 +12,6 @@
  */
 
 #include "../headerfiles/VisibleBody.h"
-#include "../headerfiles/resources.h"
 #include <math.h>
 
 VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path) {
@@ -22,14 +21,13 @@ VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path) {
     height = h;
     width = w;
     texPath = path;
-    
-    
+   
     rectangle.setPosition(posX, posY);
     rectangle.setSize(sf::Vector2f(width, height));
     rectangle.setOrigin(sf::Vector2f(width/2, height/2));
     rectangle.setScale(1,1);
 
-    Resources* tex = Resources::getInstance();
+    tex = Resources::getInstance();
     
     rectangle.setTexture(&tex->getTexture(texPath));
 }
@@ -52,6 +50,7 @@ void VisibleBody::setDim(float w, float h) {
 
 void VisibleBody::setTex(std::string path) {
     texPath = path;
+    rectangle.setTexture(&tex->getTexture(texPath));
 }
 
 void VisibleBody::setScale(int sX, int sY) {

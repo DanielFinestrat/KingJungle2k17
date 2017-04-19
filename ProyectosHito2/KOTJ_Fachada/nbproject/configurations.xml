@@ -34,6 +34,7 @@
         <itemPath>motorgrafico/headerfiles/Animation.h</itemPath>
         <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Temporizador.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Texto.h</itemPath>
         <itemPath>motorgrafico/headerfiles/VisibleBody.h</itemPath>
         <itemPath>motorgrafico/headerfiles/motorGrafico.h</itemPath>
         <itemPath>motorgrafico/headerfiles/musicPlayer.h</itemPath>
@@ -43,6 +44,7 @@
         <itemPath>motorgrafico/sourcefiles/Animation.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Temporizador.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Texto.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/VisibleBody.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/motorGrafico.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/musicPlayer.cpp</itemPath>
@@ -171,6 +173,8 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Texto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/VisibleBody.h"
             ex="false"
             tool="3"
@@ -205,6 +209,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Texto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
             ex="false"
@@ -345,6 +351,8 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Texto.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/VisibleBody.h"
             ex="false"
             tool="3"
@@ -379,6 +387,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Texto.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
             ex="false"

@@ -42,6 +42,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o \
+	${OBJECTDIR}/motorgrafico/sourcefiles/Texto.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/motorGrafico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o \
@@ -128,6 +129,11 @@ ${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o: motorgrafico/sourcefiles/T
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o motorgrafico/sourcefiles/Temporizador.cpp
+
+${OBJECTDIR}/motorgrafico/sourcefiles/Texto.o: motorgrafico/sourcefiles/Texto.cpp 
+	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Texto.o motorgrafico/sourcefiles/Texto.cpp
 
 ${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o: motorgrafico/sourcefiles/VisibleBody.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles

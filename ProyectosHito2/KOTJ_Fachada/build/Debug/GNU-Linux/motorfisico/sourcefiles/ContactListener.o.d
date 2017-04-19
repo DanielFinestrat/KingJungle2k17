@@ -84,6 +84,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Weapon.h \
  motorfisico/sourcefiles/../../headerfiles/Bala.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  motorfisico/sourcefiles/../../headerfiles/Explosion.h \
  motorfisico/sourcefiles/../../headerfiles/PlayerJoystick.h \
  motorfisico/sourcefiles/../../headerfiles/Player.h \
@@ -261,6 +262,8 @@ motorfisico/sourcefiles/../../headerfiles/Weapon.h:
 motorfisico/sourcefiles/../../headerfiles/Bala.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorfisico/sourcefiles/../../headerfiles/Explosion.h:
 

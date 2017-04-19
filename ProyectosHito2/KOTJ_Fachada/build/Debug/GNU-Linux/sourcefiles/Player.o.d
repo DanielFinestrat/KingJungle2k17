@@ -73,6 +73,7 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
@@ -238,6 +239,8 @@ sourcefiles/../headerfiles/Weapon.h:
 sourcefiles/../headerfiles/Bala.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/Partida.h:
 

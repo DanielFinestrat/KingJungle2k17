@@ -79,6 +79,7 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
@@ -250,6 +251,8 @@ sourcefiles/../headerfiles/Weapon.h:
 sourcefiles/../headerfiles/Bala.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 
