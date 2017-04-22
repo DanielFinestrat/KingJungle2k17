@@ -58,7 +58,7 @@ int Weapon::shoot() {
             ammo--;
             Partida *partida = Partida::getInstance();
             // +50 habria que cambiarlo por el size del personaje
-            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM), explosivo);
+            Bala* nuevaBala = new Bala(Vector2f(10, 4), Vector2f(cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM), explosivo);
             
             if(!parabola) nuevaBala->Disparar(5 * -dir, 180);
             else nuevaBala->Disparar_Parabola(-dir, 160);

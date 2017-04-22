@@ -9,19 +9,19 @@
 #define BALA_H
 
 #include <SFML/Graphics.hpp>
-#include "../Box2D/Box2D.h"
 #include <stdio.h>
 #include <iostream>
 #include <set>
 #include <vector>
 #include "Entidad.h"
+#include "../motorfisico/headerfiles/Cuerpo.h"
 
 class Bala : public Entidad {
 public:
     sf::Vector2f m_Size;
     bool explosion;
 
-    b2Body *m_pBody;
+    Cuerpo *cuerpo;
     sf::RectangleShape *m_Shape;
 
     /**
@@ -31,7 +31,7 @@ public:
      * @param position Vector2f: posicion inicial de la bala
      * @param explo bool: activar la explosion al eliminar la bala
      */
-    Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position, bool explo);
+    Bala(sf::Vector2f size, sf::Vector2f position, bool explo);
 
     /**
      * Actualiza el RectangleShape del objeto

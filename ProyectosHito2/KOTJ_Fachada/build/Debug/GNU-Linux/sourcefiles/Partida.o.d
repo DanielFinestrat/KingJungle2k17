@@ -76,8 +76,9 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
@@ -245,9 +246,11 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
-
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/Weapon.h:
 

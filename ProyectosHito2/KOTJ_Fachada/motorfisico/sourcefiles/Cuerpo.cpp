@@ -31,6 +31,10 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
 Cuerpo::~Cuerpo() {
 }
 
+void Cuerpo::Destruir(){
+    m_pBody->GetWorld()->DestroyBody(m_pBody);
+}
+
 void Cuerpo::aplicarFuerza(float x, float y) {
     b2Vec2 fuerza(x, y);
     m_pBody->ApplyForceToCenter(fuerza, true);
@@ -165,5 +169,4 @@ float Cuerpo::getVelocidadX() {
 
 float Cuerpo::getVelocidadY() {
     return m_pBody->GetLinearVelocity().y;
-
 }

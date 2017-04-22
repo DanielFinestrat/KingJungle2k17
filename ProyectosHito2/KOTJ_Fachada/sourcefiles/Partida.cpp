@@ -101,10 +101,11 @@ void Partida::eraseBullets() {
     for (; itBala != bullets2Delete.end(); itBala++) {
         Bala* dyingBala = *itBala;
         if (dyingBala->explosion == true) {
-            b2Vec2 position = dyingBala->m_pBody->GetPosition();
+            float posX = dyingBala->cuerpo->getPosicionX();
+            float posY = dyingBala->cuerpo->getPosicionY();
 
             Explosion *nueva;
-            nueva = new Explosion(dyingBala->m_pBody->GetWorld(), sf::Vector2f(position.x * PPM, position.y * PPM), 1.0f, 0.05f, 0.5f);
+            nueva = new Explosion(world, sf::Vector2f(posX * PPM, posY * PPM), 1.0f, 0.05f, 0.5f);
             worldExplo.insert(nueva);
         }
         worldBullets.erase(dyingBala);

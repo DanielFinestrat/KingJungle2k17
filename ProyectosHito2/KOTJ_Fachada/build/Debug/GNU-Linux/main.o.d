@@ -61,8 +61,9 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/ContactListener.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
- headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
@@ -230,9 +231,11 @@ headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
-headerfiles/../motorfisico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
-
 headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
 headerfiles/Weapon.h:
 

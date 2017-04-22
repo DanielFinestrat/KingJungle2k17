@@ -16,6 +16,8 @@ class Cuerpo {
 public:
     Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle); //Solo puede llamarse desde world
     virtual ~Cuerpo();
+    void Destruir();
+    
     void setVelocidadX(float x);
     void setVelocidadY(float y);
     void setVelocidad(float x, float y);
