@@ -40,11 +40,6 @@ Bala::Bala(b2World *mundo, sf::Vector2f size, sf::Vector2f position, bool explo)
     m_Shape->setOrigin(size.x / 2, size.y / 2);
     m_Shape->setPosition(sf::Vector2f(m_pBody->GetPosition().x*PPM, m_pBody->GetPosition().y * PPM));
     m_Shape->setFillColor(sf::Color::Yellow);
-
-    /*if (!textura.loadFromFile("resources/images/bala1.png")) {
-        cerr << "nope" << endl;
-    }
-    m_Shape->setTexture(&textura);*/
 }
 
 void Bala::Update_Shape() {

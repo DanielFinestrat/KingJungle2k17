@@ -16,10 +16,8 @@ Platform::Platform(const Platform& orig) {
 Platform::Platform(float sizex, float sizey, float posx, float posy, float friction) {
     tag = "Platform";
     
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(posx, posy, sizex, sizey);    
-    cuerpo->setFriction(0);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(posx, posy, sizex, sizey);
     cuerpo->setFriction(friction);
-    cuerpo->setRestitution(0.01);
     cuerpo->setType(0);
     cuerpo->setMaskBits(MASK_SCENERY);
     cuerpo->setCategoryBits(CATEGORY_SCENERY);

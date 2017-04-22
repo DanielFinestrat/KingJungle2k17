@@ -9,7 +9,6 @@
 #define PLATFORM_H
 
 #include <SFML/Graphics.hpp>
-#include "../Box2D/Box2D.h"
 #include <vector>
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"

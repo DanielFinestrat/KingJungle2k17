@@ -11,6 +11,7 @@
 #include "Bala.h"
 #include "Entidad.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
+#include "../motorfisico/headerfiles/Cuerpo.h"
 
 using namespace std;
 using namespace sf;
@@ -27,8 +28,6 @@ public:
     bool parabola;
     bool explosivo;
 
-    
-
     //Variables para controlar la cadencia de disparo
     sf::Clock deltaClock;
     float difTime;
@@ -39,7 +38,7 @@ public:
     std::set<Bala*> listadoBalas;
 
     sf::Vector2f m_Size;
-    b2Body *m_pBody;
+    Cuerpo *cuerpo;
     VisibleBody *m_vBody;
 
     /*Constructor del objeto arma

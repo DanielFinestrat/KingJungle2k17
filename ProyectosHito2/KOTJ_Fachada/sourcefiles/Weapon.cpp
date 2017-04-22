@@ -25,24 +25,14 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
     
-    b2BodyDef weaponBodyDef;
-    weaponBodyDef.userData = this;
-    weaponBodyDef.type = b2_dynamicBody;
-    weaponBodyDef.position.Set(pos.x*MPP, pos.y * MPP);
-    m_pBody = world->CreateBody(&weaponBodyDef);
-
-    b2PolygonShape weaponBox;
-    weaponBox.SetAsBox(size.x / 2 * MPP, size.y / 2 * MPP);
-
-    b2FixtureDef weaponFixtureDef;
-    weaponFixtureDef.shape = &weaponBox;
-    weaponFixtureDef.friction = 0.5f;
-    weaponFixtureDef.restitution = 0.3f;
-    weaponFixtureDef.density = 1.0f;
-    weaponFixtureDef.filter.categoryBits = CATEGORY_GUN;
-    weaponFixtureDef.filter.maskBits = MASK_GUN;
-
-    m_pBody->CreateFixture(&weaponFixtureDef);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, size.x, size.y);
+    cuerpo->setPosicion(pos.x * MPP, pos.y * MPP);
+    cuerpo->setMaskBits(MASK_GUN);
+    cuerpo->setCategoryBits(CATEGORY_GUN);
+    cuerpo->setDensity(1.0f);
+    cuerpo->setFriction(0.2f);
+    cuerpo->setRestitution(0.2f);
+    cuerpo->setGravityScale(1.0f);
     
     //Creacion del cuerpo visible (shape)
     m_vBody = new VisibleBody(pos.x * PPM, pos.y * PPM, size.x, size.y, "./resources/sprites/revolver.png");
@@ -50,14 +40,12 @@ Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_
 }
 
 void Weapon::update() {
-    b2Vec2 pos = m_pBody->GetPosition();
-    m_pBody->SetTransform(pos, 0);
-    m_vBody->updateBody(pos.x * PPM, pos.y * PPM, m_pBody->GetAngle()*180);
+    m_vBody->updateBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM, cuerpo->getAngulo()*180);
 }
 
 void Weapon::update(float posX, float posY) {
-    m_pBody->SetTransform(b2Vec2(posX, posY), 0);
-    m_vBody->updateBody(posX * PPM, posY * PPM, m_pBody->GetAngle()*180);
+    cuerpo->setPosicion(posX, posY);
+    m_vBody->updateBody(posX * PPM, posY * PPM, cuerpo->getAngulo()*180);
 }
 
 int Weapon::shoot() {
@@ -70,7 +58,7 @@ int Weapon::shoot() {
             ammo--;
             Partida *partida = Partida::getInstance();
             // +50 habria que cambiarlo por el size del personaje
-            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(m_pBody->GetPosition().x * PPM + 50 * dir, m_pBody->GetPosition().y * PPM), explosivo);
+            Bala* nuevaBala = new Bala(partida->world, Vector2f(10, 4), Vector2f(cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM), explosivo);
             
             if(!parabola) nuevaBala->Disparar(5 * -dir, 180);
             else nuevaBala->Disparar_Parabola(-dir, 160);
@@ -93,12 +81,12 @@ void Weapon::setPossession(bool var) {
 void Weapon::throwWeapon(float playerVel) {
 
     inPossession = false;
-    m_pBody->SetActive(true);
+    cuerpo->setActive(true);
 
     //Lanzarla para arriba si está quieto o anda despacio
-    if (fabs(playerVel) < 0.3) m_pBody->ApplyForceToCenter(b2Vec2(0, -30), 1);
+    if (fabs(playerVel) < 0.3) cuerpo->aplicarFuerza(0, -80);
         //Lanzarla hacia donde mire la pistola
-    else m_pBody->ApplyForceToCenter(b2Vec2(dir * 30 * fabs(playerVel), -20), 1);
+    else cuerpo->aplicarFuerza(dir * 70 * fabs(playerVel), -60);
 
 }
 

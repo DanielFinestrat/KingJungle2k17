@@ -12,24 +12,20 @@
 
 Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
     b2BodyDef body;
-	body.type = b2_dynamicBody;
+    body.type = b2_dynamicBody;
     body.position.Set(pos.x*MPP, pos.y * MPP);
     body.angle = angle;
-
     m_pBody = world->CreateBody(&body);
 
     b2PolygonShape box;
-    box.SetAsBox(size.x / 2 * MPP, size.y / 2 * MPP);
+    box.SetAsBox((size.x / 2) * MPP, (size.y / 2) * MPP);
 
     b2FixtureDef fixtureDef;
     fixtureDef.shape = &box;
-    fixtureDef.friction = 0;
-    fixtureDef.restitution = 0;
-    fixtureDef.density = 0;
+    fixtureDef.friction = 0.2f;
+    fixtureDef.restitution = 0.01f;
     fixtureDef.isSensor = false;
-    m_pBody->CreateFixture(&fixtureDef);
-    
-    //setType(1);
+    m_pBody->CreateFixture(&fixtureDef);    
 }
 
 Cuerpo::~Cuerpo() {
@@ -65,12 +61,15 @@ void Cuerpo::setType(int type) {
     switch (type) {
         case 0:
             m_pBody->SetType(b2_staticBody);
+            m_pBody->SetAwake(true);
             break;
         case 1:
             m_pBody->SetType(b2_dynamicBody);
+            m_pBody->SetAwake(true);
             break;
         case 2:
             m_pBody->SetType(b2_kinematicBody);
+            m_pBody->SetAwake(true);
             break;
     }
 }
@@ -114,6 +113,10 @@ void Cuerpo::setActive(bool active){
     m_pBody->SetActive(active);
 }
 
+void Cuerpo::setAwake(bool awake){
+    m_pBody->SetAwake(awake);
+}
+
 bool Cuerpo::getActive(){
     return(m_pBody->IsActive());
 }
@@ -134,6 +137,10 @@ void Cuerpo::setMaskBits(short mask) {
     b2Filter filter = m_pBody->GetFixtureList()[0].GetFilterData();
     filter.maskBits = mask;
     m_pBody->GetFixtureList()[0].SetFilterData(filter);
+}
+
+void Cuerpo::setGravityScale(float gravityScale){
+    m_pBody->SetGravityScale(gravityScale);
 }
 
 void Cuerpo::setUserData() {
@@ -160,7 +167,3 @@ float Cuerpo::getVelocidadY() {
     return m_pBody->GetLinearVelocity().y;
 
 }
-
-
-
-

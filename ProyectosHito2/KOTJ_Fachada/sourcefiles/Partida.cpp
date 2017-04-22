@@ -266,10 +266,6 @@ void Partida::respawn() {
         player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
         player->respawn();
     }
-    /* if (usingKeyboard) {
-         playerKeyboard->player->setPosition((4) * screenWidth / 5, screenHeight - 100);
-         playerKeyboard->player->respawn();
-     }*/
 }
 
 void Partida::updatePlayers(Time frameTime) {
@@ -389,10 +385,10 @@ void Partida::loadMap() {
     Platform *suelo = new Platform(screenWidth, 100.0f, screenWidth / 2.0f, screenHeight, 0.2);
     worldPlatforms.push_back(suelo);
 
-    Platform *paredIzda = new Platform(100.0f, screenHeight, 0.0f, screenHeight / 2.0f, 0);
+    Platform *paredIzda = new Platform(100.0f, screenHeight, 0.0f, screenHeight / 2.0f, 0.2);
     worldPlatforms.push_back(paredIzda);
 
-    Platform *paredDcha = new Platform(100.0f, screenHeight, screenWidth, screenHeight / 2, 0.0f);
+    Platform *paredDcha = new Platform(100.0f, screenHeight, screenWidth, screenHeight / 2, 0.2);
     worldPlatforms.push_back(paredDcha);
 
     Platform *platformDcha = new Platform(120.0f, 50.0f, screenWidth / 4, screenHeight / 3, 0.2);

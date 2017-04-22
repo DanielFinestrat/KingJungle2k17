@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "../Box2D/Box2D.h"
 #include "Entidad.h"
 #include "../motorgrafico/headerfiles/Animation.h"
 #include "../motorgrafico/headerfiles/SpriteAnimated.h"

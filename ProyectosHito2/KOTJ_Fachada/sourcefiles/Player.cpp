@@ -61,31 +61,15 @@ Player::Player() {
 
     canJump = true;
     updateCanJumpState = false;
-    fuerzaSalto = -80;
+    fuerzaSalto = -110;
     fuerzaMovimiento = 5;
     velocidadMaxima = 1;
 
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize / 2 * MPP, pSize / 2 * MPP);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize, pSize);
     cuerpo->setMaskBits(MASK_PLAYER);
     cuerpo->setCategoryBits(CATEGORY_PLAYER);
-    
-
-    //Definimos un cuerpo dinamico (afectando por la gravedad y resto de objetos box2d creados)
-    /*bodyDef.type = b2_dynamicBody;
-    bodyDef.userData = this;
-    bodyDef.gravityScale = 0.7;
-    bodyDef.fixedRotation = true;
-    m_pBody = world.CreateBody(&bodyDef);
-    polyShape.SetAsBox(pSize / 2 * MPP, pSize / 2 * MPP);
-
-    fixtureDef.shape = &polyShape;
-    fixtureDef.friction = 0.2f;
-    fixtureDef.restitution = 0;
-    fixtureDef.density = 0.7f;
-    fixtureDef.filter.categoryBits = CATEGORY_PLAYER;
-    fixtureDef.filter.maskBits = MASK_PLAYER;
-
-    m_pBody->CreateFixture(&fixtureDef);*/
+    cuerpo->setDensity(0.7f);
+    cuerpo->setGravityScale(0.7f);
 
     weapon = NULL;
 
@@ -141,7 +125,6 @@ void Player::update(Time frameTime) {
 
     float posx = cuerpo->getPosicionX();
     float posy = cuerpo->getPosicionY();
-    //b2Vec2 pos = m_pBody->GetPosition();
 
     move();
 
@@ -187,7 +170,7 @@ void Player::jump() {
 //Comprobamos si se puede saltar
 
 bool Player::isGrounded() {
-    return ( fabs(cuerpo->getVelocidadY()) <= 0.0000005 ? true : false);
+    return ( fabs(cuerpo->getVelocidadY()) <= 0.00000005 ? true : false);
 }
 
 bool Player::updateCanJumpStateState() {
@@ -268,7 +251,7 @@ void Player::respawn() {
     dirMoving = 0;
     isDucking = false;
     isDead = false;
-    cuerpo->setActive(false);
+    cuerpo->setActive(true);
 }
 
 void Player::interact(Weapon* lastWeapon) {
@@ -281,8 +264,10 @@ void Player::interact(Weapon* lastWeapon) {
             if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
                 if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
                     currentWeapon->inPossession = true;
-                    currentWeapon->m_pBody->SetAwake(false);
-                    currentWeapon->m_pBody->SetActive(false);
+
+                    currentWeapon->cuerpo->setActive(false);
+                    currentWeapon->cuerpo->setAwake(false);
+
                     weapon = currentWeapon;
                     if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
                     break;
@@ -305,8 +290,9 @@ void Player::interact() {
                 if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
                     if (!currentWeapon->inPossession) {
                         currentWeapon->inPossession = true;
-                        currentWeapon->m_pBody->SetAwake(false);
-                        currentWeapon->m_pBody->SetActive(false);
+
+                        currentWeapon->cuerpo->setActive(false);
+                        currentWeapon->cuerpo->setAwake(false);
                         weapon = currentWeapon;
                         if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
                         break;

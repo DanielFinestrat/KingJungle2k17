@@ -30,9 +30,11 @@ public:
     void setDensity(float den);
     void setSensor(bool sensor);
     void setActive(bool active);
+    void setAwake(bool awake);
     void setDespertar(bool despertador);
     void setCategoryBits(short category);
-    void setMaskBits(short mask);    
+    void setMaskBits(short mask);
+    void setGravityScale(float gravityScale);
     
     float getAngulo();
     bool getActive();
@@ -46,4 +48,3 @@ private:
 };
 
 #endif /* CUERPO_H */
-
