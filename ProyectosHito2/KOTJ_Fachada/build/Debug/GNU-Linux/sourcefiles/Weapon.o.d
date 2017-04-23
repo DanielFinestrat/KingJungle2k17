@@ -70,24 +70,24 @@ build/Debug/GNU-Linux/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Partida.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/Weapon.h \
  sourcefiles/../headerfiles/Explosion.h \
+ sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/Controlador.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h
 
 sourcefiles/../headerfiles/Weapon.h:
@@ -234,11 +234,15 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.
 
 sourcefiles/../headerfiles/Partida.h:
 
-sourcefiles/../headerfiles/../Box2D/Box2D.h:
-
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
 sourcefiles/../headerfiles/Platform.h:
 
@@ -248,13 +252,11 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
-
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Explosion.h:
+
+sourcefiles/../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
@@ -267,7 +269,5 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 sourcefiles/../headerfiles/Controlador.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:

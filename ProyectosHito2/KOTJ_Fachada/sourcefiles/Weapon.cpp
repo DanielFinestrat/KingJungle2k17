@@ -8,7 +8,7 @@
 #include "../headerfiles/Weapon.h"
 #include "../headerfiles/Partida.h"
 
-Weapon::Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm, int recoil_, bool parabola, bool explosivo) {
+Weapon::Weapon(sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, int amm, int recoil_, bool parabola, bool explosivo) {
 
     tag = "Weapon";
 

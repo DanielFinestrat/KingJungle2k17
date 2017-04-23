@@ -6,6 +6,7 @@
  */
 
 #include "../headerfiles/Partida.h"
+
 using namespace sf;
 
 static Partida* instance;
@@ -14,8 +15,6 @@ Partida::Partida() {
     window = new RenderWindow(VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     window->setFramerateLimit(60);
     
-    world = new b2World(b2Vec2(0.0f, 9.8f));
-    world->SetContactListener(&myContactListener);
     temporizador = new Temporizador(20, b2Vec2(screenWidth / 2, 0), 40);
     usingKeyboard = false;
 
@@ -104,9 +103,9 @@ void Partida::eraseBullets() {
             float posX = dyingBala->cuerpo->getPosicionX();
             float posY = dyingBala->cuerpo->getPosicionY();
 
-            Explosion *nueva;
+            /*Explosion *nueva;
             nueva = new Explosion(world, sf::Vector2f(posX * PPM, posY * PPM), 1.0f, 0.05f, 0.5f);
-            worldExplo.insert(nueva);
+            worldExplo.insert(nueva);*/
         }
         worldBullets.erase(dyingBala);
         delete dyingBala;
@@ -135,7 +134,6 @@ void Partida::Erase() {
 }
 
 void Partida::Update() {
-    world->Step(TIMESTEP, VELITER, POSITER);
     Motorfisico::getInstance()->Update();
     
     Time frameTime = frameClock.restart();
@@ -227,12 +225,6 @@ int Partida::findControladorWithId(int id) {
 }
 
 void Partida::checkJoysticksConnected() {
-
-    /*addPlayerJoystick(&playerJoysticks, 0);
-    addPlayerJoystick(&playerJoysticks, 1);
-    addPlayerJoystick(&playerJoysticks, 2);
-    addPlayerJoystick(&playerJoysticks, 3);*/
-
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
         if (joystickManager.isConnected(i)) {
@@ -252,13 +244,13 @@ void Partida::addPlayerJoystick(int id) {
 
     //Añadimos en funcion de la condición
     if (add) {
-        PlayerJoystick* p = new PlayerJoystick(id, world);
+        PlayerJoystick* p = new PlayerJoystick(id);
         worldControlador.push_back(p);
     }
 }
 
 void Partida::addPlayerKeyboard() {
-    worldControlador.push_back(new PlayerKeyboard(world));
+    worldControlador.push_back(new PlayerKeyboard());
 }
 
 void Partida::respawn() {
@@ -401,10 +393,10 @@ void Partida::loadMap() {
     Platform *platformCentr = new Platform(120.0f, 50.0, screenWidth / 2, 2 * screenHeight / 3, 0.2);
     worldPlatforms.push_back(platformCentr);
 
-    Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);
+    Weapon *pistola1 = new Weapon(Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);
     worldWeapons.push_back(pistola1);
 
-    Weapon *pistola2 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 20, false, false);
+    Weapon *pistola2 = new Weapon(Vector2f(50, 30), sf::Vector2f(3 * screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 20, false, false);
     worldWeapons.push_back(pistola2);
 }
 

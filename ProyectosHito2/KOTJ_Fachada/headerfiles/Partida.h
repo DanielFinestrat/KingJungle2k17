@@ -10,14 +10,13 @@
 
 #include <vector>
 #include <SFML/Graphics.hpp>
-#include "../Box2D/Box2D.h"
 #include "../motorgrafico/headerfiles/Temporizador.h"
+#include "../motorfisico/headerfiles/ContactListener.h"
 #include "Platform.h"
 #include "Weapon.h"
 #include "Bala.h"
 #include "Explosion.h"
 #include "PlayerJoystick.h"
-#include "../motorfisico/headerfiles/ContactListener.h"
 #include "PlayerKeyboard.h"
 
 using namespace std;
@@ -31,8 +30,6 @@ using namespace std;
 
 class Partida {
 public:
-    b2World *world;
-    ContactListener myContactListener;
     sf::RenderWindow *window;
 
     sf::View *mainCamera;

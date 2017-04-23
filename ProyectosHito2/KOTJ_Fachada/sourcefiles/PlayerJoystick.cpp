@@ -4,10 +4,11 @@
  * 
  * Created on 15 de marzo de 2017, 9:45
  */
+
 #include "../headerfiles/PlayerJoystick.h"
 #include "../headerfiles/Partida.h"
 
-PlayerJoystick::PlayerJoystick(int id, b2World *world) {
+PlayerJoystick::PlayerJoystick(int id) {
     tipo = "Joystick";
 
     Partida* partida = Partida::getInstance();

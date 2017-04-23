@@ -68,7 +68,10 @@ void Bala::Render(sf::RenderWindow *window) {
 }
 
 Bala::~Bala() {
+    cout<<"eliminar bala"<<endl;
     cuerpo->Destruir();
+    delete cuerpo;
+    cuerpo = NULL;
     delete m_Shape;
     m_Shape = NULL;
     //Hacer un delete de cada objeto que se ha creado con un New y luego igualarlo a NULL

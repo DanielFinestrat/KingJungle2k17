@@ -49,7 +49,7 @@ public:
      * @param int BPS: Balas por disparo
      * @param int ammo: Municion del arma
      */
-    Weapon(b2World *world, sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo, int recoil_, bool parabola, bool explosivo);
+    Weapon(sf::Vector2f size, sf::Vector2f pos, float shoot_cadence, int BPS, int ammo, int recoil_, bool parabola, bool explosivo);
     ~Weapon();
 
     /*Se encarga de actualizar las posiciones de los elementos del arma*/

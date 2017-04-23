@@ -10,14 +10,13 @@
 
 #include <iostream>
 #include <vector>
-#include "../Box2D/Box2D.h"
 #include "Player.h"
 #include "Controlador.h"
 
 class PlayerKeyboard : public Controlador{
 public:
     
-    PlayerKeyboard(b2World *world);
+    PlayerKeyboard();
     virtual ~PlayerKeyboard();
 
     int id;

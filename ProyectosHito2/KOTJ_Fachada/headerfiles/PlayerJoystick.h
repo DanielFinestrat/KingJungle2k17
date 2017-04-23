@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <vector>
-#include "../Box2D/Box2D.h"
 #include "Player.h"
 #include "Controlador.h"
 
@@ -19,7 +18,7 @@ using namespace std;
 class PlayerJoystick : public Controlador {
 public:
 
-    PlayerJoystick(int id, b2World *world);
+    PlayerJoystick(int id);
     virtual ~PlayerJoystick();
 
     void pressUpdateState(int botonPulsado);

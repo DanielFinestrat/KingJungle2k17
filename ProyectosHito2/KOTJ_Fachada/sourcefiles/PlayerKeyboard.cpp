@@ -8,7 +8,7 @@
 #include "../headerfiles/PlayerKeyboard.h"
 #include "../headerfiles/Partida.h"
 
-PlayerKeyboard::PlayerKeyboard(b2World* world) {
+PlayerKeyboard::PlayerKeyboard() {
     tipo = "Keyboard";
 	
     Partida* partida = Partida::getInstance();

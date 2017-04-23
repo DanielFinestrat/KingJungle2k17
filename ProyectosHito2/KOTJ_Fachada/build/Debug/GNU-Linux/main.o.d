@@ -50,30 +50,29 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  Box2D/Dynamics/Joints/b2RopeJoint.h Box2D/Dynamics/Joints/b2WeldJoint.h \
  Box2D/Dynamics/Joints/b2WheelJoint.h headerfiles/Partida.h \
- headerfiles/../Box2D/Box2D.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
- headerfiles/Platform.h headerfiles/Entidad.h \
- headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
- headerfiles/../motorfisico/headerfiles/Motorfisico.h \
- headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ headerfiles/Platform.h headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/Motorfisico.h \
+ headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/ContactListener.h \
  headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
- headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
+ headerfiles/Explosion.h headerfiles/../Box2D/Box2D.h \
+ headerfiles/PlayerJoystick.h headerfiles/Player.h \
+ headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  headerfiles/../motorgrafico/headerfiles/Animation.h \
- headerfiles/Controlador.h \
- headerfiles/../motorfisico/headerfiles/ContactListener.h \
- headerfiles/PlayerKeyboard.h
+ headerfiles/Controlador.h headerfiles/PlayerKeyboard.h
 
 Box2D/Box2D.h:
 
@@ -207,25 +206,13 @@ Box2D/Dynamics/Joints/b2WheelJoint.h:
 
 headerfiles/Partida.h:
 
-headerfiles/../Box2D/Box2D.h:
-
 headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 
-headerfiles/Platform.h:
-
-headerfiles/Entidad.h:
-
-headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
-
-headerfiles/../motorfisico/headerfiles/Motorfisico.h:
-
-headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
@@ -237,6 +224,18 @@ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfi
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
+headerfiles/Platform.h:
+
+headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/Motorfisico.h:
+
+headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
 headerfiles/Weapon.h:
 
 headerfiles/Bala.h:
@@ -246,6 +245,8 @@ headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 headerfiles/Explosion.h:
+
+headerfiles/../Box2D/Box2D.h:
 
 headerfiles/PlayerJoystick.h:
 
@@ -258,7 +259,5 @@ headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 headerfiles/../motorgrafico/headerfiles/Animation.h:
 
 headerfiles/Controlador.h:
-
-headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 headerfiles/PlayerKeyboard.h:
