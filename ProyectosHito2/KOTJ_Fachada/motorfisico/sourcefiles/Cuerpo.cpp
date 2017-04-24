@@ -15,6 +15,7 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle, Entidad* da
     body.type = b2_dynamicBody;
     body.position.Set(pos.x*MPP, pos.y * MPP);
     body.angle = angle;
+    body.fixedRotation = true;
     m_pBody = world->CreateBody(&body);
 
     b2PolygonShape box;
@@ -87,20 +88,55 @@ void Cuerpo::setPosicion(float x, float y) {
 }
 
 void Cuerpo::setFriction(float fric) {
-    m_pBody->GetFixtureList()[0].SetFriction(fric);
+    b2Fixture fix = m_pBody->GetFixtureList()[0];
+
+    b2FixtureDef fix2;
+    fix2.friction = fric;
+    fix2.density = fix.GetDensity();
+    fix2.isSensor = fix.IsSensor();
+    fix2.filter.categoryBits = fix.GetFilterData().categoryBits;
+    fix2.filter.maskBits = fix.GetFilterData().maskBits;
+    fix2.restitution = fix.GetRestitution();
+    fix2.shape = fix.GetShape();
+    fix2.userData = fix.GetUserData();
+
+    m_pBody->CreateFixture(&fix2);
 }
 
 void Cuerpo::setRestitution(float rest) {
-    m_pBody->GetFixtureList()[0].SetRestitution(rest);
+    b2Fixture fix = m_pBody->GetFixtureList()[0];
+
+    b2FixtureDef fix2;
+    fix2.restitution = rest;
+    fix2.density = fix.GetDensity();
+    fix2.isSensor = fix.IsSensor();
+    fix2.filter.categoryBits = fix.GetFilterData().categoryBits;
+    fix2.filter.maskBits = fix.GetFilterData().maskBits;
+    fix2.friction = fix.GetFriction();    
+    fix2.shape = fix.GetShape();
+    fix2.userData = fix.GetUserData();
+
+    m_pBody->CreateFixture(&fix2);
 }
 
 void Cuerpo::setDensity(float den) {
-    m_pBody->GetFixtureList()[0].SetDensity(den);
+    b2Fixture fix = m_pBody->GetFixtureList()[0];
+
+    b2FixtureDef fix2;
+    fix2.density = den;
+    fix2.isSensor = fix.IsSensor();
+    fix2.filter.categoryBits = fix.GetFilterData().categoryBits;
+    fix2.filter.maskBits = fix.GetFilterData().maskBits;
+    fix2.friction = fix.GetFriction();
+    fix2.restitution = fix.GetRestitution();
+    fix2.shape = fix.GetShape();
+    fix2.userData = fix.GetUserData();
+
+    m_pBody->CreateFixture(&fix2);
 }
 
 void Cuerpo::setSensor(bool sensor) {
-    b2Fixture fix = m_pBody->GetFixtureList()[0];    
-    m_pBody->DestroyFixture(&fix);
+    b2Fixture fix = m_pBody->GetFixtureList()[0];
 
     b2FixtureDef fix2;
     fix2.isSensor = sensor;

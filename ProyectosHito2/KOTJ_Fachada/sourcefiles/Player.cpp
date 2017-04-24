@@ -68,8 +68,7 @@ Player::Player() {
     cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize, pSize, this);
     cuerpo->setMaskBits(MASK_PLAYER);
     cuerpo->setCategoryBits(CATEGORY_PLAYER);
-    cuerpo->setDensity(0.7f);
-    cuerpo->setGravityScale(0.7f);
+    cuerpo->setDensity(0.75f);
 
     weapon = NULL;
 

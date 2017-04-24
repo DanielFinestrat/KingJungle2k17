@@ -30,9 +30,7 @@ Weapon::Weapon(sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, in
     cuerpo->setMaskBits(MASK_GUN);
     cuerpo->setCategoryBits(CATEGORY_GUN);
     cuerpo->setDensity(1.0f);
-    cuerpo->setFriction(0.2f);
     cuerpo->setRestitution(0.2f);
-    cuerpo->setGravityScale(1.0f);
     
     //Creacion del cuerpo visible (shape)
     m_vBody = new VisibleBody(pos.x * PPM, pos.y * PPM, size.x, size.y, "./resources/sprites/revolver.png");

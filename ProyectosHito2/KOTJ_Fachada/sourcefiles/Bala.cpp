@@ -21,8 +21,6 @@ Bala::Bala(sf::Vector2f size, sf::Vector2f position, bool explo) {
     cuerpo->setMaskBits(MASK_BULLET);
     cuerpo->setCategoryBits(CATEGORY_BULLET);
     cuerpo->setDensity(0.7f);
-    cuerpo->setFriction(0.2f);
-    cuerpo->setRestitution(0.0f);
 
     m_Shape = new sf::RectangleShape(size);
     m_Shape->setOrigin(size.x / 2, size.y / 2);
@@ -57,23 +55,24 @@ void Bala::Disparar_Parabola(float fuerza, float angulo) {
 }
 
 void Bala::Disparar(float velocidad, float angulo) {
-    cuerpo->setVelocidad(velocidad * cos(angulo * 3.14 / 180.0f), -velocidad * sin(angulo * 3.14 / 180.0f));
-    
     m_Shape->rotate(-angulo);
-    cuerpo->setAngulo(-angulo);    
+    
+    cuerpo->setVelocidad(velocidad * cos(angulo * 3.14 / 180.0f), -velocidad * sin(angulo * 3.14 / 180.0f));
+    cuerpo->setAngulo(-angulo);
+    cuerpo->setGravityScale(0);
 }
 
 void Bala::Render(sf::RenderWindow *window) {
     window->draw(*m_Shape);
 }
 
+//Hacer un delete de cada objeto que se ha creado con un New y luego igualarlo a NULL
 Bala::~Bala() {
     cuerpo->Destruir();
     delete cuerpo;
     cuerpo = NULL;
     delete m_Shape;
     m_Shape = NULL;
-    //Hacer un delete de cada objeto que se ha creado con un New y luego igualarlo a NULL
 }
 
 
