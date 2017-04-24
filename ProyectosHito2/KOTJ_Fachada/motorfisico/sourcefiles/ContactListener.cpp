@@ -56,7 +56,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			if (entidadB->getTag().compare("Player") == 0) {
 				Player* player = static_cast<Player*> (bodyUserDataB);
 				int dir = -1;
-				if (explo->m_pBody->GetPosition().x < player->getPositionX()) dir = 1;
+				if (explo->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
 				partida->players2Delete.push_back(player);
 			}
@@ -65,7 +65,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			if (entidadA->getTag().compare("Player") == 0) {
 				Player* player = static_cast<Player*> (bodyUserDataA);
 				int dir = -1;
-				if (explo->m_pBody->GetPosition().x < player->getPositionX()) dir = 1;
+				if (explo->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
 				partida->players2Delete.push_back(player);
 			}

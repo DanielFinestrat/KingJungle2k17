@@ -38,6 +38,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/main.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/ContactListener.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/Cuerpo.o \
+	${OBJECTDIR}/motorfisico/sourcefiles/CuerpoCircular.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/Motorfisico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o \
@@ -109,6 +110,11 @@ ${OBJECTDIR}/motorfisico/sourcefiles/Cuerpo.o: motorfisico/sourcefiles/Cuerpo.cp
 	${MKDIR} -p ${OBJECTDIR}/motorfisico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorfisico/sourcefiles/Cuerpo.o motorfisico/sourcefiles/Cuerpo.cpp
+
+${OBJECTDIR}/motorfisico/sourcefiles/CuerpoCircular.o: motorfisico/sourcefiles/CuerpoCircular.cpp 
+	${MKDIR} -p ${OBJECTDIR}/motorfisico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorfisico/sourcefiles/CuerpoCircular.o motorfisico/sourcefiles/CuerpoCircular.cpp
 
 ${OBJECTDIR}/motorfisico/sourcefiles/Motorfisico.o: motorfisico/sourcefiles/Motorfisico.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorfisico/sourcefiles

@@ -1,6 +1,6 @@
-build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
- motorfisico/sourcefiles/ContactListener.cpp \
- motorfisico/sourcefiles/../headerfiles/ContactListener.h \
+build/Debug/GNU-Linux/motorfisico/sourcefiles/CuerpoCircular.o: \
+ motorfisico/sourcefiles/CuerpoCircular.cpp \
+ motorfisico/sourcefiles/../headerfiles/CuerpoCircular.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Box2D.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Common/b2Settings.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Common/b2Draw.h \
@@ -66,40 +66,9 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2RopeJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/Bala.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../../headerfiles/Partida.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- motorfisico/sourcefiles/../../headerfiles/Platform.h \
- motorfisico/sourcefiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- motorfisico/sourcefiles/../../headerfiles/Weapon.h \
- motorfisico/sourcefiles/../../headerfiles/Bala.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- motorfisico/sourcefiles/../../headerfiles/Explosion.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
- motorfisico/sourcefiles/../../headerfiles/PlayerJoystick.h \
- motorfisico/sourcefiles/../../headerfiles/Player.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h \
- motorfisico/sourcefiles/../../headerfiles/Controlador.h \
- motorfisico/sourcefiles/../../headerfiles/PlayerKeyboard.h
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h
 
-motorfisico/sourcefiles/../headerfiles/ContactListener.h:
+motorfisico/sourcefiles/../headerfiles/CuerpoCircular.h:
 
 motorfisico/sourcefiles/../headerfiles/../../Box2D/Box2D.h:
 
@@ -232,65 +201,3 @@ motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h
 motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/Bala.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../../headerfiles/Partida.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-motorfisico/sourcefiles/../../headerfiles/Platform.h:
-
-motorfisico/sourcefiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-motorfisico/sourcefiles/../../headerfiles/Weapon.h:
-
-motorfisico/sourcefiles/../../headerfiles/Bala.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
-
-motorfisico/sourcefiles/../../headerfiles/Explosion.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
-
-motorfisico/sourcefiles/../../headerfiles/PlayerJoystick.h:
-
-motorfisico/sourcefiles/../../headerfiles/Player.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h:
-
-motorfisico/sourcefiles/../../headerfiles/Controlador.h:
-
-motorfisico/sourcefiles/../../headerfiles/PlayerKeyboard.h:

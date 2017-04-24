@@ -41,6 +41,14 @@ Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float size
     return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), angulo, data));
 }
 
+CuerpoCircular* Motorfisico::crearCuerpoCircular(float posX, float posY, float radio, Entidad* data) {
+    return (new CuerpoCircular(world, b2Vec2(posX, posY), radio, 0, data));
+}
+
+CuerpoCircular* Motorfisico::crearCuerpoCircular(float posX, float posY, float radio, float angulo, Entidad* data) {
+    return (new CuerpoCircular(world, b2Vec2(posX, posY), radio, angulo, data));
+}
+
 Motorfisico::~Motorfisico() {
 }
 

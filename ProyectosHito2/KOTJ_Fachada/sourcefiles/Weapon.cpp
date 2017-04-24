@@ -55,6 +55,7 @@ int Weapon::shoot() {
             difTime = 0.0;
             ammo--;
             Partida *partida = Partida::getInstance();
+            
             // +50 habria que cambiarlo por el size del personaje
             Bala* nuevaBala = new Bala(Vector2f(10, 4), Vector2f(cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM), explosivo);
             
@@ -83,7 +84,7 @@ void Weapon::throwWeapon(float playerVel) {
 
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) cuerpo->aplicarFuerza(0, -80);
-        //Lanzarla hacia donde mire la pistola
+    //Lanzarla hacia donde mire la pistola
     else cuerpo->aplicarFuerza(dir * 70 * fabs(playerVel), -60);
 
 }

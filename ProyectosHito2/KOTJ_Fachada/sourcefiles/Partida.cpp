@@ -103,9 +103,9 @@ void Partida::eraseBullets() {
             float posX = dyingBala->cuerpo->getPosicionX();
             float posY = dyingBala->cuerpo->getPosicionY();
 
-            /*Explosion *nueva;
-            nueva = new Explosion(world, sf::Vector2f(posX * PPM, posY * PPM), 1.0f, 0.05f, 0.5f);
-            worldExplo.insert(nueva);*/
+            Explosion *nueva;
+            nueva = new Explosion(sf::Vector2f(posX * PPM, posY * PPM), 1.0f, 0.05f, 0.5f);
+            worldExplo.insert(nueva);
         }
         worldBullets.erase(dyingBala);
         delete dyingBala;

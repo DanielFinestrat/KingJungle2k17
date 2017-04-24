@@ -79,12 +79,13 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Explosion.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
@@ -253,6 +254,8 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
 sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/Weapon.h:
@@ -265,7 +268,7 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.
 
 sourcefiles/../headerfiles/Explosion.h:
 
-sourcefiles/../headerfiles/../Box2D/Box2D.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 

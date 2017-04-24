@@ -15,10 +15,11 @@
 #define EXPLOSION_H
 
 #include <SFML/Graphics.hpp>
-#include "../Box2D/Box2D.h"
 #include <stdio.h>
 #include <iostream>
 #include "Entidad.h"
+#include "../motorfisico/headerfiles/ContactListener.h"
+#include "../motorfisico/headerfiles/CuerpoCircular.h"
 
 class Explosion : public Entidad {
 public:
@@ -30,19 +31,17 @@ public:
     float difTime;
     sf::Time dt;
 
-    b2Body *m_pBody;
+    CuerpoCircular *cuerpo;
     sf::CircleShape *m_Shape;
-    
     
     /**
     * Constructor del objeto Explosion
-    * @param mundo b2World: mundo en el que estan todos los objetos
     * @param position Vector2f: posicion de la explosion
     * @param radio float: radio maxio al que alcanzará la explosión
     * @param incremento float: valor con el que aumenta el radio con cada iteración
     * @param inicial float: radio inicial de la explosión
     */
-    Explosion(b2World *mundo, sf::Vector2f position, float radio, float incremento, float inicial);
+    Explosion(sf::Vector2f position, float radio, float incremento, float inicial);
 
     /**
     * Actualiza el FixtureBodyDef y CircleShape de la explosión

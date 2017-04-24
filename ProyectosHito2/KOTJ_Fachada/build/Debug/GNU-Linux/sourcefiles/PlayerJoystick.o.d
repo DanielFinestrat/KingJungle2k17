@@ -84,9 +84,10 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/Explosion.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h
 
@@ -262,11 +263,13 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
 sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 
-sourcefiles/../headerfiles/../Box2D/Box2D.h:
+sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 

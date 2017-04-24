@@ -19,11 +19,13 @@
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
         <itemPath>motorfisico/headerfiles/ContactListener.h</itemPath>
         <itemPath>motorfisico/headerfiles/Cuerpo.h</itemPath>
+        <itemPath>motorfisico/headerfiles/CuerpoCircular.h</itemPath>
         <itemPath>motorfisico/headerfiles/Motorfisico.h</itemPath>
       </logicalFolder>
       <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
         <itemPath>motorfisico/sourcefiles/ContactListener.cpp</itemPath>
         <itemPath>motorfisico/sourcefiles/Cuerpo.cpp</itemPath>
+        <itemPath>motorfisico/sourcefiles/CuerpoCircular.cpp</itemPath>
         <itemPath>motorfisico/sourcefiles/Motorfisico.cpp</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -141,6 +143,11 @@
       </item>
       <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="motorfisico/headerfiles/CuerpoCircular.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorfisico/headerfiles/Motorfisico.h"
             ex="false"
             tool="3"
@@ -152,6 +159,11 @@
             flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/CuerpoCircular.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Motorfisico.cpp"
             ex="false"
@@ -319,6 +331,11 @@
       </item>
       <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="motorfisico/headerfiles/CuerpoCircular.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorfisico/headerfiles/Motorfisico.h"
             ex="false"
             tool="3"
@@ -330,6 +347,11 @@
             flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/CuerpoCircular.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
       </item>
       <item path="motorfisico/sourcefiles/Motorfisico.cpp"
             ex="false"

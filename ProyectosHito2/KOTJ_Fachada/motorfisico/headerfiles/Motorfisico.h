@@ -9,6 +9,7 @@
 #define MOTORGRAFICO_H
 
 #include "Cuerpo.h"
+#include "CuerpoCircular.h"
 #include "ContactListener.h"
 #include "../../headerfiles/Entidad.h"
 
@@ -23,6 +24,8 @@ public:
     void Update();
     Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo, Entidad* data);
     Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, Entidad* data);
+    CuerpoCircular* crearCuerpoCircular(float posX, float posY, float radio, float angulo, Entidad* data);
+    CuerpoCircular* crearCuerpoCircular(float posX, float posY, float radio, Entidad* data);
 
     virtual ~Motorfisico();
 
