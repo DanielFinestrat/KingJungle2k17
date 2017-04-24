@@ -33,12 +33,12 @@ void Motorfisico::Update() {
     world->Step(TIMESTEP, VELITER, POSITER);
 }
 
-Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY) {
-    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), 0));
+Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY, Entidad* data) {
+    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), 0, data));
 }
 
-Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo) {
-    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), angulo));
+Cuerpo* Motorfisico::crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo, Entidad* data) {
+    return (new Cuerpo(world, b2Vec2(posX, posY), b2Vec2(sizeX, sizeY), angulo, data));
 }
 
 Motorfisico::~Motorfisico() {

@@ -7,6 +7,7 @@
 #include <ctime>
 #include <SFML/Graphics.hpp>
 #include "../../Box2D/Box2D.h"
+#include "../../headerfiles/Entidad.h"
 #include <iostream>
 
 #ifndef CUERPO_H
@@ -14,7 +15,7 @@
 
 class Cuerpo {
 public:
-    Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle); //Solo puede llamarse desde world
+    Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle, Entidad* data); //Solo puede llamarse desde world
     virtual ~Cuerpo();
     void Destruir();
     
@@ -25,7 +26,7 @@ public:
     void setAngulo(float angle);
     void setTamanyo(float x, float y);
     void setPosicion(float x,float y);
-    void setUserData();
+    void setUserData(Entidad* data);
     void setType(int type);
     void setFriction(float fric);
     void setRestitution(float rest);

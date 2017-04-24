@@ -71,6 +71,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../../headerfiles/Partida.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
@@ -79,6 +80,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -238,6 +240,8 @@ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfi
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
 motorfisico/sourcefiles/../../headerfiles/Partida.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
@@ -253,6 +257,8 @@ motorfisico/sourcefiles/../../headerfiles/Entidad.h:
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 

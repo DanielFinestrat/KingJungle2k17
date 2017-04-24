@@ -115,7 +115,6 @@ bool Resources::loadImage(string filename){
     err().rdbuf(NULL);
 
     if (!image->loadFromFile(filename)) {
-        cout << filename << endl;
         cout<<"Error al cargar la imagen"<<endl;
         delete image; image = NULL; return false;
     }

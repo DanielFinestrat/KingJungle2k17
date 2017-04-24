@@ -65,7 +65,7 @@ Player::Player() {
     fuerzaMovimiento = 5;
     velocidadMaxima = 1;
 
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize, pSize);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize, pSize, this);
     cuerpo->setMaskBits(MASK_PLAYER);
     cuerpo->setCategoryBits(CATEGORY_PLAYER);
     cuerpo->setDensity(0.7f);

@@ -76,6 +76,7 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -246,6 +247,8 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/Platform.h:
 

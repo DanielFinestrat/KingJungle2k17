@@ -66,11 +66,11 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -225,6 +225,8 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joint
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
 sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
@@ -232,8 +234,6 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/../../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 

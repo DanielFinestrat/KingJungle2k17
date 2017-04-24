@@ -16,7 +16,7 @@ Bala::Bala(sf::Vector2f size, sf::Vector2f position, bool explo) {
     explosion = explo;
     m_Size = size;
 
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, size.x, size.y);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, size.x, size.y, this);
     cuerpo->setPosicion(position.x * MPP, position.y * MPP);
     cuerpo->setMaskBits(MASK_BULLET);
     cuerpo->setCategoryBits(CATEGORY_BULLET);
@@ -68,7 +68,6 @@ void Bala::Render(sf::RenderWindow *window) {
 }
 
 Bala::~Bala() {
-    cout<<"eliminar bala"<<endl;
     cuerpo->Destruir();
     delete cuerpo;
     cuerpo = NULL;

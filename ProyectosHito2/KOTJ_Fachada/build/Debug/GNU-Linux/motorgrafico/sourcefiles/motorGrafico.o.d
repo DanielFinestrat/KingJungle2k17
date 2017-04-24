@@ -75,6 +75,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/motorGrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Platform.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
@@ -242,6 +243,8 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerf
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Platform.h:
 

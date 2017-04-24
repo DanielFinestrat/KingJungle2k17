@@ -65,7 +65,8 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/Cuerpo.o: \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2RevoluteJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2RopeJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h \
- motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h
+ motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h
 
 motorfisico/sourcefiles/../headerfiles/Cuerpo.h:
 
@@ -198,3 +199,5 @@ motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2RopeJoint.h
 motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h:
 
 motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:

@@ -10,7 +10,7 @@
 #define PPM 64.0f               //PIXELS POR METRO
 #define MPP (1.0f/PPM)          //METROS POR PIXEL
 
-Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
+Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle, Entidad* data) {
     b2BodyDef body;
     body.type = b2_dynamicBody;
     body.position.Set(pos.x*MPP, pos.y * MPP);
@@ -25,7 +25,9 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle) {
     fixtureDef.friction = 0.2f;
     fixtureDef.restitution = 0.01f;
     fixtureDef.isSensor = false;
-    m_pBody->CreateFixture(&fixtureDef);    
+    m_pBody->CreateFixture(&fixtureDef);
+    
+    m_pBody->SetUserData(data);
 }
 
 Cuerpo::~Cuerpo() {
@@ -147,8 +149,8 @@ void Cuerpo::setGravityScale(float gravityScale){
     m_pBody->SetGravityScale(gravityScale);
 }
 
-void Cuerpo::setUserData() {
-    m_pBody->SetUserData(this);
+void Cuerpo::setUserData(Entidad* data) {
+    m_pBody->SetUserData(data);
 }
 
 float Cuerpo::getAngulo() {

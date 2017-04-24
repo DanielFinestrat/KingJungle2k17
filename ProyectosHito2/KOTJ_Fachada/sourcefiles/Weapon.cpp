@@ -25,7 +25,7 @@ Weapon::Weapon(sf::Vector2f size, sf::Vector2f pos, float shoot_cad, int Bps, in
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
     
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, size.x, size.y);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, size.x, size.y, this);
     cuerpo->setPosicion(pos.x * MPP, pos.y * MPP);
     cuerpo->setMaskBits(MASK_GUN);
     cuerpo->setCategoryBits(CATEGORY_GUN);

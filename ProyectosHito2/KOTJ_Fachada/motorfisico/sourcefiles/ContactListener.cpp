@@ -10,11 +10,11 @@
 #include "../../headerfiles/Partida.h"
 
 void ContactListener::BeginContact(b2Contact* contact) {
-	/*Partida *partida = Partida::getInstance();
+	Partida *partida = Partida::getInstance();
 
 	void* bodyUserDataA = contact->GetFixtureA()->GetBody()->GetUserData();
 	void* bodyUserDataB = contact->GetFixtureB()->GetBody()->GetUserData();
-
+        
 	Entidad* entidadA = static_cast<Entidad*> (bodyUserDataA);
 	Entidad* entidadB = static_cast<Entidad*> (bodyUserDataB);
 
@@ -70,7 +70,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 				partida->players2Delete.push_back(player);
 			}
 		}
-	}*/
+	}
 }
 
 

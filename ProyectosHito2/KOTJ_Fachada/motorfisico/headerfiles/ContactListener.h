@@ -15,6 +15,7 @@
 
 class ContactListener : public b2ContactListener {
 public:
+    
     /**
      * Función que se ejecuta al empezar una colisión en el mundo
      * @param contact b2Contact: Elemento con los cuerpos que intervienen en la colisión

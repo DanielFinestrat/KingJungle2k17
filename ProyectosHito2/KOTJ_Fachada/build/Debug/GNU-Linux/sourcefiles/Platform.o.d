@@ -67,14 +67,15 @@ build/Debug/GNU-Linux/sourcefiles/Platform.o: sourcefiles/Platform.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2RopeJoint.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h
 
 sourcefiles/../headerfiles/Platform.h:
 
@@ -212,13 +213,13 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joint
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Bala.h:
 
@@ -227,3 +228,5 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:

@@ -59,6 +59,7 @@ build/Debug/GNU-Linux/main.o: main.cpp Box2D/Box2D.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/Platform.h headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -223,6 +224,8 @@ headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
 
 headerfiles/Platform.h:
 

@@ -10,6 +10,7 @@
 
 #include "Cuerpo.h"
 #include "ContactListener.h"
+#include "../../headerfiles/Entidad.h"
 
 #define TIMESTEP 1.0f/15.f      //TIEMPO DE REFRESCO
 #define VELITER 10              //NUMERO DE ITERACIONES POR TICK PARA CALCULAR LA VELOCIDAD
@@ -20,8 +21,8 @@ public:
     static Motorfisico* getInstance();
 
     void Update();
-    Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo);
-    Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY);
+    Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, float angulo, Entidad* data);
+    Cuerpo* crearCuerpo(float posX, float posY, float sizeX, float sizeY, Entidad* data);
 
     virtual ~Motorfisico();
 
