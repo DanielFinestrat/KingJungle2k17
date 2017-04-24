@@ -1,6 +1,5 @@
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "Box2D/Box2D.h"
 #include "headerfiles/Partida.h"
 
 using namespace std;
