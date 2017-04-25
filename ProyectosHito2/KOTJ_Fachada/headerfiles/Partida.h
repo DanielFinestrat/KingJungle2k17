@@ -8,6 +8,7 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
+#include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 #include <vector>
 #include <SFML/Graphics.hpp>
