@@ -342,6 +342,17 @@ int Player::getDirMoving() {
     return dirMoving;
 }
 
+bool Player::hasWeapon(){
+	if(weapon == NULL){
+		return false;
+	}
+	return true;
+}
+
+Weapon* Player::getWeapon(){
+	return weapon;
+}
+
 void Player::setColor(int id) {
     Color *color = new Color(0, 0, 0);
     switch (id) {

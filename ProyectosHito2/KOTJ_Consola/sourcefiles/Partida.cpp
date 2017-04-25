@@ -33,7 +33,7 @@ Partida* Partida::getInstance() {
     if (instance == NULL) instance = new Partida();
     return (instance);
 }
-
+/*
 void Partida::IA(){
 	
 	//MIRAR DE HACER 3 CAPAS DE TILED. UNA PARA SUBIR, OTRA PARA BAJAR Y OTRA PARA SEGUI
@@ -149,10 +149,16 @@ void Partida::IA(){
 	}
 		
 }
+*/
 
 void Partida::Input() {
 
-	IA();
+	for(int i=0; i<worldControlador.size(); i++){
+		Controlador* c = worldControlador.at(i);
+		if(c->tipo.compare("IA")==0){
+			c->update();
+		}
+	}
 	
     Event event;
     while (window->pollEvent(event)) {
@@ -195,6 +201,9 @@ void Partida::Input() {
                             usingKeyboard = true;
                         }
                         break;
+					case Keyboard::F3:
+						addPlayerIA();
+						break;
                     case Keyboard::Tab:
                         console.toggleConsole();
                         break;
@@ -285,15 +294,27 @@ void Partida::Update() {
 void Partida::Render() {
     window->clear(sf::Color::Black);
     window->setView(*mainCamera);
-    drawPlatforms();
+    //drawPlatforms();
     drawPlayers();
     drawWeapons();
     drawBullets();
     drawExplo();
+    drawMap();
     window->setView(*hudCamera);
     temporizador->Draw(window);
     console.draw(window);
     window->display();
+
+}
+
+void Partida::drawMap() {
+
+    for (int i = 0; i < map_sprites.size(); i++) {
+
+        window->draw(*map_sprites.at(i));
+
+    }
+
 }
 
 void Partida::drawPlatforms() {
@@ -360,8 +381,6 @@ int Partida::findControladorWithId(int id) {
 }
 
 void Partida::checkJoysticksConnected() {
-
-    addPlayerJoystick( 0);
     /*addPlayerJoystick(&playerJoysticks, 1);
     addPlayerJoystick(&playerJoysticks, 2);
     addPlayerJoystick(&playerJoysticks, 3);*/
@@ -392,6 +411,12 @@ void Partida::addPlayerJoystick(int id) {
 
 void Partida::addPlayerKeyboard() {
     worldControlador.push_back(new PlayerKeyboard(world));
+}
+
+void Partida::addPlayerIA(){
+	if(worldControlador.size() < 4){
+		worldControlador.push_back(new IAController(world));
+	}
 }
 
 void Partida::respawn() {
@@ -544,6 +569,47 @@ void Partida::loadMap() {
     worldWeapons.push_back(pistola2);
 }
 
+void Partida::cargarTiles(int capa, int y, int x) {
+
+    if (!map_texture.loadFromFile("resources/sprites/tilesheet.png")) {
+
+        cout << "Failed to load tilesheet!" << endl;
+
+    }
+
+    for (int j = 0; j < y; j++) {
+
+        for (int k = 0; k < x; k++) {
+
+            int miTile = _tilemap[0][j][k];
+
+            if (miTile != 0) {
+
+                //cout<<y<<endl;
+
+                int ancho = (miTile % 44)-1;
+
+                int altura = (miTile / 44);
+
+                IntRect *myRect = new IntRect(ancho * 32, altura * 32, 32, 32);
+
+                sf::Sprite *newTile = new Sprite();
+
+                newTile->setTexture(map_texture);
+
+                newTile->setTextureRect(*myRect);
+
+                newTile->setPosition(k*32, j*32);
+
+                map_sprites.push_back(newTile);
+
+            }
+
+        }
+
+    }
+
+}
 
 void Partida::guardarCapas(TiXmlElement* map){
 	int _width = 0; 
@@ -595,6 +661,7 @@ void Partida::guardarCapas(TiXmlElement* map){
 		}
 		
 	}
+	cargarTiles(_numLayers, _height, _width);
 }
 
 void Partida::guardarObj(TiXmlElement* map){

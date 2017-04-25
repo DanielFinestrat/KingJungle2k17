@@ -34,6 +34,7 @@ public:
     virtual void releaseUpdateState(int botonSoltado);
     virtual void checkAxisX(int ejeX);
     virtual void checkAxisY(int ejeY);
+    virtual void update();
 
 protected:
 
