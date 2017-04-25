@@ -41,6 +41,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorfisico/sourcefiles/CuerpoCircular.o \
 	${OBJECTDIR}/motorfisico/sourcefiles/Motorfisico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o \
+	${OBJECTDIR}/motorgrafico/sourcefiles/Motorgrafico.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Texto.o \
@@ -125,6 +126,11 @@ ${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o: motorgrafico/sourcefiles/Anim
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Animation.o motorgrafico/sourcefiles/Animation.cpp
+
+${OBJECTDIR}/motorgrafico/sourcefiles/Motorgrafico.o: motorgrafico/sourcefiles/Motorgrafico.cpp 
+	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/Motorgrafico.o motorgrafico/sourcefiles/Motorgrafico.cpp
 
 ${OBJECTDIR}/motorgrafico/sourcefiles/SpriteAnimated.o: motorgrafico/sourcefiles/SpriteAnimated.cpp 
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles

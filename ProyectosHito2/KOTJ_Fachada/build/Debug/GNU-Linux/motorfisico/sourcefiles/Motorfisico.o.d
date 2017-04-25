@@ -69,12 +69,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/Motorfisico.o: \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../headerfiles/CuerpoCircular.h \
- motorfisico/sourcefiles/../headerfiles/ContactListener.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/Bala.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h
+ motorfisico/sourcefiles/../headerfiles/ContactListener.h
 
 motorfisico/sourcefiles/../headerfiles/Motorfisico.h:
 
@@ -215,13 +210,3 @@ motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
 motorfisico/sourcefiles/../headerfiles/CuerpoCircular.h:
 
 motorfisico/sourcefiles/../headerfiles/ContactListener.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/Bala.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
-
-motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:

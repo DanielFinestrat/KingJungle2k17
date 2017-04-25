@@ -34,6 +34,7 @@
                    projectFiles="true">
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
         <itemPath>motorgrafico/headerfiles/Animation.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Motorgrafico.h</itemPath>
         <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Temporizador.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Texto.h</itemPath>
@@ -44,6 +45,7 @@
       </logicalFolder>
       <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
         <itemPath>motorgrafico/sourcefiles/Animation.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Motorgrafico.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Temporizador.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Texto.cpp</itemPath>
@@ -175,6 +177,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Motorgrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/SpriteAnimated.h"
             ex="false"
             tool="3"
@@ -208,6 +215,11 @@
             flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/Animation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Motorgrafico.cpp"
             ex="false"
             tool="1"
             flavor2="0">
@@ -363,6 +375,11 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Motorgrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/SpriteAnimated.h"
             ex="false"
             tool="3"
@@ -396,6 +413,11 @@
             flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/Animation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Motorgrafico.cpp"
             ex="false"
             tool="1"
             flavor2="0">

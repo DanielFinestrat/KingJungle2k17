@@ -72,6 +72,10 @@ build/Debug/GNU-Linux/sourcefiles/Controlador.o: \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h
 
@@ -224,6 +228,14 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 

@@ -8,10 +8,10 @@
 #ifndef PARTIDA_H
 #define PARTIDA_H
 
+#include "../motorgrafico/headerfiles/Motorgrafico.h"
 #include <vector>
 #include <SFML/Graphics.hpp>
 #include "../motorgrafico/headerfiles/Temporizador.h"
-#include "../motorfisico/headerfiles/ContactListener.h"
 #include "Platform.h"
 #include "Weapon.h"
 #include "Bala.h"

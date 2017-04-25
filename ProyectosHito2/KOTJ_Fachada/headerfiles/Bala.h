@@ -15,6 +15,7 @@
 #include <vector>
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
+#include "../motorfisico/headerfiles/Motorfisico.h"
 
 class Bala : public Entidad {
 public:

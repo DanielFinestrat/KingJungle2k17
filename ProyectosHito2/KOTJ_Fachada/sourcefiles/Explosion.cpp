@@ -5,6 +5,7 @@
  * Created on 2 de abril de 2017, 23:50
  */
 
+#include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../headerfiles/Explosion.h"
 #include "../headerfiles/Partida.h"
 
