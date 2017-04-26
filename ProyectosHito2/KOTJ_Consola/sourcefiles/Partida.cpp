@@ -34,124 +34,6 @@ Partida* Partida::getInstance() {
     return (instance);
 }
 
-/*
-void Partida::IA(){
-	
-        //MIRAR DE HACER 3 CAPAS DE TILED. UNA PARA SUBIR, OTRA PARA BAJAR Y OTRA PARA SEGUI
-	
-        //Método de seguir persona
-        float PosX = 0, PosY = 0;
-        float distancia = -1;
-        int ControladorSeguir = 0;
-
-        Controlador* IA = worldControlador.at(0);
-        b2Vec2 IAposition = IA->player->getPosition();
-	
-        for(int i=0; i<worldPlayer.size(); i++){
-                Controlador* jugador = worldControlador.at(i);
-                if(i!=0){	//Para probar la IA tiene id 0
-                        b2Vec2 position = jugador->player->getPosition();
-                        float dist = sqrt(pow(IAposition.x - position.x, 2) + pow(IAposition.y - position.y, 2));
-                        if(distancia == -1){
-                                //cout << "hi" << dist<< endl;
-                                ControladorSeguir = i;
-                                distancia = dist;
-                                PosX = IAposition.x - position.x;
-                                PosY = IAposition.y - position.y;
-                        }
-                        else if(dist < distancia){
-                                //cout << "hey" << dist <<  endl;
-                                ControladorSeguir = i;
-                                distancia = dist;
-                                PosX = IAposition.x - position.x;
-                                PosY = IAposition.y - position.y;
-                        }
-                }
-        }
-        //cout << PosX << " " << PosY << endl;
-	
-        //Buscar zona para arriba
-        Controlador* seguir = worldControlador.at(ControladorSeguir);
-	
-        //Juegador esta en zona superior y no saltando
-        cout << IA->player->isJumping() << endl;
-        if(!IA->player->isJumping()){
-                if( (PosY>0.9 && !seguir->player->isJumping())){
-                        cout << "superior" << endl;
-
-
-                        int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
-                        int Y = (int) (IA->player->getPosition().y*PPM / 32);
-                        if(Y<0)Y=0;
-                        int lugar = _tilemap[3][Y][X];
-                        int dir = 0;
-                        switch(lugar){
-                                case 915: 
-                                        IA->checkAxisX(-100);
-                                        break;
-                                case 914:
-                                        IA->checkAxisX(100);
-                                        break;
-                                case 917:
-                                        IA->pressUpdateState(0);
-                                        IA->releaseUpdateState(0);
-                                        IA->checkAxisX(-100);
-                                        break;
-                                case 920:
-                                        IA->pressUpdateState(0);
-                                        IA->releaseUpdateState(0);
-                                        IA->checkAxisX(100);
-                                        break;
-                        }	
-
-                }
-                //Jugador esta en misma altura (saltando o no)
-                else if(PosY > -0.5 && PosY<3.2){
-                        cout << "misma" << endl;
-
-
-                        int dir = 0;
-                        if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
-                        IA->checkAxisX(dir);
-                }
-                //Jugador esta en una altura inferior
-                else if(PosY <=-0.5){
-                        cout << "inferior" << endl;
-
-                        int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
-                        int Y = (int) (IA->player->getPosition().y*PPM / 32);
-                        if(Y<0)Y=0;
-                        int lugar = _tilemap[1][Y][X];
-                        int dir = 0;
-                        switch(lugar){
-                                case 915: 
-                                        IA->checkAxisX(-100);
-                                        break;
-                                case 914:
-                                        IA->checkAxisX(100);
-                                        break;
-                                case 917:
-                                        IA->pressUpdateState(0);
-                                        IA->releaseUpdateState(0);
-                                        IA->checkAxisX(-100);
-                                        break;
-                                case 920:
-                                        IA->pressUpdateState(0);
-                                        IA->releaseUpdateState(0);
-                                        IA->checkAxisX(100);
-                                        break;
-                                case 922:
-                                        dir = 0;
-                                        if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
-                                        IA->checkAxisX(dir);
-                                        break;	
-                        }	
-                }
-        }
-		
-}
- */
-
 void Partida::Input() {
 
     for (int i = 0; i < worldControlador.size(); i++) {
@@ -295,7 +177,6 @@ void Partida::Update() {
 void Partida::Render() {
     window->clear(sf::Color::Black);
     window->setView(*mainCamera);
-    //drawPlatforms();
     drawPlayers();
     drawWeapons();
     drawBullets();
@@ -328,7 +209,6 @@ void Partida::drawPlayers() {
     for (int i = 0; i < worldPlayer.size(); i++) {
         window->draw(worldPlayer.at(i)->getPlayerSprite());
     }
-    // if (usingKeyboard) window->draw(playerKeyboard->player->getPlayerSprite());
 }
 
 void Partida::drawWeapons() {
@@ -382,9 +262,6 @@ int Partida::findControladorWithId(int id) {
 }
 
 void Partida::checkJoysticksConnected() {
-    /*addPlayerJoystick(&playerJoysticks, 1);
-    addPlayerJoystick(&playerJoysticks, 2);
-    addPlayerJoystick(&playerJoysticks, 3);*/
 
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
@@ -432,10 +309,6 @@ void Partida::respawn() {
         player->setPosition(position.at(0), position.at(1));
         player->respawn();
     }
-    /* if (usingKeyboard) {
-         playerKeyboard->player->setPosition((4) * screenWidth / 5, screenHeight - 100);
-         playerKeyboard->player->respawn();
-     }*/
 }
 
 void Partida::updatePlayers(Time frameTime) {
