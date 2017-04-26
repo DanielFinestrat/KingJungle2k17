@@ -55,6 +55,7 @@ public:
     set<Explosion*> explo2Delete;
     
     vector<vector<int>> spawnPlayer;
+    vector<vector<int>> esquinasMapa;
     
     Temporizador *temporizador;
     Clock frameClock;

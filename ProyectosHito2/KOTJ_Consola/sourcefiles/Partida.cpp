@@ -33,133 +33,134 @@ Partida* Partida::getInstance() {
     if (instance == NULL) instance = new Partida();
     return (instance);
 }
+
 /*
 void Partida::IA(){
 	
-	//MIRAR DE HACER 3 CAPAS DE TILED. UNA PARA SUBIR, OTRA PARA BAJAR Y OTRA PARA SEGUI
+        //MIRAR DE HACER 3 CAPAS DE TILED. UNA PARA SUBIR, OTRA PARA BAJAR Y OTRA PARA SEGUI
 	
-	//Método de seguir persona
-	float PosX = 0, PosY = 0;
-	float distancia = -1;
-	int ControladorSeguir = 0;
+        //Método de seguir persona
+        float PosX = 0, PosY = 0;
+        float distancia = -1;
+        int ControladorSeguir = 0;
 
-	Controlador* IA = worldControlador.at(0);
-	b2Vec2 IAposition = IA->player->getPosition();
+        Controlador* IA = worldControlador.at(0);
+        b2Vec2 IAposition = IA->player->getPosition();
 	
-	for(int i=0; i<worldPlayer.size(); i++){
-		Controlador* jugador = worldControlador.at(i);
-		if(i!=0){	//Para probar la IA tiene id 0
-			b2Vec2 position = jugador->player->getPosition();
-			float dist = sqrt(pow(IAposition.x - position.x, 2) + pow(IAposition.y - position.y, 2));
-			if(distancia == -1){
-				//cout << "hi" << dist<< endl;
-				ControladorSeguir = i;
-				distancia = dist;
-				PosX = IAposition.x - position.x;
-				PosY = IAposition.y - position.y;
-			}
-			else if(dist < distancia){
-				//cout << "hey" << dist <<  endl;
-				ControladorSeguir = i;
-				distancia = dist;
-				PosX = IAposition.x - position.x;
-				PosY = IAposition.y - position.y;
-			}
-		}
-	}
-	//cout << PosX << " " << PosY << endl;
+        for(int i=0; i<worldPlayer.size(); i++){
+                Controlador* jugador = worldControlador.at(i);
+                if(i!=0){	//Para probar la IA tiene id 0
+                        b2Vec2 position = jugador->player->getPosition();
+                        float dist = sqrt(pow(IAposition.x - position.x, 2) + pow(IAposition.y - position.y, 2));
+                        if(distancia == -1){
+                                //cout << "hi" << dist<< endl;
+                                ControladorSeguir = i;
+                                distancia = dist;
+                                PosX = IAposition.x - position.x;
+                                PosY = IAposition.y - position.y;
+                        }
+                        else if(dist < distancia){
+                                //cout << "hey" << dist <<  endl;
+                                ControladorSeguir = i;
+                                distancia = dist;
+                                PosX = IAposition.x - position.x;
+                                PosY = IAposition.y - position.y;
+                        }
+                }
+        }
+        //cout << PosX << " " << PosY << endl;
 	
-	//Buscar zona para arriba
-	Controlador* seguir = worldControlador.at(ControladorSeguir);
+        //Buscar zona para arriba
+        Controlador* seguir = worldControlador.at(ControladorSeguir);
 	
-	//Juegador esta en zona superior y no saltando
-	cout << IA->player->isJumping() << endl;
-	if(!IA->player->isJumping()){
-		if( (PosY>0.9 && !seguir->player->isJumping())){
-			cout << "superior" << endl;
+        //Juegador esta en zona superior y no saltando
+        cout << IA->player->isJumping() << endl;
+        if(!IA->player->isJumping()){
+                if( (PosY>0.9 && !seguir->player->isJumping())){
+                        cout << "superior" << endl;
 
 
-			int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
-			int Y = (int) (IA->player->getPosition().y*PPM / 32);
-			if(Y<0)Y=0;
-			int lugar = _tilemap[3][Y][X];
-			int dir = 0;
-			switch(lugar){
-				case 915: 
-					IA->checkAxisX(-100);
-					break;
-				case 914:
-					IA->checkAxisX(100);
-					break;
-				case 917:
-					IA->pressUpdateState(0);
-					IA->releaseUpdateState(0);
-					IA->checkAxisX(-100);
-					break;
-				case 920:
-					IA->pressUpdateState(0);
-					IA->releaseUpdateState(0);
-					IA->checkAxisX(100);
-					break;
-			}	
+                        int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
+                        int Y = (int) (IA->player->getPosition().y*PPM / 32);
+                        if(Y<0)Y=0;
+                        int lugar = _tilemap[3][Y][X];
+                        int dir = 0;
+                        switch(lugar){
+                                case 915: 
+                                        IA->checkAxisX(-100);
+                                        break;
+                                case 914:
+                                        IA->checkAxisX(100);
+                                        break;
+                                case 917:
+                                        IA->pressUpdateState(0);
+                                        IA->releaseUpdateState(0);
+                                        IA->checkAxisX(-100);
+                                        break;
+                                case 920:
+                                        IA->pressUpdateState(0);
+                                        IA->releaseUpdateState(0);
+                                        IA->checkAxisX(100);
+                                        break;
+                        }	
 
-		}
-		//Jugador esta en misma altura (saltando o no)
-		else if(PosY > -0.5 && PosY<3.2){
-			cout << "misma" << endl;
+                }
+                //Jugador esta en misma altura (saltando o no)
+                else if(PosY > -0.5 && PosY<3.2){
+                        cout << "misma" << endl;
 
 
-			int dir = 0;
-			if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
-			IA->checkAxisX(dir);
-		}
-		//Jugador esta en una altura inferior
-		else if(PosY <=-0.5){
-			cout << "inferior" << endl;
+                        int dir = 0;
+                        if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
+                        IA->checkAxisX(dir);
+                }
+                //Jugador esta en una altura inferior
+                else if(PosY <=-0.5){
+                        cout << "inferior" << endl;
 
-			int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
-			int Y = (int) (IA->player->getPosition().y*PPM / 32);
-			if(Y<0)Y=0;
-			int lugar = _tilemap[1][Y][X];
-			int dir = 0;
-			switch(lugar){
-				case 915: 
-					IA->checkAxisX(-100);
-					break;
-				case 914:
-					IA->checkAxisX(100);
-					break;
-				case 917:
-					IA->pressUpdateState(0);
-					IA->releaseUpdateState(0);
-					IA->checkAxisX(-100);
-					break;
-				case 920:
-					IA->pressUpdateState(0);
-					IA->releaseUpdateState(0);
-					IA->checkAxisX(100);
-					break;
-				case 922:
-					dir = 0;
-					if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
-					IA->checkAxisX(dir);
-					break;	
-			}	
-		}
-	}
+                        int X = (int) (IA->player->getPosition().x*PPM / 32); //32 = tamaño tile
+                        int Y = (int) (IA->player->getPosition().y*PPM / 32);
+                        if(Y<0)Y=0;
+                        int lugar = _tilemap[1][Y][X];
+                        int dir = 0;
+                        switch(lugar){
+                                case 915: 
+                                        IA->checkAxisX(-100);
+                                        break;
+                                case 914:
+                                        IA->checkAxisX(100);
+                                        break;
+                                case 917:
+                                        IA->pressUpdateState(0);
+                                        IA->releaseUpdateState(0);
+                                        IA->checkAxisX(-100);
+                                        break;
+                                case 920:
+                                        IA->pressUpdateState(0);
+                                        IA->releaseUpdateState(0);
+                                        IA->checkAxisX(100);
+                                        break;
+                                case 922:
+                                        dir = 0;
+                                        if(PosX>1){dir = -100;}else if(PosX<-1){dir = 100;}
+                                        IA->checkAxisX(dir);
+                                        break;	
+                        }	
+                }
+        }
 		
 }
-*/
+ */
 
 void Partida::Input() {
 
-	for(int i=0; i<worldControlador.size(); i++){
-		Controlador* c = worldControlador.at(i);
-		if(c->tipo.compare("IA")==0){
-			c->update();
-		}
-	}
-	
+    for (int i = 0; i < worldControlador.size(); i++) {
+        Controlador* c = worldControlador.at(i);
+        if (c->tipo.compare("IA") == 0) {
+            c->update();
+        }
+    }
+
     Event event;
     while (window->pollEvent(event)) {
         switch (event.type) {
@@ -201,9 +202,9 @@ void Partida::Input() {
                             usingKeyboard = true;
                         }
                         break;
-					case Keyboard::F3:
-						addPlayerIA();
-						break;
+                    case Keyboard::F3:
+                        addPlayerIA();
+                        break;
                     case Keyboard::Tab:
                         console.toggleConsole();
                         break;
@@ -413,22 +414,22 @@ void Partida::addPlayerKeyboard() {
     worldControlador.push_back(new PlayerKeyboard(world));
 }
 
-void Partida::addPlayerIA(){
-	if(worldControlador.size() < 4){
-		worldControlador.push_back(new IAController(world));
-	}
+void Partida::addPlayerIA() {
+    if (worldControlador.size() < 4) {
+        worldControlador.push_back(new IAController(world));
+    }
 }
 
 void Partida::respawn() {
     for (int i = 0; i < worldPlayer.size(); i++) {
         Player* player = worldPlayer.at(i);
-			
-		vector<int> position = spawnPlayer.at(0);
-		//Elimina el element de la primera posicion y la inserta en la última
-		spawnPlayer.erase(spawnPlayer.begin());
-		spawnPlayer.push_back(position);
-	
-		player->setPosition(position.at(0), position.at(1));
+
+        vector<int> position = spawnPlayer.at(0);
+        //Elimina el element de la primera posicion y la inserta en la última
+        spawnPlayer.erase(spawnPlayer.begin());
+        spawnPlayer.push_back(position);
+
+        player->setPosition(position.at(0), position.at(1));
         player->respawn();
     }
     /* if (usingKeyboard) {
@@ -490,22 +491,12 @@ void Partida::cameraSetTransform() {
         }
     }
 
-    //Tenemos en cuenta las esquinas del nivel
-    posX += screenWidth*MPP;
-    posY += screenHeight*MPP;
-    total++;
-
-    posX += 0;
-    posY += 0;
-    total++;
-
-    posX += screenWidth*MPP;
-    posY += 0;
-    total++;
-
-    posX += 0;
-    posY += screenHeight*MPP;
-    total++;
+    for (int i = 0; i < esquinasMapa.size(); i++) {
+        vector<int> esquina = esquinasMapa.at(i);
+        posX += esquina.at(0) * MPP;
+        posY += esquina.at(1) * MPP;
+        total++;
+    }
 
     posX = posX / total;
     posY = posY / total;
@@ -541,27 +532,9 @@ void Partida::cameraSetTransform() {
 }
 
 void Partida::loadMap() {
-	cargarXML();
+    cargarXML();
     checkJoysticksConnected();
-	/*
-    Platform *suelo = new Platform(world, sf::Vector2f(screenWidth, 100.0), sf::Vector2f(screenWidth / 2, screenHeight), 0.2);
-    worldPlatforms.push_back(suelo);
 
-    Platform *paredIzda = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(0, screenHeight / 2), 0);
-    worldPlatforms.push_back(paredIzda);
-
-    Platform *paredDcha = new Platform(world, sf::Vector2f(100.0, screenHeight), sf::Vector2f(screenWidth, screenHeight / 2), 0);
-    worldPlatforms.push_back(paredDcha);
-
-    Platform *platformDcha = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 4, screenHeight / 3), 0.2);
-    worldPlatforms.push_back(platformDcha);
-
-    Platform *platformIzda = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(3 * screenWidth / 4, screenHeight / 3), 0.2);
-    worldPlatforms.push_back(platformIzda);
-
-    Platform *platformCentr = new Platform(world, sf::Vector2f(120.0, 50.0), sf::Vector2f(screenWidth / 2, 2 * screenHeight / 3), 0.2);
-    worldPlatforms.push_back(platformCentr);
-*/
     Weapon *pistola1 = new Weapon(world, Vector2f(50, 30), sf::Vector2f(screenWidth / 4, (screenHeight / 3) - 5), 1.0f, 1, 10, 50, true, true);
     worldWeapons.push_back(pistola1);
 
@@ -587,7 +560,7 @@ void Partida::cargarTiles(int capa, int y, int x) {
 
                 //cout<<y<<endl;
 
-                int ancho = (miTile % 44)-1;
+                int ancho = (miTile % 44) - 1;
 
                 int altura = (miTile / 44);
 
@@ -599,7 +572,7 @@ void Partida::cargarTiles(int capa, int y, int x) {
 
                 newTile->setTextureRect(*myRect);
 
-                newTile->setPosition(k*32, j*32);
+                newTile->setPosition(k * 32, j * 32);
 
                 map_sprites.push_back(newTile);
 
@@ -611,127 +584,134 @@ void Partida::cargarTiles(int capa, int y, int x) {
 
 }
 
-void Partida::guardarCapas(TiXmlElement* map){
-	int _width = 0; 
-	int _height = 0;
-	int _numLayers = 0;
+void Partida::guardarCapas(TiXmlElement* map) {
+    int _width = 0;
+    int _height = 0;
+    int _numLayers = 0;
 
-	//Leemos el valor de X e Y del mapa
-	map->QueryIntAttribute("width", &_width);
-	map->QueryIntAttribute("height", &_height);
-	
-	//Leemos el número de layers que hay
-	TiXmlElement* layer = map->FirstChildElement("layer");
-	while(layer){
-		_numLayers++;
-		layer = layer->NextSiblingElement("layer");
-	}
-	
-	//Creamos la matriz donde irá la información
-	_tilemap = new int**[_numLayers];
-	for(int i=0; i<_numLayers; i++){
-		_tilemap[i] = new int*[_height];
-		for(int j=0; j<_height; j++){
-			_tilemap[i][j] = new int[_width];
-			for(int k=0; k<_width; k++){
-				_tilemap[i][j][k] = 0;
-			}
-		}
-	}
+    //Leemos el valor de X e Y del mapa
+    map->QueryIntAttribute("width", &_width);
+    map->QueryIntAttribute("height", &_height);
 
-	cout << "altura: " << _height << " - ancho: " << _width << " - capas: " << _numLayers << endl;
-	
-	//Leemos las matrices
-	TiXmlElement *tile;
-	layer = map->FirstChildElement("layer");
-	tile = layer->FirstChildElement("data")->FirstChildElement("tile");
-	
-		 
-	for(int l=0; l<_numLayers; l++){
-		if(l!=0){
-			layer = layer->NextSiblingElement("layer");
-			tile = layer->FirstChildElement("data")->FirstChildElement("tile");
-		}
-		for(int y=0; y<_height; y++){
-			for(int x = 0; x < _width; x++){
-				tile->QueryIntAttribute("gid", &_tilemap[l][y][x]);
-				//Avanzo al siguiente tag
-				tile = tile->NextSiblingElement("tile");
-			}
-		}
-		
-	}
-	cargarTiles(_numLayers, _height, _width);
+    //Leemos el número de layers que hay
+    TiXmlElement* layer = map->FirstChildElement("layer");
+    while (layer) {
+        _numLayers++;
+        layer = layer->NextSiblingElement("layer");
+    }
+
+    //Creamos la matriz donde irá la información
+    _tilemap = new int**[_numLayers];
+    for (int i = 0; i < _numLayers; i++) {
+        _tilemap[i] = new int*[_height];
+        for (int j = 0; j < _height; j++) {
+            _tilemap[i][j] = new int[_width];
+            for (int k = 0; k < _width; k++) {
+                _tilemap[i][j][k] = 0;
+            }
+        }
+    }
+
+    cout << "altura: " << _height << " - ancho: " << _width << " - capas: " << _numLayers << endl;
+
+    //Leemos las matrices
+    TiXmlElement *tile;
+    layer = map->FirstChildElement("layer");
+    tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+
+
+    for (int l = 0; l < _numLayers; l++) {
+        if (l != 0) {
+            layer = layer->NextSiblingElement("layer");
+            tile = layer->FirstChildElement("data")->FirstChildElement("tile");
+        }
+        for (int y = 0; y < _height; y++) {
+            for (int x = 0; x < _width; x++) {
+                tile->QueryIntAttribute("gid", &_tilemap[l][y][x]);
+                //Avanzo al siguiente tag
+                tile = tile->NextSiblingElement("tile");
+            }
+        }
+
+    }
+    cargarTiles(_numLayers, _height, _width);
 }
 
-void Partida::guardarObj(TiXmlElement* map){
-	int _numLayers = 0;
-	
-	//Leemos el número de layers que hay
-	TiXmlElement* layer = map->FirstChildElement("objectgroup");
-	while(layer){
-		_numLayers++;
-		layer = layer->NextSiblingElement("objectgroup");
-	}
-	
-	//Leemos las matrices
-	TiXmlElement *object;
-	TiXmlElement *rozamiento;
-	layer = map->FirstChildElement("objectgroup");
-	object = layer->FirstChildElement("object");
-	
-	int _width = 0;
-	int _height = 0;
-	int _sizeX = 0;
-	int _sizeY = 0;
-	string tipo;
-	
-	for(int l=0; l<_numLayers; l++){
-		if(l!=0){
-			layer = layer->NextSiblingElement("objectgroup");
-			object = layer->FirstChildElement("object");
-		}
-		while(object){
-			tipo = object->Attribute("name");
-			//cout << tipo << endl;
-			if(tipo.compare("platform") == 0){
-				int _roz;
-				rozamiento = object->FirstChildElement("properties")->FirstChildElement("property");
-				object->QueryIntAttribute("x", &_width);
-				object->QueryIntAttribute("y", &_height);
-				object->QueryIntAttribute("width", &_sizeX);
-				object->QueryIntAttribute("height", &_sizeY);
-				
-				
-				rozamiento->QueryIntAttribute("value", &_roz);
-				//cout << _width << " " << _height << " " << _sizeX << " " << _sizeY << endl;
-				Platform *suelo = new Platform(world, sf::Vector2f((float)_sizeX, (float)_sizeY), sf::Vector2f((float)_width + _sizeX/2, (float)_height + _sizeY/2), ((float)_roz)/10.0);
-				worldPlatforms.push_back(suelo);
-			}
-			else if(tipo.compare("player") == 0){
-				object->QueryIntAttribute("x", &_width);
-				object->QueryIntAttribute("y", &_height);
-				vector<int> posicion;
-				posicion.push_back(_width);
-				posicion.push_back(_height);
-				spawnPlayer.push_back(posicion);
-				//cout << _width << " " << _height << endl;
-			}
-			object = object->NextSiblingElement("object");
-		}
-	}
-	
+void Partida::guardarObj(TiXmlElement* map) {
+    int _numLayers = 0;
+
+    //Leemos el número de layers que hay
+    TiXmlElement* layer = map->FirstChildElement("objectgroup");
+    while (layer) {
+        _numLayers++;
+        layer = layer->NextSiblingElement("objectgroup");
+    }
+
+    //Leemos las matrices
+    TiXmlElement *object;
+    TiXmlElement *rozamiento;
+    layer = map->FirstChildElement("objectgroup");
+    object = layer->FirstChildElement("object");
+
+    int _width = 0;
+    int _height = 0;
+    int _sizeX = 0;
+    int _sizeY = 0;
+    string tipo;
+
+    for (int l = 0; l < _numLayers; l++) {
+        if (l != 0) {
+            layer = layer->NextSiblingElement("objectgroup");
+            object = layer->FirstChildElement("object");
+        }
+        while (object) {
+            tipo = object->Attribute("name");
+            //cout << tipo << endl;
+            if (tipo.compare("platform") == 0) {
+                int _roz;
+                rozamiento = object->FirstChildElement("properties")->FirstChildElement("property");
+                object->QueryIntAttribute("x", &_width);
+                object->QueryIntAttribute("y", &_height);
+                object->QueryIntAttribute("width", &_sizeX);
+                object->QueryIntAttribute("height", &_sizeY);
+
+
+                rozamiento->QueryIntAttribute("value", &_roz);
+                //cout << _width << " " << _height << " " << _sizeX << " " << _sizeY << endl;
+                Platform *suelo = new Platform(world, sf::Vector2f((float) _sizeX, (float) _sizeY), sf::Vector2f((float) _width + _sizeX / 2, (float) _height + _sizeY / 2), ((float) _roz) / 10.0);
+                worldPlatforms.push_back(suelo);
+            } else if (tipo.compare("player") == 0) {
+                object->QueryIntAttribute("x", &_width);
+                object->QueryIntAttribute("y", &_height);
+                vector<int> posicion;
+                posicion.push_back(_width);
+                posicion.push_back(_height);
+                spawnPlayer.push_back(posicion);
+                //cout << _width << " " << _height << endl;
+            } else if (tipo.compare("esquina") == 0) {
+                object->QueryIntAttribute("x", &_width);
+                object->QueryIntAttribute("y", &_height);
+                vector<int> posicion;
+                posicion.push_back(_width);
+                posicion.push_back(_height);
+                esquinasMapa.push_back(posicion);
+                //cout << _width << " " << _height << endl;
+            }
+            object = object->NextSiblingElement("object");
+        }
+    }
+
 }
 
-void Partida::cargarXML(){
+void Partida::cargarXML() {
 
-	TiXmlDocument doc("resources/mapas/mapa.tmx");
-	doc.LoadFile();
+    TiXmlDocument doc("resources/mapas/mapa.tmx");
+    doc.LoadFile();
 
-	TiXmlElement* map = doc.FirstChildElement("map");
-	guardarCapas(map);
-	guardarObj(map);
-	
+    TiXmlElement* map = doc.FirstChildElement("map");
+    guardarCapas(map);
+    guardarObj(map);
+
 }
 
 Partida::~Partida() {

@@ -37,7 +37,7 @@ public:
     void checkAxisY(int ejeY);
     void update();
     int readTile(int layer);
-    void moveTo(float PosX, float PosY, Controlador* seguir);
+    void moveTo(float PosX, float PosY, float dist, Controlador* seguir);
     void interact();
     vector<float> buscarArma();
     vector<float> buscarHuida();
