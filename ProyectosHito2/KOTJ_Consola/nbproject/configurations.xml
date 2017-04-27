@@ -11,6 +11,7 @@
       <itemPath>headerfiles/Controlador.h</itemPath>
       <itemPath>headerfiles/Entidad.h</itemPath>
       <itemPath>headerfiles/Explosion.h</itemPath>
+      <itemPath>headerfiles/IAController.h</itemPath>
       <itemPath>headerfiles/Partida.h</itemPath>
       <itemPath>headerfiles/Platform.h</itemPath>
       <itemPath>headerfiles/Player.h</itemPath>
@@ -38,6 +39,7 @@
       <itemPath>sourcefiles/Controlador.cpp</itemPath>
       <itemPath>sourcefiles/Entidad.cpp</itemPath>
       <itemPath>sourcefiles/Explosion.cpp</itemPath>
+      <itemPath>sourcefiles/IAController.cpp</itemPath>
       <itemPath>sourcefiles/Partida.cpp</itemPath>
       <itemPath>sourcefiles/Platform.cpp</itemPath>
       <itemPath>sourcefiles/Player.cpp</itemPath>
@@ -104,6 +106,8 @@
       </item>
       <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
@@ -143,6 +147,8 @@
       <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -216,6 +222,8 @@
       </item>
       <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
@@ -255,6 +263,8 @@
       <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
       </item>

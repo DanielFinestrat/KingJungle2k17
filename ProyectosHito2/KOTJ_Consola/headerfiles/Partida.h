@@ -19,6 +19,7 @@
 #include "PlayerJoystick.h"
 #include "ContactListener.h"
 #include "PlayerKeyboard.h"
+#include "IAController.h"
 #include "Console.h"
 
 #include "tinystr.h"
@@ -54,11 +55,14 @@ public:
     set<Explosion*> explo2Delete;
     
     vector<vector<int>> spawnPlayer;
+    vector<vector<int>> esquinasMapa;
     
     Temporizador *temporizador;
     Clock frameClock;
 
     int ***_tilemap;
+    sf::Texture map_texture;
+    vector<sf::Sprite*> map_sprites;
     
     static Partida* getInstance();
 
@@ -78,6 +82,7 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
+    void drawMap();
     
     void eraseBullets();
     void erasePlayers();
@@ -88,6 +93,7 @@ public:
     void checkJoysticksConnected();
     void addPlayerJoystick(int id);
     void addPlayerKeyboard();
+    void addPlayerIA();
     void respawn();
     
     void updatePlayers(Time frameTime);
@@ -96,7 +102,7 @@ public:
     void updateExplo();
 
     void cameraSetTransform();
-    
+    void cargarTiles(int capa, int y, int x);
     void loadMap();
     virtual ~Partida();
 

@@ -43,6 +43,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
+	${OBJECTDIR}/sourcefiles/IAController.o \
 	${OBJECTDIR}/sourcefiles/Partida.o \
 	${OBJECTDIR}/sourcefiles/Platform.o \
 	${OBJECTDIR}/sourcefiles/Player.o \
@@ -130,6 +131,11 @@ ${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Explosion.o sourcefiles/Explosion.cpp
+
+${OBJECTDIR}/sourcefiles/IAController.o: sourcefiles/IAController.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/IAController.o sourcefiles/IAController.cpp
 
 ${OBJECTDIR}/sourcefiles/Partida.o: sourcefiles/Partida.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

@@ -50,11 +50,13 @@ public:
     void respawn();
     void eraseBody();
     void interact();
+    bool hasWeapon();
     void interact(Weapon* lastWeapon);
     void pause(bool); //TODO
     b2Vec2 getPosition();
     void setPosition(float, float);
     int getDirMoving();
+    Weapon* getWeapon(); 
     void setColor(int);
 
 private:
