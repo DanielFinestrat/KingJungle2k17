@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=KOTJ_Fachada_Terminada
+PROJECTNAME=KOT_Menu_Fachada_Terminada
 
 # Active Configuration
 DEFAULTCONF=Debug

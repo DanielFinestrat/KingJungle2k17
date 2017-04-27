@@ -31,7 +31,10 @@ class MusicPlayer {
         const string menuMusic;
         const string selecctionMusic;
         const string battleMusic;
-        const string defeat;
+        const string shot;
+        const string fastReload;
+        const string slowReload;
+        const string emptyCartridge;
         
 
     private:

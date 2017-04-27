@@ -7,6 +7,7 @@
 
 #include "../headerfiles/Weapon.h"
 #include "../headerfiles/Partida.h"
+#include "../motorgrafico/headerfiles/Motorgrafico.h"
 
 Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad, int Bps, int amm, int recoil_, bool parabola, bool explosivo) {
 
@@ -59,6 +60,7 @@ int Weapon::shoot() {
         difTime += deltaClock.getDeltaTimeAsSeconds();
 
         if (difTime >= shootCadence) {
+            
             difTime = 0.0;
             ammo--;
             Partida *partida = Partida::getInstance();
@@ -68,10 +70,15 @@ int Weapon::shoot() {
             
             if(!parabola) nuevaBala->Disparar(5 * -dir, 180);
             else nuevaBala->Disparar_Parabola(-dir, 160);
+            
+            Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->shot);
                 
             partida->worldBullets.insert(nuevaBala);
             return recoil;
         }
+    }
+    else{
+        Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
     }
     return 0;
 }

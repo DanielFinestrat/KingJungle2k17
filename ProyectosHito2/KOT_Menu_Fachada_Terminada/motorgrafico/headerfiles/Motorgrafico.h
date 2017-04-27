@@ -12,6 +12,7 @@
 #include "Animation.h"
 #include "SpriteAnimated.h"
 #include "Temporizador.h"
+#include "musicPlayer.h"
 
 
 class Motorgrafico {
@@ -37,6 +38,9 @@ public:
     void resetFrameTime();
     sf::Time getFrameTime();
     
+    void createMusicPlayer();
+    MusicPlayer* getMusicPlayer();
+    
     template <class T1> void draw(T1&);
     void draw(SpriteAnimated&);
     void draw(sf::RectangleShape);
@@ -59,6 +63,7 @@ private:
     sf::View *mainCamera;
     sf::View *hudCamera;
     sf::Event event;
+    MusicPlayer *mplayer;
 
 };
 

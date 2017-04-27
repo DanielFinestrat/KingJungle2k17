@@ -7,7 +7,10 @@ using namespace sf;
 MusicPlayer::MusicPlayer(): menuMusic("./resources/music/menuMusic.wav"),
                             selecctionMusic("./resources/music/selecctionMusic.wav"),
                             battleMusic("./resources/music/battleMusic.wav"),
-                            defeat("resources/music/defeatedSandwich.wav"){
+                            shot("resources/sfx/shot.wav"),
+                            fastReload("resources/sfx/fastReload.wav"),
+                            slowReload("resources/sfx/slowReload.wav"),
+                            emptyCartridge("resources/sfx/emptyCartridge.wav"){
     initialise();
 }
 
@@ -29,11 +32,18 @@ bool MusicPlayer::loadAll() {
     if (!loadSoundBuffer(menuMusic)) return false;
     if (!loadSoundBuffer(selecctionMusic)) return false;
     if (!loadSoundBuffer(battleMusic)) return false;
-    if (!loadSoundBuffer(defeat)) return false;
+    if (!loadSoundBuffer(shot)) return false;
+    if (!loadSoundBuffer(fastReload)) return false;
+    if (!loadSoundBuffer(slowReload)) return false;
+    if (!loadSoundBuffer(emptyCartridge)) return false;
+    
     if (!loadSound(menuMusic)) return false;
     if (!loadSound(selecctionMusic)) return false;
     if (!loadSound(battleMusic)) return false;
-    if (!loadSound(defeat)) return false;
+    if (!loadSound(shot)) return false;
+    if (!loadSound(fastReload)) return false;
+    if (!loadSound(slowReload)) return false;
+    if (!loadSound(emptyCartridge)) return false;
   return true;
 }
 

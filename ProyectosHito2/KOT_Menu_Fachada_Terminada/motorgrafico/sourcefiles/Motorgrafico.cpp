@@ -236,6 +236,14 @@ void Motorgrafico::displayWindow(){
     window->display();
 }
 
+void Motorgrafico::createMusicPlayer(){
+    mplayer = new MusicPlayer();        
+}
+
+MusicPlayer* Motorgrafico::getMusicPlayer(){
+    return mplayer;
+}
+
 template <class T1> void Motorgrafico::draw(T1& object){
     window->draw(object);  
 }

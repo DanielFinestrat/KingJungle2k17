@@ -95,6 +95,7 @@ build/Debug/GNU-Linux/sourcefiles/Partida.o: sourcefiles/Partida.cpp \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../motorgrafico/headerfiles/musicPlayer.h \
  sourcefiles/../headerfiles/Partida.h
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
@@ -288,5 +289,7 @@ sourcefiles/../motorgrafico/headerfiles/Animation.h:
 sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 
 sourcefiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../motorgrafico/headerfiles/musicPlayer.h:
 
 sourcefiles/../headerfiles/Partida.h:

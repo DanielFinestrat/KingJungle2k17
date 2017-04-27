@@ -88,7 +88,17 @@ build/Debug/GNU-Linux/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/Controlador.h \
- sourcefiles/../headerfiles/PlayerKeyboard.h
+ sourcefiles/../headerfiles/PlayerKeyboard.h \
+ sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
+ sourcefiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../motorgrafico/headerfiles/musicPlayer.h
 
 sourcefiles/../headerfiles/Weapon.h:
 
@@ -271,3 +281,23 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 sourcefiles/../headerfiles/Controlador.h:
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:
+
+sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../motorgrafico/headerfiles/Animation.h:
+
+sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h:
+
+sourcefiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../motorgrafico/headerfiles/musicPlayer.h:

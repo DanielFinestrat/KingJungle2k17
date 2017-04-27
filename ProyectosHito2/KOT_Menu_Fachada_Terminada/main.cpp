@@ -26,17 +26,16 @@ int main() {
     state = 1;
     Menu* menu;
     Motorgrafico *mg = Motorgrafico::getInstance();
-    
-    MusicPlayer *mplayer = new MusicPlayer();
+    mg->createMusicPlayer();
     
     while (state != 0) {
         
         if(state == 1) {
             menu = createMenu();
             
-            mplayer->playSound(mplayer->menuMusic);
-            mplayer->setLoop(mplayer->menuMusic);
-            mplayer->setVolume(mplayer->menuMusic,50);
+            mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
+            mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
+            mg->getMusicPlayer()->setVolume(mg->getMusicPlayer()->menuMusic,50);
             
             while(mg->getRenderWindow()->isOpen() && state == 1) {
 
@@ -45,7 +44,8 @@ int main() {
                 menu->render();
             }
             
-            mplayer->stopSound(mplayer->menuMusic);
+            mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->menuMusic);
+            
             menu = NULL;
             
         }
@@ -55,9 +55,9 @@ int main() {
 
             partida->loadMap();
             
-            mplayer->playSound(mplayer->battleMusic);
-            mplayer->setLoop(mplayer->battleMusic);
-            mplayer->setVolume(mplayer->battleMusic,50);
+            mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
+            mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->battleMusic);
+            mg->getMusicPlayer()->setVolume(mg->getMusicPlayer()->battleMusic,50);
 
             while(mg->getRenderWindow()->isOpen() && state == 2){
                 partida->Input(state);
@@ -66,7 +66,8 @@ int main() {
                 partida->Render();      
             }
             
-            mplayer->stopSound(mplayer->battleMusic);
+            mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
+            
             partida = NULL;
             delete partida;
             

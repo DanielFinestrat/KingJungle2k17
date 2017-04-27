@@ -93,7 +93,9 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/headerfiles/Animation.h \
  motorgrafico/headerfiles/SpriteAnimated.h \
- motorgrafico/headerfiles/Temporizador.h
+ motorgrafico/headerfiles/Temporizador.h \
+ motorgrafico/headerfiles/musicPlayer.h \
+ motorgrafico/headerfiles/musicPlayer.h
 
 headerfiles/Partida.h:
 
@@ -294,3 +296,7 @@ motorgrafico/headerfiles/Animation.h:
 motorgrafico/headerfiles/SpriteAnimated.h:
 
 motorgrafico/headerfiles/Temporizador.h:
+
+motorgrafico/headerfiles/musicPlayer.h:
+
+motorgrafico/headerfiles/musicPlayer.h:

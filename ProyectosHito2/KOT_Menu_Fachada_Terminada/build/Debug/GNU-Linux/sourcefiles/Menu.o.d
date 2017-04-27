@@ -96,7 +96,8 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
- sourcefiles/../motorgrafico/headerfiles/Temporizador.h
+ sourcefiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../motorgrafico/headerfiles/musicPlayer.h
 
 sourcefiles/../headerfiles/Menu.h:
 
@@ -293,3 +294,5 @@ sourcefiles/../motorgrafico/headerfiles/Animation.h:
 sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 
 sourcefiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../motorgrafico/headerfiles/musicPlayer.h:

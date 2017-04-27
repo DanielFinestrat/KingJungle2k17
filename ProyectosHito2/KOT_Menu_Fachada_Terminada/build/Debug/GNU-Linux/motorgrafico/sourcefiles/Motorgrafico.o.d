@@ -95,7 +95,8 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  motorgrafico/sourcefiles/../headerfiles/Animation.h \
  motorgrafico/sourcefiles/../headerfiles/SpriteAnimated.h \
- motorgrafico/sourcefiles/../headerfiles/Temporizador.h
+ motorgrafico/sourcefiles/../headerfiles/Temporizador.h \
+ motorgrafico/sourcefiles/../headerfiles/musicPlayer.h
 
 motorgrafico/sourcefiles/../headerfiles/Motorgrafico.h:
 
@@ -288,3 +289,5 @@ motorgrafico/sourcefiles/../headerfiles/Animation.h:
 motorgrafico/sourcefiles/../headerfiles/SpriteAnimated.h:
 
 motorgrafico/sourcefiles/../headerfiles/Temporizador.h:
+
+motorgrafico/sourcefiles/../headerfiles/musicPlayer.h:
