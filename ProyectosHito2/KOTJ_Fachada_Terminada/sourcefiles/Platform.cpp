@@ -23,14 +23,11 @@ Platform::Platform(float sizex, float sizey, float posx, float posy, float frict
     cuerpo->setCategoryBits(CATEGORY_SCENERY);
     
     //Definimos parametros de SFML
-    figure = new VisibleFigure(sizex, sizey);
-    figure->rectShapeSetOrigin(sizex/2, sizey/2);
-    figure->rectShapeSetPosition(posx, posy);
-    figure->rectShapeSetFillColor(0,0,255,255);
+    body = new VisibleBody(posx,posy,sizex,sizey,"");
 }
 
-VisibleFigure* Platform::getFigure(){
-    return figure;
+VisibleBody* Platform::getBodyShape(){
+    return body;
 }
 
 

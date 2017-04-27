@@ -47,7 +47,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Temporizador.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/Texto.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o \
-	${OBJECTDIR}/motorgrafico/sourcefiles/VisibleFigure.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/resources.o \
 	${OBJECTDIR}/sourcefiles/Bala.o \
@@ -155,11 +154,6 @@ ${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o: motorgrafico/sourcefiles/Vi
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/VisibleBody.o motorgrafico/sourcefiles/VisibleBody.cpp
-
-${OBJECTDIR}/motorgrafico/sourcefiles/VisibleFigure.o: motorgrafico/sourcefiles/VisibleFigure.cpp
-	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I/usr/include/SFML -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/motorgrafico/sourcefiles/VisibleFigure.o motorgrafico/sourcefiles/VisibleFigure.cpp
 
 ${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o: motorgrafico/sourcefiles/musicPlayer.cpp
 	${MKDIR} -p ${OBJECTDIR}/motorgrafico/sourcefiles

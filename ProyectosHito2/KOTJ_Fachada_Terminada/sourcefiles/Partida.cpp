@@ -105,7 +105,7 @@ void Partida::Render() {
 
 void Partida::drawPlatforms() {
     for (int i = 0; i < worldPlatforms.size(); i++) {
-       Motorgrafico::getInstance()->draw(worldPlatforms.at(i)->getFigure()->getRectShape());
+       Motorgrafico::getInstance()->draw(worldPlatforms.at(i)->getBodyShape()->getShape());
         
     }
 }
@@ -127,7 +127,7 @@ void Partida::drawBullets() {
     set<Bala*>::iterator endBala = worldBullets.end();
     for (; itBala != endBala; ++itBala) {
         Bala* renderBala = *itBala;
-        Motorgrafico::getInstance()->draw(renderBala->getFigure()->getRectShape());
+        Motorgrafico::getInstance()->draw(renderBala->getBodyShape()->getShape());
     }
 }
 
@@ -136,7 +136,7 @@ void Partida::drawExplo() {
     set<Explosion*>::iterator endExplo = worldExplo.end();
     for (; itExplo != endExplo; ++itExplo) {
         Explosion* renderExplo = *itExplo;
-        Motorgrafico::getInstance()->draw(renderExplo->figure->getCircShape());
+        Motorgrafico::getInstance()->draw(renderExplo->getBodyShape()->getCircleShape());
     }
 }
 

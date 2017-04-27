@@ -16,7 +16,7 @@
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorfisico/headerfiles/Motorfisico.h"
-#include "../motorgrafico/headerfiles/VisibleFigure.h"
+#include "../motorgrafico/headerfiles/VisibleBody.h"
 
 class Bala : public Entidad {
 public:
@@ -24,7 +24,7 @@ public:
     bool explosion;
 
     Cuerpo *cuerpo;
-    VisibleFigure *figure;
+    VisibleBody *shape;
 
     /**
      * Constructor del objeto Bala
@@ -55,7 +55,12 @@ public:
      */
     void Disparar(float velocidad, float angulo);
     
-    VisibleFigure* getFigure();
+    /**
+     * 
+     * @return el shape de la bala (VisibleBody) 
+     */
+    
+    VisibleBody* getBodyShape();
 
     /**
      * Elimina de memoria las variables de la bala

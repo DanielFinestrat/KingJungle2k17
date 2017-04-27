@@ -23,7 +23,7 @@
 class VisibleBody {
 public:
  
-    /* Constructor de un cuerpo visible 
+    /* Constructor de un cuerpo visible cuadrado
      * @param float posX: Posicion en X del objeto
      * @param float posY: Posicion en Y del objeto
      * @param float height: Altura del objeto en pixeles
@@ -31,11 +31,30 @@ public:
      */
     VisibleBody(float posX, float posY, float width, float height, std::string texPath);
     
+    /* Constructor de un cuerpo visible circular
+     * @param float posX: Posicion en X del objeto
+     * @param float posY: Posicion en Y del objeto
+     * @param float radius: Radio del objeto
+     */
+    VisibleBody(float posX, float posY, float radius, std::string texPath);
+    
     /*Funcion que modifica la posicion del objeto
      * @param float posX: Posicion en X del objeto
      * @param float posY: Posicion en Y del objeto
      */
     void setPos(float posX, float posY);
+    
+    /*Funcion que modifica la posicion del objeto circulo
+     * @param float posX: Posicion en X del objeto
+     * @param float posY: Posicion en Y del objeto
+     */
+    void setCirclePos(float posX, float posY);
+    
+    /*Funcion que modifica el origen del shape del objeto circulo
+     * @param float posX: Posicion en X del objeto
+     * @param float posY: Posicion en Y del objeto
+     */
+    void setCircleOrigin(float posX, float posY);
     
     /*Funcion que modifica las dimensiones del objeto 
      * @param float height: Altura del objeto
@@ -54,6 +73,24 @@ public:
      * @param int sY: Escala en Y
      */
     void setScale(int sX, int sY);
+    
+    /*
+     * Funcion que modifica el angulo de rotacion del objeto
+     * @param float angle: Angulo de rotacion
+     */
+    void setRot(float angle);
+    
+     /*
+     * Funcion que modifica el angulo de rotacion del objeto circulo
+     * @param float angle: Angulo de rotacion
+     */
+    void setCircleRot(float angle);
+    
+    /**
+     * Establece un nuevo radio para el objeto circulo
+     * @param float rad : Nuevo radio del objeto circulo
+     */
+    void setCircleRadius(float rad);
     
     /*
      * Funcion que devuelve la posicion del objeto
@@ -98,10 +135,9 @@ public:
      */
     void updateBody(float posX, float posY,float angle);
     
-    /* Funcion para rendereizar el el objeto
-     * @param sf::RenderWindow window: Ventana en la que se va a dibujar el objeto
-     */
     sf::RectangleShape getShape();
+    
+    sf::CircleShape getCircleShape();
     
     /*Funcion que devuelve las esquinas del objeto
      */
@@ -109,9 +145,10 @@ public:
     
     virtual ~VisibleBody();
 private:
-    float posX, posY, height, width;
+    float posX, posY, height, width, radius;
     std::string texPath;
     sf::RectangleShape rectangle;
+    sf::CircleShape circle;
     Resources* tex;
 };
 

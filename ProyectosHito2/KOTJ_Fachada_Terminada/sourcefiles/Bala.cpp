@@ -20,10 +20,7 @@ Bala::Bala(float x, float y, float posx, float posy, bool explo) {
     cuerpo->setCategoryBits(CATEGORY_BULLET);
     cuerpo->setDensity(0.7f);
     
-    figure = new VisibleFigure(x,y);
-    figure->rectShapeSetOrigin(x/2,y/2);
-    figure->rectShapeSetPosition(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM);
-    figure->rectShapeSetFillColor(255,255,0,255);
+    shape = new VisibleBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM,x,y,"");
     
 }
 
@@ -45,8 +42,8 @@ void Bala::Update_Shape() {
 
     double a = atan(vy / vx) * (180 / M_PI);     
 
-    figure->rectShapeSetPosition(posX * PPM, posY * PPM);
-    figure->rectShapeSetRotation(a);
+    shape->setPos(posX * PPM, posY * PPM);
+    shape->setRot(a);
 }
 
 void Bala::Disparar_Parabola(float fuerza, float angulo) {
@@ -54,15 +51,15 @@ void Bala::Disparar_Parabola(float fuerza, float angulo) {
 }
 
 void Bala::Disparar(float velocidad, float angulo) {
-    figure->rectShapeSetRotation(-angulo);
+    shape->setRot(-angulo);
     
     cuerpo->setVelocidad(velocidad * cos(angulo * 3.14 / 180.0f), -velocidad * sin(angulo * 3.14 / 180.0f));
     cuerpo->setAngulo(-angulo);
     cuerpo->setGravityScale(0);
 }
 
-VisibleFigure* Bala::getFigure(){
-    return figure;
+VisibleBody* Bala::getBodyShape(){
+    return shape;
 }
 
 //Hacer un delete de cada objeto que se ha creado con un New y luego igualarlo a NULL
@@ -70,8 +67,8 @@ Bala::~Bala() {
     cuerpo->Destruir();
     delete cuerpo;
     cuerpo = NULL;
-    delete figure;
-    figure = NULL;
+    delete shape;
+    shape = NULL;
 }
 
 

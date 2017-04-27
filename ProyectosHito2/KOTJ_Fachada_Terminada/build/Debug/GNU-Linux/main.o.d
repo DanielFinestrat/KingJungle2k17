@@ -72,10 +72,9 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/Platform.h headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- headerfiles/../motorgrafico/headerfiles/VisibleFigure.h \
- headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  headerfiles/Explosion.h \
  headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -241,15 +240,13 @@ headerfiles/Entidad.h:
 
 headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-headerfiles/../motorgrafico/headerfiles/VisibleFigure.h:
+headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 headerfiles/Weapon.h:
 
 headerfiles/Bala.h:
-
-headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 

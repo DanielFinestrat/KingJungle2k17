@@ -13,7 +13,7 @@
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorfisico/headerfiles/Motorfisico.h"
-#include "../motorgrafico/headerfiles/VisibleFigure.h"
+#include "../motorgrafico/headerfiles/VisibleBody.h"
 
 using namespace std;
 
@@ -24,13 +24,13 @@ public:
     Platform(const Platform& orig);
     Platform(float sizex, float sizey, float posx, float posy, float friction);
 
-    VisibleFigure* getFigure();
+    VisibleBody* getBodyShape();
 
     virtual ~Platform();
 private:
     
     Cuerpo *cuerpo;
-    VisibleFigure *figure;
+    VisibleBody *body;
 
 };
 

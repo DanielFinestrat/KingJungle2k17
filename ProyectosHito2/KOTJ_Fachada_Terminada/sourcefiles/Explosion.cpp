@@ -24,10 +24,8 @@ Explosion::Explosion(float posx, float posy, float radio, float incremento, floa
     cuerpo->setDensity(0.7f);
     cuerpo->setType(2);
 
-    figure = new VisibleFigure(inicial * PPM);
-    figure->circShapeSetOrigin(radioActual * PPM, radioActual * PPM);
-    figure->circShapeSetPosition(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM);
-    figure->circShapeSetFillColor(255,255,255,255);
+    shape = new VisibleBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM,inicial * PPM,"");
+    shape->setCircleOrigin(radioActual * PPM, radioActual * PPM);
 
 }
 
@@ -46,10 +44,10 @@ void Explosion::Update() {
             float posX = cuerpo->getPosicionX();
             float posY = cuerpo->getPosicionY();
 
-            figure->circShapeSetRadius(radioActual * PPM);
-            figure->circShapeSetOrigin(radioActual * PPM, radioActual * PPM);
-            figure->circShapeSetPosition(posX * PPM, posY * PPM);
-            figure->circShapeSetRotation((angle * 180) / M_PI);
+            shape->setCircleRadius(radioActual * PPM);
+            shape->setCircleOrigin(radioActual * PPM, radioActual * PPM);
+            shape->setCirclePos(posX * PPM, posY * PPM);
+            shape->setCircleRot((angle * 180) / M_PI);
         }
     } else {
         Partida* partida = Partida::getInstance();
@@ -57,10 +55,14 @@ void Explosion::Update() {
     }
 }
 
+VisibleBody* Explosion::getBodyShape(){
+    return shape;
+}
+
 Explosion::~Explosion() {
     cuerpo->Destruir();
     delete cuerpo;
     cuerpo = NULL;
-    delete figure;
-    figure = NULL;
+    delete shape;
+    shape = NULL;
 }

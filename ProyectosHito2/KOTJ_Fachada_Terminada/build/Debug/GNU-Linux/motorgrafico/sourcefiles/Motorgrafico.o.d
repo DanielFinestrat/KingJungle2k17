@@ -76,11 +76,10 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Platform.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h \
- motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weapon.h \
- motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weapon.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Explosion.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -248,15 +247,13 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h:
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weapon.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Bala.h:
-
-motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 

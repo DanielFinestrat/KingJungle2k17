@@ -73,7 +73,8 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -81,8 +82,6 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
@@ -240,7 +239,9 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
@@ -257,10 +258,6 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 

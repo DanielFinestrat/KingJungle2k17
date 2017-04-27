@@ -20,7 +20,7 @@
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/ContactListener.h"
 #include "../motorfisico/headerfiles/CuerpoCircular.h"
-#include "../motorgrafico/headerfiles/VisibleFigure.h"
+#include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/InnerClock.h"
 
 class Explosion : public Entidad {
@@ -33,7 +33,7 @@ public:
     float difTime;
 
     CuerpoCircular *cuerpo;
-    VisibleFigure *figure;
+    VisibleBody *shape;
     
     /**
     * Constructor del objeto Explosion
@@ -49,12 +49,19 @@ public:
     * Actualiza el CuerpoCircular y VisibleFigure de la explosión
     */
     void Update();
+    
+    /**
+     * Devuelve el VisualBody 
+     */
+    VisibleBody* getBodyShape();
 
     /**
     * Elimina de memoria las variables de la explosión 
     */
     ~Explosion();
 private:
+    
+
 
 };
 

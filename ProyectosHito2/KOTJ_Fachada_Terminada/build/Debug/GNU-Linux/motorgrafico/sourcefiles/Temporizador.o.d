@@ -76,11 +76,10 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/Platform.h \
  motorgrafico/sourcefiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
- motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h \
- motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
- motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
+ motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorgrafico/sourcefiles/../../headerfiles/Explosion.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -245,15 +244,13 @@ motorgrafico/sourcefiles/../../headerfiles/Entidad.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
-motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleFigure.h:
+motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Bala.h:
-
-motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
