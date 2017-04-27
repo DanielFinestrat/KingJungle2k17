@@ -23,9 +23,16 @@ class MusicPlayer {
         Sound &getSound(string filename);
         
         void playSound(string filename);
+        void pauseSound(string filename);
+        void stopSound(string filename);
+        void setVolume(string filename, int vol);
+        void setLoop(string filename);
 
-        const string hitSound;
-        const string deathSound;
+        const string menuMusic;
+        const string selecctionMusic;
+        const string battleMusic;
+        const string defeat;
+        
 
     private:
         map<string, SoundBuffer*> soundBuffers;

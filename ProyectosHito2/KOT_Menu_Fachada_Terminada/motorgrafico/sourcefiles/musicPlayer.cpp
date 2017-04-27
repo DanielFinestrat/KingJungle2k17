@@ -4,8 +4,12 @@
 using namespace std;
 using namespace sf;
 
-MusicPlayer::MusicPlayer(): hitSound("./resources/sfx/hit.wav"),
-                            deathSound("./resources/sfx/death.wav") {}
+MusicPlayer::MusicPlayer(): menuMusic("./resources/music/menuMusic.wav"),
+                            selecctionMusic("./resources/music/selecctionMusic.wav"),
+                            battleMusic("./resources/music/battleMusic.wav"),
+                            defeat("resources/music/defeatedSandwich.wav"){
+    initialise();
+}
 
 bool MusicPlayer::initialise() {
     if (loadAll()) { return true; }
@@ -22,10 +26,14 @@ void MusicPlayer::cleanUp() {
 }
 
 bool MusicPlayer::loadAll() {
-    if (!loadSoundBuffer(hitSound)) return false;
-    if (!loadSoundBuffer(deathSound)) return false;
-    if (!loadSound(hitSound)) return false;
-    if (!loadSound(deathSound)) return false;
+    if (!loadSoundBuffer(menuMusic)) return false;
+    if (!loadSoundBuffer(selecctionMusic)) return false;
+    if (!loadSoundBuffer(battleMusic)) return false;
+    if (!loadSoundBuffer(defeat)) return false;
+    if (!loadSound(menuMusic)) return false;
+    if (!loadSound(selecctionMusic)) return false;
+    if (!loadSound(battleMusic)) return false;
+    if (!loadSound(defeat)) return false;
   return true;
 }
 
@@ -73,4 +81,20 @@ Sound &MusicPlayer::getSound(string filename) {
 
 void MusicPlayer::playSound(string filename) {
     getSound(filename).play();
+}
+
+void MusicPlayer::pauseSound(string filename){
+    getSound(filename).pause();
+}
+
+void MusicPlayer::stopSound(string filename){
+    getSound(filename).stop();
+}
+
+void MusicPlayer::setVolume(string filename, int vol){
+    getSound(filename).setVolume(vol);
+}
+
+void MusicPlayer::setLoop(string filename){
+    getSound(filename).setLoop(true);
 }
