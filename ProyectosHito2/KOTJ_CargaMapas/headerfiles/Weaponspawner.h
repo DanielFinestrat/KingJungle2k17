@@ -27,11 +27,12 @@ public:
     void leerArmas();
     void leerSpawnerPosition();
     
-    void cargarArmas(int indice);
     void cargarArmas();
+    void reemplazarArmas();
+    void reemplazarArmas(int indice);
+    
     
     void Update();
-    void Render();
     void checkIfUsed();
 
 private:

@@ -1,3 +1,4 @@
+
 /* 
  * File:   Motorgrafico.cpp
  * Author: amygwyllion
@@ -246,6 +247,10 @@ void Motorgrafico::draw(SpriteAnimated &object) {
 }
 
 void Motorgrafico::draw(sf::RectangleShape object) {
+    window->draw(object);
+}
+
+void Motorgrafico::draw(sf::RectangleShape &object) {
     window->draw(object);
 }
 

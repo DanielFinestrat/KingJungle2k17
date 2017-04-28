@@ -90,7 +90,6 @@ void Partida::Render() {
 
     drawPlayers();
     drawWeapons();
-    factoriaArmas->Render();
     drawBullets();
     drawExplo();
     mapa->drawMap();
@@ -174,14 +173,14 @@ void Partida::addPlayerJoystick(int id) {
     }
 
     //Añadimos en funcion de la condición
-    if (add) {
+    if (add && worldControlador.size() < 4) {
         PlayerJoystick* p = new PlayerJoystick(id);
         worldControlador.push_back(p);
     }
 }
 
 void Partida::addPlayerKeyboard() {
-    worldControlador.push_back(new PlayerKeyboard());
+    if(worldControlador.size() < 4) worldControlador.push_back(new PlayerKeyboard());
 }
 
 void Partida::respawn() {

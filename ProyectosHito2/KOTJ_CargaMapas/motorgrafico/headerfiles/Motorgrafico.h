@@ -45,6 +45,7 @@ public:
     template <class T1> void draw(T1&);
     void draw(SpriteAnimated&);
     void draw(sf::RectangleShape);
+    void draw(sf::RectangleShape&);
     void draw(sf::CircleShape);
     void draw(sf::Text);
     
