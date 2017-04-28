@@ -65,16 +65,28 @@ int Weapon::shoot() {
             ammo--;
             Partida *partida = Partida::getInstance();
 
-            // +50 habria que cambiarlo por el size del personaje
-            for (int i = 0; i < BPS; i++) {
-                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
-                
-                if (!parabola){
-                    if (BPS > 1) nuevaBala->Disparar(5 * -dir, 135 + i*45);
-                    else nuevaBala->Disparar(5 * -dir, 180);
+            if (!parabola) {
+
+                float difAng = 180 / (BPS * 2);
+                for (int i = 0; i < BPS / 2; i++) {
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    nuevaBala->Disparar(5 * -dir, 180 - difAng * (i + 1));
+                    partida->worldBullets.insert(nuevaBala);
                 }
-                else nuevaBala->Disparar_Parabola(-dir, 160 + i*45);
-                
+                for (int i = 0; i < BPS / 2; i++) {
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    nuevaBala->Disparar(5 * -dir, 180 + difAng * (i + 1));
+                    partida->worldBullets.insert(nuevaBala);
+                }
+                if (BPS % 2 != 0) {
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    nuevaBala->Disparar(5 * -dir, 180);
+                    partida->worldBullets.insert(nuevaBala);
+                }
+
+            } else {
+                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                nuevaBala->Disparar_Parabola(-dir, 160);
                 partida->worldBullets.insert(nuevaBala);
             }
 
