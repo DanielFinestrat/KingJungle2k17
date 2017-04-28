@@ -12,6 +12,7 @@
 #include <vector>
 #include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../motorgrafico/headerfiles/Temporizador.h"
+#include "Weaponspawner.h"
 #include "Platform.h"
 #include "Weapon.h"
 #include "Bala.h"
@@ -34,13 +35,10 @@ class Motorgrafico;
 class Partida {
 public:
     
-    sf::RenderWindow *window;
-
-    sf::View *mainCamera;
-    sf::View *hudCamera;
-
     Mapa *mapa;
-    
+    Weaponspawner* factoriaArmas;
+    Temporizador *temporizador;
+
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
     set<Explosion*> worldExplo;
@@ -50,9 +48,6 @@ public:
     set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
     set<Explosion*> explo2Delete;
-
-    Temporizador *temporizador;
-    Clock frameClock;
 
     static Partida* getInstance();
 

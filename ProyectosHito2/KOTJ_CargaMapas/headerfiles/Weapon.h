@@ -14,6 +14,7 @@
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorgrafico/headerfiles/InnerClock.h"
+#include "../motorgrafico/headerfiles/resources.h"
 
 using namespace std;
 

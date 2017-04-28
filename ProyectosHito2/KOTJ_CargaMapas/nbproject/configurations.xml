@@ -16,6 +16,7 @@
       <itemPath>headerfiles/PlayerJoystick.h</itemPath>
       <itemPath>headerfiles/PlayerKeyboard.h</itemPath>
       <itemPath>headerfiles/Weapon.h</itemPath>
+      <itemPath>headerfiles/Weaponspawner.h</itemPath>
     </logicalFolder>
     <logicalFolder name="motorfisico" displayName="motorfisico" projectFiles="true">
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
@@ -60,10 +61,6 @@
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
-      <itemPath>resources/fonts</itemPath>
-      <itemPath>resources/sprites</itemPath>
-    </logicalFolder>
-    <logicalFolder name="resources" displayName="resources" projectFiles="true">
       <logicalFolder name="datos" displayName="datos" projectFiles="true">
         <itemPath>resources/datos/armas.xml</itemPath>
       </logicalFolder>
@@ -71,7 +68,6 @@
         <itemPath>resources/fonts/bits.ttf</itemPath>
       </logicalFolder>
       <logicalFolder name="mapas" displayName="mapas" projectFiles="true">
-        <itemPath>resources/mapas/mapa.tmx</itemPath>
       </logicalFolder>
       <logicalFolder name="music" displayName="music" projectFiles="true">
         <itemPath>resources/music/battleMusic.wav</itemPath>
@@ -108,6 +104,7 @@
       <itemPath>sourcefiles/PlayerJoystick.cpp</itemPath>
       <itemPath>sourcefiles/PlayerKeyboard.cpp</itemPath>
       <itemPath>sourcefiles/Weapon.cpp</itemPath>
+      <itemPath>sourcefiles/Weaponspawner.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="tinyxml" displayName="tinyxml" projectFiles="true">
@@ -182,6 +179,8 @@
       <item path="headerfiles/PlayerKeyboard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Weaponspawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -305,11 +304,7 @@
       </item>
       <item path="resources/datos/armas.xml" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="resources/fonts" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="resources/fonts/bits.ttf" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/mapas/mapa.tmx" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/music/battleMusic.wav" ex="false" tool="3" flavor2="0">
       </item>
@@ -332,8 +327,6 @@
       <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/revolver.png" ex="false" tool="3" flavor2="0">
       </item>
@@ -371,6 +364,8 @@
       <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weaponspawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tinyxml/headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -448,6 +443,8 @@
       </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/Weaponspawner.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motorfisico/headerfiles/ContactListener.h"
@@ -570,11 +567,7 @@
       </item>
       <item path="resources/datos/armas.xml" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="resources/fonts" ex="false" tool="3" flavor2="0">
-      </item>
       <item path="resources/fonts/bits.ttf" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/mapas/mapa.tmx" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/music/battleMusic.wav" ex="false" tool="3" flavor2="0">
       </item>
@@ -597,8 +590,6 @@
       <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/revolver.png" ex="false" tool="3" flavor2="0">
       </item>
@@ -636,6 +627,8 @@
       <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weaponspawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="tinyxml/headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
       </item>

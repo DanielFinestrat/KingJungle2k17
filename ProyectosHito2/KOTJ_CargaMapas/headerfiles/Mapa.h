@@ -10,7 +10,6 @@
 #define MAPA_H
 
 #include <vector>
-#include <SFML/Graphics.hpp>
 #include "../headerfiles/Platform.h"
 #include "../tinyxml/headerfiles/tinystr.h"
 #include "../tinyxml/headerfiles/tinyxml.h"
@@ -34,6 +33,7 @@ public:
     void guardarObj(TiXmlElement* map);
     
     vector< vector<int> > getEsquinas();
+    vector< vector<int> > getSpawnArmas();
     
     void drawMap();
     

@@ -74,6 +74,8 @@ void Partida::Erase() {
 void Partida::Update() {
     Motorfisico::getInstance()->Update();
     Motorgrafico::getInstance()->updateWindow();
+
+    factoriaArmas->Update();
     updateWeapons();
     updatePlayers(Motorgrafico::getInstance()->getFrameTime());
     updateBullets();
@@ -83,20 +85,19 @@ void Partida::Update() {
 }
 
 void Partida::Render() {
-    
     Motorgrafico::getInstance()->clearWindow();
     Motorgrafico::getInstance()->setMainCameraView();
 
     drawPlayers();
     drawWeapons();
+    factoriaArmas->Render();
     drawBullets();
     drawExplo();
     mapa->drawMap();
-    
+
     Motorgrafico::getInstance()->setHudCameraView();
     Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
-
 }
 
 void Partida::drawPlayers() {
@@ -107,7 +108,7 @@ void Partida::drawPlayers() {
 
 void Partida::drawWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-       Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
+        Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
     }
 }
 
@@ -226,11 +227,11 @@ void Partida::cameraSetTransform() {
     Motorgrafico::getInstance()->cameraSetTransform();
 }
 
-bool Partida::getUsingKeyboard(){
+bool Partida::getUsingKeyboard() {
     return usingKeyboard;
 }
 
-void Partida::setUsingKeyboard(bool state){
+void Partida::setUsingKeyboard(bool state) {
     usingKeyboard = state;
 }
 
@@ -238,13 +239,9 @@ void Partida::loadMap() {
     checkJoysticksConnected();
 
     mapa = new Mapa();
-    mapa->leerMapa(mapa->mapaPrueba);
-    
-    Weapon *pistola1 = new Weapon(50, 30,screenWidth / 4, (screenHeight / 3) - 5, 1.0f, 1, 10, 50, true, true);
-    worldWeapons.push_back(pistola1);
-    
-    Weapon *pistola2 = new Weapon(50, 30,3 * screenWidth / 4, (screenHeight / 3) - 5, 1.0f, 1, 10, 20, false, false);
-    worldWeapons.push_back(pistola2);
+    mapa->leerMapa(mapa->mapaSelva);
+
+    factoriaArmas = new Weaponspawner();
 }
 
 Partida::~Partida() {

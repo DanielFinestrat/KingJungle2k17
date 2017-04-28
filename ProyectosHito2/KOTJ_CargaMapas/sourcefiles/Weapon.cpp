@@ -35,7 +35,7 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     cuerpo->setRestitution(0.2f);
     
     //Creacion del cuerpo visible (shape)
-    m_vBody = new VisibleBody(posx * PPM, posy * PPM, sizex, sizey, "./resources/sprites/revolver.png", true);
+    m_vBody = new VisibleBody(posx * PPM, posy * PPM, sizex, sizey, Resources::getInstance()->armas, true);
 
 }
 

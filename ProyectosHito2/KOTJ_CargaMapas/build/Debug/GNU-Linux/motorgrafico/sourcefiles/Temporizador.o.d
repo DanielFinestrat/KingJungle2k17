@@ -73,14 +73,19 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
- motorgrafico/sourcefiles/../../headerfiles/Platform.h \
+ motorgrafico/sourcefiles/../../headerfiles/Weaponspawner.h \
+ motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
+ motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/Entidad.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
- motorgrafico/sourcefiles/../../headerfiles/Bala.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/resources.h \
+ motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h \
+ motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinyxml.h \
+ motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h \
+ motorgrafico/sourcefiles/../../headerfiles/Platform.h \
  motorgrafico/sourcefiles/../../headerfiles/Explosion.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
@@ -92,10 +97,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/Controlador.h \
  motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h \
  motorgrafico/sourcefiles/../../headerfiles/Mapa.h \
- motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h \
- motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h \
- motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinyxml.h \
- motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h
+ motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h
 
 motorgrafico/sourcefiles/../headerfiles/Temporizador.h:
 
@@ -243,7 +245,11 @@ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactLis
 
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
-motorgrafico/sourcefiles/../../headerfiles/Platform.h:
+motorgrafico/sourcefiles/../../headerfiles/Weaponspawner.h:
+
+motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
+
+motorgrafico/sourcefiles/../../headerfiles/Bala.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Entidad.h:
 
@@ -253,11 +259,17 @@ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBo
 
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
-motorgrafico/sourcefiles/../../headerfiles/Weapon.h:
-
-motorgrafico/sourcefiles/../../headerfiles/Bala.h:
-
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/resources.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinyxml.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h:
+
+motorgrafico/sourcefiles/../../headerfiles/Platform.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Explosion.h:
 
@@ -282,9 +294,3 @@ motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h:
 motorgrafico/sourcefiles/../../headerfiles/Mapa.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h:
-
-motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h:
-
-motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinyxml.h:
-
-motorgrafico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h:

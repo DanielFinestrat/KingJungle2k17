@@ -61,6 +61,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/PlayerKeyboard.o \
 	${OBJECTDIR}/sourcefiles/Weapon.o \
+	${OBJECTDIR}/sourcefiles/Weaponspawner.o \
 	${OBJECTDIR}/tinyxml/sourcefiles/tinystr.o \
 	${OBJECTDIR}/tinyxml/sourcefiles/tinyxml.o \
 	${OBJECTDIR}/tinyxml/sourcefiles/tinyxmlerror.o \
@@ -232,6 +233,11 @@ ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Weapon.o sourcefiles/Weapon.cpp
+
+${OBJECTDIR}/sourcefiles/Weaponspawner.o: sourcefiles/Weaponspawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Weaponspawner.o sourcefiles/Weaponspawner.cpp
 
 ${OBJECTDIR}/tinyxml/sourcefiles/tinystr.o: tinyxml/sourcefiles/tinystr.cpp 
 	${MKDIR} -p ${OBJECTDIR}/tinyxml/sourcefiles

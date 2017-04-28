@@ -80,9 +80,14 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/Weaponspawner.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -90,10 +95,7 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
- sourcefiles/../headerfiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h
+ sourcefiles/../headerfiles/../headerfiles/Platform.h
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
@@ -259,11 +261,21 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h:
+
 sourcefiles/../headerfiles/Controlador.h:
 
 sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../headerfiles/Weaponspawner.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
 
 sourcefiles/../headerfiles/Platform.h:
 
@@ -280,9 +292,3 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:

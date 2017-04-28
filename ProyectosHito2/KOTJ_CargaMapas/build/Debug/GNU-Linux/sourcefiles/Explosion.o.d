@@ -79,9 +79,14 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
- sourcefiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/Weaponspawner.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
+ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
+ sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Player.h \
@@ -91,10 +96,7 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
- sourcefiles/../headerfiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
- sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h
+ sourcefiles/../headerfiles/../headerfiles/Platform.h
 
 sourcefiles/../motorfisico/headerfiles/Motorfisico.h:
 
@@ -256,13 +258,23 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
-sourcefiles/../headerfiles/Platform.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+sourcefiles/../headerfiles/Weaponspawner.h:
 
 sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h:
+
+sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
+
+sourcefiles/../headerfiles/Platform.h:
 
 sourcefiles/../headerfiles/Explosion.h:
 
@@ -283,9 +295,3 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h:
-
-sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
