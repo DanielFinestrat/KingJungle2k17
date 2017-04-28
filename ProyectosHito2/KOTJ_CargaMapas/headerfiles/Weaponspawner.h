@@ -31,7 +31,6 @@ public:
     void reemplazarArmas();
     void reemplazarArmas(int indice);
     
-    
     void Update();
     void checkIfUsed();
 

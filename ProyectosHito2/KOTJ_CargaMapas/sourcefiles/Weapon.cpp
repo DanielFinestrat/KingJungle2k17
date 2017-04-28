@@ -22,18 +22,18 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
 
     this->parabola = parabola;
     this->explosivo = explosivo;
-    
+
     inPossession = false;
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
-    
+
     cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, sizex, sizey, this);
     cuerpo->setPosicion(posx * MPP, posy * MPP);
     cuerpo->setMaskBits(MASK_GUN);
     cuerpo->setCategoryBits(CATEGORY_GUN);
     cuerpo->setDensity(1.0f);
     cuerpo->setRestitution(0.2f);
-    
+
     //Creacion del cuerpo visible (shape)
     m_vBody = new VisibleBody(posx * PPM, posy * PPM, sizex, sizey, Resources::getInstance()->armas, true);
 
@@ -54,30 +54,35 @@ void Weapon::update(float posX, float posY) {
 
 int Weapon::shoot() {
     if (ammo > 0) {
-        
+
         deltaClock.restartClock();
         //dt = deltaClock.restart();
         difTime += deltaClock.getDeltaTimeAsSeconds();
 
         if (difTime >= shootCadence) {
-            
+
             difTime = 0.0;
             ammo--;
             Partida *partida = Partida::getInstance();
-            
+
             // +50 habria que cambiarlo por el size del personaje
-            Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
-            
-            if(!parabola) nuevaBala->Disparar(5 * -dir, 180);
-            else nuevaBala->Disparar_Parabola(-dir, 160);
-            
-            Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->shot);
+            for (int i = 0; i < BPS; i++) {
+                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
                 
-            partida->worldBullets.insert(nuevaBala);
+                if (!parabola){
+                    if (BPS > 1) nuevaBala->Disparar(5 * -dir, 135 + i*45);
+                    else nuevaBala->Disparar(5 * -dir, 180);
+                }
+                else nuevaBala->Disparar_Parabola(-dir, 160 + i*45);
+                
+                partida->worldBullets.insert(nuevaBala);
+            }
+
+            Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->shot);
+
             return recoil;
         }
-    }
-    else{
+    } else {
         Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
     }
     return 0;
@@ -94,7 +99,7 @@ void Weapon::throwWeapon(float playerVel) {
 
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) cuerpo->aplicarFuerza(0, -80);
-    //Lanzarla hacia donde mire la pistola
+        //Lanzarla hacia donde mire la pistola
     else cuerpo->aplicarFuerza(dir * 70 * fabs(playerVel), -60);
 
 }
