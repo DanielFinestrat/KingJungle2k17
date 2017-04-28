@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=KOTJ_Menu+CargaMapas
+PROJECTNAME=KOTJ_CargaMapas
 
 # Active Configuration
 DEFAULTCONF=Debug

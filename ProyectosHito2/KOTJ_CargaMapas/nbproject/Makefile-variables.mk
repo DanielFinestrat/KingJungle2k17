@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=kotj_menu_cargamapas
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_menu_cargamapas
+CND_ARTIFACT_NAME_Debug=kotj_cargamapas
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_cargamapas
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=kotjmenu+cargamapas.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjmenu+cargamapas.tar
+CND_PACKAGE_NAME_Debug=kotjcargamapas.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjcargamapas.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=kotj_menu_cargamapas
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_menu_cargamapas
+CND_ARTIFACT_NAME_Release=kotj_cargamapas
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_cargamapas
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=kotjmenu+cargamapas.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjmenu+cargamapas.tar
+CND_PACKAGE_NAME_Release=kotjcargamapas.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjcargamapas.tar
 #
 # include compiler specific variables
 #
