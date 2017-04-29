@@ -21,12 +21,6 @@ public:
      * @param contact b2Contact: Elemento con los cuerpos que intervienen en la colisión
      */
     void BeginContact(b2Contact* contact);
-
-    /**
-     * Función que se ejecuta al finalizar una colisión en el mundo
-     * @param contact b2Contact: Elemento con los cuerpos que intervienen en la colisión
-     */
-    //void EndContact(b2Contact* contact);
     
 };
 

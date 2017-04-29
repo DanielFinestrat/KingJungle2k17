@@ -86,7 +86,6 @@ VisibleBody* Bala::getBodyShape() {
 }
 
 //Hacer un delete de cada objeto que se ha creado con un New y luego igualarlo a NULL
-
 Bala::~Bala() {
     cuerpo->Destruir();
     delete cuerpo;
