@@ -20,17 +20,18 @@ using namespace std;
 
 class Weapon : public Entidad {
 public:
-    float shootCadence; //Shots per second
     int BPS; //Bullets per shot
-    bool inPossession; //Indica si el arma esta en posesion de un personaje
     int ammo; //Municion actual del arma
     int dir; //Direccion a la que apunta el arma
     int recoil;
     int rango;
-    
+    float shootCadence; //Shots per second
     bool parabola;
     bool explosivo;
 
+    bool inPossession;
+    bool used;
+    
     //Variables para controlar la cadencia de disparo
     InnerClock deltaClock;
     float difTime;

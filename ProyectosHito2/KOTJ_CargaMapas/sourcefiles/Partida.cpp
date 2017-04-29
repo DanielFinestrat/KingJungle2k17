@@ -32,6 +32,13 @@ void Partida::erasePlayers() {
     players2Delete.clear();
 }
 
+void Partida::eraseWeapons(){
+    for (int i = 0; i < weapons2Delete.size(); i++) {
+        delete(weapons2Delete.at(i));
+    }
+    weapons2Delete.clear();
+}
+
 void Partida::eraseBullets() {
     set<Bala*>::iterator itBala = bullets2Delete.begin();
 
@@ -69,6 +76,7 @@ void Partida::Erase() {
     eraseBullets();
     erasePlayers();
     eraseExplo();
+    eraseWeapons();
 }
 
 void Partida::Update() {
@@ -109,7 +117,7 @@ void Partida::drawPlayers() {
 
 void Partida::drawWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-        Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
+        if (worldWeapons.at(i) != NULL) Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
     }
 }
 
@@ -182,7 +190,7 @@ void Partida::addPlayerJoystick(int id) {
 }
 
 void Partida::addPlayerKeyboard() {
-    if(worldControlador.size() < 4) worldControlador.push_back(new PlayerKeyboard());
+    if (worldControlador.size() < 4) worldControlador.push_back(new PlayerKeyboard());
 }
 
 void Partida::respawn() {
@@ -201,7 +209,7 @@ void Partida::updatePlayers(Time frameTime) {
 
 void Partida::updateWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-        worldWeapons.at(i)->update();
+        if (worldWeapons.at(i) != NULL) worldWeapons.at(i)->update();
     }
 }
 

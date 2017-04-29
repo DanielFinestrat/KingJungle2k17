@@ -45,10 +45,11 @@ public:
     vector<Player*> worldPlayer;
     vector<Controlador*> worldControlador;
 
-    set<Bala*> bullets2Delete;
     vector<Player*> players2Delete;
+    vector<Weapon*> weapons2Delete;
+    set<Bala*> bullets2Delete;
     set<Explosion*> explo2Delete;
-
+    
     static Partida* getInstance();
 
     void Input(int &e);
@@ -64,6 +65,7 @@ public:
 
     void eraseBullets();
     void erasePlayers();
+    void eraseWeapons();
     void eraseExplo();
 
     int findKeyboardControlador();

@@ -28,11 +28,10 @@ public:
     void leerSpawnerPosition();
     
     void cargarArmas();
-    void reemplazarArmas();
-    void reemplazarArmas(int indice);
+    void cargarArmas(int indice);
     
     void Update();
-    void checkIfUsed();
+    void deleteNotUsedWeapon();
 
 private:
 
@@ -60,7 +59,6 @@ private:
     
     vector< vector<int> > spawnArmas;
     vector<datosArma> datosArmas;
-    vector<Weapon*> armas;
     
     InnerClock* clock;
     const float respawnTime = 20.0f;

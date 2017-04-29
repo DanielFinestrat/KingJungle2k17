@@ -26,6 +26,7 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     this->explosivo = explosivo;
 
     inPossession = false;
+    used = false;
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
 
@@ -103,6 +104,7 @@ int Weapon::shoot() {
 
 void Weapon::setPossession(bool var) {
     inPossession = var;
+    if(var) used = var;
 }
 
 void Weapon::throwWeapon(float playerVel) {
@@ -123,6 +125,10 @@ void Weapon::setDir(int i) {
 }
 
 Weapon::~Weapon() {
+    delete (cuerpo);
+    delete (m_vBody);
+    cuerpo = NULL;
+    m_vBody = NULL;
 }
 
 

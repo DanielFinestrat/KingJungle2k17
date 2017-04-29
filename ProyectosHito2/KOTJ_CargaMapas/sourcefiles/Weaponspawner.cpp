@@ -67,8 +67,8 @@ void Weaponspawner::Update() {
     
     if (currentTime <= 0) {
         currentTime = respawnTime;
-        checkIfUsed();
-        reemplazarArmas();
+        deleteNotUsedWeapon();
+        cargarArmas();
     }
 }
 
@@ -95,12 +95,11 @@ void Weaponspawner::cargarArmas() {
 
         Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango, datos.parabola, datos.explosivo);
         arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
-        armas.push_back(arma);
         Partida::getInstance()->worldWeapons.push_back(arma);
     }
 }
 
-void Weaponspawner::reemplazarArmas(int indice) {
+void Weaponspawner::cargarArmas(int indice) {
     for (int i = 0; i < spawnArmas.size(); i++) {
         datosArma datos = datosArmas.at(indice);
 
@@ -110,47 +109,17 @@ void Weaponspawner::reemplazarArmas(int indice) {
 
         Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango , datos.parabola, datos.explosivo);
         arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
-        armas.at(i) = arma;
-        Partida::getInstance()->worldWeapons.at(i) = arma;
+        Partida::getInstance()->worldWeapons.push_back(arma);
     }
 }
 
-void Weaponspawner::reemplazarArmas() {
-    srand(time(NULL));
-    for (int i = 0; i < spawnArmas.size(); i++) {
-
-        datosArma datos;
-        int grupo = -1;
-        int indice = rand() % 20; //100% (0 a 19)
-
-        if (indice <= 8) grupo = 0; //40%
-        else if (indice <= 15) grupo = 1; //35%
-        else if (indice <= 19) grupo = 2; //25%
-
-        do {
-            indice = rand() % datosArmas.size();
-            datos = datosArmas.at(indice);
-        } while (grupo != datos.rareza);
-
-        vector<int> spawn = spawnArmas.at(i);
-        float x = spawn.at(0);
-        float y = spawn.at(1);
-
-        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango, datos.parabola, datos.explosivo);
-        arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
-        armas.at(i) = arma;
-        Partida::getInstance()->worldWeapons.at(i) = arma;
-    }
-}
-
-void Weaponspawner::checkIfUsed() {
-    for (int i = 0; i < armas.size(); i++) {
-        if (armas.at(i) != NULL) {
-            Weapon *arma = armas.at(i);
-            if (arma->inPossession) {
-                Partida::getInstance()->worldWeapons.push_back(armas.at(i));
-                Partida::getInstance()->worldWeapons.at(i) = NULL;
-                armas.at(i) == NULL;
+void Weaponspawner::deleteNotUsedWeapon() {
+    for (int i = 0; i < Partida::getInstance()->worldWeapons.size(); i++) {
+        Weapon* arma = Partida::getInstance()->worldWeapons.at(i);
+        if (arma != NULL) {
+            if (!arma->used) {
+                //Partida::getInstance()->weapons2Delete.push_back(Partida::getInstance()->worldWeapons.at(i));
+                //Partida::getInstance()->worldWeapons.at(i) = NULL;
             }
         }
     }
