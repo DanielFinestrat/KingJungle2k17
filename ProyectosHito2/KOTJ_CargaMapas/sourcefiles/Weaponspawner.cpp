@@ -42,11 +42,11 @@ void Weaponspawner::leerArmas() {
 
         arma->QueryIntAttribute("bpd", &nuevosDatos.bpd);
         arma->QueryIntAttribute("cargador", &nuevosDatos.cargador);
-        arma->QueryFloatAttribute("recoiltime", &nuevosDatos.recoiltime);
         arma->QueryIntAttribute("rareza", &nuevosDatos.rareza);
-        arma->QueryIntAttribute("rango", &nuevosDatos.rango);
-        arma->QueryBoolAttribute("parabola", &nuevosDatos.parabola);
         arma->QueryIntAttribute("recoil", &nuevosDatos.recoil);
+        arma->QueryIntAttribute("rango", &nuevosDatos.rango);
+        arma->QueryFloatAttribute("recoiltime", &nuevosDatos.recoiltime);
+        arma->QueryBoolAttribute("parabola", &nuevosDatos.parabola);
         arma->QueryBoolAttribute("explosivo", &nuevosDatos.explosivo);
 
         TiXmlElement* rect = arma->FirstChildElement();
@@ -93,7 +93,7 @@ void Weaponspawner::cargarArmas() {
         float x = spawn.at(0);
         float y = spawn.at(1);
 
-        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.parabola, datos.explosivo);
+        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango, datos.parabola, datos.explosivo);
         arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
         armas.push_back(arma);
         Partida::getInstance()->worldWeapons.push_back(arma);
@@ -108,7 +108,7 @@ void Weaponspawner::reemplazarArmas(int indice) {
         float x = spawn.at(0);
         float y = spawn.at(1);
 
-        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.parabola, datos.explosivo);
+        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango , datos.parabola, datos.explosivo);
         arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
         armas.at(i) = arma;
         Partida::getInstance()->worldWeapons.at(i) = arma;
@@ -136,7 +136,7 @@ void Weaponspawner::reemplazarArmas() {
         float x = spawn.at(0);
         float y = spawn.at(1);
 
-        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.parabola, datos.explosivo);
+        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango, datos.parabola, datos.explosivo);
         arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
         armas.at(i) = arma;
         Partida::getInstance()->worldWeapons.at(i) = arma;

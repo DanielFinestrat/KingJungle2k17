@@ -26,6 +26,7 @@ public:
     int ammo; //Municion actual del arma
     int dir; //Direccion a la que apunta el arma
     int recoil;
+    int rango;
     
     bool parabola;
     bool explosivo;
@@ -52,7 +53,7 @@ public:
      * @param int BPS: Balas por disparo
      * @param int ammo: Municion del arma
      */
-    Weapon(float sizex, float sizey, float posx, float posy, float shoot_cadence, int BPS, int ammo, int recoil_, bool parabola, bool explosivo);
+    Weapon(float sizex, float sizey, float posx, float posy, float shoot_cadence, int BPS, int ammo, int recoil_, int rango, bool parabola, bool explosivo);
     
     ~Weapon();
 

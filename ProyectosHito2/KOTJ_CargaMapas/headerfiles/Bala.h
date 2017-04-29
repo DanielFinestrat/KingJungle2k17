@@ -10,6 +10,7 @@
 #define BALA_H
 
 #include <stdio.h>
+#include <math.h>
 #include <iostream>
 #include <set>
 #include <vector>
@@ -23,6 +24,10 @@ public:
     
     bool explosion;
 
+    float posInicialX;
+    float posInicialY;
+    float maxDist;
+    
     Cuerpo *cuerpo;
     VisibleBody *shape;
 
@@ -34,7 +39,7 @@ public:
      * @param position Vector2f: posicion inicial de la bala
      * @param explo bool: activar la explosion al eliminar la bala
      */
-    Bala(float x, float y, float posx, float posy, bool explo);
+    Bala(float x, float y, float posx, float posy, bool explo, int rango);
 
     /**
      * Actualiza el RectangleShape del objeto

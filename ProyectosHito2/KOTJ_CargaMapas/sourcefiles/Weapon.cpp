@@ -1,3 +1,4 @@
+
 /* 
  * File:   weapon.cpp
  * Author: pedro
@@ -9,7 +10,7 @@
 #include "../headerfiles/Partida.h"
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 
-Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad, int Bps, int amm, int recoil_, bool parabola, bool explosivo) {
+Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad, int Bps, int amm, int recoil_, int rango, bool parabola, bool explosivo) {
 
     tag = "Weapon";
 
@@ -19,6 +20,7 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     m_sizey = sizey;
     ammo = amm;
     recoil = recoil_;
+    this->rango = rango;
 
     this->parabola = parabola;
     this->explosivo = explosivo;
@@ -56,7 +58,6 @@ int Weapon::shoot() {
     if (ammo > 0) {
 
         deltaClock.restartClock();
-        //dt = deltaClock.restart();
         difTime += deltaClock.getDeltaTimeAsSeconds();
 
         if (difTime >= shootCadence) {
@@ -69,23 +70,23 @@ int Weapon::shoot() {
 
                 float difAng = 180 / (BPS * 2);
                 for (int i = 0; i < BPS / 2; i++) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo, rango);
                     nuevaBala->Disparar(5 * -dir, 180 - difAng * (i + 1));
                     partida->worldBullets.insert(nuevaBala);
                 }
                 for (int i = 0; i < BPS / 2; i++) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo, rango);
                     nuevaBala->Disparar(5 * -dir, 180 + difAng * (i + 1));
                     partida->worldBullets.insert(nuevaBala);
                 }
                 if (BPS % 2 != 0) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo, rango);
                     nuevaBala->Disparar(5 * -dir, 180);
                     partida->worldBullets.insert(nuevaBala);
                 }
 
             } else {
-                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo);
+                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo, rango);
                 nuevaBala->Disparar_Parabola(-dir, 160);
                 partida->worldBullets.insert(nuevaBala);
             }
