@@ -43,7 +43,6 @@ private:
     sf::Text *timeBoardSec;
     sf::Text *timeBoardMsec;
     
-    //b2Vec2 position;
     float m_posx;
     float m_posy;
     int size;

@@ -10,10 +10,12 @@
 #define MAPA_H
 
 #include <vector>
+#include <string>
 #include "../headerfiles/Platform.h"
 #include "../tinyxml/headerfiles/tinystr.h"
 #include "../tinyxml/headerfiles/tinyxml.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
+#include "../motorgrafico/headerfiles/Fondo.h"
 
 using namespace std;
 
@@ -26,9 +28,11 @@ public:
     Mapa();
     virtual ~Mapa();
 
+    void Update();
     void leerMapa(string mapa);
     void cargarXML();
     void cargarTiles(int y, int x);
+    void guardarFondo(TiXmlElement* map);
     void guardarCapas(TiXmlElement* map);
     void guardarObj(TiXmlElement* map);
     
@@ -36,9 +40,11 @@ public:
     vector< vector<int> > getSpawnArmas();
     
     void drawMap();
+    void drawBackground();
     
 private:
-    string fondo;
+    string fondostr;
+    Fondo* fondo;
     int ***_tilemap;
     
     vector<VisibleBody*> map_sprites;

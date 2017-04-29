@@ -97,7 +97,8 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/Controlador.h \
  motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h \
  motorgrafico/sourcefiles/../../headerfiles/Mapa.h \
- motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h
+ motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h
 
 motorgrafico/sourcefiles/../headerfiles/Temporizador.h:
 
@@ -294,3 +295,5 @@ motorgrafico/sourcefiles/../../headerfiles/PlayerKeyboard.h:
 motorgrafico/sourcefiles/../../headerfiles/Mapa.h:
 
 motorgrafico/sourcefiles/../../headerfiles/../headerfiles/Platform.h:
+
+motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:

@@ -94,7 +94,8 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
- sourcefiles/../headerfiles/../headerfiles/Platform.h
+ sourcefiles/../headerfiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h
 
 sourcefiles/../headerfiles/Player.h:
 
@@ -291,3 +292,5 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:

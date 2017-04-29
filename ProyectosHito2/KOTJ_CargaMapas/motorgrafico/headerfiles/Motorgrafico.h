@@ -47,7 +47,11 @@ public:
     void draw(sf::RectangleShape);
     void draw(sf::RectangleShape&);
     void draw(sf::CircleShape);
+    void draw(Sprite&);
     void draw(sf::Text);
+    
+    float getCameraPositionX();
+    float getCameraPositionY();
     
     virtual ~Motorgrafico();
     

@@ -71,7 +71,7 @@ void Temporizador::Update() {
 
     setPosition();
 
-    if (iSeconds = 0 && iMiliseconds <= 0) restartGame();
+    if (iSeconds <= 0 && iMiliseconds <= 0) restartGame();
     else if (iSeconds < 0) restartGame();
 
 }

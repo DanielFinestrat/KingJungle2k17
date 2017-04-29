@@ -15,15 +15,28 @@ Mapa::Mapa() {
 Mapa::~Mapa() {
 }
 
+void Mapa::Update() {
+    fondo->Update();
+}
+
 void Mapa::leerMapa(string mapa) {
     const char *cstr = mapa.c_str();
     TiXmlDocument doc(cstr);
     doc.LoadFile();
-
+    
     TiXmlElement* map = doc.FirstChildElement("map");
-
+    guardarFondo(map);
     guardarCapas(map);
     guardarObj(map);
+
+    fondo = new Fondo(fondostr);
+}
+
+void Mapa::guardarFondo(TiXmlElement* map) {
+    TiXmlElement* properties = map->FirstChildElement();
+    properties = properties->FirstChildElement();
+    string s(properties->LastAttribute()->Value());
+    fondostr = s;
 }
 
 void Mapa::guardarCapas(TiXmlElement* map) {
@@ -172,6 +185,10 @@ void Mapa::drawMap() {
         VisibleBody *body = map_sprites.at(i);
         Motorgrafico::getInstance()->draw(body->getShape());
     }
+}
+
+void Mapa::drawBackground() {
+    fondo->Render();
 }
 
 vector< vector<int> > Mapa::getEsquinas() {

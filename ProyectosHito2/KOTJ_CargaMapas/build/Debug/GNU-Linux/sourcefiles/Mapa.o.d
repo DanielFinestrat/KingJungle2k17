@@ -79,6 +79,8 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -272,6 +274,10 @@ sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h:
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" nextobjectid="19">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" nextobjectid="26">
+ <properties>
+  <property name="fondo" value="./resources/fondos/jungle.png"/>
+ </properties>
  <tileset firstgid="1" source="KOTJ.tsx"/>
- <objectgroup name="Plataformas">
+ <objectgroup name="Plataformas" visible="0">
   <object id="1" name="platform" x="896" y="480" width="64" height="160">
    <properties>
     <property name="roz" value="2"/>
@@ -34,14 +37,18 @@
   </object>
  </objectgroup>
  <objectgroup name="Spawn">
-  <object id="9" name="player" x="224" y="480" width="32" height="32"/>
-  <object id="10" name="player" x="448" y="64" width="32" height="32"/>
-  <object id="13" name="player" x="736" y="224" width="32" height="32"/>
-  <object id="14" name="player" x="768" y="480" width="32" height="32"/>
+  <object id="9" name="player" x="224" y="512" width="32" height="32"/>
+  <object id="10" name="player" x="448" y="96" width="32" height="32"/>
+  <object id="14" name="player" x="768" y="512" width="32" height="32"/>
   <object id="15" name="esquina" x="0" y="0" width="32" height="32"/>
   <object id="16" name="esquina" x="1088" y="0" width="32" height="32"/>
   <object id="17" name="esquina" x="1088" y="608" width="32" height="32"/>
   <object id="18" name="esquina" x="0" y="608" width="32" height="32"/>
+  <object id="21" name="arma" x="704" y="256" width="32" height="32"/>
+  <object id="22" name="arma" x="320" y="512" width="32" height="32"/>
+  <object id="23" name="player" x="736" y="256" width="32" height="32"/>
+  <object id="24" name="arma" x="416" y="96" width="32" height="32"/>
+  <object id="25" name="arma" x="896" y="448" width="32" height="32"/>
  </objectgroup>
  <layer name="Escenario" width="35" height="20" offsetx="0" offsety="1">
   <data>
@@ -2155,7 +2162,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="35" height="20">
+ <layer name="IA subir" width="35" height="20" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

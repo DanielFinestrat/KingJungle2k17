@@ -7,11 +7,11 @@ using namespace std;
 static Resources* instance; 
 
 Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
-                        arma("./resources/sprites/revolver.png"),
                         triangle("./resources/sprites/triangle.png"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
-                        tiles("./resources/sprites/tilesheet.png")
+                        tiles("./resources/sprites/tilesheet.png"),
+                        fondoJungla("./resources/fondos/jungle.png")
                         { initialise(); }
 
 
@@ -54,11 +54,11 @@ void Resources::cleanUp() {
 
 bool Resources::loadAll() {
     if (!loadFont(myFont)) return false;
-    if (!loadTexture(arma)) return false;
     if (!loadTexture(triangle)) return false;
     if (!loadTexture(sprites)) return false;
     if (!loadTexture(armas)) return false;
     if (!loadTexture(tiles)) return false;
+    if (!loadTexture(fondoJungla)) return false;
   return true;
 }
 

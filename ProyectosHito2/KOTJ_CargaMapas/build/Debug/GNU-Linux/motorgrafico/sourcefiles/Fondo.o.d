@@ -1,5 +1,7 @@
-build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
- motorgrafico/sourcefiles/Motorgrafico.cpp \
+build/Debug/GNU-Linux/motorgrafico/sourcefiles/Fondo.o: \
+ motorgrafico/sourcefiles/Fondo.cpp \
+ motorgrafico/sourcefiles/../headerfiles/Fondo.h \
+ motorgrafico/sourcefiles/../headerfiles/../headerfiles/resources.h \
  motorgrafico/sourcefiles/../headerfiles/Motorgrafico.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Partida.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -105,6 +107,10 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/SpriteAnimated.h \
  motorgrafico/sourcefiles/../headerfiles/Temporizador.h \
  motorgrafico/sourcefiles/../headerfiles/musicPlayer.h
+
+motorgrafico/sourcefiles/../headerfiles/Fondo.h:
+
+motorgrafico/sourcefiles/../headerfiles/../headerfiles/resources.h:
 
 motorgrafico/sourcefiles/../headerfiles/Motorgrafico.h:
 

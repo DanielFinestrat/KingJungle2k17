@@ -100,6 +100,8 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/PlayerKeyboard.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Mapa.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../headerfiles/Platform.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
@@ -307,6 +309,10 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/PlayerKeyboard.h:
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Mapa.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../headerfiles/Platform.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
 

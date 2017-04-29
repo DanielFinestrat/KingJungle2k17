@@ -75,6 +75,7 @@ void Partida::Update() {
     Motorfisico::getInstance()->Update();
     Motorgrafico::getInstance()->updateWindow();
 
+    mapa->Update();
     factoriaArmas->Update();
     updateWeapons();
     updatePlayers(Motorgrafico::getInstance()->getFrameTime());
@@ -88,9 +89,10 @@ void Partida::Render() {
     Motorgrafico::getInstance()->clearWindow();
     Motorgrafico::getInstance()->setMainCameraView();
 
+    mapa->drawBackground();
+    drawBullets();
     drawPlayers();
     drawWeapons();
-    drawBullets();
     drawExplo();
     mapa->drawMap();
 

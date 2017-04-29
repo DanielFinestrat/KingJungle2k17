@@ -3,7 +3,7 @@
 	<arma nombre="pistola" bpd="1" cargador="7" recoiltime="0.5" rareza="0" rango="1" parabola="false" recoil="10" explosivo="false" >
 		<rectangulo x="0" y="0" w="76" h="49" />	
 	</arma>
-	<arma nombre="escopeta" bpd="3" cargador="4" recoiltime="1" rareza="0" rango="0" parabola="false" recoil="30" explosivo="false" >
+	<arma nombre="escopeta" bpd="5" cargador="5" recoiltime="1" rareza="0" rango="0" parabola="false" recoil="30" explosivo="false" >
 		<rectangulo x="781" y="0" w="140" h="42" />	
 	</arma>
 	<arma nombre="fusil" bpd="1" cargador="20" recoiltime="0.05" rareza="2" rango="2" parabola="false" recoil="20" explosivo="false" >

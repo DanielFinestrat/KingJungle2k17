@@ -96,6 +96,7 @@ build/Debug/GNU-Linux/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
  sourcefiles/../headerfiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
@@ -302,6 +303,8 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 

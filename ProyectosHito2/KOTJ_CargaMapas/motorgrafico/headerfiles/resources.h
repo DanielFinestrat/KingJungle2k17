@@ -26,11 +26,11 @@ class Resources {
         Image &getImage(string filename);
 
         const string myFont;
-        const string arma;
         const string triangle;
         const string sprites;
         const string armas;
         const string tiles;
+        const string fondoJungla;
         
 
     private:

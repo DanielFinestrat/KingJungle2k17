@@ -96,7 +96,8 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
- sourcefiles/../headerfiles/../headerfiles/Platform.h
+ sourcefiles/../headerfiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h
 
 sourcefiles/../motorfisico/headerfiles/Motorfisico.h:
 
@@ -295,3 +296,5 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:

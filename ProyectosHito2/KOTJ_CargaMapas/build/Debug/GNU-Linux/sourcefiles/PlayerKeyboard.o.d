@@ -95,7 +95,8 @@ build/Debug/GNU-Linux/sourcefiles/PlayerKeyboard.o: \
  sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
- sourcefiles/../headerfiles/../headerfiles/Platform.h
+ sourcefiles/../headerfiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:
 
@@ -292,3 +293,5 @@ sourcefiles/../headerfiles/PlayerKeyboard.h:
 sourcefiles/../headerfiles/Mapa.h:
 
 sourcefiles/../headerfiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:

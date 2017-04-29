@@ -37,6 +37,7 @@
                    projectFiles="true">
       <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
         <itemPath>motorgrafico/headerfiles/Animation.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Fondo.h</itemPath>
         <itemPath>motorgrafico/headerfiles/InnerClock.h</itemPath>
         <itemPath>motorgrafico/headerfiles/Motorgrafico.h</itemPath>
         <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
@@ -48,6 +49,7 @@
       </logicalFolder>
       <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
         <itemPath>motorgrafico/sourcefiles/Animation.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Fondo.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/InnerClock.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/Motorgrafico.cpp</itemPath>
         <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
@@ -82,7 +84,6 @@
         <itemPath>resources/sfx/slowReload.wav</itemPath>
       </logicalFolder>
       <logicalFolder name="sprites" displayName="sprites" projectFiles="true">
-        <itemPath>resources/sprites/revolver.png</itemPath>
         <itemPath>resources/sprites/sprites.png</itemPath>
         <itemPath>resources/sprites/tilesheet.png</itemPath>
         <itemPath>resources/sprites/triangle.png</itemPath>
@@ -223,6 +224,8 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Fondo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/InnerClock.h"
             ex="false"
             tool="3"
@@ -264,6 +267,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Fondo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/InnerClock.cpp"
             ex="false"
@@ -327,8 +332,6 @@
       <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites/revolver.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
       </item>
@@ -486,6 +489,8 @@
             tool="3"
             flavor2="0">
       </item>
+      <item path="motorgrafico/headerfiles/Fondo.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="motorgrafico/headerfiles/InnerClock.h"
             ex="false"
             tool="3"
@@ -527,6 +532,8 @@
             ex="false"
             tool="1"
             flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Fondo.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="motorgrafico/sourcefiles/InnerClock.cpp"
             ex="false"
@@ -590,8 +597,6 @@
       <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites/revolver.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
       </item>

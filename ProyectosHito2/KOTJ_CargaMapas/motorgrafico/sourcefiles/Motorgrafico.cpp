@@ -262,6 +262,11 @@ void Motorgrafico::draw(sf::Text object) {
     window->draw(object);
 }
 
+void Motorgrafico::draw(Sprite &object) {
+    window->draw(object);
+}
+
+
 sf::RenderWindow *Motorgrafico::getRenderWindow() {
     return window;
 }
@@ -280,6 +285,14 @@ void Motorgrafico::resetFrameTime() {
 
 sf::Time Motorgrafico::getFrameTime() {
     return frameTime;
+}
+
+float Motorgrafico::getCameraPositionX(){
+    return(mainCamera->getCenter().x);
+}
+
+float Motorgrafico::getCameraPositionY(){
+    return(mainCamera->getCenter().y);
 }
 
 Motorgrafico::~Motorgrafico() {
