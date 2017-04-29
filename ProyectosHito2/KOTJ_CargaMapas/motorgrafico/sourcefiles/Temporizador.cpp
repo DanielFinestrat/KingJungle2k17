@@ -17,7 +17,6 @@ Temporizador::Temporizador(int time, float posx, float posy, int size) {
     chrono.restart();
 
     maxTime = (float) time;
-    //this->position = position;
     m_posx = posx;
     m_posy = posy;
 
@@ -72,7 +71,8 @@ void Temporizador::Update() {
 
     setPosition();
 
-    if (iSeconds <= 0 && iMiliseconds <= 0) restartGame();
+    if (iSeconds = 0 && iMiliseconds <= 0) restartGame();
+    else if (iSeconds < 0) restartGame();
 
 }
 

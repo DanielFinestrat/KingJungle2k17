@@ -28,7 +28,6 @@ public:
     void Draw(sf::RenderWindow *window);
     void restartGame();
     void setPosition();
-    //void setBasePosition(b2Vec2 *position);
     void setBasePosition(float posx, float posy);
     void setScale(float newScaleX, float newScaleY);
 

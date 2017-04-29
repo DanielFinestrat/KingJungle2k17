@@ -112,7 +112,7 @@ void Weapon::throwWeapon(float playerVel) {
 
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) cuerpo->aplicarFuerza(0, -80);
-        //Lanzarla hacia donde mire la pistola
+    //Lanzarla hacia donde mire la pistola
     else cuerpo->aplicarFuerza(dir * 70 * fabs(playerVel), -60);
 
 }
