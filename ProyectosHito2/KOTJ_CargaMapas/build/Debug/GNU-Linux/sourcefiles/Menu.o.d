@@ -75,6 +75,10 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Weaponspawner.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Weapon.h \
@@ -104,6 +108,9 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
@@ -262,6 +269,14 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerf
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Weaponspawner.h:
@@ -319,6 +334,12 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/header
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
 

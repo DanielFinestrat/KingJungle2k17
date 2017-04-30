@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   Trampa.h
@@ -14,7 +9,6 @@
 #ifndef TRAMPA_H
 #define TRAMPA_H
 
-
 #include <stdio.h>
 #include <math.h>
 #include <iostream>
@@ -22,15 +16,13 @@
 #include <vector>
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
-#include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
-
 
 using namespace std;
 
-class Trampa : public Entidad{
+class Trampa : public Entidad {
 public:
-    
+
     /**
      * Constructor del objeto Bala
      * @param mundo Motorfisico*: mundo en el que estan todos los objetos
@@ -41,7 +33,7 @@ public:
      * @param type int: tipo de trampa
      * @param angle float: angulo de la trampa
      */
-    Trampa(Motorfisico *world, int sizeX, int sizeY, int posX, int posY, int type, float angle);
+    Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle);
     Trampa(const Trampa& orig);
     virtual ~Trampa();
     int getID();
@@ -51,12 +43,13 @@ public:
      */
     bool getEstado();
     bool getRoto();
+    Cuerpo* getCuerpo();
     void activar();
     void desactivar();
     void startContact();
     void endContact();
-    //void render(sf::RenderWindow *window);
     VisibleBody* updateShape();
+    
 private:
     int id;
     bool estado; //Activado(true) o desactivado(false)
@@ -64,11 +57,8 @@ private:
     int iniPosX;
     int iniPosY;
     bool contact;
-    
     Cuerpo *cuerpo;
-    
-   
-    
+
     //Tamanyos
     int m_SizeX;
     int m_SizeY;

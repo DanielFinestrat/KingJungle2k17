@@ -55,6 +55,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
+	${OBJECTDIR}/sourcefiles/IAController.o \
 	${OBJECTDIR}/sourcefiles/Mapa.o \
 	${OBJECTDIR}/sourcefiles/Menu.o \
 	${OBJECTDIR}/sourcefiles/Partida.o \
@@ -62,6 +63,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Player.o \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/PlayerKeyboard.o \
+	${OBJECTDIR}/sourcefiles/Trampa.o \
 	${OBJECTDIR}/sourcefiles/Weapon.o \
 	${OBJECTDIR}/sourcefiles/Weaponspawner.o \
 	${OBJECTDIR}/tinyxml/sourcefiles/tinystr.o \
@@ -206,6 +208,11 @@ ${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Explosion.o sourcefiles/Explosion.cpp
 
+${OBJECTDIR}/sourcefiles/IAController.o: sourcefiles/IAController.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/IAController.o sourcefiles/IAController.cpp
+
 ${OBJECTDIR}/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
@@ -240,6 +247,11 @@ ${OBJECTDIR}/sourcefiles/PlayerKeyboard.o: sourcefiles/PlayerKeyboard.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/PlayerKeyboard.o sourcefiles/PlayerKeyboard.cpp
+
+${OBJECTDIR}/sourcefiles/Trampa.o: sourcefiles/Trampa.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Trampa.o sourcefiles/Trampa.cpp
 
 ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

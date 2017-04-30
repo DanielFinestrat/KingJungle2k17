@@ -25,3 +25,5 @@ void Controlador::checkAxisX(int ejeX) {
 void Controlador::checkAxisY(int ejeY) {
 }
 
+void Controlador::update(){
+}

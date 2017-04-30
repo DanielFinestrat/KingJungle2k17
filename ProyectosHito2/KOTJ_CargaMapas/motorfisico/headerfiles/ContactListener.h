@@ -12,6 +12,7 @@
 #include <iostream>
 #include "../../Box2D/Box2D.h"
 #include "../../headerfiles/Entidad.h"
+#include "../../headerfiles/Trampa.h"
 
 class ContactListener : public b2ContactListener {
 public:

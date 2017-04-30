@@ -144,6 +144,10 @@ void Motorgrafico::eventListener(int &e) {
                                 }
                                 break;
 
+                            case Keyboard::F3:
+                                partida->addPlayerIA();
+                                break;
+
                             case Keyboard::Tab:
                                 partida->console.toggleConsole();
                                 break;

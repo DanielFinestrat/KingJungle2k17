@@ -10,13 +10,13 @@
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 
 Mapa::Mapa() {
+    mapas.push_back(mapaSeleccion);
     mapas.push_back(mapaPrueba);
     mapas.push_back(mapaSelva);
     mapas.push_back(mapaCueva);
     mapas.push_back(mapaMar);
-    mapas.push_back(mapaSeleccion);
-    //mapas.push_back(mapaPsico);
     mapas.push_back(mapaHielo);
+    //mapas.push_back(mapaPsico);
 }
 
 Mapa::~Mapa() {
@@ -173,9 +173,9 @@ void Mapa::guardarObj(TiXmlElement* map) {
                 posicion.push_back(_height);
 
                 esquinasMapa.push_back(posicion);
-            }else if (tipo.compare("trampa") == 0){
+            } else if (tipo.compare("trampa") == 0) {
                 object->QueryIntAttribute("x", &_width);
-                object->QueryIntAttribute("y", &_height);                
+                object->QueryIntAttribute("y", &_height);
                 object->QueryIntAttribute("type", &_type);
                 object->QueryIntAttribute("width", &_sizeX);
                 object->QueryIntAttribute("height", &_sizeY);
@@ -230,12 +230,26 @@ vector< vector<int> > Mapa::getEsquinas() {
 vector< vector<int> > Mapa::getSpawnArmas() {
     return (spawnArmas);
 }
+
 vector< vector<int> > Mapa::getSpawnTrampas() {
     return (spawnTrampas);
 }
 
-string Mapa::getRandomMap() {
-    srand(time(NULL));
-    int i = rand() % mapas.size();
-    return (mapas.at(i));
+vector< vector<int> > Mapa::getSpawnPlayer() {
+    return (spawnPlayer);
 }
+
+string Mapa::getRandomMap() {
+    int oldIndexMap = Partida::getInstance()->indexMap;
+    
+    srand(time(NULL));
+    int newIndexMap = -1;
+    
+    do {
+        newIndexMap = rand() % mapas.size();
+    } while (oldIndexMap == newIndexMap && newIndexMap == 0);
+    
+    Partida::getInstance()->indexMap = newIndexMap;
+    return (mapas.at(newIndexMap));
+}
+

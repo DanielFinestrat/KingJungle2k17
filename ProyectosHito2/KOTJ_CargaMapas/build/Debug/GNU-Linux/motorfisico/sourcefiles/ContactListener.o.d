@@ -67,12 +67,19 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WeldJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/Trampa.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  motorfisico/sourcefiles/../../headerfiles/Partida.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
- motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  motorfisico/sourcefiles/../../headerfiles/Weaponspawner.h \
@@ -81,7 +88,6 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/resources.h \
  motorfisico/sourcefiles/../../headerfiles/../tinyxml/headerfiles/tinystr.h \
@@ -101,8 +107,12 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Mapa.h \
  motorfisico/sourcefiles/../../headerfiles/../headerfiles/Platform.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
+ motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  motorfisico/sourcefiles/../../headerfiles/Console.h \
- motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h
+ motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ motorfisico/sourcefiles/../../headerfiles/Trampa.h \
+ motorfisico/sourcefiles/../../headerfiles/IAController.h \
+ motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h
 
 motorfisico/sourcefiles/../headerfiles/ContactListener.h:
 
@@ -238,17 +248,31 @@ motorfisico/sourcefiles/../headerfiles/../../Box2D/Dynamics/Joints/b2WheelJoint.
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
 
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/Trampa.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
 motorfisico/sourcefiles/../../headerfiles/Partida.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
+motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../Box2D/Box2D.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
@@ -265,8 +289,6 @@ motorfisico/sourcefiles/../../headerfiles/Entidad.h:
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
@@ -306,6 +328,14 @@ motorfisico/sourcefiles/../../headerfiles/../headerfiles/Platform.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
+motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
 motorfisico/sourcefiles/../../headerfiles/Console.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+motorfisico/sourcefiles/../../headerfiles/Trampa.h:
+
+motorfisico/sourcefiles/../../headerfiles/IAController.h:
+
+motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h:

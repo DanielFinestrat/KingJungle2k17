@@ -165,7 +165,6 @@ void Player::jump() {
 }
 
 //Comprobamos si se puede saltar
-
 bool Player::isGrounded() {
     return ( fabs(cuerpo->getVelocidadY()) <= 0.00000005 ? true : false);
 }
@@ -351,4 +350,17 @@ void Player::setColor(int id) {
             break;
     }
     playerSprite->setColor(*color);
+}
+
+bool Player::hasWeapon(){
+    if(this->weapon == NULL) return (false);
+    else return(true);
+}
+
+Weapon* Player::getWeapon(){
+    return(this->weapon);
+}
+
+bool Player::isJumping(){
+	return !canJump;
 }

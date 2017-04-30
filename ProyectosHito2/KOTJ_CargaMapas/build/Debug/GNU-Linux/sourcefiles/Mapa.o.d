@@ -73,8 +73,12 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
@@ -110,6 +114,9 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
@@ -264,9 +271,17 @@ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircu
 
 sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
-sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h:
 
-sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
 
@@ -337,6 +352,12 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h:
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
 

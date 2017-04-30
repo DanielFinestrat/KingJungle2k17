@@ -53,6 +53,9 @@ public:
     void setPosition(float, float);
     int getDirMoving();
     void setColor(int);
+    bool hasWeapon();
+    Weapon* getWeapon();
+    bool isJumping();
 
 private:
     Cuerpo *cuerpo;

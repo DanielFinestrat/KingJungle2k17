@@ -29,8 +29,11 @@ public:
     const string mapaMar = "./resources/mapas/mapaMar.tmx";
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaPsico = "./resources/mapas/mapaPsico.tmx";
-    const string mapaSeleccion = "./resources/mapas/charSelect.tmx";
+    const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
     vector<string> mapas;
+    
+    int ***_tilemap;
+    vector< vector<int> > spawnPlayer;
     
     Mapa();
     virtual ~Mapa();
@@ -47,6 +50,7 @@ public:
     vector< vector<int> > getEsquinas();
     vector< vector<int> > getSpawnArmas();
     vector< vector<int> > getSpawnTrampas();
+    vector< vector<int> > getSpawnPlayer();
     
     void drawMap();
     void drawBackground();
@@ -54,10 +58,8 @@ public:
 private:
     string fondostr;
     Fondo* fondo;
-    int ***_tilemap;
     
     vector<VisibleBody*> map_sprites;
-    vector< vector<int> > spawnPlayer;
     vector< vector<int> > spawnArmas;
     vector< vector<int> > esquinasMapa;
     vector< vector<int> > spawnTrampas;

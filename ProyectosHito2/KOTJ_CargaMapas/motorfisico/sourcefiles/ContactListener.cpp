@@ -23,7 +23,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 
 	//cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
 
-	//Colision con Balas
+	//Colisión con Balas
 	if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
 		if (entidadA->getTag().compare("Bala") == 0) {
 			Bala* bala = static_cast<Bala*> (bodyUserDataA);
@@ -49,8 +49,9 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			}
 			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
 		}
-	} 
-        //Colision con explosiones
+	}
+        
+        //Colisión con Explosiones
         else if (entidadA->getTag().compare("Explosion") == 0 || entidadB->getTag().compare("Explosion") == 0) {
 		if (entidadA->getTag().compare("Explosion") == 0) {
 			Explosion* explo = static_cast<Explosion*> (bodyUserDataA);
@@ -72,7 +73,8 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			}
 		}
 	}
-        //Colision con trampas
+        
+        //Colisión con trampas
         else if (entidadA->getTag().compare("Trampa") == 0 || entidadB->getTag().compare("Trampa") == 0) {
 		if (entidadA->getTag().compare("Trampa") == 0) {
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataA);
@@ -94,6 +96,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			}
 		}
 	}
+        
 }
 
 

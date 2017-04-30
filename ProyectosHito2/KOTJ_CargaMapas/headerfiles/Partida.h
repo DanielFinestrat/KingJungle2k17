@@ -22,6 +22,7 @@
 #include "Mapa.h"
 #include "Console.h"
 #include "Trampa.h"
+#include "IAController.h"
 
 using namespace std;
 
@@ -40,6 +41,7 @@ public:
     Mapa *mapa;
     Weaponspawner* factoriaArmas;
     Console console;
+    int indexMap;
 
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
@@ -78,12 +80,14 @@ public:
     void checkJoysticksConnected();
     void addPlayerJoystick(int id);
     void addPlayerKeyboard();
+    void addPlayerIA();
     void respawn();
 
     void updatePlayers(Time frameTime);
     void updateBullets();
     void updateWeapons();
     void updateExplo();
+    void updateIA();
 
     void cameraSetTransform();
 
@@ -92,6 +96,7 @@ public:
 
     void loadMap();
     void loadMap(string mapaStr);
+    
     virtual ~Partida();
 
 private:

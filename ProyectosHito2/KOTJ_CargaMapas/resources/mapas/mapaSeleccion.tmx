@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="32" tileheight="32" nextobjectid="72">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="32" tileheight="32" nextobjectid="77">
  <properties>
   <property name="fondo" value="./resources/fondos/charselectFondo.png"/>
  </properties>
@@ -5457,30 +5457,31 @@
     <property name="roz" value="2"/>
    </properties>
   </object>
-  <object id="45" name="boton1" x="128" y="288" width="64" height="64"/>
-  <object id="50" name="palanca1" x="320" y="320" width="64" height="64">
+  <object id="50" name="palanca" x="320" y="320" width="64" height="64">
    <properties>
     <property name="trigger" value="trampilla1"/>
    </properties>
   </object>
-  <object id="53" name="palanca2" x="640" y="320" width="64" height="64">
+  <object id="53" name="palanca" x="640" y="320" width="64" height="64">
    <properties>
     <property name="trigger" value="trampilla2"/>
    </properties>
   </object>
-  <object id="54" name="boton2" x="448" y="288" width="64" height="64"/>
-  <object id="57" name="palanca3" x="960" y="320" width="64" height="64">
+  <object id="57" name="palanca" x="960" y="320" width="64" height="64">
    <properties>
     <property name="trigger" value="trampilla3"/>
    </properties>
   </object>
-  <object id="58" name="boton3" x="768" y="288" width="64" height="64"/>
-  <object id="59" name="palanca4" x="1280" y="320" width="64" height="64">
+  <object id="59" name="palanca" x="1280" y="320" width="64" height="64">
    <properties>
     <property name="trigger" value="trampilla4"/>
    </properties>
   </object>
-  <object id="60" name="boton4" x="1088" y="288" width="64" height="64"/>
+  <object id="72" name="boton" x="128" y="288" width="64" height="64">
+   <properties>
+    <property name="trigger" value="celda0"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="Plataformas">
   <object id="9" name="platform" x="128" y="672" width="1472" height="128">
@@ -5547,5 +5548,20 @@
   <object id="69" name="esquina" x="0" y="768" width="32" height="32"/>
   <object id="70" name="esquina" x="1568" y="768" width="32" height="32"/>
   <object id="71" name="esquina" x="1568" y="0" width="32" height="32"/>
+  <object id="74" name="boton" x="448" y="288" width="64" height="64">
+   <properties>
+    <property name="trigger" value="celda1"/>
+   </properties>
+  </object>
+  <object id="75" name="boton" x="768" y="288" width="64" height="64">
+   <properties>
+    <property name="trigger" value="celda2"/>
+   </properties>
+  </object>
+  <object id="76" name="boton" x="1088" y="288" width="64" height="64">
+   <properties>
+    <property name="trigger" value="celda3"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>

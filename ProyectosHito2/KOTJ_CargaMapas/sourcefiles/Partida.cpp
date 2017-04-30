@@ -16,6 +16,7 @@ Partida::Partida() {
     usingKeyboard = false;
     mapa = NULL;
     factoriaArmas = NULL;
+    indexMap = -1;
 }
 
 Partida* Partida::getInstance() {
@@ -24,7 +25,17 @@ Partida* Partida::getInstance() {
 }
 
 void Partida::Input(int &e) {
+    updateIA();
     Motorgrafico::getInstance()->eventListener(e);
+}
+
+void Partida::updateIA() {
+    for (int i = 0; i < worldControlador.size(); i++) {
+        Controlador* c = worldControlador.at(i);
+        if (c->tipo.compare("IA") == 0) {
+            c->update();
+        }
+    }
 }
 
 void Partida::erasePlayers() {
@@ -117,7 +128,7 @@ void Partida::Render() {
 
     Motorgrafico::getInstance()->setHudCameraView();
     console.draw();
-    
+
     Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
 }
@@ -153,9 +164,8 @@ void Partida::drawExplo() {
 }
 
 void Partida::drawConsole() {
-    
-}
 
+}
 
 int Partida::findKeyboardControlador() {
     int index = -1;
@@ -211,10 +221,20 @@ void Partida::addPlayerKeyboard() {
     if (worldControlador.size() < 4) worldControlador.push_back(new PlayerKeyboard());
 }
 
+void Partida::addPlayerIA() {
+    if (worldControlador.size() < 4) worldControlador.push_back(new IAController());
+}
+
 void Partida::respawn() {
     for (int i = 0; i < worldPlayer.size(); i++) {
         Player* player = worldPlayer.at(i);
-        player->setPosition((i + 1) * screenWidth / 5, screenHeight - 100);
+        
+        vector<int> position = mapa->spawnPlayer.at(0);
+        mapa->spawnPlayer.erase(mapa->spawnPlayer.begin());
+        mapa->spawnPlayer.push_back(position);
+        
+
+        player->setPosition(position.at(0), position.at(1));
         player->respawn();
     }
 }

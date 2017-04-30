@@ -69,11 +69,15 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/Weaponspawner.h headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/Entidad.h headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  headerfiles/../motorgrafico/headerfiles/resources.h \
  headerfiles/../tinyxml/headerfiles/tinystr.h \
@@ -88,9 +92,12 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/Controlador.h headerfiles/PlayerKeyboard.h \
  headerfiles/Mapa.h headerfiles/../headerfiles/Platform.h \
- headerfiles/../motorgrafico/headerfiles/Fondo.h headerfiles/Console.h \
- headerfiles/../motorgrafico/headerfiles/Texto.h \
- motorgrafico/headerfiles/Texto.h motorgrafico/headerfiles/Motorgrafico.h \
+ headerfiles/../motorgrafico/headerfiles/Fondo.h \
+ headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ headerfiles/Console.h headerfiles/../motorgrafico/headerfiles/Texto.h \
+ headerfiles/Trampa.h headerfiles/IAController.h \
+ headerfiles/../Box2D/Box2D.h motorgrafico/headerfiles/Texto.h \
+ motorgrafico/headerfiles/Motorgrafico.h \
  motorgrafico/headerfiles/../../headerfiles/Partida.h \
  motorgrafico/headerfiles/../../headerfiles/Menu.h \
  motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
@@ -243,6 +250,16 @@ headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 headerfiles/../motorfisico/headerfiles/ContactListener.h:
 
+headerfiles/../motorfisico/headerfiles/../../headerfiles/Trampa.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
 headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 headerfiles/Weaponspawner.h:
@@ -256,8 +273,6 @@ headerfiles/Entidad.h:
 headerfiles/../motorfisico/headerfiles/Cuerpo.h:
 
 headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
@@ -297,9 +312,17 @@ headerfiles/../headerfiles/Platform.h:
 
 headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
+headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
 headerfiles/Console.h:
 
 headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+headerfiles/Trampa.h:
+
+headerfiles/IAController.h:
+
+headerfiles/../Box2D/Box2D.h:
 
 motorgrafico/headerfiles/Texto.h:
 
