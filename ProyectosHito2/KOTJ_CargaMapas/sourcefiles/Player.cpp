@@ -259,7 +259,7 @@ void Player::interact(Weapon* lastWeapon) {
             if (worldWeapons.at(i) != NULL) {
                 Weapon *currentWeapon = worldWeapons.at(i);
                 if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
-                    if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
+                    if (!currentWeapon->inPossession && currentWeapon != lastWeapon  && currentWeapon->ammo != 0) {
                         currentWeapon->setPossession(true);
 
                         currentWeapon->cuerpo->setActive(false);
@@ -287,7 +287,7 @@ void Player::interact() {
                 if (worldWeapons.at(i) != NULL) {
                     Weapon *currentWeapon = worldWeapons.at(i);
                     if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
-                        if (!currentWeapon->inPossession) {
+                        if (!currentWeapon->inPossession && currentWeapon->ammo != 0) {
                             currentWeapon->setPossession(true);
 
                             currentWeapon->cuerpo->setActive(false);

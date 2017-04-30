@@ -36,6 +36,7 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     cuerpo->setCategoryBits(CATEGORY_GUN);
     cuerpo->setDensity(1.0f);
     cuerpo->setRestitution(0.2f);
+    cuerpo->setFriction(0.7);
 
     //Creacion del cuerpo visible (shape)
     m_vBody = new VisibleBody(posx * PPM, posy * PPM, sizex, sizey, Resources::getInstance()->armas, true);
@@ -46,6 +47,8 @@ void Weapon::update() {
     m_vBody->setPos(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM);
     m_vBody->setAngle(cuerpo->getAngulo()*180);
     m_vBody->updateBody();
+
+    if (used && !inPossession) checkIfDelete();
 }
 
 void Weapon::update(float posX, float posY) {
@@ -53,6 +56,27 @@ void Weapon::update(float posX, float posY) {
     m_vBody->setPos(posX * PPM, posY * PPM);
     m_vBody->setAngle(cuerpo->getAngulo()*180);
     m_vBody->updateBody();
+    if (used && !inPossession) checkIfDelete();
+}
+
+void Weapon::checkIfDelete() {
+    float vx = fabs(cuerpo->getVelocidadX());
+    float vy = fabs(cuerpo->getVelocidadY());
+    if (vx < 0.005 && vy < 0.005 && ammo == 0) {
+        doDelete();
+    }
+}
+
+void Weapon::doDelete() {
+    for (int i = 0; i < Partida::getInstance()->worldWeapons.size(); i++) {
+        Weapon* arma = Partida::getInstance()->worldWeapons.at(i);
+        if (arma != NULL) {
+            if (arma == this) {
+                Partida::getInstance()->weapons2Delete.push_back(Partida::getInstance()->worldWeapons.at(i));
+                Partida::getInstance()->worldWeapons.at(i) = NULL;
+            }
+        }
+    }
 }
 
 int Weapon::shoot() {
@@ -104,7 +128,7 @@ int Weapon::shoot() {
 
 void Weapon::setPossession(bool var) {
     inPossession = var;
-    if(var) used = var;
+    if (var) used = var;
 }
 
 void Weapon::throwWeapon(float playerVel) {
@@ -114,7 +138,7 @@ void Weapon::throwWeapon(float playerVel) {
 
     //Lanzarla para arriba si está quieto o anda despacio
     if (fabs(playerVel) < 0.3) cuerpo->aplicarFuerza(0, -80);
-    //Lanzarla hacia donde mire la pistola
+        //Lanzarla hacia donde mire la pistola
     else cuerpo->aplicarFuerza(dir * 70 * fabs(playerVel), -60);
 
 }

@@ -115,11 +115,9 @@ void Weaponspawner::cargarArmas(int indice) {
 
 void Weaponspawner::deleteNotUsedWeapon() {
     for (int i = 0; i < Partida::getInstance()->worldWeapons.size(); i++) {
-        //cout<<"entro FUERA" <<i<<" veces"<<endl;
         Weapon* arma = Partida::getInstance()->worldWeapons.at(i);
         if (arma != NULL) {
             if (!arma->used) {
-                //cout<<"entro DENTRO" <<i<<" veces"<<endl;
                 Partida::getInstance()->weapons2Delete.push_back(Partida::getInstance()->worldWeapons.at(i));
                 Partida::getInstance()->worldWeapons.at(i) = NULL;
             }

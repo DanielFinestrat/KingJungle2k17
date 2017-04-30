@@ -88,6 +88,10 @@ public:
      * @param int i: Puede ser 1 o -1
      */
     void setDir(int i);
+    
+    void checkIfDelete();
+    
+    void doDelete();
 };
 
 #endif /* WEAPON_H */
