@@ -37,7 +37,6 @@ public:
     
     Mapa *mapa;
     Weaponspawner* factoriaArmas;
-    Temporizador *temporizador;
 
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;

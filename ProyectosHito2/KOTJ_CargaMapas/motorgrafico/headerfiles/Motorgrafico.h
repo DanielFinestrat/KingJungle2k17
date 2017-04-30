@@ -53,6 +53,8 @@ public:
     float getCameraPositionX();
     float getCameraPositionY();
     
+    Temporizador* getTemporizador();
+    
     virtual ~Motorgrafico();
     
 private:

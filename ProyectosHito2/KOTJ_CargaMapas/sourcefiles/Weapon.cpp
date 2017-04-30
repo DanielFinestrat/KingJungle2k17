@@ -69,7 +69,7 @@ int Weapon::shoot() {
 
             if (!parabola) {
 
-                float difAng = 180 / (BPS * 2);
+                float difAng = 90 / (BPS * 2);
                 for (int i = 0; i < BPS / 2; i++) {
                     Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + 50 * dir, cuerpo->getPosicionY() * PPM, explosivo, rango);
                     nuevaBala->Disparar(5 * -dir, 180 - difAng * (i + 1));

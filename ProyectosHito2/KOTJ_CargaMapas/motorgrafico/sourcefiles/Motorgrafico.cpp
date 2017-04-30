@@ -295,5 +295,9 @@ float Motorgrafico::getCameraPositionY(){
     return(mainCamera->getCenter().y);
 }
 
+Temporizador* Motorgrafico::getTemporizador(){
+    return(this->temporizador);
+}
+
 Motorgrafico::~Motorgrafico() {
 }

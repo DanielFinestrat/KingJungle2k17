@@ -30,15 +30,19 @@ public:
     void setPosition();
     void setBasePosition(float posx, float posy);
     void setScale(float newScaleX, float newScaleY);
+    
+    void stop(bool stop);
+    void restart();
 
     virtual ~Temporizador();
 private:
 
     sf::Clock chrono;
-    sf::Font font;
     
     float maxTime;
     float currentTime;
+    
+    bool stopped;
     
     sf::Text *timeBoardSec;
     sf::Text *timeBoardMsec;

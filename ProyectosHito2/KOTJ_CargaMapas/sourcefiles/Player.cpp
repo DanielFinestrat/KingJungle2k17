@@ -17,13 +17,10 @@
 Player::Player() {
     tag = "Player";
 
-    //Cargamos la textura
-    if (!texture.loadFromFile("resources/sprites/sprites.png")) {
-        cout << "Failed to load player spritesheet!" << endl;
-    }
+    //Cargamos la textura    
 
     //Creamos los diferentes frames que va a tener nuestro sprite animado
-    walkingAnimation.setSpriteSheet(texture);
+    walkingAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     walkingAnimation.addFrame(IntRect(3, 142, 49 - 3, 207 - 149));
     walkingAnimation.addFrame(IntRect(52, 142, 97 - 52, 207 - 143));
     walkingAnimation.addFrame(IntRect(151, 142, 196 - 151, 207 - 143));
@@ -31,23 +28,23 @@ Player::Player() {
     walkingAnimation.addFrame(IntRect(293, 142, 339 - 293, 207 - 143));
     walkingAnimation.addFrame(IntRect(149, 142, 196 - 149, 207 - 143));
 
-    jumpAnimation.setSpriteSheet(texture);
+    jumpAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     jumpAnimation.addFrame(IntRect(53, 219, 98 - 53, 70));
     jumpAnimation.addFrame(IntRect(101, 289 - 70, 146 - 101, 70));
 
-    fallAnimation.setSpriteSheet(texture);
+    fallAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     fallAnimation.addFrame(IntRect(306, 285 - 70, 351 - 306, 70));
     fallAnimation.addFrame(IntRect(354, 285 - 70, 399 - 354, 70));
 
-    standAnimation.setSpriteSheet(texture);
+    standAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     standAnimation.addFrame(IntRect(4, 0, 38 - 4, 67));
     standAnimation.addFrame(IntRect(41, 0, 74 - 41, 67));
     standAnimation.addFrame(IntRect(77, 0, 110 - 77, 67));
 
-    duckAnimation.setSpriteSheet(texture);
+    duckAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     duckAnimation.addFrame(IntRect(3, 298 - 70, 51 - 3, 70));
 
-    deadAnimation.setSpriteSheet(texture);
+    deadAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
     deadAnimation.addFrame(IntRect(3, 1470, 77 - 3, 1540 - 1470));
 
     currentAnimation = &standAnimation; //Establecemos la animacion por defecto
@@ -133,12 +130,10 @@ void Player::update(Time frameTime) {
     if (isDead) {
         setDeadAnimation();
         if (cuerpo->getActive()) eraseBody();
-    }
-    
-    else if ((int) cuerpo->getVelocidadY() > 0) setFallAnimation();
-    
+    } else if ((int) cuerpo->getVelocidadY() > 0) setFallAnimation();
+
     else if ((int) cuerpo->getVelocidadY() < 0) setJumpAnimation();
-    
+
     else {
         if (isDucking && isGrounded() == true) setDuckAnimation();
         else if (dirMoving != 0) setWalkingAnimation();
@@ -222,7 +217,6 @@ void Player::die(int dir) {
             weapon->throwWeapon(dir);
             weapon = NULL;
         }
-
         isDead = true;
     }
 }
@@ -262,17 +256,19 @@ void Player::interact(Weapon* lastWeapon) {
         Partida *partida = Partida::getInstance();
         vector<Weapon*> worldWeapons = partida->worldWeapons;
         for (int i = 0; i < worldWeapons.size(); i++) {
-            Weapon *currentWeapon = worldWeapons.at(i);
-            if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
-                if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
-                    currentWeapon->setPossession(true);
+            if (worldWeapons.at(i) != NULL) {
+                Weapon *currentWeapon = worldWeapons.at(i);
+                if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
+                    if (!currentWeapon->inPossession && currentWeapon != lastWeapon) {
+                        currentWeapon->setPossession(true);
 
-                    currentWeapon->cuerpo->setActive(false);
-                    currentWeapon->cuerpo->setAwake(false);
+                        currentWeapon->cuerpo->setActive(false);
+                        currentWeapon->cuerpo->setAwake(false);
 
-                    weapon = currentWeapon;
-                    if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
-                    break;
+                        weapon = currentWeapon;
+                        if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+                        break;
+                    }
                 }
             }
         }
@@ -288,16 +284,18 @@ void Player::interact() {
 
         if (weapon == NULL) {
             for (int i = 0; i < worldWeapons.size(); i++) {
-                Weapon *currentWeapon = worldWeapons.at(i);
-                if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
-                    if (!currentWeapon->inPossession) {
-                        currentWeapon->setPossession(true);
+                if (worldWeapons.at(i) != NULL) {
+                    Weapon *currentWeapon = worldWeapons.at(i);
+                    if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
+                        if (!currentWeapon->inPossession) {
+                            currentWeapon->setPossession(true);
 
-                        currentWeapon->cuerpo->setActive(false);
-                        currentWeapon->cuerpo->setAwake(false);
-                        weapon = currentWeapon;
-                        if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
-                        break;
+                            currentWeapon->cuerpo->setActive(false);
+                            currentWeapon->cuerpo->setAwake(false);
+                            weapon = currentWeapon;
+                            if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+                            break;
+                        }
                     }
                 }
             }

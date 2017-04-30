@@ -57,7 +57,6 @@ public:
 private:
     Cuerpo *cuerpo;
 
-    Texture texture;
     Animation standAnimation; //Animacion de estar quieto
     Animation walkingAnimation; //Animacion de andar
     Animation jumpAnimation; //Animacion de saltar

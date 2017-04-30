@@ -32,7 +32,7 @@ void Partida::erasePlayers() {
     players2Delete.clear();
 }
 
-void Partida::eraseWeapons(){
+void Partida::eraseWeapons() {
     for (int i = 0; i < weapons2Delete.size(); i++) {
         delete(weapons2Delete.at(i));
     }
@@ -251,6 +251,7 @@ void Partida::loadMap() {
     mapa->leerMapa(mapa->mapaSelva);
 
     factoriaArmas = new Weaponspawner();
+    Motorgrafico::getInstance()->getTemporizador()->stop(false);
 }
 
 Partida::~Partida() {
