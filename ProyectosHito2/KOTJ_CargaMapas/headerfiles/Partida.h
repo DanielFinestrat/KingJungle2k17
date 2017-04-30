@@ -21,6 +21,7 @@
 #include "PlayerKeyboard.h"
 #include "Mapa.h"
 #include "Console.h"
+#include "Trampa.h"
 
 using namespace std;
 
