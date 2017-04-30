@@ -112,9 +112,12 @@ void Partida::Render() {
     drawPlayers();
     drawWeapons();
     drawExplo();
+    drawConsole();
     mapa->drawMap();
 
     Motorgrafico::getInstance()->setHudCameraView();
+    console.draw();
+    
     Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
 }
@@ -148,6 +151,11 @@ void Partida::drawExplo() {
         Motorgrafico::getInstance()->draw(renderExplo->getBodyShape()->getCircleShape());
     }
 }
+
+void Partida::drawConsole() {
+    
+}
+
 
 int Partida::findKeyboardControlador() {
     int index = -1;

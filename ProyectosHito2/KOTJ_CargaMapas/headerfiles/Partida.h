@@ -20,6 +20,7 @@
 #include "PlayerJoystick.h"
 #include "PlayerKeyboard.h"
 #include "Mapa.h"
+#include "Console.h"
 
 using namespace std;
 
@@ -34,9 +35,10 @@ class Motorgrafico;
 
 class Partida {
 public:
-    
+
     Mapa *mapa;
     Weaponspawner* factoriaArmas;
+    Console console;
 
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
@@ -49,7 +51,7 @@ public:
     vector<Weapon*> weapons2Delete;
     set<Bala*> bullets2Delete;
     set<Explosion*> explo2Delete;
-    
+
     static Partida* getInstance();
 
     void Input(int &e);
@@ -62,6 +64,7 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
+    void drawConsole();
 
     void eraseBullets();
     void erasePlayers();
@@ -91,12 +94,11 @@ public:
     virtual ~Partida();
 
 private:
-    
+
     Motorgrafico *mg;
     bool usingKeyboard;
-    
-    Partida();
 
+    Partida();
 };
 
 #endif /* PARTIDA_H */

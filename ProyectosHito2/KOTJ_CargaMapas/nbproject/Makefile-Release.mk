@@ -51,6 +51,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/motorgrafico/sourcefiles/musicPlayer.o \
 	${OBJECTDIR}/motorgrafico/sourcefiles/resources.o \
 	${OBJECTDIR}/sourcefiles/Bala.o \
+	${OBJECTDIR}/sourcefiles/Console.o \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
@@ -184,6 +185,11 @@ ${OBJECTDIR}/sourcefiles/Bala.o: sourcefiles/Bala.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Bala.o sourcefiles/Bala.cpp
+
+${OBJECTDIR}/sourcefiles/Console.o: sourcefiles/Console.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Console.o sourcefiles/Console.cpp
 
 ${OBJECTDIR}/sourcefiles/Controlador.o: sourcefiles/Controlador.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

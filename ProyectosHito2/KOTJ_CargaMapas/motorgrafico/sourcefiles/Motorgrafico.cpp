@@ -61,7 +61,7 @@ void Motorgrafico::cameraSetTransform() {
             total++;
         }
     }
-    
+
     vector< vector<int> > esquinas = partida->mapa->getEsquinas();
     for (int i = 0; i < esquinas.size(); i++) {
         vector<int> esquina = esquinas.at(i);
@@ -143,12 +143,28 @@ void Motorgrafico::eventListener(int &e) {
                                     partida->setUsingKeyboard(true);
                                 }
                                 break;
+
+                            case Keyboard::Tab:
+                                partida->console.toggleConsole();
+                                break;
+
+                            case Keyboard::Return:
+                                partida->console.send();
+                                break;
+
+                            case Keyboard::BackSpace:
+                                partida->console.deleteChar();
+                                break;
                         }
                         break;
 
                     case sf::Event::KeyReleased:
                         if (event.key.code == sf::Keyboard::Escape) e = 1;
                         if (partida->getUsingKeyboard() == true) partida->worldControlador.at(partida->findKeyboardControlador())->releaseUpdateState(event.key.code);
+                        break;
+
+                    case sf::Event::TextEntered:
+                        textEnteredConsole(event);
                         break;
                 }
             }
@@ -266,7 +282,6 @@ void Motorgrafico::draw(Sprite &object) {
     window->draw(object);
 }
 
-
 sf::RenderWindow *Motorgrafico::getRenderWindow() {
     return window;
 }
@@ -287,17 +302,26 @@ sf::Time Motorgrafico::getFrameTime() {
     return frameTime;
 }
 
-float Motorgrafico::getCameraPositionX(){
-    return(mainCamera->getCenter().x);
+float Motorgrafico::getCameraPositionX() {
+    return (mainCamera->getCenter().x);
 }
 
-float Motorgrafico::getCameraPositionY(){
-    return(mainCamera->getCenter().y);
+float Motorgrafico::getCameraPositionY() {
+    return (mainCamera->getCenter().y);
 }
 
-Temporizador* Motorgrafico::getTemporizador(){
-    return(this->temporizador);
+Temporizador* Motorgrafico::getTemporizador() {
+    return (this->temporizador);
+}
+
+void Motorgrafico::textEnteredConsole(Event even) {
+    if (partida->console.getConsoleInScreen() && even.text.unicode < 128 && (even.text.unicode != 13 && even.text.unicode != 9 && even.text.unicode != 8)) {
+        std::string s = "";
+        s += static_cast<char> (even.text.unicode);
+        partida->console.write(s);
+    }
 }
 
 Motorgrafico::~Motorgrafico() {
 }
+

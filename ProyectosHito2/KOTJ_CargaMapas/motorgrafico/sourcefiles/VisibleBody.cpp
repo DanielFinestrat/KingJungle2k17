@@ -9,6 +9,9 @@
 #include "../headerfiles/VisibleBody.h"
 #include <math.h>
 
+
+VisibleBody::VisibleBody(){}
+
 VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path, bool centerOrigin) {
     
     posX = x;
@@ -98,6 +101,11 @@ void VisibleBody::setCircleRot(float angle){
 void VisibleBody::setCircleRadius(float rad){
     radius = rad;
     circle.setRadius(radius);
+}
+
+void VisibleBody::setColor(int r, int g, int b, int a) {
+    Color c = Color(r,g,b,a);
+    rectangle.setFillColor(c);
 }
 
 float VisibleBody::getPosX() {

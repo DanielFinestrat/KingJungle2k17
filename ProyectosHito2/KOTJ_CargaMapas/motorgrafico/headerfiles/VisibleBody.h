@@ -16,7 +16,9 @@
 
 class VisibleBody {
 public:
- 
+    
+    VisibleBody();
+    
     /**
      * Constructor de un cuerpo visible cuadrado
      * @param float posX: Posicion en X del objeto
@@ -100,6 +102,15 @@ public:
      * @param float angle: angulo de rotacion EN GRADOS.
      */
     void setAngle(float angle);
+    
+    /**
+     * Funcion para cambiar el color del objeto
+     * @param r cantidad de rojo de 0 a 255
+     * @param g cantidad de verde de 0 a 255
+     * @param b cantidad de azul de 0 a 255
+     * @param a canal alfa del color
+     */
+    void setColor(int r, int g, int b, int a);
     
     //Funcion que devuelve la posicion del objeto
     std::vector<float> getPos();

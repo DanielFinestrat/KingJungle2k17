@@ -64,7 +64,7 @@ void Weaponspawner::leerArmas() {
 void Weaponspawner::Update() {
     currentTime = currentTime - clock->getDeltaTimeAsSeconds();
     clock->restartClock();
-    
+
     if (currentTime <= 0) {
         currentTime = respawnTime;
         deleteNotUsedWeapon();
@@ -100,16 +100,19 @@ void Weaponspawner::cargarArmas() {
 }
 
 void Weaponspawner::cargarArmas(int indice) {
-    for (int i = 0; i < spawnArmas.size(); i++) {
-        datosArma datos = datosArmas.at(indice);
+    if (indice >= 0 && indice < datosArmas.size()) {
+        deleteNotPossessedWeapons();
+        for (int i = 0; i < spawnArmas.size(); i++) {
+            datosArma datos = datosArmas.at(indice);
 
-        vector<int> spawn = spawnArmas.at(i);
-        float x = spawn.at(0);
-        float y = spawn.at(1);
+            vector<int> spawn = spawnArmas.at(i);
+            float x = spawn.at(0);
+            float y = spawn.at(1);
 
-        Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango , datos.parabola, datos.explosivo);
-        arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
-        Partida::getInstance()->worldWeapons.push_back(arma);
+            Weapon* arma = new Weapon(datos.rectangulo.w * 0.65, datos.rectangulo.h * 0.65, x, y, datos.recoiltime, datos.bpd, datos.cargador, datos.recoil, datos.rango, datos.parabola, datos.explosivo);
+            arma->m_vBody->setRect(datos.rectangulo.x, datos.rectangulo.y, datos.rectangulo.w, datos.rectangulo.h);
+            Partida::getInstance()->worldWeapons.push_back(arma);
+        }
     }
 }
 

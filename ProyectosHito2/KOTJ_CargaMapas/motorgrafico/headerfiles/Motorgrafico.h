@@ -8,12 +8,15 @@
 
 
 #include <SFML/Graphics.hpp>
+#include <functional>
+#include <iostream>
 #include "../../headerfiles/Partida.h"
 #include "../../headerfiles/Menu.h"
 #include "Animation.h"
 #include "SpriteAnimated.h"
 #include "Temporizador.h"
 #include "musicPlayer.h"
+//#include "../../headerfiles/Console.h"
 
 
 class Motorgrafico {
@@ -55,6 +58,7 @@ public:
     
     Temporizador* getTemporizador();
     
+    void textEnteredConsole(Event even);
     virtual ~Motorgrafico();
     
 private:
