@@ -26,7 +26,7 @@ Texto::Texto(std::string t, int s, std::string p, int r, int g, int b) {
     text.setCharacterSize(size);
     text.setPosition(posX, posY);
     text.setString(string);
-    text.setColor(color);
+    text.setFillColor(color);
     text.setScale(1,1);
 }
 
@@ -50,7 +50,7 @@ void Texto::setColor(int r, int g, int b) {
     color.r = r;
     color.g = g;
     color.b = b;
-    text.setColor(color);
+    text.setFillColor(color);
 }
 
 void Texto::setFont(std::string p) {
