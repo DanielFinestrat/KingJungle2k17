@@ -149,6 +149,7 @@ void Weapon::setDir(int i) {
 }
 
 Weapon::~Weapon() {
+    cuerpo->Destruir();
     delete (cuerpo);
     delete (m_vBody);
     cuerpo = NULL;

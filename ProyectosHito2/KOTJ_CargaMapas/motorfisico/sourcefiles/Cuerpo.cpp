@@ -32,6 +32,8 @@ Cuerpo::Cuerpo(b2World *world, b2Vec2 pos, b2Vec2 size, float angle, Entidad* da
 }
 
 Cuerpo::~Cuerpo() {
+    //delete(m_pBody);
+    m_pBody = NULL;
 }
 
 void Cuerpo::Destruir(){

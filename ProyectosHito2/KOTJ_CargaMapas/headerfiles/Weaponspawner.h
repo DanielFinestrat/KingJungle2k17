@@ -32,6 +32,7 @@ public:
     
     void Update();
     void deleteNotUsedWeapon();
+    void deleteNotPossessedWeapons();
 
 private:
 

@@ -45,6 +45,7 @@ public:
     vector<Controlador*> worldControlador;
 
     vector<Player*> players2Delete;
+    vector<Platform*> platforms2Delete;
     vector<Weapon*> weapons2Delete;
     set<Bala*> bullets2Delete;
     set<Explosion*> explo2Delete;
@@ -66,6 +67,7 @@ public:
     void erasePlayers();
     void eraseWeapons();
     void eraseExplo();
+    void erasePlatforms();
 
     int findKeyboardControlador();
     int findControladorWithId(int id);
@@ -85,6 +87,7 @@ public:
     void setUsingKeyboard(bool state);
 
     void loadMap();
+    void loadMap(string mapaStr);
     virtual ~Partida();
 
 private:
@@ -97,4 +100,3 @@ private:
 };
 
 #endif /* PARTIDA_H */
-

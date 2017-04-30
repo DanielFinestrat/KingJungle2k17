@@ -94,6 +94,8 @@ void Temporizador::Draw(sf::RenderWindow *window) {
 void Temporizador::restartGame() {
     chrono.restart();
     Partida *partida = Partida::getInstance();
+    
+    partida->loadMap();
     partida->respawn();
 }
 

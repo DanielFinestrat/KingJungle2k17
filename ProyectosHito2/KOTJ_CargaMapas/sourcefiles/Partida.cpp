@@ -14,6 +14,8 @@ static Partida* instance;
 
 Partida::Partida() {
     usingKeyboard = false;
+    mapa = NULL;
+    factoriaArmas = NULL;
 }
 
 Partida* Partida::getInstance() {
@@ -37,6 +39,13 @@ void Partida::eraseWeapons() {
         delete(weapons2Delete.at(i));
     }
     weapons2Delete.clear();
+}
+
+void Partida::erasePlatforms() {
+    for (int i = 0; i < platforms2Delete.size(); i++) {
+        delete(platforms2Delete.at(i));
+    }
+    platforms2Delete.clear();
 }
 
 void Partida::eraseBullets() {
@@ -77,6 +86,7 @@ void Partida::Erase() {
     erasePlayers();
     eraseExplo();
     eraseWeapons();
+    erasePlatforms();
 }
 
 void Partida::Update() {
@@ -247,10 +257,42 @@ void Partida::setUsingKeyboard(bool state) {
 void Partida::loadMap() {
     checkJoysticksConnected();
 
+    if (mapa != NULL) {
+        delete(mapa);
+        mapa = NULL;
+    }
+
+    if (factoriaArmas != NULL) {
+        delete(factoriaArmas);
+        factoriaArmas = NULL;
+    }
+
     mapa = new Mapa();
-    mapa->leerMapa(mapa->mapaSelva);
+    mapa->leerMapa(mapa->getRandomMap());
 
     factoriaArmas = new Weaponspawner();
+    Motorgrafico::getInstance()->getTemporizador()->restart();
+    Motorgrafico::getInstance()->getTemporizador()->stop(false);
+}
+
+void Partida::loadMap(string mapaStr) {
+    checkJoysticksConnected();
+
+    if (mapa != NULL) {
+        delete(mapa);
+        mapa = NULL;
+    }
+
+    if (factoriaArmas != NULL) {
+        delete(factoriaArmas);
+        factoriaArmas = NULL;
+    }
+
+    mapa = new Mapa();
+    mapa->leerMapa(mapaStr);
+
+    factoriaArmas = new Weaponspawner();
+    Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
 }
 

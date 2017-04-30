@@ -33,5 +33,7 @@ void Fondo::Render(){
 }
 
 Fondo::~Fondo() {
+    delete(imagenFondo);
+    imagenFondo = NULL;
 }
 

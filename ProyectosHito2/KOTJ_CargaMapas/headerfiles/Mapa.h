@@ -11,6 +11,7 @@
 
 #include <vector>
 #include <string>
+#include <cstdlib>
 #include "../headerfiles/Platform.h"
 #include "../tinyxml/headerfiles/tinystr.h"
 #include "../tinyxml/headerfiles/tinyxml.h"
@@ -24,6 +25,7 @@ public:
 
     const string mapaPrueba = "./resources/mapas/mapaPrueba.tmx";
     const string mapaSelva = "./resources/mapas/mapaSelva.tmx";
+    vector<string> mapas;
     
     Mapa();
     virtual ~Mapa();
@@ -35,7 +37,8 @@ public:
     void guardarFondo(TiXmlElement* map);
     void guardarCapas(TiXmlElement* map);
     void guardarObj(TiXmlElement* map);
-    
+   
+    string getRandomMap();
     vector< vector<int> > getEsquinas();
     vector< vector<int> > getSpawnArmas();
     
@@ -55,5 +58,5 @@ private:
     
 };
 
-#endif /* CARGAMAPAS_H */
+#endif /* MAPA_H */
 

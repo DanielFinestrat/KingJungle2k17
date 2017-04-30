@@ -10,9 +10,21 @@
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 
 Mapa::Mapa() {
+    mapas.push_back(mapaPrueba);
+    mapas.push_back(mapaSelva);
 }
 
 Mapa::~Mapa() {
+    delete (fondo);
+    fondo = NULL;
+
+    for (int i = 0; i < map_sprites.size(); i++) delete(map_sprites.at(i));
+    map_sprites.clear();
+
+    for (int i = 0; i < worldPlatforms.size(); i++) {
+        Partida::getInstance()->platforms2Delete.push_back(worldPlatforms.at(i));
+    }
+    worldPlatforms.clear();
 }
 
 void Mapa::Update() {
@@ -23,7 +35,7 @@ void Mapa::leerMapa(string mapa) {
     const char *cstr = mapa.c_str();
     TiXmlDocument doc(cstr);
     doc.LoadFile();
-    
+
     TiXmlElement* map = doc.FirstChildElement("map");
     guardarFondo(map);
     guardarCapas(map);
@@ -197,4 +209,10 @@ vector< vector<int> > Mapa::getEsquinas() {
 
 vector< vector<int> > Mapa::getSpawnArmas() {
     return (spawnArmas);
+}
+
+string Mapa::getRandomMap() {
+    srand(time(NULL));
+    int i = rand() % mapas.size();
+    return (mapas.at(i));
 }

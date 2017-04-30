@@ -125,6 +125,19 @@ void Weaponspawner::deleteNotUsedWeapon() {
     }
 }
 
+void Weaponspawner::deleteNotPossessedWeapons() {
+    for (int i = 0; i < Partida::getInstance()->worldWeapons.size(); i++) {
+        Weapon* arma = Partida::getInstance()->worldWeapons.at(i);
+        if (arma != NULL) {
+            if (!arma->inPossession) {
+                Partida::getInstance()->weapons2Delete.push_back(Partida::getInstance()->worldWeapons.at(i));
+                Partida::getInstance()->worldWeapons.at(i) = NULL;
+            }
+        }
+    }
+}
+
 Weaponspawner::~Weaponspawner() {
+    deleteNotPossessedWeapons();
 }
 
