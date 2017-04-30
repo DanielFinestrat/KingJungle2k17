@@ -25,6 +25,8 @@ public:
 
     const string mapaPrueba = "./resources/mapas/mapaPrueba.tmx";
     const string mapaSelva = "./resources/mapas/mapaSelva.tmx";
+    const string mapaCueva = "./resources/mapas/mapaCueva.tmx";
+    const string mapaMar = "./resources/mapas/mapaMar.tmx";
     vector<string> mapas;
     
     Mapa();
@@ -41,6 +43,7 @@ public:
     string getRandomMap();
     vector< vector<int> > getEsquinas();
     vector< vector<int> > getSpawnArmas();
+    vector< vector<int> > getSpawnTrampas();
     
     void drawMap();
     void drawBackground();
@@ -54,6 +57,7 @@ private:
     vector< vector<int> > spawnPlayer;
     vector< vector<int> > spawnArmas;
     vector< vector<int> > esquinasMapa;
+    vector< vector<int> > spawnTrampas;
     vector<Platform*> worldPlatforms;
     
 };

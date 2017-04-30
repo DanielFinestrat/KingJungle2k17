@@ -12,6 +12,8 @@
 Mapa::Mapa() {
     mapas.push_back(mapaPrueba);
     mapas.push_back(mapaSelva);
+    mapas.push_back(mapaCueva);
+    mapas.push_back(mapaMar);
 }
 
 Mapa::~Mapa() {
@@ -122,6 +124,7 @@ void Mapa::guardarObj(TiXmlElement* map) {
     int _height = 0;
     int _sizeX = 0;
     int _sizeY = 0;
+    int _type = 0;
     string tipo;
 
     for (int l = 0; l < _numLayers; l++) {
@@ -167,6 +170,16 @@ void Mapa::guardarObj(TiXmlElement* map) {
                 posicion.push_back(_height);
 
                 esquinasMapa.push_back(posicion);
+            }else if (tipo.compare("trampa") == 0){
+                object->QueryIntAttribute("x", &_width);
+                object->QueryIntAttribute("y", &_height);                
+                object->QueryIntAttribute("type", &_type);
+                vector<int> posicion;
+                posicion.push_back(_width);
+                posicion.push_back(_height);
+                posicion.push_back(_type);
+
+                spawnTrampas.push_back(posicion);
             }
             object = object->NextSiblingElement("object");
         }
@@ -209,6 +222,9 @@ vector< vector<int> > Mapa::getEsquinas() {
 
 vector< vector<int> > Mapa::getSpawnArmas() {
     return (spawnArmas);
+}
+vector< vector<int> > Mapa::getSpawnTrampas() {
+    return (spawnTrampas);
 }
 
 string Mapa::getRandomMap() {
