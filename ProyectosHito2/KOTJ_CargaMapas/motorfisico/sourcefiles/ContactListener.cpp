@@ -49,7 +49,9 @@ void ContactListener::BeginContact(b2Contact* contact) {
 			}
 			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
 		}
-	} else if (entidadA->getTag().compare("Explosion") == 0 || entidadB->getTag().compare("Explosion") == 0) {
+	} 
+        //Colision con explosiones
+        else if (entidadA->getTag().compare("Explosion") == 0 || entidadB->getTag().compare("Explosion") == 0) {
 		if (entidadA->getTag().compare("Explosion") == 0) {
 			Explosion* explo = static_cast<Explosion*> (bodyUserDataA);
 			if (entidadB->getTag().compare("Player") == 0) {
@@ -65,6 +67,28 @@ void ContactListener::BeginContact(b2Contact* contact) {
 				Player* player = static_cast<Player*> (bodyUserDataA);
 				int dir = -1;
 				if (explo->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+		}
+	}
+        //Colision con trampas
+        else if (entidadA->getTag().compare("Trampa") == 0 || entidadB->getTag().compare("Trampa") == 0) {
+		if (entidadA->getTag().compare("Trampa") == 0) {
+			Trampa* trampa = static_cast<Trampa*> (bodyUserDataA);
+			if (entidadB->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataB);
+				int dir = -1;
+				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+			}
+		} else if (entidadB->getTag().compare("Trampa") == 0) {
+			Trampa* trampa = static_cast<Trampa*> (bodyUserDataB);
+			if (entidadA->getTag().compare("Player") == 0) {
+				Player* player = static_cast<Player*> (bodyUserDataA);
+				int dir = -1;
+				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
 				partida->players2Delete.push_back(player);
 			}

@@ -14,6 +14,9 @@ Mapa::Mapa() {
     mapas.push_back(mapaSelva);
     mapas.push_back(mapaCueva);
     mapas.push_back(mapaMar);
+    mapas.push_back(mapaSeleccion);
+    //mapas.push_back(mapaPsico);
+    mapas.push_back(mapaHielo);
 }
 
 Mapa::~Mapa() {
@@ -174,10 +177,14 @@ void Mapa::guardarObj(TiXmlElement* map) {
                 object->QueryIntAttribute("x", &_width);
                 object->QueryIntAttribute("y", &_height);                
                 object->QueryIntAttribute("type", &_type);
+                object->QueryIntAttribute("width", &_sizeX);
+                object->QueryIntAttribute("height", &_sizeY);
                 vector<int> posicion;
                 posicion.push_back(_width);
                 posicion.push_back(_height);
                 posicion.push_back(_type);
+                posicion.push_back(_sizeX);
+                posicion.push_back(_sizeY);
 
                 spawnTrampas.push_back(posicion);
             }
