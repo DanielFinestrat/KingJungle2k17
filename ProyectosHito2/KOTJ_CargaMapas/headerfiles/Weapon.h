@@ -29,6 +29,8 @@ public:
     bool parabola;
     bool explosivo;
 
+    bool balasVisibles;
+    
     bool inPossession;
     bool used;
     

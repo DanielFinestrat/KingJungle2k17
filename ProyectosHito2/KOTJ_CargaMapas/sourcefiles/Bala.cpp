@@ -11,7 +11,7 @@
 
 using namespace std;
 
-Bala::Bala(float x, float y, float posx, float posy, bool explo, int rango) {
+Bala::Bala(float x, float y, float posx, float posy, bool explo, int rango, bool balaVisible) {
     tag = "Bala";
     explosion = explo;
     
@@ -29,7 +29,7 @@ Bala::Bala(float x, float y, float posx, float posy, bool explo, int rango) {
             maxDist = 13;
             break;
         case(-1):
-            maxDist = 1.5f;
+            maxDist = 0.5f;
             break;
     }
 
@@ -39,8 +39,8 @@ Bala::Bala(float x, float y, float posx, float posy, bool explo, int rango) {
     cuerpo->setCategoryBits(CATEGORY_BULLET);
     cuerpo->setDensity(0.7f);
 
-    shape = new VisibleBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM, x, y, "", true);
-
+    if(balaVisible) shape = new VisibleBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM, x, y, "", true);
+    else shape = new VisibleBody(0, 0, 0, 0, "", true);
 }
 
 void Bala::Update_Shape() {

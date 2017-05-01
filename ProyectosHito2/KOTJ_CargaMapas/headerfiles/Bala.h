@@ -39,7 +39,7 @@ public:
      * @param position Vector2f: posicion inicial de la bala
      * @param explo bool: activar la explosion al eliminar la bala
      */
-    Bala(float x, float y, float posx, float posy, bool explo, int rango);
+    Bala(float x, float y, float posx, float posy, bool explo, int rango, bool balaVisible);
 
     /**
      * Actualiza el RectangleShape del objeto

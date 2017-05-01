@@ -15,6 +15,8 @@ using namespace std;
 #define PPM 64.0f 
 #define MPP (1.0f/PPM)
 
+#define pSize 64
+
 const short CATEGORY_BULLET = 0x0001;
 const short CATEGORY_SCENERY = 0x0002;
 const short CATEGORY_PLAYER = 0x0004;

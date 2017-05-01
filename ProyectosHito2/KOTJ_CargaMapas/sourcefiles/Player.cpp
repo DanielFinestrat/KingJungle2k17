@@ -9,11 +9,6 @@
 #include "../headerfiles/Player.h"
 #include "../headerfiles/Partida.h"
 
-#define PPM 64.0f               //PIXELS POR METRO
-#define MPP (1.0f/PPM)          //METROS POR PIXEL
-
-#define pSize 64                //Collider Box Size
-
 Player::Player() {
     tag = "Player";   
 
@@ -57,11 +52,11 @@ Player::Player() {
 
     canJump = true;
     updateCanJumpState = false;
-    fuerzaSalto = -98;
+    fuerzaSalto = -50;
     fuerzaMovimiento = 5;
     velocidadMaxima = 1;
 
-    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize, pSize, this);
+    cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, pSize/2, pSize, this);
     cuerpo->setMaskBits(MASK_PLAYER);
     cuerpo->setCategoryBits(CATEGORY_PLAYER);
     cuerpo->setDensity(0.75f);
