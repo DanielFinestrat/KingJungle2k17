@@ -228,14 +228,16 @@ void Partida::addPlayerIA() {
 void Partida::respawn() {
     for (int i = 0; i < worldPlayer.size(); i++) {
         Player* player = worldPlayer.at(i);
-        
+
         vector<int> position = mapa->spawnPlayer.at(0);
         mapa->spawnPlayer.erase(mapa->spawnPlayer.begin());
         mapa->spawnPlayer.push_back(position);
-        
 
         player->setPosition(position.at(0), position.at(1));
         player->respawn();
+
+        factoriaArmas->deleteNotPossessedWeapons();
+        factoriaArmas->cargarArmas();
     }
 }
 
@@ -301,6 +303,8 @@ void Partida::loadMap() {
     factoriaArmas = new Weaponspawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
+
+    respawn();
 }
 
 void Partida::loadMap(string mapaStr) {
@@ -322,6 +326,8 @@ void Partida::loadMap(string mapaStr) {
     factoriaArmas = new Weaponspawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
+
+    respawn();
 }
 
 Partida::~Partida() {

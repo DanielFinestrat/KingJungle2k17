@@ -13,7 +13,6 @@
 VisibleBody::VisibleBody(){}
 
 VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path, bool centerOrigin) {
-    
     posX = x;
     posY = y;
     height = h;
@@ -22,13 +21,13 @@ VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path, b
    
     rectangle.setPosition(posX, posY);
     rectangle.setSize(sf::Vector2f(width, height));
-    rectangle.setScale(1,1);
+    rectangle.setScale(1, 1);
     
-    if (centerOrigin)rectangle.setOrigin(sf::Vector2f(width/2, height/2));
+    if (centerOrigin)rectangle.setOrigin(sf::Vector2f(width/2.0f, height/2.0f));
     else rectangle.setOrigin(sf::Vector2f(0, 0));
 
     tex = Resources::getInstance();
-    if(texPath!="") rectangle.setTexture(&tex->getTexture(texPath), 0);
+    if(texPath!="") rectangle.setTexture(&tex->getTexture(texPath),0);
 }
 
 VisibleBody::VisibleBody(float x, float y, float rad, std::string path){
@@ -38,7 +37,7 @@ VisibleBody::VisibleBody(float x, float y, float rad, std::string path){
     
     circle.setPosition(posX,posY);
     circle.setRadius(radius);
-    circle.setOrigin(radius/2,radius/2);
+    circle.setOrigin(radius/2.0f,radius/2.0f);
     circle.setScale(1,1);
     
     tex = Resources::getInstance();
@@ -51,7 +50,7 @@ void VisibleBody::setRect(float posX, float posY, float width, float height){
 }
 
 void VisibleBody::updateBody() {
-    rectangle.setOrigin(width/2, height/2);
+    rectangle.setOrigin(width/2.0f, height/2.0f);
     rectangle.setPosition(posX, posY);
     rectangle.setRotation(angle);
 }
@@ -145,6 +144,7 @@ std::string VisibleBody::getTexPath() {
 sf::RectangleShape VisibleBody::getShape() {
     return rectangle;
 }
+
 sf::CircleShape VisibleBody::getCircleShape(){
     return circle;
 }

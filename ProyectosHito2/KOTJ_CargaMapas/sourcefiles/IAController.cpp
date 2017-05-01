@@ -205,10 +205,6 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
                     releaseUpdateState(0);
                     break;
             }
-
-
-
-
             if (estado.compare("buscarArma") == 0) {
                 if (PosX > 0.5) {
                     checkAxisX(-100);

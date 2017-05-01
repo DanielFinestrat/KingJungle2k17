@@ -165,6 +165,7 @@ void Player::jump() {
 }
 
 //Comprobamos si se puede saltar
+
 bool Player::isGrounded() {
     return ( fabs(cuerpo->getVelocidadY()) <= 0.00000005 ? true : false);
 }
@@ -247,6 +248,10 @@ void Player::respawn() {
     isDucking = false;
     isDead = false;
     cuerpo->setActive(true);
+    if (hasWeapon()) {
+        weapon->throwWeapon(0);
+        weapon = NULL;
+    }
 }
 
 void Player::interact(Weapon* lastWeapon) {
@@ -258,7 +263,7 @@ void Player::interact(Weapon* lastWeapon) {
             if (worldWeapons.at(i) != NULL) {
                 Weapon *currentWeapon = worldWeapons.at(i);
                 if (playerSprite->getGlobalBounds().intersects(currentWeapon->m_vBody->getBounds())) {
-                    if (!currentWeapon->inPossession && currentWeapon != lastWeapon  && currentWeapon->ammo != 0) {
+                    if (!currentWeapon->inPossession && currentWeapon != lastWeapon && currentWeapon->ammo != 0) {
                         currentWeapon->setPossession(true);
 
                         currentWeapon->cuerpo->setActive(false);
@@ -352,15 +357,15 @@ void Player::setColor(int id) {
     playerSprite->setColor(*color);
 }
 
-bool Player::hasWeapon(){
-    if(this->weapon == NULL) return (false);
-    else return(true);
+bool Player::hasWeapon() {
+    if (this->weapon == NULL) return (false);
+    else return (true);
 }
 
-Weapon* Player::getWeapon(){
-    return(this->weapon);
+Weapon* Player::getWeapon() {
+    return (this->weapon);
 }
 
-bool Player::isJumping(){
-	return !canJump;
+bool Player::isJumping() {
+    return !canJump;
 }
