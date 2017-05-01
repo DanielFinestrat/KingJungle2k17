@@ -16,7 +16,7 @@ Motorgrafico* Motorgrafico::getInstance() {
 }
 
 Motorgrafico::Motorgrafico() {
-    temporizador = new Temporizador(20, screenWidth / 2, 0, 40);
+    temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
     partida = Partida::getInstance();
     window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     setFramerateLimitOn(60);
@@ -100,7 +100,6 @@ void Motorgrafico::cameraSetTransform() {
 
     //Ponerlo todo
     setMainCameraView();
-
 }
 
 void Motorgrafico::eventListener(int &e) {

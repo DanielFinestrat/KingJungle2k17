@@ -131,10 +131,15 @@ void IAController::checkAxisY(int ejeY) {
 }
 
 int IAController::readTile(int layer) {
-    int X = (int) (player->getPositionX() * PPM / 32); //32 = tamaño tile
+    int X = (int) (player->getPositionX() * PPM / 32);
     int Y = (int) (player->getPositionY() * PPM / 32);
+    int maxX = Partida::getInstance()->mapa->xTiles;
+    int maxY = Partida::getInstance()->mapa->yTiles;
+
     if (Y < 0) Y = 0;
     if (X < 0) X = 0;
+    if (Y > maxY) Y = maxY;
+    if (X > maxX) X = maxX;
 
     int lugar = Partida::getInstance()->mapa->_tilemap[layer][Y][X];
     return (lugar);
@@ -267,21 +272,23 @@ vector<float> IAController::buscarArma() {
     bool encontrada = false;
 
     for (int i = 0; i < partida->worldWeapons.size(); i++) {
-        Weapon* arma = partida->worldWeapons.at(i);
-        if (!arma->inPossession && arma->ammo > 0) {
-            //cout << i << endl;
-            float positionX = arma->cuerpo->getPosicionX();
-            float positionY = arma->cuerpo->getPosicionY();
-            float dist = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
-            if (distancia == -1) {
-                encontrada = true;
-                distancia = dist;
-                PosX = IApositionX - positionX;
-                PosY = IApositionY - positionY;
-            } else if (dist < distancia) {
-                distancia = dist;
-                PosX = IApositionX - positionX;
-                PosY = IApositionY - positionY;
+        if (partida->worldWeapons.at(i) != NULL) {
+            Weapon* arma = partida->worldWeapons.at(i);
+            if (!arma->inPossession && arma->ammo > 0) {
+                //cout << i << endl;
+                float positionX = arma->cuerpo->getPosicionX();
+                float positionY = arma->cuerpo->getPosicionY();
+                float dist = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
+                if (distancia == -1) {
+                    encontrada = true;
+                    distancia = dist;
+                    PosX = IApositionX - positionX;
+                    PosY = IApositionY - positionY;
+                } else if (dist < distancia) {
+                    distancia = dist;
+                    PosX = IApositionX - positionX;
+                    PosY = IApositionY - positionY;
+                }
             }
         }
     }
@@ -353,8 +360,6 @@ vector<float> IAController::buscarHuida() {
 }
 
 vector<float> IAController::buscarMatar() {
-
-
 
 }
 

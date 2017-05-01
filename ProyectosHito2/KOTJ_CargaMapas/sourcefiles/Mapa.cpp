@@ -80,7 +80,9 @@ void Mapa::guardarCapas(TiXmlElement* map) {
             _tilemap[i][j] = new int[_width];
             for (int k = 0; k < _width; k++) {
                 _tilemap[i][j][k] = 0;
+                xTiles = k;
             }
+            yTiles = j;
         }
     }
 
@@ -247,7 +249,7 @@ string Mapa::getRandomMap() {
     
     do {
         newIndexMap = rand() % mapas.size();
-    } while (oldIndexMap == newIndexMap && newIndexMap == 0);
+    } while (newIndexMap == oldIndexMap || newIndexMap == 0);
     
     Partida::getInstance()->indexMap = newIndexMap;
     return (mapas.at(newIndexMap));

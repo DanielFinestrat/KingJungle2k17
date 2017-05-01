@@ -33,6 +33,8 @@ public:
     vector<string> mapas;
     
     int ***_tilemap;
+    int xTiles;
+    int yTiles;
     vector< vector<int> > spawnPlayer;
     
     Mapa();
