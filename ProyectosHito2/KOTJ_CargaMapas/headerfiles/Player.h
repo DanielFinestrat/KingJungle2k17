@@ -56,6 +56,7 @@ public:
     bool hasWeapon();
     Weapon* getWeapon();
     bool isJumping();
+    void checkMapBounds();
 
 private:
     Cuerpo *cuerpo;

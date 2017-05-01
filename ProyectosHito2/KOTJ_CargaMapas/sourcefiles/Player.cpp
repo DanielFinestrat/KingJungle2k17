@@ -15,9 +15,7 @@
 #define pSize 64                //Collider Box Size
 
 Player::Player() {
-    tag = "Player";
-
-    //Cargamos la textura    
+    tag = "Player";   
 
     //Creamos los diferentes frames que va a tener nuestro sprite animado
     walkingAnimation.setSpriteSheet(Resources::getInstance()->getTexture(Resources::getInstance()->sprites));
@@ -144,7 +142,20 @@ void Player::update(Time frameTime) {
     playAnimation();
 
     if (weapon != NULL) weapon->update(posx, posy);
+    
+    if(!isPlayerDead()) checkMapBounds();
 
+}
+
+void Player::checkMapBounds(){
+    float pY = getPositionY() * -1;
+    float maxY = Partida::getInstance()->mapa->yTiles * -32 * MPP;
+    
+    if(pY < maxY){
+        die(dirLooking);
+        cuerpo->setVelocidad(0,0);
+        eraseBody();
+    }
 }
 
 SpriteAnimated& Player::getPlayerSprite() {
@@ -165,7 +176,6 @@ void Player::jump() {
 }
 
 //Comprobamos si se puede saltar
-
 bool Player::isGrounded() {
     return ( fabs(cuerpo->getVelocidadY()) <= 0.00000005 ? true : false);
 }
