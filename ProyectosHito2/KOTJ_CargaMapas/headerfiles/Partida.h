@@ -67,7 +67,6 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
-    void drawConsole();
 
     void eraseBullets();
     void erasePlayers();

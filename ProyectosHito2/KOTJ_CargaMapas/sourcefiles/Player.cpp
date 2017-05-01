@@ -148,8 +148,8 @@ void Player::checkMapBounds(){
     
     if(pY < maxY){
         die(dirLooking);
-        cuerpo->setVelocidad(0,0);
-        eraseBody();
+        //cuerpo->setVelocidad(0,0);
+        //eraseBody();
     }
 }
 

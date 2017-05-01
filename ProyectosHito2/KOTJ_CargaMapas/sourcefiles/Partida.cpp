@@ -124,7 +124,6 @@ void Partida::Render() {
     drawPlayers();
     drawWeapons();
     drawExplo();
-    drawConsole();
     mapa->drawMap();
 
     Motorgrafico::getInstance()->setHudCameraView();
@@ -162,10 +161,6 @@ void Partida::drawExplo() {
         Explosion* renderExplo = *itExplo;
         Motorgrafico::getInstance()->draw(renderExplo->getBodyShape()->getCircleShape());
     }
-}
-
-void Partida::drawConsole() {
-
 }
 
 int Partida::findKeyboardControlador() {
