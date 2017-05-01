@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   Console.cpp
@@ -33,6 +28,8 @@ Console::Console() {
     consoleText = new Texto(consoleString, 20, Resources::getInstance()->myFont, 255, 255, 255);
     consoleText->setPos(0, screenHeight - console.getHeight() + 15);
 
+    commandStringVector = vector<std::string>();
+    lastCommand = -1;
 
     functionMap = new std::map < std::string, std::function<void (int) >>();
     loadFunctions();
@@ -42,14 +39,7 @@ Console::~Console() {
 }
 
 void Console::toggleConsole() {
-    //usingKeyboard = consoleInScreen;
     consoleInScreen = !consoleInScreen;
-
-    /*if (consoleInScreen) {
-        cout << "se activa la consola" << endl;
-    } else {
-        cout << "se desactiva la consola" << endl;
-    }*/
 }
 
 void Console::send() {
@@ -81,6 +71,14 @@ void Console::send() {
                 fn(param1);
             }
 
+            if (param1 == -1) commandStringVector.push_back(nombrefunction);
+            else {
+                ostringstream stm;
+                stm << param1;
+                string parametro1 = stm.str();
+                commandStringVector.push_back(nombrefunction + " " + parametro1);
+            }
+
             delete token;
             delete[] line;
         }
@@ -95,6 +93,7 @@ void Console::send() {
             consoleString = consoleString.substr(pos + 1);
             nlines--;
         }
+        lastCommand = -1;
         commandString = "";
         consoleString += "\n>";
         nlines++;
@@ -160,9 +159,13 @@ void selectMap(int n) {
     vector<string> maps = partida->mapa->mapas;
 
     if (n >= 0 && n < maps.size()) {
-        //cout<<"entro"<<endl;
+        cout << "entro" << endl;
         partida->loadMap(maps.at(n));
     }
+}
+
+void exitGame(int n) {
+    Motorgrafico::getInstance()->getRenderWindow()->close();
 }
 
 void Console::loadFunctions() {
@@ -183,6 +186,33 @@ void Console::loadFunctions() {
 
     fn = selectMap;
     functionMap->insert(std::pair<string, function<void (int) >>("selectmap", fn));
+
+    fn = exitGame;
+    functionMap->insert(std::pair<string, function<void (int) >>("exit", fn));
+}
+
+void Console::getLastCommand() {
+    int vecsize = commandStringVector.size();
+    if (vecsize > 0) {
+        if (lastCommand == -1) {
+            lastCommand = vecsize - 1;
+
+            commandString = commandStringVector.at(lastCommand);
+            consoleString += commandString;
+            consoleText->setTexto(consoleString);
+        } else {
+            if (commandString.compare(commandStringVector.at(lastCommand)) == 0) {
+                if (lastCommand > 0 && lastCommand < vecsize) {
+                    lastCommand--;
+                    consoleString.resize(consoleString.length() - commandString.length());
+
+                    commandString = commandStringVector.at(lastCommand);
+                    consoleString += commandString;
+                    consoleText->setTexto(consoleString);
+                }
+            }
+        }
+    }
 }
 
 bool Console::getConsoleInScreen() {

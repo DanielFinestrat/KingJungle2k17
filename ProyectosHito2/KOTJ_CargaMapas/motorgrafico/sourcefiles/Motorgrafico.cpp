@@ -62,13 +62,13 @@ void Motorgrafico::cameraSetTransform() {
         }
     }
 
-    vector< vector<int> > esquinas = partida->mapa->getEsquinas();
+    /*vector< vector<int> > esquinas = partida->mapa->getEsquinas();
     for (int i = 0; i < esquinas.size(); i++) {
         vector<int> esquina = esquinas.at(i);
         posX += esquina.at(0) * MPP;
         posY += esquina.at(1) * MPP;
         total++;
-    }
+    }*/
 
     posX = posX / total;
     posY = posY / total;
@@ -87,14 +87,25 @@ void Motorgrafico::cameraSetTransform() {
     }
 
     if (maxDifferenceX > maxDifferenceY * ratio) {
-        maxDifferenceX += 2;
+        maxDifferenceX += 3.5;
         newSize = abs(maxDifferenceX * 2 * PPM);
         if (newSize < minSize) newSize = minSize;
+
+        /*if (newSize > Partida::getInstance()->mapa->xTiles * 32) {
+            newSize = Partida::getInstance()->mapa->xTiles * 32;
+        }*/
+
         mainCamera->setSize(sf::Vector2f(newSize, newSize / ratio));
+
     } else {
-        maxDifferenceY += (2 / ratio);
+        maxDifferenceY += (3.5 / ratio);
         newSize = abs(maxDifferenceY * 2 * PPM);
         if (newSize < minSize / ratio) newSize = minSize / ratio;
+
+        /*if (newSize > (Partida::getInstance()->mapa->yTiles + 1) * 32) {
+            newSize = (Partida::getInstance()->mapa->yTiles + 1) * 32;
+        }*/
+
         mainCamera->setSize(sf::Vector2f(newSize * ratio, newSize));
     }
 
@@ -157,6 +168,10 @@ void Motorgrafico::eventListener(int &e) {
 
                             case Keyboard::BackSpace:
                                 partida->console.deleteChar();
+                                break;
+
+                            case Keyboard::Up:
+                                partida->console.getLastCommand();
                                 break;
                         }
                         break;

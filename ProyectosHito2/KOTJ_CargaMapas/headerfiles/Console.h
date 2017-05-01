@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /* 
  * File:   Console.h
@@ -17,6 +12,7 @@
 #include <iostream>
 #include <string.h>
 #include <functional>
+#include <vector>
 #include "../motorgrafico/headerfiles/Texto.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/resources.h"
@@ -60,6 +56,8 @@ public:
      */
     void draw();
     
+    void getLastCommand();
+    
     bool getConsoleInScreen();
 
     virtual ~Console();
@@ -71,6 +69,10 @@ private:
     Texto *consoleText; /**Texto que se muestra en la consola*/
     std::string consoleString; /**String que se va concatenando continuamente y se asigna al texto drawable*/
     std::string commandString; /**String que contiene el valor del comando actual*/
+    std::vector<std::string> commandStringVector; /**Vector que contiene los comandos de consola*/
+    int lastCommand;
+    //std::string backup;
+    
     int nlines;
     std::map<std::string, std::function<void (int) >> *functionMap; /**HashMap de las funciones de la consola*/
 
@@ -78,4 +80,3 @@ private:
 };
 
 #endif /* CONSOLE_H */
-
