@@ -404,7 +404,9 @@ void IAController::update() {
         pos.push_back(PosX);
         pos.push_back(PosY);
         pos.push_back(distancia);
-        seguir = partida->worldControlador.at(ControladorSeguir);
+        if (partida->worldControlador.at(ControladorSeguir) != NULL) {
+            seguir = partida->worldControlador.at(ControladorSeguir);
+        }
         cout << ControladorSeguir << endl;
     }
     //Buscar zona para arriba

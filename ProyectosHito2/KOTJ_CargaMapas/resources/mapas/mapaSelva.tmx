@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="70" height="40" tilewidth="32" tileheight="32" nextobjectid="97">
  <properties>
-  <property name="fondo" value="./resources/fondos/jungle.png"/>
+  <property name="fondo" value="./resources/fondos/fondoJungle.png"/>
  </properties>
  <tileset firstgid="1" source="../../../../Escritorio/KOTJ.tsx"/>
  <layer name="Escenario" width="70" height="40" offsetx="0" offsety="32">

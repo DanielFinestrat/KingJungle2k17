@@ -11,9 +11,13 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
                         tiles("./resources/sprites/tilesheet.png"),
-                        fondoJungla("./resources/fondos/jungle.png"),
-			fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
-			fondoHielo2("./resources/fondos/fondoHielo2.jpg")
+                        fondoJungle("./resources/fondos/fondoJungle.jpg"),
+                        fondoHielo("./resources/fondos/fondoHielo.jpg"),
+                        fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
+                        fondoSeleccion("./resources/fondos/fondoSeleccion.jpg"),
+                        fondoCueva("./resources/fondos/fondoCueva.jpg"),
+                        fondoMandala("./resources/fondos/fondoMandala.jpg"),
+                        fondoMar("./resources/fondos/fondoMar.jpg")
                         { initialise(); }
 
 
@@ -60,9 +64,13 @@ bool Resources::loadAll() {
     if (!loadTexture(sprites)) return false;
     if (!loadTexture(armas)) return false;
     if (!loadTexture(tiles)) return false;
-    if (!loadTexture(fondoJungla)) return false;
+    if (!loadTexture(fondoJungle)) return false;
+    if (!loadTexture(fondoHielo)) return false;
     if (!loadTexture(fondoHielo1)) return false;
-    if (!loadTexture(fondoHielo2)) return false;
+    if (!loadTexture(fondoSeleccion)) return false;
+    if (!loadTexture(fondoCueva)) return false;
+    if (!loadTexture(fondoMandala)) return false;
+    if (!loadTexture(fondoMar)) return false;
   return true;
 }
 

@@ -147,11 +147,9 @@ void Motorgrafico::eventListener(int &e) {
                         if (partida->getUsingKeyboard() == true)
                             partida->worldControlador.at(partida->findKeyboardControlador())->pressUpdateState(event.key.code);
                         switch (event.key.code) {
+                            
                             case sf::Keyboard::F2:
-                                if (partida->getUsingKeyboard() == false) {
-                                    partida->addPlayerKeyboard();
-                                    partida->setUsingKeyboard(true);
-                                }
+                                if (partida->getUsingKeyboard() == false) partida->addPlayerKeyboard();
                                 break;
 
                             case Keyboard::F3:

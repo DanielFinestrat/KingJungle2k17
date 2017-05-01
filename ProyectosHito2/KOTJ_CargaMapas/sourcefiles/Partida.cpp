@@ -102,6 +102,8 @@ void Partida::Erase() {
 }
 
 void Partida::Update() {
+
+    //cout<<worldControlador.size()<<", "<<worldPlayer.size()<<endl;
     Motorfisico::getInstance()->Update();
     Motorgrafico::getInstance()->updateWindow();
 
@@ -191,7 +193,7 @@ int Partida::findControladorWithId(int id) {
 void Partida::checkJoysticksConnected() {
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
-        if (joystickManager.isConnected(i)) {
+        if (joystickManager.isConnected(i) && worldPlayer.size() < 4) {
             addPlayerJoystick(i);
         }
     }
@@ -202,23 +204,31 @@ void Partida::addPlayerJoystick(int id) {
     bool add = true;
 
     //Comprobamos si existe el mando y actualizamos la condición
-    for (int i = 0; i < worldControlador.size() && add; i++) {
+    for (int i = 0;add && i < worldControlador.size(); i++) {
         if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) add = false;
+    }
+    
+    if (worldPlayer.size() >= 4){
+        cout<<"hay demasiados jugadores"<<endl;
+        add = false;
     }
 
     //Añadimos en funcion de la condición
-    if (add && worldControlador.size() < 4) {
+    if (add) {
         PlayerJoystick* p = new PlayerJoystick(id);
         worldControlador.push_back(p);
     }
 }
 
 void Partida::addPlayerKeyboard() {
-    if (worldControlador.size() < 4) worldControlador.push_back(new PlayerKeyboard());
+    if (worldPlayer.size() < 4) {
+        setUsingKeyboard(true);
+        worldControlador.push_back(new PlayerKeyboard());
+    }
 }
 
 void Partida::addPlayerIA() {
-    if (worldControlador.size() < 4) worldControlador.push_back(new IAController());
+    if (worldPlayer.size() < 4) worldControlador.push_back(new IAController());
 }
 
 void Partida::respawn() {

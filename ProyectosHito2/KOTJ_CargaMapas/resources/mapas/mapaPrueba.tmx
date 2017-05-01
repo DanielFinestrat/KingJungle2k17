@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="35" height="20" tilewidth="32" tileheight="32" nextobjectid="26">
  <properties>
-  <property name="fondo" value="./resources/fondos/jungle.png"/>
+  <property name="fondo" value="./resources/fondos/fondoJungle.png"/>
  </properties>
  <tileset firstgid="1" source="../../../../Escritorio/KOTJ.tsx"/>
  <objectgroup name="Plataformas" visible="0">

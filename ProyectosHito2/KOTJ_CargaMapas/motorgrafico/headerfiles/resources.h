@@ -30,9 +30,13 @@ class Resources {
         const string sprites;
         const string armas;
         const string tiles;
-        const string fondoJungla;
-	const string fondoHielo1;
-	const string fondoHielo2;        
+        const string fondoJungle;        
+        const string fondoHielo;        
+        const string fondoHielo1;        
+        const string fondoSeleccion;        
+        const string fondoCueva;        
+        const string fondoMandala;        
+        const string fondoMar;        
 
     private:
         Resources();

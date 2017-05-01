@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="32" tileheight="32" nextobjectid="1">
+ <properties>
+  <property name="fondo" value="./resources/fondos/fondoMandala.jpg"/>
+ </properties>
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
   <image source="tilesheet_complete.png" width="1408" height="768"/>
   <terraintypes>
