@@ -11,13 +11,13 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
                         tiles("./resources/sprites/tilesheet.png"),
-                        fondoJungle("./resources/fondos/fondoJungle.jpg"),
+                        fondoCueva("./resources/fondos/fondoCueva.png"),
                         fondoHielo("./resources/fondos/fondoHielo.jpg"),
                         fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
-                        fondoSeleccion("./resources/fondos/fondoSeleccion.jpg"),
-                        fondoCueva("./resources/fondos/fondoCueva.jpg"),
+                        fondoJungle("./resources/fondos/fondoJungle.png"),
                         fondoMandala("./resources/fondos/fondoMandala.jpg"),
-                        fondoMar("./resources/fondos/fondoMar.jpg")
+                        fondoMar("./resources/fondos/fondoMar.jpg"),
+                        fondoSeleccion("./resources/fondos/fondoSeleccion.png")
                         { initialise(); }
 
 
