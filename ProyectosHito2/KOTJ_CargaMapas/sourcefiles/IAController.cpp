@@ -155,7 +155,7 @@ void IAController::interact() {
         releaseUpdateState(2);
         if (!player->hasWeapon()) {
             estado = "buscarArma";
-        } else if (player->getWeapon()->ammo <= 0) {
+        } else if (player->getWeapon()->ammo != 0) {
             pressUpdateState(1);
             releaseUpdateState(1);
         }
@@ -270,7 +270,7 @@ vector<float> IAController::buscarArma() {
     for (int i = 0; i < partida->worldWeapons.size(); i++) {
         if (partida->worldWeapons.at(i) != NULL) {
             Weapon* arma = partida->worldWeapons.at(i);
-            if (!arma->inPossession && arma->ammo > 0) {
+            if (!arma->inPossession && arma->ammo != 0) {
                 //cout << i << endl;
                 float positionX = arma->cuerpo->getPosicionX();
                 float positionY = arma->cuerpo->getPosicionY();
@@ -330,7 +330,7 @@ vector<float> IAController::buscarHuida() {
 
     for (int i = 0; i < partida->worldWeapons.size(); i++) {
         Weapon* weapon = partida->worldWeapons.at(i);
-        if (!weapon->inPossession && weapon->ammo > 0) {
+        if (!weapon->inPossession && weapon->ammo != 0) {
             estado = "buscarArma";
         }
     }
