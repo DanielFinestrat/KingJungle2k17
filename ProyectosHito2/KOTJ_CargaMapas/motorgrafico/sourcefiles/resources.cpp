@@ -103,7 +103,7 @@ bool Resources::loadTexture(string filename){
         delete texture; texture = NULL; return false;
     }
 
-    texture->setSmooth(true);
+    texture->setSmooth(false);
     textures.insert(pair<string, Texture*>(filename, texture));
     
     return true;

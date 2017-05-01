@@ -27,7 +27,7 @@ VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path, b
     else rectangle.setOrigin(sf::Vector2f(0, 0));
 
     tex = Resources::getInstance();
-    if(texPath!="") rectangle.setTexture(&tex->getTexture(texPath),0);
+    if(texPath!="") rectangle.setTexture(&tex->getTexture(texPath), 0);
 }
 
 VisibleBody::VisibleBody(float x, float y, float rad, std::string path){
@@ -35,7 +35,7 @@ VisibleBody::VisibleBody(float x, float y, float rad, std::string path){
     posY = y;
     radius = rad;
     
-    circle.setPosition(posX,posY);
+    circle.setPosition(posX, posY);
     circle.setRadius(radius);
     circle.setOrigin(radius/2.0f,radius/2.0f);
     circle.setScale(1,1);
