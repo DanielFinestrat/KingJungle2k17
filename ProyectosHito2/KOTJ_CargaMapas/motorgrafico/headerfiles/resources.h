@@ -31,7 +31,8 @@ class Resources {
         const string armas;
         const string tiles;
         const string fondoJungla;
-        
+	const string fondoHielo1;
+	const string fondoHielo2;        
 
     private:
         Resources();

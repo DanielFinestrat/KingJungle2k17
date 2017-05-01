@@ -11,7 +11,9 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
                         tiles("./resources/sprites/tilesheet.png"),
-                        fondoJungla("./resources/fondos/jungle.png")
+                        fondoJungla("./resources/fondos/jungle.png"),
+			fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
+			fondoHielo2("./resources/fondos/fondoHielo2.jpg")
                         { initialise(); }
 
 
@@ -59,6 +61,8 @@ bool Resources::loadAll() {
     if (!loadTexture(armas)) return false;
     if (!loadTexture(tiles)) return false;
     if (!loadTexture(fondoJungla)) return false;
+    if (!loadTexture(fondoHielo1)) return false;
+    if (!loadTexture(fondoHielo2)) return false;
   return true;
 }
 
