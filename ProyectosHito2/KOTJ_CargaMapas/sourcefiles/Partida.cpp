@@ -203,20 +203,19 @@ void Partida::addPlayerJoystick(int id) {
     //Para saber si la tenemos que añador
     bool add = true;
 
-    //Comprobamos si existe el mando y actualizamos la condición
-    for (int i = 0;add && i < worldControlador.size(); i++) {
-        if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) add = false;
-    }
-    
-    if (worldPlayer.size() >= 4){
-        cout<<"hay demasiados jugadores"<<endl;
-        add = false;
-    }
+    if (worldPlayer.size() < 4) {
+        //Comprobamos si existe el mando y actualizamos la condición
+        for (int i = 0; i < worldControlador.size() && add; i++) {
+            if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) add = false;
+        }
 
-    //Añadimos en funcion de la condición
-    if (add) {
-        PlayerJoystick* p = new PlayerJoystick(id);
-        worldControlador.push_back(p);
+        //Añadimos en funcion de la condición
+        if (add) {
+            PlayerJoystick* p = new PlayerJoystick(id);
+            worldControlador.push_back(p);
+        }
+    } else {
+        cout << "hay demasiados jugadores" << endl;
     }
 }
 

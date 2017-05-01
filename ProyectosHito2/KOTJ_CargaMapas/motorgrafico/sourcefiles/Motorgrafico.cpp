@@ -127,27 +127,45 @@ void Motorgrafico::eventListener(int &e) {
                         break;
 
                     case sf::Event::JoystickMoved:
+                    {
                         if (event.joystickMove.axis == Joystick::X) {
-                            partida->worldControlador.at(partida->findControladorWithId(event.joystickMove.joystickId))->checkAxisX(event.joystickMove.position);
+                            int pos = partida->findControladorWithId(event.joystickMove.joystickId);
+                            if (pos > 0 && pos < partida->worldPlayer.size()) {
+                                partida->worldControlador.at(partida->findControladorWithId(event.joystickMove.joystickId))->checkAxisX(event.joystickMove.position);
+                            }
                         }
                         if (event.joystickMove.axis == Joystick::Y) {
-                            partida->worldControlador.at(partida->findControladorWithId(event.joystickMove.joystickId))->checkAxisY(event.joystickMove.position);
+                            int pos = partida->findControladorWithId(event.joystickMove.joystickId);
+                            if (pos > 0 && pos < partida->worldPlayer.size()) {
+                                partida->worldControlador.at(partida->findControladorWithId(event.joystickMove.joystickId))->checkAxisY(event.joystickMove.position);
+                            }
                         }
                         break;
+                    }
 
                     case sf::Event::JoystickButtonPressed:
-                        partida->worldControlador.at(partida->findControladorWithId(event.joystickButton.joystickId))->pressUpdateState(event.joystickButton.button);
+                    {
+                        int pos = partida->findControladorWithId(event.joystickMove.joystickId);
+                        if (pos > 0 && pos < partida->worldPlayer.size()) {
+                            partida->worldControlador.at(partida->findControladorWithId(event.joystickButton.joystickId))->pressUpdateState(event.joystickButton.button);
+                        }
                         break;
+                    }
 
                     case sf::Event::JoystickButtonReleased:
-                        partida->worldControlador.at(partida->findControladorWithId(event.joystickButton.joystickId))->releaseUpdateState(event.joystickButton.button);
+                    {
+                        int pos = partida->findControladorWithId(event.joystickMove.joystickId);
+                        if (pos > 0 && pos < partida->worldPlayer.size()) {
+                            partida->worldControlador.at(partida->findControladorWithId(event.joystickButton.joystickId))->releaseUpdateState(event.joystickButton.button);
+                        }
                         break;
+                    }
 
                     case sf::Event::KeyPressed:
                         if (partida->getUsingKeyboard() == true)
                             partida->worldControlador.at(partida->findKeyboardControlador())->pressUpdateState(event.key.code);
                         switch (event.key.code) {
-                            
+
                             case sf::Keyboard::F2:
                                 if (partida->getUsingKeyboard() == false) partida->addPlayerKeyboard();
                                 break;
