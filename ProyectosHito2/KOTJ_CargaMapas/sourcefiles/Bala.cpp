@@ -55,8 +55,11 @@ void Bala::Update_Shape() {
     float distRecorridaY = fabs(posInicialY - posY);
     float distRecorridaTotal = distRecorridaX + distRecorridaY;
     
-    //Se comprueba si las balas salen de la pantalla
-    if (distRecorridaTotal > maxDist || posX < 0 - screenWidth || posX > screenWidth * 2 * MPP || posY > screenHeight * 2 * MPP) {
+    //Se comprueba si las balas salen del mapa
+    float mapaWidth = Partida::getInstance()->mapa->xTiles*33;
+    float mapaHeight = Partida::getInstance()->mapa->xTiles*33;
+    
+    if (distRecorridaTotal > maxDist || posX < 0 - mapaWidth || posX > mapaWidth * 2 * MPP || posY > mapaHeight * 2 * MPP) {
         partida->bullets2Delete.insert(this);
     }
 
