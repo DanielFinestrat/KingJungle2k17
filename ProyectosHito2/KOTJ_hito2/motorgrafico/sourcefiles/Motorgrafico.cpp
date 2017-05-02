@@ -550,7 +550,6 @@ Partida* Motorgrafico::getPartida() {
 }
 
 void Motorgrafico::deletePartida() {
-    partida->resetInstance();
     delete partida;
     partida = NULL;
 }

@@ -119,12 +119,12 @@ int Weapon::shoot() {
                 partida->worldBullets.insert(nuevaBala);
             }
 
-            if(!balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->shot);
+            if(balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->shot);
 
             return recoil;
         }
     } else {
-        if(!balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
+        if(balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
     }
     return 0;
 }

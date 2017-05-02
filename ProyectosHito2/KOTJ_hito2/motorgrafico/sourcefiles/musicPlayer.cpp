@@ -4,13 +4,13 @@
 using namespace std;
 using namespace sf;
 
-MusicPlayer::MusicPlayer(): menuMusic("resources/music/menuMusic.wav"),
-                            selecctionMusic("resources/music/selecctionMusic.wav"),
-                            battleMusic("resources/music/battleMusic.wav"),
-                            shot("resources/sfx/shot.wav"),
-                            fastReload("resources/sfx/fastReload.wav"),
-                            slowReload("resources/sfx/slowReload.wav"),
-                            emptyCartridge("resources/sfx/emptyCartridge.wav"){
+MusicPlayer::MusicPlayer() : menuMusic("resources/music/menuMusic.wav"),
+selecctionMusic("resources/music/selecctionMusic.wav"),
+battleMusic("resources/music/battleMusic.wav"),
+shot("resources/sfx/shot.wav"),
+fastReload("resources/sfx/fastReload.wav"),
+slowReload("resources/sfx/slowReload.wav"),
+emptyCartridge("resources/sfx/emptyCartridge.wav") {
     initialise();
     musicVolume = 5;
     sfxVolume = 5;
@@ -19,7 +19,9 @@ MusicPlayer::MusicPlayer(): menuMusic("resources/music/menuMusic.wav"),
 }
 
 bool MusicPlayer::initialise() {
-    if (loadAll()) { return true; }
+    if (loadAll()) {
+        return true;
+    }
     return false;
 }
 
@@ -40,7 +42,7 @@ bool MusicPlayer::loadAll() {
     if (!loadSoundBuffer(fastReload)) return false;
     if (!loadSoundBuffer(slowReload)) return false;
     if (!loadSoundBuffer(emptyCartridge)) return false;
-    
+
     if (!loadSound(menuMusic)) return false;
     if (!loadSound(selecctionMusic)) return false;
     if (!loadSound(battleMusic)) return false;
@@ -48,25 +50,27 @@ bool MusicPlayer::loadAll() {
     if (!loadSFX(fastReload)) return false;
     if (!loadSFX(slowReload)) return false;
     if (!loadSFX(emptyCartridge)) return false;
-  return true;
+    return true;
 }
 
-bool MusicPlayer::loadSoundBuffer(string filename){
+bool MusicPlayer::loadSoundBuffer(string filename) {
     if (soundBuffers.find(filename) != soundBuffers.end()) return false;
 
     SoundBuffer *soundBuffer = new SoundBuffer();
     err().rdbuf(NULL);
 
     if (!soundBuffer->loadFromFile(filename)) {
-        cout<<"ERROR CARGANDO"<<endl;
-        delete soundBuffer; soundBuffer = NULL; return false;
+        cout << "ERROR CARGANDO" << endl;
+        delete soundBuffer;
+        soundBuffer = NULL;
+        return false;
     }
-    
+
     Sound toPlay;
     toPlay.setBuffer(*soundBuffer);
     //toPlay.setBuffer(*soundBuffers.find(filename)->second);
     toPlay.play();
-    
+
     soundBuffers.insert(pair<string, SoundBuffer*>(filename, soundBuffer));
 
     return true;
@@ -76,27 +80,27 @@ SoundBuffer &MusicPlayer::getSoundBuffer(string filename) {
     return *(soundBuffers.find(filename)->second);
 }
 
-bool MusicPlayer::loadSound(string filename){
+bool MusicPlayer::loadSound(string filename) {
     if (sounds.find(filename) != sounds.end()) return false;
 
     Sound *sound = new Sound();
     err().rdbuf(NULL);
 
     sound->setBuffer(getSoundBuffer(filename));
-    
+
     sounds.insert(pair<string, Sound*>(filename, sound));
 
     return true;
 }
 
-bool MusicPlayer::loadSFX(string filename){
+bool MusicPlayer::loadSFX(string filename) {
     if (sfx.find(filename) != sfx.end()) return false;
 
     Sound *sound = new Sound();
     err().rdbuf(NULL);
 
     sound->setBuffer(getSoundBuffer(filename));
-    
+
     sfx.insert(pair<string, Sound*>(filename, sound));
 
     return true;
@@ -118,52 +122,49 @@ void MusicPlayer::playSFX(string filename) {
     getSFX(filename).play();
 }
 
-void MusicPlayer::pauseSound(string filename){
+void MusicPlayer::pauseSound(string filename) {
     getSound(filename).pause();
 }
 
-void MusicPlayer::stopSound(string filename){
+void MusicPlayer::stopSound(string filename) {
     getSound(filename).stop();
 }
 
-int MusicPlayer::getMusicVolume(){
+int MusicPlayer::getMusicVolume() {
     return musicVolume;
 }
-int MusicPlayer::getSFXVolume(){
+
+int MusicPlayer::getSFXVolume() {
     return sfxVolume;
 }
 
-void MusicPlayer::setMusicVolume(int vol){
+void MusicPlayer::setMusicVolume(int vol) {
     map<string, Sound*>::iterator it;
     musicVolume += vol;
-    if(musicVolume<=10 && musicVolume>=0){
-    for ( it = sounds.begin(); it != sounds.end(); it++ )
-        {
-            std::cout << it->first
-                      << std::endl ;
-            getSound(it->first).setVolume(musicVolume*10);
+    if (musicVolume <= 10 && musicVolume >= 0) {
+        for (it = sounds.begin(); it != sounds.end(); it++) {
+            /*std::cout << it->first
+                      << std::endl ;*/
+            getSound(it->first).setVolume(musicVolume * 10);
         }
-        cout<<"musica: "<<musicVolume*10<<endl;
-    }
-    else musicVolume = (musicVolume > 10) ? 10 : 0;
+        //cout << "musica: " << musicVolume * 10 << endl;
+    } else musicVolume = (musicVolume > 10) ? 10 : 0;
 }
 
-void MusicPlayer::setSFXVolume(int vol){
+void MusicPlayer::setSFXVolume(int vol) {
     map<string, Sound*>::iterator it;
-    sfxVolume += vol;  
-    if(sfxVolume<=10 && sfxVolume>=0){
-        for ( it = sfx.begin(); it != sfx.end(); it++ )
-        {
-            std::cout << it->first
-                      << std::endl ;
-            getSFX(it->first).setVolume(sfxVolume*10);
+    sfxVolume += vol;
+    if (sfxVolume <= 10 && sfxVolume >= 0) {
+        for (it = sfx.begin(); it != sfx.end(); it++) {
+            /*std::cout << it->first
+                      << std::endl ;*/
+            getSFX(it->first).setVolume(sfxVolume * 10);
         }
-        cout<<"sfx: "<<sfxVolume*10<<endl;
-    }
-    else sfxVolume = (sfxVolume > 10) ? 10 : 0;  
+        //cout << "sfx: " << sfxVolume * 10 << endl;
+    } else sfxVolume = (sfxVolume > 10) ? 10 : 0;
 }
 
-void MusicPlayer::setLoop(string filename){
+void MusicPlayer::setLoop(string filename) {
     getSound(filename).setLoop(true);
 }
 
