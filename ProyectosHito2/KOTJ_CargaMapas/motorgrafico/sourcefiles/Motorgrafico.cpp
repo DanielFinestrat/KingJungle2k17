@@ -17,7 +17,7 @@ Motorgrafico* Motorgrafico::getInstance() {
 
 Motorgrafico::Motorgrafico() {
     temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
-    partida = Partida::getInstance();
+    //partida = Partida::getInstance();
     window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     setFramerateLimitOn(60);
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
@@ -54,6 +54,7 @@ void Motorgrafico::cameraSetTransform() {
     float maxDifferenceY = 0;
 
     //Posición
+	Partida * partida = Partida::getInstance();
     for (int i = 0; i < partida->worldPlayer.size(); i++) {
         if (!partida->worldPlayer.at(i)->isPlayerDead()) {
             posX += partida->worldPlayer.at(i)->getPositionX();
@@ -114,6 +115,7 @@ void Motorgrafico::cameraSetTransform() {
 }
 
 void Motorgrafico::eventListener(int &e) {
+	Partida * partida = Partida::getInstance();
     switch (e) {
         case 2:
             while (window->pollEvent(event)) {
@@ -349,6 +351,7 @@ Temporizador* Motorgrafico::getTemporizador() {
 }
 
 void Motorgrafico::textEnteredConsole(Event even) {
+	Partida * partida = Partida::getInstance();
     if (partida->console.getConsoleInScreen() && even.text.unicode < 128 && (even.text.unicode != 13 && even.text.unicode != 9 && even.text.unicode != 8)) {
         std::string s = "";
         s += static_cast<char> (even.text.unicode);

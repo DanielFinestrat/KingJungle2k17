@@ -32,7 +32,8 @@ int main() {
             mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
             mg->getMusicPlayer()->setVolume(mg->getMusicPlayer()->menuMusic,50);
-            
+			
+            //->isOpen() es un método de sfml, creo que deberíamos crear un metodo en el motor grafico que haga totalmente lo mismo
             while(mg->getRenderWindow()->isOpen() && state == 1) {
                 menu->input(state, menu);
                 menu->update();

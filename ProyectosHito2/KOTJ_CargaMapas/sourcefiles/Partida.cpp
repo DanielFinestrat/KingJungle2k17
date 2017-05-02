@@ -22,6 +22,7 @@ Partida::Partida() {
 
 Partida* Partida::getInstance() {
     if (instance == NULL) instance = new Partida();
+	cout << "partida instanciada" << endl;
     return (instance);
 }
 

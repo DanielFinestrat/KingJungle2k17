@@ -12,8 +12,6 @@
 
 using namespace std;
 
-Partida * partida = Partida::getInstance();
-
 Console::Console() {
 
     consoleInScreen = false;
@@ -134,7 +132,7 @@ void Console::draw() {
 
 void suicideAll(int n) {
     //cout << "pum, tos muertos" << endl;
-
+	Partida * partida = Partida::getInstance();
     for (int i = 0; i < partida->worldPlayer.size(); i++) {
         partida->players2Delete.push_back(partida->worldPlayer.at(i));
     }
@@ -142,6 +140,7 @@ void suicideAll(int n) {
 
 void reviveAll(int n) {
     //cout << "pum, tos muertos" << endl;
+	Partida * partida = Partida::getInstance();
     partida->respawn();
 }
 
@@ -151,11 +150,13 @@ void infiniteTime(int n) {
 }
 
 void selectWeapon(int n) {
+	Partida * partida = Partida::getInstance();
     partida->factoriaArmas->cargarArmas(n);
 
 }
 
 void selectMap(int n) {
+	Partida * partida = Partida::getInstance();
     vector<string> maps = partida->mapa->mapas;
 
     if (n >= 0 && n < maps.size()) {

@@ -65,7 +65,7 @@ private:
     Motorgrafico();
     Motorgrafico(const Motorgrafico& orig);
     
-    Partida *partida;
+    //Partida *partida;
     
     Temporizador *temporizador;
     sf::Clock frameClock;
