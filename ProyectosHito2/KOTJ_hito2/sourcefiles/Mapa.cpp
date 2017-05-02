@@ -17,7 +17,6 @@ Mapa::Mapa() {
     mapas.push_back(mapaMar);
     mapas.push_back(mapaHielo);
     mapas.push_back(mapaLaberinto);
-    //mapas.push_back(mapaPsico);
 }
 
 Mapa::~Mapa() {

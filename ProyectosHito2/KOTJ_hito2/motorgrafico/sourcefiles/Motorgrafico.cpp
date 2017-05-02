@@ -16,8 +16,8 @@ Motorgrafico* Motorgrafico::getInstance() {
 }
 
 Motorgrafico::Motorgrafico() {
-    temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
-    partida = Partida::getInstance();
+    //temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
+    //partida = Partida::getInstance();
     window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     setFramerateLimitOn(60);
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
@@ -541,6 +541,7 @@ void Motorgrafico::textEnteredConsole(Event even) {
 }
 
 void Motorgrafico::createPartida() {
+    temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
     partida = Partida::getInstance();
 }
 
@@ -549,8 +550,9 @@ Partida* Motorgrafico::getPartida() {
 }
 
 void Motorgrafico::deletePartida() {
-    partida = NULL;
+    partida->resetInstance();
     delete partida;
+    partida = NULL;
 }
 
 Motorgrafico::~Motorgrafico() {

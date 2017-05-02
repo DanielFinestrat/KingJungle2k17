@@ -3,8 +3,10 @@
 #include "motorgrafico/headerfiles/Texto.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include "motorgrafico/headerfiles/musicPlayer.h"
-int state;
+
 using namespace std;
+
+int state;
 
 Menu* createMainMenu() {
     Texto* op1 = new Texto("Jugar", 18,"./resources/fonts/bits.ttf", 255, 0, 0);
@@ -56,6 +58,7 @@ Menu* createOptions() {
     Menu* menu = new Menu(vec, 512, 250);
     return menu;
 }
+
 Menu* createPause() {
     Texto* op1 = new Texto("1: Reanudar", 18,"./resources/fonts/bits.ttf", 255, 0, 0);
     Texto* op2 = new Texto("2: Volver al menu", 18,"./resources/fonts/bits.ttf", 255, 0, 0);
@@ -114,7 +117,6 @@ int main() {
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
             
             Motorgrafico::getInstance()->deletePartida();
-            
         }
         
         

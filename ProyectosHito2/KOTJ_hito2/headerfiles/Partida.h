@@ -96,6 +96,7 @@ public:
     void loadMap();
     void loadMap(string mapaStr);
     
+    void resetInstance();
     virtual ~Partida();
 
 private:

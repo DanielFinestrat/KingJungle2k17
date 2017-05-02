@@ -334,5 +334,10 @@ void Partida::loadMap(string mapaStr) {
     respawn();
 }
 
+void Partida::resetInstance() {
+    delete instance;
+    instance = NULL;
+}
+
 Partida::~Partida() {
 }
