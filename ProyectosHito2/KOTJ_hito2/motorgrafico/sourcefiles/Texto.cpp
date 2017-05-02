@@ -20,7 +20,7 @@ Texto::Texto(std::string t, int s, std::string p, int r, int g, int b) {
     text.setFont(font->getFont(fontPath));
     text.setCharacterSize(size);
     text.setString(string);
-    text.setFillColor(color);
+    text.setColor(color);
     text.setScale(1,1);
 }
 
@@ -41,7 +41,7 @@ Texto::Texto(int i, int s, std::string p, int r, int g, int b) {
     text.setFont(font->getFont(fontPath));
     text.setCharacterSize(size);
     text.setString(string);
-    text.setFillColor(color);
+    text.setColor(color);
     text.setScale(1,1);
 }
 
@@ -61,7 +61,7 @@ Texto::Texto(float i, int s, std::string p, int r, int g, int b) {
     text.setFont(font->getFont(fontPath));
     text.setCharacterSize(size);
     text.setString(string);
-    text.setFillColor(color);
+    text.setColor(color);
     text.setScale(1,1);
 }
 
@@ -101,7 +101,7 @@ void Texto::setColor(int r, int g, int b) {
     color.r = r;
     color.g = g;
     color.b = b;
-    text.setFillColor(color);
+    text.setColor(color);
 }
 
 void Texto::setFont(std::string p) {

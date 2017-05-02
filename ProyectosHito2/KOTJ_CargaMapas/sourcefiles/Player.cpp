@@ -319,7 +319,7 @@ void Player::interact() {
 }
 
 void Player::pause(bool paused) {
-
+	paused = !paused;
 }
 
 float Player::getPositionX() {

@@ -74,7 +74,7 @@ Menu* createPause() {
 }
 
 int main() {
-
+	bool empezada = false;
     state = 1;
     Menu* menu;
     Motorgrafico *mg = Motorgrafico::getInstance();
@@ -84,10 +84,12 @@ int main() {
     while (state != 0) {
 
         if (state == 1) {
+			empezada = false;
             menu = createMainMenu();
 
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
 
+			//->isOpen() es un método de sfml, creo que deberiamos crear un método en el motorgrafico que haga totalmente lo mismo
             while (mg->getRenderWindow()->isOpen() && state == 1) {
                 menu->input(state, menu);
                 menu->update();
@@ -98,8 +100,11 @@ int main() {
         }
 
         if (state == 2) {
-            Motorgrafico::getInstance()->createPartida();
-            Motorgrafico::getInstance()->getPartida()->loadMap();
+			if(!empezada){
+				Motorgrafico::getInstance()->createPartida();
+				Motorgrafico::getInstance()->getPartida()->loadMap();
+				empezada = true;
+			}
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->menuMusic);
             mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
@@ -115,7 +120,7 @@ int main() {
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
 
-            Motorgrafico::getInstance()->deletePartida();
+           //Motorgrafico::getInstance()->deletePartida();
         }
 
 
