@@ -59,13 +59,13 @@
    </animation>
   </tile>
  </tileset>
- <objectgroup name="Plataformas" visible="0">
+ <objectgroup name="Plataformas">
   <object id="16" name="platform" x="673.333" y="418.667" width="637.333" height="58.6667">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="18" name="platform" x="384" y="544" width="196" height="64">
+  <object id="18" name="platform" x="384" y="544" width="192" height="32">
    <properties>
     <property name="roz" value="5"/>
    </properties>
@@ -7508,7 +7508,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="60" height="40">
+ <layer name="IA subir" width="60" height="40" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

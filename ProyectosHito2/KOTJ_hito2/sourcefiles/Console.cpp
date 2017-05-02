@@ -159,7 +159,7 @@ void selectMap(int n) {
     vector<string> maps = partida->mapa->mapas;
 
     if (n >= 0 && n < maps.size()) {
-        cout << "entro" << endl;
+        //cout << "entro" << endl;
         partida->loadMap(maps.at(n));
     }
 }

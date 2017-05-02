@@ -177,7 +177,7 @@ int Partida::findKeyboardControlador() {
 }
 
 int Partida::findControladorWithId(int id) {
-    int index = -1;
+    int index = 0;
 
     for (int i = 0; i < worldControlador.size(); i++) {
         if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) {
@@ -214,7 +214,7 @@ void Partida::addPlayerJoystick(int id) {
             worldControlador.push_back(p);
         }
     } else {
-        cout << "hay demasiados jugadores" << endl;
+        //cout << "hay demasiados jugadores" << endl;
     }
 }
 

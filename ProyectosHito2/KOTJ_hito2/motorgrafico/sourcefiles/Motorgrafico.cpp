@@ -117,7 +117,7 @@ void Motorgrafico::eventListener(int &e) {
     switch (e) {
         case 2:
             while (window->pollEvent(event)) {
-                cout << event.key.code << endl;
+                //cout << event.key.code << endl;
                 switch (event.type) {
                     case sf::Event::Closed:
                         window->close();
