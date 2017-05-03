@@ -16,17 +16,12 @@ Motorgrafico* Motorgrafico::getInstance() {
 }
 
 Motorgrafico::Motorgrafico() {
-    //temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
-    //partida = Partida::getInstance();
     window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
     setFramerateLimitOn(60);
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     hudCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     setMainCameraView();
     setHudCameraView();
-}
-
-Motorgrafico::Motorgrafico(const Motorgrafico& orig) {
 }
 
 void Motorgrafico::setFramerateLimitOn(int framerate) {

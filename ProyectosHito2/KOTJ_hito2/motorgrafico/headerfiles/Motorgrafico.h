@@ -16,7 +16,6 @@
 #include "SpriteAnimated.h"
 #include "Temporizador.h"
 #include "musicPlayer.h"
-//#include "../../headerfiles/Console.h"
 
 class Motorgrafico {
 public:
@@ -66,7 +65,6 @@ public:
 
 private:
     Motorgrafico();
-    Motorgrafico(const Motorgrafico& orig);
 
     Partida *partida;
 

@@ -17,7 +17,7 @@ using namespace sf;
 
 class Fondo {
 public:
-    Fondo(string ruta);
+    Fondo(string ruta, bool pantallaCarga);
     virtual ~Fondo();
     
     void Update();
@@ -26,6 +26,7 @@ public:
     
 private:
     Sprite* imagenFondo;
+    bool pantallaCarga;
     
 };
 

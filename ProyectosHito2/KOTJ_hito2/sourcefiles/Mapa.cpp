@@ -46,7 +46,7 @@ void Mapa::leerMapa(string mapa) {
     guardarCapas(map);
     guardarObj(map);
 
-    fondo = new Fondo(fondostr);
+    fondo = new Fondo(fondostr, false);
 }
 
 void Mapa::guardarFondo(TiXmlElement* map) {
