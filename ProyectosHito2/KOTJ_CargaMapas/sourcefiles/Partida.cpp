@@ -18,6 +18,7 @@ Partida::Partida() {
     mapa = NULL;
     factoriaArmas = NULL;
     indexMap = -1;
+    loadTextsNClock();
 }
 
 Partida* Partida::getInstance() {
@@ -44,6 +45,7 @@ void Partida::erasePlayers() {
         players2Delete.at(i)->die(players2Delete.at(i)->getDirMoving());
     }
     players2Delete.clear();
+    //finishRound();
 }
 
 void Partida::eraseWeapons() {
@@ -113,6 +115,7 @@ void Partida::Update() {
     updatePlayers(Motorgrafico::getInstance()->getFrameTime());
     updateBullets();
     updateExplo();
+    updateClock();
 
     cameraSetTransform();
 }
@@ -129,6 +132,7 @@ void Partida::Render() {
     mapa->drawMap();
 
     Motorgrafico::getInstance()->setHudCameraView();
+    drawText(0);
     console.draw();
 
     Motorgrafico::getInstance()->drawTemporizador();
@@ -162,6 +166,15 @@ void Partida::drawExplo() {
     for (; itExplo != endExplo; ++itExplo) {
         Explosion* renderExplo = *itExplo;
         Motorgrafico::getInstance()->draw(renderExplo->getBodyShape()->getCircleShape());
+    }
+}
+
+void Partida::drawText(int n) {
+    if (notFirstReset && n == 0)
+        Motorgrafico::getInstance()->draw(worldTexts.at(4)->getDrawable());
+    else if (n == 1) {
+        for (int i = 0; i < worldTexts.size() - 1; i++)
+            Motorgrafico::getInstance()->draw(worldTexts.at(i)->getDrawable());
     }
 }
 
@@ -277,6 +290,20 @@ void Partida::updateExplo() {
     }
 }
 
+void Partida::updateClock() {
+    cout << timeBetweenReset << endl;
+    if (notFirstReset) {
+        changeLevelClock.restartClock();
+        timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
+        if (timeBetweenReset > 4.0) {
+            notFirstReset = false;
+            timeBetweenReset = 0;
+            worldTexts.at(4)->setTexto("");
+            loadMap();
+        }
+    }
+}
+
 void Partida::cameraSetTransform() {
     Motorgrafico::getInstance()->cameraSetTransform();
 }
@@ -336,4 +363,45 @@ void Partida::loadMap(string mapaStr) {
 }
 
 Partida::~Partida() {
+}
+
+void Partida::finishRound() {
+    int alivePeople = 0;
+    for (int i = 0; i < worldPlayer.size(); i++) {
+        if (worldPlayer.at(i) != NULL && !worldPlayer.at(i)->isPlayerDead())
+            alivePeople++;
+    }
+    //&& changeLevelClock.getDeltaTimeAsSeconds() > 0.2
+    if (alivePeople == 1) {
+        cout << "winner" << endl;
+        Texto *plus1 = worldTexts.at(4);
+        plus1->setTexto("+1");
+        plus1->setPos(screenWidth / 2 + 30, screenHeight / 2 - 90);
+        //Motorgrafico::getInstance()->getMusicPlayer()->playSound(Motorgrafico::getInstance()->getMusicPlayer()->coin2);
+
+        changeLevelClock.restartClock();
+        notFirstReset = true;
+        timeBetweenReset = 0;
+    }
+}
+
+void Partida::loadTextsNClock() {
+    changeLevelClock = InnerClock();
+    changeLevelClock.restartClock();
+    notFirstReset = false;
+
+    Texto *text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
+    worldTexts.push_back(text);
+
+    text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
+    worldTexts.push_back(text);
+
+    text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
+    worldTexts.push_back(text);
+
+    text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
+    worldTexts.push_back(text);
+
+    text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
+    worldTexts.push_back(text);
 }
