@@ -17,6 +17,7 @@ Partida::Partida() {
     usingKeyboard = false;
     mapa = NULL;
     factoriaArmas = NULL;
+    factoriaTrampas = NULL;
     indexMap = -1;
 }
 
@@ -316,7 +317,6 @@ void Partida::setUsingKeyboard(bool state) {
 
 void Partida::loadMap() {
     checkJoysticksConnected();
-
     if (mapa != NULL) {
         delete(mapa);
         mapa = NULL;
@@ -326,11 +326,13 @@ void Partida::loadMap() {
         delete(factoriaArmas);
         factoriaArmas = NULL;
     }
-    
-
+    if (factoriaTrampas != NULL){
+        delete(factoriaTrampas);
+        factoriaTrampas = NULL;
+    }
     mapa = new Mapa();
-    mapa->leerMapa(mapa->getRandomMap());
-    
+    //mapa->leerMapa(mapa->getRandomMap());
+    mapa->leerMapa(mapa->mapaCueva);
 
     
     factoriaArmas = new Weaponspawner();

@@ -107,6 +107,7 @@ build/Debug/GNU-Linux/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp \
  sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
@@ -334,6 +335,8 @@ sourcefiles/../headerfiles/Trampa.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/TrapSpawner.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 

@@ -107,8 +107,7 @@ build/Debug/GNU-Linux/sourcefiles/PlayerKeyboard.o: \
  sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
- sourcefiles/../headerfiles/TrapSpawner.h \
- sourcefiles/../headerfiles/Partida.h
+ sourcefiles/../headerfiles/TrapSpawner.h
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:
 
@@ -329,5 +328,3 @@ sourcefiles/../headerfiles/IAController.h:
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/TrapSpawner.h:
-
-sourcefiles/../headerfiles/Partida.h:

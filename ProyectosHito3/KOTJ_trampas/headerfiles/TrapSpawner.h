@@ -17,7 +17,6 @@
 #include <vector>
 #include <cstdlib>
 #include "Trampa.h"
-#include "Partida.h"
 
 class TrapSpawner {
 public:

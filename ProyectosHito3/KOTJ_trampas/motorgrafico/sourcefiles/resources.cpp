@@ -11,6 +11,7 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
                         tiles("./resources/sprites/tilesheet.png"),
+                        spikes("./resources/sprites/trapSpike.png"),
                         fondoCueva("./resources/fondos/fondoCueva.png"),
                         fondoHielo("./resources/fondos/fondoHielo.jpg"),
                         fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
@@ -71,6 +72,7 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoCueva)) return false;
     if (!loadTexture(fondoMandala)) return false;
     if (!loadTexture(fondoMar)) return false;
+    if (!loadTexture(spikes))return false;
   return true;
 }
 

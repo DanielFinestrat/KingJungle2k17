@@ -109,8 +109,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/Trampa.h \
  motorgrafico/sourcefiles/../../headerfiles/IAController.h \
  motorgrafico/sourcefiles/../../headerfiles/../Box2D/Box2D.h \
- motorgrafico/sourcefiles/../../headerfiles/TrapSpawner.h \
- motorgrafico/sourcefiles/../../headerfiles/Partida.h
+ motorgrafico/sourcefiles/../../headerfiles/TrapSpawner.h
 
 motorgrafico/sourcefiles/../headerfiles/Temporizador.h:
 
@@ -331,5 +330,3 @@ motorgrafico/sourcefiles/../../headerfiles/IAController.h:
 motorgrafico/sourcefiles/../../headerfiles/../Box2D/Box2D.h:
 
 motorgrafico/sourcefiles/../../headerfiles/TrapSpawner.h:
-
-motorgrafico/sourcefiles/../../headerfiles/Partida.h:

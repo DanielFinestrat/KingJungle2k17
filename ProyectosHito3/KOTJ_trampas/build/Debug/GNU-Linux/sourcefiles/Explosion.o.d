@@ -108,8 +108,7 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
- sourcefiles/../headerfiles/TrapSpawner.h \
- sourcefiles/../headerfiles/Partida.h
+ sourcefiles/../headerfiles/TrapSpawner.h
 
 sourcefiles/../motorfisico/headerfiles/Motorfisico.h:
 
@@ -332,5 +331,3 @@ sourcefiles/../headerfiles/IAController.h:
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/TrapSpawner.h:
-
-sourcefiles/../headerfiles/Partida.h:

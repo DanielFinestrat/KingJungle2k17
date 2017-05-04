@@ -97,8 +97,7 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/Console.h headerfiles/../motorgrafico/headerfiles/Texto.h \
  headerfiles/Trampa.h headerfiles/IAController.h \
  headerfiles/../Box2D/Box2D.h headerfiles/TrapSpawner.h \
- headerfiles/Partida.h motorgrafico/headerfiles/Texto.h \
- motorgrafico/headerfiles/Motorgrafico.h \
+ motorgrafico/headerfiles/Texto.h motorgrafico/headerfiles/Motorgrafico.h \
  motorgrafico/headerfiles/../../headerfiles/Partida.h \
  motorgrafico/headerfiles/../../headerfiles/Menu.h \
  motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
@@ -326,8 +325,6 @@ headerfiles/IAController.h:
 headerfiles/../Box2D/Box2D.h:
 
 headerfiles/TrapSpawner.h:
-
-headerfiles/Partida.h:
 
 motorgrafico/headerfiles/Texto.h:
 

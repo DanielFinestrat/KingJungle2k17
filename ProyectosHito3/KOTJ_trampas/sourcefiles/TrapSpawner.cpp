@@ -14,8 +14,10 @@
 #include <vector>
 
 #include "../headerfiles/TrapSpawner.h"
+#include "../headerfiles/Partida.h"
 
 TrapSpawner::TrapSpawner() {
+    leerSpawnerPosition();
     crearTrampas();
 }
 
@@ -27,7 +29,7 @@ TrapSpawner::~TrapSpawner() {
 
 
 void TrapSpawner::crearTrampas(){
-    int posX, posY, type, sizeX, sizeY;
+    int posX, posY, type, sizeX, sizeY, time;
     vector<int> trapDate;
     Trampa* trap = NULL;
     for(int i = 0; i < spawnTraps.size(); i++){
@@ -37,12 +39,11 @@ void TrapSpawner::crearTrampas(){
         type = trapDate.at(2);
         sizeX = trapDate.at(3);
         sizeY = trapDate.at(4);
-        
-        trap = new Trampa(sizeX, sizeY, posX, posY, type,0);
+        time = trapDate.at(5);
+        trap = new Trampa(sizeX, sizeY, posX, posY, type,0, time);
         
         Partida::getInstance()->worldTraps.push_back(trap);
         
-
     }    
         
     
@@ -59,5 +60,5 @@ void TrapSpawner::borrarTrampas(){
     
 }
 void TrapSpawner::leerSpawnerPosition(){
-    spawnTraps = Partida::getInstance()->mapa->getSpawnArmas();
+    spawnTraps = Partida::getInstance()->mapa->getSpawnTrampas();
 }

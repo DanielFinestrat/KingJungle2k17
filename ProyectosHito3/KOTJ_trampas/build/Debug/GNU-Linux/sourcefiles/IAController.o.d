@@ -106,8 +106,7 @@ build/Debug/GNU-Linux/sourcefiles/IAController.o: \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/IAController.h \
- sourcefiles/../headerfiles/TrapSpawner.h \
- sourcefiles/../headerfiles/Partida.h
+ sourcefiles/../headerfiles/TrapSpawner.h
 
 sourcefiles/../headerfiles/IAController.h:
 
@@ -328,5 +327,3 @@ sourcefiles/../headerfiles/Trampa.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/TrapSpawner.h:
-
-sourcefiles/../headerfiles/Partida.h:

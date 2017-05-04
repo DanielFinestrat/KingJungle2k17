@@ -132,6 +132,7 @@ void Mapa::guardarObj(TiXmlElement* map) {
     int _type = 0;
     int _posX = 0;
     int _posY=0;
+    int _time=0;
     string tipo;
 
     for (int l = 0; l < _numLayers; l++) {
@@ -180,16 +181,17 @@ void Mapa::guardarObj(TiXmlElement* map) {
             } else if (tipo.compare("trampa") == 0) {
                 object->QueryIntAttribute("x", &_posX);
                 object->QueryIntAttribute("y", &_posY);
-                object->QueryIntAttribute("type", &_type);
+                object->QueryIntAttribute("tipo", &_type);
                 object->QueryIntAttribute("width", &_sizeX);
                 object->QueryIntAttribute("height", &_sizeY);
+                object->QueryIntAttribute("time", &_time);
                 vector<int> posicion;
                 posicion.push_back(_posX);
                 posicion.push_back(_posY);
                 posicion.push_back(_type);
                 posicion.push_back(_sizeX);
                 posicion.push_back(_sizeY);
-
+                posicion.push_back(_time);
                 spawnTrampas.push_back(posicion);
             }
             object = object->NextSiblingElement("object");

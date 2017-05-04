@@ -22,7 +22,6 @@ void ContactListener::BeginContact(b2Contact* contact) {
 	string tagB = entidadB->getTag();
 
 	//cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
-
 	//Colisión con Balas
 	if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
 		if (entidadA->getTag().compare("Bala") == 0) {
@@ -77,26 +76,31 @@ void ContactListener::BeginContact(b2Contact* contact) {
         //Colisión con trampas
         else if (entidadA->getTag().compare("Trampa") == 0 || entidadB->getTag().compare("Trampa") == 0) {
 		if (entidadA->getTag().compare("Trampa") == 0) {
+                    cout<<"Prueba 1"<<endl;
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataA);
 			if (entidadB->getTag().compare("Player") == 0) {
-				Player* player = static_cast<Player*> (bodyUserDataB);
+			cout<<"Prueba 2"<<endl;	
+                            Player* player = static_cast<Player*> (bodyUserDataB);
 				int dir = -1;
 				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
+                                cout<<"Prueba 3"<<endl;
 				partida->players2Delete.push_back(player);
 			}
 		} else if (entidadB->getTag().compare("Trampa") == 0) {
+                    cout<<"Prueba 4"<<endl;
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataB);
 			if (entidadA->getTag().compare("Player") == 0) {
+                            cout<<"Prueba 5"<<endl;
 				Player* player = static_cast<Player*> (bodyUserDataA);
 				int dir = -1;
+                                cout<<"Prueba 6"<<endl;
 				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
 				partida->players2Delete.push_back(player);
 			}
 		}
 	}
-        
 }
 
 

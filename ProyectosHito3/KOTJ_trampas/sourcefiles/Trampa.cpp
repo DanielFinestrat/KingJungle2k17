@@ -9,12 +9,13 @@
 #include "../headerfiles/Trampa.h"
 #include "../motorfisico/headerfiles/Motorfisico.h"
 
+
 #define VELTRAP 5 //Velocidad que tendra la trampa
 
 using namespace std;
 using namespace sf;
 
-Trampa::Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle) {
+Trampa::Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle, int tiempo) {
     tag = "Trampa";
     id = type;
     estado = false;
@@ -23,6 +24,7 @@ Trampa::Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle) 
     m_SizeY = sizeY;
     iniPosX = posX;
     iniPosY = posY;
+    time = tiempo;
 
     cuerpo = Motorfisico::getInstance()->crearCuerpo(posX, posY, sizeX, sizeY, angle, this);
     
@@ -36,7 +38,8 @@ Trampa::Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle) 
                 cuerpo->setType(2);
                 cuerpo->setMaskBits(MASK_TRAMPA1);//Colisiona con jugadores
                 cuerpo->setSensor(true);
-                m_vBody->setTex("");
+                cout<<"pureb"<<endl;
+                m_vBody->setTex(Resources::getInstance()->spikes);
                 break;
             case 1: //Zona de muerte solida
                 cuerpo->setType(0);
@@ -139,18 +142,19 @@ void Trampa::update() {
     float angle = cuerpo->getAngulo();
     int posX = cuerpo->getPosicionX();
     int posY = cuerpo->getPosicionY();
-    //int velY;
+    int velY;
 
     m_vBody->setPos(posX*PPM, posY * PPM);
     m_vBody->setAngle(angle);
 
-    /*if (iniPosY >= posY * PPM + m_SizeY && cuerpo->getVelocidadY() < 0) {
+    if (iniPosY >= posY * PPM + m_SizeY && cuerpo->getVelocidadY() < 0) {
         velY = 0;
+        cout<<"Prueba"<<endl;
         cuerpo->setVelocidadY(velY);
     } else if (iniPosY <= posY * PPM && cuerpo->getVelocidadY() > 0) {
         velY = 0;
         cuerpo->setVelocidadY(velY);
-    }*/
+    }
 
 }
 

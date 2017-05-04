@@ -106,7 +106,6 @@ build/Debug/GNU-Linux/sourcefiles/Console.o: sourcefiles/Console.cpp \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
- sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
@@ -334,8 +333,6 @@ sourcefiles/../headerfiles/IAController.h:
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
 
 sourcefiles/../headerfiles/TrapSpawner.h:
-
-sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 
