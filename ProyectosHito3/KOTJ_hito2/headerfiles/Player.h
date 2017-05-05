@@ -58,6 +58,7 @@ public:
     Weapon* getWeapon();
     bool isJumping();
     void checkMapBounds();
+    void Contact(void* punt, string tipo);
 
 private:
     Cuerpo *cuerpo;

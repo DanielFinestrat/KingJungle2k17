@@ -99,3 +99,7 @@ void Trampa::endContact() {
 Cuerpo* Trampa::getCuerpo(){
     return(this->cuerpo);
 }
+
+void Trampa::Contact(void* punt, string tipo){
+
+}

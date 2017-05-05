@@ -84,6 +84,13 @@ void Bala::Disparar(float velocidad, float angulo) {
     cuerpo->setGravityScale(0);
 }
 
+void Bala::Contact(void* punt, string tipo){
+	Partida *partida = Partida::getInstance();
+	if (partida->bullets2Delete.count(this) == 0){ 
+		partida->bullets2Delete.insert(this);
+	}
+}
+
 VisibleBody* Bala::getBodyShape() {
     return shape;
 }

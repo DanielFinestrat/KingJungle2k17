@@ -32,6 +32,10 @@ VisibleBody* Platform::getBodyShape() {
     return body;
 }
 
+void Platform::Contact(void* punt, string tipo){
+
+}
+
 Platform::~Platform() {
     cuerpo->Destruir();
     delete(cuerpo);

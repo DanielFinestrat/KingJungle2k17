@@ -50,6 +50,8 @@ public:
     */
     void Update();
     
+    void Contact(void* punt, string tipo);
+    
     /**
      * Devuelve el VisualBody 
      */

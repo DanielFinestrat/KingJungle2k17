@@ -59,6 +59,10 @@ VisibleBody* Explosion::getBodyShape(){
     return shape;
 }
 
+void Explosion::Contact(void* punt, string tipo){
+
+}
+
 Explosion::~Explosion() {
     cuerpo->Destruir();
     delete cuerpo;

@@ -20,34 +20,27 @@ void ContactListener::BeginContact(b2Contact* contact) {
 
 	string tagA = entidadA->getTag();
 	string tagB = entidadB->getTag();
-
+	
+	entidadA->Contact(bodyUserDataB, tagB);
+	entidadB->Contact(bodyUserDataA, tagA);
+	
+	// Player - Weapon - Bala - Explosion - Trampa
 	//cout << "BOOM colision - " << entidadA->getTag() << " - " << entidadB->getTag() << endl;
-
+/*
 	//Colisión con Balas
 	if (entidadA->getTag().compare("Bala") == 0 || entidadB->getTag().compare("Bala") == 0) {
 		if (entidadA->getTag().compare("Bala") == 0) {
 			Bala* bala = static_cast<Bala*> (bodyUserDataA);
-
 			if (entidadB->getTag().compare("Player") == 0) {
 				Player* player = static_cast<Player*> (bodyUserDataB);
-				int dir = -1;
-				if (bala->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
 			}
-			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
 
 		} else if (entidadB->getTag().compare("Bala") == 0) {
 			Bala* bala = static_cast<Bala*> (bodyUserDataB);
 
 			if (entidadA->getTag().compare("Player") == 0) {
 				Player* player = static_cast<Player*> (bodyUserDataA);
-				int dir = -1;
-				if (bala->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
 			}
-			if (partida->bullets2Delete.count(bala) == 0) partida->bullets2Delete.insert(bala);
 		}
 	}
         
@@ -56,20 +49,10 @@ void ContactListener::BeginContact(b2Contact* contact) {
 		if (entidadA->getTag().compare("Explosion") == 0) {
 			Explosion* explo = static_cast<Explosion*> (bodyUserDataA);
 			if (entidadB->getTag().compare("Player") == 0) {
-				Player* player = static_cast<Player*> (bodyUserDataB);
-				int dir = -1;
-				if (explo->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
 			}
 		} else if (entidadB->getTag().compare("Explosion") == 0) {
 			Explosion* explo = static_cast<Explosion*> (bodyUserDataB);
 			if (entidadA->getTag().compare("Player") == 0) {
-				Player* player = static_cast<Player*> (bodyUserDataA);
-				int dir = -1;
-				if (explo->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
 			}
 		}
 	}
@@ -79,11 +62,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 		if (entidadA->getTag().compare("Trampa") == 0) {
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataA);
 			if (entidadB->getTag().compare("Player") == 0) {
-				Player* player = static_cast<Player*> (bodyUserDataB);
-				int dir = -1;
-				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
-				player->changeDirection(dir);
-				partida->players2Delete.push_back(player);
+			
 			}
 		} else if (entidadB->getTag().compare("Trampa") == 0) {
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataB);
@@ -95,8 +74,7 @@ void ContactListener::BeginContact(b2Contact* contact) {
 				partida->players2Delete.push_back(player);
 			}
 		}
-	}
-        
+	}*/
 }
 
 

@@ -151,6 +151,10 @@ void Weapon::setDir(int i) {
     m_vBody->setScale(i, 1);
 }
 
+void Weapon::Contact(void* punt, string tipo){
+
+}
+
 Weapon::~Weapon() {
     cuerpo->Destruir();
     delete (cuerpo);

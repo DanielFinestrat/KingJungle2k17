@@ -64,11 +64,11 @@ void Motorgrafico::cameraSetTransform() {
         posY += esquina.at(1) * MPP;
         total++;
     }*/
-
-    posX = posX / total;
-    posY = posY / total;
-    mainCamera->setCenter(posX * PPM, posY * PPM);
-
+	if(total !=0){
+		posX = posX / total;
+		posY = posY / total;
+		mainCamera->setCenter(posX * PPM, posY * PPM);
+	}
 
     //Zoom
     for (int i = 0; i < partida->worldPlayer.size(); i++) {

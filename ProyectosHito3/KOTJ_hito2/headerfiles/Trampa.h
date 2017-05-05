@@ -49,6 +49,7 @@ public:
     void startContact();
     void endContact();
     VisibleBody* updateShape();
+    void Contact(void* punt, string tipo);
     
 private:
     int id;

@@ -26,6 +26,8 @@ public:
 
     VisibleBody* getBodyShape();
 
+     void Contact(void* punt, string tipo);
+    
     virtual ~Platform();
 private:
     

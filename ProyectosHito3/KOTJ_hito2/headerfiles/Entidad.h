@@ -39,6 +39,7 @@ public:
     Entidad(const Entidad& orig);
     
     virtual void Render();
+    virtual void Contact(void* punt, string tipo);
     
     string getTag();
     

@@ -20,6 +20,9 @@ string Entidad::getTag(){
     return tag;
 }
 
+void Entidad::Contact(void* punt, string tipo) {
+}
+
 Entidad::~Entidad() {
 }
 

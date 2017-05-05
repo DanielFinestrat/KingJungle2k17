@@ -94,6 +94,8 @@ public:
     void checkIfDelete();
     
     void doDelete();
+    
+    void Contact(void* punt, string tipo);
 };
 
 #endif /* WEAPON_H */

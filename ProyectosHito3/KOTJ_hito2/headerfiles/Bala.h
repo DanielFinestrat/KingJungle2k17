@@ -60,6 +60,9 @@ public:
      */
     void Disparar(float velocidad, float angulo);
     
+    
+    void Contact(void* punt, string tipo);
+    
     /**
      * 
      * @return el shape de la bala (VisibleBody) 

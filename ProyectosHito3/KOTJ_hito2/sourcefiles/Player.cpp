@@ -380,3 +380,29 @@ Weapon* Player::getWeapon() {
 bool Player::isJumping() {
     return !canJump;
 }
+
+void Player::Contact(void* punt, string tipo){
+	if(tipo.compare("Platform")!=0){
+		Partida* partida = Partida::getInstance();
+		int dir = -1;
+
+		if(tipo.compare("Bala")==0){
+			Bala* bala = static_cast<Bala*> (punt);
+			if (bala->cuerpo->getPosicionX() < this->getPositionX()){ 
+				dir = 1;
+			}
+		}else if(tipo.compare("Explosion")==0){
+			Explosion* explo = static_cast<Explosion*> (punt);
+			if (explo->cuerpo->getPosicionX() < this->getPositionX()){ 
+				dir = 1;
+			}
+		}else if(tipo.compare("Trampa")==0){
+			Trampa* trampa = static_cast<Trampa*> (punt);
+			if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()){ 
+				dir = 1;
+			}
+		}
+		this->changeDirection(dir);
+		partida->players2Delete.push_back(this);
+	}
+}
