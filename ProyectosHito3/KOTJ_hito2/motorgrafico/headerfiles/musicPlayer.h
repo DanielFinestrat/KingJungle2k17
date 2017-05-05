@@ -44,7 +44,10 @@ class MusicPlayer {
         const string fastReload;
         const string slowReload;
         const string emptyCartridge;
-        
+        const string coin1;		
+        const string coin2;		
+        const string explosion1;		
+        const string explosion2;
 
         
 

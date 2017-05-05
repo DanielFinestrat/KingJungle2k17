@@ -46,8 +46,14 @@ public:
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
     set<Explosion*> worldExplo;
+    vector<Texto*> worldTexts;
     vector<Player*> worldPlayer;
     vector<Controlador*> worldControlador;
+
+    InnerClock changeLevelClock;
+    bool notFirstReset;
+    bool finalLevelTextPrepared;
+    float timeBetweenReset;
 
     vector<Player*> players2Delete;
     vector<Platform*> platforms2Delete;
@@ -67,6 +73,7 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
+    void drawTexts(int n);
 
     void eraseBullets();
     void erasePlayers();
@@ -87,12 +94,16 @@ public:
     void updateWeapons();
     void updateExplo();
     void updateIA();
+    void updateClock();
 
     void cameraSetTransform();
 
     bool getUsingKeyboard();
     void setUsingKeyboard(bool state);
 
+    void finishRound();
+    void loadTextsNClock();
+    bool onlyOneAlive();
     void loadMap();
     void loadMap(string mapaStr);
 

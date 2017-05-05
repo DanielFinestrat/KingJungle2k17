@@ -149,6 +149,7 @@ void Player::checkMapBounds() {
 
     if (pY < maxY) {
         die(dirLooking);
+        Partida::getInstance()->players2Delete.push_back(this);
         //cuerpo->setVelocidad(0,0);
         //eraseBody();
     }

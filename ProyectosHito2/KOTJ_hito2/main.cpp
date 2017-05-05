@@ -107,7 +107,7 @@ int main() {
         if (state == 2) {
             if (!empezada) {
                 Motorgrafico::getInstance()->createPartida();
-                Motorgrafico::getInstance()->getPartida()->loadMap();
+                Motorgrafico::getInstance()->getPartida()->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 empezada = true;
             }
 

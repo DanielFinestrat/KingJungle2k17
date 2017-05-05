@@ -132,7 +132,7 @@ void Console::draw() {
 
 void suicideAll(int n) {
     //cout << "pum, tos muertos" << endl;
-	Partida * partida = Partida::getInstance();
+    Partida * partida = Partida::getInstance();
     for (int i = 0; i < partida->worldPlayer.size(); i++) {
         partida->players2Delete.push_back(partida->worldPlayer.at(i));
     }
@@ -140,7 +140,7 @@ void suicideAll(int n) {
 
 void reviveAll(int n) {
     //cout << "pum, tos muertos" << endl;
-	Partida * partida = Partida::getInstance();
+    Partida * partida = Partida::getInstance();
     partida->respawn();
 }
 
@@ -150,13 +150,13 @@ void infiniteTime(int n) {
 }
 
 void selectWeapon(int n) {
-	Partida * partida = Partida::getInstance();
+    Partida * partida = Partida::getInstance();
     partida->factoriaArmas->cargarArmas(n);
 
 }
 
 void selectMap(int n) {
-	Partida * partida = Partida::getInstance();
+    Partida * partida = Partida::getInstance();
     vector<string> maps = partida->mapa->mapas;
 
     if (n >= 0 && n < maps.size()) {
@@ -193,23 +193,25 @@ void Console::loadFunctions() {
 }
 
 void Console::getLastCommand() {
-    int vecsize = commandStringVector.size();
-    if (vecsize > 0) {
-        if (lastCommand == -1) {
-            lastCommand = vecsize - 1;
+    if (consoleInScreen) {
+        int vecsize = commandStringVector.size();
+        if (vecsize > 0) {
+            if (lastCommand == -1) {
+                lastCommand = vecsize - 1;
 
-            commandString = commandStringVector.at(lastCommand);
-            consoleString += commandString;
-            consoleText->setTexto(consoleString);
-        } else {
-            if (commandString.compare(commandStringVector.at(lastCommand)) == 0) {
-                if (lastCommand > 0 && lastCommand < vecsize) {
-                    lastCommand--;
-                    consoleString.resize(consoleString.length() - commandString.length());
+                commandString = commandStringVector.at(lastCommand);
+                consoleString += commandString;
+                consoleText->setTexto(consoleString);
+            } else {
+                if (commandString.compare(commandStringVector.at(lastCommand)) == 0) {
+                    if (lastCommand > 0 && lastCommand < vecsize) {
+                        lastCommand--;
+                        consoleString.resize(consoleString.length() - commandString.length());
 
-                    commandString = commandStringVector.at(lastCommand);
-                    consoleString += commandString;
-                    consoleText->setTexto(consoleString);
+                        commandString = commandStringVector.at(lastCommand);
+                        consoleString += commandString;
+                        consoleText->setTexto(consoleString);
+                    }
                 }
             }
         }
