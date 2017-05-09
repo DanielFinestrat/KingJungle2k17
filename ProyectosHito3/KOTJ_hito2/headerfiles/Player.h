@@ -59,6 +59,9 @@ public:
     bool isJumping();
     void checkMapBounds();
     void Contact(void* punt, string tipo);
+    
+    void give1Point();
+    int getPoints();
 
 private:
     Cuerpo *cuerpo;
@@ -87,6 +90,8 @@ private:
     float fuerzaSalto;
     float fuerzaMovimiento;
     float velocidadMaxima;
+    
+    int points;
 };
 
 #endif /* PLAYER_H */

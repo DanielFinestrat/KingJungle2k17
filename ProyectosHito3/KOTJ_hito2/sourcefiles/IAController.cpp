@@ -158,10 +158,10 @@ void IAController::interact() {
 }
 
 void IAController::moveTo(float PosX, float PosY, float dist, Controlador* seguir) {
-    cout << estado << endl;
+    //cout << estado << endl;
     if (!player->isJumping()) {
         if ((PosY > 0.9 && (seguir == NULL || !seguir->player->isJumping())) || dist > 10) {
-            cout << "superior" << endl;
+            //cout << "superior" << endl;
             int lugar = readTile(layerSubir);
             int dir = 0;
             switch (lugar) {
@@ -402,7 +402,7 @@ void IAController::update() {
         if (partida->worldControlador.at(ControladorSeguir) != NULL) {
             seguir = partida->worldControlador.at(ControladorSeguir);
         }
-        cout << ControladorSeguir << endl;
+        //cout << ControladorSeguir << endl;
     }
     //Buscar zona para arriba
     moveTo(pos.at(0), pos.at(1), pos.at(2), seguir);

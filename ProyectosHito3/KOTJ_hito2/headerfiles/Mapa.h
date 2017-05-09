@@ -30,6 +30,7 @@ public:
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
     const string mapaLaberinto = "./resources/mapas/mapaLaberinto.tmx";
+    const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
     vector<string> mapas;
     
     int ***_tilemap;
@@ -49,10 +50,12 @@ public:
     void guardarObj(TiXmlElement* map);
    
     string getRandomMap();
+    bool getIfFirstMap();
     vector< vector<int> > getEsquinas();
     vector< vector<int> > getSpawnArmas();
     vector< vector<int> > getSpawnTrampas();
     vector< vector<int> > getSpawnPlayer();
+    vector<VisibleBody*> aditionalSprites;
     
     void drawMap();
     void drawBackground();
@@ -60,6 +63,7 @@ public:
 private:
     string fondostr;
     Fondo* fondo;
+    bool firstMap;
     
     vector<VisibleBody*> map_sprites;
     vector< vector<int> > spawnArmas;

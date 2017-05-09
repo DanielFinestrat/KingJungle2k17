@@ -110,11 +110,15 @@ int main() {
                 Motorgrafico::getInstance()->getPartida()->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 empezada = true;
             }
-
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->menuMusic);
-            mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
-            mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->battleMusic);
 
+            if (Partida::getInstance()->mapa->getIfFirstMap()) {
+                mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->elevatorMusic);
+                mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->elevatorMusic);
+            } else {
+                mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
+                mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->battleMusic);
+            }
 
             while (mg->getRenderWindow()->isOpen() && state == 2) {
                 Motorgrafico::getInstance()->getPartida()->Input(state);
@@ -124,6 +128,7 @@ int main() {
             }
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
+            mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
 
             //Motorgrafico::getInstance()->deletePartida();
         }

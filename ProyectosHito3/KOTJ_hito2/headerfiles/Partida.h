@@ -95,6 +95,7 @@ public:
     void updateExplo();
     void updateIA();
     void updateClock();
+    void updateTexts();
 
     void cameraSetTransform();
 
@@ -103,9 +104,9 @@ public:
 
     void finishRound();
     void loadTextsNClock();
-    bool onlyOneAlive();
     void loadMap();
     void loadMap(string mapaStr);
+    void loadFinalMap();
 
     virtual ~Partida();
 

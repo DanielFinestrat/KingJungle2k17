@@ -17,6 +17,8 @@ Mapa::Mapa() {
     mapas.push_back(mapaMar);
     mapas.push_back(mapaHielo);
     mapas.push_back(mapaLaberinto);
+    mapas.push_back(mapaPodio);
+    firstMap = false;
 }
 
 Mapa::~Mapa() {
@@ -37,6 +39,18 @@ void Mapa::Update() {
 }
 
 void Mapa::leerMapa(string mapa) {
+    if (mapa.compare(mapaSeleccion) == 0) {
+        firstMap = true;
+        cout << firstMap << endl;
+    } else {
+        if (Partida::getInstance()->indexMap!=0) {
+            Motorgrafico *mg = Motorgrafico::getInstance();
+            mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
+            mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
+            mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->battleMusic);
+        }
+        firstMap = false;
+    }
     const char *cstr = mapa.c_str();
     TiXmlDocument doc(cstr);
     doc.LoadFile();
@@ -219,6 +233,10 @@ void Mapa::drawMap() {
         VisibleBody *body = map_sprites.at(i);
         Motorgrafico::getInstance()->draw(body->getShape());
     }
+    for (int i = 0; i < aditionalSprites.size(); i++) {
+        VisibleBody *body = aditionalSprites.at(i);
+        Motorgrafico::getInstance()->draw(body->getShape());
+    }
 }
 
 void Mapa::drawBackground() {
@@ -243,15 +261,18 @@ vector< vector<int> > Mapa::getSpawnPlayer() {
 
 string Mapa::getRandomMap() {
     int oldIndexMap = Partida::getInstance()->indexMap;
-    
+
     srand(time(NULL));
     int newIndexMap = -1;
-    
+
     do {
         newIndexMap = rand() % mapas.size();
     } while (newIndexMap == oldIndexMap || newIndexMap == 0);
-    
+
     Partida::getInstance()->indexMap = newIndexMap;
     return (mapas.at(newIndexMap));
 }
 
+bool Mapa::getIfFirstMap() {
+    return firstMap;
+}

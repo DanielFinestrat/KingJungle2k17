@@ -40,6 +40,7 @@ class MusicPlayer {
         const string menuMusic;
         const string selecctionMusic;
         const string battleMusic;
+        const string elevatorMusic;
         const string shot;
         const string fastReload;
         const string slowReload;
@@ -48,6 +49,9 @@ class MusicPlayer {
         const string coin2;		
         const string explosion1;		
         const string explosion2;
+        const string rocketShoot;
+        const string grenadeShoot;
+        const string gameOver1;
 
         
 
