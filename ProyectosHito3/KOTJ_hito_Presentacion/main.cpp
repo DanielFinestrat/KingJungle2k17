@@ -9,10 +9,10 @@ using namespace std;
 int state;
 
 Menu* createMainMenu() {
-    Texto* op1 = new Texto("Jugar", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Opciones de partida", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Opciones del juego", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op4 = new Texto("Salir", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Jugar", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Opciones de partida", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Opciones del juego", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op4 = new Texto("Salir", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(4);
     vec[0] = op1;
@@ -25,10 +25,10 @@ Menu* createMainMenu() {
 }
 
 Menu* createGameMenu() {
-    Texto* op1 = new Texto("Rondas", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Tiempo", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Modo", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op4 = new Texto("Volver", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Rondas", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Tiempo", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Modo", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op4 = new Texto("Volver", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(4);
     vec[0] = op1;
@@ -42,9 +42,9 @@ Menu* createGameMenu() {
 }
 
 Menu* createOptionsMenu() {
-    Texto* op1 = new Texto("Volumen de musica", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Volumen de efectos", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Volver", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Volumen de musica", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Volumen de efectos", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Volver", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(3);
     vec[0] = op1;
@@ -58,9 +58,9 @@ Menu* createOptionsMenu() {
 }
 
 Menu* createPause() {
-    Texto* op1 = new Texto("1: Reanudar", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("2: Volver al menu", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("3: Salir del juego", 18, "./resources/fonts/bits.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("1: Reanudar", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("2: Volver al menu", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("3: Salir del juego", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(3);
     vec[0] = op1;
@@ -76,10 +76,9 @@ int main() {
     state = 1;
     Menu* menu;
     Motorgrafico *mg = Motorgrafico::getInstance();
-
-    Fondo* fondoCarga = new Fondo("./resources/fondos/fondoCarga.png", true);
-    fondoCarga->Update();
-    fondoCarga->Render();
+    Fondo* fondo = new Fondo("./resources/fondos/fondoCarga.png", true);
+    fondo->Update();
+    fondo->Render();
 
     mg->createMusicPlayer();
     mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
@@ -87,16 +86,27 @@ int main() {
     while (state != 0) {
 
         if (state == 1) {
+            if (empezada) {
+                Partida::getInstance()->worldPlayer.clear();
+                Partida::getInstance()->worldControlador.clear();
+                Partida::getInstance()->setUsingKeyboard(false);
+            }
+            
             empezada = false;
             menu = createMainMenu();
-
+            
+            
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
 
             //->isOpen() es un método de sfml, creo que deberiamos crear un método en el motorgrafico que haga totalmente lo mismo
             while (mg->getRenderWindow()->isOpen() && state == 1) {
+                
                 menu->input(state, menu);
+                
                 menu->update();
+                
                 menu->render();
+                
             }
 
             menu = NULL;

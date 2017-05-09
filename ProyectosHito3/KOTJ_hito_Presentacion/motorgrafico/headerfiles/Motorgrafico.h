@@ -57,6 +57,8 @@ public:
 
     float getCameraPositionX();
     float getCameraPositionY();
+    int getWindowHeight();
+    int getWindowWidth();
 
     Temporizador* getTemporizador();
 

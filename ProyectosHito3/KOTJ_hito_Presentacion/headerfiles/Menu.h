@@ -13,6 +13,7 @@
 #include <vector>
 #include "../motorgrafico/headerfiles/Texto.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
+#include "../motorgrafico/headerfiles/Fondo.h"
 
 
 class Menu {
@@ -144,7 +145,8 @@ private:
     Texto* trounds, * ttime, * tmode, * tmVol, * tfxVol;
     int currentOpt, rounds, mode, musicVol, fxVol;
     float posX, posY, time;
-    VisibleBody* triangle, * triangle1, *  triangle2, *  rectangle;
+    VisibleBody* puntero, * puntero1, *  puntero2, *  rectangle;
+    Fondo* fondo;
 };
 
 #endif /* MENU_H */

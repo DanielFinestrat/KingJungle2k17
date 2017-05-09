@@ -26,7 +26,7 @@ class Resources {
         Image &getImage(string filename);
 
         const string myFont;
-        const string triangle;
+        const string menuFont;
         const string sprites;
         const string armas;
         const string tiles;
@@ -36,7 +36,9 @@ class Resources {
         const string fondoSeleccion;        
         const string fondoCueva;        
         const string fondoMandala;        
-        const string fondoMar;        
+        const string fondoMar;
+        const string fondoMenu;
+        const string puntero;
 
     private:
         Resources();

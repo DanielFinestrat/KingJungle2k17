@@ -112,6 +112,7 @@ build/Debug/GNU-Linux/sourcefiles/Weaponspawner.o: \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
  sourcefiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../motorgrafico/headerfiles/Temporizador.h \
@@ -344,6 +345,8 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
 sourcefiles/../motorgrafico/headerfiles/Animation.h:
 

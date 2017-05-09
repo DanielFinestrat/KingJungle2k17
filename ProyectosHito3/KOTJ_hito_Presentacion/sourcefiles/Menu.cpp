@@ -15,7 +15,9 @@ Menu::Menu(std::vector<Texto*> op, int x, int y) {
     posX = x;
     posY = y;
 
-    triangle = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
+    fondo = new Fondo("./resources/fondos/fondomenu.png", false);
+
+    puntero = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
 
     int inc;
     for (int i = 0; i < options.size(); i++) {
@@ -38,13 +40,14 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int r, float t, int m) {
     modes[0] = "Normal";
     modes[1] = "Recolectar monedas";
     modes[2] = "Clavar la bandera";
+    fondo = new Fondo("./resources/fondos/fondomenu.png", false);
 
-    trounds = new Texto(rounds, 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    ttime = new Texto(time, 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    tmode = new Texto(modes[mode - 1], 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    triangle = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
-    triangle1 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
-    triangle2 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
+    trounds = new Texto(rounds, 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    ttime = new Texto(time, 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    tmode = new Texto(modes[mode - 1], 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    puntero = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
+    puntero1 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
+    puntero2 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
 
     int inc;
     for (int i = 0; i < options.size(); i++) {
@@ -60,12 +63,14 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int vm, int vfx) {
     posY = y;
     musicVol = vm;
     fxVol = vfx;
-    
-    tmVol = new Texto(musicVol*10, 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    tfxVol = new Texto(fxVol*10, 18, "./resources/fonts/bits.ttf", 255, 0, 0);
-    triangle = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
-    triangle1 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
-    triangle2 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/triangle.png", true);
+    fondo = new Fondo("./resources/fondos/fondomenu.png", false);
+
+    tmVol = new Texto(musicVol * 10, 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    tfxVol = new Texto(fxVol * 10, 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    puntero = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
+    puntero1 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
+    puntero2 = new VisibleBody(posX, posY, 16, 16, "./resources/sprites/puntero.png", true);
+
 
     int inc;
     for (int i = 0; i < options.size(); i++) {
@@ -76,14 +81,18 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int vm, int vfx) {
 
 void Menu::update() {
     int inc;
+    int w = Motorgrafico::getInstance()->getWindowWidth();
+    int h = Motorgrafico::getInstance()->getWindowHeight();
 
+
+    fondo->setPosition(w / 2, h / 2);
     for (int i = 0; i < options.size(); i++) {
         inc = i * 20;
         if (i == currentOpt) {
             options[i]->setPos(posX + 5, posY + inc);
             options[i]->setColor(0, 255, 0);
-            triangle->setPos(posX - 20, posY + 16 + inc);
-            triangle->setAngle(90);
+            puntero->setPos(posX - 20, posY + 16 + inc);
+            puntero->setAngle(90);
 
 
         } else {
@@ -91,40 +100,42 @@ void Menu::update() {
             options[i]->setColor(255, 0, 0);
         }
     }
+
 }
 
 void Menu::gameUpdate() {
     int inc;
     int incX;
 
+    fondo->Update();
     for (int i = 0; i < options.size(); i++) {
         inc = i * 20;
 
         if (i == currentOpt) {
             options[i]->setPos(posX + 5, posY + inc);
             options[i]->setColor(0, 255, 0);
-            triangle->setPos(posX - 20, posY + 16 + inc);
-            triangle->setAngle(90);
+            puntero->setPos(posX - 20, posY + 16 + inc);
+            puntero->setAngle(90);
 
             if (i != 3) {
-                triangle1->setPos(posX + 85, posY + 16 + inc);
-                triangle1->setAngle(270);
+                puntero1->setPos(posX + 85, posY + 16 + inc);
+                puntero1->setAngle(270);
 
 
                 if (i == 0) {
                     trounds->setPos(posX + 100, posY + inc);
                     trounds->setColor(0, 255, 0);
                     incX = 100 + 15 * trounds->getStringLength();
-                    triangle2->setPos(posX + 130, posY + 16 + inc);
-                    triangle2->setAngle(90);
+                    puntero2->setPos(posX + 130, posY + 16 + inc);
+                    puntero2->setAngle(90);
                 }
 
                 if (i == 1) {
                     ttime->setPos(posX + 100, posY + inc);
                     ttime->setColor(0, 255, 0);
                     incX = 100 + 15 * ttime->getStringLength();
-                    triangle2->setPos(posX + 130, posY + 16 + inc);
-                    triangle2->setAngle(90);
+                    puntero2->setPos(posX + 130, posY + 16 + inc);
+                    puntero2->setAngle(90);
                 }
 
                 if (i == 2) {
@@ -134,8 +145,8 @@ void Menu::gameUpdate() {
                     if (mode == 2) incX = 270;
                     if (mode == 3) incX = 240;
 
-                    triangle2->setPos(posX + incX, posY + 16 + inc);
-                    triangle2->setAngle(90);
+                    puntero2->setPos(posX + incX, posY + 16 + inc);
+                    puntero2->setAngle(90);
                 }
             }
 
@@ -165,33 +176,35 @@ void Menu::gameUpdate() {
 void Menu::optionsUpdate() {
     int inc;
     int incX;
+
+    fondo->Update();
     for (int i = 0; i < options.size(); i++) {
         inc = i * 20;
 
         if (i == currentOpt) {
             options[i]->setPos(posX + 5, posY + inc);
             options[i]->setColor(0, 255, 0);
-            triangle->setPos(posX - 20, posY + 16 + inc);
-            triangle->setAngle(90);
+            puntero->setPos(posX - 20, posY + 16 + inc);
+            puntero->setAngle(90);
 
             if (i != 2) {
-                triangle1->setPos(posX + 285, posY + 16 + inc);
-                triangle1->setAngle(270);
+                puntero1->setPos(posX + 285, posY + 16 + inc);
+                puntero1->setAngle(270);
 
                 if (i == 0) {
                     tmVol->setPos(posX + 300, posY + inc);
                     tmVol->setColor(0, 255, 0);
-                    
-                    triangle2->setPos(posX + 340, posY + 16 + inc);
-                    triangle2->setAngle(90);
+
+                    puntero2->setPos(posX + 340, posY + 16 + inc);
+                    puntero2->setAngle(90);
                 }
 
                 if (i == 1) {
                     tfxVol->setPos(posX + 300, posY + inc);
                     tfxVol->setColor(0, 255, 0);
-                    
-                    triangle2->setPos(posX + 340, posY + 16 + inc);
-                    triangle2->setAngle(90);
+
+                    puntero2->setPos(posX + 340, posY + 16 + inc);
+                    puntero2->setAngle(90);
                 }
             }
 
@@ -235,11 +248,12 @@ void Menu::render() {
 
     Motorgrafico::getInstance()->clearWindow();
     Motorgrafico::getInstance()->setHudCameraView();
-
+    
     int i = 0;
 
-    triangle->updateBody();
-    Motorgrafico::getInstance()->draw(triangle->getShape());
+    puntero->updateBody();
+    fondo->Render();
+    Motorgrafico::getInstance()->draw(puntero->getShape());
     while (i < options.size()) {
         Motorgrafico::getInstance()->draw(options[i]->getDrawable());
         i++;
@@ -254,15 +268,15 @@ void Menu::renderGameMenu() {
 
 
     int i = 0;
+    fondo->Render();
+    puntero->updateBody();
+    puntero1->updateBody();
+    puntero2->updateBody();
 
-    triangle->updateBody();
-    triangle1->updateBody();
-    triangle2->updateBody();
-
-    Motorgrafico::getInstance()->draw(triangle->getShape());
+    Motorgrafico::getInstance()->draw(puntero->getShape());
     if (currentOpt != 3) {
-        Motorgrafico::getInstance()->draw(triangle1->getShape());
-        Motorgrafico::getInstance()->draw(triangle2->getShape());
+        Motorgrafico::getInstance()->draw(puntero1->getShape());
+        Motorgrafico::getInstance()->draw(puntero2->getShape());
     }
 
     while (i < options.size()) {
@@ -283,26 +297,26 @@ void Menu::renderOptionsMenu() {
 
 
     int i = 0;
+    fondo->Render();
+    puntero->updateBody();
+    puntero1->updateBody();
+    puntero2->updateBody();
 
-    triangle->updateBody();
-    triangle1->updateBody();
-    triangle2->updateBody();
-
-    Motorgrafico::getInstance()->draw(triangle->getShape());
+    Motorgrafico::getInstance()->draw(puntero->getShape());
     if (currentOpt != 2) {
-        Motorgrafico::getInstance()->draw(triangle1->getShape());
-        Motorgrafico::getInstance()->draw(triangle2->getShape());
+        Motorgrafico::getInstance()->draw(puntero1->getShape());
+        Motorgrafico::getInstance()->draw(puntero2->getShape());
     }
 
     while (i < options.size()) {
         Motorgrafico::getInstance()->draw(options[i]->getDrawable());
         i++;
     }
-    
+
     Motorgrafico::getInstance()->draw(tmVol->getDrawable());
     Motorgrafico::getInstance()->draw(tfxVol->getDrawable());
 
-    Motorgrafico::getInstance()->displayWindow();    
+    Motorgrafico::getInstance()->displayWindow();
 }
 
 void Menu::input(int &state, Menu* menu) {
@@ -368,28 +382,28 @@ void Menu::decreaseMode() {
 void Menu::increaseMusicVol() {
     if (musicVol < 10) {
         musicVol++;
-        tmVol->setTexto(musicVol*10);
+        tmVol->setTexto(musicVol * 10);
     }
 }
 
 void Menu::increaseFXVol() {
     if (fxVol < 10) {
         fxVol++;
-        tfxVol->setTexto(fxVol*10);
+        tfxVol->setTexto(fxVol * 10);
     }
 }
 
-void Menu::decreaseMusicVol(){
+void Menu::decreaseMusicVol() {
     if (musicVol > 0) {
         musicVol--;
-        tmVol->setTexto(musicVol*10);
+        tmVol->setTexto(musicVol * 10);
     }
 }
 
 void Menu::decreaseFXVol() {
     if (fxVol > 0) {
         fxVol--;
-        tfxVol->setTexto(fxVol*10);
+        tfxVol->setTexto(fxVol * 10);
     }
 }
 

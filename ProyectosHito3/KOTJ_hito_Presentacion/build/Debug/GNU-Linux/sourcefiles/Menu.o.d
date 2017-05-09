@@ -3,6 +3,7 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
@@ -105,7 +106,6 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Mapa.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../headerfiles/Platform.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
- sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h \
@@ -124,6 +124,8 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 
@@ -328,8 +330,6 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Mapa.h:
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../headerfiles/Platform.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:
-
-sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Console.h:
 

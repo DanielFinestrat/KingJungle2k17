@@ -7,7 +7,7 @@ using namespace std;
 static Resources* instance; 
 
 Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
-                        triangle("./resources/sprites/triangle.png"),
+                        menuFont("./resources/fonts/newrotic.ttf"),
                         sprites("./resources/sprites/sprites.png"),
                         armas("./resources/sprites/weapon_spritesheet.png"),
                         tiles("./resources/sprites/tilesheet.png"),
@@ -17,7 +17,9 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         fondoJungle("./resources/fondos/fondoJungle.png"),
                         fondoMandala("./resources/fondos/fondoMandala.jpg"),
                         fondoMar("./resources/fondos/fondoMar.jpg"),
-                        fondoSeleccion("./resources/fondos/fondoSeleccion.png")
+                        fondoSeleccion("./resources/fondos/fondoSeleccion.png"),
+                        fondoMenu("./resources/fondos/fondomenu.png"),
+                        puntero("./resources/sprites/puntero.png")
                         { initialise(); }
 
 
@@ -60,7 +62,7 @@ void Resources::cleanUp() {
 
 bool Resources::loadAll() {
     if (!loadFont(myFont)) return false;
-    if (!loadTexture(triangle)) return false;
+    if (!loadFont(menuFont)) return false;
     if (!loadTexture(sprites)) return false;
     if (!loadTexture(armas)) return false;
     if (!loadTexture(tiles)) return false;
@@ -71,6 +73,8 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoCueva)) return false;
     if (!loadTexture(fondoMandala)) return false;
     if (!loadTexture(fondoMar)) return false;
+    if (!loadTexture(fondoMenu)) return false;
+    if (!loadTexture(puntero)) return false;
   return true;
 }
 
@@ -79,7 +83,7 @@ bool Resources::loadFont(string filename) {
 
     Font *font = new Font();
     err().rdbuf(NULL);
-
+    
     if (!font->loadFromFile(filename)) {
         cout<<"Error cargando fuente"<<endl;
         delete font; font = NULL; return false;

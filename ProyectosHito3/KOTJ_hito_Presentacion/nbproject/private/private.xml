@@ -9,7 +9,11 @@
         <group>
             <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/motorgrafico/sourcefiles/Motorgrafico.cpp</file>
             <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/main.cpp</file>
+            <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/motorgrafico/headerfiles/resources.h</file>
+            <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/motorgrafico/sourcefiles/resources.cpp</file>
+            <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/motorgrafico/headerfiles/Motorgrafico.h</file>
             <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/headerfiles/Menu.h</file>
+            <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/motorgrafico/sourcefiles/Fondo.cpp</file>
             <file>file:/home/pedro/NetBeansProjects/KOTJ_hito_Presentacion/sourcefiles/Menu.cpp</file>
         </group>
     </open-files>

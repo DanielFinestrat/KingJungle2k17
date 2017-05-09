@@ -601,6 +601,14 @@ void Motorgrafico::deletePartida() {
     partida = NULL;
 }
 
+int Motorgrafico::getWindowHeight() {
+    return window->getSize().y;
+}
+
+int Motorgrafico::getWindowWidth() {
+    return window->getSize().x;
+}
+
 Motorgrafico::~Motorgrafico() {
 }
 
