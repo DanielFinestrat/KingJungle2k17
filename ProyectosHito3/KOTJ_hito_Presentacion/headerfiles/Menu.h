@@ -11,6 +11,8 @@
 
 #include <iostream>
 #include <vector>
+#include <sstream>
+#include <string>
 #include "../motorgrafico/headerfiles/Texto.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/Fondo.h"

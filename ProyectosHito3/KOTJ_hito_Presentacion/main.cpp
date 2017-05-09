@@ -9,10 +9,10 @@ using namespace std;
 int state;
 
 Menu* createMainMenu() {
-    Texto* op1 = new Texto("Jugar", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Opciones de partida", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Opciones del juego", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op4 = new Texto("Salir", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Jugar", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Opciones de partida", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Opciones del juego", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op4 = new Texto("Salir", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(4);
     vec[0] = op1;
@@ -20,15 +20,15 @@ Menu* createMainMenu() {
     vec[2] = op3;
     vec[3] = op4;
 
-    Menu* menu = new Menu(vec, 512, 250);
+    Menu* menu = new Menu(vec, 350, 200);
     return menu;
 }
 
 Menu* createGameMenu() {
-    Texto* op1 = new Texto("Rondas", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Tiempo", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Modo", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op4 = new Texto("Volver", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Rondas", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Tiempo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Modo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op4 = new Texto("Volver", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(4);
     vec[0] = op1;
@@ -36,15 +36,15 @@ Menu* createGameMenu() {
     vec[2] = op3;
     vec[3] = op4;
 
-    Menu* menu = new Menu(vec, 512, 250, 5, 20, 1);
+    Menu* menu = new Menu(vec, 350, 200, 5, 20, 1);
 
     return menu;
 }
 
 Menu* createOptionsMenu() {
-    Texto* op1 = new Texto("Volumen de musica", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("Volumen de efectos", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Volver", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Volumen de musica", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Volumen de efectos", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Volver", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(3);
     vec[0] = op1;
@@ -53,21 +53,21 @@ Menu* createOptionsMenu() {
     
     int vm = Motorgrafico::getInstance()->getMusicPlayer()->getMusicVolume();
     int vfx = Motorgrafico::getInstance()->getMusicPlayer()->getSFXVolume();
-    Menu* menu = new Menu(vec, 512, 250, vm, vfx);
+    Menu* menu = new Menu(vec, 350, 200, vm, vfx);
     return menu;
 }
 
 Menu* createPause() {
-    Texto* op1 = new Texto("1: Reanudar", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op2 = new Texto("2: Volver al menu", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("3: Salir del juego", 18, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Reanudar", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op2 = new Texto("Volver al menu", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Salir del juego", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(3);
     vec[0] = op1;
     vec[1] = op2;
     vec[2] = op3;
 
-    Menu* menu = new Menu(vec, 512, 250);
+    Menu* menu = new Menu(vec, 350, 200);
     return menu;
 }
 

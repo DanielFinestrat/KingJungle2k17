@@ -91,7 +91,6 @@
       <logicalFolder name="sprites" displayName="sprites" projectFiles="true">
         <itemPath>resources/sprites/sprites.png</itemPath>
         <itemPath>resources/sprites/tilesheet.png</itemPath>
-        <itemPath>resources/sprites/triangle.png</itemPath>
         <itemPath>resources/sprites/weapon_spritesheet.png</itemPath>
       </logicalFolder>
     </logicalFolder>
@@ -356,8 +355,6 @@
       <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/tilesheet.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites/triangle.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/weapon_spritesheet.png"
             ex="false"
@@ -639,8 +636,6 @@
       <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/tilesheet.png" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="resources/sprites/triangle.png" ex="false" tool="3" flavor2="0">
       </item>
       <item path="resources/sprites/weapon_spritesheet.png"
             ex="false"
