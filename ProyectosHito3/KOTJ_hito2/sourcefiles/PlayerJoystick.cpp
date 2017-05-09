@@ -49,7 +49,11 @@ PlayerJoystick::PlayerJoystick(int id) {
     this->id = id;
     
     player = new Player();
-    player->setPosition((partida->worldPlayer.size() + 1) * screenWidth / 5, screenHeight - 100);
+    vector<int> position = partida->mapa->getSpawnPlayer().at(0);
+    partida->mapa->spawnPlayer.erase(partida->mapa->spawnPlayer.begin());
+    partida->mapa->spawnPlayer.push_back(position);
+
+    player->setPosition(position.at(0), position.at(1));
     player->setColor(partida->worldPlayer.size());
 
     partida->worldPlayer.push_back(player);
