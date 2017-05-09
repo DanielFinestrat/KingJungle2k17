@@ -17,6 +17,7 @@ Partida::Partida() {
     usingKeyboard = false;
     mapa = NULL;
     factoriaArmas = NULL;
+    factoriaTrampas = NULL;
     indexMap = -1;
     loadTextsNClock();
 }
@@ -62,6 +63,13 @@ void Partida::erasePlatforms() {
     platforms2Delete.clear();
 }
 
+void Partida::eraseTraps() {
+    for (int i = 0; i< traps2Delete.size(); i++) {
+        delete(traps2Delete.at(i));
+    }
+    traps2Delete.clear();
+}
+
 void Partida::eraseBullets() {
     set<Bala*>::iterator itBala = bullets2Delete.begin();
 
@@ -101,6 +109,8 @@ void Partida::Erase() {
     eraseExplo();
     eraseWeapons();
     erasePlatforms();
+    eraseTraps();
+
 }
 
 void Partida::Update() {
@@ -115,6 +125,7 @@ void Partida::Update() {
     updateBullets();
     updateExplo();
     updateClock();
+    updateTraps();
     //updateTexts();
 
     cameraSetTransform();
@@ -130,6 +141,7 @@ void Partida::Render() {
     //drawTexts(1);
     drawWeapons();
     drawExplo();
+    drawTraps();
     mapa->drawMap();
 
     Motorgrafico::getInstance()->setHudCameraView();
@@ -149,6 +161,12 @@ void Partida::drawPlayers() {
 void Partida::drawWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
         if (worldWeapons.at(i) != NULL) Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
+    }
+}
+
+void Partida::drawTraps() {
+    for (int i = 0; i < worldTraps.size(); i++) {
+        if (worldTraps.at(i) != NULL) Motorgrafico::getInstance()->draw((worldTraps.at(i)->getVBody()->getShape()));
     }
 }
 
@@ -275,6 +293,13 @@ void Partida::updateWeapons() {
     }
 }
 
+void Partida::updateTraps() {
+    for (int i = 0; i < worldTraps.size(); i++) {
+        if (worldTraps.at(i) != NULL) worldTraps.at(i)->update();
+        
+    }
+}
+
 void Partida::updateBullets() {
     set<Bala*>::iterator itBala = worldBullets.begin();
     set<Bala*>::iterator endBala = worldBullets.end();
@@ -381,10 +406,16 @@ void Partida::loadMap() {
         factoriaArmas = NULL;
     }
 
+    if (factoriaTrampas != NULL){
+        factoriaTrampas->borrarTrampas();
+        delete(factoriaTrampas);
+        factoriaTrampas = NULL;
+    }
     mapa = new Mapa();
     mapa->leerMapa(mapa->getRandomMap());
 
     factoriaArmas = new Weaponspawner();
+    factoriaTrampas = new TrapSpawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
 
@@ -403,11 +434,18 @@ void Partida::loadMap(string mapaStr) {
         delete(factoriaArmas);
         factoriaArmas = NULL;
     }
+    
+    if (factoriaTrampas != NULL){
+        factoriaTrampas->borrarTrampas();
+        delete(factoriaTrampas);
+        factoriaTrampas = NULL;
+    }
 
     mapa = new Mapa();
     mapa->leerMapa(mapaStr);
 
     factoriaArmas = new Weaponspawner();
+    factoriaTrampas = new TrapSpawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
 
@@ -427,8 +465,11 @@ void Partida::loadFinalMap() {
         factoriaArmas = NULL;
     }
 
+    
+    
     mapa = new Mapa();
-    mapa->leerMapa(mapa->mapaPodio);
+    //mapa->leerMapa(mapa->mapaPodio);
+    mapa->leerMapa(mapa->mapaCueva);
     
     VisibleBody *podioVB = new VisibleBody(192, 160, 16, 16, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);

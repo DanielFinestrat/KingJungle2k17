@@ -30,7 +30,7 @@ public:
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
     const string mapaLaberinto = "./resources/mapas/mapaLaberinto.tmx";
-    const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
+    //const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
     vector<string> mapas;
     
     int ***_tilemap;
@@ -53,7 +53,7 @@ public:
     bool getIfFirstMap();
     vector< vector<int> > getEsquinas();
     vector< vector<int> > getSpawnArmas();
-    vector< vector<int> > getSpawnTrampas();
+    vector< vector<float> > getSpawnTrampas();
     vector< vector<int> > getSpawnPlayer();
     vector<VisibleBody*> aditionalSprites;
     
@@ -68,7 +68,7 @@ private:
     vector<VisibleBody*> map_sprites;
     vector< vector<int> > spawnArmas;
     vector< vector<int> > esquinasMapa;
-    vector< vector<int> > spawnTrampas;
+    vector< vector<float> > spawnTrampas;
     vector<Platform*> worldPlatforms;
     
 };

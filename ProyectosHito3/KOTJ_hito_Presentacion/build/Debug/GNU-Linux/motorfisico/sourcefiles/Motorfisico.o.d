@@ -74,7 +74,8 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/Motorfisico.o: \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h
 
 motorfisico/sourcefiles/../headerfiles/Motorfisico.h:
 
@@ -225,3 +226,5 @@ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfi
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:

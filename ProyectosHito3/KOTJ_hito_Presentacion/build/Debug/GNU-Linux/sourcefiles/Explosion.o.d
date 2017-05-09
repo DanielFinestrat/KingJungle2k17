@@ -74,6 +74,7 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
@@ -106,6 +107,7 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../headerfiles/Console.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h
 
@@ -259,6 +261,8 @@ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerf
 
 sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 sourcefiles/../headerfiles/Explosion.h:
 
 sourcefiles/../headerfiles/Entidad.h:
@@ -324,6 +328,8 @@ sourcefiles/../headerfiles/Console.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../headerfiles/Trampa.h:
+
+sourcefiles/../headerfiles/TrapSpawner.h:
 
 sourcefiles/../headerfiles/IAController.h:
 

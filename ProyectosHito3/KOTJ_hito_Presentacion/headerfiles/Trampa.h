@@ -17,23 +17,27 @@
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
+#include "../motorgrafico/headerfiles/InnerClock.h"
 
 using namespace std;
 
 class Trampa : public Entidad {
 public:
+    
+        Cuerpo *cuerpo;
+
 
     /**
-     * Constructor del objeto Bala
-     * @param mundo Motorfisico*: mundo en el que estan todos los objetos
+     * Constructor del objeto Trampa
      * @param sizeX int: ancho de la trampa
      * @param sizeY int: alto de la trampa
      * @param posX int: posicion inicial X
      * @param posY int: posicion inicial Y
-     * @param type int: tipo de trampa
+     * @param type int: tipo de trampa (0 = pinchos, 1 = zona mortal, 2 = palanca, 3 = tnt, 4 = nitro )
      * @param angle float: angulo de la trampa
+     * @param time int : tiempo activo
      */
-    Trampa(int sizeX, int sizeY, int posX, int posY, int type, float angle);
+    Trampa(float sizeX, float sizeY, float posX, float posY, int type, float angle, int time);
     Trampa(const Trampa& orig);
     virtual ~Trampa();
     int getID();
@@ -44,26 +48,26 @@ public:
     bool getEstado();
     bool getRoto();
     Cuerpo* getCuerpo();
+    VisibleBody* getVBody();
     void activar();
     void desactivar();
-    void startContact();
-    void endContact();
-    VisibleBody* updateShape();
+    void update();
+    float getSizeX();
     void Contact(void* punt, string tipo);
     
 private:
-    int id;
+    int id; //0 pinchos, 1 zona de muerte solida, 2 zona de muerte atravesable, 3 tnt, 4 nitroglicerina, 5 palanca, 6 placa de presion
     bool estado; //Activado(true) o desactivado(false)
     bool roto; //Roto (true) intacto (false)
-    int iniPosX;
-    int iniPosY;
-    bool contact;
-    Cuerpo *cuerpo;
-
+    float iniPosX;
+    float iniPosY;
+    int time;
+    InnerClock reloj;
+    float difTime;
     //Tamanyos
-    int m_SizeX;
-    int m_SizeY;
-    VisibleBody *m_Shape;
+    float m_SizeX;
+    float m_SizeY;
+    VisibleBody *m_vBody;
 
 };
 

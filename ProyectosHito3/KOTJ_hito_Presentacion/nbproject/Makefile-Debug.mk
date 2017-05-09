@@ -64,6 +64,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/PlayerJoystick.o \
 	${OBJECTDIR}/sourcefiles/PlayerKeyboard.o \
 	${OBJECTDIR}/sourcefiles/Trampa.o \
+	${OBJECTDIR}/sourcefiles/TrapSpawner.o \
 	${OBJECTDIR}/sourcefiles/Weapon.o \
 	${OBJECTDIR}/sourcefiles/Weaponspawner.o \
 	${OBJECTDIR}/tinyxml/sourcefiles/tinystr.o \
@@ -250,6 +251,11 @@ ${OBJECTDIR}/sourcefiles/Trampa.o: sourcefiles/Trampa.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Trampa.o sourcefiles/Trampa.cpp
+
+${OBJECTDIR}/sourcefiles/TrapSpawner.o: sourcefiles/TrapSpawner.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -I/usr/include/SFML -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/TrapSpawner.o sourcefiles/TrapSpawner.cpp
 
 ${OBJECTDIR}/sourcefiles/Weapon.o: sourcefiles/Weapon.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

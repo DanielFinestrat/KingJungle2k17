@@ -74,6 +74,7 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/Weaponspawner.h headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/Entidad.h headerfiles/../motorfisico/headerfiles/Cuerpo.h \
@@ -95,9 +96,9 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorgrafico/headerfiles/Fondo.h \
  headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  headerfiles/Console.h headerfiles/../motorgrafico/headerfiles/Texto.h \
- headerfiles/Trampa.h headerfiles/IAController.h \
- headerfiles/../Box2D/Box2D.h motorgrafico/headerfiles/Texto.h \
- motorgrafico/headerfiles/Motorgrafico.h \
+ headerfiles/Trampa.h headerfiles/TrapSpawner.h \
+ headerfiles/IAController.h headerfiles/../Box2D/Box2D.h \
+ motorgrafico/headerfiles/Texto.h motorgrafico/headerfiles/Motorgrafico.h \
  motorgrafico/headerfiles/../../headerfiles/Partida.h \
  motorgrafico/headerfiles/../../headerfiles/Menu.h \
  motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
@@ -261,6 +262,8 @@ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerf
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 headerfiles/Weaponspawner.h:
@@ -320,6 +323,8 @@ headerfiles/Console.h:
 headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 headerfiles/Trampa.h:
+
+headerfiles/TrapSpawner.h:
 
 headerfiles/IAController.h:
 

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="32" tileheight="32" nextobjectid="75">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="60" height="40" tilewidth="32" tileheight="32" nextobjectid="81">
  <properties>
   <property name="fondo" value="./resources/fondos/fondoCueva.png"/>
  </properties>
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
-  <image source="../../../../Escritorio/tilesheet_complete.png" width="1408" height="768"/>
+  <image source="../sprites/tilesheet.png" width="1408" height="768"/>
   <terraintypes>
    <terrain name="Cuesta 135" tile="45"/>
    <terrain name="Flotador redondo" tile="102"/>
@@ -122,7 +122,7 @@
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="20" name="platform" x="896" y="639.333" width="127.333" height="65.3333">
+  <object id="20" name="platform" x="896" y="639.333" width="127.333" height="67.33">
    <properties>
     <property name="roz" value="5"/>
    </properties>
@@ -154,33 +154,113 @@
   </object>
   <object id="29" name="platform" x="225.333" y="1024" width="189.333" height="96">
    <properties>
-    <property name="roz" value="5"/>
+    <property name="value" value="5"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Spawn" visible="0">
+ <objectgroup name="Spawn">
   <object id="32" name="player" x="640" y="416" width="32" height="32"/>
   <object id="34" name="player" x="1248" y="416" width="32" height="32"/>
   <object id="35" name="player" x="1248" y="736" width="32" height="32"/>
   <object id="36" name="player" x="608" y="736" width="32" height="32"/>
-  <object id="37" name="pincho" x="448" y="1120" width="64" height="96"/>
-  <object id="39" name="pincho" x="512" y="1120" width="64" height="96"/>
-  <object id="40" name="pincho" x="576" y="1120" width="64" height="96"/>
-  <object id="41" name="pincho" x="640" y="1120" width="64" height="96"/>
-  <object id="42" name="pincho" x="704" y="1120" width="64" height="96"/>
-  <object id="43" name="pincho" x="768" y="1120" width="64" height="96"/>
-  <object id="44" name="pincho" x="832" y="1120" width="64" height="96"/>
-  <object id="45" name="pincho" x="896" y="1120" width="64" height="96"/>
-  <object id="46" name="pincho" x="960" y="1120" width="64" height="96"/>
-  <object id="47" name="pincho" x="1024" y="1120" width="64" height="96"/>
-  <object id="48" name="pincho" x="1088" y="1120" width="64" height="96"/>
-  <object id="49" name="pincho" x="1152" y="1120" width="64" height="96"/>
-  <object id="50" name="pincho" x="1216" y="1120" width="64" height="96"/>
-  <object id="51" name="pincho" x="1280" y="1120" width="64" height="96"/>
-  <object id="52" name="pincho" x="1344" y="1120" width="64" height="96"/>
-  <object id="53" name="pincho" x="1408" y="1120" width="64" height="96"/>
-  <object id="54" name="arma" x="224" y="992" width="32" height="32"/>
-  <object id="55" name="arma" x="1664" y="992" width="32" height="32"/>
+  <object id="37" name="trampa" x="449" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="39" name="trampa" x="513" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="40" name="trampa" x="577" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="41" name="trampa" x="641" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="42" name="trampa" x="705" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="43" name="trampa" x="769" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="44" name="trampa" x="833" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="45" name="trampa" x="897" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="46" name="trampa" x="961" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="47" name="trampa" x="1025" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="48" name="trampa" x="1089" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="49" name="trampa" x="1153" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="50" name="trampa" x="1217" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="51" name="trampa" x="1281" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="52" name="trampa" x="1345" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="53" name="trampa" x="1409" y="1125.5" width="60" height="80">
+   <properties>
+    <property name="time" value="2"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="54" name="arma" x="288" y="992" width="32" height="32"/>
+  <object id="55" name="arma" x="1600" y="992" width="32" height="32"/>
   <object id="56" name="arma" x="942" y="603" width="32" height="28"/>
   <object id="57" name="arma" x="96" y="224" width="32" height="32"/>
   <object id="58" name="arma" x="1824" y="256" width="32" height="32"/>
@@ -188,14 +268,26 @@
   <object id="60" name="arma" x="384" y="320" width="32" height="32"/>
   <object id="61" name="arma" x="608" y="992" width="32" height="32"/>
   <object id="66" name="arma" x="1280" y="992" width="32" height="32"/>
-  <object id="67" name="esquina" x="0" y="1184" width="32" height="32"/>
+  <object id="67" name="esquina" x="0" y="1248" width="32" height="32"/>
   <object id="68" name="esquina" x="0" y="0" width="32" height="32"/>
   <object id="69" name="esquina" x="1888" y="0" width="32" height="32"/>
-  <object id="70" name="esquina" x="1888" y="1184" width="32" height="32"/>
+  <object id="70" name="esquina" x="1888" y="1248" width="32" height="32"/>
   <object id="71" name="arma" x="1152" y="992" width="32" height="32"/>
   <object id="72" name="arma" x="1024" y="992" width="32" height="32"/>
   <object id="73" name="arma" x="896" y="992" width="32" height="32"/>
   <object id="74" name="arma" x="768" y="992" width="32" height="32"/>
+  <object id="78" name="trampa" x="80" y="1136.5" width="131" height="80">
+   <properties>
+    <property name="time" value="5"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
+  <object id="79" name="trampa" x="1710" y="1138.5" width="131" height="80">
+   <properties>
+    <property name="time" value="5"/>
+    <property name="tipo" value="0"/>
+   </properties>
+  </object>
  </objectgroup>
  <layer name="Escenario" width="60" height="40">
   <data>
@@ -2183,8 +2275,8 @@
    <tile gid="750"/>
    <tile gid="913"/>
    <tile gid="914"/>
-   <tile gid="989"/>
-   <tile gid="990"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="575"/>
    <tile gid="576"/>
@@ -2233,8 +2325,8 @@
    <tile gid="578"/>
    <tile gid="580"/>
    <tile gid="0"/>
-   <tile gid="989"/>
-   <tile gid="990"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="915"/>
    <tile gid="916"/>
    <tile gid="749"/>
@@ -2243,8 +2335,8 @@
    <tile gid="530"/>
    <tile gid="957"/>
    <tile gid="958"/>
-   <tile gid="1033"/>
-   <tile gid="1034"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="574"/>
    <tile gid="574"/>
@@ -2293,8 +2385,8 @@
    <tile gid="574"/>
    <tile gid="574"/>
    <tile gid="0"/>
-   <tile gid="1033"/>
-   <tile gid="1034"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="959"/>
    <tile gid="960"/>
    <tile gid="529"/>
@@ -2419,126 +2511,126 @@
    <tile gid="542"/>
    <tile gid="543"/>
    <tile gid="627"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="579"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="579"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="579"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="579"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="575"/>
+   <tile gid="576"/>
+   <tile gid="577"/>
+   <tile gid="578"/>
+   <tile gid="579"/>
    <tile gid="583"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="585"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="585"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
+   <tile gid="584"/>
    <tile gid="584"/>
    <tile gid="585"/>
    <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="585"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="583"/>
-   <tile gid="584"/>
-   <tile gid="586"/>
-   <tile gid="587"/>
-   <tile gid="588"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -7409,7 +7501,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="60" height="40">
+ <layer name="IA subir" width="60" height="40" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

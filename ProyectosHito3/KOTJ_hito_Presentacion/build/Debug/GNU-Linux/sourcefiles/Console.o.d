@@ -79,6 +79,7 @@ build/Debug/GNU-Linux/sourcefiles/Console.o: sourcefiles/Console.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/Weaponspawner.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
@@ -103,6 +104,7 @@ build/Debug/GNU-Linux/sourcefiles/Console.o: sourcefiles/Console.cpp \
  sourcefiles/../headerfiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
  sourcefiles/../headerfiles/Console.h sourcefiles/../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
@@ -276,6 +278,8 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motor
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 sourcefiles/../headerfiles/Weaponspawner.h:
@@ -327,6 +331,8 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 sourcefiles/../headerfiles/Console.h:
 
 sourcefiles/../headerfiles/Trampa.h:
+
+sourcefiles/../headerfiles/TrapSpawner.h:
 
 sourcefiles/../headerfiles/IAController.h:
 

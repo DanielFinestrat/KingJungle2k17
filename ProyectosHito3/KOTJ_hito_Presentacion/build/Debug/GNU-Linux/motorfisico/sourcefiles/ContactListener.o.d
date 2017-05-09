@@ -74,6 +74,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorfisico/sourcefiles/../../headerfiles/Partida.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
@@ -111,6 +112,7 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Console.h \
  motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  motorfisico/sourcefiles/../../headerfiles/Trampa.h \
+ motorfisico/sourcefiles/../../headerfiles/TrapSpawner.h \
  motorfisico/sourcefiles/../../headerfiles/IAController.h \
  motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h
 
@@ -262,6 +264,8 @@ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerf
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 motorfisico/sourcefiles/../../headerfiles/Partida.h:
 
 motorfisico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/Motorfisico.h:
@@ -335,6 +339,8 @@ motorfisico/sourcefiles/../../headerfiles/Console.h:
 motorfisico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 motorfisico/sourcefiles/../../headerfiles/Trampa.h:
+
+motorfisico/sourcefiles/../../headerfiles/TrapSpawner.h:
 
 motorfisico/sourcefiles/../../headerfiles/IAController.h:
 

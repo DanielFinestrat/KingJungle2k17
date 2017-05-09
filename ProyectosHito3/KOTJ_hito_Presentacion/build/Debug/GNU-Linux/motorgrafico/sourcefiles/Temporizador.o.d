@@ -77,6 +77,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  motorgrafico/sourcefiles/../../headerfiles/Weaponspawner.h \
  motorgrafico/sourcefiles/../../headerfiles/Weapon.h \
@@ -107,6 +108,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Temporizador.o: \
  motorgrafico/sourcefiles/../../headerfiles/Console.h \
  motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  motorgrafico/sourcefiles/../../headerfiles/Trampa.h \
+ motorgrafico/sourcefiles/../../headerfiles/TrapSpawner.h \
  motorgrafico/sourcefiles/../../headerfiles/IAController.h \
  motorgrafico/sourcefiles/../../headerfiles/../Box2D/Box2D.h
 
@@ -264,6 +266,8 @@ motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../head
 
 motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+motorgrafico/sourcefiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Weaponspawner.h:
@@ -323,6 +327,8 @@ motorgrafico/sourcefiles/../../headerfiles/Console.h:
 motorgrafico/sourcefiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 motorgrafico/sourcefiles/../../headerfiles/Trampa.h:
+
+motorgrafico/sourcefiles/../../headerfiles/TrapSpawner.h:
 
 motorgrafico/sourcefiles/../../headerfiles/IAController.h:
 

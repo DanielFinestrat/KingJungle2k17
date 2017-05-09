@@ -77,6 +77,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weaponspawner.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weapon.h \
@@ -107,6 +108,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Console.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Trampa.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/TrapSpawner.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/IAController.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../Box2D/Box2D.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Menu.h \
@@ -269,6 +271,8 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerf
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Weaponspawner.h:
@@ -328,6 +332,8 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Console.h:
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Trampa.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/TrapSpawner.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/IAController.h:
 

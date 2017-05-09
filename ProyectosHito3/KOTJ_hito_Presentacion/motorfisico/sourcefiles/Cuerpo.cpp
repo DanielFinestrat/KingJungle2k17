@@ -157,19 +157,7 @@ void Cuerpo::setDensity(float den) {
 }
 
 void Cuerpo::setSensor(bool sensor) {
-    b2Fixture fix = m_pBody->GetFixtureList()[0];
-
-    b2FixtureDef fix2;
-    fix2.isSensor = sensor;
-    fix2.density = fix.GetDensity();
-    fix2.filter.categoryBits = fix.GetFilterData().categoryBits;
-    fix2.filter.maskBits = fix.GetFilterData().maskBits;
-    fix2.friction = fix.GetFriction();
-    fix2.restitution = fix.GetRestitution();
-    fix2.shape = fix.GetShape();
-    fix2.userData = fix.GetUserData();
-
-    m_pBody->CreateFixture(&fix2);
+    m_pBody->GetFixtureList()[0].SetSensor(sensor);
 }
 
 void Cuerpo::setActive(bool active){

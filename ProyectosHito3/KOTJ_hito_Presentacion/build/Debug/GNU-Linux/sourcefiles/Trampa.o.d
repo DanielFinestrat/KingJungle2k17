@@ -69,6 +69,7 @@ build/Debug/GNU-Linux/sourcefiles/Trampa.o: sourcefiles/Trampa.cpp \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../motorfisico/headerfiles/CuerpoCircular.h \
@@ -218,6 +219,8 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/Entidad.
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../motorfisico/headerfiles/Motorfisico.h:
 

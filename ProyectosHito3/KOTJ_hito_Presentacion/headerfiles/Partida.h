@@ -22,6 +22,7 @@
 #include "Mapa.h"
 #include "Console.h"
 #include "Trampa.h"
+#include "TrapSpawner.h"
 #include "IAController.h"
 
 using namespace std;
@@ -40,6 +41,7 @@ public:
 
     Mapa *mapa;
     Weaponspawner* factoriaArmas;
+    TrapSpawner* factoriaTrampas;
     Console console;
     int indexMap;
 
@@ -48,6 +50,7 @@ public:
     set<Explosion*> worldExplo;
     vector<Texto*> worldTexts;
     vector<Player*> worldPlayer;
+    vector<Trampa*> worldTraps;
     vector<Controlador*> worldControlador;
 
     InnerClock changeLevelClock;
@@ -58,6 +61,7 @@ public:
     vector<Player*> players2Delete;
     vector<Platform*> platforms2Delete;
     vector<Weapon*> weapons2Delete;
+    vector<Trampa*> traps2Delete;
     set<Bala*> bullets2Delete;
     set<Explosion*> explo2Delete;
 
@@ -73,12 +77,14 @@ public:
     void drawWeapons();
     void drawBullets();
     void drawExplo();
+    void drawTraps();
     void drawTexts(int n);
 
     void eraseBullets();
     void erasePlayers();
     void eraseWeapons();
     void eraseExplo();
+    void eraseTraps();
     void erasePlatforms();
 
     int findKeyboardControlador();
@@ -93,6 +99,7 @@ public:
     void updateBullets();
     void updateWeapons();
     void updateExplo();
+    void updateTraps();
     void updateIA();
     void updateClock();
     void updateTexts();

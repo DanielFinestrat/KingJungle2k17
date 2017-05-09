@@ -18,6 +18,7 @@
       <itemPath>headerfiles/PlayerJoystick.h</itemPath>
       <itemPath>headerfiles/PlayerKeyboard.h</itemPath>
       <itemPath>headerfiles/Trampa.h</itemPath>
+      <itemPath>headerfiles/TrapSpawner.h</itemPath>
       <itemPath>headerfiles/Weapon.h</itemPath>
       <itemPath>headerfiles/Weaponspawner.h</itemPath>
     </logicalFolder>
@@ -111,6 +112,7 @@
       <itemPath>sourcefiles/PlayerJoystick.cpp</itemPath>
       <itemPath>sourcefiles/PlayerKeyboard.cpp</itemPath>
       <itemPath>sourcefiles/Trampa.cpp</itemPath>
+      <itemPath>sourcefiles/TrapSpawner.cpp</itemPath>
       <itemPath>sourcefiles/Weapon.cpp</itemPath>
       <itemPath>sourcefiles/Weaponspawner.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
@@ -192,6 +194,8 @@
       <item path="headerfiles/PlayerKeyboard.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Trampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/TrapSpawner.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -387,6 +391,8 @@
       <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Trampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/TrapSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -472,6 +478,8 @@
       </item>
       <item path="headerfiles/Trampa.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/TrapSpawner.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Weaponspawner.h" ex="false" tool="3" flavor2="0">
@@ -666,6 +674,8 @@
       <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Trampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/TrapSpawner.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
       </item>

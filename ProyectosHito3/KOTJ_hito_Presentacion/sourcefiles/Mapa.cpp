@@ -17,7 +17,7 @@ Mapa::Mapa() {
     mapas.push_back(mapaMar);
     mapas.push_back(mapaHielo);
     mapas.push_back(mapaLaberinto);
-    mapas.push_back(mapaPodio);
+    //mapas.push_back(mapaPodio);
     firstMap = false;
 }
 
@@ -136,6 +136,9 @@ void Mapa::guardarObj(TiXmlElement* map) {
     //Leemos las matrices
     TiXmlElement *object;
     TiXmlElement *rozamiento;
+    TiXmlElement *time;
+    TiXmlElement *tipoTrap;
+    
     layer = map->FirstChildElement("objectgroup");
     object = layer->FirstChildElement("object");
 
@@ -143,7 +146,10 @@ void Mapa::guardarObj(TiXmlElement* map) {
     int _height = 0;
     int _sizeX = 0;
     int _sizeY = 0;
-    int _type = 0;
+    int _tipo = 0;
+    float _posX = 0;
+    float _posY=0;
+    int _time=0;
     string tipo;
 
     for (int l = 0; l < _numLayers; l++) {
@@ -190,18 +196,21 @@ void Mapa::guardarObj(TiXmlElement* map) {
 
                 esquinasMapa.push_back(posicion);
             } else if (tipo.compare("trampa") == 0) {
-                object->QueryIntAttribute("x", &_width);
-                object->QueryIntAttribute("y", &_height);
-                object->QueryIntAttribute("type", &_type);
+                time = object->FirstChildElement("properties")->FirstChildElement("property");
+                tipoTrap = time->NextSiblingElement("property");
+                object->QueryFloatAttribute("x", &_posX);
+                object->QueryFloatAttribute("y", &_posY);
+                tipoTrap->QueryIntAttribute("value", &_tipo);
                 object->QueryIntAttribute("width", &_sizeX);
                 object->QueryIntAttribute("height", &_sizeY);
-                vector<int> posicion;
-                posicion.push_back(_width);
-                posicion.push_back(_height);
-                posicion.push_back(_type);
+                time->QueryIntAttribute("value", &_time);
+                vector<float> posicion;
+                posicion.push_back(_posX);
+                posicion.push_back(_posY);
+                posicion.push_back(_tipo);
                 posicion.push_back(_sizeX);
                 posicion.push_back(_sizeY);
-
+                posicion.push_back(_time);
                 spawnTrampas.push_back(posicion);
             }
             object = object->NextSiblingElement("object");
@@ -251,7 +260,7 @@ vector< vector<int> > Mapa::getSpawnArmas() {
     return (spawnArmas);
 }
 
-vector< vector<int> > Mapa::getSpawnTrampas() {
+vector< vector<float> > Mapa::getSpawnTrampas() {
     return (spawnTrampas);
 }
 

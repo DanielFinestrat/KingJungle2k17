@@ -62,14 +62,24 @@ void ContactListener::BeginContact(b2Contact* contact) {
 		if (entidadA->getTag().compare("Trampa") == 0) {
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataA);
 			if (entidadB->getTag().compare("Player") == 0) {
-			
+                            Player* player = static_cast<Player*> (bodyUserDataB);
+                            if(player->isPlayerDead() == false);
+                                    //player->die(player->getDirMoving());
+                                int dir = -1;
+				if (trampa->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
+				player->changeDirection(dir);
+				partida->players2Delete.push_back(player);
+                                
 			}
 		} else if (entidadB->getTag().compare("Trampa") == 0) {
 			Trampa* trampa = static_cast<Trampa*> (bodyUserDataB);
 			if (entidadA->getTag().compare("Player") == 0) {
 				Player* player = static_cast<Player*> (bodyUserDataA);
-				int dir = -1;
-				if (trampa->getCuerpo()->getPosicionX() < player->getPositionX()) dir = 1;
+                                if(player->isPlayerDead() == false);
+                                
+                                    //player->die(player->getDirMoving());
+                                int dir = -1;
+				if (trampa->cuerpo->getPosicionX() < player->getPositionX()) dir = 1;
 				player->changeDirection(dir);
 				partida->players2Delete.push_back(player);
 			}

@@ -78,6 +78,7 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
@@ -115,6 +116,7 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/TrapSpawner.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../Box2D/Box2D.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
@@ -282,6 +284,8 @@ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../heade
 
 sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
@@ -355,6 +359,8 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/header
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Trampa.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/TrapSpawner.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/IAController.h:
 
