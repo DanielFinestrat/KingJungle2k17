@@ -112,37 +112,37 @@
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="18" name="platform" x="608" y="512" width="126.667" height="64.6667">
+  <object id="18" name="platform" x="576" y="512" width="192" height="64.6667">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="19" name="platform" x="1184" y="512" width="127.333" height="64.6667">
+  <object id="19" name="platform" x="1152" y="512" width="192" height="64">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="20" name="platform" x="896" y="639.333" width="127.333" height="67.33">
+  <object id="20" name="platform" x="864" y="640" width="192" height="67.33">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="21" name="platform" x="544" y="832" width="256" height="32">
+  <object id="21" name="platform" x="512" y="832" width="287" height="32">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="22" name="platform" x="576" y="864" width="192" height="32">
+  <object id="22" name="platform" x="544" y="864" width="226" height="32">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="24" name="platform" x="1120.67" y="831.333" width="254" height="33.3333">
+  <object id="24" name="platform" x="1120" y="832" width="286" height="32">
    <properties>
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="25" name="platform" x="1152.67" y="862.667" width="192" height="33.3333">
+  <object id="25" name="platform" x="1152" y="864" width="225" height="32">
    <properties>
     <property name="roz" value="5"/>
    </properties>
@@ -165,97 +165,113 @@
   <object id="36" name="player" x="608" y="736" width="32" height="32"/>
   <object id="37" name="trampa" x="449" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="39" name="trampa" x="513" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="40" name="trampa" x="577" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="41" name="trampa" x="641" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="42" name="trampa" x="705" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="43" name="trampa" x="769" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="44" name="trampa" x="833" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="45" name="trampa" x="897" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="46" name="trampa" x="961" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="47" name="trampa" x="1025" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="48" name="trampa" x="1089" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="49" name="trampa" x="1153" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="50" name="trampa" x="1217" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="51" name="trampa" x="1281" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="52" name="trampa" x="1345" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="53" name="trampa" x="1409" y="1125.5" width="60" height="80">
    <properties>
-    <property name="time" value="2"/>
+    <property name="timeAct" value="9"/>
+    <property name="timeDes" value="2"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
@@ -278,13 +294,15 @@
   <object id="74" name="arma" x="768" y="992" width="32" height="32"/>
   <object id="78" name="trampa" x="80" y="1136.5" width="131" height="80">
    <properties>
-    <property name="time" value="5"/>
+    <property name="timeAct" value="14"/>
+    <property name="timeDes" value="5"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
   <object id="79" name="trampa" x="1710" y="1138.5" width="131" height="80">
    <properties>
-    <property name="time" value="5"/>
+    <property name="timeAct" value="14"/>
+    <property name="timeDes" value="5"/>
     <property name="tipo" value="0"/>
    </properties>
   </object>
@@ -1269,9 +1287,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="631"/>
    <tile gid="632"/>
+   <tile gid="632"/>
+   <tile gid="533"/>
    <tile gid="633"/>
    <tile gid="634"/>
    <tile gid="0"/>
@@ -1286,13 +1305,12 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="631"/>
    <tile gid="632"/>
+   <tile gid="632"/>
+   <tile gid="533"/>
    <tile gid="633"/>
    <tile gid="634"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1329,9 +1347,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="675"/>
    <tile gid="676"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="677"/>
    <tile gid="678"/>
    <tile gid="0"/>
@@ -1346,13 +1365,12 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="675"/>
    <tile gid="676"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="677"/>
    <tile gid="678"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1518,12 +1536,12 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="631"/>
    <tile gid="632"/>
+   <tile gid="632"/>
+   <tile gid="533"/>
    <tile gid="633"/>
    <tile gid="634"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1578,12 +1596,12 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="675"/>
    <tile gid="676"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="677"/>
    <tile gid="678"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1867,13 +1885,13 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="719"/>
    <tile gid="720"/>
-   <tile gid="715"/>
+   <tile gid="533"/>
+   <tile gid="533"/>
    <tile gid="716"/>
-   <tile gid="717"/>
-   <tile gid="718"/>
+   <tile gid="533"/>
+   <tile gid="533"/>
    <tile gid="721"/>
    <tile gid="722"/>
    <tile gid="0"/>
@@ -1888,13 +1906,13 @@
    <tile gid="0"/>
    <tile gid="719"/>
    <tile gid="720"/>
-   <tile gid="715"/>
+   <tile gid="533"/>
+   <tile gid="533"/>
    <tile gid="716"/>
-   <tile gid="717"/>
-   <tile gid="718"/>
+   <tile gid="533"/>
+   <tile gid="533"/>
    <tile gid="721"/>
    <tile gid="722"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -1927,13 +1945,13 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="0"/>
    <tile gid="763"/>
    <tile gid="764"/>
-   <tile gid="759"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="760"/>
-   <tile gid="761"/>
-   <tile gid="762"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="765"/>
    <tile gid="766"/>
    <tile gid="0"/>
@@ -1948,13 +1966,13 @@
    <tile gid="0"/>
    <tile gid="763"/>
    <tile gid="764"/>
-   <tile gid="759"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="760"/>
-   <tile gid="761"/>
-   <tile gid="762"/>
+   <tile gid="577"/>
+   <tile gid="577"/>
    <tile gid="765"/>
    <tile gid="766"/>
-   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>

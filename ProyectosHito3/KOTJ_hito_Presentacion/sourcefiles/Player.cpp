@@ -408,6 +408,32 @@ void Player::Contact(void* punt, string tipo) {
         partida->players2Delete.push_back(this);
     }
 }
+void Player::Contact(void* punt, string tipo, int id) {
+    if (tipo.compare("Platform") != 0) {
+        Partida* partida = Partida::getInstance();
+        int dir = -1;
+
+         if (tipo.compare("Trampa") == 0) {
+             
+             switch (id){
+                 case 3:
+                     break;
+                 case 4:
+                     break;
+                 default:
+                    Trampa* trampa = static_cast<Trampa*> (punt);
+                    if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()) {
+                        dir = 1;
+                    }
+                    this->changeDirection(dir);
+                    partida->players2Delete.push_back(this);
+                     break;
+             }
+            
+        }
+        
+    }
+}
 
 void Player::give1Point() {
     points++;

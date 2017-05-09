@@ -15,7 +15,7 @@
 using namespace std;
 using namespace sf;
 
-Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float angle, int tiempo) {
+Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float angle, int tiempoDes, int tiempoAct) {
     tag = "Trampa";
     id = type;
     estado = false;
@@ -24,7 +24,8 @@ Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float
     m_SizeY = sizeY;
     iniPosX = posX;
     iniPosY = posY;
-    time = tiempo;
+    timeDes = tiempoDes;
+    timeAct = tiempoAct;
     reloj.restartClock();
     difTime = 0;
 
@@ -38,19 +39,21 @@ Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float
                 cuerpo->setType(2);
                 cuerpo->setMaskBits(MASK_TRAMPA1);//Colisiona con jugadores
                 cuerpo->setSensor(true);
-                //activar();
-                m_vBody->setTex(Resources::getInstance()->spikes);
+                //m_vBody->setTex(Resources::getInstance()->getTexture("./resources/sprites/trapSpike.png"));
                 break;
             case 1: //Zona de muerte solida
                 cuerpo->setType(0);
                 cuerpo->setMaskBits(MASK_TRAMPA2);//Colisiona con balas y jugadores
-                m_vBody->setTex("");
+                //m_vBody->setTex(Resources::getInstance()->getTexture(Resources::getInstance()->transparente));
+                estado = true;
                 break;
             case 2: //Zona de muerte atravesable
                 cuerpo->setType(0);
                 cuerpo->setMaskBits(MASK_TRAMPA1);
                 cuerpo->setSensor(true);
-                m_vBody->setTex("");
+                //m_vBody->setTex(Resources::getInstance()->getTexture(Resources::getInstance()->transparente));
+                estado = true;
+                
                 break; 
             case 3: //TNT
                 cuerpo->setType(1);
@@ -149,26 +152,31 @@ void Trampa::update() {
 
     m_vBody->setPos(posX*PPM, posY*PPM);
     m_vBody->setAngle(angle);
-    cout<<difTime<<endl;
     
     reloj.restartClock();
     difTime += reloj.getDeltaTimeAsSeconds();
 
-    if(estado == false && difTime >= 9){
+    if(estado == false && timeAct != -1 && difTime >= timeAct){
         activar();
         difTime = 0;
-    } else if(estado == true && difTime >= time){
+    } else if(estado == true && timeDes != -1 && difTime >= timeDes){
         desactivar();
         difTime = 0;
     }
-
-    if (iniPosY >= posY * PPM + m_SizeY/2  && cuerpo->getVelocidadY() < 0) {
-        velY = 0;
-        cuerpo->setVelocidadY(velY);
-    } else if (iniPosY <= posY * PPM - m_SizeY/2 && cuerpo->getVelocidadY() > 0) {
-        velY = 0;
-        cuerpo->setVelocidadY(velY);
+    switch (id){
+        case 0:
+            if (iniPosY >= posY * PPM + m_SizeY/2  && cuerpo->getVelocidadY() < 0) {
+                velY = 0;
+                cuerpo->setVelocidadY(velY);
+            } else if (iniPosY <= posY * PPM - m_SizeY/2 && cuerpo->getVelocidadY() > 0) {
+                velY = 0;
+                cuerpo->setVelocidadY(velY);
+            }
+            break;
+        default:
+            break;
     }
+    
     
 }
 
@@ -186,5 +194,18 @@ VisibleBody* Trampa::getVBody(){
 }
 
 void Trampa::Contact(void* punt, string tipo){
-
+    switch(id){
+        case 3:
+            if(roto == false){
+                roto = true;
+            }
+            break;
+        case 4:
+            if(roto == false){
+                roto = true;
+            }
+            break;
+        default:
+            break;
+    }
 }

@@ -137,7 +137,6 @@ void Mapa::guardarObj(TiXmlElement* map) {
     TiXmlElement *object;
     TiXmlElement *rozamiento;
     TiXmlElement *time;
-    TiXmlElement *tipoTrap;
     
     layer = map->FirstChildElement("objectgroup");
     object = layer->FirstChildElement("object");
@@ -149,7 +148,8 @@ void Mapa::guardarObj(TiXmlElement* map) {
     int _tipo = 0;
     float _posX = 0;
     float _posY=0;
-    int _time=0;
+    int _timeAct=0;
+    int _timeDes = 0;
     string tipo;
 
     for (int l = 0; l < _numLayers; l++) {
@@ -197,20 +197,24 @@ void Mapa::guardarObj(TiXmlElement* map) {
                 esquinasMapa.push_back(posicion);
             } else if (tipo.compare("trampa") == 0) {
                 time = object->FirstChildElement("properties")->FirstChildElement("property");
-                tipoTrap = time->NextSiblingElement("property");
+                time->QueryIntAttribute("value", &_timeAct);
+                time = time->NextSiblingElement("property");
+                time->QueryIntAttribute("value", &_timeDes);
+                time = time->NextSiblingElement("property");
+                time->QueryIntAttribute("value", &_tipo);
                 object->QueryFloatAttribute("x", &_posX);
                 object->QueryFloatAttribute("y", &_posY);
-                tipoTrap->QueryIntAttribute("value", &_tipo);
                 object->QueryIntAttribute("width", &_sizeX);
                 object->QueryIntAttribute("height", &_sizeY);
-                time->QueryIntAttribute("value", &_time);
+                
                 vector<float> posicion;
                 posicion.push_back(_posX);
                 posicion.push_back(_posY);
                 posicion.push_back(_tipo);
                 posicion.push_back(_sizeX);
                 posicion.push_back(_sizeY);
-                posicion.push_back(_time);
+                posicion.push_back(_timeDes);
+                posicion.push_back(_timeAct);
                 spawnTrampas.push_back(posicion);
             }
             object = object->NextSiblingElement("object");
