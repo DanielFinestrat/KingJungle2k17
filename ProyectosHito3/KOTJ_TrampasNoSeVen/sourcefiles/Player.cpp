@@ -393,19 +393,36 @@ void Player::Contact(void* punt, string tipo) {
             if (bala->cuerpo->getPosicionX() < this->getPositionX()) {
                 dir = 1;
             }
+            this->changeDirection(dir);
+            partida->players2Delete.push_back(this);
         } else if (tipo.compare("Explosion") == 0) {
             Explosion* explo = static_cast<Explosion*> (punt);
             if (explo->cuerpo->getPosicionX() < this->getPositionX()) {
                 dir = 1;
             }
+            this->changeDirection(dir);
+            partida->players2Delete.push_back(this);
         } else if (tipo.compare("Trampa") == 0) {
             Trampa* trampa = static_cast<Trampa*> (punt);
-            if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()) {
-                dir = 1;
-            }
+            int id = trampa->getID();
+            
+            switch (id){
+                 case 3:
+                     break;
+                 case 4:
+                     break;
+                 default:
+                    Trampa* trampa = static_cast<Trampa*> (punt);
+                    if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()) {
+                        dir = 1;
+                    }
+                    this->changeDirection(dir);
+                    partida->players2Delete.push_back(this);
+                     break;
+             }
+            
         }
-        this->changeDirection(dir);
-        partida->players2Delete.push_back(this);
+        
     }
 }
 void Player::Contact(void* punt, string tipo, int id) {
