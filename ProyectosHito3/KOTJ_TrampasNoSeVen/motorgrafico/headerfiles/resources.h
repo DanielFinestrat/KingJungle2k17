@@ -31,6 +31,7 @@ class Resources {
         const string armas;
         const string tiles;
         const string spikes;
+        const string podio;
         const string fondoJungle;        
         const string fondoHielo;        
         const string fondoHielo1;        

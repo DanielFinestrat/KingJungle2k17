@@ -18,6 +18,7 @@
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/InnerClock.h"
+#include "../headerfiles/Explosion.h"
 
 using namespace std;
 

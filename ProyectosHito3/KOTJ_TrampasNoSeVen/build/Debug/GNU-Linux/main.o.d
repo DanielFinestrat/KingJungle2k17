@@ -75,6 +75,12 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  headerfiles/Weaponspawner.h headerfiles/Weapon.h headerfiles/Bala.h \
  headerfiles/Entidad.h headerfiles/../motorfisico/headerfiles/Cuerpo.h \
@@ -84,11 +90,8 @@ build/Debug/GNU-Linux/main.o: main.cpp headerfiles/Partida.h \
  headerfiles/../tinyxml/headerfiles/tinystr.h \
  headerfiles/../tinyxml/headerfiles/tinyxml.h \
  headerfiles/../tinyxml/headerfiles/tinystr.h headerfiles/Platform.h \
- headerfiles/Explosion.h \
- headerfiles/../motorfisico/headerfiles/ContactListener.h \
- headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
- headerfiles/PlayerJoystick.h headerfiles/Player.h \
- headerfiles/../motorgrafico/headerfiles/Animation.h \
+ headerfiles/Explosion.h headerfiles/PlayerJoystick.h \
+ headerfiles/Player.h headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  headerfiles/../motorgrafico/headerfiles/Animation.h \
  headerfiles/Controlador.h headerfiles/PlayerKeyboard.h \
@@ -264,6 +267,18 @@ headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerf
 
 headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
 headerfiles/Weaponspawner.h:
@@ -291,10 +306,6 @@ headerfiles/../tinyxml/headerfiles/tinystr.h:
 headerfiles/Platform.h:
 
 headerfiles/Explosion.h:
-
-headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 headerfiles/PlayerJoystick.h:
 

@@ -95,12 +95,7 @@
     <property name="roz" value="5"/>
    </properties>
   </object>
-  <object id="24" name="platform" x="1728" y="288" width="128" height="32">
-   <properties>
-    <property name="roz" value="5"/>
-   </properties>
-  </object>
-  <object id="25" name="platform" x="1760" y="320" width="160" height="64">
+  <object id="24" name="platform" x="1728" y="288" width="192" height="97">
    <properties>
     <property name="roz" value="5"/>
    </properties>
@@ -267,11 +262,11 @@
   </object>
  </objectgroup>
  <objectgroup name="Spawn" offsetx="0" offsety="1.33333">
-  <object id="1" name="player" x="736" y="320" width="32" height="32"/>
-  <object id="2" name="player" x="832" y="320" width="32" height="32"/>
-  <object id="3" name="player" x="1056" y="320" width="32" height="32"/>
-  <object id="4" name="player" x="960" y="320" width="32" height="32"/>
-  <object id="5" name="trampa" x="1728" y="220.5" width="45.5" height="67.5">
+  <object id="1" name="player" x="736" y="384" width="32" height="32"/>
+  <object id="2" name="player" x="832" y="384" width="32" height="32"/>
+  <object id="3" name="player" x="1056" y="384" width="32" height="32"/>
+  <object id="4" name="player" x="960" y="384" width="32" height="32"/>
+  <object id="5" name="trampa" x="1729.33" y="236.5" width="45.5" height="49.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>

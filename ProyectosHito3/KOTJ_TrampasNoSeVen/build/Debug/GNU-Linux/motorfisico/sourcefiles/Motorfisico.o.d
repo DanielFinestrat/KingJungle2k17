@@ -75,7 +75,13 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/Motorfisico.o: \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/Explosion.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/Entidad.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h
 
 motorfisico/sourcefiles/../headerfiles/Motorfisico.h:
 
@@ -228,3 +234,15 @@ motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerf
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 motorfisico/sourcefiles/../headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/Explosion.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/Entidad.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+motorfisico/sourcefiles/../headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:

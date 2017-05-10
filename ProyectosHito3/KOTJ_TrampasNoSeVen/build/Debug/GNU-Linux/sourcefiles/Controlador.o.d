@@ -82,6 +82,12 @@ build/Debug/GNU-Linux/sourcefiles/Controlador.o: \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h
@@ -255,6 +261,18 @@ sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motor
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 

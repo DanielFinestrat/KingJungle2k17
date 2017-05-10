@@ -79,6 +79,12 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
@@ -102,8 +108,6 @@ build/Debug/GNU-Linux/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../tinyxml/headerfiles/tinyxml.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Platform.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Explosion.h \
- sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/PlayerJoystick.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Player.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Animation.h \
@@ -286,6 +290,18 @@ sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../heade
 
 sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../headerfiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 sourcefiles/../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
 
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
@@ -331,10 +347,6 @@ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../tinyxml/headerfiles
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Platform.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Explosion.h:
-
-sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/PlayerJoystick.h:
 

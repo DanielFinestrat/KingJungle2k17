@@ -408,6 +408,7 @@ void Partida::updateBeforeMap() {
 
 
     } else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
+        Motorgrafico::getInstance()->getTemporizador()->stop(false);
         Texto *plus1 = worldTexts.at(4);
         plus1->setTexto("");
         plus1->setPos(screenWidth / 2 - 30, screenHeight / 2 - 90);
@@ -439,7 +440,6 @@ void Partida::startTextBeforeLevel() {
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
     Update();
     Update();
-    Motorgrafico::getInstance()->getTemporizador()->stop(false);
 }
 
 void Partida::loadMap() {

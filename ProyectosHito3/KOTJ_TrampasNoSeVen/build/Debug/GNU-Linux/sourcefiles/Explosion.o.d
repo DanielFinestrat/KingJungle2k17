@@ -75,18 +75,22 @@ build/Debug/GNU-Linux/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/Explosion.h \
- sourcefiles/../headerfiles/Entidad.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h \
- sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Motorfisico.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
  sourcefiles/../headerfiles/Weaponspawner.h \
  sourcefiles/../headerfiles/Weapon.h sourcefiles/../headerfiles/Bala.h \
+ sourcefiles/../headerfiles/Entidad.h \
  sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
@@ -263,17 +267,19 @@ sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerf
 
 sourcefiles/../motorfisico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Explosion.h:
+
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/Entidad.h:
+
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
+
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
+
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../motorfisico/headerfiles/../../headerfiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
+
 sourcefiles/../headerfiles/Explosion.h:
-
-sourcefiles/../headerfiles/Entidad.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/ContactListener.h:
-
-sourcefiles/../headerfiles/../motorfisico/headerfiles/CuerpoCircular.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../headerfiles/Partida.h:
 
@@ -287,7 +293,13 @@ sourcefiles/../headerfiles/Weapon.h:
 
 sourcefiles/../headerfiles/Bala.h:
 
+sourcefiles/../headerfiles/Entidad.h:
+
 sourcefiles/../headerfiles/../motorfisico/headerfiles/Cuerpo.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h:
 
