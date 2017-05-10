@@ -33,6 +33,7 @@ class MusicPlayer {
         int getSFXVolume();
         void setMusicVolume(int vol);
         void setSFXVolume(int vol);
+        void setSFXPitchBend(string filename, float level);
         void setLoop(string filename);
         
 
@@ -52,6 +53,8 @@ class MusicPlayer {
         const string rocketShoot;
         const string grenadeShoot;
         const string gameOver1;
+        const string ech220;
+        const string death;
 
         
 

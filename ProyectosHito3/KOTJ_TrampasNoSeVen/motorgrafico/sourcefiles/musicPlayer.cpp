@@ -18,7 +18,9 @@ explosion1("resources/sfx/explosion1.wav"),
 explosion2("resources/sfx/explosion2.wav"),
 gameOver1("resources/sfx/gameover1.wav"),
 rocketShoot("resources/sfx/rocketShoot.wav"),
-grenadeShoot("resources/sfx/grenadeShoot.wav") {
+grenadeShoot("resources/sfx/grenadeShoot.wav"),
+ech220("resources/sfx/ech220.wav"),
+death("resources/sfx/death.wav"){
     initialise();
     musicVolume = 5;
     sfxVolume = 5;
@@ -58,6 +60,8 @@ bool MusicPlayer::loadAll() {
     if (!loadSoundBuffer(gameOver1)) return false;
     if (!loadSoundBuffer(rocketShoot)) return false;
     if (!loadSoundBuffer(grenadeShoot)) return false;
+    if (!loadSoundBuffer(ech220)) return false;
+    if (!loadSoundBuffer(death)) return false;
 
     if (!loadSound(menuMusic)) return false;
     if (!loadSound(selecctionMusic)) return false;
@@ -74,6 +78,8 @@ bool MusicPlayer::loadAll() {
     if (!loadSFX(gameOver1)) return false;
     if (!loadSFX(rocketShoot)) return false;
     if (!loadSFX(grenadeShoot)) return false;
+    if (!loadSFX(ech220)) return false;
+    if (!loadSFX(death)) return false;
     return true;
 }
 
@@ -186,6 +192,10 @@ void MusicPlayer::setSFXVolume(int vol) {
         }
         //cout << "sfx: " << sfxVolume * 10 << endl;
     } else sfxVolume = (sfxVolume > 10) ? 10 : 0;
+}
+
+void MusicPlayer::setSFXPitchBend(string filename, float level) {
+    getSFX(filename).setPitch(level);
 }
 
 void MusicPlayer::setLoop(string filename) {

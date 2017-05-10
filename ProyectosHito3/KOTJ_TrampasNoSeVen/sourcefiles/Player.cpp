@@ -8,6 +8,7 @@
 
 #include "../headerfiles/Player.h"
 #include "../headerfiles/Partida.h"
+#include "../motorgrafico/headerfiles/Motorgrafico.h"
 
 Player::Player() {
     tag = "Player";
@@ -227,6 +228,7 @@ void Player::die(int dir) {
             weapon = NULL;
         }
         isDead = true;
+        Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->death);
     }
 }
 
@@ -235,7 +237,10 @@ bool Player::isPlayerDead() {
 }
 
 void Player::mock() {
-
+    float random_level = 0.75 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(1.25-0.75)));
+    std::cout<<random_level<<endl;
+    Motorgrafico::getInstance()->getMusicPlayer()->setSFXPitchBend(Motorgrafico::getInstance()->getMusicPlayer()->ech220,random_level);
+    Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->ech220);
 }
 
 void Player::shoot() {
