@@ -19,6 +19,7 @@ Partida::Partida() {
     factoriaArmas = NULL;
     factoriaTrampas = NULL;
     indexMap = -1;
+    checkJoysticksConnected();
     loadTextsNClock();
 }
 
@@ -64,7 +65,7 @@ void Partida::erasePlatforms() {
 }
 
 void Partida::eraseTraps() {
-    for (int i = 0; i< traps2Delete.size(); i++) {
+    for (int i = 0; i < traps2Delete.size(); i++) {
         delete(traps2Delete.at(i));
     }
     traps2Delete.clear();
@@ -296,7 +297,7 @@ void Partida::updateWeapons() {
 void Partida::updateTraps() {
     for (int i = 0; i < worldTraps.size(); i++) {
         if (worldTraps.at(i) != NULL) worldTraps.at(i)->update();
-        
+
     }
 }
 
@@ -394,7 +395,6 @@ void Partida::setUsingKeyboard(bool state) {
 }
 
 void Partida::loadMap() {
-    checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -406,7 +406,7 @@ void Partida::loadMap() {
         factoriaArmas = NULL;
     }
 
-    if (factoriaTrampas != NULL){
+    if (factoriaTrampas != NULL) {
         factoriaTrampas->borrarTrampas();
         delete(factoriaTrampas);
         factoriaTrampas = NULL;
@@ -423,7 +423,6 @@ void Partida::loadMap() {
 }
 
 void Partida::loadMap(string mapaStr) {
-    checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -434,8 +433,8 @@ void Partida::loadMap(string mapaStr) {
         delete(factoriaArmas);
         factoriaArmas = NULL;
     }
-    
-    if (factoriaTrampas != NULL){
+
+    if (factoriaTrampas != NULL) {
         factoriaTrampas->borrarTrampas();
         delete(factoriaTrampas);
         factoriaTrampas = NULL;
@@ -453,7 +452,6 @@ void Partida::loadMap(string mapaStr) {
 }
 
 void Partida::loadFinalMap() {
-    checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -465,22 +463,21 @@ void Partida::loadFinalMap() {
         factoriaArmas = NULL;
     }
 
-    
-    
+
+
     mapa = new Mapa();
     //mapa->leerMapa(mapa->mapaPodio);
     mapa->leerMapa(mapa->mapaCueva);
-    
+
     VisibleBody *podioVB = new VisibleBody(192, 160, 16, 16, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);
-    
+
     factoriaArmas = new Weaponspawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
     Motorgrafico::getInstance()->getTemporizador()->stop(false);
-    
+
     respawn();
 }
-
 
 Partida::~Partida() {
 

@@ -33,11 +33,11 @@ public:
      * @param sizeY int: alto de la trampa
      * @param posX int: posicion inicial X
      * @param posY int: posicion inicial Y
-     * @param type int: tipo de trampa (0 = pinchos, 1 = zona mortal solida, 2 = zona mortal atravesable, 3 = tnt, 4 = nitro )
+     * @param type int: tipo de trampa (0 = pinchos, 1 = zona mortal, 2 = palanca, 3 = tnt, 4 = nitro )
      * @param angle float: angulo de la trampa
      * @param time int : tiempo activo
      */
-    Trampa(float sizeX, float sizeY, float posX, float posY, int type, float angle, int timeDes, int timeAct);
+    Trampa(float sizeX, float sizeY, float posX, float posY, int type, float angle, int time);
     Trampa(const Trampa& orig);
     virtual ~Trampa();
     int getID();
@@ -61,8 +61,7 @@ private:
     bool roto; //Roto (true) intacto (false)
     float iniPosX;
     float iniPosY;
-    int timeDes;
-    int timeAct;
+    int time;
     InnerClock reloj;
     float difTime;
     //Tamanyos

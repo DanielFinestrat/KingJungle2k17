@@ -20,8 +20,7 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         fondoMar("./resources/fondos/fondoMar.jpg"),
                         fondoSeleccion("./resources/fondos/fondoSeleccion.png"),
                         fondoMenu("./resources/fondos/fondomenu.png"),
-                        puntero("./resources/sprites/puntero.png"),
-                        transparente("./resources/sprites/transparente.png")
+                        puntero("./resources/sprites/puntero.png")
                         { initialise(); }
 
 
@@ -78,7 +77,6 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoMenu)) return false;
     if (!loadTexture(puntero)) return false;
     if (!loadTexture(spikes))return false;
-    if(!loadTexture(transparente)) return false;
   return true;
 }
 

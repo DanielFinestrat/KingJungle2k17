@@ -50,7 +50,7 @@ Menu* createOptionsMenu() {
     vec[0] = op1;
     vec[1] = op2;
     vec[2] = op3;
-    
+
     int vm = Motorgrafico::getInstance()->getMusicPlayer()->getMusicVolume();
     int vfx = Motorgrafico::getInstance()->getMusicPlayer()->getSFXVolume();
     Menu* menu = new Menu(vec, 350, 200, vm, vfx);
@@ -91,24 +91,19 @@ int main() {
                 Partida::getInstance()->worldControlador.clear();
                 Partida::getInstance()->setUsingKeyboard(false);
             }
-            
+
             empezada = false;
             menu = createMainMenu();
-            
-            
+
+
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
 
             //->isOpen() es un método de sfml, creo que deberiamos crear un método en el motorgrafico que haga totalmente lo mismo
             while (mg->getRenderWindow()->isOpen() && state == 1) {
-                
                 menu->input(state, menu);
-                
                 menu->update();
-                
                 menu->render();
-                
             }
-
             menu = NULL;
         }
 

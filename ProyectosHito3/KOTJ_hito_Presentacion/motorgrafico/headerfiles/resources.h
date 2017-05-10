@@ -40,7 +40,6 @@ class Resources {
         const string fondoMar;
         const string fondoMenu;
         const string puntero;
-        const string transparente;
 
     private:
         Resources();

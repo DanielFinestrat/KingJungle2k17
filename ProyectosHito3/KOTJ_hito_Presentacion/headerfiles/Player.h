@@ -59,8 +59,6 @@ public:
     bool isJumping();
     void checkMapBounds();
     void Contact(void* punt, string tipo);
-    void Contact(void* punt, string tipo, int id);
-
     
     void give1Point();
     int getPoints();

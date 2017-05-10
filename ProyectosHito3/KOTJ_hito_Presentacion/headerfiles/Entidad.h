@@ -41,8 +41,6 @@ public:
     
     virtual void Render();
     virtual void Contact(void* punt, string tipo);
-    virtual void Contact(void* punt, string tipo, int id);
-
     
     string getTag();
     

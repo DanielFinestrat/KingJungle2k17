@@ -29,7 +29,7 @@ TrapSpawner::~TrapSpawner() {
 
 
 void TrapSpawner::crearTrampas(){
-    int  type, timeAct, timeDes;
+    int  type, time;
     float posX, posY, sizeX, sizeY;
     vector<float> trapDate;
     Trampa* trap = NULL;
@@ -40,9 +40,8 @@ void TrapSpawner::crearTrampas(){
         type = trapDate.at(2);
         sizeX = trapDate.at(3);
         sizeY = trapDate.at(4);
-        timeDes = trapDate.at(5);
-        timeAct = trapDate.at(6);
-        trap = new Trampa(sizeX, sizeY, posX, posY, type,0, timeDes, timeAct);
+        time = trapDate.at(5);
+        trap = new Trampa(sizeX, sizeY, posX, posY, type,0, time);
         
         Partida::getInstance()->worldTraps.push_back(trap);
         

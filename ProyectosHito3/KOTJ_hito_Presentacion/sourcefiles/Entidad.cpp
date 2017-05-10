@@ -22,8 +22,6 @@ string Entidad::getTag(){
 
 void Entidad::Contact(void* punt, string tipo) {
 }
-void Entidad::Contact(void* punt, string tipo, int id) {
-}
 
 Entidad::~Entidad() {
 }
