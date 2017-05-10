@@ -21,8 +21,8 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     ammo = amm;
     recoil = recoil_;
     this->rango = rango;
-    
-    if(rango == -1) balasVisibles = false;
+
+    if (rango == -1) balasVisibles = false;
     else balasVisibles = true;
 
     this->parabola = parabola;
@@ -98,33 +98,37 @@ int Weapon::shoot() {
 
                 float difAng = 90 / (BPS * 2);
                 for (int i = 0; i < BPS / 2; i++) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize/2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                     nuevaBala->Disparar(5 * -dir, 180 - difAng * (i + 1));
                     partida->worldBullets.insert(nuevaBala);
                 }
                 for (int i = 0; i < BPS / 2; i++) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize/2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                     nuevaBala->Disparar(5 * -dir, 180 + difAng * (i + 1));
                     partida->worldBullets.insert(nuevaBala);
                 }
                 if (BPS % 2 != 0) {
-                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize/2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
+                    Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                     nuevaBala->Disparar(5 * -dir, 180);
                     partida->worldBullets.insert(nuevaBala);
                 }
 
             } else {
-                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize/2.5f) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
+                Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5f) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                 nuevaBala->Disparar_Parabola(-dir, 160);
                 partida->worldBullets.insert(nuevaBala);
             }
 
-            if(balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->shot);
-
+            if (balasVisibles) {
+                if (explosivo)
+                    Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->rocketShoot);
+                else
+                    Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->shot);
+            }
             return recoil;
         }
     } else {
-        if(balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
+        if (balasVisibles) Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->emptyCartridge);
     }
     return 0;
 }
@@ -151,7 +155,7 @@ void Weapon::setDir(int i) {
     m_vBody->setScale(i, 1);
 }
 
-void Weapon::Contact(void* punt, string tipo){
+void Weapon::Contact(void* punt, string tipo) {
 
 }
 

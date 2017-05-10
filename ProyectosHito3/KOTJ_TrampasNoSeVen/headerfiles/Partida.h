@@ -36,6 +36,13 @@ using namespace std;
 
 class Motorgrafico;
 
+struct checkLoadingLevel {
+    bool loadingLevel;
+    bool firstTextPrepared;
+    bool secondTextPrepared;
+    bool thirdTextPrepared;
+};
+
 class Partida {
 public:
 
@@ -56,7 +63,10 @@ public:
     InnerClock changeLevelClock;
     bool notFirstReset;
     bool finalLevelTextPrepared;
+    bool gameisover;
     float timeBetweenReset;
+
+    checkLoadingLevel loadingLevelStruct;
 
     vector<Player*> players2Delete;
     vector<Platform*> platforms2Delete;
@@ -78,7 +88,8 @@ public:
     void drawBullets();
     void drawExplo();
     void drawTraps();
-    void drawTexts(int n);
+    void drawTexts();
+    void drawMainText();
 
     void eraseBullets();
     void erasePlayers();
@@ -103,12 +114,14 @@ public:
     void updateIA();
     void updateClock();
     void updateTexts();
+    void updateBeforeMap();
 
     void cameraSetTransform();
 
     bool getUsingKeyboard();
     void setUsingKeyboard(bool state);
 
+    void startTextBeforeLevel();
     void finishRound();
     void loadTextsNClock();
     void loadMap();

@@ -15,10 +15,10 @@ emptyCartridge("resources/sfx/emptyCartridge.wav"),
 coin1("resources/sfx/coin1.wav"),
 coin2("resources/sfx/coin2.wav"),
 explosion1("resources/sfx/explosion1.wav"),
+explosion2("resources/sfx/explosion2.wav"),
 gameOver1("resources/sfx/gameover1.wav"),
 rocketShoot("resources/sfx/rocketShoot.wav"),
-grenadeShoot("resources/sfx/grenadeShoot.wav"),
-explosion2("resources/sfx/explosion2.wav") {
+grenadeShoot("resources/sfx/grenadeShoot.wav") {
     initialise();
     musicVolume = 5;
     sfxVolume = 5;
@@ -56,6 +56,8 @@ bool MusicPlayer::loadAll() {
     if (!loadSoundBuffer(explosion2)) return false;
     if (!loadSoundBuffer(emptyCartridge)) return false;
     if (!loadSoundBuffer(gameOver1)) return false;
+    if (!loadSoundBuffer(rocketShoot)) return false;
+    if (!loadSoundBuffer(grenadeShoot)) return false;
 
     if (!loadSound(menuMusic)) return false;
     if (!loadSound(selecctionMusic)) return false;
@@ -70,6 +72,8 @@ bool MusicPlayer::loadAll() {
     if (!loadSFX(explosion2)) return false;
     if (!loadSFX(emptyCartridge)) return false;
     if (!loadSFX(gameOver1)) return false;
+    if (!loadSFX(rocketShoot)) return false;
+    if (!loadSFX(grenadeShoot)) return false;
     return true;
 }
 

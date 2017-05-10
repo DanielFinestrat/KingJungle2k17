@@ -11,13 +11,13 @@
 
 Mapa::Mapa() {
     mapas.push_back(mapaSeleccion);
+    mapas.push_back(mapaPodio);
     mapas.push_back(mapaPrueba);
     mapas.push_back(mapaSelva);
     mapas.push_back(mapaCueva);
     mapas.push_back(mapaMar);
     mapas.push_back(mapaHielo);
     mapas.push_back(mapaLaberinto);
-    //mapas.push_back(mapaPodio);
     firstMap = false;
 }
 
@@ -43,7 +43,7 @@ void Mapa::leerMapa(string mapa) {
         firstMap = true;
         cout << firstMap << endl;
     } else {
-        if (Partida::getInstance()->indexMap!=0) {
+        if (Partida::getInstance()->indexMap != 0) {
             Motorgrafico *mg = Motorgrafico::getInstance();
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
             mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->battleMusic);
@@ -137,7 +137,7 @@ void Mapa::guardarObj(TiXmlElement* map) {
     TiXmlElement *object;
     TiXmlElement *rozamiento;
     TiXmlElement *time;
-    
+
     layer = map->FirstChildElement("objectgroup");
     object = layer->FirstChildElement("object");
 
@@ -147,8 +147,8 @@ void Mapa::guardarObj(TiXmlElement* map) {
     int _sizeY = 0;
     int _tipo = 0;
     float _posX = 0;
-    float _posY=0;
-    int _timeAct=0;
+    float _posY = 0;
+    int _timeAct = 0;
     int _timeDes = 0;
     string tipo;
 
@@ -206,7 +206,7 @@ void Mapa::guardarObj(TiXmlElement* map) {
                 object->QueryFloatAttribute("y", &_posY);
                 object->QueryIntAttribute("width", &_sizeX);
                 object->QueryIntAttribute("height", &_sizeY);
-                
+
                 vector<float> posicion;
                 posicion.push_back(_posX);
                 posicion.push_back(_posY);
@@ -280,7 +280,7 @@ string Mapa::getRandomMap() {
 
     do {
         newIndexMap = rand() % mapas.size();
-    } while (newIndexMap == oldIndexMap || newIndexMap == 0);
+    } while (newIndexMap == oldIndexMap || newIndexMap == 0 || newIndexMap == 1);
 
     Partida::getInstance()->indexMap = newIndexMap;
     return (mapas.at(newIndexMap));

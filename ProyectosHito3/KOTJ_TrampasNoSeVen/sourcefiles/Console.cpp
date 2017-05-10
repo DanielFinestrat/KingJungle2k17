@@ -160,13 +160,24 @@ void selectMap(int n) {
     vector<string> maps = partida->mapa->mapas;
 
     if (n >= 0 && n < maps.size()) {
-        //cout << "entro" << endl;
-        partida->loadMap(maps.at(n));
+        if (maps.at(n).compare(partida->mapa->mapaPodio) == 0)
+            partida->loadFinalMap();
+        else
+            partida->loadMap(maps.at(n));
     }
 }
 
 void exitGame(int n) {
     Motorgrafico::getInstance()->getRenderWindow()->close();
+}
+
+void give5Points(int n) {
+    Partida * partida = Partida::getInstance();
+    if (n >= 0 && n < partida->worldPlayer.size()) {
+        for (int i = 0; i < 5; i++) {
+            partida->worldPlayer.at(n)->give1Point();
+        }
+    }
 }
 
 void Console::loadFunctions() {
@@ -190,6 +201,9 @@ void Console::loadFunctions() {
 
     fn = exitGame;
     functionMap->insert(std::pair<string, function<void (int) >>("exit", fn));
+    
+    fn = give5Points;
+    functionMap->insert(std::pair<string, function<void (int) >>("give5", fn));
 }
 
 void Console::getLastCommand() {

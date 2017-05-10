@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=kotj_hito_presentacion_new
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_hito_presentacion_new
+CND_ARTIFACT_NAME_Debug=kotj_trampasnoseven
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_trampasnoseven
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=kotjhitopresentacionnew.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjhitopresentacionnew.tar
+CND_PACKAGE_NAME_Debug=kotjtrampasnoseven.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjtrampasnoseven.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=kotj_hito_presentacion_new
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_hito_presentacion_new
+CND_ARTIFACT_NAME_Release=kotj_trampasnoseven
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_trampasnoseven
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=kotjhitopresentacionnew.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjhitopresentacionnew.tar
+CND_PACKAGE_NAME_Release=kotjtrampasnoseven.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjtrampasnoseven.tar
 #
 # include compiler specific variables
 #

@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=KOTJ_hito_Presentacion_NEW
+PROJECTNAME=KOTJ_TrampasNoSeVen
 
 # Active Configuration
 DEFAULTCONF=Debug

@@ -30,7 +30,7 @@ public:
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
     const string mapaLaberinto = "./resources/mapas/mapaLaberinto.tmx";
-    //const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
+    const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
     vector<string> mapas;
     
     int ***_tilemap;
