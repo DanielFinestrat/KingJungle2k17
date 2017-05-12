@@ -128,6 +128,7 @@ void Partida::Update() {
     updateClock();
     updateTraps();
     //updateTexts();
+    //hud->update();
 
     cameraSetTransform();
 }
@@ -144,12 +145,12 @@ void Partida::Render() {
     drawExplo();
     drawTraps();
     mapa->drawMap();
-
+    //hud->render();
     Motorgrafico::getInstance()->setHudCameraView();
     if (notFirstReset || loadingLevelStruct.loadingLevel)
         drawMainText();
     console.draw();
-
+    
     Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
 }
@@ -250,7 +251,7 @@ void Partida::addPlayerJoystick(int id) {
         //Añadimos en funcion de la condición
         if (add) {
             PlayerJoystick* p = new PlayerJoystick(id);
-            worldControlador.push_back(p);
+            worldControlador.push_back(p);            
         }
     } else {
         //cout << "hay demasiados jugadores" << endl;
@@ -583,5 +584,13 @@ void Partida::loadTextsNClock() {
     worldTexts.push_back(text);
 
     text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
-    worldTexts.push_back(text);
+    worldTexts.push_back(text);    
+}
+
+void Partida::createHud() {
+    hud->getInstance();
+}
+
+Hud* Partida::getHud() {
+    return hud;
 }

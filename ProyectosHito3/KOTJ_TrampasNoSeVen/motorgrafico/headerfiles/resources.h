@@ -43,6 +43,7 @@ class Resources {
         const string puntero;
         const string transparente;
         const string tnt;
+        const string cross;
 
     private:
         Resources();

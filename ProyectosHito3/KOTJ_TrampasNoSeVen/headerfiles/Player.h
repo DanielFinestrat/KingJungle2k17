@@ -60,6 +60,7 @@ public:
     void checkMapBounds();
     void Contact(void* punt, string tipo);
     void Contact(void* punt, string tipo, int id);
+    string getTexture();
 
     
     void give1Point();

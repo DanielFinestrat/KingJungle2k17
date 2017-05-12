@@ -23,7 +23,8 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         fondoSeleccion("./resources/fondos/fondoSeleccion.png"),
                         fondoMenu("./resources/fondos/fondomenu.png"),
                         puntero("./resources/sprites/puntero.png"),
-                        transparente("./resources/sprites/transparente.png")
+                        transparente("./resources/sprites/transparente.png"),
+                        cross("./resources/sprites/cross.png")
                         { initialise(); }
 
 
@@ -82,7 +83,8 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoMenu)) return false;
     if (!loadTexture(puntero)) return false;
     if (!loadTexture(spikes))return false;
-    if(!loadTexture(transparente)) return false;
+    if (!loadTexture(transparente)) return false;
+    if (!loadTexture(cross)) return false;
   return true;
 }
 

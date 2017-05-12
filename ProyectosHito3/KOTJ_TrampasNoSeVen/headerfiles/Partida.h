@@ -12,6 +12,7 @@
 #include <vector>
 #include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../motorgrafico/headerfiles/Temporizador.h"
+#include "Hud.h"
 #include "Weaponspawner.h"
 #include "Platform.h"
 #include "Weapon.h"
@@ -127,6 +128,8 @@ public:
     void loadMap();
     void loadMap(string mapaStr);
     void loadFinalMap();
+    void createHud();
+    Hud* getHud();
 
     virtual ~Partida();
 
@@ -134,7 +137,8 @@ private:
 
     Motorgrafico *mg;
     bool usingKeyboard;
-
+    Hud *hud;
+    
     Partida();
 };
 

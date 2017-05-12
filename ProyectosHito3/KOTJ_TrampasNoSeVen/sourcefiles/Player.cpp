@@ -464,3 +464,7 @@ void Player::give1Point() {
 int Player::getPoints() {
     return points;
 }
+
+string Player::getTexture() {
+    return Resources::getInstance()->sprites;
+}

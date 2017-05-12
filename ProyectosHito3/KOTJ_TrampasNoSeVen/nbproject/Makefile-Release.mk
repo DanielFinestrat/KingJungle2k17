@@ -55,6 +55,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Controlador.o \
 	${OBJECTDIR}/sourcefiles/Entidad.o \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
+	${OBJECTDIR}/sourcefiles/Hud.o \
 	${OBJECTDIR}/sourcefiles/IAController.o \
 	${OBJECTDIR}/sourcefiles/Mapa.o \
 	${OBJECTDIR}/sourcefiles/Menu.o \
@@ -208,6 +209,11 @@ ${OBJECTDIR}/sourcefiles/Explosion.o: sourcefiles/Explosion.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Explosion.o sourcefiles/Explosion.cpp
+
+${OBJECTDIR}/sourcefiles/Hud.o: sourcefiles/Hud.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Hud.o sourcefiles/Hud.cpp
 
 ${OBJECTDIR}/sourcefiles/IAController.o: sourcefiles/IAController.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

@@ -95,6 +95,9 @@ build/Debug/GNU-Linux/sourcefiles/IAController.o: \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/Hud.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Weaponspawner.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
@@ -106,10 +109,7 @@ build/Debug/GNU-Linux/sourcefiles/IAController.o: \
  sourcefiles/../headerfiles/Mapa.h \
  sourcefiles/../headerfiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- sourcefiles/../headerfiles/Console.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
- sourcefiles/../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/Console.h sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h
 
@@ -309,6 +309,12 @@ sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
+sourcefiles/../headerfiles/Hud.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
 sourcefiles/../headerfiles/Weaponspawner.h:
 
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
@@ -331,11 +337,7 @@ sourcefiles/../headerfiles/../headerfiles/Platform.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
-
 sourcefiles/../headerfiles/Console.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../headerfiles/Trampa.h:
 

@@ -107,6 +107,11 @@ void VisibleBody::setColor(int r, int g, int b, int a) {
     rectangle.setFillColor(c);
 }
 
+void VisibleBody::setTexRect(int x, int y, int w, int h) {
+    IntRect myRect = IntRect(posX, posY, width, height);
+    rectangle.setTextureRect(myRect);
+}
+
 float VisibleBody::getPosX() {
     return posX;
 }

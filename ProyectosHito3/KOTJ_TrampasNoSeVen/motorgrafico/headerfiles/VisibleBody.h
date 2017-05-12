@@ -111,6 +111,14 @@ public:
      * @param a canal alfa del color
      */
     void setColor(int r, int g, int b, int a);
+    /*
+     * Funcion que especifica el rectangulo a pintar de una textura
+     * @param int x: Posicion X inicial del rectangulo
+     * @param int y: Posicion Y inicial del rectangulo
+     * @param int w: Ancho del rectangulo
+     * @param int h: Alto del rectangulo
+     */
+    void setTexRect(int x, int y, int w, int h);
     
     //Funcion que devuelve la posicion del objeto
     std::vector<float> getPos();

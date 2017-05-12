@@ -93,23 +93,23 @@ build/Debug/GNU-Linux/sourcefiles/Weaponspawner.o: \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
- sourcefiles/../headerfiles/Weaponspawner.h \
- sourcefiles/../headerfiles/Platform.h \
- sourcefiles/../headerfiles/Explosion.h \
- sourcefiles/../headerfiles/PlayerJoystick.h \
+ sourcefiles/../headerfiles/Hud.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../headerfiles/Weaponspawner.h \
+ sourcefiles/../headerfiles/Platform.h \
+ sourcefiles/../headerfiles/Explosion.h \
+ sourcefiles/../headerfiles/PlayerJoystick.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
  sourcefiles/../headerfiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- sourcefiles/../headerfiles/Console.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
- sourcefiles/../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/Console.h sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
@@ -314,13 +314,11 @@ sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
-sourcefiles/../headerfiles/Weaponspawner.h:
+sourcefiles/../headerfiles/Hud.h:
 
-sourcefiles/../headerfiles/Platform.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
-sourcefiles/../headerfiles/Explosion.h:
-
-sourcefiles/../headerfiles/PlayerJoystick.h:
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
 
 sourcefiles/../headerfiles/Player.h:
 
@@ -329,6 +327,14 @@ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/SpriteAnimated.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Animation.h:
+
+sourcefiles/../headerfiles/Weaponspawner.h:
+
+sourcefiles/../headerfiles/Platform.h:
+
+sourcefiles/../headerfiles/Explosion.h:
+
+sourcefiles/../headerfiles/PlayerJoystick.h:
 
 sourcefiles/../headerfiles/Controlador.h:
 
@@ -340,11 +346,7 @@ sourcefiles/../headerfiles/../headerfiles/Platform.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
-
 sourcefiles/../headerfiles/Console.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../headerfiles/Trampa.h:
 

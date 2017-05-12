@@ -7,6 +7,7 @@
 
 #include "../headerfiles/PlayerKeyboard.h"
 #include "../headerfiles/Partida.h"
+#include "../headerfiles/Hud.h"
 
 PlayerKeyboard::PlayerKeyboard() {
     tipo = "Keyboard";
@@ -76,6 +77,8 @@ PlayerKeyboard::PlayerKeyboard() {
     player->setPosition(position.at(0), position.at(1));
     player->setColor(id);
     partida->worldPlayer.push_back(player);
+    //partida->createHud();
+    //partida->getHud()->addPlayer(player);
 
     //cout << "Se ha unido el jugador con teclado con id: " << this->id << " " << tipo << endl;
 }

@@ -92,6 +92,10 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/resources.h \
  sourcefiles/../headerfiles/Partida.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../headerfiles/Hud.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
+ sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/Weaponspawner.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h \
  sourcefiles/../headerfiles/../tinyxml/headerfiles/tinyxml.h \
@@ -99,19 +103,25 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/Explosion.h \
  sourcefiles/../headerfiles/PlayerJoystick.h \
- sourcefiles/../headerfiles/Player.h \
  sourcefiles/../headerfiles/Controlador.h \
  sourcefiles/../headerfiles/PlayerKeyboard.h \
  sourcefiles/../headerfiles/Mapa.h \
  sourcefiles/../headerfiles/../headerfiles/Platform.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
- sourcefiles/../headerfiles/Console.h \
- sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
- sourcefiles/../headerfiles/Trampa.h \
+ sourcefiles/../headerfiles/Console.h sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h
+ sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
+ sourcefiles/../motorgrafico/headerfiles/Animation.h \
+ sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h \
+ sourcefiles/../motorgrafico/headerfiles/Temporizador.h \
+ sourcefiles/../motorgrafico/headerfiles/musicPlayer.h
 
 sourcefiles/../headerfiles/Player.h:
 
@@ -303,6 +313,14 @@ sourcefiles/../headerfiles/Partida.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Temporizador.h:
 
+sourcefiles/../headerfiles/Hud.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
+
+sourcefiles/../headerfiles/Player.h:
+
 sourcefiles/../headerfiles/Weaponspawner.h:
 
 sourcefiles/../headerfiles/../tinyxml/headerfiles/tinystr.h:
@@ -317,8 +335,6 @@ sourcefiles/../headerfiles/Explosion.h:
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
-sourcefiles/../headerfiles/Player.h:
-
 sourcefiles/../headerfiles/Controlador.h:
 
 sourcefiles/../headerfiles/PlayerKeyboard.h:
@@ -329,11 +345,7 @@ sourcefiles/../headerfiles/../headerfiles/Platform.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Fondo.h:
 
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h:
-
 sourcefiles/../headerfiles/Console.h:
-
-sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
 sourcefiles/../headerfiles/Trampa.h:
 
@@ -342,3 +354,23 @@ sourcefiles/../headerfiles/TrapSpawner.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h:
+
+sourcefiles/../motorgrafico/headerfiles/Animation.h:
+
+sourcefiles/../motorgrafico/headerfiles/SpriteAnimated.h:
+
+sourcefiles/../motorgrafico/headerfiles/Temporizador.h:
+
+sourcefiles/../motorgrafico/headerfiles/musicPlayer.h:

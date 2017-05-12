@@ -119,6 +119,10 @@ int main() {
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
             }
+            
+            //if (!Partida::getInstance()->worldPlayer.empty())
+            //    mg->getPartida()->createHud();
+            
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->menuMusic);
 
             if (Motorgrafico::getInstance()->getPartida()->mapa->getIfFirstMap()) {
@@ -134,7 +138,9 @@ int main() {
                 if (mg->getPartida()->getInstance()->loadingLevelStruct.loadingLevel) {
                     mg->getPartida()->updateBeforeMap();
                 } else {
+                    
                     mg->getPartida()->Update();
+                    
                 }
                 mg->getPartida()->Erase();
                 mg->getPartida()->Render();
