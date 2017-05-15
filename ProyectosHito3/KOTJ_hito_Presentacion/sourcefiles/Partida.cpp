@@ -129,7 +129,7 @@ void Partida::Update() {
     updateTraps();
     //updateTexts();
 
-    cameraSetTransform();
+    cameraSetFinalTransform();
 }
 
 void Partida::Render() {
@@ -382,8 +382,8 @@ void Partida::updateTexts() {
     }
 }
 
-void Partida::cameraSetTransform() {
-    Motorgrafico::getInstance()->cameraSetTransform();
+void Partida::cameraSetFinalTransform() {
+    Motorgrafico::getInstance()->cameraSetFinalTransform();
 }
 
 bool Partida::getUsingKeyboard() {

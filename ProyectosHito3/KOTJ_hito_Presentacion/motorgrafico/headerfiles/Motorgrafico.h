@@ -28,7 +28,8 @@ public:
     void setFramerateLimitOn(int framerate);
     void setMainCameraView();
     void setHudCameraView();
-    void cameraSetTransform();
+    void cameraSetFinalTransform();
+    void lerpCameraTransform();
 
     void clearWindow();
     void eventListener(int &estado);
@@ -73,6 +74,10 @@ private:
     Temporizador *temporizador;
     sf::Clock frameClock;
     sf::Time frameTime;
+
+    Vector2f finalCameraPosition;
+    Vector2f finalCameraSize;
+    float cameraVelocity;
 
     sf::RenderWindow *window;
     sf::View *mainCamera;

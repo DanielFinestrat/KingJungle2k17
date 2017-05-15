@@ -51,6 +51,7 @@ public:
     bool getPaused();
     float getPositionX();
     float getPositionY();
+    float getNotJumpingY();
     void setPosition(float, float);
     int getDirMoving();
     void setColor(int);
@@ -87,6 +88,8 @@ private:
     bool isDead;
     bool paused;
 
+    float notJumpingY;
+    
     float fuerzaSalto;
     float fuerzaMovimiento;
     float velocidadMaxima;

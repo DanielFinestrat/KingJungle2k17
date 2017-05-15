@@ -104,7 +104,7 @@ public:
     void updateClock();
     void updateTexts();
 
-    void cameraSetTransform();
+    void cameraSetFinalTransform();
 
     bool getUsingKeyboard();
     void setUsingKeyboard(bool state);

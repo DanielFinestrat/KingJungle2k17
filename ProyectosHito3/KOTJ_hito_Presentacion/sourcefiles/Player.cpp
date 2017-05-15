@@ -120,6 +120,8 @@ void Player::update(Time frameTime) {
 
     move();
 
+    if(isGrounded()) notJumpingY = cuerpo->getPosicionY();
+    
     if (!canJump && updateCanJumpState) canJump = isGrounded();
 
     if (isDead) {
@@ -336,6 +338,10 @@ float Player::getPositionX() {
 
 float Player::getPositionY() {
     return (cuerpo->getPosicionY());
+}
+
+float Player::getNotJumpingY() {
+    return (notJumpingY);
 }
 
 void Player::setPosition(float posX, float posY) {

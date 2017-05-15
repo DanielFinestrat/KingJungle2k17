@@ -16,10 +16,11 @@ Motorgrafico* Motorgrafico::getInstance() {
 }
 
 Motorgrafico::Motorgrafico() {
-    window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", sf::Style::Titlebar | sf::Style::Close);
+    window = new sf::RenderWindow(sf::VideoMode(screenWidth, screenHeight), "KingOfTheJungle 2k17 Turbo Power Edition", /*sf::Style::Fullscreen |*/ sf::Style::Titlebar | sf::Style::Close);
     setFramerateLimitOn(60);
     mainCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
     hudCamera = new sf::View(sf::FloatRect(0, 0, screenWidth, screenHeight));
+    cameraVelocity = 0.1f;
     setMainCameraView();
     setHudCameraView();
 }
@@ -36,7 +37,7 @@ void Motorgrafico::setHudCameraView() {
     window ->setView(*hudCamera);
 }
 
-void Motorgrafico::cameraSetTransform() {
+void Motorgrafico::cameraSetFinalTransform() {
     int total = 0;
     float posX = 0;
     float posY = 0;
@@ -64,10 +65,12 @@ void Motorgrafico::cameraSetTransform() {
         posY += esquina.at(1) * MPP;
         total++;
     }*/
+    
     if (total != 0) {
         posX = posX / total;
         posY = posY / total;
-        mainCamera->setCenter(posX * PPM, posY * PPM);
+        //mainCamera->setCenter(posX * PPM, posY * PPM);
+        finalCameraPosition = Vector2f(posX * PPM, posY * PPM);
     }
 
     //Zoom
@@ -88,9 +91,10 @@ void Motorgrafico::cameraSetTransform() {
 
         /*if (newSize > Partida::getInstance()->mapa->xTiles * 32) {
             newSize = Partida::getInstance()->mapa->xTiles * 32;
-        }*/
-
-        mainCamera->setSize(sf::Vector2f(newSize, newSize / ratio));
+        }
+        mainCamera->setSize(sf::Vector2f(newSize, newSize / ratio));*/
+        
+        finalCameraSize = Vector2f(newSize, newSize / ratio);
 
     } else {
         maxDifferenceY += (3.5 / ratio);
@@ -99,13 +103,27 @@ void Motorgrafico::cameraSetTransform() {
 
         /*if (newSize > (Partida::getInstance()->mapa->yTiles + 1) * 32) {
             newSize = (Partida::getInstance()->mapa->yTiles + 1) * 32;
-        }*/
-
-        mainCamera->setSize(sf::Vector2f(newSize * ratio, newSize));
+        }
+        mainCamera->setSize(sf::Vector2f(newSize * ratio, newSize));*/
+        
+        finalCameraSize = Vector2f(newSize * ratio, newSize);
     }
 
-    //Ponerlo todo
+    //Poner la cámara
+    lerpCameraTransform();
     setMainCameraView();
+}
+
+void Motorgrafico::lerpCameraTransform(){
+    Vector2f cameraPos = mainCamera->getCenter();
+    Vector2f deltaPos = Vector2f(finalCameraPosition.x - cameraPos.x, finalCameraPosition.y - cameraPos.y);
+    Vector2f newPos = Vector2f(cameraPos.x + deltaPos.x * cameraVelocity, cameraPos.y + deltaPos.y * cameraVelocity);
+    mainCamera->setCenter(newPos.x, newPos.y);
+    
+    Vector2f cameraSize = mainCamera->getSize();
+    Vector2f deltaSize = Vector2f(finalCameraSize.x - cameraSize.x, finalCameraSize.y - cameraSize.y);
+    Vector2f newSize = Vector2f(cameraSize.x + deltaSize.x * cameraVelocity, cameraSize.y + deltaSize.y * cameraVelocity);
+    mainCamera->setSize(newSize.x, newSize.y);    
 }
 
 void Motorgrafico::eventListener(int &e) {
