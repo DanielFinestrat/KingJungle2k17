@@ -29,7 +29,6 @@ Partida* Partida::getInstance() {
 }
 
 void Partida::Input(int &e) {
-    updateIA();
     Motorgrafico::getInstance()->eventListener(e);
 }
 
@@ -123,6 +122,7 @@ void Partida::Update() {
     factoriaArmas->Update();
     updateWeapons();
     updatePlayers(Motorgrafico::getInstance()->getFrameTime());
+	updateIA();
     updateBullets();
     updateExplo();
     updateClock();

@@ -30,15 +30,16 @@ public:
     void releaseUpdateState(int botonSoltado);
     void checkAxisX(int ejeX);
     void checkAxisY(int ejeY);
+    
+    bool disparar(float dist, float PosX);
     void update();
     int readTile(int layer);
     void moveTo(float PosX, float PosY, float dist, Controlador* seguir);
     void interact();
     vector<float> buscarArma();
     vector<float> buscarHuida();
-    vector<float> buscarMatar();
+    vector<float> buscarMatar(Controlador **seguir);
 
 };
 
 #endif /* IACONTROLLER_H */
-

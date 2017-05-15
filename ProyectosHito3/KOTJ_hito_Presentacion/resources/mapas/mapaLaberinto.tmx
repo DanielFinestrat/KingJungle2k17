@@ -4,7 +4,7 @@
   <property name="Fondo" value="./resources/fondos/fondoMandala.jpg"/>
  </properties>
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
-  <image source="tilesheet_complete.png" width="1408" height="768"/>
+  <image source="../../../../../Escritorio/tilesheet_complete.png" width="1408" height="768"/>
   <terraintypes>
    <terrain name="Cuesta 135" tile="45"/>
    <terrain name="Flotador redondo" tile="102"/>
@@ -59,7 +59,7 @@
    </animation>
   </tile>
  </tileset>
- <tileset firstgid="1057" source="../../../../Escritorio/KOTJ.tsx"/>
+ <tileset firstgid="1057" source="../../../../../Escritorio/KOTJ.tsx"/>
  <objectgroup name="Plataformas">
   <object id="14" name="platform" x="64" y="288" width="544" height="96">
    <properties>

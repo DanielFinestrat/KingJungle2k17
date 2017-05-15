@@ -155,6 +155,10 @@ void Weapon::Contact(void* punt, string tipo){
 
 }
 
+int Weapon::getRango(){
+	return rango;
+}
+
 Weapon::~Weapon() {
     cuerpo->Destruir();
     delete (cuerpo);

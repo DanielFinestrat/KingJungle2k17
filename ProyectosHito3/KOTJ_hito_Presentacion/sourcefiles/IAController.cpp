@@ -106,7 +106,6 @@ void IAController::checkAxisX(int ejeX) {
 
     //1 = derecha
     if (ejeX != estadoEjeX) {
-        //cout << "Me muevo en el eje X en la dirección " << ejeX << endl;
         estadoEjeX = ejeX;
         player->changeDirection(estadoEjeX);
     }
@@ -119,11 +118,14 @@ void IAController::checkAxisY(int ejeY) {
 
     //1 = agachado
     if (ejeY != estadoEjeY) {
-        //cout << "Me muevo en el eje Y en la dirección " << ejeY << endl;
         estadoEjeY = ejeY;
         player->duck(estadoEjeY);
     }
 }
+
+
+
+
 
 int IAController::readTile(int layer) {
     int X = (int) (player->getPositionX() * PPM / 32);
@@ -140,28 +142,58 @@ int IAController::readTile(int layer) {
     return (lugar);
 }
 
+bool IAController::disparar(float dist, float PosX){
+    bool disparo = false;
+   
+    //Compruebo que el jugador tenga una arma y que el arma este a rango de disparo
+    if(player->hasWeapon() && dist < player->getWeapon()->getRango()){
+        
+        disparo = true;             //Si que se realiza el disparo
+        checkAxisX(0);              //Se queda quito al disparar
+        
+        //Se cambia la dirección del jugador para que mire hacia el personaje
+        if(PosX>=0){
+            player->changeDirection(-1);
+            player->changeDirection(0);
+        }else{
+            player->changeDirection(1);
+            player->changeDirection(0);
+        }
+        
+        pressUpdateState(2);        //Pulsa el botón de disparo
+        releaseUpdateState(2);      //Suelta el botón de disparo
+        
+        
+        //En el caso de que el jugador no tenga balas suelta el arma
+        if (player->getWeapon()->ammo == 0) {
+            pressUpdateState(1);
+            releaseUpdateState(1);
+        }
+    }
+    //En el caso de que el jugador no tenga arma este cambia su estado a buscarArma
+    else if(!player->hasWeapon()){
+        estado = "buscarArma";
+    }
+    
+    return disparo;
+}
+
 void IAController::interact() {
     if (estado.compare("buscarArma") == 0) {
         pressUpdateState(1);
         releaseUpdateState(1);
-        estado = "matar";
-    } else if (estado.compare("matar") == 0) {
-        pressUpdateState(2);
-        releaseUpdateState(2);
-        if (!player->hasWeapon()) {
-            estado = "buscarArma";
-        } else if (player->getWeapon()->ammo != 0) {
-            pressUpdateState(1);
-            releaseUpdateState(1);
+        if(player->hasWeapon()){
+            estado = "matar";
         }
     }
 }
 
 void IAController::moveTo(float PosX, float PosY, float dist, Controlador* seguir) {
-    //cout << estado << endl;
+    cout << estado << " " << dist<< " ";
     if (!player->isJumping()) {
-        if ((PosY > 0.9 && (seguir == NULL || !seguir->player->isJumping())) || dist > 10) {
-            //cout << "superior" << endl;
+        if ((PosY > 0.9 && (seguir == NULL || !seguir->player->isJumping())) ) {
+		//if (PosY > 0.9 ) {
+            cout << "superior" << endl;
             int lugar = readTile(layerSubir);
             int dir = 0;
             switch (lugar) {
@@ -188,7 +220,7 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
 
         }//Jugador esta en misma altura (saltando o no)
         else if (PosY > -0.5 && PosY < 3.2) {
-            //cout << "misma" << endl;
+			cout << "misma" << endl;
             int lugar = readTile(layerSubir);
             switch (lugar) {
                 case 917:
@@ -211,16 +243,17 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
                     interact();
                 }
             } else if (estado.compare("matar") == 0) {
-                if (PosX != 0) {
-                    interact();
-                    checkAxisX(0);
-                } else {
-                    checkAxisX(0);
+                if(seguir == NULL || !disparar(dist, PosX)){
+                    if (PosX > 0.5) {
+                        checkAxisX(-100);
+                    } else if (PosX<-0.5) {
+                        checkAxisX(100);
+                    }
                 }
             }
         }//Jugador esta en una altura inferior
         else if (PosY <= -0.5) {
-            //cout << "inferior" << endl;
+            cout << "inferior" << endl;
             int lugar = readTile(layerBajar);
             int dir = 0;
             switch (lugar) {
@@ -350,8 +383,48 @@ vector<float> IAController::buscarHuida() {
 
 }
 
-vector<float> IAController::buscarMatar() {
+vector<float> IAController::buscarMatar(Controlador** seguir) {
+    Partida* partida = Partida::getInstance();
+    float PosX = 0, PosY = 0;
+    float distancia = -1;
+    int ControladorSeguir = 0;
 
+    float IApositionX = player->getPositionX();
+    float IApositionY = player->getPositionY();
+
+    for (int i = 0; i < partida->worldPlayer.size(); i++) {
+        Controlador* jugador = partida->worldControlador.at(i);
+        if (i != id && !jugador->player->isPlayerDead()) { //Para probar la IA tiene id 0
+            float positionX = jugador->player->getPositionX();
+            float positionY = jugador->player->getPositionY();
+            float dist = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
+            if (distancia == -1) {
+                ControladorSeguir = i;
+                distancia = dist;
+                PosX = IApositionX - positionX;
+                PosY = IApositionY - positionY;
+            } else if (dist < distancia) {
+                ControladorSeguir = i;
+                distancia = dist;
+                PosX = IApositionX - positionX;
+                PosY = IApositionY - positionY;
+            }
+        }
+
+    }
+    if (partida->worldControlador.at(ControladorSeguir) != NULL) {
+        *seguir = partida->worldControlador.at(ControladorSeguir);
+    }
+    
+	if(!player->hasWeapon()){
+        estado = "buscarArma";
+    }
+	
+    vector<float> ret;
+    ret.push_back(PosX);
+    ret.push_back(PosY);
+    ret.push_back(distancia);
+    return ret;
 }
 
 void IAController::update() {
@@ -368,44 +441,9 @@ void IAController::update() {
     } else if (estado.compare("huir") == 0) {
         pos = buscarHuida();
     } else if (estado.compare("matar") == 0) {
-        float PosX = 0, PosY = 0;
-        float distancia = -1;
-        int ControladorSeguir = 0;
-
-        float IApositionX = player->getPositionX();
-        float IApositionY = player->getPositionY();
-
-        for (int i = 0; i < partida->worldPlayer.size(); i++) {
-            Controlador* jugador = partida->worldControlador.at(i);
-            if (i != id && !jugador->player->isPlayerDead()) { //Para probar la IA tiene id 0
-                float positionX = jugador->player->getPositionX();
-                float positionY = jugador->player->getPositionY();
-                float dist = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
-                if (distancia == -1) {
-                    ControladorSeguir = i;
-                    distancia = dist;
-                    PosX = IApositionX - positionX;
-                    PosY = IApositionY - positionY;
-                } else if (dist < distancia) {
-                    ControladorSeguir = i;
-                    distancia = dist;
-                    PosX = IApositionX - positionX;
-                    PosY = IApositionY - positionY;
-                }
-            }
-
-        }
-        //cout << PosX << " " << PosY << endl;
-        pos.push_back(PosX);
-        pos.push_back(PosY);
-        pos.push_back(distancia);
-        if (partida->worldControlador.at(ControladorSeguir) != NULL) {
-            seguir = partida->worldControlador.at(ControladorSeguir);
-        }
-        //cout << ControladorSeguir << endl;
+        pos = buscarMatar(&seguir);
     }
-    //Buscar zona para arriba
+	
     moveTo(pos.at(0), pos.at(1), pos.at(2), seguir);
-    //Juegador esta en zona superior y no saltando
 
 }
