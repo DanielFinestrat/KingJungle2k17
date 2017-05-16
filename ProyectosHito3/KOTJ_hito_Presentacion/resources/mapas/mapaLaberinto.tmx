@@ -60,7 +60,7 @@
   </tile>
  </tileset>
  <tileset firstgid="1057" source="../../../../../Escritorio/KOTJ.tsx"/>
- <objectgroup name="Plataformas">
+ <objectgroup name="Plataformas" visible="0">
   <object id="14" name="platform" x="64" y="288" width="544" height="96">
    <properties>
     <property name="roz" value="5"/>
@@ -257,7 +257,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Spawn">
+ <objectgroup name="Spawn" visible="0">
   <object id="1" name="arma" x="896" y="192" width="32" height="32"/>
   <object id="3" name="arma" x="1056" y="352" width="32" height="32"/>
   <object id="4" name="arma" x="1792" y="512" width="32" height="32"/>

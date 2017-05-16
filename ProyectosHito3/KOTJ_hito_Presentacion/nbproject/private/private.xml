@@ -6,6 +6,15 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/headerfiles/IAController.h</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/sourcefiles/Partida.cpp</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/sourcefiles/Weapon.cpp</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/headerfiles/Weapon.h</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/motorgrafico/sourcefiles/Motorgrafico.cpp</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/sourcefiles/Player.cpp</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/sourcefiles/IAController.cpp</file>
+            <file>file:/home/angel/KingJungle2k17/ProyectosHito3/KOTJ_hito_Presentacion/main.cpp</file>
+        </group>
     </open-files>
 </project-private>

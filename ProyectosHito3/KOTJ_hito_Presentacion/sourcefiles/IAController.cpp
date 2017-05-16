@@ -105,10 +105,10 @@ void IAController::checkAxisX(int ejeX) {
     else ejeX = 0;
 
     //1 = derecha
-    if (ejeX != estadoEjeX) {
+
         estadoEjeX = ejeX;
         player->changeDirection(estadoEjeX);
-    }
+    
 }
 
 void IAController::checkAxisY(int ejeY) {
