@@ -193,7 +193,7 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
     if (!player->isJumping()) {
         if ((PosY > 0.9 && (seguir == NULL || !seguir->player->isJumping())) ) {
 		//if (PosY > 0.9 ) {
-            cout << "superior" << endl;
+            cout << "superior";
             int lugar = readTile(layerSubir);
             int dir = 0;
             switch (lugar) {
@@ -220,7 +220,7 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
 
         }//Jugador esta en misma altura (saltando o no)
         else if (PosY > -0.5 && PosY < 3.2) {
-			cout << "misma" << endl;
+			cout << "misma";
             int lugar = readTile(layerSubir);
             switch (lugar) {
                 case 917:
@@ -253,7 +253,7 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
             }
         }//Jugador esta en una altura inferior
         else if (PosY <= -0.5) {
-            cout << "inferior" << endl;
+            cout << "inferior";
             int lugar = readTile(layerBajar);
             int dir = 0;
             switch (lugar) {
@@ -285,6 +285,7 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
             }
         }
     }
+	cout << endl;
 }
 
 vector<float> IAController::buscarArma() {
@@ -443,6 +444,8 @@ void IAController::update() {
     } else if (estado.compare("matar") == 0) {
         pos = buscarMatar(&seguir);
     }
+	
+	cout << pos.at(2) << endl;
 	
     moveTo(pos.at(0), pos.at(1), pos.at(2), seguir);
 

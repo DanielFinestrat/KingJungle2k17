@@ -155,8 +155,23 @@ void Weapon::Contact(void* punt, string tipo){
 
 }
 
-int Weapon::getRango(){
-	return rango;
+float Weapon::getRango(){
+	float maxDist = 0; 
+	 switch (rango) {
+        case(0):
+            maxDist = 5;
+            break;
+        case(1):
+            maxDist = 8;
+            break;
+        case(2):
+            maxDist = 13;
+            break;
+        case(-1):
+            maxDist = 0.5f;
+            break;
+    }
+	return maxDist;
 }
 
 Weapon::~Weapon() {

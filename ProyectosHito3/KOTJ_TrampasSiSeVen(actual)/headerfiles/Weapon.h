@@ -95,6 +95,8 @@ public:
     
     void doDelete();
     
+    float getRango();
+    
     void Contact(void* punt, string tipo);
 };
 

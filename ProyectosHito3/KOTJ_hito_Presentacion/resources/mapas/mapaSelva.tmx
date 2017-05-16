@@ -3,7 +3,7 @@
  <properties>
   <property name="fondo" value="./resources/fondos/fondoJungle.png"/>
  </properties>
- <tileset firstgid="1" source="../../../../Escritorio/KOTJ.tsx"/>
+ <tileset firstgid="1" source="../../../../../Escritorio/KOTJ.tsx"/>
  <layer name="Escenario" width="70" height="40" offsetx="0" offsety="32">
   <data>
    <tile gid="267"/>
@@ -8416,7 +8416,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="70" height="40" visible="0" offsetx="0" offsety="32">
+ <layer name="IA subir" width="70" height="40" offsetx="0" offsety="32">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10219,7 +10219,7 @@
    <tile gid="914"/>
    <tile gid="914"/>
    <tile gid="914"/>
-   <tile gid="920"/>
+   <tile gid="914"/>
    <tile gid="920"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10289,7 +10289,7 @@
    <tile gid="914"/>
    <tile gid="914"/>
    <tile gid="914"/>
-   <tile gid="920"/>
+   <tile gid="914"/>
    <tile gid="920"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -11406,17 +11406,17 @@
     <property name="roz" type="int" value="0"/>
    </properties>
   </object>
-  <object id="58" name="platform" x="1568" y="576" width="128" height="32">
+  <object id="58" name="platform" x="1600" y="576" width="64" height="32">
    <properties>
     <property name="roz" type="int" value="0"/>
    </properties>
   </object>
-  <object id="59" name="platform" x="1728" y="736" width="128" height="32">
+  <object id="59" name="platform" x="1760" y="736" width="64" height="32">
    <properties>
     <property name="roz" type="int" value="0"/>
    </properties>
   </object>
-  <object id="60" name="platform" x="1536" y="896" width="128" height="32">
+  <object id="60" name="platform" x="1568" y="896" width="64" height="32">
    <properties>
     <property name="roz" type="int" value="0"/>
    </properties>

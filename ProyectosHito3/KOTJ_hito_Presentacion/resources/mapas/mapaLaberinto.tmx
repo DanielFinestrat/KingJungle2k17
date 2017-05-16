@@ -11091,7 +11091,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="60" height="60" visible="0">
+ <layer name="IA subir" width="60" height="60">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -11961,8 +11961,8 @@
    <tile gid="0"/>
    <tile gid="914"/>
    <tile gid="914"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1976"/>
+   <tile gid="1976"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -12021,8 +12021,8 @@
    <tile gid="0"/>
    <tile gid="914"/>
    <tile gid="914"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
+   <tile gid="1976"/>
+   <tile gid="1976"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
