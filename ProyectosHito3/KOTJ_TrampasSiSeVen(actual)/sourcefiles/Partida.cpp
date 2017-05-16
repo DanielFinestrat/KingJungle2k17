@@ -131,7 +131,7 @@ void Partida::Update() {
     //updateTexts();
     //hud->update();
 
-    cameraSetTransform();
+    cameraSetFinalTransform();
 }
 
 void Partida::Render() {
@@ -292,6 +292,10 @@ void Partida::updatePlayers(Time frameTime) {
     }
 }
 
+void Partida::cameraSetFinalTransform() {
+    Motorgrafico::getInstance()->cameraSetFinalTransform();
+}
+
 void Partida::updateWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
         if (worldWeapons.at(i) != NULL) worldWeapons.at(i)->update();
@@ -425,10 +429,6 @@ void Partida::updateBeforeMap() {
         loadingLevelStruct.loadingLevel = false;
 
     }
-}
-
-void Partida::cameraSetTransform() {
-    Motorgrafico::getInstance()->cameraSetTransform();
 }
 
 bool Partida::getUsingKeyboard() {

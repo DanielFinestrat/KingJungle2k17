@@ -123,7 +123,7 @@ public:
     
     void breakTraps();
 
-    void cameraSetTransform();
+    void cameraSetFinalTransform();
 
     bool getUsingKeyboard();
     void setUsingKeyboard(bool state);
