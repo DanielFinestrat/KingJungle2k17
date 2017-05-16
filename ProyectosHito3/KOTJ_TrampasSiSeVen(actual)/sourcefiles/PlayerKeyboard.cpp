@@ -77,8 +77,7 @@ PlayerKeyboard::PlayerKeyboard() {
     player->setPosition(position.at(0), position.at(1));
     player->setColor(id);
     partida->worldPlayer.push_back(player);
-    //partida->createHud();
-    //partida->getHud()->addPlayer(player);
+    Hud::getInstance()->addPlayer(player);
 
     //cout << "Se ha unido el jugador con teclado con id: " << this->id << " " << tipo << endl;
 }

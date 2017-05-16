@@ -19,6 +19,7 @@ Partida::Partida() {
     factoriaArmas = NULL;
     factoriaTrampas = NULL;
     indexMap = -1;
+    hud = Hud::getInstance();
     loadTextsNClock();
 }
 
@@ -129,7 +130,7 @@ void Partida::Update() {
     updateTraps();
     breakTraps();
     //updateTexts();
-    //hud->update();
+    hud->update();
 
     cameraSetFinalTransform();
 }
@@ -146,12 +147,12 @@ void Partida::Render() {
     drawExplo();
     drawTraps();
     mapa->drawMap();
-    //hud->render();
     Motorgrafico::getInstance()->setHudCameraView();
     if (notFirstReset || loadingLevelStruct.loadingLevel)
         drawMainText();
+    hud->render();
     console.draw();
-    
+
     Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
 }
@@ -196,12 +197,10 @@ void Partida::drawTexts() {
     for (int i = 0; i < worldTexts.size() - 1; i++)
         if (worldTexts.at(i)->getTexto() != "") {
             Motorgrafico::getInstance()->draw(worldTexts.at(i)->getDrawable());
-            //cout << "se pinta el texto nº " << i << "y tiene dentro " << worldTexts.at(i)->getTexto() << endl;
         }
 }
 
 void Partida::drawMainText() {
-    //cout<<"me pinto :)"<<endl;
     Motorgrafico::getInstance()->draw(worldTexts.at(4)->getDrawable());
 }
 
@@ -252,7 +251,7 @@ void Partida::addPlayerJoystick(int id) {
         //Añadimos en funcion de la condición
         if (add) {
             PlayerJoystick* p = new PlayerJoystick(id);
-            worldControlador.push_back(p);            
+            worldControlador.push_back(p);
         }
     } else {
         //cout << "hay demasiados jugadores" << endl;
@@ -308,9 +307,9 @@ void Partida::updateTraps() {
     }
 }
 
-void Partida::breakTraps(){  //Rompe las trampas, se le llama en el update a falta de un lugar mas adecuado
-    for (int i = 0; i<traps2Break.size(); i++){
-        if(traps2Break.at(i) != NULL) traps2Break.at(i)->romper();
+void Partida::breakTraps() { //Rompe las trampas, se le llama en el update a falta de un lugar mas adecuado
+    for (int i = 0; i < traps2Break.size(); i++) {
+        if (traps2Break.at(i) != NULL) traps2Break.at(i)->romper();
     }
     traps2Break.clear();
 }
@@ -591,13 +590,5 @@ void Partida::loadTextsNClock() {
     worldTexts.push_back(text);
 
     text = new Texto("", 80, Resources::getInstance()->myFont, 255, 255, 255);
-    worldTexts.push_back(text);    
-}
-
-void Partida::createHud() {
-    hud->getInstance();
-}
-
-Hud* Partida::getHud() {
-    return hud;
+    worldTexts.push_back(text);
 }

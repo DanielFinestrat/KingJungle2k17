@@ -60,6 +60,7 @@ IAController::IAController() {
     player->setColor(partida->worldPlayer.size());
 
     partida->worldPlayer.push_back(player);
+    Hud::getInstance()->addPlayer(player);
 }
 
 IAController::~IAController() {

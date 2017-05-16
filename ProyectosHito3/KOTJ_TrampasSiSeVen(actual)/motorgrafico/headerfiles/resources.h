@@ -38,6 +38,7 @@ class Resources {
         const string fondoSeleccion;        
         const string fondoCueva;        
         const string fondoMandala;        
+        const string fondoMandala2; 
         const string fondoMar;
         const string fondoMenu;
         const string puntero;

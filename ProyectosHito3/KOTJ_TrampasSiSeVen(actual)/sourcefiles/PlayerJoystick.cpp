@@ -58,9 +58,8 @@ PlayerJoystick::PlayerJoystick(int id) {
     player->setColor(partida->worldPlayer.size());
 
     partida->worldPlayer.push_back(player);
-//    partida->createHud();
-//    partida->getHud()->addPlayer(player);
-
+    Hud::getInstance()->addPlayer(player);
+    
     //cout << "He insertado un mando con la id " << this->id << " " << tipo << endl;
 }
 

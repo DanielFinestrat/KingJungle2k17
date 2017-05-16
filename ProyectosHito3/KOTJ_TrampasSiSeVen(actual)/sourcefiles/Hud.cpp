@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   Hud.cpp
  * Author: pedro
@@ -17,33 +11,35 @@
 static Hud* instance;
 
 Hud::Hud() {
-
-
     int w = 1024;
     int h = 600;
 
-    avatars = std::vector<VisibleBody*>(4);
-    weaponsIcon = std::vector<VisibleBody*>(4);
-    crosses = std::vector<VisibleBody*>(4);
-    ammos = std::vector<Texto*>(4);
+    //J1 - Esquina sup izq
+    vector<int> vector1;
+    vector1.push_back(50);
+    vector1.push_back(50);
+    positions.push_back(vector1);
 
-    positions = std::vector< std::vector<int> >(4);
-    for (int i = 0; i < positions.size(); i++) {
-        positions[i] = std::vector<int>(2);
+    //J2 - Esquina sup dcha
+    vector<int> vector2;
+    vector2.push_back(w - 50);
+    vector2.push_back(50);
+    positions.push_back(vector2);
 
-    }
+    //J3 - Esquina inf izq
+    vector<int> vector3;
+    vector3.push_back(50);
+    vector3.push_back(h - 50);
+    positions.push_back(vector3);
 
-    positions[0][0] = 50;
-    positions[0][1] = 50; //J1 - Esquina sup izq
-    positions[1][0] = w - 50;
-    positions[1][1] = 50; //J2 - Esquina sup dcha
-    positions[2][0] = 50;
-    positions[2][1] = h - 50; //J3 - Esquina inf izq
-    positions[3][0] = w - 50;
-    positions[3][1] = h - 50; //J4 - Esquina inf dcha
+    //J4 - Esquina inf dcha
+    vector<int> vector4;
+    vector4.push_back(w - 50);
+    vector4.push_back(h - 50);
+    positions.push_back(vector4);
 
     for (int i = 0; i < 4; i++) {
-        crosses[i] = new VisibleBody(positions[i][0], positions[i][1], 100, 100, "./resources/sprites/cross.png", true);
+        crosses.push_back(new VisibleBody(positions[i][0], positions[i][1], 100, 100, Resources::getInstance()->cross, true));
     }
 }
 
@@ -54,53 +50,39 @@ Hud* Hud::getInstance() {
 
 void Hud::update() {
     for (int i = 0; i < players.size(); i++) {
-        if (players[i] != NULL) {
-            Weapon* weapon = players[i]->getWeapon();
+        if (players.at(i) != NULL) {
+            Weapon* weapon = players.at(i)->getWeapon();
             if (weapon != NULL) {
                 string weaponTex = weapon->m_vBody->getTexPath();
-                weaponsIcon[i] = new VisibleBody(positions[i][0], positions[i][1], 100, 100, weaponTex, true);
-                ammos[i] = new Texto(weapon->ammo, 18, "./resources/fonts/newrotic.ttf", 255, 255, 255);
+                weaponsIcon.push_back(new VisibleBody(positions[i][0], positions[i][1], 100, 100, weaponTex, true));
+                ammos.push_back(new Texto(weapon->ammo, 18, Resources::getInstance()->menuFont, 255, 255, 255));
             }
-            std::cout << "acabo update" << std::endl;
         }
     }
 }
 
 void Hud::render() {
-    std::cout << "entro en render" << std::endl;
-    if (!players.empty()) {
-        for (int i = 0; i < players.size(); i++) {
-            if (players[i] != NULL) {
-                std::cout << "entro en bucle render" << std::endl;
-                Motorgrafico::getInstance()->draw(avatars[i]->getShape());
-                if (!players[i]->isPlayerDead()) {
-                    std::cout << "NO ESTA MUERTO" << std::endl;
-                    if (weaponsIcon[i] != NULL && ammos[i] != NULL) {
-                        Motorgrafico::getInstance()->draw(weaponsIcon[i]->getShape());
-                        Motorgrafico::getInstance()->draw(ammos[i]->getDrawable());
-                    }
-
-                } else {
-                    Motorgrafico::getInstance()->draw(crosses[i]->getShape());
+    for (int i = 0; i < players.size(); i++) {
+        if (players.at(i) != NULL) {
+            Motorgrafico::getInstance()->draw(avatars.at(i)->getShape());
+            if (!players.at(i)->isPlayerDead()) {
+                if (weaponsIcon.size() > i && ammos.size() > i) {
+                    Motorgrafico::getInstance()->draw(weaponsIcon.at(i)->getShape());
+                    Motorgrafico::getInstance()->draw(ammos.at(i)->getDrawable());
                 }
             }
+            else Motorgrafico::getInstance()->draw(crosses.at(i)->getShape());
         }
     }
-    std::cout << "salgo de render" << std::endl;
 }
 
 void Hud::addPlayer(Player* p) {
-    std::cout <<"SADASD"<< std::endl;
-
     players.push_back(p);
-    std::cout <<"hiaiiaiai"<< std::endl;
-    
-    int i = players.size()-1;
-    
-    avatars.push_back(new VisibleBody(positions[i][0], positions[i][1], 100, 100, players[i]->getTexture(), true));
-    
-    avatars.back()->setTexRect(0, 0, 300, 200);
-    
+    int i = players.size() - 1;
+
+    VisibleBody *body = new VisibleBody(positions[i][0], positions[i][1], 100, 100, p->getTexture(), true);
+    body->setTexRect(0, 0, 300, 200);
+    avatars.push_back(body);
 }
 
 void Hud::deletePlayers() {

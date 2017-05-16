@@ -237,9 +237,9 @@ bool Player::isPlayerDead() {
 }
 
 void Player::mock() {
-    float random_level = 0.75 + static_cast <float> (rand()) /( static_cast <float> (RAND_MAX/(1.25-0.75)));
-    std::cout<<random_level<<endl;
-    Motorgrafico::getInstance()->getMusicPlayer()->setSFXPitchBend(Motorgrafico::getInstance()->getMusicPlayer()->ech220,random_level);
+    float random_level = 0.75 + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (1.25 - 0.75)));
+    std::cout << random_level << endl;
+    Motorgrafico::getInstance()->getMusicPlayer()->setSFXPitchBend(Motorgrafico::getInstance()->getMusicPlayer()->ech220, random_level);
     Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->ech220);
 }
 
@@ -410,50 +410,51 @@ void Player::Contact(void* punt, string tipo) {
         } else if (tipo.compare("Trampa") == 0) {
             Trampa* trampa = static_cast<Trampa*> (punt);
             int id = trampa->getID();
-            
-            switch (id){
-                 case 3:
-                     break;
-                 case 4:
-                     break;
-                 default:
+
+            switch (id) {
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
                     Trampa* trampa = static_cast<Trampa*> (punt);
                     if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()) {
                         dir = 1;
                     }
                     this->changeDirection(dir);
                     partida->players2Delete.push_back(this);
-                     break;
-             }
-            
+                    break;
+            }
+
         }
-        
+
     }
 }
+
 void Player::Contact(void* punt, string tipo, int id) {
     if (tipo.compare("Platform") != 0) {
         Partida* partida = Partida::getInstance();
         int dir = -1;
 
-         if (tipo.compare("Trampa") == 0) {
-             
-             switch (id){
-                 case 3:
-                     break;
-                 case 4:
-                     break;
-                 default:
+        if (tipo.compare("Trampa") == 0) {
+
+            switch (id) {
+                case 3:
+                    break;
+                case 4:
+                    break;
+                default:
                     Trampa* trampa = static_cast<Trampa*> (punt);
                     if (trampa->getCuerpo()->getPosicionX() < this->getPositionX()) {
                         dir = 1;
                     }
                     this->changeDirection(dir);
                     partida->players2Delete.push_back(this);
-                     break;
-             }
-            
+                    break;
+            }
+
         }
-        
+
     }
 }
 

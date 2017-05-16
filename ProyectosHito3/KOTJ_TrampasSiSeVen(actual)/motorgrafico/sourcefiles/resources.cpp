@@ -19,6 +19,7 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
                         fondoJungle("./resources/fondos/fondoJungle.png"),
                         fondoMandala("./resources/fondos/fondoMandala.jpg"),
+                        fondoMandala2("./resources/fondos/fondoMandala2.jpg"),
                         fondoMar("./resources/fondos/fondoMar.jpg"),
                         fondoSeleccion("./resources/fondos/fondoSeleccion.png"),
                         fondoMenu("./resources/fondos/fondomenu.png"),
@@ -78,14 +79,15 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoHielo1)) return false;
     if (!loadTexture(fondoSeleccion)) return false;
     if (!loadTexture(fondoCueva)) return false;
-    if (!loadTexture(fondoMandala)) return false;
+    if (!loadTexture(fondoMandala)) return false;    
     if (!loadTexture(fondoMar)) return false;
     if (!loadTexture(fondoMenu)) return false;
     if (!loadTexture(puntero)) return false;
     if (!loadTexture(spikes))return false;
     if (!loadTexture(transparente)) return false;
     if (!loadTexture(cross)) return false;
-  return true;
+    if (!loadTexture(fondoMandala2)) return false;
+    return true;
 }
 
 bool Resources::loadFont(string filename) {

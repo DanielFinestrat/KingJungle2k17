@@ -134,8 +134,6 @@ public:
     void loadMap();
     void loadMap(string mapaStr);
     void loadFinalMap();
-    void createHud();
-    Hud* getHud();
 
     virtual ~Partida();
 
