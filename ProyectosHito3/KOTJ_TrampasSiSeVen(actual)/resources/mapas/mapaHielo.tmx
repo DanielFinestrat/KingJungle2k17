@@ -4,9 +4,9 @@
   <property name="fondo" value="./resources/fondos/fondoHielo.jpg"/>
  </properties>
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
-  <image source="tilesheet_complete.png" width="1408" height="768"/>
+  <image source="../../../../../Escritorio/tilesheet_complete.png" width="1408" height="768"/>
  </tileset>
- <tileset firstgid="1057" source="../../../../Escritorio/KOTJ.tsx"/>
+ <tileset firstgid="1057" source="../../../../../Escritorio/KOTJ.tsx"/>
  <layer name="Escenario" width="90" height="40">
   <data>
    <tile gid="0"/>
@@ -5625,10 +5625,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -5639,6 +5639,18 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -5651,18 +5663,6 @@
    <tile gid="915"/>
    <tile gid="915"/>
    <tile gid="915"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="0"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
    <tile gid="915"/>
    <tile gid="915"/>
    <tile gid="915"/>
@@ -5715,10 +5715,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
-   <tile gid="914"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
+   <tile gid="1971"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -5737,10 +5737,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
-   <tile gid="915"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
+   <tile gid="1970"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -10819,7 +10819,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="90" height="40">
+ <layer name="IA subir" width="90" height="40" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
