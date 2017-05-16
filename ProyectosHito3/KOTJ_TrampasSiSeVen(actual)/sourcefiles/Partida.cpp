@@ -306,7 +306,7 @@ void Partida::updateTraps() {
 
 void Partida::breakTraps(){  //Rompe las trampas, se le llama en el update a falta de un lugar mas adecuado
     for (int i = 0; i<traps2Break.size(); i++){
-        if(traps2Break.at(i) != NULL) traps2Break.at(i)->romper(true);
+        if(traps2Break.at(i) != NULL) traps2Break.at(i)->romper();
     }
     traps2Break.clear();
 }

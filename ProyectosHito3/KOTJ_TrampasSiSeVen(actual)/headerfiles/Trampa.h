@@ -47,13 +47,12 @@ public:
      */
     bool getEstado();
     bool getRoto();
-    bool getExplosivo();
     Cuerpo* getCuerpo();
     VisibleBody* getVBody();
     void activar();
     void desactivar();
     void update();
-    void romper(bool roto);
+    void romper();
     float getSizeX();
     void Contact(void* punt, string tipo);
     
@@ -61,7 +60,6 @@ private:
     int id; //0 pinchos, 1 zona de muerte solida, 2 zona de muerte atravesable, 3 tnt, 4 nitroglicerina, 5 palanca, 6 placa de presion
     bool estado; //Activado(true) o desactivado(false)
     bool roto; //Roto (true) intacto (false)
-    bool explosivo; //Informa de si va a explotar en el siguiente update
     float iniPosX;
     float iniPosY;
     int timeDes;

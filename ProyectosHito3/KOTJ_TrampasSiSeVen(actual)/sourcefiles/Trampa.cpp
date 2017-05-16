@@ -21,7 +21,6 @@ Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float
     id = type;
     estado = false;
     roto = false;
-    explosivo = false;
     m_SizeX = sizeX;
     m_SizeY = sizeY;
     iniPosX = posX;
@@ -99,16 +98,24 @@ void Trampa::activar() {
     if (!estado) {
         estado = true;
         switch (id) {
-            case 0:
+            case 0: //Pinchos
                 velY = -VELTRAP;
                 cuerpo->setVelocidadY(velY);
                 break;
-            case 3:
-                roto = true;
-                break;
-            case 4:
-                roto = true;
-                break;
+            case 3: //TNT
+                if(roto == false){
+                    roto = true;
+                    
+                    Partida *partida = Partida::getInstance();
+                    partida->traps2Break.push_back(this);
+                }
+            case 4://Nitro
+                if(roto == false){
+                    roto = true;
+                    
+                    Partida *partida = Partida::getInstance();
+                    partida->traps2Break.push_back(this);
+                }
                 //  case 5:
                 // case 6:
             default:
@@ -128,7 +135,7 @@ void Trampa::desactivar() {
     if (estado) {
         estado = false;
         switch (id) {
-            case 0:
+            case 0: //pinchos
                 velY = VELTRAP;
                 cuerpo->setVelocidadY(velY);
                 break;
@@ -143,14 +150,19 @@ void Trampa::desactivar() {
 
 }
 
-void Trampa::romper(bool romper){
-    roto = romper;
+void Trampa::romper(){
+    Explosion *nueva = NULL;
     switch (id) {
-        case 3:
+        case 3: //TNT
             cuerpo->setMaskBits(MASK_INTANGIBLE);
             cuerpo->setType(2);
-            Explosion *nueva;
-            nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 1.0f, 0.05f, 0.5f);
+            nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.0f, 0.04f, 0.5f);
+            Partida::getInstance()->worldExplo.insert(nueva);
+            break;
+        case 4: //Nitro
+            cuerpo->setMaskBits(MASK_INTANGIBLE);
+            cuerpo->setType(2);
+            nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.5f, 0.05f, 0.5f);
             Partida::getInstance()->worldExplo.insert(nueva);
             break;
         default:
@@ -202,9 +214,7 @@ bool Trampa::getEstado() {
     return estado;
 }
 
-bool Trampa::getExplosivo(){
-    return explosivo;
-}
+
 
 Cuerpo* Trampa::getCuerpo() {
     return (this->cuerpo);
@@ -219,23 +229,15 @@ void Trampa::Contact(void* punt, string tipo) {
         case 3: //TNT
             if (roto == false) { 
                 if(tipo.compare("Bala")== 0 || tipo.compare("Explosion") == 0){
-                    roto = true;
-                    explosivo = true;
-                    //cuerpo->setType(2);
-                    
-                    Partida *partida = Partida::getInstance();
-                    //if (partida->traps2Delete.count(this) == 0){ 
-                    partida->traps2Break.push_back(this);
-                    //}
-                    /*Explosion *nueva;
-                    nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 1.0f, 0.05f, 0.5f);
-                    Partida::getInstance()->worldExplo.insert(nueva);*/
+                    activar();
                 }
             }
             break;
         case 4: //Nitro
             if (roto == false) {
-                roto = true;
+                if(tipo.compare("Bala")== 0 || tipo.compare("Explosion") == 0 || tipo.compare("Player")){
+                    activar();
+                }
             }
             break;
         default:
