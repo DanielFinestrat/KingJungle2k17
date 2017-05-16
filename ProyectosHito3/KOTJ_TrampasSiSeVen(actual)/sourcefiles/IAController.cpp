@@ -6,6 +6,8 @@
  * Created on 25 de abril de 2017, 14:12
  */
 
+#include <SFML/Audio/AlResource.hpp>
+
 #include "../headerfiles/IAController.h"
 #include "../headerfiles/Partida.h"
 
@@ -60,7 +62,6 @@ IAController::IAController() {
     player->setColor(partida->worldPlayer.size());
 
     partida->worldPlayer.push_back(player);
-    Hud::getInstance()->addPlayer(player);
 }
 
 IAController::~IAController() {
@@ -124,6 +125,11 @@ void IAController::checkAxisY(int ejeY) {
     }
 }
 
+void IAController::restart(){
+	weaponFocus = NULL;
+	playerFocus = NULL;
+	estado = "buscarArma";
+}
 
 
 
@@ -192,10 +198,11 @@ void IAController::interact() {
 void IAController::moveTo(float PosX, float PosY, float dist, Controlador* seguir) {
     cout << estado << " " << dist<< " ";
     if (!player->isJumping()) {
-        if ((PosY > 0.9 && (seguir == NULL || !seguir->player->isJumping())) ) {
+        if (PosY > 0.9 && (seguir == NULL || !seguir!=player->isJumping())  ) {
 		//if (PosY > 0.9 ) {
-            cout << "superior";
+            cout << "superior ";
             int lugar = readTile(layerSubir);
+			cout << lugar;
             int dir = 0;
             switch (lugar) {
                 case 915:
@@ -221,8 +228,9 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
 
         }//Jugador esta en misma altura (saltando o no)
         else if (PosY > -0.5 && PosY < 3.2) {
-			cout << "misma";
-            int lugar = readTile(layerSubir);
+			cout << "misma ";
+            int lugar = readTile(layerMisma);
+			cout << lugar;
             switch (lugar) {
                 case 917:
                     pressUpdateState(0);
@@ -254,8 +262,9 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
             }
         }//Jugador esta en una altura inferior
         else if (PosY <= -0.5) {
-            cout << "inferior";
+            cout << "inferior ";	
             int lugar = readTile(layerBajar);
+			cout << lugar;
             int dir = 0;
             switch (lugar) {
                 case 915:
@@ -285,7 +294,10 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
                     break;
             }
         }
-    }
+			
+    }else{
+		cout << "saltando";
+	}
 	cout << endl;
 }
 
@@ -306,11 +318,13 @@ vector<float> IAController::buscarArma() {
                 float positionY = arma->cuerpo->getPosicionY();
                 float dist = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
                 if (distancia == -1) {
+					weaponFocus = arma;
                     encontrada = true;
                     distancia = dist;
                     PosX = IApositionX - positionX;
                     PosY = IApositionY - positionY;
                 } else if (dist < distancia) {
+					weaponFocus = arma;
                     distancia = dist;
                     PosX = IApositionX - positionX;
                     PosY = IApositionY - positionY;
@@ -319,6 +333,7 @@ vector<float> IAController::buscarArma() {
         }
     }
     if (!encontrada) {
+		weaponFocus = NULL;
         estado = "huir";
     }
     vector<float> ret;
@@ -326,6 +341,40 @@ vector<float> IAController::buscarArma() {
     ret.push_back(PosY);
     ret.push_back(distancia);
     return ret;
+}
+
+vector<float> IAController::getPosArma(){
+	vector<float> pos;
+	float PosX = 0, PosY = 0;
+	float distancia = -1;
+	
+	Partida* partida = Partida::getInstance();
+	bool existe = false;
+	for(int i=0; i<partida->worldWeapons.size(); i++){
+		if(partida->worldWeapons.at(i) == weaponFocus){
+			existe = true;
+		}
+	}
+	
+	if (weaponFocus->inPossession || weaponFocus->ammo == 0 || !existe) {
+		weaponFocus = NULL;
+		return buscarArma();
+	}else{
+		float IApositionX = player->getPositionX();
+		float IApositionY = player->getPositionY();
+		float positionX = weaponFocus->cuerpo->getPosicionX();
+        float positionY = weaponFocus->cuerpo->getPosicionY();
+		
+		distancia = sqrt(pow(IApositionX - positionX, 2) + pow(IApositionY - positionY, 2));
+        PosX = IApositionX - positionX;
+        PosY = IApositionY - positionY;
+	}
+	
+	pos.push_back(PosX);
+    pos.push_back(PosY);
+    pos.push_back(distancia);
+    return pos;
+	
 }
 
 vector<float> IAController::buscarHuida() {
@@ -436,18 +485,24 @@ void IAController::update() {
     Partida* partida = Partida::getInstance();
 
     vector<float> pos;
-    Controlador* seguir = NULL;
-
+	playerFocus = NULL;
+	
+	
     if (estado.compare("buscarArma") == 0) {
-        pos = buscarArma();
+		if(weaponFocus == NULL){
+			pos = buscarArma();
+		}
+		else{
+			pos = getPosArma();
+		}
     } else if (estado.compare("huir") == 0) {
         pos = buscarHuida();
     } else if (estado.compare("matar") == 0) {
-        pos = buscarMatar(&seguir);
+        pos = buscarMatar(&playerFocus);
     }
 	
 	cout << pos.at(2) << endl;
 	
-    moveTo(pos.at(0), pos.at(1), pos.at(2), seguir);
+    moveTo(pos.at(0), pos.at(1), pos.at(2), playerFocus);
 
 }

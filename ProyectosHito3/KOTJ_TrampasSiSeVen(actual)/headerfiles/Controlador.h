@@ -30,6 +30,7 @@ public:
     virtual void checkAxisX(int ejeX);
     virtual void checkAxisY(int ejeY);
     virtual void update();
+    virtual void restart();
 
 protected:
 

@@ -27,3 +27,6 @@ void Controlador::checkAxisY(int ejeY) {
 
 void Controlador::update(){
 }
+
+void Controlador::restart(){
+}
