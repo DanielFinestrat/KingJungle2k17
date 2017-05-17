@@ -195,7 +195,7 @@ void Player::changeDirection(int newDirMov) {
                 dirLooking = dirMoving;
 
                 if (weapon != NULL) {
-                    weapon->setDir(dirLooking);
+                    weapon->setDir(dirLooking); //TODO : cambiar la rotacion del arma
                 }
 
             }
@@ -238,7 +238,7 @@ bool Player::isPlayerDead() {
 
 void Player::mock() {
     float random_level = 0.75 + static_cast<float> (rand()) / (static_cast<float> (RAND_MAX / (1.25 - 0.75)));
-    std::cout << random_level << endl;
+    //std::cout << random_level << endl;
     Motorgrafico::getInstance()->getMusicPlayer()->setSFXPitchBend(Motorgrafico::getInstance()->getMusicPlayer()->ech220, random_level);
     Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->ech220);
 }
@@ -284,7 +284,10 @@ void Player::interact(Weapon* lastWeapon) {
                         currentWeapon->cuerpo->setAwake(false);
 
                         weapon = currentWeapon;
-                        if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+                        if (dirLooking != weapon->dir) weapon->setDir(dirLooking);
+                        if (lastWeapon->getRango() == 0.5) {
+                            currentWeapon->cuerpo->setAngulo(-0.5);
+                        }
                         break;
                     }
                 }
@@ -311,13 +314,19 @@ void Player::interact() {
                             currentWeapon->cuerpo->setActive(false);
                             currentWeapon->cuerpo->setAwake(false);
                             weapon = currentWeapon;
+
                             if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
+
+                            if (currentWeapon->getRango() == 0.5) {
+                                currentWeapon->cuerpo->setAngulo(-0.5);
+                            }
                             break;
                         }
                     }
                 }
             }
         } else {
+            if (weapon->getRango() == 0.5) weapon->cuerpo->setAngulo(0);	
             weapon->throwWeapon(cuerpo->getVelocidadX());
             Weapon* lastWeapon = weapon;
             weapon = NULL;

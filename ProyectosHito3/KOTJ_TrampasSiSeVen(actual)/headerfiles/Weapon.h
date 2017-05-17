@@ -34,6 +34,10 @@ public:
     bool inPossession;
     bool used;
     
+    bool atackPressed; //Activa la animacion de ataque de la espada		
+    InnerClock animationClock;		
+    float animtime;
+    
     //Variables para controlar la cadencia de disparo
     InnerClock deltaClock;
     float difTime;
@@ -101,4 +105,3 @@ public:
 };
 
 #endif /* WEAPON_H */
-

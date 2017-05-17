@@ -129,7 +129,7 @@ void Partida::Update() {
     updateClock();
     updateTraps();
     breakTraps();
-    //updateTexts();
+    updateTexts();
     hud->update();
 
     cameraSetFinalTransform();
@@ -142,7 +142,7 @@ void Partida::Render() {
     mapa->drawBackground();
     drawBullets();
     drawPlayers();
-    //drawTexts();
+    drawTexts();
     drawWeapons();
     drawExplo();
     drawTraps();
@@ -388,10 +388,9 @@ void Partida::updateClock() {
 }
 
 void Partida::updateTexts() {
-    for (int i = 0; i < worldPlayer.size() - 1; i++) {
+    for (int i = 0; i < worldPlayer.size(); i++) {
         if (worldPlayer.at(i) != NULL && !worldPlayer.at(i)->isPlayerDead()) {
-            worldTexts.at(i)->setTexto("1");
-            worldTexts.at(i)->setPos(worldPlayer.at(i)->getPositionX(), worldPlayer.at(i)->getPositionY());
+            worldTexts.at(i)->setPos(worldPlayer.at(i)->getPositionX() * PPM + 35, worldPlayer.at(i)->getPositionY() * PPM - 70);
         } else {
             worldTexts.at(i)->setTexto("");
         }
@@ -537,7 +536,7 @@ void Partida::loadFinalMap() {
     respawn();
 
     //cout << "mapa final" << endl;
-    VisibleBody *podioVB = new VisibleBody(320, 416, 256, 192, "./resources/sprites/podio.png", true);
+    VisibleBody *podioVB = new VisibleBody(320, 386, 256, 192, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);
 }
 

@@ -33,6 +33,9 @@ Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad
     dir = 1;
     difTime = (1 / shootCadence) * 1000;
 
+    atackPressed = false;
+    animtime = 0;
+
     cuerpo = Motorfisico::getInstance()->crearCuerpo(0, 0, sizex, sizey, this);
     cuerpo->setPosicion(posx * MPP, posy * MPP);
     cuerpo->setMaskBits(MASK_GUN);
@@ -60,6 +63,18 @@ void Weapon::update(float posX, float posY) {
     m_vBody->setAngle(cuerpo->getAngulo()*180);
     m_vBody->updateBody();
     if (used && !inPossession) checkIfDelete();
+
+    if (atackPressed) {
+        animationClock.restartClock();
+        animtime += animationClock.getDeltaTimeAsSeconds();
+
+        //cout<<"ataco"<<animtime<<endl;		
+
+        if (animtime > shootCadence) {
+            animtime = 0;
+            atackPressed = false;
+        }
+    }
 }
 
 void Weapon::checkIfDelete() {
@@ -108,6 +123,7 @@ int Weapon::shoot() {
                     partida->worldBullets.insert(nuevaBala);
                 }
                 if (BPS % 2 != 0) {
+                    if (rango == -1) atackPressed = true;
                     Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                     nuevaBala->Disparar(5 * -dir, 180);
                     partida->worldBullets.insert(nuevaBala);
@@ -152,16 +168,17 @@ void Weapon::throwWeapon(float playerVel) {
 
 void Weapon::setDir(int i) {
     dir = i;
-    m_vBody->setScale(i, 1);
+    if (rango != -1 && cuerpo->getAngulo() != -0.5)
+        m_vBody->setScale(i, 1);
 }
 
 void Weapon::Contact(void* punt, string tipo) {
 
 }
 
-float Weapon::getRango(){
-	float maxDist = 0; 
-	 switch (rango) {
+float Weapon::getRango() {
+    float maxDist = 0;
+    switch (rango) {
         case(0):
             maxDist = 5;
             break;
@@ -175,7 +192,7 @@ float Weapon::getRango(){
             maxDist = 0.5f;
             break;
     }
-	return maxDist;
+    return maxDist;
 }
 
 Weapon::~Weapon() {
@@ -185,7 +202,3 @@ Weapon::~Weapon() {
     cuerpo = NULL;
     m_vBody = NULL;
 }
-
-
-
-
