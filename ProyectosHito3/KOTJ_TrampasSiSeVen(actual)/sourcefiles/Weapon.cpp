@@ -195,6 +195,14 @@ float Weapon::getRango() {
     return maxDist;
 }
 
+VisibleBody* Weapon::getVBody() {
+    return m_vBody;
+}
+
+int Weapon::getAmmo() {
+    return ammo;
+}
+
 Weapon::~Weapon() {
     cuerpo->Destruir();
     delete (cuerpo);

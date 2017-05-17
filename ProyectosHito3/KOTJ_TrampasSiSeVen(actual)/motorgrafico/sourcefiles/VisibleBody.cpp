@@ -112,7 +112,7 @@ void VisibleBody::setColor(int r, int g, int b, int a) {
 }
 
 void VisibleBody::setTexRect(int x, int y, int w, int h) {
-    IntRect myRect = IntRect(posX, posY, width, height);
+    IntRect myRect = IntRect(x, y, w, h);
     rectangle.setTextureRect(myRect);
 }
 

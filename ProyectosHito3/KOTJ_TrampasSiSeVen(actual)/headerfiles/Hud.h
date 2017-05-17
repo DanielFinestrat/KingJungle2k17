@@ -23,11 +23,6 @@ public:
     static Hud* getInstance();
 
     /*
-     * Funcion que actualiza el hud
-     */
-    void update();
-
-    /*
      *Funcion que dibuja el hud 
      */
     void render();
@@ -49,10 +44,7 @@ private:
     std::vector<Player*> players;
     std::vector< std::vector<int> > positions;
     std::vector<VisibleBody*> avatars;
-    std::vector<VisibleBody*> weaponsIcon;
-    std::vector<VisibleBody*> crosses;
-    std::vector<Texto*> ammos;
-    
+    std::vector<VisibleBody*> crosses;    
     /*
      * Constructor de hud
      * @param std::vector<Player> j: Vector de jugadores en partida

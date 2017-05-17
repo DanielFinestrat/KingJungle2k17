@@ -48,27 +48,35 @@ Hud* Hud::getInstance() {
     return (instance);
 }
 
-void Hud::update() {
-    for (int i = 0; i < players.size(); i++) {
-        if (players.at(i) != NULL) {
-            Weapon* weapon = players.at(i)->getWeapon();
-            if (weapon != NULL) {
-                string weaponTex = weapon->m_vBody->getTexPath();
-                weaponsIcon.push_back(new VisibleBody(positions[i][0], positions[i][1], 100, 100, weaponTex, true));
-                ammos.push_back(new Texto(weapon->ammo, 18, Resources::getInstance()->menuFont, 255, 255, 255));
-            }
-        }
-    }
-}
-
 void Hud::render() {
     for (int i = 0; i < players.size(); i++) {
         if (players.at(i) != NULL) {
+            if (i == 1)  {avatars.at(i)->setColor(255, 255, 0, 255); avatars.at(i)->setScale(-1,1);}
+            if (i == 2)  avatars.at(i)->setColor(0, 255, 255, 255);
+            if (i == 3)  {avatars.at(i)->setColor(255, 0, 255, 255); avatars.at(i)->setScale(-1,1);}
+            
             Motorgrafico::getInstance()->draw(avatars.at(i)->getShape());
             if (!players.at(i)->isPlayerDead()) {
-                if (weaponsIcon.size() > i && ammos.size() > i) {
-                    Motorgrafico::getInstance()->draw(weaponsIcon.at(i)->getShape());
-                    Motorgrafico::getInstance()->draw(ammos.at(i)->getDrawable());
+                
+                Weapon * weapon = players.at(i)->getWeapon();
+                if (weapon != NULL) {
+                    VisibleBody * bodyP  = weapon->getVBody();
+                    VisibleBody body = *bodyP;
+                   
+                    if (i == 0) { body.setPos(100, 100); body.setScale(1,1);}
+                    if (i == 1) { body.setPos(positions.at(i).at(0)-50, 100); body.setScale(-1,1); }
+                    if (i == 2) { body.setPos(100, positions.at(i).at(1)-30); body.setScale(1,1);}
+                    if (i == 3) { body.setPos(positions.at(i).at(0)-50, positions.at(i).at(1)-30); body.setScale(-1,1);}
+                    Motorgrafico::getInstance()->draw(body.getShape());
+                    
+                    if (weapon->getAmmo() >= 0 ) {
+                        Texto * ammo =  new Texto(weapon->getAmmo(), 25, Resources::getInstance()->menuFont, 255, 255, 255);
+                        if (i == 0) ammo->setPos(110, 60);
+                        if (i == 1) ammo->setPos(positions.at(i).at(0)-70, 60);
+                        if (i == 2) ammo->setPos(110, positions.at(i).at(1)-30);
+                        if (i == 3) ammo->setPos(positions.at(i).at(0)-70, positions.at(i).at(1)-30);
+                        Motorgrafico::getInstance()->draw(ammo->getDrawable());
+                    }
                 }
             }
             else Motorgrafico::getInstance()->draw(crosses.at(i)->getShape());
@@ -80,12 +88,13 @@ void Hud::addPlayer(Player* p) {
     players.push_back(p);
     int i = players.size() - 1;
 
-    VisibleBody *body = new VisibleBody(positions[i][0], positions[i][1], 100, 100, p->getTexture(), true);
-    body->setTexRect(0, 0, 300, 200);
+    VisibleBody *body = new VisibleBody(positions.at(i).at(0), positions.at(i).at(1), 100, 100, p->getTexture(), true);
+    body->setTexRect(0, 0, 40, 35);
     avatars.push_back(body);
 }
 
 void Hud::deletePlayers() {
+    players.clear();
 }
 
 Hud::~Hud() {

@@ -130,8 +130,7 @@ void Partida::Update() {
     updateTraps();
     breakTraps();
     updateTexts();
-    hud->update();
-
+    
     cameraSetFinalTransform();
 }
 

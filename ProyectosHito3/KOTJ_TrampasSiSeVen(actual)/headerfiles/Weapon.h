@@ -94,6 +94,15 @@ public:
      * @param int i: Puede ser 1 o -1
      */
     void setDir(int i);
+    /*
+     * Funcion que devuelve un puntero al VisibleBody del arma
+     */
+    VisibleBody* getVBody();
+    
+    /*
+     * Funcion que devuelve la municion actual del arma
+     */
+    int getAmmo();
     
     void checkIfDelete();
     

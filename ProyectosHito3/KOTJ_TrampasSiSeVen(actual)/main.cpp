@@ -149,7 +149,8 @@ int main() {
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
-
+            
+            Hud::getInstance()->deletePlayers();
             //Motorgrafico::getInstance()->deletePartida();
         }
 
