@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="32" tileheight="32" nextobjectid="86">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="50" height="27" tilewidth="32" tileheight="32" nextobjectid="90">
  <properties>
   <property name="fondo" value="./resources/fondos/fondoSeleccion.png"/>
  </properties>
@@ -5437,7 +5437,7 @@
   <object id="84" name="player" x="879.5" y="0.5" width="32" height="32"/>
   <object id="85" name="cadaver" x="880.5" y="49.5" width="32" height="32"/>
  </objectgroup>
- <objectgroup name="Plataformas" visible="0">
+ <objectgroup name="Plataformas">
   <object id="9" name="platform" x="128" y="672" width="1472" height="128">
    <properties>
     <property name="roz" value="2"/>
@@ -5502,5 +5502,25 @@
   <object id="69" name="esquina" x="0" y="800" width="32" height="32"/>
   <object id="70" name="esquina" x="1568" y="800" width="32" height="32"/>
   <object id="71" name="esquina" x="1568" y="0" width="32" height="32"/>
+  <object id="86" name="platform" x="192" y="384" width="128" height="64">
+   <properties>
+    <property name="roz" value="2"/>
+   </properties>
+  </object>
+  <object id="87" name="platform" x="512" y="384" width="128" height="64">
+   <properties>
+    <property name="roz" value="2"/>
+   </properties>
+  </object>
+  <object id="88" name="platform" x="832" y="384" width="128" height="64">
+   <properties>
+    <property name="roz" value="2"/>
+   </properties>
+  </object>
+  <object id="89" name="platform" x="1152" y="384" width="128" height="64">
+   <properties>
+    <property name="roz" value="2"/>
+   </properties>
+  </object>
  </objectgroup>
 </map>
