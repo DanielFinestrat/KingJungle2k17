@@ -11,6 +11,7 @@
       <itemPath>headerfiles/Explosion.h</itemPath>
       <itemPath>headerfiles/Hud.h</itemPath>
       <itemPath>headerfiles/IAController.h</itemPath>
+      <itemPath>headerfiles/Inbetween.h</itemPath>
       <itemPath>headerfiles/Mapa.h</itemPath>
       <itemPath>headerfiles/Menu.h</itemPath>
       <itemPath>headerfiles/Partida.h</itemPath>
@@ -105,6 +106,7 @@
       <itemPath>sourcefiles/Explosion.cpp</itemPath>
       <itemPath>sourcefiles/Hud.cpp</itemPath>
       <itemPath>sourcefiles/IAController.cpp</itemPath>
+      <itemPath>sourcefiles/Inbetween.cpp</itemPath>
       <itemPath>sourcefiles/Mapa.cpp</itemPath>
       <itemPath>sourcefiles/Menu.cpp</itemPath>
       <itemPath>sourcefiles/Partida.cpp</itemPath>
@@ -181,6 +183,8 @@
       <item path="headerfiles/Hud.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Inbetween.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Mapa.h" ex="false" tool="3" flavor2="0">
       </item>
@@ -378,6 +382,8 @@
       <item path="sourcefiles/Hud.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Inbetween.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Mapa.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -467,6 +473,8 @@
       </item>
       <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="headerfiles/Inbetween.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="headerfiles/Mapa.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="headerfiles/Menu.h" ex="false" tool="3" flavor2="0">
@@ -663,6 +671,8 @@
       <item path="sourcefiles/Hud.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Inbetween.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="sourcefiles/Mapa.cpp" ex="false" tool="1" flavor2="0">
       </item>

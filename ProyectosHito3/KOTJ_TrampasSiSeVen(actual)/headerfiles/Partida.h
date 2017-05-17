@@ -27,6 +27,7 @@
 #include "Trampa.h"
 #include "TrapSpawner.h"
 #include "IAController.h"
+#include "Inbetween.h"
 
 using namespace std;
 
@@ -41,6 +42,7 @@ class Motorgrafico;
 
 struct checkLoadingLevel {
     bool loadingLevel;
+    bool showingInbetween;
     bool firstTextPrepared;
     bool secondTextPrepared;
     bool thirdTextPrepared;
@@ -70,6 +72,7 @@ public:
     float timeBetweenReset;
 
     checkLoadingLevel loadingLevelStruct;
+    Inbetween* inbetween;
 
     vector<Player*> players2Delete;
     vector<Platform*> platforms2Delete;
@@ -119,6 +122,7 @@ public:
     void updateIA();
     void updateClock();
     void updateTexts();
+    void inbetweenUpdate();
     void updateBeforeMap();
     
     void breakTraps();

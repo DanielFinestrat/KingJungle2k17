@@ -57,6 +57,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/sourcefiles/Explosion.o \
 	${OBJECTDIR}/sourcefiles/Hud.o \
 	${OBJECTDIR}/sourcefiles/IAController.o \
+	${OBJECTDIR}/sourcefiles/Inbetween.o \
 	${OBJECTDIR}/sourcefiles/Mapa.o \
 	${OBJECTDIR}/sourcefiles/Menu.o \
 	${OBJECTDIR}/sourcefiles/Partida.o \
@@ -219,6 +220,11 @@ ${OBJECTDIR}/sourcefiles/IAController.o: sourcefiles/IAController.cpp
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/IAController.o sourcefiles/IAController.cpp
+
+${OBJECTDIR}/sourcefiles/Inbetween.o: sourcefiles/Inbetween.cpp 
+	${MKDIR} -p ${OBJECTDIR}/sourcefiles
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/sourcefiles/Inbetween.o sourcefiles/Inbetween.cpp
 
 ${OBJECTDIR}/sourcefiles/Mapa.o: sourcefiles/Mapa.cpp 
 	${MKDIR} -p ${OBJECTDIR}/sourcefiles

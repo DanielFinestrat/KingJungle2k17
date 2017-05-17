@@ -109,7 +109,7 @@ build/Debug/GNU-Linux/sourcefiles/PlayerJoystick.o: \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
- sourcefiles/../headerfiles/Hud.h
+ sourcefiles/../headerfiles/Inbetween.h sourcefiles/../headerfiles/Hud.h
 
 sourcefiles/../headerfiles/PlayerJoystick.h:
 
@@ -334,5 +334,7 @@ sourcefiles/../headerfiles/TrapSpawner.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/Inbetween.h:
 
 sourcefiles/../headerfiles/Hud.h:

@@ -45,6 +45,7 @@ class Resources {
         const string transparente;
         const string tnt;
         const string cross;
+        const string crown;
         const string explosion;
         const string nitro;
 

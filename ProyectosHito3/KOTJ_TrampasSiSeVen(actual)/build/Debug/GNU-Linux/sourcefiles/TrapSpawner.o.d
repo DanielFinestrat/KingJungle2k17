@@ -103,7 +103,8 @@ build/Debug/GNU-Linux/sourcefiles/TrapSpawner.o: \
  sourcefiles/../headerfiles/Console.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h
+ sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/Inbetween.h
 
 sourcefiles/../headerfiles/TrapSpawner.h:
 
@@ -318,3 +319,5 @@ sourcefiles/../headerfiles/TrapSpawner.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/Inbetween.h:

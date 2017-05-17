@@ -107,7 +107,8 @@ build/Debug/GNU-Linux/sourcefiles/Bala.o: sourcefiles/Bala.cpp \
  sourcefiles/../headerfiles/Console.h sourcefiles/../headerfiles/Trampa.h \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
- sourcefiles/../headerfiles/../Box2D/Box2D.h
+ sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/Inbetween.h
 
 sourcefiles/../headerfiles/Bala.h:
 
@@ -332,3 +333,5 @@ sourcefiles/../headerfiles/TrapSpawner.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/Inbetween.h:

@@ -115,7 +115,8 @@ build/Debug/GNU-Linux/motorfisico/sourcefiles/ContactListener.o: \
  motorfisico/sourcefiles/../../headerfiles/Trampa.h \
  motorfisico/sourcefiles/../../headerfiles/TrapSpawner.h \
  motorfisico/sourcefiles/../../headerfiles/IAController.h \
- motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h
+ motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h \
+ motorfisico/sourcefiles/../../headerfiles/Inbetween.h
 
 motorfisico/sourcefiles/../headerfiles/ContactListener.h:
 
@@ -348,3 +349,5 @@ motorfisico/sourcefiles/../../headerfiles/TrapSpawner.h:
 motorfisico/sourcefiles/../../headerfiles/IAController.h:
 
 motorfisico/sourcefiles/../../headerfiles/../Box2D/Box2D.h:
+
+motorfisico/sourcefiles/../../headerfiles/Inbetween.h:

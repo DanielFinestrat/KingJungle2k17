@@ -94,19 +94,12 @@ int main() {
 
             empezada = false;
             menu = createMainMenu();
-
-
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
 
-            //->isOpen() es un método de sfml, creo que deberiamos crear un método en el motorgrafico que haga totalmente lo mismo
             while (mg->getRenderWindow()->isOpen() && state == 1) {
-
                 menu->input(state, menu);
-
                 menu->update();
-
                 menu->render();
-
             }
 
             menu = NULL;
@@ -119,10 +112,7 @@ int main() {
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
             }
-            
-            //if (!Partida::getInstance()->worldPlayer.empty())
-            //    mg->getPartida()->createHud();
-            
+
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->menuMusic);
 
             if (Motorgrafico::getInstance()->getPartida()->mapa->getIfFirstMap()) {
@@ -137,19 +127,19 @@ int main() {
                 mg->getPartida()->Input(state);
                 if (mg->getPartida()->getInstance()->loadingLevelStruct.loadingLevel) {
                     mg->getPartida()->updateBeforeMap();
+                } else if (mg->getPartida()->getInstance()->loadingLevelStruct.showingInbetween) {
+                    mg->getPartida()->inbetweenUpdate();
                 } else {
-                    
                     mg->getPartida()->Update();
-                    
                 }
                 mg->getPartida()->Erase();
                 mg->getPartida()->Render();
-                
+
             }
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
-            
+
             Hud::getInstance()->deletePlayers();
             //Motorgrafico::getInstance()->deletePartida();
         }

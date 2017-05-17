@@ -108,6 +108,7 @@ build/Debug/GNU-Linux/sourcefiles/Player.o: sourcefiles/Player.cpp \
  sourcefiles/../headerfiles/TrapSpawner.h \
  sourcefiles/../headerfiles/IAController.h \
  sourcefiles/../headerfiles/../Box2D/Box2D.h \
+ sourcefiles/../headerfiles/Inbetween.h \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
@@ -342,6 +343,8 @@ sourcefiles/../headerfiles/TrapSpawner.h:
 sourcefiles/../headerfiles/IAController.h:
 
 sourcefiles/../headerfiles/../Box2D/Box2D.h:
+
+sourcefiles/../headerfiles/Inbetween.h:
 
 sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 

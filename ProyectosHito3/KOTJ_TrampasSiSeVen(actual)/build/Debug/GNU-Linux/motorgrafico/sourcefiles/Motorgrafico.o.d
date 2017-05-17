@@ -112,6 +112,7 @@ build/Debug/GNU-Linux/motorgrafico/sourcefiles/Motorgrafico.o: \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/TrapSpawner.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/IAController.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../Box2D/Box2D.h \
+ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Inbetween.h \
  motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Menu.h \
  motorgrafico/sourcefiles/../headerfiles/Animation.h \
  motorgrafico/sourcefiles/../headerfiles/SpriteAnimated.h \
@@ -341,6 +342,8 @@ motorgrafico/sourcefiles/../headerfiles/../../headerfiles/TrapSpawner.h:
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/IAController.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/../Box2D/Box2D.h:
+
+motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Inbetween.h:
 
 motorgrafico/sourcefiles/../headerfiles/../../headerfiles/Menu.h:
 

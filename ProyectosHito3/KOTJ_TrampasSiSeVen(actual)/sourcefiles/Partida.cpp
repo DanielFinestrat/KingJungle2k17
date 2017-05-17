@@ -116,7 +116,6 @@ void Partida::Erase() {
 }
 
 void Partida::Update() {
-
     Motorfisico::getInstance()->Update();
     Motorgrafico::getInstance()->updateWindow();
 
@@ -150,9 +149,10 @@ void Partida::Render() {
     if (notFirstReset || loadingLevelStruct.loadingLevel)
         drawMainText();
     hud->render();
+    if (loadingLevelStruct.showingInbetween) inbetween->render();
     console.draw();
 
-    Motorgrafico::getInstance()->drawTemporizador();
+    if (!loadingLevelStruct.showingInbetween) Motorgrafico::getInstance()->drawTemporizador();
     Motorgrafico::getInstance()->displayWindow();
 }
 
@@ -396,10 +396,21 @@ void Partida::updateTexts() {
     }
 }
 
+void Partida::inbetweenUpdate() {
+    changeLevelClock.restartClock();
+    timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
+    
+    if (timeBetweenReset > 2) {
+        loadingLevelStruct.loadingLevel = true;
+        loadingLevelStruct.showingInbetween = false;
+        timeBetweenReset = 0;
+        Update(); Update();
+    }
+}
+
 void Partida::updateBeforeMap() {
     changeLevelClock.restartClock();
     timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
-    //cout << timeBetweenReset << endl;
 
     if (loadingLevelStruct.firstTextPrepared && timeBetweenReset > 1) {
         Texto *plus1 = worldTexts.at(4);
@@ -414,7 +425,6 @@ void Partida::updateBeforeMap() {
         plus1->setPos(screenWidth / 2 - 80, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin2);
         loadingLevelStruct.secondTextPrepared = false;
-
 
     } else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
         Motorgrafico::getInstance()->getTemporizador()->stop(false);
@@ -437,18 +447,20 @@ void Partida::setUsingKeyboard(bool state) {
 }
 
 void Partida::startTextBeforeLevel() {
-    loadingLevelStruct.loadingLevel = true;
+    loadingLevelStruct.loadingLevel = false;
     loadingLevelStruct.firstTextPrepared = true;
     loadingLevelStruct.secondTextPrepared = true;
     loadingLevelStruct.thirdTextPrepared = true;
+    loadingLevelStruct.showingInbetween = true;
 
+    timeBetweenReset = 0;
+    inbetween = NULL;
+    inbetween = new Inbetween(worldPlayer);
+    
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
-    Update();
-    Update();
 }
 
 void Partida::loadMap() {
-    //checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -480,7 +492,6 @@ void Partida::loadMap() {
 }
 
 void Partida::loadMap(string mapaStr) {
-    //checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -513,7 +524,6 @@ void Partida::loadMap(string mapaStr) {
 }
 
 void Partida::loadFinalMap() {
-    //checkJoysticksConnected();
 
     if (mapa != NULL) {
         delete(mapa);
@@ -534,7 +544,6 @@ void Partida::loadFinalMap() {
 
     respawn();
 
-    //cout << "mapa final" << endl;
     VisibleBody *podioVB = new VisibleBody(320, 386, 256, 192, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);
 }
@@ -545,7 +554,6 @@ Partida::~Partida() {
 
 void Partida::finishRound() {
     if (!notFirstReset) {
-        //cout << "trying to finish this" << endl;
 
         int alivePeople = 0;
         for (int i = 0; i < worldPlayer.size(); i++) {
@@ -568,8 +576,8 @@ void Partida::loadTextsNClock() {
     notFirstReset = false;
     gameisover = false;
 
-    //loadingLevelStruct = new str
     loadingLevelStruct.loadingLevel = false;
+    loadingLevelStruct.showingInbetween = false;
     loadingLevelStruct.firstTextPrepared = false;
     loadingLevelStruct.secondTextPrepared = false;
     loadingLevelStruct.thirdTextPrepared = false;
