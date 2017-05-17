@@ -18,6 +18,7 @@ VisibleBody::VisibleBody(float x, float y, float w, float h, std::string path, b
     height = h;
     width = w;
     texPath = path;
+    circle.setRadius(0);
    
     rectangle.setPosition(posX, posY);
     rectangle.setSize(sf::Vector2f(width, height));
@@ -82,7 +83,10 @@ void VisibleBody::setDim(float w, float h) {
 
 void VisibleBody::setTex(std::string path) {
     texPath = path;
-    rectangle.setTexture(&tex->getTexture(texPath));
+    if(circle.getRadius() == 0)
+        rectangle.setTexture(&tex->getTexture(texPath));
+    else
+        circle.setTexture(&tex->getTexture(texPath));
 }
 
 void VisibleBody::setScale(int sX, int sY) {

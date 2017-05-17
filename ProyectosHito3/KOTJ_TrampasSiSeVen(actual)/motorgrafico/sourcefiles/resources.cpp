@@ -25,7 +25,9 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         fondoMenu("./resources/fondos/fondomenu.png"),
                         puntero("./resources/sprites/puntero.png"),
                         transparente("./resources/sprites/transparente.png"),
-                        cross("./resources/sprites/cross.png")
+                        cross("./resources/sprites/cross.png"),
+                        explosion("./resources/sprites/explosion.png"),
+                        nitro("./resources/sprites/nitro.png")
                         { initialise(); }
 
 
@@ -87,6 +89,8 @@ bool Resources::loadAll() {
     if (!loadTexture(transparente)) return false;
     if (!loadTexture(cross)) return false;
     if (!loadTexture(fondoMandala2)) return false;
+    if  (!loadTexture(explosion)) return false;
+    if (!loadTexture(nitro)) return false;
     return true;
 }
 

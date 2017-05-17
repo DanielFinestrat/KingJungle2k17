@@ -17,13 +17,14 @@ Explosion::Explosion(float posx, float posy, float radio, float incremento, floa
     incrementoRadio = incremento;
     difTime = 0;
     
-    cuerpo = Motorfisico::getInstance()->crearCuerpoCircular(posx, posy, radio, this);
+    cuerpo = Motorfisico::getInstance()->crearCuerpoCircular(posx, posy, inicial, this);
     cuerpo->setMaskBits(MASK_EXPLOSION);
     cuerpo->setCategoryBits(CATEGORY_EXPLOSION);
     cuerpo->setDensity(0.7f);
     cuerpo->setType(2);
     
     shape = new VisibleBody(cuerpo->getPosicionX() * PPM, cuerpo->getPosicionY() * PPM,inicial * PPM,"");
+    shape->setTex(Resources::getInstance()->explosion);
     shape->setCircleOrigin(radioActual * PPM, radioActual * PPM);
 
 }

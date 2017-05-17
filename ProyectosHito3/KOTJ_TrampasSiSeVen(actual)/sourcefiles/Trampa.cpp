@@ -64,7 +64,7 @@ Trampa::Trampa(float sizeX, float sizeY, float posX, float posY, int type, float
         case 4: //Nitroglicerina
             cuerpo->setType(1);
             cuerpo->setMaskBits(MASK_TRAMPA2);
-            m_vBody->setTex("");
+            m_vBody->setTex(Resources::getInstance()->nitro);
             break;
         case 5: //Palanca
             cuerpo->setType(0);
@@ -156,12 +156,14 @@ void Trampa::romper(){
         case 3: //TNT
             cuerpo->setMaskBits(MASK_INTANGIBLE);
             cuerpo->setType(2);
+            cuerpo->setVelocidad(0,0);
             nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.0f, 0.04f, 0.5f);
             Partida::getInstance()->worldExplo.insert(nueva);
             break;
         case 4: //Nitro
             cuerpo->setMaskBits(MASK_INTANGIBLE);
             cuerpo->setType(2);
+            cuerpo->setVelocidad(0,0);
             nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.5f, 0.05f, 0.5f);
             Partida::getInstance()->worldExplo.insert(nueva);
             break;
@@ -235,7 +237,7 @@ void Trampa::Contact(void* punt, string tipo) {
             break;
         case 4: //Nitro
             if (roto == false) {
-                if(tipo.compare("Bala")== 0 || tipo.compare("Explosion") == 0 || tipo.compare("Player")){
+                if(tipo.compare("Bala")== 0 || tipo.compare("Explosion") == 0 || tipo.compare("Player") == 0){
                     activar();
                 }
             }
