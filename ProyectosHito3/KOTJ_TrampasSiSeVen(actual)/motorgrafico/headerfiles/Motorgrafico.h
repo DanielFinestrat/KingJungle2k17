@@ -21,7 +21,7 @@ class Motorgrafico {
 public:
     static Motorgrafico* getInstance();
 
-    void createPartida();
+    void createPartida(int tiempo);
     Partida* getPartida();
     void deletePartida();
 

@@ -445,16 +445,21 @@ void Partida::updateBeforeMap() {
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin1);
         loadingLevelStruct.firstTextPrepared = false;
 
-    } else if (loadingLevelStruct.secondTextPrepared && timeBetweenReset > 2) {
+    }
+	//ready
+	else if (loadingLevelStruct.secondTextPrepared && timeBetweenReset > 2) {
         Texto *plus1 = worldTexts.at(4);
         plus1->setTexto("READY");
         plus1->setPos(screenWidth / 2 - 80, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin2);
         loadingLevelStruct.secondTextPrepared = false;
 
-    } else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
+    }
+	//se reanuda la partida
+	else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
 
         Motorgrafico::getInstance()->getTemporizador()->stop(false);
+		Motorgrafico::getInstance()->getTemporizador()->restart();
         Texto *plus1 = worldTexts.at(4);
         plus1->setTexto("");
         plus1->setPos(screenWidth / 2 - 30, screenHeight / 2 - 90);

@@ -37,9 +37,8 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int r, float t, int m) {
     time = t;
     mode = m;
     modes = std::vector<string>(3);
-    modes[0] = "Normal";
+    modes[0] = "Todos contra Todos";
     modes[1] = "Recolectar monedas";
-    modes[2] = "Clavar la bandera";
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);
 
     trounds = new Texto(rounds, 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
@@ -139,7 +138,7 @@ void Menu::gameUpdate() {
                     tmode->setColor(100, 0, 0);
                     if (mode == 1) incX = 170;
                     if (mode == 2) incX = 270;
-                    if (mode == 3) incX = 240;
+                    //if (mode == 3) incX = 240;
                 }
             }
 
@@ -335,7 +334,8 @@ void Menu::increaseTime() {
 
 void Menu::increaseMode() {
 
-    if (mode < 3) {
+    //if (mode < 3) {
+	if (mode < 2) {
         mode++;
         stringstream ss;
         ss << "<" << modes[mode - 1] << ">";
@@ -409,6 +409,18 @@ void Menu::decreaseFXVol() {
         ss << "<" << fxVol*10 << ">";
         tfxVol->setTexto(ss.str());
     }
+}
+
+int Menu::getTiempo(){
+	return time;
+}
+
+int Menu::getRounds(){
+	return rounds;
+}
+
+int Menu::getMode(){
+	return mode;
 }
 
 Menu::~Menu() {

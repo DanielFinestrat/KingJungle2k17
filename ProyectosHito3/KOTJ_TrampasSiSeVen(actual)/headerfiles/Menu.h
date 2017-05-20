@@ -135,6 +135,10 @@ public:
     void gameUpdate();
     void optionsUpdate();
     
+    int getTiempo();
+    int getRounds();
+    int getMode();
+    
     /*
      * Funcion que gestiona la entrada de teclado
      */
@@ -145,8 +149,8 @@ private:
     std::vector<Texto*> options;
     std::vector<string> modes;
     Texto* trounds, * ttime, * tmode, * tmVol, * tfxVol;
-    int currentOpt, rounds, mode, musicVol, fxVol;
-    float posX, posY, time;
+    int currentOpt, rounds, mode, time, musicVol, fxVol;
+    float posX, posY;
     VisibleBody* puntero, * puntero1, *  puntero2, *  rectangle;
     Fondo* fondo;
 };

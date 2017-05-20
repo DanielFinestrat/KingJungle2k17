@@ -606,8 +606,8 @@ void Motorgrafico::textEnteredConsole(Event even) {
     }
 }
 
-void Motorgrafico::createPartida() {
-    temporizador = new Temporizador(60, screenWidth / 2, 0, 40);
+void Motorgrafico::createPartida(int tiempo) {
+    temporizador = new Temporizador(tiempo, screenWidth / 2, 0, 40);
     partida = Partida::getInstance();
 }
 

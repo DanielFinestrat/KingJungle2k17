@@ -24,7 +24,7 @@ Menu* createMainMenu() {
     return menu;
 }
 
-Menu* createGameMenu() {
+Menu* createGameMenu(int rondas, int tiempo, int modo) {
     Texto* op1 = new Texto("Rondas", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op2 = new Texto("Tiempo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op3 = new Texto("Modo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
@@ -36,7 +36,7 @@ Menu* createGameMenu() {
     vec[2] = op3;
     vec[3] = op4;
 
-    Menu* menu = new Menu(vec, 350, 200, 5, 20, 1);
+    Menu* menu = new Menu(vec, 350, 200, rondas, tiempo, modo);
 
     return menu;
 }
@@ -73,16 +73,24 @@ Menu* createPause() {
 
 int main() {
     bool empezada = false;
+	
     state = 1;
     Menu* menu;
     Motorgrafico *mg = Motorgrafico::getInstance();
     Fondo* fondo = new Fondo("./resources/fondos/fondoCarga.png", true);
     fondo->Update();
     fondo->Render();
-
     mg->createMusicPlayer();
     mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
 
+	//datos Basicos de la partida
+	vector<int> datosPartida; 	//int rondas tiempo modo
+	datosPartida.push_back(5);
+	datosPartida.push_back(60);
+	datosPartida.push_back(1);
+
+	
+	
     while (state != 0) {
 
         if (state == 1) {
@@ -107,7 +115,7 @@ int main() {
 
         if (state == 2) {
             if (!empezada) {
-                Motorgrafico::getInstance()->createPartida();
+                Motorgrafico::getInstance()->createPartida(datosPartida.at(1));
                 Motorgrafico::getInstance()->getPartida()->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
@@ -147,16 +155,18 @@ int main() {
 
         if (state == 3) {
 
-            menu = createGameMenu();
+            menu = createGameMenu(datosPartida.at(0), datosPartida.at(1), datosPartida.at(2));
 
-            int i = 0;
             while (mg->getRenderWindow()->isOpen() && state == 3) {
-                i++;
                 menu->input(state, menu);
                 menu->gameUpdate();
                 menu->renderGameMenu();
             }
-
+			
+			datosPartida.at(0) = menu->getRounds();
+			datosPartida.at(1) = menu->getTiempo();
+			datosPartida.at(2) = menu->getMode();
+			
             menu = NULL;
         }
 
