@@ -264,7 +264,12 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                 }
                             }
                             break;
-
+						case Event::JoystickButtonPressed:
+								if (menu->getCurrentOption() == 0) e = 2;
+                                if (menu->getCurrentOption() == 1) e = 3;
+                                if (menu->getCurrentOption() == 2) e = 4;
+                                if (menu->getCurrentOption() == 3) e = 0;
+							break;
                         case Event::KeyPressed:
                             switch (event.key.code) {
                                 case Keyboard::Down:
@@ -339,7 +344,9 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                     break;
                             }
                             break;
-
+						case Event::JoystickButtonPressed:
+								 if (menu->getCurrentOption() == 3) e = 1;
+							break;
                         case Event::KeyReleased:
                             if (event.key.code == sf::Keyboard::Right) {
                                 if (menu->getCurrentOption() == 0) menu->increaseRounds();
@@ -432,7 +439,9 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
 
                             }
                             break;
-
+						case Event::JoystickButtonPressed:
+								 if (menu->getCurrentOption() == 2) e = 1;
+							break;	
                         case Event::KeyReleased:
 
                             if (event.key.code == sf::Keyboard::Right) {
@@ -473,8 +482,7 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                             break;
                     }
                 }
-
-
+				break;
             case 5: //pausa dentro de partida
                 while (window->pollEvent(event)) {
                     switch (event.type) {
@@ -506,7 +514,25 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                     break;
                             }
                             break;
-
+						case Event::JoystickButtonPressed:
+								 if (menu->getCurrentOption() == 0) {
+                                    for (int i = 0; i < Partida::getInstance()->worldPlayer.size(); i++) {
+                                        if (Partida::getInstance()->worldPlayer.at(i) != NULL) {
+                                            if (Partida::getInstance()->worldPlayer.at(i)->getPaused()) {
+                                                Partida::getInstance()->worldPlayer.at(i)->pause();
+                                            }
+                                        }
+                                    }
+                                    e = 2;
+                                }
+                                if (menu->getCurrentOption() == 1) {
+                                    getMusicPlayer()->stopSound(getMusicPlayer()->battleMusic);
+                                    getMusicPlayer()->playSound(getMusicPlayer()->menuMusic);
+                                    e = 1;
+                                }
+                                if (menu->getCurrentOption() == 2) e = 0;
+							break;
+						
                         case Event::KeyReleased:
 
                             if (event.key.code == 58) {
@@ -532,7 +558,6 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                             }
                     }
                 }
-
                 break;
         }
     }

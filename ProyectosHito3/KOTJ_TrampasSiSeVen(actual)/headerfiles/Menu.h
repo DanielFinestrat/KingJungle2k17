@@ -13,6 +13,7 @@
 #include <vector>
 #include <sstream>
 #include <string>
+#include "../motorgrafico/headerfiles/InnerClock.h"
 #include "../motorgrafico/headerfiles/Texto.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/Fondo.h"
@@ -146,6 +147,11 @@ public:
     
     virtual ~Menu();
 private:
+    InnerClock relojVertical;
+    float difTimeVertical = 0.0f;
+    InnerClock relojHorizontal;
+    float difTimeHorizontal = 0.0f;
+    
     std::vector<Texto*> options;
     std::vector<string> modes;
     Texto* trounds, * ttime, * tmode, * tmVol, * tfxVol;

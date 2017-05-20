@@ -113,6 +113,7 @@ build/Debug/GNU-Linux/sourcefiles/Weaponspawner.o: \
  sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h \
+ sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
  sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Fondo.h \
@@ -352,6 +353,8 @@ sourcefiles/../motorgrafico/headerfiles/Motorgrafico.h:
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Partida.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/Menu.h:
+
+sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../motorgrafico/headerfiles/../../headerfiles/../motorgrafico/headerfiles/Texto.h:
 

@@ -14,7 +14,7 @@ Menu::Menu(std::vector<Texto*> op, int x, int y) {
     currentOpt = 0;
     posX = x;
     posY = y;
-
+	
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);
 
     puntero = new VisibleBody(posX, posY, 387/3, 200/3, "./resources/sprites/puntero.png", true);
@@ -32,7 +32,7 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int r, float t, int m) {
     currentOpt = 0;
     posX = x;
     posY = y;
-
+	
     rounds = r;
     time = t;
     mode = m;
@@ -62,7 +62,7 @@ Menu::Menu(std::vector<Texto*> op, int x, int y, int vm, int vfx) {
     musicVol = vm;
     fxVol = vfx;
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);
-
+	
     tmVol = new Texto(musicVol * 10, 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     tfxVol = new Texto(fxVol * 10, 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     puntero = new VisibleBody(posX, posY, 387/3, 200/3, "./resources/sprites/puntero.png", true);
@@ -223,22 +223,29 @@ void Menu::optionsUpdate() {
 }
 
 void Menu::goDown() {
-
-    if (currentOpt == options.size() - 1) {
-        currentOpt = 0;
-    } else {
-
-        currentOpt++;
-    }
+	relojVertical.restartClock();
+    difTimeVertical += relojVertical.getDeltaTimeAsSeconds();
+	if(difTimeVertical>=0.25){
+		difTimeVertical = 0.0f;
+		if (currentOpt == options.size() - 1) {
+			currentOpt = 0;
+		} else {
+			currentOpt++;
+		}
+	}
 }
 
 void Menu::goUp() {
-
-    if (currentOpt == 0) {
-        currentOpt = options.size() - 1;
-    } else {
-        currentOpt--;
-    }
+	relojVertical.restartClock();
+    difTimeVertical += relojVertical.getDeltaTimeAsSeconds();
+	if(difTimeVertical>=0.25){
+		difTimeVertical = 0.0f;
+		if (currentOpt == 0) {
+			currentOpt = options.size() - 1;
+		} else {
+			currentOpt--;
+		}
+	}
 }
 
 void Menu::render() {
@@ -312,103 +319,144 @@ int Menu::getCurrentOption() {
 }
 
 void Menu::increaseRounds() {
-
-    if (rounds < 10) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (rounds < 10) {
         rounds++;
         stringstream ss;
         ss << "<" << rounds << ">";
         trounds->setTexto(ss.str());
         
     }
-
+	}
 }
 
 void Menu::increaseTime() {
-
-    if (time < 100) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (time < 100) {
         time += 10;
         stringstream ss;
         ss << "<" << time << ">";
         ttime->setTexto(ss.str());
    }
+	}
 }
 
 void Menu::increaseMode() {
-
-    if (mode < 3) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (mode < 3) {
         mode++;
         stringstream ss;
         ss << "<" << modes[mode - 1] << ">";
         tmode->setTexto(ss.str());
     }
-
+	}
 }
 
 void Menu::decreaseRounds() {
-
-    if (rounds > 1) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (rounds > 1) {
         rounds--;
         stringstream ss;
         ss << "<" << rounds << ">";
         trounds->setTexto(ss.str());
     }
-
+	}
 }
 
 void Menu::decreaseTime() {
-
-    if (time > 10) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (time > 10) {
         time -= 10;
         stringstream ss;
         ss << "<" << time << ">";
         ttime->setTexto(ss.str());
     }
-
+	}
 }
 
 void Menu::decreaseMode() {
-    if (mode > 1) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (mode > 1) {
         mode--;
         stringstream ss;
         ss << "<" << modes[mode - 1] << ">";
         tmode->setTexto(ss.str());
     }
+	}
 }
 
 void Menu::increaseMusicVol() {
-    if (musicVol < 10) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (musicVol < 10) {
         musicVol++;
         stringstream ss;
         ss << "<" << musicVol*10 << ">";
         tmVol->setTexto(ss.str());
     }
+	}
 }
 
 void Menu::increaseFXVol() {
-    if (fxVol < 10) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (fxVol < 10) {
         fxVol++;
         stringstream ss;
         ss << "<" << fxVol*10 << ">";
         tfxVol->setTexto(ss.str());
     }
+	}
 }
 
 void Menu::decreaseMusicVol() {
-    if (musicVol > 0) {
+	relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;	
+		if (musicVol > 0) {
         musicVol--;
         stringstream ss;
         ss << "<" << musicVol*10 << ">";
         tmVol->setTexto(ss.str());
     }
+	}
 }
 
 void Menu::decreaseFXVol() {
-    if (fxVol > 0) {
+    relojHorizontal.restartClock();
+	difTimeHorizontal += relojHorizontal.getDeltaTimeAsSeconds();
+	if(difTimeHorizontal>=0.25){
+		difTimeHorizontal = 0.0f;
+		if (fxVol > 0) {
         fxVol--;
         stringstream ss;
         ss << "<" << fxVol*10 << ">";
         tfxVol->setTexto(ss.str());
     }
+	}
 }
 
 int Menu::getTiempo(){

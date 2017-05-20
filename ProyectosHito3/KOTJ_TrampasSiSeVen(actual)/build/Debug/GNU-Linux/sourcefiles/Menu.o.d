@@ -1,5 +1,6 @@
 build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../headerfiles/Menu.h \
+ sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/../headerfiles/resources.h \
  sourcefiles/../headerfiles/../motorgrafico/headerfiles/VisibleBody.h \
@@ -122,6 +123,8 @@ build/Debug/GNU-Linux/sourcefiles/Menu.o: sourcefiles/Menu.cpp \
  sourcefiles/../motorgrafico/headerfiles/musicPlayer.h
 
 sourcefiles/../headerfiles/Menu.h:
+
+sourcefiles/../headerfiles/../motorgrafico/headerfiles/InnerClock.h:
 
 sourcefiles/../headerfiles/../motorgrafico/headerfiles/Texto.h:
 
