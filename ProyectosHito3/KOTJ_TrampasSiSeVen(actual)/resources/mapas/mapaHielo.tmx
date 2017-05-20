@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="90" height="40" tilewidth="32" tileheight="32" nextobjectid="176">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="90" height="40" tilewidth="32" tileheight="32" nextobjectid="187">
  <properties>
   <property name="fondo" value="./resources/fondos/fondoHielo.jpg"/>
  </properties>
@@ -9,7 +9,7 @@
  <tileset firstgid="1057" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
   <image source="../../../../ProyectosHito2/KOTJ_CargaMapas/resources/mapas/tilesheet_complete.png" width="1408" height="768"/>
  </tileset>
- <objectgroup name="Plataformas" visible="0">
+ <objectgroup name="Plataformas">
   <object id="16" name="platform" x="32" y="768" width="64" height="192">
    <properties>
     <property name="roz" value="0"/>
@@ -305,6 +305,16 @@
     <property name="roz" value="2"/>
    </properties>
   </object>
+  <object id="176" name="platform" x="502" y="1119.33" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="178" name="platform" x="2368" y="1120" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup name="Spawns">
   <object id="68" name="player" x="576" y="1120" width="32" height="32"/>
@@ -339,46 +349,76 @@
   <object id="105" name="esquina" x="32" y="1248" width="32" height="32"/>
   <object id="106" name="esquina" x="2816" y="1248" width="32" height="32"/>
   <object id="107" name="esquina" x="2816" y="0" width="32" height="32"/>
-  <object id="170" name="trampa" x="448" y="1120" width="64" height="32">
+  <object id="170" name="trampa" x="448" y="1106.5" width="54.6667" height="45.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
    </properties>
   </object>
-  <object id="171" name="trampa" x="1248" y="224" width="64" height="32">
+  <object id="171" name="trampa" x="1257.5" y="209.5" width="43.5" height="46.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
    </properties>
   </object>
-  <object id="172" name="trampa" x="1568" y="224" width="64" height="32">
+  <object id="172" name="trampa" x="1580" y="212.5" width="42" height="43.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
    </properties>
   </object>
-  <object id="173" name="trampa" x="1312" y="864" width="64" height="32">
+  <object id="173" name="trampa" x="1312" y="851.333" width="52.5" height="44.6667">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
    </properties>
   </object>
-  <object id="174" name="trampa" x="1504" y="864" width="64" height="32">
+  <object id="174" name="trampa" x="1514.5" y="852.667" width="53.5" height="43.3333">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
    </properties>
   </object>
-  <object id="175" name="trampa" x="2368" y="1120" width="64" height="32">
+  <object id="175" name="trampa" x="2379" y="1107.5" width="53" height="44.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
     <property name="tipo" value="2"/>
+   </properties>
+  </object>
+  <object id="179" name="platform" x="1365" y="864.5" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="180" name="platform" x="1504" y="864" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="181" name="platform" x="1248" y="224" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="182" name="platform" x="1302" y="224.5" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="185" name="platform" x="1568" y="224" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
+   </properties>
+  </object>
+  <object id="186" name="platform" x="1623" y="224" width="10" height="32">
+   <properties>
+    <property name="roz" value="0"/>
    </properties>
   </object>
  </objectgroup>
@@ -3458,8 +3498,8 @@
    <tile gid="574"/>
    <tile gid="573"/>
    <tile gid="574"/>
-   <tile gid="817"/>
-   <tile gid="818"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -3518,8 +3558,8 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="817"/>
-   <tile gid="818"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="529"/>
    <tile gid="530"/>
    <tile gid="573"/>
