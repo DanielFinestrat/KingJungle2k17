@@ -407,12 +407,10 @@ void Partida::updateClock() {
             notFirstReset = false;
             timeBetweenReset = 0;
             worldTexts.at(4)->setTexto("");
-            //cout << "se termina el juego?" << gameisover << endl;
-            if (gameisover)
+            if (gameisover) {
+                startGameOverInbetweener();
                 loadFinalMap();
-
-            else
-                loadMap();
+            } else loadMap();
         }
     }
 }
@@ -444,6 +442,12 @@ void Partida::inbetweenUpdate() {
 void Partida::updateBeforeMap() {
     changeLevelClock.restartClock();
     timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
+
+    if (gameisover) {
+        Motorgrafico::getInstance()->getTemporizador()->stop(false);
+        Motorgrafico::getInstance()->getTemporizador()->restart();
+        loadingLevelStruct.loadingLevel = false;
+    }
 
     if (loadingLevelStruct.firstTextPrepared && timeBetweenReset > 1) {
         Texto *plus1 = worldTexts.at(4);
@@ -489,7 +493,21 @@ void Partida::startTextBeforeLevel() {
 
     timeBetweenReset = 0;
     inbetween = NULL;
-    inbetween = new Inbetween(worldPlayer, maxPoints);
+    inbetween = new Inbetween(worldPlayer, maxPoints, rondas.at(rondaActual).modoJuego, false);
+
+    Motorgrafico::getInstance()->getTemporizador()->stop(true);
+}
+
+void Partida::startGameOverInbetweener() {
+    loadingLevelStruct.loadingLevel = false;
+    loadingLevelStruct.firstTextPrepared = false;
+    loadingLevelStruct.secondTextPrepared = false;
+    loadingLevelStruct.thirdTextPrepared = false;
+    loadingLevelStruct.showingInbetween = true;
+
+    timeBetweenReset = 0;
+    inbetween = NULL;
+    inbetween = new Inbetween(worldPlayer, maxPoints, rondas.at(rondaActual).modoJuego, true);
 
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
 }
@@ -510,19 +528,13 @@ void Partida::fillRondasVector(int tipoRonda) {
         } while (newIndexMap == oldIndexMap || newIndexMap == 0 || newIndexMap == 1);
         ronda.mapa = newIndexMap;
 
-        if (tipoRonda != 1) {
-            newIndexModo = tipoRonda - 2;
-        }        
-        else {
-            do {
-                newIndexModo = rand() % 2;
-            } while (newIndexModo == oldIndexModo);
-        }
+        if (tipoRonda != 1) newIndexModo = tipoRonda - 2;
+        else newIndexModo = rand() % 2;
 
         ronda.modoJuego = newIndexModo;
 
         rondas.push_back(ronda);
-        
+
         oldIndexMap = newIndexMap;
         oldIndexModo = newIndexModo;
     }
@@ -548,8 +560,13 @@ void Partida::loadMap() {
             delete(factoriaTrampas);
             factoriaTrampas = NULL;
         }
+
         mapa = new Mapa();
-        mapa->leerMapa(mapa->getRandomMap());
+        if (rondaActual > rondas.size() - 1) rondaActual = 0;
+        mapa->leerMapa(mapa->mapas.at(rondas.at(rondaActual).mapa));
+        indexMap = rondas.at(rondaActual).mapa;
+        if (mapa->getIfFirstMap()) indexMap = -1;
+        rondaActual++;
 
         factoriaArmas = new Weaponspawner();
         factoriaTrampas = new TrapSpawner();
@@ -583,6 +600,8 @@ void Partida::loadMap(string mapaStr) {
 
     mapa = new Mapa();
     mapa->leerMapa(mapaStr);
+    indexMap = rondas.at(rondaActual).mapa;
+    if (mapa->getIfFirstMap()) indexMap = -1;
 
     factoriaArmas = new Weaponspawner();
     factoriaTrampas = new TrapSpawner();
@@ -645,7 +664,7 @@ void Partida::finishRound() {
             }
 
             if (alivePeople == 1) {
-
+                Motorgrafico::getInstance()->getTemporizador()->stop(true);
                 changeLevelClock.restartClock();
                 notFirstReset = true;
                 timeBetweenReset = 0;

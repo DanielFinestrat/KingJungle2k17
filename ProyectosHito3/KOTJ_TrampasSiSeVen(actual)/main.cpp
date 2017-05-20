@@ -11,7 +11,7 @@ int state;
 Menu* createMainMenu() {
     Texto* op1 = new Texto("Jugar", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op2 = new Texto("Opciones de partida", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op3 = new Texto("Opciones del juego", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op3 = new Texto("Opciones del sonido", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op4 = new Texto("Salir", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
     std::vector<Texto*> vec(4);

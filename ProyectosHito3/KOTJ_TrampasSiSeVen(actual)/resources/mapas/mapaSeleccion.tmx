@@ -4,7 +4,7 @@
   <property name="fondo" value="./resources/fondos/fondoSeleccion.png"/>
  </properties>
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
-  <image source="../../../../ProyectosHito2/KOTJ_CargaMapas/resources/mapas/tilesheet_complete.png" width="1408" height="768"/>
+  <image source="../../../../Escritorio/tilesheet_complete.png" width="1408" height="768"/>
  </tileset>
  <layer name="Escenario" width="55" height="26">
   <data>
@@ -1159,10 +1159,10 @@
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
-   <tile gid="861"/>
-   <tile gid="862"/>
-   <tile gid="861"/>
-   <tile gid="862"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
+   <tile gid="0"/>
    <tile gid="1"/>
    <tile gid="221"/>
    <tile gid="222"/>
@@ -5751,13 +5751,6 @@
   <object id="80" name="player" x="560.333" y="47" width="32" height="32"/>
   <object id="82" name="player" x="880.834" y="46.8333" width="32" height="32"/>
   <object id="84" name="player" x="1200.16" y="49.1667" width="32" height="32"/>
-  <object id="95" name="trampa" x="1636.67" y="624" width="123.333" height="48">
-   <properties>
-    <property name="2" value=""/>
-    <property name="timeAct" value="-1"/>
-    <property name="timeDes" value="-1"/>
-   </properties>
-  </object>
  </objectgroup>
  <objectgroup name="Plataformas">
   <object id="9" name="platform" x="128" y="672" width="1632.33" height="128">
@@ -5842,11 +5835,6 @@
   <object id="89" name="platform" x="1152" y="384" width="128" height="64">
    <properties>
     <property name="roz" value="2"/>
-   </properties>
-  </object>
-  <object id="94" name="platform" x="1632" y="640" width="4.66667" height="32">
-   <properties>
-    <property name="roz" value="0"/>
    </properties>
   </object>
  </objectgroup>

@@ -11,10 +11,20 @@
 #include "../headerfiles/Inbetween.h"
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 
-Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
+Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints, int tipoJuego, bool gameOver) {
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);
     fondo->setPosition(1024 / 2, 600 / 2);
 
+    string stringModo = "Todos contra Todos";
+    if(tipoJuego == 1) stringModo = "Recoger    Monedas";
+    else if(tipoJuego == 2) stringModo = "Patata Caliente";
+    else if(tipoJuego == 3) stringModo = "Clava la Bandera";
+    
+    if(gameOver) stringModo = "Partida Terminada!";
+    
+    modoJuegoTxt = new Texto(stringModo, 70, Resources::getInstance()->menuFont, 0, 0, 0);
+    modoJuegoTxt->setPos(150, 500);
+        
     for (int i = 0; i < jugadores.size(); i++) {
         Player* player = jugadores.at(i);
         puntuacion.push_back(player->getPoints());
@@ -25,7 +35,7 @@ Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
         VisibleBody* crownBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 50, 150, 75, Resources::getInstance()->crown, true);
         coronaVB.push_back(crownBody);
 
-        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - (puntuacion.at(i) * 500 / maxPoints) - 60, 60, 55, player->getTexture(), true);
+        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - ((puntuacion.at(i) + 1) * 400 / (maxPoints + 1)) - 60, 60, 55, player->getTexture(), true);
         playerBody->setRect(0, 0, 40, 35);
         if (i == 0) playerBody->setColor(255, 255, 255, 255);
         if (i == 1) playerBody->setColor(255, 255, 000, 255);
@@ -33,7 +43,7 @@ Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
         if (i == 3) playerBody->setColor(255, 000, 255, 255);
         playerVB.push_back(playerBody);
 
-        Texto* text = new Texto(puntosString, 35, Resources::getInstance()->myFont, 255, 255, 255);
+        Texto* text = new Texto(puntosString, 35, Resources::getInstance()->menuFont, 255, 255, 255);
         text->setPos(playerBody->getPosX() - 55, playerBody->getPosY() - 35 / 2);
         puntuacionText.push_back(text);
     }
@@ -49,6 +59,7 @@ void Inbetween::render() {
         renderCrowns();
         renderFaces();
         renderPunt();
+        Motorgrafico::getInstance()->draw(modoJuegoTxt->getDrawable());
         Motorgrafico::getInstance()->displayWindow();
     }
 }

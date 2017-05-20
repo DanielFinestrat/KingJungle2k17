@@ -94,9 +94,11 @@ void Temporizador::Draw(sf::RenderWindow *window) {
 void Temporizador::restartGame() {
     chrono.restart();
     Partida *partida = Partida::getInstance();
-    
-    partida->loadMap();
-    partida->respawn();
+
+    for (int i = 0; i < partida->worldPlayer.size(); i++) {
+        partida->players2Delete.push_back(partida->worldPlayer.at(i));
+    }
+    partida->finishRound();
 }
 
 void Temporizador::setPosition() {

@@ -19,7 +19,7 @@ using namespace std;
 
 class Inbetween {
 public:
-    Inbetween(vector<Player*> jugadores, int maxPoints);
+    Inbetween(vector<Player*> jugadores, int maxPoints, int modoJuego, bool gameOver);
     void Update();
     void render();
     void renderCrowns();
@@ -32,6 +32,7 @@ private:
     vector<VisibleBody*> coronaVB;
     vector<Texto*> puntuacionText;
     vector<int> puntuacion;
+    Texto* modoJuegoTxt;
     Fondo* fondo;
     bool isRendered;
 
