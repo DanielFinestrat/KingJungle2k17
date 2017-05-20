@@ -162,8 +162,10 @@ void selectMap(int n) {
     if (n >= 0 && n < maps.size()) {
         if (maps.at(n).compare(partida->mapa->mapaPodio) == 0)
             partida->loadFinalMap();
-        else
+        else {
             partida->loadMap(maps.at(n));
+            partida->indexMap = n;
+        }
     }
 }
 
@@ -201,7 +203,7 @@ void Console::loadFunctions() {
 
     fn = exitGame;
     functionMap->insert(std::pair<string, function<void (int) >>("exit", fn));
-    
+
     fn = give5Points;
     functionMap->insert(std::pair<string, function<void (int) >>("give5", fn));
 }

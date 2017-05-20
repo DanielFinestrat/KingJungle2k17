@@ -285,9 +285,6 @@ void Player::interact(Weapon* lastWeapon) {
 
                         weapon = currentWeapon;
                         if (dirLooking != weapon->dir) weapon->setDir(dirLooking);
-                        if (lastWeapon->getRango() == 0.5) {
-                            currentWeapon->cuerpo->setAngulo(-0.5);
-                        }
                         break;
                     }
                 }
@@ -316,17 +313,13 @@ void Player::interact() {
                             weapon = currentWeapon;
 
                             if (dirLooking != weapon->dir)weapon->setDir(dirLooking);
-
-                            if (currentWeapon->getRango() == 0.5) {
-                                currentWeapon->cuerpo->setAngulo(-0.5);
-                            }
                             break;
                         }
                     }
                 }
             }
         } else {
-            if (weapon->getRango() == 0.5) weapon->cuerpo->setAngulo(0);	
+            //Aqui se dropea el arma
             weapon->throwWeapon(cuerpo->getVelocidadX());
             Weapon* lastWeapon = weapon;
             weapon = NULL;

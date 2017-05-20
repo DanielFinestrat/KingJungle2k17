@@ -15,7 +15,7 @@
 	<arma nombre="lanzagranadas" bpd="1" cargador="7" recoiltime="2" rareza="1" rango="2" parabola="true" recoil="40" explosivo="true" >
 		<rectangulo x="76" y="0" w="128" h="26" />	
 	</arma>
-	<arma nombre="katana" bpd="1" cargador="-1" recoiltime="0.5" rareza="1" rango="-1" parabola="false" recoil="0" explosivo="false" >
+	<arma nombre="katana" bpd="1" cargador="-1" recoiltime="0.2" rareza="1" rango="-1" parabola="false" recoil="0" explosivo="false" >
 		<rectangulo x="447" y="0" w="156" h="25" />	
 	</arma>
 </armas>

@@ -30,14 +30,14 @@ public:
     bool explosivo;
 
     bool balasVisibles;
-    
+
     bool inPossession;
     bool used;
-    
+
     bool atackPressed; //Activa la animacion de ataque de la espada		
-    InnerClock animationClock;		
-    float animtime;
-    
+    InnerClock animationClock; //Reloj de la animación del ataque
+    float animtime; //Variable para reiniciar la posicion del arma despues del ataque
+
     //Variables para controlar la cadencia de disparo
     InnerClock deltaClock;
     float difTime;
@@ -61,7 +61,7 @@ public:
      * @param int ammo: Municion del arma
      */
     Weapon(float sizex, float sizey, float posx, float posy, float shoot_cadence, int BPS, int ammo, int recoil_, int rango, bool parabola, bool explosivo);
-    
+
     ~Weapon();
 
     //Se encarga de actualizar las posiciones de los elementos del arma
@@ -79,7 +79,7 @@ public:
      * @param b2World world: mundo en el que se van a crear las balas
      */
     int shoot();
-    
+
     /**
      * Funcion para editar la posesion del arma
      * @param bool var: Puede ser true o false
@@ -98,18 +98,40 @@ public:
      * Funcion que devuelve un puntero al VisibleBody del arma
      */
     VisibleBody* getVBody();
-    
+
     /*
      * Funcion que devuelve la municion actual del arma
      */
     int getAmmo();
-    
+
+    /**
+     * Funcion que mueve el cuerpo del arma
+     * @param x: posicion en x
+     * @param y: posicion en y
+     */
+    void moveWeapon(float x, float y);
+
+    /**
+     * Comprueba si se puede borrar el arma (0 balas)
+     */
     void checkIfDelete();
-    
+
+    /**
+     * Se borra a sí mismo entre las armas a borrar
+     */
     void doDelete();
-    
+
+    /**
+     * Devuelve el rango segun el tipo del arma
+     * @return 
+     */
     float getRango();
-    
+
+    /**
+     * Se llama siempre que roza con cualquier cosa, hereda de entidad
+     * @param punt
+     * @param tipo
+     */
     void Contact(void* punt, string tipo);
 };
 

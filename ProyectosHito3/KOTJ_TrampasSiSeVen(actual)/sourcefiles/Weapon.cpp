@@ -58,17 +58,21 @@ void Weapon::update() {
 }
 
 void Weapon::update(float posX, float posY) {
-    cuerpo->setPosicion(posX, posY);
-    m_vBody->setPos(posX * PPM, posY * PPM);
-    m_vBody->setAngle(cuerpo->getAngulo()*180);
-    m_vBody->updateBody();
-    if (used && !inPossession) checkIfDelete();
+    if (!atackPressed) {
+        moveWeapon(posX, posY);
 
-    if (atackPressed) {
+        m_vBody->setAngle(cuerpo->getAngulo()*180);
+        m_vBody->updateBody();
+        if (used && !inPossession) checkIfDelete();
+
+    } else {
         animationClock.restartClock();
         animtime += animationClock.getDeltaTimeAsSeconds();
+        cout << animtime << endl;
 
-        //cout<<"ataco"<<animtime<<endl;		
+        moveWeapon(posX + (0.6 * dir), posY);
+        m_vBody->setAngle(cuerpo->getAngulo()*180);
+        m_vBody->updateBody();
 
         if (animtime > shootCadence) {
             animtime = 0;
@@ -123,7 +127,11 @@ int Weapon::shoot() {
                     partida->worldBullets.insert(nuevaBala);
                 }
                 if (BPS % 2 != 0) {
-                    if (rango == -1) atackPressed = true;
+                    if (rango == -1) {
+                        atackPressed = true;
+                        animtime = 0;
+                        animationClock.restartClock();
+                    }
                     Bala* nuevaBala = new Bala(10, 4, cuerpo->getPosicionX() * PPM + (pSize / 2.5) * dir, cuerpo->getPosicionY() * PPM, explosivo, rango, balasVisibles);
                     nuevaBala->Disparar(5 * -dir, 180);
                     partida->worldBullets.insert(nuevaBala);
@@ -168,8 +176,18 @@ void Weapon::throwWeapon(float playerVel) {
 
 void Weapon::setDir(int i) {
     dir = i;
-    if (rango != -1 && cuerpo->getAngulo() != -0.5)
-        m_vBody->setScale(i, 1);
+    //if (rango != -1 && cuerpo->getAngulo() != -0.5)
+    m_vBody->setScale(i, 1);
+}
+
+void Weapon::moveWeapon(float x, float y) {
+    if (rango != -1) {
+        cuerpo->setPosicion(x, y);
+        m_vBody->setPos(x * PPM, y * PPM);
+    } else {
+        cuerpo->setPosicion(x + (0.5 * dir), y);
+        m_vBody->setPos(cuerpo->getPosicionX() * PPM, y * PPM);
+    }
 }
 
 void Weapon::Contact(void* punt, string tipo) {
