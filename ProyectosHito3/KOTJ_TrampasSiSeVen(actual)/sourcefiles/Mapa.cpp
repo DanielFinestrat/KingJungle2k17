@@ -22,15 +22,31 @@ Mapa::Mapa() {
 }
 
 Mapa::~Mapa() {
-    delete (fondo);
+    Partida* partida = Partida::getInstance();
+    set<Bala*>::iterator itBala = partida->worldBullets.begin();
+    set<Explosion*>::iterator itExplo = partida->worldExplo.begin();
+
+   
+   delete (fondo);
     fondo = NULL;
 
-    for (int i = 0; i < map_sprites.size(); i++) delete(map_sprites.at(i));
+   for (int i = 0; i < map_sprites.size(); i++) delete(map_sprites.at(i));
     map_sprites.clear();
 
-    for (int i = 0; i < worldPlatforms.size(); i++) {
-        Partida::getInstance()->platforms2Delete.push_back(worldPlatforms.at(i));
+   for (int i = 0; i < worldPlatforms.size(); i++) {
+        partida->platforms2Delete.push_back(worldPlatforms.at(i));
     }
+    for (; itBala != partida->worldBullets.end(); itBala++){
+        Bala* bala = *itBala;
+        partida->bullets2Delete.insert(bala);        
+   }
+    for (; itExplo != partida->worldExplo.end(); itExplo++){
+        Explosion* explo = *itExplo;
+        partida->explo2Delete.insert(explo);        
+   }
+    
+   partida->worldBullets.clear();
+    partida->worldExplo.clear();
     worldPlatforms.clear();
 }
 

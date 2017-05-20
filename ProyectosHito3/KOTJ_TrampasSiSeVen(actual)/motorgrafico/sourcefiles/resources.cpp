@@ -15,6 +15,7 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         spikes("./resources/sprites/trapSpike.png"),
                         fondoCueva("./resources/fondos/fondoCueva.png"),
                         tnt("./resources/sprites/tnt-0.png"),
+                        tntRoto("./resources/sprites/tntRoto.png"),
                         fondoHielo("./resources/fondos/fondoHielo.jpg"),
                         fondoHielo1("./resources/fondos/fondoHielo1.jpg"),
                         fondoJungle("./resources/fondos/fondoJungle.png"),
@@ -28,7 +29,8 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         cross("./resources/sprites/cross.png"),
                         crown("./resources/sprites/crown.png"),
                         explosion("./resources/sprites/explosion.png"),
-                        nitro("./resources/sprites/nitro.png")
+                        nitro("./resources/sprites/nitro.png"),
+                        nitroRoto("./resources/sprites/nitroRoto.png")
                         { initialise(); }
 
 
@@ -77,6 +79,7 @@ bool Resources::loadAll() {
     if (!loadTexture(tiles)) return false;
     if (!loadTexture(podio)) return false;
     if (!loadTexture(tnt)) return false;
+    if (!loadTexture(tntRoto)) return false;
     if (!loadTexture(fondoJungle)) return false;
     if (!loadTexture(fondoHielo)) return false;
     if (!loadTexture(fondoHielo1)) return false;
@@ -93,6 +96,7 @@ bool Resources::loadAll() {
     if (!loadTexture(fondoMandala2)) return false;
     if  (!loadTexture(explosion)) return false;
     if (!loadTexture(nitro)) return false;
+    if (!loadTexture(nitroRoto)) return false;
     return true;
 }
 

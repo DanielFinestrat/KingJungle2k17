@@ -157,6 +157,7 @@ void Trampa::romper(){
             cuerpo->setMaskBits(MASK_INTANGIBLE);
             cuerpo->setType(2);
             cuerpo->setVelocidad(0,0);
+            m_vBody->setTex(Resources::getInstance()->tntRoto);
             nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.0f, 0.04f, 0.5f);
             Partida::getInstance()->worldExplo.insert(nueva);
             break;
@@ -164,6 +165,7 @@ void Trampa::romper(){
             cuerpo->setMaskBits(MASK_INTANGIBLE);
             cuerpo->setType(2);
             cuerpo->setVelocidad(0,0);
+            m_vBody->setTex(Resources::getInstance()->nitroRoto);
             nueva = new Explosion(cuerpo->getPosicionX()* PPM, cuerpo->getPosicionY() * PPM, 2.5f, 0.05f, 0.5f);
             Partida::getInstance()->worldExplo.insert(nueva);
             break;

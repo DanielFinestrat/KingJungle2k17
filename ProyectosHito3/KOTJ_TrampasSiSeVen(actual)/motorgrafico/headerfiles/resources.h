@@ -44,10 +44,12 @@ class Resources {
         const string puntero;
         const string transparente;
         const string tnt;
+        const string tntRoto;
         const string cross;
         const string crown;
         const string explosion;
         const string nitro;
+        const string nitroRoto;
 
     private:
         Resources();
