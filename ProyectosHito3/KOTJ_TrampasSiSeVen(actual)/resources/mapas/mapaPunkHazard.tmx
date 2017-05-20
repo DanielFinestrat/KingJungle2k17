@@ -143,7 +143,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="Spawn" visible="0">
+ <objectgroup name="Spawn">
   <object id="52" name="trampa" x="1310" y="1320" width="60" height="80">
    <properties>
     <property name="timeAct" value="9"/>
@@ -299,20 +299,6 @@
    </properties>
   </object>
   <object id="74" name="trampa" x="774.583" y="329.917" width="45.5" height="49.5">
-   <properties>
-    <property name="timeAct" value="-1"/>
-    <property name="timeDes" value="-1"/>
-    <property name="tipo" value="4"/>
-   </properties>
-  </object>
-  <object id="75" name="trampa" x="586.583" y="1.91667" width="45.5" height="49.5">
-   <properties>
-    <property name="timeAct" value="-1"/>
-    <property name="timeDes" value="-1"/>
-    <property name="tipo" value="4"/>
-   </properties>
-  </object>
-  <object id="76" name="trampa" x="921.25" y="5.91667" width="45.5" height="49.5">
    <properties>
     <property name="timeAct" value="-1"/>
     <property name="timeDes" value="-1"/>
