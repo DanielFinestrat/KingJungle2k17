@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>1</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/motorgrafico/sourcefiles/Motorgrafico.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Weapon.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/headerfiles/Partida.h</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Partida.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/main.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/headerfiles/Inbetween.h</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/motorgrafico/sourcefiles/Temporizador.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Console.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/headerfiles/Menu.h</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/headerfiles/Weapon.h</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Inbetween.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Menu.cpp</file>
+            <file>file:/home/amygwyllion/NetBeansProjects/KOTJ_Monedas/sourcefiles/Player.cpp</file>
+        </group>
+    </open-files>
+</project-private>
