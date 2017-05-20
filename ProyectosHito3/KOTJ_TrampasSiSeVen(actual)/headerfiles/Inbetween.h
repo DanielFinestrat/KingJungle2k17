@@ -33,6 +33,7 @@ private:
     vector<Texto*> puntuacionText;
     vector<int> puntuacion;
     Fondo* fondo;
+    bool isRendered;
 
 };
 
