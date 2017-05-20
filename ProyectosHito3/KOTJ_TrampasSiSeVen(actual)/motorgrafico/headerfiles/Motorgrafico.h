@@ -63,6 +63,8 @@ public:
 
     Temporizador* getTemporizador();
 
+    void setGoToMenu(bool go);
+    
     void textEnteredConsole(Event even);
     virtual ~Motorgrafico();
 
@@ -85,5 +87,6 @@ private:
     sf::Event event;
     MusicPlayer *mplayer;
 
+    bool goToMenuNow;
 };
 

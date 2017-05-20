@@ -7,8 +7,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/youjair/Escritorio/NetBeansProjects/KingJungle2k17/ProyectosHito3/KOTJ_TrampasSiSeVen(actual)/main.cpp</file>
-            <file>file:/home/youjair/Escritorio/NetBeansProjects/KingJungle2k17/ProyectosHito3/KOTJ_TrampasSiSeVen(actual)/headerfiles/Partida.h</file>
+            <file>file:/home/danielfinestrat/NetBeansProjects/KOTJ_TrampasSiSeVen(actual)/motorgrafico/headerfiles/Motorgrafico.h</file>
+            <file>file:/home/danielfinestrat/NetBeansProjects/KOTJ_TrampasSiSeVen(actual)/headerfiles/Partida.h</file>
+            <file>file:/home/danielfinestrat/NetBeansProjects/KOTJ_TrampasSiSeVen(actual)/motorgrafico/sourcefiles/Motorgrafico.cpp</file>
+            <file>file:/home/danielfinestrat/NetBeansProjects/KOTJ_TrampasSiSeVen(actual)/sourcefiles/Partida.cpp</file>
         </group>
     </open-files>
 </project-private>

@@ -48,6 +48,11 @@ struct checkLoadingLevel {
     bool thirdTextPrepared;
 };
 
+struct Ronda {
+    int mapa;
+    int modoJuego;
+};
+
 class Partida {
 public:
 
@@ -58,15 +63,8 @@ public:
     int indexMap;
     int maxPoints;
 
-    vector<Weapon*> worldWeapons;
-    set<Bala*> worldBullets;
-    set<Explosion*> worldExplo;
-    vector<Texto*> worldTexts;
-    vector<Player*> worldPlayer;
-    vector<Trampa*> worldTraps;
-    vector<Controlador*> worldControlador;
-
     InnerClock changeLevelClock;
+    bool lastLevel;
     bool notFirstReset;
     bool finalLevelTextPrepared;
     bool gameisover;
@@ -75,15 +73,25 @@ public:
     checkLoadingLevel loadingLevelStruct;
     Inbetween* inbetween;
 
+    vector<Ronda> rondas;
+    int rondaActual;
+
+    vector<Weapon*> worldWeapons;
+    set<Bala*> worldBullets;
+    set<Explosion*> worldExplo;
+    vector<Texto*> worldTexts;
+    vector<Player*> worldPlayer;
+    vector<Trampa*> worldTraps;
+    vector<Controlador*> worldControlador;
+
     vector<Player*> players2Delete;
     vector<Platform*> platforms2Delete;
     vector<Weapon*> weapons2Delete;
     vector<Trampa*> traps2Delete;
     set<Bala*> bullets2Delete;
     set<Explosion*> explo2Delete;
-
     vector<Trampa*> traps2Break;
-    
+
     static Partida* getInstance();
 
     void Input(int &e);
@@ -125,7 +133,7 @@ public:
     void updateTexts();
     void inbetweenUpdate();
     void updateBeforeMap();
-    
+
     void breakTraps();
     void ordenarJugadores();
 
@@ -135,10 +143,12 @@ public:
     void setUsingKeyboard(bool state);
 
     void setMaxPoints(int points);
-    
+
+    void fillRondasVector();   
     void startTextBeforeLevel();
     void finishRound();
     void loadTextsNClock();
+    
     void loadMap();
     void loadMap(string mapaStr);
     void loadFinalMap();
@@ -150,7 +160,7 @@ private:
     Motorgrafico *mg;
     bool usingKeyboard;
     Hud *hud;
-    
+
     Partida();
 };
 

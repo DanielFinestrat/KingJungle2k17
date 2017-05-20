@@ -18,9 +18,12 @@ Partida::Partida() {
     mapa = NULL;
     factoriaArmas = NULL;
     factoriaTrampas = NULL;
+    lastLevel = false;
     indexMap = -1;
+    rondaActual = 0;
     hud = Hud::getInstance();
     loadTextsNClock();
+    fillRondasVector();
 }
 
 Partida* Partida::getInstance() {
@@ -159,21 +162,18 @@ void Partida::Render() {
 
 void Partida::drawPlayers() {
     for (int i = 0; i < worldPlayer.size(); i++) {
-
         Motorgrafico::getInstance()->draw(worldPlayer.at(i)->getPlayerSprite());
     }
 }
 
 void Partida::drawWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-
         if (worldWeapons.at(i) != NULL) Motorgrafico::getInstance()->draw((worldWeapons.at(i)->m_vBody->getShape()));
     }
 }
 
 void Partida::drawTraps() {
     for (int i = 0; i < worldTraps.size(); i++) {
-
         if (worldTraps.at(i) != NULL) Motorgrafico::getInstance()->draw((worldTraps.at(i)->getVBody()->getShape()));
     }
 }
@@ -207,7 +207,6 @@ void Partida::drawTexts() {
 }
 
 void Partida::drawMainText() {
-
     Motorgrafico::getInstance()->draw(worldTexts.at(4)->getDrawable());
 }
 
@@ -263,21 +262,17 @@ void Partida::addPlayerJoystick(int id) {
             PlayerJoystick* p = new PlayerJoystick(id);
             worldControlador.push_back(p);
         }
-    } else {
-        //cout << "hay demasiados jugadores" << endl;
     }
 }
 
 void Partida::addPlayerKeyboard() {
     if (worldPlayer.size() < 4) {
-
         setUsingKeyboard(true);
         worldControlador.push_back(new PlayerKeyboard());
     }
 }
 
 void Partida::addPlayerIA() {
-
     if (worldPlayer.size() < 4 && mapa->getIfFirstMap()) worldControlador.push_back(new IAController());
 }
 
@@ -304,33 +299,28 @@ void Partida::respawn() {
 
 void Partida::updatePlayers(Time frameTime) {
     for (int i = 0; i < worldPlayer.size(); i++) {
-
         worldPlayer.at(i)->update(Motorgrafico::getInstance()->getFrameTime());
     }
 }
 
 void Partida::cameraSetFinalTransform() {
-
     Motorgrafico::getInstance()->cameraSetFinalTransform();
 }
 
 void Partida::updateWeapons() {
     for (int i = 0; i < worldWeapons.size(); i++) {
-
         if (worldWeapons.at(i) != NULL) worldWeapons.at(i)->update();
     }
 }
 
 void Partida::updateTraps() {
     for (int i = 0; i < worldTraps.size(); i++) {
-
         if (worldTraps.at(i) != NULL) worldTraps.at(i)->update();
     }
 }
 
 void Partida::breakTraps() { //Rompe las trampas, se le llama en el update a falta de un lugar mas adecuado
     for (int i = 0; i < traps2Break.size(); i++) {
-
         if (traps2Break.at(i) != NULL) traps2Break.at(i)->romper();
     }
     traps2Break.clear();
@@ -354,7 +344,6 @@ void Partida::updateBullets() {
     set<Bala*>::iterator itBala = worldBullets.begin();
     set<Bala*>::iterator endBala = worldBullets.end();
     for (; itBala != endBala; ++itBala) {
-
         Bala* updateBala = *itBala;
         updateBala->Update_Shape();
     }
@@ -365,14 +354,13 @@ void Partida::updateExplo() {
     set<Explosion*>::iterator itExplo = worldExplo.begin();
     set<Explosion*>::iterator endExplo = worldExplo.end();
     for (; itExplo != endExplo; ++itExplo) {
-
         Explosion* updateBala = *itExplo;
         updateBala->Update();
     }
 }
 
-void Partida::setMaxPoints(int points){
-	maxPoints = points;
+void Partida::setMaxPoints(int points) {
+    maxPoints = points;
 }
 
 void Partida::updateClock() {
@@ -380,7 +368,6 @@ void Partida::updateClock() {
     if (notFirstReset) {
         changeLevelClock.restartClock();
         timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
-        //cout << timeBetweenReset << endl;
         //AQUI entra cuando es el mapa de seleccion y asi saltarse tanto la espera como dar puntos
         if (indexMap == -1 && finalLevelTextPrepared) {
             timeBetweenReset = 3;
@@ -398,9 +385,7 @@ void Partida::updateClock() {
             }
             if (playerposition != -1) {
                 //aqui entre cuando solo hay una persona viva una vez ya pasado 1 segundol
-                //cout << "PUNTOS ANTES" << worldPlayer.at(playerposition)->getPoints() << endl;
                 worldPlayer.at(playerposition)->give1Point();
-                //cout << "PUNTOS DESPUES" << worldPlayer.at(playerposition)->getPoints() << endl;
 
                 if (worldPlayer.at(playerposition)->getPoints() == maxPoints) {
                     gameisover = true;
@@ -451,7 +436,6 @@ void Partida::inbetweenUpdate() {
     timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
 
     if (timeBetweenReset > 2) {
-
         loadingLevelStruct.loadingLevel = true;
         loadingLevelStruct.showingInbetween = false;
         timeBetweenReset = 0;
@@ -470,18 +454,15 @@ void Partida::updateBeforeMap() {
         plus1->setPos(screenWidth / 2 - 40, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin1);
         loadingLevelStruct.firstTextPrepared = false;
-
-    }//ready
+    }        //ready
     else if (loadingLevelStruct.secondTextPrepared && timeBetweenReset > 2) {
         Texto *plus1 = worldTexts.at(4);
         plus1->setTexto("READY");
         plus1->setPos(screenWidth / 2 - 80, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin2);
         loadingLevelStruct.secondTextPrepared = false;
-
-    }//se reanuda la partida
+    }        //se reanuda la partida
     else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
-
         Motorgrafico::getInstance()->getTemporizador()->stop(false);
         Motorgrafico::getInstance()->getTemporizador()->restart();
         Texto *plus1 = worldTexts.at(4);
@@ -495,17 +476,14 @@ void Partida::updateBeforeMap() {
 }
 
 bool Partida::getUsingKeyboard() {
-
     return usingKeyboard;
 }
 
 void Partida::setUsingKeyboard(bool state) {
-
     usingKeyboard = state;
 }
 
 void Partida::startTextBeforeLevel() {
-
     loadingLevelStruct.loadingLevel = false;
     loadingLevelStruct.firstTextPrepared = true;
     loadingLevelStruct.secondTextPrepared = true;
@@ -519,35 +497,66 @@ void Partida::startTextBeforeLevel() {
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
 }
 
+void Partida::fillRondasVector() {
+    srand(time(NULL));
+    Mapa *mapa = new Mapa();
+    int newIndexMap = -1;
+    int newIndexModo = -1;
+    int oldIndexMap = -1;
+    int oldIndexModo = -1;
+
+    for (int i = 0; i < 30; i++) {
+        Ronda ronda;
+
+        do {
+            newIndexMap = rand() % mapa->mapas.size();
+        } while (newIndexMap == oldIndexMap || newIndexMap == 0 || newIndexMap == 1);
+        ronda.mapa = newIndexMap;
+
+        do {
+            newIndexModo = rand() % 2;
+        } while (newIndexModo == oldIndexModo);
+        ronda.modoJuego = newIndexModo;
+
+        rondas.push_back(ronda);
+        oldIndexMap = newIndexMap;
+        oldIndexModo = newIndexModo;
+    }
+}
+
 void Partida::loadMap() {
 
-    if (mapa != NULL) {
-        delete(mapa);
-        mapa = NULL;
+    if (lastLevel) Motorgrafico::getInstance()->setGoToMenu(true);
+    else {
+
+        if (mapa != NULL) {
+            delete(mapa);
+            mapa = NULL;
+        }
+
+        if (factoriaArmas != NULL) {
+            delete(factoriaArmas);
+            factoriaArmas = NULL;
+        }
+
+        if (factoriaTrampas != NULL) {
+            factoriaTrampas->borrarTrampas();
+            delete(factoriaTrampas);
+            factoriaTrampas = NULL;
+        }
+        mapa = new Mapa();
+        mapa->leerMapa(mapa->getRandomMap());
+
+        factoriaArmas = new Weaponspawner();
+        factoriaTrampas = new TrapSpawner();
+        Motorgrafico::getInstance()->getTemporizador()->restart();
+        Motorgrafico::getInstance()->getTemporizador()->stop(false);
+
+        respawn();
+
+        if (!mapa->getIfFirstMap())
+            startTextBeforeLevel();
     }
-
-    if (factoriaArmas != NULL) {
-        delete(factoriaArmas);
-        factoriaArmas = NULL;
-    }
-
-    if (factoriaTrampas != NULL) {
-        factoriaTrampas->borrarTrampas();
-        delete(factoriaTrampas);
-        factoriaTrampas = NULL;
-    }
-    mapa = new Mapa();
-    mapa->leerMapa(mapa->getRandomMap());
-
-    factoriaArmas = new Weaponspawner();
-    factoriaTrampas = new TrapSpawner();
-    Motorgrafico::getInstance()->getTemporizador()->restart();
-    Motorgrafico::getInstance()->getTemporizador()->stop(false);
-
-    respawn();
-
-    if (!mapa->getIfFirstMap())
-        startTextBeforeLevel();
 }
 
 void Partida::loadMap(string mapaStr) {
@@ -584,6 +593,8 @@ void Partida::loadMap(string mapaStr) {
 
 void Partida::loadFinalMap() {
 
+    lastLevel = true;
+
     if (mapa != NULL) {
         delete(mapa);
         mapa = NULL;
@@ -619,20 +630,23 @@ Partida::~Partida() {
 }
 
 void Partida::finishRound() {
-    if (!notFirstReset) {
+    if (lastLevel) Motorgrafico::getInstance()->setGoToMenu(true);
+    else {
+        if (!notFirstReset) {
 
-        int alivePeople = 0;
-        for (int i = 0; i < worldPlayer.size(); i++) {
-            if (worldPlayer.at(i) != NULL && !worldPlayer.at(i)->isPlayerDead())
-                alivePeople++;
-        }
+            int alivePeople = 0;
+            for (int i = 0; i < worldPlayer.size(); i++) {
+                if (worldPlayer.at(i) != NULL && !worldPlayer.at(i)->isPlayerDead())
+                    alivePeople++;
+            }
 
-        if (alivePeople == 1) {
+            if (alivePeople == 1) {
 
-            changeLevelClock.restartClock();
-            notFirstReset = true;
-            timeBetweenReset = 0;
-            finalLevelTextPrepared = true;
+                changeLevelClock.restartClock();
+                notFirstReset = true;
+                timeBetweenReset = 0;
+                finalLevelTextPrepared = true;
+            }
         }
     }
 }

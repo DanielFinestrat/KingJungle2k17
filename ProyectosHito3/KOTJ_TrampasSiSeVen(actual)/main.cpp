@@ -73,7 +73,7 @@ Menu* createPause() {
 
 int main() {
     bool empezada = false;
-	
+
     state = 1;
     Menu* menu;
     Motorgrafico *mg = Motorgrafico::getInstance();
@@ -83,14 +83,14 @@ int main() {
     mg->createMusicPlayer();
     mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
 
-	//datos Basicos de la partida
-	vector<int> datosPartida; 	//int rondas tiempo modo
-	datosPartida.push_back(5);
-	datosPartida.push_back(60);
-	datosPartida.push_back(1);
+    //datos Basicos de la partida
+    vector<int> datosPartida; //int rondas tiempo modo
+    datosPartida.push_back(5);
+    datosPartida.push_back(60);
+    datosPartida.push_back(1);
 
-	
-	
+
+
     while (state != 0) {
 
         if (state == 1) {
@@ -101,6 +101,8 @@ int main() {
             }
 
             empezada = false;
+            Motorgrafico::getInstance()->setGoToMenu(false);
+            
             menu = createMainMenu();
             mg->getMusicPlayer()->setLoop(mg->getMusicPlayer()->menuMusic);
 
@@ -119,7 +121,7 @@ int main() {
                 Motorgrafico::getInstance()->createPartida(datosPartida.at(1));
                 partida = Motorgrafico::getInstance()->getPartida();
                 partida->indexMap = -1;
-				Partida::getInstance()->setMaxPoints(datosPartida.at(0));
+                Partida::getInstance()->setMaxPoints(datosPartida.at(0));
                 partida->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
@@ -153,7 +155,6 @@ int main() {
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
 
             Hud::getInstance()->deletePlayers();
-            //Motorgrafico::getInstance()->deletePartida();
         }
 
 
@@ -166,11 +167,11 @@ int main() {
                 menu->gameUpdate();
                 menu->renderGameMenu();
             }
-			
-			datosPartida.at(0) = menu->getPuntos();
-			datosPartida.at(1) = menu->getTiempo();
-			datosPartida.at(2) = menu->getMode();
-			
+
+            datosPartida.at(0) = menu->getPuntos();
+            datosPartida.at(1) = menu->getTiempo();
+            datosPartida.at(2) = menu->getMode();
+
             menu = NULL;
         }
 

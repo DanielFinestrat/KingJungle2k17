@@ -22,10 +22,10 @@ Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
         stm << player->getPoints();
         string puntosString = stm.str();
 
-        VisibleBody* crownBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 50, 100, 50, Resources::getInstance()->crown, true);
+        VisibleBody* crownBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 50, 150, 75, Resources::getInstance()->crown, true);
         coronaVB.push_back(crownBody);
 
-        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - (puntuacion.at(i) * 500 / maxPoints) - 40, 40, 35, player->getTexture(), true);
+        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - (puntuacion.at(i) * 500 / maxPoints) - 60, 60, 55, player->getTexture(), true);
         playerBody->setRect(0, 0, 40, 35);
         if (i == 0) playerBody->setColor(255, 255, 255, 255);
         if (i == 1) playerBody->setColor(255, 255, 000, 255);
@@ -33,8 +33,8 @@ Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
         if (i == 3) playerBody->setColor(255, 000, 255, 255);
         playerVB.push_back(playerBody);
 
-        Texto* text = new Texto(puntosString, 25, Resources::getInstance()->myFont, 255, 255, 255);
-        text->setPos(playerBody->getPosX() - 35, playerBody->getPosY() - 35 / 2);
+        Texto* text = new Texto(puntosString, 35, Resources::getInstance()->myFont, 255, 255, 255);
+        text->setPos(playerBody->getPosX() - 55, playerBody->getPosY() - 35 / 2);
         puntuacionText.push_back(text);
     }
 
