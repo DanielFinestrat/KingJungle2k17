@@ -19,7 +19,7 @@ using namespace std;
 
 class Inbetween {
 public:
-    Inbetween(vector<Player*> jugadores);
+    Inbetween(vector<Player*> jugadores, int maxPoints);
     void Update();
     void render();
     void renderCrowns();

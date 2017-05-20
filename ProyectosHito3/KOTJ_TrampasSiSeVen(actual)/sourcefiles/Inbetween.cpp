@@ -11,7 +11,7 @@
 #include "../headerfiles/Inbetween.h"
 #include "../motorgrafico/headerfiles/Motorgrafico.h"
 
-Inbetween::Inbetween(vector<Player*> jugadores) {
+Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints) {
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);
     fondo->setPosition(1024 / 2, 600 / 2);
 
@@ -25,7 +25,7 @@ Inbetween::Inbetween(vector<Player*> jugadores) {
         VisibleBody* crownBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 50, 100, 50, Resources::getInstance()->crown, true);
         coronaVB.push_back(crownBody);
 
-        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - (puntuacion.at(i) * 500 / 10) - 40, 40, 35, player->getTexture(), true);
+        VisibleBody* playerBody = new VisibleBody((1024 * (2.0f * i + 1.0f) / 8.0f), 600 - (puntuacion.at(i) * 500 / maxPoints) - 40, 40, 35, player->getTexture(), true);
         playerBody->setRect(0, 0, 40, 35);
         if (i == 0) playerBody->setColor(255, 255, 255, 255);
         if (i == 1) playerBody->setColor(255, 255, 000, 255);

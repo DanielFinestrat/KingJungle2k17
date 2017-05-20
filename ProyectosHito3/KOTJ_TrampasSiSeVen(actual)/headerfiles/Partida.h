@@ -56,6 +56,7 @@ public:
     TrapSpawner* factoriaTrampas;
     Console console;
     int indexMap;
+    int maxPoints;
 
     vector<Weapon*> worldWeapons;
     set<Bala*> worldBullets;
@@ -133,6 +134,8 @@ public:
     bool getUsingKeyboard();
     void setUsingKeyboard(bool state);
 
+    void setMaxPoints(int points);
+    
     void startTextBeforeLevel();
     void finishRound();
     void loadTextsNClock();

@@ -136,7 +136,7 @@ public:
     void optionsUpdate();
     
     int getTiempo();
-    int getRounds();
+    int getPuntos();
     int getMode();
     
     /*

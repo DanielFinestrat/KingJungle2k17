@@ -191,13 +191,13 @@ void IAController::interact() {
 }
 
 void IAController::moveTo(float PosX, float PosY, float dist, Controlador* seguir) {
-    cout << estado << " " << dist<< " ";
+    //cout << estado << " " << dist<< " ";
     if (!player->isJumping()) {
         if (PosY > 0.9 && (seguir == NULL || !seguir!=player->isJumping())  ) {
 		//if (PosY > 0.9 ) {
-            cout << "superior ";
+            //cout << "superior ";
             int lugar = readTile(layerSubir);
-			cout << lugar;
+			//cout << lugar;
             int dir = 0;
             switch (lugar) {
                 case 915:
@@ -223,9 +223,9 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
 
         }//Jugador esta en misma altura (saltando o no)
         else if (PosY > -0.5 && PosY < 3.2) {
-			cout << "misma ";
+			//cout << "misma ";
             int lugar = readTile(layerMisma);
-			cout << lugar;
+			//cout << lugar;
             switch (lugar) {
                 case 917:
                     pressUpdateState(0);
@@ -257,9 +257,9 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
             }
         }//Jugador esta en una altura inferior
         else if (PosY <= -0.5) {
-            cout << "inferior ";	
+            //cout << "inferior ";	
             int lugar = readTile(layerBajar);
-			cout << lugar;
+			//cout << lugar;
             int dir = 0;
             switch (lugar) {
                 case 915:
@@ -291,9 +291,9 @@ void IAController::moveTo(float PosX, float PosY, float dist, Controlador* segui
         }
 			
     }else{
-		cout << "saltando";
+		//cout << "saltando";
 	}
-	cout << endl;
+	//cout << endl;
 }
 
 vector<float> IAController::buscarArma() {
@@ -404,7 +404,7 @@ vector<float> IAController::buscarHuida() {
 
     for (int i = 0; i < partida->worldWeapons.size(); i++) {
         Weapon* weapon = partida->worldWeapons.at(i);
-        if (!weapon->inPossession && weapon->ammo != 0) {
+        if (weapon!=NULL && !weapon->inPossession && weapon->ammo != 0) {
             estado = "buscarArma";
         }
     }
@@ -476,15 +476,17 @@ vector<float> IAController::buscarMatar(Controlador** seguir) {
 void IAController::resetArmas(){
 	Partida* partida = Partida::getInstance();
 	bool existe = false;
-	for(int i=0; i < partida->worldWeapons.size(); i++){
-		if(weaponFocus == partida->worldWeapons.at(i)){
-			existe = true;
+	if(weaponFocus != NULL && player->getWeapon() != weaponFocus){
+		for(int i=0; i < partida->worldWeapons.size(); i++){
+			if(weaponFocus == partida->worldWeapons.at(i) && !partida->worldWeapons.at(i)->inPossession){
+				existe = true;
+			}
 		}
-	}
-	
-	if(!existe){
-		weaponFocus = NULL;
-		estado = "buscarArma";
+
+		if(!existe){
+			weaponFocus = NULL;
+			estado = "buscarArma";
+		}
 	}
 }
 
@@ -513,7 +515,7 @@ void IAController::update() {
         pos = buscarMatar(&playerFocus);
     }
 	
-	cout << pos.at(2) << endl;
+	//cout << pos.at(2) << endl;
 	
     moveTo(pos.at(0), pos.at(1), pos.at(2), playerFocus);
 

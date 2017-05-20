@@ -25,7 +25,7 @@ Menu* createMainMenu() {
 }
 
 Menu* createGameMenu(int rondas, int tiempo, int modo) {
-    Texto* op1 = new Texto("Rondas", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op1 = new Texto("Puntos", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op2 = new Texto("Tiempo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op3 = new Texto("Modo", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op4 = new Texto("Volver", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
@@ -119,6 +119,7 @@ int main() {
                 Motorgrafico::getInstance()->createPartida(datosPartida.at(1));
                 partida = Motorgrafico::getInstance()->getPartida();
                 partida->indexMap = -1;
+				Partida::getInstance()->setMaxPoints(datosPartida.at(0));
                 partida->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
@@ -166,7 +167,7 @@ int main() {
                 menu->renderGameMenu();
             }
 			
-			datosPartida.at(0) = menu->getRounds();
+			datosPartida.at(0) = menu->getPuntos();
 			datosPartida.at(1) = menu->getTiempo();
 			datosPartida.at(2) = menu->getMode();
 			

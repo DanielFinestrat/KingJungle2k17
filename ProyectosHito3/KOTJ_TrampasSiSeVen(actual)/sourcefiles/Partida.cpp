@@ -371,6 +371,10 @@ void Partida::updateExplo() {
     }
 }
 
+void Partida::setMaxPoints(int points){
+	maxPoints = points;
+}
+
 void Partida::updateClock() {
     //si no es la primera vez que se hace el reset del clock, se empieza a reiniciar el clock cada frame y se calcula el tiempo desde que empieza
     if (notFirstReset) {
@@ -398,7 +402,7 @@ void Partida::updateClock() {
                 worldPlayer.at(playerposition)->give1Point();
                 //cout << "PUNTOS DESPUES" << worldPlayer.at(playerposition)->getPoints() << endl;
 
-                if (worldPlayer.at(playerposition)->getPoints() == 10) {
+                if (worldPlayer.at(playerposition)->getPoints() == maxPoints) {
                     gameisover = true;
                 }
 
@@ -510,7 +514,7 @@ void Partida::startTextBeforeLevel() {
 
     timeBetweenReset = 0;
     inbetween = NULL;
-    inbetween = new Inbetween(worldPlayer);
+    inbetween = new Inbetween(worldPlayer, maxPoints);
 
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
 }
