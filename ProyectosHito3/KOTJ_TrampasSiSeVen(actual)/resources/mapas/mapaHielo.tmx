@@ -6,6 +6,9 @@
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
   <image source="../../../../../Escritorio/tilesheet_complete.png" width="1408" height="768"/>
  </tileset>
+ <tileset firstgid="1057" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
+  <image source="../../../../ProyectosHito2/KOTJ_CargaMapas/resources/mapas/tilesheet_complete.png" width="1408" height="768"/>
+ </tileset>
  <objectgroup name="Plataformas" visible="0">
   <object id="16" name="platform" x="32" y="768" width="64" height="192">
    <properties>
@@ -7553,7 +7556,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA misma" width="90" height="40">
+ <layer name="IA misma" width="90" height="40" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -11157,7 +11160,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="90" height="40" visible="0">
+ <layer name="IA subir" width="90" height="40">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -13085,7 +13088,7 @@
    <tile gid="914"/>
    <tile gid="920"/>
    <tile gid="920"/>
-   <tile gid="0"/>
+   <tile gid="1971"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -13175,7 +13178,7 @@
    <tile gid="914"/>
    <tile gid="920"/>
    <tile gid="920"/>
-   <tile gid="0"/>
+   <tile gid="1971"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -13265,7 +13268,7 @@
    <tile gid="914"/>
    <tile gid="920"/>
    <tile gid="920"/>
-   <tile gid="0"/>
+   <tile gid="1971"/>
    <tile gid="0"/>
    <tile gid="0"/>
    <tile gid="0"/>

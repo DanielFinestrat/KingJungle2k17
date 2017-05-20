@@ -3046,7 +3046,7 @@
    <tile gid="319"/>
   </data>
  </layer>
- <layer name="IA bajar" width="70" height="40">
+ <layer name="IA bajar" width="70" height="40" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -8654,7 +8654,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="70" height="40" visible="0" offsetx="0" offsety="32">
+ <layer name="IA subir" width="70" height="40" offsetx="0" offsety="32">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>

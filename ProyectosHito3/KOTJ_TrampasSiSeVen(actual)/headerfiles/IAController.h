@@ -33,7 +33,6 @@ public:
     void releaseUpdateState(int botonSoltado);
     void checkAxisX(int ejeX);
     void checkAxisY(int ejeY);
-    void restart();
     
     bool disparar(float dist, float PosX);
     void update();
@@ -44,7 +43,8 @@ public:
     vector<float> getPosArma();
     vector<float> buscarHuida();
     vector<float> buscarMatar(Controlador **seguir);
-
+    void resetArmas();
+    
 };
 
 #endif /* IACONTROLLER_H */

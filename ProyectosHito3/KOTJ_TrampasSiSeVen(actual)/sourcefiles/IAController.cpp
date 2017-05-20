@@ -107,10 +107,8 @@ void IAController::checkAxisX(int ejeX) {
     else if (ejeX < -10) ejeX = -1;
     else ejeX = 0;
 
-    //1 = derecha
-
-        estadoEjeX = ejeX;
-        player->changeDirection(estadoEjeX);
+    estadoEjeX = ejeX;
+    player->changeDirection(estadoEjeX);
     
 }
 
@@ -126,11 +124,7 @@ void IAController::checkAxisY(int ejeY) {
     }
 }
 
-void IAController::restart(){
-	weaponFocus = NULL;
-	playerFocus = NULL;
-	estado = "buscarArma";
-}
+
 
 
 
@@ -479,12 +473,29 @@ vector<float> IAController::buscarMatar(Controlador** seguir) {
     return ret;
 }
 
+void IAController::resetArmas(){
+	Partida* partida = Partida::getInstance();
+	bool existe = false;
+	for(int i=0; i < partida->worldWeapons.size(); i++){
+		if(weaponFocus == partida->worldWeapons.at(i)){
+			existe = true;
+		}
+	}
+	
+	if(!existe){
+		weaponFocus = NULL;
+		estado = "buscarArma";
+	}
+}
+
 void IAController::update() {
     //MIRAR DE HACER 3 CAPAS DE TILED. UNA PARA SUBIR, OTRA PARA BAJAR Y OTRA PARA SEGUI
     //Método de seguir persona
 
     Partida* partida = Partida::getInstance();
-
+	
+	resetArmas();
+	
     vector<float> pos;
 	playerFocus = NULL;
 	
