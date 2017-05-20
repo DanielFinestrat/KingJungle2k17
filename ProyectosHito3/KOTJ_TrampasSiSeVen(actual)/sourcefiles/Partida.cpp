@@ -492,6 +492,7 @@ void Partida::startTextBeforeLevel() {
     loadingLevelStruct.showingInbetween = true;
 
     timeBetweenReset = 0;
+	Erase();
     inbetween = NULL;
     inbetween = new Inbetween(worldPlayer, maxPoints, rondas.at(rondaActual).modoJuego, false);
 
