@@ -3,7 +3,7 @@
  <properties>
   <property name="fondo" value="./resources/fondos/fondoJungle.png"/>
  </properties>
- <tileset firstgid="1" source="../../../../../Escritorio/KOTJ.tsx"/>
+ <tileset firstgid="1" source="untitled.tsx"/>
  <objectgroup name="Plataformas" visible="0" offsetx="0" offsety="32">
   <object id="5" name="platform" x="160" y="1216" width="800" height="32">
    <properties>

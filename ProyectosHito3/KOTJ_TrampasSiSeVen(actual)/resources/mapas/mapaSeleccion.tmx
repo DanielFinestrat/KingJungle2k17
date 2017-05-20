@@ -6,7 +6,7 @@
  <tileset firstgid="1" name="tilesheet_complete" tilewidth="32" tileheight="32" tilecount="1056" columns="44">
   <image source="../../../../ProyectosHito2/KOTJ_CargaMapas/resources/mapas/tilesheet_complete.png" width="1408" height="768"/>
  </tileset>
- <layer name="Escenario" width="50" height="27" visible="0">
+ <layer name="Escenario" width="50" height="27">
   <data>
    <tile gid="1"/>
    <tile gid="1"/>
@@ -1360,7 +1360,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA bajar" width="50" height="27">
+ <layer name="IA bajar" width="50" height="27" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
@@ -5422,7 +5422,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <objectgroup name="Spawns" visible="0">
+ <objectgroup name="Spawns">
   <object id="29" name="player" x="238" y="0" width="32" height="32"/>
   <object id="35" name="cadaver" x="239" y="49" width="32" height="32"/>
   <object id="61" name="arma" x="288" y="640" width="32" height="32"/>

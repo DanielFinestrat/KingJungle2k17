@@ -3,7 +3,7 @@
  <properties>
   <property name="fondo" value="./resources/fondos/fondoJungle.png"/>
  </properties>
- <tileset firstgid="1" source="../../../../../Escritorio/KOTJ.tsx"/>
+ <tileset firstgid="1" source="untitled.tsx"/>
  <objectgroup name="Plataformas" visible="0">
   <object id="1" name="platform" x="896" y="480" width="64" height="160">
    <properties>
@@ -665,8 +665,8 @@
    <tile gid="365"/>
    <tile gid="365"/>
    <tile gid="365"/>
-   <tile gid="365"/>
-   <tile gid="365"/>
+   <tile gid="309"/>
+   <tile gid="310"/>
    <tile gid="365"/>
    <tile gid="365"/>
    <tile gid="365"/>
@@ -682,41 +682,41 @@
    <tile gid="309"/>
    <tile gid="309"/>
    <tile gid="309"/>
-   <tile gid="366"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="268"/>
-   <tile gid="363"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="309"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
+   <tile gid="310"/>
    <tile gid="319"/>
    <tile gid="319"/>
    <tile gid="319"/>
@@ -2162,7 +2162,7 @@
    <tile gid="0"/>
   </data>
  </layer>
- <layer name="IA subir" width="35" height="20">
+ <layer name="IA subir" width="35" height="20" visible="0">
   <data>
    <tile gid="0"/>
    <tile gid="0"/>
