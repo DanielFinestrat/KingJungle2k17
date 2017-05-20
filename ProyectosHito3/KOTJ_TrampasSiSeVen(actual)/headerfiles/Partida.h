@@ -144,7 +144,7 @@ public:
 
     void setMaxPoints(int points);
 
-    void fillRondasVector();   
+    void fillRondasVector(int tipoRonda);   
     void startTextBeforeLevel();
     void finishRound();
     void loadTextsNClock();

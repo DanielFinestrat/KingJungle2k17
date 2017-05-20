@@ -23,7 +23,6 @@ Partida::Partida() {
     rondaActual = 0;
     hud = Hud::getInstance();
     loadTextsNClock();
-    fillRondasVector();
 }
 
 Partida* Partida::getInstance() {
@@ -241,7 +240,6 @@ void Partida::checkJoysticksConnected() {
     Joystick joystickManager;
     for (int i = 0; i < 4; i++) {
         if (joystickManager.isConnected(i) && worldPlayer.size() < 4) {
-
             addPlayerJoystick(i);
         }
     }
@@ -256,7 +254,6 @@ void Partida::addPlayerJoystick(int id) {
         for (int i = 0; i < worldControlador.size() && add; i++) {
             if (worldControlador.at(i)->tipo.compare("Joystick") == 0 && worldControlador.at(i)->id == id) add = false;
         }
-
         //Añadimos en funcion de la condición
         if (add) {
             PlayerJoystick* p = new PlayerJoystick(id);
@@ -454,14 +451,14 @@ void Partida::updateBeforeMap() {
         plus1->setPos(screenWidth / 2 - 40, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin1);
         loadingLevelStruct.firstTextPrepared = false;
-    }        //ready
+    }//ready
     else if (loadingLevelStruct.secondTextPrepared && timeBetweenReset > 2) {
         Texto *plus1 = worldTexts.at(4);
         plus1->setTexto("READY");
         plus1->setPos(screenWidth / 2 - 80, screenHeight / 2 - 80);
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->coin2);
         loadingLevelStruct.secondTextPrepared = false;
-    }        //se reanuda la partida
+    }//se reanuda la partida
     else if (loadingLevelStruct.thirdTextPrepared && timeBetweenReset > 3) {
         Motorgrafico::getInstance()->getTemporizador()->stop(false);
         Motorgrafico::getInstance()->getTemporizador()->restart();
@@ -497,7 +494,7 @@ void Partida::startTextBeforeLevel() {
     Motorgrafico::getInstance()->getTemporizador()->stop(true);
 }
 
-void Partida::fillRondasVector() {
+void Partida::fillRondasVector(int tipoRonda) {
     srand(time(NULL));
     Mapa *mapa = new Mapa();
     int newIndexMap = -1;
@@ -513,12 +510,19 @@ void Partida::fillRondasVector() {
         } while (newIndexMap == oldIndexMap || newIndexMap == 0 || newIndexMap == 1);
         ronda.mapa = newIndexMap;
 
-        do {
-            newIndexModo = rand() % 2;
-        } while (newIndexModo == oldIndexModo);
+        if (tipoRonda != 1) {
+            newIndexModo = tipoRonda - 2;
+        }        
+        else {
+            do {
+                newIndexModo = rand() % 2;
+            } while (newIndexModo == oldIndexModo);
+        }
+
         ronda.modoJuego = newIndexModo;
 
         rondas.push_back(ronda);
+        
         oldIndexMap = newIndexMap;
         oldIndexModo = newIndexModo;
     }

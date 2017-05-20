@@ -84,12 +84,10 @@ int main() {
     mg->getMusicPlayer()->playSound(mg->getMusicPlayer()->menuMusic);
 
     //datos Basicos de la partida
-    vector<int> datosPartida; //int rondas tiempo modo
+    vector<int> datosPartida; //int puntos tiempo modo
     datosPartida.push_back(5);
     datosPartida.push_back(60);
     datosPartida.push_back(1);
-
-
 
     while (state != 0) {
 
@@ -122,6 +120,7 @@ int main() {
                 partida = Motorgrafico::getInstance()->getPartida();
                 partida->indexMap = -1;
                 Partida::getInstance()->setMaxPoints(datosPartida.at(0));
+                Partida::getInstance()->fillRondasVector(datosPartida.at(2));
                 partida->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
