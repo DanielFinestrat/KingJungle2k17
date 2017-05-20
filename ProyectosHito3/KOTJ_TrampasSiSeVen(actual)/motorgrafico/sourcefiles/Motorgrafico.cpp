@@ -138,7 +138,8 @@ void Motorgrafico::eventListener(int &e) {
                         break;
 
                     case sf::Event::JoystickConnected:
-                        partida->addPlayerJoystick(event.joystickConnect.joystickId);
+                        if(partida->getInstance()->indexMap == -1)
+                            partida->addPlayerJoystick(event.joystickConnect.joystickId);
                         break;
 
                     case sf::Event::JoystickMoved:
@@ -171,11 +172,13 @@ void Motorgrafico::eventListener(int &e) {
 
                         switch (event.key.code) {
                             case sf::Keyboard::F2:
-                                if (partida->getUsingKeyboard() == false) partida->addPlayerKeyboard();
+                                if (partida->getUsingKeyboard() == false && partida->getInstance()->indexMap == -1) 
+                                        partida->addPlayerKeyboard();
                                 break;
 
                             case Keyboard::F3:
-                                partida->addPlayerIA();
+                                if(partida->getInstance()->indexMap == -1)
+                                    partida->addPlayerIA();
                                 break;
 
                             case Keyboard::Tab:

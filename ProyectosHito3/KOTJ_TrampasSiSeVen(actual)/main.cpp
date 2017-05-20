@@ -115,8 +115,11 @@ int main() {
 
         if (state == 2) {
             if (!empezada) {
+                Partida* partida;
                 Motorgrafico::getInstance()->createPartida(datosPartida.at(1));
-                Motorgrafico::getInstance()->getPartida()->loadMap("./resources/mapas/mapaSeleccion.tmx");
+                partida = Motorgrafico::getInstance()->getPartida();
+                partida->indexMap = -1;
+                partida->loadMap("./resources/mapas/mapaSeleccion.tmx");
                 Partida::getInstance()->checkJoysticksConnected();
                 empezada = true;
             }

@@ -126,6 +126,7 @@ public:
     void updateBeforeMap();
     
     void breakTraps();
+    void ordenarJugadores();
 
     void cameraSetFinalTransform();
 

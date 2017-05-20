@@ -283,6 +283,10 @@ void Partida::addPlayerIA() {
 }
 
 void Partida::respawn() {
+    //ordenamos los jugadores segun la puntuacion
+    if(indexMap == 1){
+        ordenarJugadores();
+    }
     for (int i = 0; i < worldPlayer.size(); i++) {
 
         Player* player = worldPlayer.at(i);
@@ -333,6 +337,20 @@ void Partida::breakTraps() { //Rompe las trampas, se le llama en el update a fal
     traps2Break.clear();
 }
 
+void Partida::ordenarJugadores(){
+    int j;
+    Player* jugador;
+        for(int i = 1; i<worldPlayer.size();i++){
+            jugador = worldPlayer.at(i);
+            j = i-1;
+            while((j >= 0)  && (jugador->getPoints() > worldPlayer.at(j)->getPoints())){
+                worldPlayer.at(j+1) = worldPlayer.at(j); 
+                j--;
+            }
+            worldPlayer.at(j+1) = jugador;
+        }
+}
+
 void Partida::updateBullets() {
     set<Bala*>::iterator itBala = worldBullets.begin();
     set<Bala*>::iterator endBala = worldBullets.end();
@@ -360,6 +378,11 @@ void Partida::updateClock() {
         changeLevelClock.restartClock();
         timeBetweenReset += changeLevelClock.getDeltaTimeAsSeconds();
         //cout << timeBetweenReset << endl;
+         //AQUI entra cuando es el mapa de seleccion y asi saltarse tanto la espera como dar puntos
+        if(indexMap == -1 && finalLevelTextPrepared){
+            timeBetweenReset = 3;
+            finalLevelTextPrepared = false;
+        }
         if (finalLevelTextPrepared && timeBetweenReset > 1.0) {
             //se comprueba si hay solo 1 jugador vivo y se le da un punto
             int playerposition = -1;
@@ -573,6 +596,7 @@ void Partida::loadFinalMap() {
 
     mapa = new Mapa();
     mapa->leerMapa(mapa->mapaPodio);
+    indexMap = 1;
 
     factoriaArmas = new Weaponspawner();
     Motorgrafico::getInstance()->getTemporizador()->restart();
