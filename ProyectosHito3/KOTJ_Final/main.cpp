@@ -12,13 +12,15 @@ Menu* createMainMenu() {
     Texto* op1 = new Texto("Jugar", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op2 = new Texto("Opciones de partida", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
     Texto* op3 = new Texto("Opciones del sonido", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
-    Texto* op4 = new Texto("Salir", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op4 = new Texto("Controles", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
+    Texto* op5 = new Texto("Salir", 40, "./resources/fonts/newrotic.ttf", 255, 0, 0);
 
-    std::vector<Texto*> vec(4);
+    std::vector<Texto*> vec(5);
     vec[0] = op1;
     vec[1] = op2;
     vec[2] = op3;
     vec[3] = op4;
+    vec[4] = op5;
 
     Menu* menu = new Menu(vec, 350, 200);
     return menu;
@@ -155,7 +157,6 @@ int main() {
 
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->battleMusic);
             mg->getMusicPlayer()->stopSound(mg->getMusicPlayer()->elevatorMusic);
-
         }
 
 
@@ -188,6 +189,7 @@ int main() {
         }
 
         if (state == 5) {
+            Partida::getInstance()->worldWeapons.clear();
             Menu* pauseMenu = createPause();
             while (Motorgrafico::getInstance()->getRenderWindow()->isOpen() && state == 5) {
                 pauseMenu->input(state, pauseMenu);
@@ -195,6 +197,13 @@ int main() {
                 pauseMenu->render();
             }
             pauseMenu = NULL;
+        }
+        
+        if (state == 6) {
+            Motorgrafico::getInstance()->renderizarInstrucciones();
+            while(state == 6) {
+                    Motorgrafico::getInstance()->eventListener(state);
+            }
         }
     }
 

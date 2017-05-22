@@ -24,6 +24,7 @@ Motorgrafico::Motorgrafico() {
     setMainCameraView();
     setHudCameraView();
     goToMenuNow = false;
+    contControles = 0;
 }
 
 void Motorgrafico::setFramerateLimitOn(int framerate) {
@@ -230,6 +231,19 @@ void Motorgrafico::eventListener(int &e) {
                     }
                 }
                 break;
+                
+            case 6:
+                while (window->pollEvent(event)) {
+                    switch (event.type) {
+                        case Event::KeyReleased:
+                            
+                            if (contControles == 0) {renderizarInstrucciones2();}
+                            if (contControles == 1) {contControles = -1; e = 1;}
+                            contControles++;
+                            break;
+                    }
+                }
+                break;
         }
     }
 }
@@ -268,7 +282,8 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                             if (menu->getCurrentOption() == 0) e = 2;
                             if (menu->getCurrentOption() == 1) e = 3;
                             if (menu->getCurrentOption() == 2) e = 4;
-                            if (menu->getCurrentOption() == 3) e = 0;
+                            if (menu->getCurrentOption() == 3) e = 6;
+                            if (menu->getCurrentOption() == 4) e = 0;
                             break;
                         case Event::KeyPressed:
                             switch (event.key.code) {
@@ -288,7 +303,8 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                 if (menu->getCurrentOption() == 0) e = 2;
                                 if (menu->getCurrentOption() == 1) e = 3;
                                 if (menu->getCurrentOption() == 2) e = 4;
-                                if (menu->getCurrentOption() == 3) e = 0;
+                                if (menu->getCurrentOption() == 3) e = 6;
+                                if (menu->getCurrentOption() == 4) e = 0;
                             }
                             if (event.key.code == sf::Keyboard::Escape) {
                                 e = 0;
@@ -687,6 +703,40 @@ int Motorgrafico::getWindowWidth() {
 void Motorgrafico::setGoToMenu(bool go) {
     goToMenuNow = go;
 }
+
+void Motorgrafico::renderizarInstrucciones() {
+    
+    fondoMenu = new Fondo(Resources::getInstance()->fondoMenu, false);
+    mando = new Fondo(Resources::getInstance()->mando, false);
+    texto = new Texto("Pulsa un boton para continuar", 20, Resources::getInstance()->menuFont, 100, 0, 0);
+    fondoMenu->setPosition(512,300);
+    mando->setPosition(512,300);
+    texto->setPos(50,550);
+    
+    window->clear();
+    fondoMenu->Render();
+    mando->Render();
+    draw(texto->getDrawable());
+    window->display();
+    
+}
+
+void Motorgrafico::renderizarInstrucciones2() {
+    fondoMenu = new Fondo(Resources::getInstance()->fondoMenu, false);
+    teclado = new Fondo(Resources::getInstance()->teclado, false);
+    texto = new Texto("Pulsa un boton para continuar", 20, Resources::getInstance()->menuFont, 100, 0, 0);
+    fondoMenu->setPosition(512,300);
+    teclado->setPosition(512,300);
+    texto->setPos(50,550);
+    
+    window->clear();
+    fondoMenu->Render();
+    teclado->Render();
+    draw(texto->getDrawable());
+    window->display();
+    
+}
+
 
 Motorgrafico::~Motorgrafico() {
 }

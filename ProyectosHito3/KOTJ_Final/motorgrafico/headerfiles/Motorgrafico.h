@@ -60,6 +60,8 @@ public:
     float getCameraPositionY();
     int getWindowHeight();
     int getWindowWidth();
+    void renderizarInstrucciones();
+    void renderizarInstrucciones2();
 
     Temporizador* getTemporizador();
 
@@ -86,6 +88,12 @@ private:
     sf::View *hudCamera;
     sf::Event event;
     MusicPlayer *mplayer;
+    
+    Fondo *fondoMenu;
+    Fondo *mando;
+    Fondo *teclado;
+    Texto *texto;
+    int contControles;
 
     bool goToMenuNow;
 };

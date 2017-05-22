@@ -31,7 +31,9 @@ Resources::Resources(): myFont("./resources/fonts/bits.ttf"),
                         explosion("./resources/sprites/explosion.png"),
                         nitro("./resources/sprites/nitro.png"),
                         nitroRoto("./resources/sprites/nitroRoto.png"),
-                        coin("./resources/sprites/coins.png")
+                        coin("./resources/sprites/coins.png"),
+                        mando("./resources/fondos/mando.png"),
+                        teclado("./resources/fondos/teclado.png")
                         { initialise(); }
 
 
@@ -99,6 +101,8 @@ bool Resources::loadAll() {
     if (!loadTexture(nitro)) return false;
     if (!loadTexture(nitroRoto)) return false;
     if (!loadTexture(coin)) return false;
+    if (!loadTexture(mando)) return false;
+    if (!loadTexture(teclado)) return false;
     return true;
 }
 

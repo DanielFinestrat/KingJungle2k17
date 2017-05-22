@@ -51,6 +51,8 @@ class Resources {
         const string nitro;
         const string nitroRoto;
         const string coin;
+        const string mando;
+        const string teclado;
 
     private:
         Resources();
