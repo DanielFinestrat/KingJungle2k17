@@ -41,9 +41,9 @@ Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints, int tipoJuego, bo
         VisibleBody* playerBody = new VisibleBody(ancho, altura, 60, 55, player->getTexture(), true);
         playerBody->setRect(0, 0, 40, 35);
         if (i == 0) playerBody->setColor(255, 255, 255, 255);
-        if (i == 1) playerBody->setColor(255, 255, 000, 255);
-        if (i == 2) playerBody->setColor(000, 255, 255, 255);
-        if (i == 3) playerBody->setColor(255, 000, 255, 255);
+        if (i == 1) playerBody->setColor(255, 070, 070, 255);
+        if (i == 2) playerBody->setColor(070, 255, 070, 255);
+        if (i == 3) playerBody->setColor(070, 070, 255, 255);
         playerVB.push_back(playerBody);
 
         Texto* text = new Texto(puntosString, 35, Resources::getInstance()->menuFont, 255, 255, 255);

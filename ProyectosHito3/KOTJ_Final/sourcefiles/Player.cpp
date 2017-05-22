@@ -68,7 +68,7 @@ Player::Player() {
 
     monedero = 0;
     decreasedCoins = 0;
-    
+
     coinsClock = new InnerClock();
     coinsClock->restartClock();
 
@@ -376,14 +376,17 @@ void Player::setColor(int id) {
             break;
         case 1:
             color->r = 255;
-            color->g = 255;
+            color->g = 070;
+            color->b = 070;
             break;
         case 2:
+            color->r = 070;
             color->g = 255;
-            color->b = 255;
+            color->b = 070;
             break;
         case 3:
-            color->r = 255;
+            color->r = 070;
+            color->g = 070;
             color->b = 255;
             break;
     }
@@ -490,12 +493,12 @@ void Player::upgradeMonedero(int value) {
 }
 
 void Player::downgradeMonedero() {
-    if(monedero*0.7>=1) decreasedCoins = monedero - (int) monedero * 0.7 + 1;
+    if (monedero * 0.7 >= 1) decreasedCoins = monedero - (int) monedero * 0.7 + 1;
     else decreasedCoins = 0;
     monedero = monedero * 0.7;
 }
 
-void Player::resetMonedero(){
+void Player::resetMonedero() {
     monedero = 0;
 }
 

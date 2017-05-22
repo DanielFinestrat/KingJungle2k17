@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=GNU-Linux
 CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
-CND_ARTIFACT_NAME_Debug=kotj_errortiempo
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_errortiempo
+CND_ARTIFACT_NAME_Debug=kotj_final
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/kotj_final
 CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
-CND_PACKAGE_NAME_Debug=kotjerrortiempo.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjerrortiempo.tar
+CND_PACKAGE_NAME_Debug=kotjfinal.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kotjfinal.tar
 # Release configuration
 CND_PLATFORM_Release=GNU-Linux
 CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
-CND_ARTIFACT_NAME_Release=kotj_errortiempo
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_errortiempo
+CND_ARTIFACT_NAME_Release=kotj_final
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kotj_final
 CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
-CND_PACKAGE_NAME_Release=kotjerrortiempo.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjerrortiempo.tar
+CND_PACKAGE_NAME_Release=kotjfinal.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kotjfinal.tar
 #
 # include compiler specific variables
 #

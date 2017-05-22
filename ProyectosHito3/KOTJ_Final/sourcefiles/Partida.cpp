@@ -802,7 +802,7 @@ void Partida::loadFinalMap() {
     }
     respawn();
 
-    VisibleBody *podioVB = new VisibleBody(384, 386, 256, 192, "./resources/sprites/podio.png", true);
+    VisibleBody *podioVB = new VisibleBody(352+128, 352+64, 256, 192, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);
 }
 

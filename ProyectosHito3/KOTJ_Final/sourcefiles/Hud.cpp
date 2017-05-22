@@ -54,9 +54,9 @@ void Hud::render() {
             body->setTexRect(0, 0, 40, 35);
                   
         if (Partida::getInstance()->worldPlayer.at(i) != NULL) {
-            if (i == 1)  {body->setColor(255, 255, 0, 255); body->setScale(-1,1);            }
-            if (i == 2)  body->setColor(0, 255, 255, 255);
-            if (i == 3)  {body->setColor(255, 0, 255, 255); body->setScale(-1,1);}
+            if (i == 1)  {body->setColor(255, 70, 70, 255); body->setScale(-1,1);}
+            if (i == 2)  body->setColor(70, 255, 70, 255);
+            if (i == 3)  {body->setColor(70, 70, 255, 255); body->setScale(-1,1);}
             Motorgrafico::getInstance()->draw(body->getShape());
             
             if (!Partida::getInstance()->worldPlayer.at(i)->isPlayerDead()) {

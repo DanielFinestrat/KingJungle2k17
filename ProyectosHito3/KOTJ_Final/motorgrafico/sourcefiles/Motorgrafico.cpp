@@ -391,11 +391,13 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                 if (event.joystickMove.position < -10) {
                                     menu->goUp();
                                 }
-
-                                if (event.joystickMove.axis == Joystick::X) {
+                            }
+                            
+                            if (event.joystickMove.axis == Joystick::X) {
                                     if (event.joystickMove.position > 10) {
                                         if (menu->getCurrentOption() == 0) {
                                             menu->increaseMusicVol();
+                                            
                                             getMusicPlayer()->setMusicVolume(1);
 
                                         }
@@ -410,7 +412,7 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                 }
 
                                 if (event.joystickMove.axis == Joystick::X) {
-                                    if (event.joystickMove.position < 10) {
+                                    if (event.joystickMove.position < -10) {
                                         if (menu->getCurrentOption() == 0) {
                                             menu->decreaseMusicVol();
                                             getMusicPlayer()->setMusicVolume(-1);
@@ -425,7 +427,6 @@ void Motorgrafico::eventListener(int &e, Menu* menu) {
                                         }
                                     }
                                 }
-                            }
                             break;
 
                         case Event::KeyPressed:
