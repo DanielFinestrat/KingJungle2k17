@@ -66,6 +66,8 @@ public:
     void setGoToMenu(bool go);
     
     void textEnteredConsole(Event even);
+    void renderizarInstrucciones();
+    void renderizarInstrucciones2();
     virtual ~Motorgrafico();
 
 private:
@@ -86,6 +88,13 @@ private:
     sf::View *hudCamera;
     sf::Event event;
     MusicPlayer *mplayer;
+    
+    Fondo *fondoMenu;
+    Fondo *mando;
+    Fondo *teclado;
+    Texto *texto;
+    
+    int contControles;
 
     bool goToMenuNow;
 };
