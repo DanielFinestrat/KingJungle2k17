@@ -37,10 +37,12 @@ void Partida::Input(int &e) {
 }
 
 void Partida::updateIA() {
-    for (int i = 0; i < worldControlador.size(); i++) {
-        Controlador* c = worldControlador.at(i);
-        if (c->tipo.compare("IA") == 0) {
-            c->update();
+    if(!gameisover){
+        for (int i = 0; i < worldControlador.size(); i++) {
+            Controlador* c = worldControlador.at(i);
+            if (c->tipo.compare("IA") == 0) {
+                c->update();
+            }
         }
     }
 }
@@ -314,13 +316,16 @@ void Partida::respawn() {
 }
 
 void Partida::updatePlayers(Time frameTime) {
+
+    //cout << timeBetweenReset << endl;
+    
     for (int i = 0; i < worldPlayer.size(); i++) {
         worldPlayer.at(i)->update(Motorgrafico::getInstance()->getFrameTime());
         if (rondas.at(rondaActual).modoJuego == 1) {
             int value = worldPlayer.at(i)->collidesWithCoin();
             Texto *plusCoin = worldTexts.at(i);
             worldPlayer.at(i)->getCoinsClock()->restartClock();
-            worldPlayer.at(i)->addCoinDeltaTime();
+        worldPlayer.at(i)->addCoinDeltaTime();
 
 
             string valorMoneda;
@@ -347,8 +352,11 @@ void Partida::updatePlayers(Time frameTime) {
                     int pos = rand() % mapa->spawnPlayer.size();
                     vector<int> position = mapa->spawnPlayer.at(pos);
 
-                    worldPlayer.at(i)-> setPosition(position.at(0), position.at(1));
-                    worldPlayer.at(i)-> respawn();
+                    //worldPlayer.at(i)-> setPosition(position.at(0), position.at(1));
+                    if (timeBetweenReset < 0.5) {
+                        worldPlayer.at(i)-> setPosition(position.at(0), position.at(1));
+                        worldPlayer.at(i)-> respawn();
+                    }
                     worldPlayer.at(i)->resetRespawnTime();
                 }
             } else {
@@ -589,6 +597,7 @@ void Partida::updateBeforeMap() {
         Motorgrafico::getInstance()->getMusicPlayer()->playSFX(Motorgrafico::getInstance()->getMusicPlayer()->explosion1);
         loadingLevelStruct.thirdTextPrepared = false;
         loadingLevelStruct.loadingLevel = false;
+        timeBetweenReset = 0;
 
     }
 }
@@ -802,7 +811,7 @@ void Partida::loadFinalMap() {
     }
     respawn();
 
-    VisibleBody *podioVB = new VisibleBody(352+128, 352+64, 256, 192, "./resources/sprites/podio.png", true);
+    VisibleBody *podioVB = new VisibleBody(352 + 128, 352 + 64, 256, 192, "./resources/sprites/podio.png", true);
     mapa->aditionalSprites.push_back(podioVB);
 }
 
