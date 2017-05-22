@@ -1,0 +1,740 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="97">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+      <itemPath>headerfiles/Bala.h</itemPath>
+      <itemPath>headerfiles/Coin.h</itemPath>
+      <itemPath>headerfiles/Coinsspawner.h</itemPath>
+      <itemPath>headerfiles/Console.h</itemPath>
+      <itemPath>headerfiles/Controlador.h</itemPath>
+      <itemPath>headerfiles/Entidad.h</itemPath>
+      <itemPath>headerfiles/Explosion.h</itemPath>
+      <itemPath>headerfiles/Hud.h</itemPath>
+      <itemPath>headerfiles/IAController.h</itemPath>
+      <itemPath>headerfiles/Inbetween.h</itemPath>
+      <itemPath>headerfiles/Mapa.h</itemPath>
+      <itemPath>headerfiles/Menu.h</itemPath>
+      <itemPath>headerfiles/Partida.h</itemPath>
+      <itemPath>headerfiles/Platform.h</itemPath>
+      <itemPath>headerfiles/Player.h</itemPath>
+      <itemPath>headerfiles/PlayerJoystick.h</itemPath>
+      <itemPath>headerfiles/PlayerKeyboard.h</itemPath>
+      <itemPath>headerfiles/Trampa.h</itemPath>
+      <itemPath>headerfiles/TrapSpawner.h</itemPath>
+      <itemPath>headerfiles/Weapon.h</itemPath>
+      <itemPath>headerfiles/Weaponspawner.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="motorfisico" displayName="motorfisico" projectFiles="true">
+      <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+        <itemPath>motorfisico/headerfiles/ContactListener.h</itemPath>
+        <itemPath>motorfisico/headerfiles/Cuerpo.h</itemPath>
+        <itemPath>motorfisico/headerfiles/CuerpoCircular.h</itemPath>
+        <itemPath>motorfisico/headerfiles/Motorfisico.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+        <itemPath>motorfisico/sourcefiles/ContactListener.cpp</itemPath>
+        <itemPath>motorfisico/sourcefiles/Cuerpo.cpp</itemPath>
+        <itemPath>motorfisico/sourcefiles/CuerpoCircular.cpp</itemPath>
+        <itemPath>motorfisico/sourcefiles/Motorfisico.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="motorgrafico"
+                   displayName="motorgrafico"
+                   projectFiles="true">
+      <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+        <itemPath>motorgrafico/headerfiles/Animation.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Fondo.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/InnerClock.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Motorgrafico.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/SpriteAnimated.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Temporizador.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/Texto.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/VisibleBody.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/musicPlayer.h</itemPath>
+        <itemPath>motorgrafico/headerfiles/resources.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+        <itemPath>motorgrafico/sourcefiles/Animation.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Fondo.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/InnerClock.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Motorgrafico.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/SpriteAnimated.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Temporizador.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/Texto.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/VisibleBody.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/musicPlayer.cpp</itemPath>
+        <itemPath>motorgrafico/sourcefiles/resources.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <logicalFolder name="datos" displayName="datos" projectFiles="true">
+        <itemPath>resources/datos/armas.xml</itemPath>
+      </logicalFolder>
+      <logicalFolder name="fonts" displayName="fonts" projectFiles="true">
+        <itemPath>resources/fonts/bits.ttf</itemPath>
+        <itemPath>resources/fonts/newrotic.ttf</itemPath>
+      </logicalFolder>
+      <logicalFolder name="mapas" displayName="mapas" projectFiles="true">
+      </logicalFolder>
+      <logicalFolder name="music" displayName="music" projectFiles="true">
+        <itemPath>resources/music/battleMusic.wav</itemPath>
+        <itemPath>resources/music/defeatedSandwich.wav</itemPath>
+        <itemPath>resources/music/menuMusic.wav</itemPath>
+        <itemPath>resources/music/selecctionMusic.wav</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sfx" displayName="sfx" projectFiles="true">
+        <itemPath>resources/sfx/emptyCartridge.wav</itemPath>
+        <itemPath>resources/sfx/fastReload.wav</itemPath>
+        <itemPath>resources/sfx/shot.wav</itemPath>
+        <itemPath>resources/sfx/slowReload.wav</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sprites" displayName="sprites" projectFiles="true">
+        <itemPath>resources/sprites/sprites.png</itemPath>
+        <itemPath>resources/sprites/tilesheet.png</itemPath>
+        <itemPath>resources/sprites/weapon_spritesheet.png</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>sourcefiles/Bala.cpp</itemPath>
+      <itemPath>sourcefiles/Coin.cpp</itemPath>
+      <itemPath>sourcefiles/Coinsspawner.cpp</itemPath>
+      <itemPath>sourcefiles/Console.cpp</itemPath>
+      <itemPath>sourcefiles/Controlador.cpp</itemPath>
+      <itemPath>sourcefiles/Entidad.cpp</itemPath>
+      <itemPath>sourcefiles/Explosion.cpp</itemPath>
+      <itemPath>sourcefiles/Hud.cpp</itemPath>
+      <itemPath>sourcefiles/IAController.cpp</itemPath>
+      <itemPath>sourcefiles/Inbetween.cpp</itemPath>
+      <itemPath>sourcefiles/Mapa.cpp</itemPath>
+      <itemPath>sourcefiles/Menu.cpp</itemPath>
+      <itemPath>sourcefiles/Partida.cpp</itemPath>
+      <itemPath>sourcefiles/Platform.cpp</itemPath>
+      <itemPath>sourcefiles/Player.cpp</itemPath>
+      <itemPath>sourcefiles/PlayerJoystick.cpp</itemPath>
+      <itemPath>sourcefiles/PlayerKeyboard.cpp</itemPath>
+      <itemPath>sourcefiles/Trampa.cpp</itemPath>
+      <itemPath>sourcefiles/TrapSpawner.cpp</itemPath>
+      <itemPath>sourcefiles/Weapon.cpp</itemPath>
+      <itemPath>sourcefiles/Weaponspawner.cpp</itemPath>
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="tinyxml" displayName="tinyxml" projectFiles="true">
+      <logicalFolder name="headerfiles" displayName="headerfiles" projectFiles="true">
+        <itemPath>tinyxml/headerfiles/tinystr.h</itemPath>
+        <itemPath>tinyxml/headerfiles/tinyxml.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="sourcefiles" displayName="sourcefiles" projectFiles="true">
+        <itemPath>tinyxml/sourcefiles/tinystr.cpp</itemPath>
+        <itemPath>tinyxml/sourcefiles/tinyxml.cpp</itemPath>
+        <itemPath>tinyxml/sourcefiles/tinyxmlerror.cpp</itemPath>
+        <itemPath>tinyxml/sourcefiles/tinyxmlparser.cpp</itemPath>
+      </logicalFolder>
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <standard>8</standard>
+          <incDir>
+            <pElem>/usr/include/SFML</pElem>
+          </incDir>
+        </ccTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/lib/x86_64-linux-gnu</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>libBox2D.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-audio.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-graphics.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-network.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-system.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-window.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Coin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Coinsspawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Console.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Hud.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Inbetween.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Mapa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/PlayerJoystick.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/PlayerKeyboard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Trampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/TrapSpawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Weaponspawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/ContactListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/CuerpoCircular.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/Motorfisico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/ContactListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/CuerpoCircular.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/Motorfisico.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Animation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Fondo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/InnerClock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Motorgrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/SpriteAnimated.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Temporizador.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Texto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/VisibleBody.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/musicPlayer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/resources.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Animation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Fondo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/InnerClock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Motorgrafico.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/SpriteAnimated.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Texto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/musicPlayer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/resources.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="resources/datos/armas.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fonts/bits.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fonts/newrotic.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/battleMusic.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/defeatedSandwich.wav"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/music/menuMusic.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/selecctionMusic.wav"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/sfx/emptyCartridge.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/fastReload.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/tilesheet.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/weapon_spritesheet.png"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Coin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Coinsspawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Console.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Hud.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Inbetween.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Platform.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/PlayerJoystick.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Trampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/TrapSpawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weaponspawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml/headerfiles/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxmlerror.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxmlparser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+        <linkerTool>
+          <linkerAddLib>
+            <pElem>/usr/lib/x86_64-linux-gnu</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibFileItem>libBox2D.a</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-window.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-audio.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-graphics.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-network.so</linkerLibFileItem>
+            <linkerLibFileItem>/usr/lib/x86_64-linux-gnu/libsfml-system.so</linkerLibFileItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+      <item path="headerfiles/Bala.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Coin.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Coinsspawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Console.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Controlador.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Entidad.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Explosion.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Hud.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/IAController.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Inbetween.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Mapa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Menu.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Partida.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Platform.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Player.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/PlayerJoystick.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/PlayerKeyboard.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Trampa.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/TrapSpawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Weapon.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="headerfiles/Weaponspawner.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/ContactListener.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/Cuerpo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/CuerpoCircular.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/headerfiles/Motorfisico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/ContactListener.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/Cuerpo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/CuerpoCircular.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorfisico/sourcefiles/Motorfisico.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Animation.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Fondo.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/InnerClock.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Motorgrafico.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/SpriteAnimated.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Temporizador.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/Texto.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/VisibleBody.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/musicPlayer.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/headerfiles/resources.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Animation.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Fondo.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/InnerClock.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Motorgrafico.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/SpriteAnimated.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Temporizador.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/Texto.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/VisibleBody.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/musicPlayer.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="motorgrafico/sourcefiles/resources.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="resources/datos/armas.xml" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fonts/bits.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/fonts/newrotic.ttf" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/battleMusic.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/defeatedSandwich.wav"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/music/menuMusic.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/music/selecctionMusic.wav"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="resources/sfx/emptyCartridge.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/fastReload.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/shot.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sfx/slowReload.wav" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/sprites.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/tilesheet.png" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="resources/sprites/weapon_spritesheet.png"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="sourcefiles/Bala.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Coin.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Coinsspawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Console.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Controlador.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Entidad.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Explosion.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Hud.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/IAController.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Inbetween.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Mapa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Menu.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Partida.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Platform.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Player.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/PlayerJoystick.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/PlayerKeyboard.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Trampa.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/TrapSpawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weapon.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="sourcefiles/Weaponspawner.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/headerfiles/tinystr.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml/headerfiles/tinyxml.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinystr.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxml.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxmlerror.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="tinyxml/sourcefiles/tinyxmlparser.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

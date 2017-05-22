@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<armas>
+	<arma nombre="pistola" bpd="1" cargador="7" recoiltime="0.5" rareza="0" rango="1" parabola="false" recoil="10" explosivo="false" >
+		<rectangulo x="0" y="0" w="76" h="49" />	
+	</arma>
+	<arma nombre="escopeta" bpd="3" cargador="5" recoiltime="1" rareza="0" rango="0" parabola="false" recoil="30" explosivo="false" >
+		<rectangulo x="781" y="0" w="140" h="42" />	
+	</arma>
+	<arma nombre="fusil" bpd="1" cargador="20" recoiltime="0.05" rareza="2" rango="2" parabola="false" recoil="20" explosivo="false" >
+		<rectangulo x="603" y="0" w="178" h="47" />	
+	</arma>
+	<arma nombre="lanzacohetes" bpd="1" cargador="2" recoiltime="2" rareza="2" rango="2" parabola="false" recoil="40" explosivo="true" >
+		<rectangulo x="204" y="0" w="243" h="42" />	
+	</arma>
+	<arma nombre="lanzagranadas" bpd="1" cargador="7" recoiltime="2" rareza="1" rango="2" parabola="true" recoil="40" explosivo="true" >
+		<rectangulo x="76" y="0" w="128" h="26" />	
+	</arma>
+	<arma nombre="katana" bpd="1" cargador="-1" recoiltime="0.2" rareza="1" rango="-1" parabola="false" recoil="0" explosivo="false" >
+		<rectangulo x="447" y="0" w="156" h="25" />	
+	</arma>
+</armas>
