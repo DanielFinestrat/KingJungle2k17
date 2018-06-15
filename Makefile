@@ -8,7 +8,7 @@ SOURCE_DIRS			:= $(shell find src -type d -not -path "src")
 SourcePath			:= $(shell find src -name '*.cpp')
 
 CXX					:= g++
-CXXFLAGS 			:= -O3 -ffast-math -g -Wall -std=c++11
+CXXFLAGS 			:= -ffast-math -g -Wall -std=c++11
 CPPFLAGS        	:= -I/usr/include
 LDFLAGS				:= -L.
 LIBS 				:= -lsfml-audio -lsfml-system -lsfml-graphics -lsfml-window -lBox2D
