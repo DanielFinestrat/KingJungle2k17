@@ -151,7 +151,7 @@ void Player::update(Time frameTime) {
     playerSprite->setPosition(posx * PPM, posy * PPM);
     playAnimation();
 
-    if (weapon != NULL) weapon->update(posx, posy);
+    if (weapon != NULL) weapon->update(posx, posy+0.2);
 
     if (!isPlayerDead()) checkMapBounds();
 
