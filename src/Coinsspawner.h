@@ -16,8 +16,8 @@
 #include "motorgrafico/Animation.h"
 #include "motorgrafico/SpriteAnimated.h"
 #include "motorgrafico/InnerClock.h"
-#include "tinyxml/headerfiles/tinystr.h"
-#include "tinyxml/headerfiles/tinyxml.h"
+#include "tinyxml/tinystr.h"
+#include "tinyxml/tinyxml.h"
 
 class Coinsspawner {
 public:

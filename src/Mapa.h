@@ -13,8 +13,8 @@
 #include <string>
 #include <cstdlib>
 #include "Platform.h"
-#include "tinyxml/headerfiles/tinystr.h"
-#include "tinyxml/headerfiles/tinyxml.h"
+#include "tinyxml/tinystr.h"
+#include "tinyxml/tinyxml.h"
 #include "motorgrafico/VisibleBody.h"
 #include "motorgrafico/Fondo.h"
 

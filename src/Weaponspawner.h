@@ -11,8 +11,8 @@
 
 #include <vector>
 #include "Weapon.h"
-#include "tinyxml/headerfiles/tinystr.h"
-#include "tinyxml/headerfiles/tinyxml.h"
+#include "tinyxml/tinystr.h"
+#include "tinyxml/tinyxml.h"
 #include "motorgrafico/InnerClock.h"
 
 using namespace std;
