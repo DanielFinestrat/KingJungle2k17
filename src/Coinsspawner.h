@@ -11,13 +11,13 @@
 
 #include "Entidad.h"
 #include "Coin.h"
-#include "../motorfisico/headerfiles/Cuerpo.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/Animation.h"
-#include "../motorgrafico/headerfiles/SpriteAnimated.h"
-#include "../motorgrafico/headerfiles/InnerClock.h"
-#include "../tinyxml/headerfiles/tinystr.h"
-#include "../tinyxml/headerfiles/tinyxml.h"
+#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/Animation.h"
+#include "motorgrafico/headerfiles/SpriteAnimated.h"
+#include "motorgrafico/headerfiles/InnerClock.h"
+#include "tinyxml/headerfiles/tinystr.h"
+#include "tinyxml/headerfiles/tinyxml.h"
 
 class Coinsspawner {
 public:

@@ -13,10 +13,10 @@
 #include <string>
 #include <cstdlib>
 #include "Platform.h"
-#include "../tinyxml/headerfiles/tinystr.h"
-#include "../tinyxml/headerfiles/tinyxml.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/Fondo.h"
+#include "tinyxml/headerfiles/tinystr.h"
+#include "tinyxml/headerfiles/tinyxml.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/Fondo.h"
 
 using namespace std;
 

@@ -10,10 +10,10 @@
 #define COIN_H
 
 #include "Entidad.h"
-#include "../motorfisico/headerfiles/Cuerpo.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/Animation.h"
-#include "../motorgrafico/headerfiles/SpriteAnimated.h"
+#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/Animation.h"
+#include "motorgrafico/headerfiles/SpriteAnimated.h"
 
 class Coin : public Entidad {
 public:

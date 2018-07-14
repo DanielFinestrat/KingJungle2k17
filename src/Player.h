@@ -10,10 +10,10 @@
 #define PLAYER_H
 
 #include "Entidad.h"
-#include "../motorgrafico/headerfiles/Animation.h"
-#include "../motorgrafico/headerfiles/SpriteAnimated.h"
-#include "../motorgrafico/headerfiles/InnerClock.h"
-#include "../motorfisico/headerfiles/Cuerpo.h"
+#include "motorgrafico/headerfiles/Animation.h"
+#include "motorgrafico/headerfiles/SpriteAnimated.h"
+#include "motorgrafico/headerfiles/InnerClock.h"
+#include "motorfisico/headerfiles/Cuerpo.h"
 #include "Weapon.h"
 
 using namespace std;

@@ -12,8 +12,8 @@
 #include <vector>
 #include <set>
 
-#include "../motorfisico/headerfiles/Motorfisico.h"
-#include "../motorgrafico/headerfiles/Temporizador.h"
+#include "motorfisico/headerfiles/Motorfisico.h"
+#include "motorgrafico/headerfiles/Temporizador.h"
 #include "Hud.h"
 #include "Weaponspawner.h"
 #include "Platform.h"

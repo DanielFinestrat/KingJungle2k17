@@ -9,7 +9,7 @@
 #ifndef HUD_H
 #define HUD_H
 
-#include "../motorgrafico/headerfiles/Texto.h"
+#include "motorgrafico/headerfiles/Texto.h"
 #include "Player.h"
 
 using namespace std;

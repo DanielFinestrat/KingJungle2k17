@@ -16,10 +16,10 @@
 #define EXPLOSION_H
 
 #include "Entidad.h"
-#include "../motorfisico/headerfiles/ContactListener.h"
-#include "../motorfisico/headerfiles/CuerpoCircular.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/InnerClock.h"
+#include "motorfisico/headerfiles/ContactListener.h"
+#include "motorfisico/headerfiles/CuerpoCircular.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/InnerClock.h"
 
 class Explosion : public Entidad {
 public:

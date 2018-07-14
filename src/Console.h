@@ -12,9 +12,9 @@
 #include <string>
 #include <functional>
 #include <vector>
-#include "../motorgrafico/headerfiles/Texto.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/resources.h"
+#include "motorgrafico/headerfiles/Texto.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/resources.h"
 
 #define screenWidth 1024
 #define screenHeight 600

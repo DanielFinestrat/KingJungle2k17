@@ -11,9 +11,9 @@
 
 #include <vector>
 #include "Entidad.h"
-#include "../motorfisico/headerfiles/Cuerpo.h"
-#include "../motorfisico/headerfiles/Motorfisico.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
+#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorfisico/headerfiles/Motorfisico.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
 
 using namespace std;
 

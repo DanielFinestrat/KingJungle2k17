@@ -10,9 +10,9 @@
 #define TRAMPA_H
 
 #include "Entidad.h"
-#include "../motorfisico/headerfiles/Cuerpo.h"
-#include "../motorgrafico/headerfiles/VisibleBody.h"
-#include "../motorgrafico/headerfiles/InnerClock.h"
+#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/headerfiles/InnerClock.h"
 
 using namespace std;
 
