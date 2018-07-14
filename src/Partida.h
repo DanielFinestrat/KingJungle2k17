@@ -12,7 +12,7 @@
 #include <vector>
 #include <set>
 
-#include "motorfisico/headerfiles/Motorfisico.h"
+#include "motorfisico/Motorfisico.h"
 #include "motorgrafico/headerfiles/Temporizador.h"
 #include "Hud.h"
 #include "Weaponspawner.h"

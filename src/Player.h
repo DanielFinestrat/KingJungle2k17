@@ -13,7 +13,7 @@
 #include "motorgrafico/headerfiles/Animation.h"
 #include "motorgrafico/headerfiles/SpriteAnimated.h"
 #include "motorgrafico/headerfiles/InnerClock.h"
-#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorfisico/Cuerpo.h"
 #include "Weapon.h"
 
 using namespace std;

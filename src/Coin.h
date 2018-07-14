@@ -10,7 +10,7 @@
 #define COIN_H
 
 #include "Entidad.h"
-#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorfisico/Cuerpo.h"
 #include "motorgrafico/headerfiles/VisibleBody.h"
 #include "motorgrafico/headerfiles/Animation.h"
 #include "motorgrafico/headerfiles/SpriteAnimated.h"

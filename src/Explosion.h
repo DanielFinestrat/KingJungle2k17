@@ -16,8 +16,8 @@
 #define EXPLOSION_H
 
 #include "Entidad.h"
-#include "motorfisico/headerfiles/ContactListener.h"
-#include "motorfisico/headerfiles/CuerpoCircular.h"
+#include "motorfisico/ContactListener.h"
+#include "motorfisico/CuerpoCircular.h"
 #include "motorgrafico/headerfiles/VisibleBody.h"
 #include "motorgrafico/headerfiles/InnerClock.h"
 

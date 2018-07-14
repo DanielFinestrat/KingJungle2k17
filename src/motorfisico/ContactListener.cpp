@@ -6,8 +6,8 @@
  * Created on 26 de marzo de 2017, 20:41
  */
 
-#include "../headerfiles/ContactListener.h"
-#include "../../Partida.h"
+#include "ContactListener.h"
+#include "../Partida.h"
 
 void ContactListener::BeginContact(b2Contact* contact) {
 	Partida *partida = Partida::getInstance();

@@ -7,7 +7,7 @@
  */
 
 #include "Trampa.h"
-#include "motorfisico/headerfiles/Motorfisico.h"
+#include "motorfisico/Motorfisico.h"
 #include "Partida.h"
 #include <stdio.h>
 #include <PI.h>

@@ -13,7 +13,7 @@
 #include "Bala.h"
 #include "Entidad.h"
 #include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorfisico/headerfiles/Cuerpo.h"
+#include "motorfisico/Cuerpo.h"
 #include "motorgrafico/headerfiles/InnerClock.h"
 #include "motorgrafico/headerfiles/resources.h"
 
