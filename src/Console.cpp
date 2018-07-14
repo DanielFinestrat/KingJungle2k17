@@ -6,8 +6,8 @@
  * Created on 5 de abril de 2017, 16:02
  */
 
-#include "headerfiles/Console.h"
-#include "headerfiles/Partida.h"
+#include "Console.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include <iostream>
 

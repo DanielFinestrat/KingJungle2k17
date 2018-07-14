@@ -9,7 +9,7 @@
 #define CUERPO_H
 
 #include "../../Box2D/Box2D.h"
-#include "../../headerfiles/Entidad.h"
+#include "../../Entidad.h"
 
 class Cuerpo {
 public:

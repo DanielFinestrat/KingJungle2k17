@@ -6,8 +6,8 @@
  * Created on 16 de marzo de 2017, 20:43
  */
 
-#include "headerfiles/Bala.h"
-#include "headerfiles/Partida.h"
+#include "Bala.h"
+#include "Partida.h"
 
 #include <stdio.h>
 #include <PI.h>

@@ -5,7 +5,7 @@
  * Created on 26 de marzo de 2017, 13:57
  */
 
-#include "headerfiles/Entidad.h"
+#include "Entidad.h"
 
 Entidad::Entidad() {
 }

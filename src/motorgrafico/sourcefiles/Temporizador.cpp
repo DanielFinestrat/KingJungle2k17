@@ -6,7 +6,7 @@
  */
 
 #include "../headerfiles/Temporizador.h"
-#include "../../headerfiles/Partida.h"
+#include "../../Partida.h"
 
 Temporizador::Temporizador() {
 }

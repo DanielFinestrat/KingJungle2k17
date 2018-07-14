@@ -5,7 +5,7 @@
  * Created on 26 de marzo de 2017, 14:03
  */
 
-#include "headerfiles/Platform.h"
+#include "Platform.h"
 
 Platform::Platform() {
     cuerpo = NULL;

@@ -6,7 +6,7 @@
  * Created on 25 de abril de 2017, 14:27
  */
 
-#include "headerfiles/Menu.h"
+#include "Menu.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include <iostream>
 #include <sstream>

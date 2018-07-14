@@ -6,9 +6,9 @@
  * Created on 26 de marzo de 2017, 18:36
  */
 
-#include "headerfiles/Trampa.h"
+#include "Trampa.h"
 #include "motorfisico/headerfiles/Motorfisico.h"
-#include "headerfiles/Partida.h"
+#include "Partida.h"
 #include <stdio.h>
 #include <PI.h>
 #include <iostream>

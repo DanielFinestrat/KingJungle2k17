@@ -6,8 +6,8 @@
  * Created on 30 de abril de 2017, 18:40
  */
 
-#include "headerfiles/Coin.h"
-#include "headerfiles/Partida.h"
+#include "Coin.h"
+#include "Partida.h"
 
 
 Coin::Coin(float posx, float posy, int m_value, Animation* animation) {

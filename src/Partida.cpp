@@ -7,7 +7,7 @@
  */
 
 #include "motorgrafico/headerfiles/Motorgrafico.h"
-#include "headerfiles/Partida.h"
+#include "Partida.h"
 #include <algorithm>
 #include <PI.h>
 

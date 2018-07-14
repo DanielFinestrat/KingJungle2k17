@@ -6,9 +6,9 @@
  * Created on 16 de mayo de 2017, 19:43
  */
 
-#include "headerfiles/Player.h"
+#include "Player.h"
 #include "motorgrafico/headerfiles/Texto.h"
-#include "headerfiles/Inbetween.h"
+#include "Inbetween.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include <sstream>
 

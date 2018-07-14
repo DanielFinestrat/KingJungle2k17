@@ -7,7 +7,7 @@
  */
 
 #include "../headerfiles/ContactListener.h"
-#include "../../headerfiles/Partida.h"
+#include "../../Partida.h"
 
 void ContactListener::BeginContact(b2Contact* contact) {
 	Partida *partida = Partida::getInstance();

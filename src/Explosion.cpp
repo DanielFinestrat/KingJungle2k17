@@ -6,8 +6,8 @@
  */
 
 #include "motorfisico/headerfiles/Motorfisico.h"
-#include "headerfiles/Explosion.h"
-#include "headerfiles/Partida.h"
+#include "Explosion.h"
+#include "Partida.h"
 #include <stdio.h>
 #include <iostream>
 #include <PI.h>

@@ -6,8 +6,8 @@
  * Created on 1 de mayo de 2017, 16:44
  */
 
-#include "headerfiles/Coinsspawner.h"
-#include "headerfiles/Partida.h"
+#include "Coinsspawner.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 
 Coinsspawner::Coinsspawner() {   

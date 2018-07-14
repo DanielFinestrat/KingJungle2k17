@@ -14,8 +14,8 @@
 #include <vector>
 #include <cstdlib>
 
-#include "headerfiles/TrapSpawner.h"
-#include "headerfiles/Partida.h"
+#include "TrapSpawner.h"
+#include "Partida.h"
 
 TrapSpawner::TrapSpawner() {
     leerSpawnerPosition();

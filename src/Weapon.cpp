@@ -6,8 +6,8 @@
  * Created on 16 de marzo de 2017, 20:24
  */
 
-#include "headerfiles/Weapon.h"
-#include "headerfiles/Partida.h"
+#include "Weapon.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 
 Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad, int Bps, int amm, int recoil_, int rango, bool parabola, bool explosivo) {

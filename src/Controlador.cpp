@@ -5,7 +5,7 @@
  * Created on 5 de abril de 2017, 9:53
  */
 
-#include "headerfiles/Controlador.h"
+#include "Controlador.h"
 
 Controlador::Controlador() {
 }

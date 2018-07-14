@@ -9,8 +9,8 @@
 #include <SFML/Graphics.hpp>
 #include <functional>
 #include <iostream>
-#include "../../headerfiles/Partida.h"
-#include "../../headerfiles/Menu.h"
+#include "../../Partida.h"
+#include "../../Menu.h"
 #include "Animation.h"
 #include "SpriteAnimated.h"
 #include "Temporizador.h"

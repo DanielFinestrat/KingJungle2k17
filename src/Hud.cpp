@@ -5,7 +5,7 @@
  * Created on 30 de abril de 2017, 13:35
  */
 
-#include "headerfiles/Hud.h"
+#include "Hud.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 
 static Hud* instance;

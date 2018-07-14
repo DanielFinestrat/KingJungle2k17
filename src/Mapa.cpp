@@ -6,7 +6,7 @@
  * Created on 28 de abril de 2017, 10:42
  */
 
-#include "headerfiles/Mapa.h"
+#include "Mapa.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 
 Mapa::Mapa() {

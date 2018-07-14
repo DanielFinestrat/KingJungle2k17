@@ -12,7 +12,7 @@
 #include "Cuerpo.h"
 #include "CuerpoCircular.h"
 #include "ContactListener.h"
-#include "../../headerfiles/Entidad.h"
+#include "../../Entidad.h"
 
 #define TIMESTEP 1.0f/15.f      //TIEMPO DE REFRESCO
 #define VELITER 10              //NUMERO DE ITERACIONES POR TICK PARA CALCULAR LA VELOCIDAD

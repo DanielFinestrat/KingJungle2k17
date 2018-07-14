@@ -5,9 +5,9 @@
  * Created on 29 de marzo de 2017, 11:20
  */
 
-#include "headerfiles/PlayerKeyboard.h"
-#include "headerfiles/Partida.h"
-#include "headerfiles/Hud.h"
+#include "PlayerKeyboard.h"
+#include "Partida.h"
+#include "Hud.h"
 #include <iostream>
 #include <vector>
 

@@ -6,8 +6,8 @@
  * Created on 28 de abril de 2017, 19:23
  */
 
-#include "headerfiles/Weaponspawner.h"
-#include "headerfiles/Partida.h"
+#include "Weaponspawner.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include <cstdlib>
 

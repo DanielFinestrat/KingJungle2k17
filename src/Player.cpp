@@ -6,8 +6,8 @@
  * Created on 21 de marzo de 2017, 8:00
  */
 
-#include "headerfiles/Player.h"
-#include "headerfiles/Partida.h"
+#include "Player.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include <iostream>
 

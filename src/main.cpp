@@ -1,5 +1,5 @@
 
-#include "headerfiles/Partida.h"
+#include "Partida.h"
 #include "motorgrafico/headerfiles/Texto.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include "motorgrafico/headerfiles/musicPlayer.h"

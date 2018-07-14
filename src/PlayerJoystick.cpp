@@ -5,9 +5,9 @@
  * Created on 15 de marzo de 2017, 9:45
  */
 
-#include "headerfiles/PlayerJoystick.h"
-#include "headerfiles/Partida.h"
-#include "headerfiles/Hud.h"
+#include "PlayerJoystick.h"
+#include "Partida.h"
+#include "Hud.h"
 #include <iostream>
 #include <vector>
 
