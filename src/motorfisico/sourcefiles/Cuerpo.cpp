@@ -8,7 +8,7 @@
 #include "../headerfiles/Cuerpo.h"
 
 #include <stdio.h>
-#include <math.h>
+#include <PI.h>
 #include <iostream>
 
 #define PPM 64.0f               //PIXELS POR METRO

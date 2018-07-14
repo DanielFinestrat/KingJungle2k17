@@ -10,8 +10,7 @@
 #define PARTIDA_H
 
 #include <vector>
-#include <algorithm>
-#include <math.h>
+#include <set>
 
 #include "../motorfisico/headerfiles/Motorfisico.h"
 #include "../motorgrafico/headerfiles/Temporizador.h"

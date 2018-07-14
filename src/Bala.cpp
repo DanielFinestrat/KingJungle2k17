@@ -9,6 +9,12 @@
 #include "headerfiles/Bala.h"
 #include "headerfiles/Partida.h"
 
+#include <stdio.h>
+#include <PI.h>
+#include <iostream>
+#include <set>
+#include <vector>
+
 using namespace std;
 
 Bala::Bala(float x, float y, float posx, float posy, bool explo, int rango, bool balaVisible) {

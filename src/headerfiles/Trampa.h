@@ -9,11 +9,6 @@
 #ifndef TRAMPA_H
 #define TRAMPA_H
 
-#include <stdio.h>
-#include <math.h>
-#include <iostream>
-#include <set>
-#include <vector>
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/Cuerpo.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"

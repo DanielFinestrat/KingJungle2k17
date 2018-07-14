@@ -9,7 +9,11 @@
 #include "headerfiles/Trampa.h"
 #include "motorfisico/headerfiles/Motorfisico.h"
 #include "headerfiles/Partida.h"
-
+#include <stdio.h>
+#include <PI.h>
+#include <iostream>
+#include <set>
+#include <vector>
 
 #define VELTRAP 3 //Velocidad que tendra la trampa
 

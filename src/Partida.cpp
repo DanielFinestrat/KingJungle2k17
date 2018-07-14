@@ -8,6 +8,8 @@
 
 #include "motorgrafico/headerfiles/Motorgrafico.h"
 #include "headerfiles/Partida.h"
+#include <algorithm>
+#include <PI.h>
 
 using namespace sf;
 
