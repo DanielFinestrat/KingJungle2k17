@@ -19,19 +19,17 @@ OBJ					:= $(patsubst src/%.cpp,obj/%.o,$(SourcePath))
 
 SOURCE_DIRS 		:= $(patsubst src/%,obj/%,$(SOURCE_DIRS))
 
+ifeq ($(OS),Windows_NT)
+ICO 				= ico/game_icon_res.rc
+ICOOBJ				= $(patsubst ico/%.rc,obj/%.o,$(ICO))
+endif
+
 #MAKE OPTIONS
 .PHONY: all clean
 
-all: prepare $(OBJ)
-	$(info ----------------------------------------------)
-	$(info Linking executable $(Target)...)
-	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(OBJ) -o $(EXECUTABLE) $(LDFLAGS) $(LIBS)
+all: prepare ico compile 	
 	$(info ----------------------------------------------)	
 	$(info Compile OK)
-
-obj/%.o: src/%.cpp
-	$(info Compiling-> $@)
-	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 prepare:
 	$(info ==============================================)
@@ -39,6 +37,24 @@ prepare:
 	$(info ==============================================)
 	@mkdir -p $(BinPath)
 	@mkdir -p $(SOURCE_DIRS)
+
+ico:
+    ifeq ($(OS),Windows_NT)
+		$(info ==============================================)
+		$(info Creating ico object)
+		$(info Compiling-> $(ICOOBJ))
+		$(info ==============================================)
+		$(shell windres $(ICO) -o $(ICOOBJ))
+    endif
+
+obj/%.o: src/%.cpp
+	$(info Compiling-> $@)
+	@$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
+
+compile: $(OBJ)
+	$(info ----------------------------------------------)
+	$(info Linking executable $(Target)...)
+	@$(CXX) $(CPPFLAGS) $(CXXFLAGS) $(OBJ) -o $(EXECUTABLE) $(LDFLAGS) $(LIBS) $(ICOOBJ)
 
 clean:
 	$(info ==============================================)
