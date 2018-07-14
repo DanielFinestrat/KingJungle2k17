@@ -9,7 +9,7 @@
 #ifndef FONDO_H
 #define FONDO_H
 
-#include "../headerfiles/resources.h"
+#include "resources.h"
 #include <SFML/Graphics.hpp>
 
 using namespace std;

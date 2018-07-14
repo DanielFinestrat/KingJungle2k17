@@ -8,7 +8,7 @@
 
 #include "Weapon.h"
 #include "Partida.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 
 Weapon::Weapon(float sizex, float sizey, float posx, float posy, float shoot_cad, int Bps, int amm, int recoil_, int rango, bool parabola, bool explosivo) {
 

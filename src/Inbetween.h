@@ -10,9 +10,9 @@
 #define INBETWEEN_H
 
 #include <vector>
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/resources.h"
-#include "motorgrafico/headerfiles/Fondo.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/resources.h"
+#include "motorgrafico/Fondo.h"
 
 using namespace std;
 

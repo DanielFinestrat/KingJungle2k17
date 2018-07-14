@@ -11,7 +11,7 @@
  * Created on 27 de abril de 2017, 0:52
  */
 
-#include "../headerfiles/InnerClock.h"
+#include "InnerClock.h"
 
 InnerClock::InnerClock() {
 }

@@ -15,8 +15,8 @@
 #include "Platform.h"
 #include "tinyxml/headerfiles/tinystr.h"
 #include "tinyxml/headerfiles/tinyxml.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/Fondo.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/Fondo.h"
 
 using namespace std;
 

@@ -7,7 +7,7 @@
  */
 
 #include "Mapa.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 
 Mapa::Mapa() {
     mapas.push_back(mapaSeleccion);

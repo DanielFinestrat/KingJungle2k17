@@ -1,4 +1,4 @@
-#include "../headerfiles/resources.h"
+#include "resources.h"
 #include <iostream>
 
 using namespace sf;

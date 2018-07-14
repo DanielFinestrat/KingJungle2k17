@@ -9,7 +9,7 @@
 #ifndef TEXTO_H
 #define TEXTO_H
 
-#include "../headerfiles/resources.h"
+#include "resources.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>

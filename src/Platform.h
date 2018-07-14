@@ -13,7 +13,7 @@
 #include "Entidad.h"
 #include "motorfisico/Cuerpo.h"
 #include "motorfisico/Motorfisico.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/VisibleBody.h"
 
 using namespace std;
 

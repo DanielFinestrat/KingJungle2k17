@@ -13,7 +13,7 @@
 #include "Weapon.h"
 #include "tinyxml/headerfiles/tinystr.h"
 #include "tinyxml/headerfiles/tinyxml.h"
-#include "motorgrafico/headerfiles/InnerClock.h"
+#include "motorgrafico/InnerClock.h"
 
 using namespace std;
 

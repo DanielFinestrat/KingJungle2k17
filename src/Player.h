@@ -10,9 +10,9 @@
 #define PLAYER_H
 
 #include "Entidad.h"
-#include "motorgrafico/headerfiles/Animation.h"
-#include "motorgrafico/headerfiles/SpriteAnimated.h"
-#include "motorgrafico/headerfiles/InnerClock.h"
+#include "motorgrafico/Animation.h"
+#include "motorgrafico/SpriteAnimated.h"
+#include "motorgrafico/InnerClock.h"
 #include "motorfisico/Cuerpo.h"
 #include "Weapon.h"
 

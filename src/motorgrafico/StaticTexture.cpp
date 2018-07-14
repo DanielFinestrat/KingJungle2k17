@@ -11,7 +11,7 @@
  * Created on 5 de abril de 2017, 20:13
  */
 
-#include "../headerfiles/StaticTexture.h"
+#include "StaticTexture.h"
 using namespace std;
 using namespace sf;
 StaticTexture::StaticTexture() {textura = new Texture;}

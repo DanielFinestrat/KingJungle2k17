@@ -9,7 +9,7 @@
 #ifndef VISIBLEBODY_H
 #define VISIBLEBODY_H
 
-#include "../headerfiles/resources.h"
+#include "resources.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <vector>

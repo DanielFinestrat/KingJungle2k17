@@ -5,8 +5,8 @@
  * Created on 27 de marzo de 2017, 13:05
  */
 
-#include "../headerfiles/Temporizador.h"
-#include "../../Partida.h"
+#include "Temporizador.h"
+#include "../Partida.h"
 
 Temporizador::Temporizador() {
 }

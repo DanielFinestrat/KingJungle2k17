@@ -6,7 +6,7 @@
  * Created on 26 de marzo de 2017, 13:13
  */
 
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 #include "Partida.h"
 #include <algorithm>
 #include <PI.h>

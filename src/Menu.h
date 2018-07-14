@@ -11,10 +11,10 @@
 
 #include <vector>
 #include <string>
-#include "motorgrafico/headerfiles/InnerClock.h"
-#include "motorgrafico/headerfiles/Texto.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/Fondo.h"
+#include "motorgrafico/InnerClock.h"
+#include "motorgrafico/Texto.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/Fondo.h"
 
 class Menu {
 public:

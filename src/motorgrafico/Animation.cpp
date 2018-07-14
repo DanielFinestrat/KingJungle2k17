@@ -5,7 +5,7 @@
  * Created on 8 de marzo de 2017, 10:41
  */
 
-#include "../headerfiles/Animation.h"
+#include "Animation.h"
 using namespace sf;
 using namespace std;
 

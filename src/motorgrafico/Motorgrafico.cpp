@@ -6,7 +6,7 @@
  * Created on 11 de abril de 2017, 20:17
  */
 
-#include "../headerfiles/Motorgrafico.h"
+#include "Motorgrafico.h"
 
 static Motorgrafico* instance;
 

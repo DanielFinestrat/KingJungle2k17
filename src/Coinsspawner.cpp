@@ -8,7 +8,7 @@
 
 #include "Coinsspawner.h"
 #include "Partida.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 
 Coinsspawner::Coinsspawner() {   
     leerCoins();

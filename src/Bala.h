@@ -12,7 +12,7 @@
 #include "Entidad.h"
 #include "motorfisico/Cuerpo.h"
 #include "motorfisico/Motorfisico.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/VisibleBody.h"
 
 class Bala : public Entidad {
 public:

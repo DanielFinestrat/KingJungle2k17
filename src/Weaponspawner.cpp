@@ -8,7 +8,7 @@
 
 #include "Weaponspawner.h"
 #include "Partida.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 #include <cstdlib>
 
 Weaponspawner::Weaponspawner() {

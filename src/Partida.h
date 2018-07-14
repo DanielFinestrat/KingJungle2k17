@@ -13,7 +13,7 @@
 #include <set>
 
 #include "motorfisico/Motorfisico.h"
-#include "motorgrafico/headerfiles/Temporizador.h"
+#include "motorgrafico/Temporizador.h"
 #include "Hud.h"
 #include "Weaponspawner.h"
 #include "Platform.h"

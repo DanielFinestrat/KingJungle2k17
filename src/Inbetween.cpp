@@ -7,9 +7,9 @@
  */
 
 #include "Player.h"
-#include "motorgrafico/headerfiles/Texto.h"
+#include "motorgrafico/Texto.h"
 #include "Inbetween.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 #include <sstream>
 
 Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints, int tipoJuego, bool gameOver) {

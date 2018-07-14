@@ -11,8 +11,8 @@
 
 #include "Entidad.h"
 #include "motorfisico/Cuerpo.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/InnerClock.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/InnerClock.h"
 
 using namespace std;
 

@@ -1,8 +1,8 @@
 
 #include "Partida.h"
-#include "motorgrafico/headerfiles/Texto.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
-#include "motorgrafico/headerfiles/musicPlayer.h"
+#include "motorgrafico/Texto.h"
+#include "motorgrafico/Motorgrafico.h"
+#include "motorgrafico/musicPlayer.h"
 
 using namespace std;
 

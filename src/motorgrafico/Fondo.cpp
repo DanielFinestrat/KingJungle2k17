@@ -6,8 +6,8 @@
  * Created on 29 de abril de 2017, 10:17
  */
 
-#include "../headerfiles/Fondo.h"
-#include "../headerfiles/Motorgrafico.h"
+#include "Fondo.h"
+#include "Motorgrafico.h"
 
 Fondo::Fondo(string ruta, bool pantallaCarga) {
     imagenFondo = new Sprite();

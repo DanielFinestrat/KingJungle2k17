@@ -18,8 +18,8 @@
 #include "Entidad.h"
 #include "motorfisico/ContactListener.h"
 #include "motorfisico/CuerpoCircular.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/InnerClock.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/InnerClock.h"
 
 class Explosion : public Entidad {
 public:

@@ -6,7 +6,7 @@
  * Created on 19 de abril de 2017, 19:15
  */
 
-#include "../headerfiles/Texto.h"
+#include "Texto.h"
 
 Texto::Texto(std::string t, int s, std::string p, int r, int g, int b) {
     string = t;

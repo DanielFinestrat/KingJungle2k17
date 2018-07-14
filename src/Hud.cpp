@@ -6,7 +6,7 @@
  */
 
 #include "Hud.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 
 static Hud* instance;
 

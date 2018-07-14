@@ -5,7 +5,7 @@
  * Created on 8 de marzo de 2017, 11:25
  */
 
-#include "../headerfiles/SpriteAnimated.h"
+#include "SpriteAnimated.h"
 
 using namespace sf;
 using namespace std;

@@ -11,9 +11,9 @@
 
 #include "Entidad.h"
 #include "motorfisico/Cuerpo.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
-#include "motorgrafico/headerfiles/Animation.h"
-#include "motorgrafico/headerfiles/SpriteAnimated.h"
+#include "motorgrafico/VisibleBody.h"
+#include "motorgrafico/Animation.h"
+#include "motorgrafico/SpriteAnimated.h"
 
 class Coin : public Entidad {
 public:

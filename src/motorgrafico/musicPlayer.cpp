@@ -1,4 +1,4 @@
-#include "../headerfiles/musicPlayer.h"
+#include "musicPlayer.h"
 #include <iostream>
 
 using namespace std;

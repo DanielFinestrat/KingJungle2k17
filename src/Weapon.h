@@ -12,10 +12,10 @@
 #include <set>
 #include "Bala.h"
 #include "Entidad.h"
-#include "motorgrafico/headerfiles/VisibleBody.h"
+#include "motorgrafico/VisibleBody.h"
 #include "motorfisico/Cuerpo.h"
-#include "motorgrafico/headerfiles/InnerClock.h"
-#include "motorgrafico/headerfiles/resources.h"
+#include "motorgrafico/InnerClock.h"
+#include "motorgrafico/resources.h"
 
 using namespace std;
 

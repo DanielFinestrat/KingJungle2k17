@@ -7,7 +7,7 @@
  */
 
 #include "Menu.h"
-#include "motorgrafico/headerfiles/Motorgrafico.h"
+#include "motorgrafico/Motorgrafico.h"
 #include <iostream>
 #include <sstream>
 
