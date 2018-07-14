@@ -8,6 +8,8 @@
 #include "headerfiles/PlayerJoystick.h"
 #include "headerfiles/Partida.h"
 #include "headerfiles/Hud.h"
+#include <iostream>
+#include <vector>
 
 PlayerJoystick::PlayerJoystick(int id) {
     tipo = "Joystick";

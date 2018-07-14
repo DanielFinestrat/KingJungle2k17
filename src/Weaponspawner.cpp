@@ -9,6 +9,7 @@
 #include "headerfiles/Weaponspawner.h"
 #include "headerfiles/Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
+#include <cstdlib>
 
 Weaponspawner::Weaponspawner() {
     leerArmas();

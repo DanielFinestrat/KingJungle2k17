@@ -15,8 +15,6 @@
 #ifndef EXPLOSION_H
 #define EXPLOSION_H
 
-#include <stdio.h>
-#include <iostream>
 #include "Entidad.h"
 #include "../motorfisico/headerfiles/ContactListener.h"
 #include "../motorfisico/headerfiles/CuerpoCircular.h"

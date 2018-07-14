@@ -9,6 +9,7 @@
 #include "headerfiles/Player.h"
 #include "headerfiles/Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
+#include <iostream>
 
 Player::Player() {
     tag = "Player";

@@ -8,6 +8,8 @@
 #include "headerfiles/PlayerKeyboard.h"
 #include "headerfiles/Partida.h"
 #include "headerfiles/Hud.h"
+#include <iostream>
+#include <vector>
 
 PlayerKeyboard::PlayerKeyboard() {
     tipo = "Keyboard";

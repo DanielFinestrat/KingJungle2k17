@@ -9,8 +9,7 @@
 #ifndef CONSOLE_H
 #define CONSOLE_H
 
-#include <iostream>
-#include <string.h>
+#include <string>
 #include <functional>
 #include <vector>
 #include "../motorgrafico/headerfiles/Texto.h"

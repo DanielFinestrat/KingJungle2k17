@@ -9,9 +9,7 @@
 #ifndef MENU_H
 #define MENU_H
 
-#include <iostream>
 #include <vector>
-#include <sstream>
 #include <string>
 #include "../motorgrafico/headerfiles/InnerClock.h"
 #include "../motorgrafico/headerfiles/Texto.h"

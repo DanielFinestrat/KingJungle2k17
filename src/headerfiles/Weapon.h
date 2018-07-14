@@ -9,6 +9,7 @@
 #ifndef WEAPON_H
 #define WEAPON_H
 
+#include <set>
 #include "Bala.h"
 #include "Entidad.h"
 #include "../motorgrafico/headerfiles/VisibleBody.h"

@@ -7,6 +7,7 @@
  */
 
 #include <SFML/Audio/AlResource.hpp>
+#include <iostream>
 
 #include "headerfiles/IAController.h"
 #include "headerfiles/Partida.h"

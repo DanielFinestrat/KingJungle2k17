@@ -9,8 +9,6 @@
 #ifndef PLAYERKEYBOARD_H
 #define PLAYERKEYBOARD_H
 
-#include <iostream>
-#include <vector>
 #include "Player.h"
 #include "Controlador.h"
 

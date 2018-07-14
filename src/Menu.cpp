@@ -8,6 +8,8 @@
 
 #include "headerfiles/Menu.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
+#include <iostream>
+#include <sstream>
 
 Menu::Menu(std::vector<Texto*> op, int x, int y) {
     options = op;

@@ -10,6 +10,7 @@
 #include "motorgrafico/headerfiles/Texto.h"
 #include "headerfiles/Inbetween.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
+#include <sstream>
 
 Inbetween::Inbetween(vector<Player*> jugadores, int maxPoints, int tipoJuego, bool gameOver) {
     fondo = new Fondo("./resources/fondos/fondomenu.png", false);

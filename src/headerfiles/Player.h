@@ -9,7 +9,6 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-#include <iostream>
 #include "Entidad.h"
 #include "../motorgrafico/headerfiles/Animation.h"
 #include "../motorgrafico/headerfiles/SpriteAnimated.h"

@@ -15,7 +15,6 @@
 #define TRAPSPAWNER_H
 
 #include <vector>
-#include <cstdlib>
 #include "Trampa.h"
 
 class TrapSpawner {

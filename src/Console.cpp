@@ -9,6 +9,7 @@
 #include "headerfiles/Console.h"
 #include "headerfiles/Partida.h"
 #include "motorgrafico/headerfiles/Motorgrafico.h"
+#include <iostream>
 
 using namespace std;
 

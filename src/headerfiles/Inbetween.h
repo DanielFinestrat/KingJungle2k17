@@ -10,7 +10,6 @@
 #define INBETWEEN_H
 
 #include <vector>
-#include <sstream>
 #include "../motorgrafico/headerfiles/VisibleBody.h"
 #include "../motorgrafico/headerfiles/resources.h"
 #include "../motorgrafico/headerfiles/Fondo.h"

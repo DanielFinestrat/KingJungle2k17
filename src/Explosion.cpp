@@ -8,6 +8,9 @@
 #include "motorfisico/headerfiles/Motorfisico.h"
 #include "headerfiles/Explosion.h"
 #include "headerfiles/Partida.h"
+#include <stdio.h>
+#include <iostream>
+#include <PI.h>
 
 Explosion::Explosion(float posx, float posy, float radio, float incremento, float inicial) {
     tag = "Explosion";

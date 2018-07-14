@@ -9,8 +9,6 @@
 #ifndef PLAYERJOYSTICK_H
 #define PLAYERJOYSTICK_H
 
-#include <iostream>
-#include <vector>
 #include "Player.h"
 #include "Controlador.h"
 

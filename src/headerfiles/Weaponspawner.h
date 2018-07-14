@@ -10,7 +10,6 @@
 #define WEAPONSPAWNER_H
 
 #include <vector>
-#include <cstdlib>
 #include "Weapon.h"
 #include "../tinyxml/headerfiles/tinystr.h"
 #include "../tinyxml/headerfiles/tinyxml.h"

@@ -12,6 +12,7 @@
  */
 
 #include <vector>
+#include <cstdlib>
 
 #include "headerfiles/TrapSpawner.h"
 #include "headerfiles/Partida.h"
