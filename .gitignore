@@ -1,2 +1,5 @@
 # Compiled Object files
 obj/*
+
+# Binary of the game
+KingOfTheJungle*

@@ -9,9 +9,9 @@ SourcePath			:= $(shell find src -name '*.cpp')
 
 CXX					:= g++
 CXXFLAGS 			:= -ffast-math -g -Wall -std=c++11
-CPPFLAGS        	:= -I/usr/include
-LDFLAGS				:= -L.
-LIBS 				:= -lsfml-audio -lsfml-system -lsfml-graphics -lsfml-window -lBox2D
+CPPFLAGS        	:= -I/usr/include -I./src -I./src/include
+LDFLAGS				:= -L/usr/lib
+LIBS 				:= -lsfml-audio -lsfml-system -lsfml-graphics -lsfml-window
 
 EXECUTABLE 			:= $(BinPath)/$(Target)
 SRC 	   			:= $(wildcard $(SourcePath)/*.cpp)					#no hace nada
