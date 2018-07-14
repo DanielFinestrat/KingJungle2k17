@@ -10,7 +10,7 @@
 #define CUERPOCIRCULAR_H
 
 #include <ctime>
-#include "../../../Box2D/Box2D.h"
+#include "../../Box2D/Box2D.h"
 #include "../../headerfiles/Entidad.h"
 #include <iostream>
 

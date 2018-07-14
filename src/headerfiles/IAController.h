@@ -9,8 +9,6 @@
 #ifndef IACONTROLLER_H
 #define IACONTROLLER_H
 
-#include <iostream>
-#include "../../Box2D/Box2D.h"
 #include "Player.h"
 #include "Controlador.h"
 
