@@ -29,8 +29,6 @@ public:
     const string mapaMar = "./resources/mapas/mapaMar.tmx";
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
-    const string mapaLaberinto = "./resources/mapas/mapaLaberinto.tmx";
-    const string mapaPunk = "./resources/mapas/mapaPunkHazard.tmx";
     const string mapaPodio = "./resources/mapas/mapaPodio.tmx";
     vector<string> mapas;
     
