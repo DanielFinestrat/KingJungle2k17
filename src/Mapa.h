@@ -26,7 +26,6 @@ public:
     const string mapaPrueba = "./resources/mapas/mapaPrueba.tmx";
     const string mapaSelva = "./resources/mapas/mapaSelva.tmx";
     const string mapaCueva = "./resources/mapas/mapaCueva.tmx";
-    const string mapaMar = "./resources/mapas/mapaMar.tmx";
     const string mapaHielo = "./resources/mapas/mapaHielo.tmx";
     const string mapaSeleccion = "./resources/mapas/mapaSeleccion.tmx";
     const string mapaPodio = "./resources/mapas/mapaPodio.tmx";

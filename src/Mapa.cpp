@@ -15,7 +15,6 @@ Mapa::Mapa() {
     mapas.push_back(mapaPrueba);
     mapas.push_back(mapaSelva);
     mapas.push_back(mapaCueva);
-    mapas.push_back(mapaMar);
     mapas.push_back(mapaHielo);
     firstMap = false;
 }
